@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # If dist directory exists, automatically serve from dist/
+  RewriteCond %{REQUEST_URI} !^/dist/
+  RewriteCond %{DOCUMENT_ROOT}/dist%{REQUEST_URI} -f [OR]
+  RewriteCond %{DOCUMENT_ROOT}/dist%{REQUEST_URI} -d
+  RewriteRule ^(.*)$ /dist/$1 [L]
+
+  # Route SPA direct URLs / page refresh to /dist/index.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /dist/index.html [L]
+</IfModule>
