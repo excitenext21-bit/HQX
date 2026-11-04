@@ -39,33 +39,21 @@ export default function Founder() {
             {/* Left and top subtle vignette for depth */}
             <div className="absolute inset-0 bg-radial-gradient from-transparent via-[#121210]/20 to-[#121210]/70 pointer-events-none"></div>
 
-            {/* Subtle Name Identifier on Image */}
-            <div className="absolute bottom-6 left-6 z-10 bg-black/40 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/10 hidden sm:flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-hq-yellow animate-pulse"></span>
-              <span className="text-xs font-mono tracking-widest uppercase text-white/90">Manny Anchan • Live Keynote</span>
-            </div>
+
           </div>
 
           {/* Right: High-Impact Bold Condensed Editorial Quote & Meta */}
           <div className="lg:col-span-6 flex flex-col justify-center px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-10 lg:py-0 relative z-10 bg-[#121210]">
-            {/* Top Eyebrow Pill */}
-            <div className="flex items-center gap-2.5 mb-6">
-              <span className="w-2 h-2 rounded-full bg-hq-yellow" />
-              <span className="font-mono text-xs uppercase tracking-widest text-hq-yellow font-semibold">
-                Founder's Creed • Global Keynote Steward
-              </span>
-            </div>
-
             {/* Massive Editorial Quote Headline (Matching Ash Soan Reference Typography) */}
             <blockquote 
-              className="founder-hero-quote text-lg sm:text-[22px] md:text-2xl lg:text-[1.75rem] xl:text-[2.15rem] font-medium leading-[1.25] tracking-tight uppercase text-white mb-8 border-l-4 border-hq-yellow pl-4 sm:pl-6"
+              className="founder-hero-quote text-xl sm:text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.35rem] font-medium leading-[1.25] tracking-tight uppercase text-white mb-8 border-l-4 border-hq-yellow pl-4 sm:pl-6"
             >
               “THIS IS HOW THE GOOD COMPANIES FIND THE GOOD COMPANY.”
             </blockquote>
 
             {/* Author Credential Signature Line */}
-            <div className="mb-8">
-              <div className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-white mb-1">
+            <div className="mb-10">
+              <div className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-2">
                 Manny Anchan
               </div>
               <div className="text-xs sm:text-sm font-mono text-white/60 tracking-wider uppercase">
@@ -73,36 +61,29 @@ export default function Founder() {
               </div>
             </div>
 
-            {/* Credential Indicators Row (Slide 26 & 27 highlights) */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-white/10 mb-8">
-              <div>
-                <div className="text-[11px] font-mono text-white/40 uppercase tracking-wider mb-1">Stewardship</div>
-                <div className="text-sm font-display font-semibold text-white">25+ Years Global</div>
-              </div>
-              <div>
-                <div className="text-[11px] font-mono text-white/40 uppercase tracking-wider mb-1">Alumni</div>
-                <div className="text-sm font-display font-semibold text-white">Harvard &amp; Columbia</div>
-              </div>
-              <div>
-                <div className="text-[11px] font-mono text-white/40 uppercase tracking-wider mb-1">Stage Pedigree</div>
-                <div className="text-sm font-display font-semibold text-hq-yellow">4x TEDx Speaker</div>
-              </div>
-            </div>
+            {/* Primary Action Button (Home Page Hero Signature Style) */}
+            <div>
+              <Link 
+                to="/contact" 
+                className="group relative inline-flex items-center justify-between gap-6 py-3.5 px-1 font-display font-medium text-xs tracking-widest text-white hover:text-hq-yellow transition-colors duration-300"
+              >
+                {/* Top border line */}
+                <span className="absolute top-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1.25px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none"></span>
 
-            {/* Primary Action Button */}
-            <div className="flex items-center gap-4">
-              <a
-                href="#pedigree"
-                className="inline-flex items-center gap-3 bg-hq-yellow text-[#0A0A0A] font-display font-semibold text-xs uppercase tracking-widest px-7 py-3.5 rounded-full hover:bg-white hover:text-black transition-all duration-300 shadow-lg group"
-              >
-                <span>Read Manny's Pedigree</span>
-                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-              </a>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 border border-white/20 text-white font-mono text-xs uppercase tracking-widest px-6 py-3.5 rounded-full hover:border-hq-yellow hover:text-hq-yellow transition-all"
-              >
-                <span>Inquire Keynote</span>
+                <span className="relative z-10">INQUIRE KEYNOTE</span>
+
+                <svg 
+                  className="w-[20px] h-[10px] inline-block transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0" 
+                  viewBox="0 0 20 10" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line x1="0" y1="5" x2="20" y2="5" stroke="currentColor" strokeWidth="1" />
+                  <polyline points="15 1, 20 5, 15 9" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+
+                {/* Bottom border line */}
+                <span className="absolute bottom-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1.25px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none"></span>
               </Link>
             </div>
           </div>
