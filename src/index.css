@@ -1,6 +1,22 @@
 @import url('https://fonts.cdnfonts.com/css/google-sans');
 @import url('https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600,700,800,900&display=swap');
 
+@font-face {
+  font-family: 'SansakertaMonda';
+  src: url('/fonts/monda/monda.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monda';
+  src: url('/fonts/monda/monda.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,7 +25,7 @@
   *,
   *::before,
   *::after {
-    font-family: "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: "Google Sans", "Product Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
 
   html {
@@ -25,7 +41,7 @@
   body {
     background-color: #FFFFFF;
     color: #0A0A0A;
-    font-family: "Google Sans", "Product Sans", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: "Google Sans", "Product Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
 
   html.dark,
@@ -34,36 +50,42 @@
     color: #F5F5F5;
   }
 
-  /* All Headings use Google Sans font */
-  h1, h2, h3, h4, h5, h6, .font-display, .font-heading {
-    font-family: "Google Sans", "Product Sans", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  /* Global Consistent Typography Hierarchy: Google Sans as clean modern default */
+  h1, h2, h3, h4, h5, h6, .font-display, .font-heading, .founder-hero-quote {
+    font-family: "Google Sans", "Product Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     letter-spacing: -0.02em;
   }
 
-  /* All Paragraphs: 16px font-size, 400 font-weight, Google Sans font */
-  p {
-    font-family: "Google Sans", "Product Sans", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-    font-size: 16px !important;
-    font-weight: 400 !important;
-    line-height: 1.6;
+  /* Standard Base Paragraph: Google Sans */
+  p, .font-body {
+    font-family: "Google Sans", "Product Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.65;
   }
 
   span, a, button, input, select, textarea {
-    font-family: "Google Sans", "Product Sans", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: "Google Sans", "Product Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
-}
-
-p {
-  font-family: "Google Sans", "Product Sans", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: 16px !important;
-  font-weight: 400 !important;
-  line-height: 1.6;
 }
 
 .font-display,
 .font-heading,
 .font-jost {
-  font-family: "Google Sans", "Product Sans", "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-family: "Google Sans", "Product Sans", sans-serif !important;
+}
+
+.font-serif {
+  font-family: "Prata", "Tenor Sans", Georgia, Cambria, serif !important;
+}
+
+/* Exclusive typography for 'shape tomorrow' matching attached Stella / Discretionary Ligature aesthetic */
+.font-stella {
+  font-family: 'SansakertaMonda', 'Monda', 'Google Sans', sans-serif !important;
+  font-feature-settings: "dlig" 1, "ss01" 1, "liga" 1, "calt" 1;
+  letter-spacing: -0.03em;
+}
+
+.font-monda {
+  font-family: "Google Sans", "Product Sans", sans-serif !important;
 }
 
 /* Monospace fonts replaced with Google Sans globally */
@@ -159,23 +181,35 @@ html.dark .bg-hq-yellow:not(:hover) {
 html.dark .bg-hq-yellow .animate-marquee,
 .bg-hq-yellow .animate-marquee *,
 html.dark .bg-hq-yellow .animate-marquee *,
-.marquee-partners-track,
-html.dark .marquee-partners-track,
-.marquee-partners-track *,
-html.dark .marquee-partners-track * {
+.bg-hq-yellow .marquee-partners-track,
+html.dark .bg-hq-yellow .marquee-partners-track,
+.bg-hq-yellow .marquee-partners-track *,
+html.dark .bg-hq-yellow .marquee-partners-track * {
   color: #0A0A0A !important;
 }
 
-.bg-hq-yellow .animate-marquee svg,
-html.dark .bg-hq-yellow .animate-marquee svg,
-.marquee-partners-track svg,
-html.dark .marquee-partners-track svg {
-  color: #0A0A0A !important;
-}
-
-.marquee-partners-dot,
-html.dark .marquee-partners-dot {
+.bg-hq-yellow .marquee-partners-dot,
+html.dark .bg-hq-yellow .marquee-partners-dot {
   color: rgba(10, 10, 10, 0.4) !important;
+}
+
+/* Reversed Corporate Partner Marquee - Black background, Yellow logos */
+.marquee-dark,
+html.dark .marquee-dark,
+.marquee-dark .animate-marquee,
+html.dark .marquee-dark .animate-marquee,
+.marquee-dark .animate-marquee *,
+html.dark .marquee-dark .animate-marquee *,
+.marquee-dark .marquee-partners-track,
+html.dark .marquee-dark .marquee-partners-track,
+.marquee-dark .marquee-partners-track *,
+html.dark .marquee-dark .marquee-partners-track * {
+  color: #F8B012 !important;
+}
+
+.marquee-dark .marquee-partners-dot,
+html.dark .marquee-dark .marquee-partners-dot {
+  color: rgba(248, 176, 18, 0.4) !important;
 }
 
 /* ==========================================================================

@@ -7,6 +7,7 @@ import React from 'react';
 export default function BrandLogo({ 
   className = 'h-8 w-auto', 
   iconOnly = false,
+  hideSquircle = false,
   textColor,
   yellowFill = '#FFCD00',
   swooshFill = '#0A0A0A',
@@ -46,24 +47,26 @@ export default function BrandLogo({
 
   return (
     <svg 
-      viewBox="0 0 606 270" 
+      viewBox={hideSquircle ? "24 0 576 270" : "0 0 606 270"} 
       fill="none" 
       xmlns="http://www.w3.org/2000/svg" 
       className={className}
       {...props}
     >
       {/* Yellow Squircle Background */}
-      <rect 
-        x="0" 
-        y="0" 
-        width="252" 
-        height="253" 
-        rx="52" 
-        ry="52" 
-        fill={yellowFill} 
-        stroke={squircleStroke} 
-        strokeWidth={squircleStrokeWidth} 
-      />
+      {!hideSquircle && (
+        <rect 
+          x="0" 
+          y="0" 
+          width="252" 
+          height="253" 
+          rx="52" 
+          ry="52" 
+          fill={yellowFill} 
+          stroke={squircleStroke} 
+          strokeWidth={squircleStrokeWidth} 
+        />
+      )}
       
       {/* Smile Trajectory Swoosh Arrow */}
       <path 

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Sparkles, Clock, Users, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Sparkles, Clock, Users, CheckCircle2, ArrowRight, ShieldCheck, Heart, Brain, Dumbbell, Award } from 'lucide-react';
 import { useData } from '../context/DataContext';
 
 export default function EngagingWorkshops() {
-  const { faculty, addInquiry } = useData();
-  const [selectedWorkshop, setSelectedWorkshop] = useState('Productivity & Deep Work Architecture');
+  const { addInquiry } = useData();
+  const [selectedWorkshop, setSelectedWorkshop] = useState('Strategic Thinking & Performance Optimization');
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
     name: '',
@@ -18,43 +18,63 @@ export default function EngagingWorkshops() {
   const workshops = [
     {
       id: 'w1',
-      title: 'Productivity & Deep Work Architecture',
+      title: 'Strategic Thinking & Performance Optimization',
       duration: 'Full Day (6 Hours)',
-      target: 'Managers & Knowledge Workers',
-      summary: 'Practical neuro-ergonomic systems to eliminate email friction, establish uninterrupted flow state sprint blocks, and 2x cognitive throughput.',
+      target: 'Managers, Directors & Business Heads',
+      summary: 'Enhance professional capabilities, eliminate execution bottlenecks, and align operational priorities with strategic long-term vision.',
       expertName: 'Ajay Srinivasan',
-      expertRole: 'Enterprise Leadership & Scale Strategist',
-      expertImage: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80'
+      expertRole: 'Seasoned Business Leader & Scale Strategist',
+      expertImage: '/team/ajay-srinivasan.png'
     },
     {
       id: 'w2',
-      title: 'Mindfulness & Somatic Reset Under Pressure',
+      title: 'Mindfulness, Self-Compassion & Stress Resilience',
       duration: 'Half Day (3.5 Hours)',
-      target: 'High-Stress Teams & Trading Floors',
-      summary: 'Proven Olympic athletic techniques for autonomic down-regulation, heart rate variability mastery, and rapid stress recovery during crises.',
+      target: 'High-Stress Corporate Teams & Fast-Growth Pods',
+      summary: 'Autonomic nervous system regulation, vagal tone activation, mindfulness techniques, and clinical burnout prevention.',
       expertName: 'Carolin Nytra',
-      expertRole: 'Olympic Athlete & Holistic Guide',
-      expertImage: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80'
+      expertRole: 'Olympic Hurdler & Holistic Well-Being Advocate',
+      expertImage: '/team/carolin-nytra.png'
     },
     {
       id: 'w3',
-      title: 'Grit, Composure & Championship Mindset',
+      title: 'Grit, Composure & Championship Team Dynamics',
       duration: 'Half Day or Full Day',
-      target: 'Sales, Growth & Competitive Units',
-      summary: 'Lessons from international hockey podiums on bouncing back from immediate setbacks, maintaining clutch focus, and mutual trust.',
+      target: 'Sales Teams, Operations & Project Leads',
+      summary: 'Lessons from international sports podiums on bouncing back from immediate setbacks, maintaining composure, and clutch execution.',
       expertName: 'Rupinder Singh',
-      expertRole: 'Olympic Medalist & Performance Coach',
-      expertImage: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80'
+      expertRole: 'Olympic Field Hockey Star & Gold Medalist',
+      expertImage: '/team/rupinder-singh.png'
     },
     {
       id: 'w4',
-      title: 'Conscious Parenting & Corporate Integration',
+      title: 'Conscious Parenting & Work-Life Harmony',
       duration: 'Half Day (3 Hours)',
-      target: 'Working Parents & Diversity Employee Groups',
-      summary: 'Navigating executive commitments while showing up emotionally grounded for modern children and family architectures without guilt.',
+      target: 'Working Parents & Diversity Employee Resource Groups',
+      summary: 'Navigating executive pressure while showing up emotionally grounded for modern children without guilt or generational friction.',
       expertName: 'Soha Ali Khan',
-      expertRole: 'Author & Modern Family Thought Leader',
-      expertImage: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80'
+      expertRole: 'Author & Modern Parenting Mentor',
+      expertImage: '/team/soha-ali-khan.png'
+    },
+    {
+      id: 'w5',
+      title: 'Industrial Mindful Leadership & Personnel Care',
+      duration: 'Full Day (6 Hours)',
+      target: 'HR Leaders, Plant Managers & Division Heads',
+      summary: 'Evidence-based frameworks from Warwick & Yale on cultivating psychological safety, labor harmony, and positive work culture.',
+      expertName: 'Meera Chauhan',
+      expertRole: 'Director at Tricolite | Warwick & Yale Fellow',
+      expertImage: '/team/meera-chauhan.png'
+    },
+    {
+      id: 'w6',
+      title: 'Corporate Movement, Posture & Energy Architecture',
+      duration: 'Half Day (3 Hours)',
+      target: 'All Corporate Employees & Desk-Bound Workers',
+      summary: 'Fit Panda holistic movement routines, desk-side mobility drills, somatic resets, and metabolic energy sustainment.',
+      expertName: 'Parvej Mantrri',
+      expertRole: 'Fit Panda Founder & Celebrity Fitness Coach',
+      expertImage: '/profile_assets/page_24_img_1_1600.jpeg'
     }
   ];
 
@@ -69,170 +89,202 @@ export default function EngagingWorkshops() {
 
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
-      {/* Header */}
-      <section className="bg-hq-yellow text-hq-black pt-28 pb-20 px-6 md:px-12 border-b border-hq-black">
-        <div className="max-w-7xl mx-auto">
-          <div className="font-mono text-xs uppercase tracking-widest font-semibold mb-3">
-            Hands-on Masterclasses
+      {/* Header with Authentic Profile Imagery */}
+      <section className="bg-[#0A0A0A] text-hq-white pt-36 pb-20 px-6 md:px-12 border-b border-white/10 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10">
+          <div className="max-w-2xl">
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-semibold mb-5">
+              Engaging <br />
+              <span className="text-hq-yellow">Workshops</span>
+            </h1>
+            <p className="font-body text-base md:text-xl font-light text-hq-white/80 leading-relaxed">
+              Interactive Corporate Workshops designed to enhance professional skills and organizational effectiveness. Focusing on strategic thinking, resilience development, performance optimization, leadership skills, effective communication, and stress management.
+            </p>
           </div>
-          <h1 className="font-display text-5xl md:text-7xl tracking-tighter font-semibold mb-6">
-            Engaging <br />
-            <span className="bg-hq-black text-hq-yellow px-3 py-1 inline-block mt-1">Workshops</span>
-          </h1>
-          <p className="font-body text-lg md:text-xl font-light text-hq-black/80 max-w-2xl leading-relaxed">
-            Dynamic, interactive, and clinically verified workshops tailored to boost employee morale, self-compassion, and peak productivity across enterprise teams.
-          </p>
+
+          <div className="w-full lg:w-4/12">
+            <div className="rounded-3xl overflow-hidden border border-white/20 shadow-2xl bg-hq-black">
+              <img 
+                src="/profile_assets/page_13_img_1_1023.jpeg" 
+                alt="Corporate Workshop in Action" 
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-4 bg-hq-black text-white text-xs font-mono uppercase tracking-wider flex justify-between items-center border-t border-white/10">
+                <span>Interactive Seminars</span>
+                <span className="text-hq-yellow font-bold">Live Execution</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Workshop Catalog with Assigned CMS Faculty */}
+      {/* 3 Core Benefits from Profile Page 13 */}
+      <section className="py-14 px-6 md:px-12 bg-hq-black text-white border-b border-white/10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
+            <div className="w-10 h-10 rounded-xl bg-hq-yellow text-hq-black flex items-center justify-center font-bold mb-3">01</div>
+            <h3 className="font-display text-xl font-bold mb-2 text-hq-yellow">Productivity Focused</h3>
+            <p className="font-body text-xs text-white/80 font-light leading-relaxed">
+              Interactive sessions designed specifically to improve day-to-day productivity and eliminate operational drag.
+            </p>
+          </div>
+          <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
+            <div className="w-10 h-10 rounded-xl bg-hq-yellow text-hq-black flex items-center justify-center font-bold mb-3">02</div>
+            <h3 className="font-display text-xl font-bold mb-2 text-hq-yellow">Holistic Well-Being Toolkit</h3>
+            <p className="font-body text-xs text-white/80 font-light leading-relaxed">
+              Focus areas include mindfulness, positive psychology, self-care, self-compassion, finding purpose, and stress management.
+            </p>
+          </div>
+          <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
+            <div className="w-10 h-10 rounded-xl bg-hq-yellow text-hq-black flex items-center justify-center font-bold mb-3">03</div>
+            <h3 className="font-display text-xl font-bold mb-2 text-hq-yellow">Actionable Strategies</h3>
+            <p className="font-body text-xs text-white/80 font-light leading-relaxed">
+              Every participant leaves with a concrete personal toolkit and repeatable strategies for sustained overall well-being.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Workshop Catalog with Real Profile Faculty */}
       <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <div className="text-xs font-mono uppercase tracking-widest text-hq-black/50 mb-2 font-semibold">
-            Assigned Specialist Mentors
-          </div>
           <h2 className="font-display text-4xl md:text-5xl tracking-tight font-semibold">
-            Interactive Workshop Directory
+            Interactive Corporate Workshop Catalog
           </h2>
+          <p className="font-body text-hq-black/70 text-sm max-w-xl mx-auto mt-2 font-light">
+            Led directly by world champions, C-suite veterans, and licensed well-being practitioners from the HQX advisory faculty.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {workshops.map((w) => (
-            <div key={w.id} className="bg-hq-gray p-8 border border-hq-black/15 shadow-md flex flex-col justify-between">
+            <div 
+              key={w.id} 
+              className="bg-hq-gray p-8 rounded-2xl border border-hq-black/15 shadow-sm hover:border-hq-black hover:shadow-xl transition-all flex flex-col justify-between group"
+            >
               <div>
-                <div className="flex justify-between items-start mb-4">
-                  <span className="text-xs font-mono bg-hq-black text-hq-yellow px-2.5 py-1 rounded uppercase font-semibold">
-                    {w.duration}
-                  </span>
-                  <span className="text-xs font-mono text-hq-black/60">{w.target}</span>
+                {/* Faculty Mentor Headshot */}
+                <div className="flex items-center gap-4 mb-6 pb-4 border-b border-hq-black/10">
+                  <div className="w-14 h-14 rounded-full overflow-hidden bg-white border border-hq-black/20 shrink-0">
+                    <img src={w.expertImage} alt={w.expertName} className="w-full h-full object-cover object-top" />
+                  </div>
+                  <div>
+                    <h4 className="font-display text-base font-bold text-hq-black">{w.expertName}</h4>
+                    <p className="text-[11px] font-mono text-hq-black/60">{w.expertRole}</p>
+                  </div>
                 </div>
-                <h3 className="font-display text-2xl font-semibold mb-3">
+
+                <div className="flex items-center gap-2 text-xs font-mono text-hq-black/60 mb-3">
+                  <Clock className="w-3.5 h-3.5 text-hq-black" />
+                  <span>{w.duration}</span>
+                </div>
+
+                <h3 className="font-display text-2xl font-bold tracking-tight mb-3 group-hover:text-hq-yellow transition-colors">
                   {w.title}
                 </h3>
+
                 <p className="font-body text-xs text-hq-black/75 font-light leading-relaxed mb-6">
                   {w.summary}
                 </p>
+
+                <div className="text-[11px] font-mono text-hq-black/60 bg-white px-3 py-1.5 rounded-lg border border-hq-black/10 inline-block mb-6">
+                  Target: {w.target}
+                </div>
               </div>
 
-              {/* Assigned Faculty Card */}
-              <div className="pt-6 border-t border-hq-black/10 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <img src={w.expertImage} alt={w.expertName} className="w-12 h-12 rounded-full object-cover border border-hq-black/20" />
-                  <div>
-                    <div className="font-display text-xs uppercase font-bold">{w.expertName}</div>
-                    <div className="text-[10px] font-mono text-hq-black/60">{w.expertRole}</div>
-                  </div>
-                </div>
-                <button
-                  onClick={() => {
-                    setSelectedWorkshop(w.title);
-                    document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="text-xs font-display font-semibold uppercase tracking-wider bg-hq-yellow text-hq-black px-4 py-2 rounded-full hover:bg-hq-black hover:text-white transition-all"
-                >
-                  Book Workshop
-                </button>
-              </div>
+              <button
+                onClick={() => {
+                  setSelectedWorkshop(w.title);
+                  document.getElementById('booking-section')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="w-full bg-hq-black text-white font-display text-xs uppercase tracking-widest py-3 rounded-full hover:bg-hq-yellow hover:text-hq-black transition-colors font-semibold flex items-center justify-center gap-2"
+              >
+                <span>Select Workshop</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
             </div>
           ))}
         </div>
 
-        {/* Lead-gen Form */}
-        <div id="booking-form" className="bg-hq-black text-hq-white p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl max-w-2xl mx-auto">
-          <div className="text-center mb-8">
-            <span className="text-xs font-mono text-hq-yellow uppercase tracking-widest">Reserve a Date</span>
-            <h3 className="font-display text-3xl font-semibold mt-1">Request Workshop Delivery</h3>
-            <div className="text-xs text-hq-yellow font-mono mt-1">Selected: {selectedWorkshop}</div>
+        {/* Booking Form */}
+        <div id="booking-section" className="bg-hq-black text-white p-8 md:p-14 rounded-3xl border border-black shadow-2xl max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-xs font-mono uppercase tracking-widest text-hq-yellow block font-bold mb-2">Book Corporate Masterclass</span>
+            <h3 className="font-display text-3xl md:text-4xl font-bold">
+              Reserve Workshop for Your Enterprise
+            </h3>
           </div>
 
           {submitted ? (
             <div className="bg-hq-yellow text-hq-black p-8 rounded-2xl text-center">
-              <CheckCircle2 className="w-10 h-10 mx-auto mb-2" />
-              <h4 className="font-display text-xl font-semibold">Workshop Request Registered</h4>
-              <p className="text-xs font-body mt-1">Our coordinator will confirm faculty schedule within 24 hours.</p>
+              <CheckCircle2 className="w-12 h-12 mx-auto mb-3" />
+              <h4 className="font-display text-2xl font-bold mb-2">Workshop Inquiry Received</h4>
+              <p className="font-body text-sm font-light">
+                Our lead facilitator will coordinate directly with your HR/L&D desk within 4 hours.
+              </p>
             </div>
           ) : (
-            <form onSubmit={handleBooking} className="space-y-4 text-xs font-body">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <form onSubmit={handleBooking} className="space-y-6">
+              <div className="p-4 bg-white/5 rounded-xl border border-white/10 mb-6">
+                <span className="text-xs font-mono uppercase text-white/60 block mb-1">Selected Workshop:</span>
+                <span className="font-display text-lg text-hq-yellow font-bold">{selectedWorkshop}</span>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-[10px] font-mono uppercase text-white/60 mb-1">Contact Name *</label>
-                  <input 
-                    type="text" 
-                    required 
+                  <label className="text-xs font-mono uppercase text-white/70 block mb-2">Your Name</label>
+                  <input
+                    type="text"
+                    required
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    placeholder="e.g. Shalini Roy" 
-                    className="w-full bg-white/10 border border-white/20 p-3 text-white focus:outline-none focus:border-hq-yellow" 
+                    placeholder="e.g. Sangeeta Rao"
+                    className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-hq-yellow"
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-mono uppercase text-white/60 mb-1">Company / HR Division *</label>
-                  <input 
-                    type="text" 
-                    required 
+                  <label className="text-xs font-mono uppercase text-white/70 block mb-2">Company / Organization</label>
+                  <input
+                    type="text"
+                    required
                     value={form.company}
                     onChange={(e) => setForm({ ...form, company: e.target.value })}
-                    placeholder="e.g. Cipla / L&D Department" 
-                    className="w-full bg-white/10 border border-white/20 p-3 text-white focus:outline-none focus:border-hq-yellow" 
+                    placeholder="e.g. TATA AIG"
+                    className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-hq-yellow"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-[10px] font-mono uppercase text-white/60 mb-1">Work Email *</label>
-                  <input 
-                    type="email" 
-                    required 
+                  <label className="text-xs font-mono uppercase text-white/70 block mb-2">Corporate Email</label>
+                  <input
+                    type="email"
+                    required
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    placeholder="shalini@cipla.com" 
-                    className="w-full bg-white/10 border border-white/20 p-3 text-white focus:outline-none focus:border-hq-yellow" 
+                    placeholder="e.g. s.rao@tataaig.com"
+                    className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-hq-yellow"
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-mono uppercase text-white/60 mb-1">Phone Number *</label>
-                  <input 
-                    type="tel" 
-                    required 
+                  <label className="text-xs font-mono uppercase text-white/70 block mb-2">Contact Number</label>
+                  <input
+                    type="tel"
+                    required
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                    placeholder="+91 98000 00000" 
-                    className="w-full bg-white/10 border border-white/20 p-3 text-white focus:outline-none focus:border-hq-yellow" 
+                    placeholder="+91 98000 00000"
+                    className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-hq-yellow"
                   />
                 </div>
               </div>
 
-              <div>
-                <label className="block text-[10px] font-mono uppercase text-white/60 mb-1">Expected Audience Size</label>
-                <select 
-                  value={form.headcount}
-                  onChange={(e) => setForm({ ...form, headcount: e.target.value })}
-                  className="w-full bg-white/10 border border-white/20 p-3 text-white focus:outline-none focus:border-hq-yellow"
-                >
-                  <option value="20-50 Participants" className="bg-hq-black">20-50 Participants</option>
-                  <option value="50-100 Participants" className="bg-hq-black">50-100 Participants</option>
-                  <option value="100-300 Participants" className="bg-hq-black">100-300 Participants</option>
-                  <option value="300+ Enterprise" className="bg-hq-black">300+ Enterprise Cohort</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-[10px] font-mono uppercase text-white/60 mb-1">Special Requirements or Hybrid Needs</label>
-                <textarea 
-                  rows={2}
-                  value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  placeholder="In-person, virtual, or multi-location hybrid..."
-                  className="w-full bg-white/10 border border-white/20 p-3 text-white focus:outline-none focus:border-hq-yellow"
-                ></textarea>
-              </div>
-
-              <button 
+              <button
                 type="submit"
-                className="w-full bg-hq-yellow text-hq-black font-display font-semibold uppercase tracking-widest py-4 text-xs hover:bg-white transition-all rounded-full shadow-lg"
+                className="w-full bg-hq-yellow text-hq-black font-display font-semibold uppercase tracking-widest py-4 rounded-xl text-sm hover:bg-white transition-all shadow-xl"
               >
-                Confirm Workshop Booking Request
+                Submit Workshop Booking Request
               </button>
             </form>
           )}

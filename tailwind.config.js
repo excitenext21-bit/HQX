@@ -19,13 +19,14 @@ export default {
         }
       },
       fontFamily: {
+        monda: ['"Monda"', '"Google Sans"', 'sans-serif'],
         display: ['"Google Sans"', '"Product Sans"', '"General Sans"', '"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
         heading: ['"Google Sans"', '"Product Sans"', '"General Sans"', '"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
         inter: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
         body: ['"General Sans"', '"Google Sans"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
         sans: ['"Google Sans"', '"Product Sans"', '"General Sans"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
         mono: ['"Google Sans"', '"Product Sans"', '"General Sans"', '"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
-        serif: ['"Google Sans"', '"General Sans"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+        serif: ['"Prata"', '"Tenor Sans"', 'Georgia', 'serif'],
         prata: ['"Prata"', 'serif'],
       },
       animation: {

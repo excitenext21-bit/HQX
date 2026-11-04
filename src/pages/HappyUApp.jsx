@@ -14,7 +14,10 @@ import {
   Sun, 
   ShieldCheck, 
   Download, 
-  ArrowRight 
+  ArrowRight,
+  BookMarked,
+  Users,
+  Compass
 } from 'lucide-react';
 
 export default function HappyUApp() {
@@ -68,21 +71,40 @@ export default function HappyUApp() {
     return `${mins}:${remainder < 10 ? '0' : ''}${remainder}`;
   };
 
+  const appBenefits = [
+    {
+      title: 'Well-being Enhancement',
+      desc: 'HappyU app systematically boosts overall everyday happiness and emotional resilience.'
+    },
+    {
+      title: 'Comprehensive Features',
+      desc: 'Guided meditation exercises, gratitude journaling, positive affirmations, and mood tracking.'
+    },
+    {
+      title: 'Mental Health Support',
+      desc: 'Instant access to scientific mental health resources, somatic resets, and expert guidance.'
+    },
+    {
+      title: 'Community Connection',
+      desc: 'Connects users with an inspiring, supportive, like-minded community of wellness practitioners.'
+    },
+    {
+      title: 'Life Changing Benefits',
+      desc: 'Increased joy and contentment, dramatically reduced stress and anxiety, and improved mental health.'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
-      {/* Hero Section */}
-      <section className="bg-hq-black text-hq-white pt-28 pb-20 px-6 md:px-12 border-b border-white/10 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12">
+      {/* Hero Header with Authentic App Mockups */}
+      <section className="bg-hq-black text-hq-white pt-36 pb-20 px-6 md:px-12 border-b border-white/10 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-12">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-hq-yellow/20 border border-hq-yellow/40 rounded-full text-hq-yellow text-xs font-mono uppercase tracking-widest mb-6">
-              <Smartphone className="w-3.5 h-3.5" />
-              <span>Mobile Mental Wellness Ecosystem</span>
-            </div>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-tighter font-semibold mb-6">
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-semibold mb-5">
               HappyU <span className="text-hq-yellow">App</span>
             </h1>
             <p className="font-body text-base md:text-xl text-hq-white/80 font-light leading-relaxed mb-8">
-              Improve overall well-being, emotional regulation, and cognitive clarity every single day. The mobile companion to the HQ Functional Enhancement Model.
+              HappyU is an app that aims to improve the user's overall well-being and sense of happiness. Packed with meditation exercises, gratitude journaling, positive affirmations, and mood tracking to develop lasting daily micro-habits.
             </p>
             <div className="flex flex-wrap gap-4">
               <a 
@@ -96,279 +118,257 @@ export default function HappyUApp() {
                 className="border border-white/30 text-white font-display text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all flex items-center gap-2"
               >
                 <Download className="w-4 h-4" />
-                <span>Get iOS & Android Beta</span>
+                <span>Get iOS & Android App</span>
               </button>
             </div>
           </div>
 
-          {/* Quick Metrics */}
-          <div className="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-md w-full lg:w-auto">
-            <div className="text-xs font-mono uppercase text-hq-yellow mb-4">Enterprise Adoption</div>
-            <div className="space-y-4 font-display">
-              <div>
-                <div className="text-3xl font-bold text-white">4.9 ★★★★★</div>
-                <div className="text-[10px] text-white/60 uppercase tracking-wider font-mono">App Store & Play Store</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-hq-yellow">88%</div>
-                <div className="text-[10px] text-white/60 uppercase tracking-wider font-mono">30-Day Active Habit Retention</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-white">3 Mins</div>
-                <div className="text-[10px] text-white/60 uppercase tracking-wider font-mono">Daily Executive Protocol</div>
-              </div>
+          {/* Authentic Real App Screenshots from Profile Page 20 */}
+          <div className="flex gap-4 items-center justify-center">
+            <div className="w-40 sm:w-48 aspect-[9/18] rounded-3xl overflow-hidden border-4 border-hq-yellow shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform bg-black">
+              <img 
+                src="/profile_assets/page_20_img_1_1277.jpeg" 
+                alt="HappyU Mobile App Screenshot" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="w-40 sm:w-48 aspect-[9/18] rounded-3xl overflow-hidden border-4 border-white/40 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform bg-black">
+              <img 
+                src="/profile_assets/page_20_img_3_1284.jpeg" 
+                alt="HappyU Meditation & Mood Screens" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Interactive App Simulator Section */}
-      <section id="simulator" className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
+      {/* 5 Core App Benefits (Page 20 of Profile) */}
+      <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <div className="text-xs font-mono uppercase tracking-widest text-hq-black/50 mb-2 font-semibold">
-            Live Interactive Simulator
+            Proven Clinical Impact
           </div>
-          <h2 className="font-display text-4xl md:text-5xl tracking-tight font-semibold mb-4">
-            Experience HappyU Inside Your Browser
+          <h2 className="font-display text-4xl md:text-5xl tracking-tight font-semibold">
+            Key Benefits of HappyU
           </h2>
-          <p className="font-body text-hq-black/70 max-w-xl mx-auto font-light text-sm">
-            Switch between Meditation Exercises, Gratitude Journaling, and Mood Tracking below to test the core features in real-time.
-          </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-12 items-center justify-center">
-          {/* Feature Selector Controls */}
-          <div className="w-full lg:w-1/3 space-y-4">
-            <button
-              onClick={() => setActiveTab('meditate')}
-              className={`w-full p-6 text-left border transition-all ${
-                activeTab === 'meditate'
-                  ? 'bg-hq-black text-hq-white border-hq-black shadow-xl scale-[1.02]'
-                  : 'bg-hq-gray text-hq-black border-hq-black/10 hover:border-hq-yellow'
-              }`}
-            >
-              <div className="flex items-center gap-3 mb-2">
-                <Sun className={`w-5 h-5 ${activeTab === 'meditate' ? 'text-hq-yellow' : 'text-hq-black'}`} />
-                <h3 className="font-display text-lg font-semibold">Meditation Exercises</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          {appBenefits.map((b, i) => (
+            <div key={i} className="bg-hq-gray p-8 rounded-2xl border border-hq-black/10 hover:border-hq-black transition-all">
+              <div className="w-10 h-10 rounded-xl bg-hq-black text-hq-yellow flex items-center justify-center font-mono font-bold text-sm mb-4">
+                {(i + 1).toString().padStart(2, '0')}
               </div>
-              <p className="text-xs font-body font-light opacity-80 leading-relaxed">
-                3-minute guided somatic breathwork designed to down-regulate nervous system hyperactivity between executive meetings.
+              <h3 className="font-display text-2xl font-bold mb-2">
+                {b.title}
+              </h3>
+              <p className="font-body text-xs text-hq-black/75 font-light leading-relaxed">
+                {b.desc}
               </p>
-            </button>
+            </div>
+          ))}
 
-            <button
-              onClick={() => setActiveTab('journal')}
-              className={`w-full p-6 text-left border transition-all ${
-                activeTab === 'journal'
-                  ? 'bg-hq-black text-hq-white border-hq-black shadow-xl scale-[1.02]'
-                  : 'bg-hq-gray text-hq-black border-hq-black/10 hover:border-hq-yellow'
-              }`}
-            >
-              <div className="flex items-center gap-3 mb-2">
-                <Heart className={`w-5 h-5 ${activeTab === 'journal' ? 'text-hq-yellow' : 'text-hq-black'}`} />
-                <h3 className="font-display text-lg font-semibold">Gratitude Journaling</h3>
+          {/* Community Card */}
+          <div className="bg-hq-black text-white p-8 rounded-2xl border border-black shadow-xl flex flex-col justify-between">
+            <div>
+              <div className="text-xs font-mono text-hq-yellow uppercase tracking-widest mb-2 font-semibold">
+                Daily Community
               </div>
-              <p className="text-xs font-body font-light opacity-80 leading-relaxed">
-                Neuroplasticity-backed daily prompt reflections that rewire the brain from scarcity vigilance to abundant contentment.
+              <h3 className="font-display text-2xl font-bold mb-3">
+                New Experiences
+              </h3>
+              <p className="font-body text-xs text-white/80 font-light leading-relaxed">
+                Join thousands of enterprise executives meditating together, tracking moods, and building habits with the HQX network.
               </p>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('mood')}
-              className={`w-full p-6 text-left border transition-all ${
-                activeTab === 'mood'
-                  ? 'bg-hq-black text-hq-white border-hq-black shadow-xl scale-[1.02]'
-                  : 'bg-hq-gray text-hq-black border-hq-black/10 hover:border-hq-yellow'
-              }`}
-            >
-              <div className="flex items-center gap-3 mb-2">
-                <Activity className={`w-5 h-5 ${activeTab === 'mood' ? 'text-hq-yellow' : 'text-hq-black'}`} />
-                <h3 className="font-display text-lg font-semibold">Mood Tracking</h3>
-              </div>
-              <p className="text-xs font-body font-light opacity-80 leading-relaxed">
-                Real-time affective trajectory analytics mapping emotional climate across weeks and business quarters.
-              </p>
-            </button>
-          </div>
-
-          {/* Interactive Phone Simulator Screen */}
-          <div className="w-full max-w-sm border-[10px] border-hq-black rounded-[3.5rem] bg-hq-black shadow-2xl p-4 overflow-hidden relative">
-            {/* Phone Notch */}
-            <div className="w-24 h-5 bg-hq-black rounded-full mx-auto mb-2 relative z-20"></div>
-
-            {/* Simulated Phone Display Screen */}
-            <div className="bg-hq-white rounded-[2.5rem] p-6 text-hq-black h-[540px] flex flex-col justify-between overflow-y-auto no-scrollbar">
-              {/* App Header */}
-              <div className="flex justify-between items-center pb-3 border-b border-hq-black/10">
-                <div className="font-display font-bold uppercase tracking-tight text-sm">
-                  HappyU<span className="text-hq-yellow">.</span>
-                </div>
-                <div className="text-[10px] font-mono bg-hq-black text-hq-yellow px-2 py-0.5 rounded-full font-semibold">
-                  PRO
-                </div>
-              </div>
-
-              {/* Dynamic Screen Content based on Active Tab */}
-              <div className="my-auto py-4">
-                {activeTab === 'meditate' && (
-                  <div className="text-center space-y-6">
-                    <div className="text-[10px] font-mono uppercase text-hq-black/50">Somatic Reset • 3 Mins</div>
-                    <div className="w-36 h-36 rounded-full border-4 border-hq-yellow flex flex-col items-center justify-center mx-auto bg-hq-yellow/10 animate-pulse-subtle">
-                      <span className="font-display text-4xl font-bold text-hq-black">{formatTimer(secondsLeft)}</span>
-                      <span className="text-[9px] font-mono text-hq-black/60 uppercase">Inhale • Exhale</span>
-                    </div>
-                    <div className="flex justify-center gap-3">
-                      <button 
-                        onClick={() => setIsRunning(!isRunning)}
-                        className="bg-hq-black text-hq-white font-display text-xs uppercase tracking-wider px-5 py-2.5 rounded-full flex items-center gap-1.5 hover:bg-hq-yellow hover:text-hq-black transition-colors"
-                      >
-                        {isRunning ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
-                        <span>{isRunning ? 'Pause' : 'Start'}</span>
-                      </button>
-                      <button 
-                        onClick={() => { setIsRunning(false); setSecondsLeft(180); }}
-                        className="border border-hq-black/20 p-2.5 rounded-full hover:bg-hq-gray"
-                        title="Reset"
-                      >
-                        <RotateCcw className="w-3.5 h-3.5" />
-                      </button>
-                    </div>
-                  </div>
-                )}
-
-                {activeTab === 'journal' && (
-                  <div className="space-y-4">
-                    <div className="text-xs font-semibold font-display uppercase text-hq-black">
-                      Daily Prompt:
-                    </div>
-                    <div className="p-3 bg-hq-yellow/15 border border-hq-yellow rounded-xl text-xs font-body italic text-hq-black/80">
-                      "What unexpected kindness or breakthrough did you witness today?"
-                    </div>
-                    <form onSubmit={handleSaveJournal} className="space-y-2">
-                      <textarea
-                        rows={2}
-                        value={journalText}
-                        onChange={(e) => setJournalText(e.target.value)}
-                        placeholder="Type your reflection here..."
-                        className="w-full p-2.5 text-xs border border-hq-black/20 rounded-xl focus:outline-none focus:border-hq-black"
-                      ></textarea>
-                      <button
-                        type="submit"
-                        className="w-full bg-hq-black text-hq-yellow font-display text-[10px] uppercase font-bold py-2 rounded-lg"
-                      >
-                        Log to Gratitude Vault
-                      </button>
-                    </form>
-
-                    <div className="space-y-1.5 max-h-32 overflow-y-auto pt-2 border-t border-hq-black/10">
-                      <div className="text-[10px] font-mono text-hq-black/50 uppercase">Recent Entries:</div>
-                      {savedJournal.map((entry, idx) => (
-                        <div key={idx} className="p-2 bg-hq-gray rounded text-[11px] font-body text-hq-black/75">
-                          • {entry}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {activeTab === 'mood' && (
-                  <div className="space-y-5">
-                    <div className="text-center">
-                      <div className="text-[10px] font-mono text-hq-black/50 uppercase mb-1">Current State</div>
-                      <div className="text-xl font-display uppercase font-bold">How are you feeling?</div>
-                    </div>
-
-                    <div className="grid grid-cols-3 gap-2">
-                      {[
-                        { id: 'calm', label: 'Calm', emoji: '🧘' },
-                        { id: 'energetic', label: 'Energized', emoji: '⚡' },
-                        { id: 'overwhelmed', label: 'Overwhelmed', emoji: '🌊' }
-                      ].map((m) => (
-                        <button
-                          key={m.id}
-                          onClick={() => setSelectedMood(m.id)}
-                          className={`p-2.5 rounded-xl border text-center transition-all ${
-                            selectedMood === m.id
-                              ? 'bg-hq-yellow border-hq-black font-bold shadow-sm'
-                              : 'bg-hq-gray border-hq-black/10'
-                          }`}
-                        >
-                          <div className="text-xl mb-1">{m.emoji}</div>
-                          <div className="text-[10px] font-display uppercase">{m.label}</div>
-                        </button>
-                      ))}
-                    </div>
-
-                    {/* Mood Trajectory Chart Mockup */}
-                    <div className="p-3 bg-hq-gray rounded-2xl border border-hq-black/10">
-                      <div className="text-[10px] font-mono text-hq-black/50 uppercase mb-2">Weekly Mood Velocity:</div>
-                      <div className="flex items-end justify-between h-16 pt-2 px-2">
-                        {moodHistory.map((item, idx) => (
-                          <div key={idx} className="flex flex-col items-center gap-1">
-                            <div 
-                              className="w-4 bg-hq-black rounded-t transition-all hover:bg-hq-yellow" 
-                              style={{ height: `${(item.score / 100) * 48}px` }}
-                            ></div>
-                            <span className="text-[9px] font-mono text-hq-black/60">{item.day}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* App Bottom Navigation */}
-              <div className="pt-3 border-t border-hq-black/10 flex justify-around text-center text-[10px] font-mono uppercase">
-                <button 
-                  onClick={() => setActiveTab('meditate')} 
-                  className={activeTab === 'meditate' ? 'text-hq-black font-bold' : 'text-hq-black/40'}
-                >
-                  Meditate
-                </button>
-                <button 
-                  onClick={() => setActiveTab('journal')} 
-                  className={activeTab === 'journal' ? 'text-hq-black font-bold' : 'text-hq-black/40'}
-                >
-                  Journal
-                </button>
-                <button 
-                  onClick={() => setActiveTab('mood')} 
-                  className={activeTab === 'mood' ? 'text-hq-black font-bold' : 'text-hq-black/40'}
-                >
-                  Mood
-                </button>
-              </div>
+            </div>
+            <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-hq-yellow font-bold">
+              <span>Over 50,000+ Active Users</span>
+              <Users className="w-4 h-4" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Feature Pillars Detailed */}
-      <section className="py-20 px-6 md:px-12 bg-hq-gray border-t border-hq-black/10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white p-8 border border-hq-black/15 shadow-sm">
-            <ShieldCheck className="w-10 h-10 text-hq-yellow mb-4 stroke-[1.5]" />
-            <h3 className="font-display text-xl font-semibold mb-2">Enterprise Privacy</h3>
-            <p className="font-body text-xs text-hq-black/70 font-light leading-relaxed">
-              End-to-end encrypted reflection vault. No corporate HR or management ever sees personal journal entries or intimate mood notes.
+      {/* Interactive In-Browser App Simulator */}
+      <section id="simulator" className="py-20 px-6 md:px-12 bg-hq-gray border-t border-b border-hq-black/10">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-xs font-mono uppercase tracking-widest text-hq-black/60 block font-bold mb-2">
+              Interactive In-Browser Experience
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight">
+              Test Drive the HappyU Experience
+            </h2>
+            <p className="font-body text-hq-black/70 max-w-md mx-auto text-sm mt-2 font-light">
+              Switch between features below to experience daily meditation, journaling, and mood tracking live.
             </p>
           </div>
-          <div className="bg-white p-8 border border-hq-black/15 shadow-sm">
-            <Activity className="w-10 h-10 text-hq-yellow mb-4 stroke-[1.5]" />
-            <h3 className="font-display text-xl font-semibold mb-2">Aggregated Climate</h3>
-            <p className="font-body text-xs text-hq-black/70 font-light leading-relaxed">
-              Anonymous, macro-level team sentiment trends allow executive leadership to foresee burnout cycles 4 weeks before turnover spikes.
-            </p>
-          </div>
-          <div className="bg-white p-8 border border-hq-black/15 shadow-sm">
-            <Sparkles className="w-10 h-10 text-hq-yellow mb-4 stroke-[1.5]" />
-            <h3 className="font-display text-xl font-semibold mb-2">Micro Habits Architecture</h3>
-            <p className="font-body text-xs text-hq-black/70 font-light leading-relaxed">
-              Engineered with behavioural economist principles so busy knowledge workers achieve habit formation in just 180 seconds daily.
-            </p>
+
+          {/* Simulator Shell */}
+          <div className="max-w-md mx-auto bg-hq-black text-white p-6 sm:p-8 rounded-[40px] shadow-2xl border-4 border-hq-black relative overflow-hidden">
+            {/* Simulator Tabs */}
+            <div className="flex justify-between items-center bg-white/10 p-1 rounded-full mb-8">
+              <button
+                onClick={() => setActiveTab('meditate')}
+                className={`flex-1 py-2 rounded-full text-xs font-display uppercase tracking-wider font-semibold transition-all ${
+                  activeTab === 'meditate' ? 'bg-hq-yellow text-hq-black shadow-md' : 'text-white/70 hover:text-white'
+                }`}
+              >
+                Meditate
+              </button>
+              <button
+                onClick={() => setActiveTab('journal')}
+                className={`flex-1 py-2 rounded-full text-xs font-display uppercase tracking-wider font-semibold transition-all ${
+                  activeTab === 'journal' ? 'bg-hq-yellow text-hq-black shadow-md' : 'text-white/70 hover:text-white'
+                }`}
+              >
+                Journal
+              </button>
+              <button
+                onClick={() => setActiveTab('mood')}
+                className={`flex-1 py-2 rounded-full text-xs font-display uppercase tracking-wider font-semibold transition-all ${
+                  activeTab === 'mood' ? 'bg-hq-yellow text-hq-black shadow-md' : 'text-white/70 hover:text-white'
+                }`}
+              >
+                Mood Track
+              </button>
+            </div>
+
+            {/* TAB 1: MEDITATE */}
+            {activeTab === 'meditate' && (
+              <div className="text-center py-6">
+                <div className="w-32 h-32 rounded-full border-4 border-hq-yellow/40 flex items-center justify-center mx-auto mb-6 relative">
+                  <div className={`w-28 h-28 rounded-full bg-hq-yellow/20 flex items-center justify-center transition-all duration-1000 ${
+                    isRunning ? 'scale-110 animate-pulse' : 'scale-100'
+                  }`}>
+                    <span className="font-display text-3xl font-bold text-white">{formatTimer(secondsLeft)}</span>
+                  </div>
+                </div>
+                <div className="text-xs font-mono text-white/60 uppercase tracking-widest mb-6">
+                  {isRunning ? 'Breathe Deeply • Inhale 4s, Exhale 4s' : 'Press Play for 3-Min Grounding'}
+                </div>
+                <div className="flex justify-center gap-4">
+                  <button
+                    onClick={() => setIsRunning(!isRunning)}
+                    className="w-14 h-14 rounded-full bg-hq-yellow text-hq-black flex items-center justify-center shadow-lg hover:scale-105 transition-transform"
+                  >
+                    {isRunning ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6 ml-0.5" />}
+                  </button>
+                  <button
+                    onClick={() => {
+                      setIsRunning(false);
+                      setSecondsLeft(180);
+                    }}
+                    className="w-14 h-14 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors"
+                  >
+                    <RotateCcw className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* TAB 2: GRATITUDE JOURNAL */}
+            {activeTab === 'journal' && (
+              <div className="py-2">
+                <form onSubmit={handleSaveJournal} className="mb-6">
+                  <label className="text-xs font-mono text-hq-yellow uppercase tracking-wider block mb-2 font-bold">
+                    What are 2 things you're grateful for today?
+                  </label>
+                  <textarea
+                    rows={3}
+                    value={journalText}
+                    onChange={(e) => setJournalText(e.target.value)}
+                    placeholder="e.g. Clean air, supportive colleague on project..."
+                    className="w-full bg-white/10 border border-white/20 rounded-2xl p-4 text-xs text-white outline-none focus:border-hq-yellow mb-3 resize-none"
+                  ></textarea>
+                  <button
+                    type="submit"
+                    className="w-full bg-hq-yellow text-hq-black font-display font-semibold text-xs uppercase tracking-widest py-3 rounded-full hover:bg-white transition-all shadow-md"
+                  >
+                    Save Gratitude Entry
+                  </button>
+                </form>
+
+                <div className="space-y-2">
+                  <div className="text-[10px] font-mono uppercase text-white/50 tracking-wider">Recent Reflections:</div>
+                  {savedJournal.map((entry, idx) => (
+                    <div key={idx} className="bg-white/5 p-3 rounded-xl border border-white/10 text-xs text-white/90 flex items-start gap-2">
+                      <Check className="w-3.5 h-3.5 text-hq-yellow shrink-0 mt-0.5" />
+                      <span>{entry}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* TAB 3: MOOD TRACKER */}
+            {activeTab === 'mood' && (
+              <div className="py-2 text-center">
+                <span className="text-xs font-mono text-white/60 uppercase tracking-widest block mb-4">
+                  Check In: How is your internal weather?
+                </span>
+                
+                <div className="flex justify-around mb-8">
+                  {[
+                    { id: 'peaceful', label: 'Peaceful', icon: Smile, score: 95 },
+                    { id: 'neutral', label: 'Balanced', icon: Meh, score: 75 },
+                    { id: 'fatigued', label: 'Fatigued', icon: Frown, score: 55 }
+                  ].map((m) => {
+                    const MIcon = m.icon;
+                    const isMActive = selectedMood === m.id;
+                    return (
+                      <button
+                        key={m.id}
+                        onClick={() => setSelectedMood(m.id)}
+                        className={`flex flex-col items-center gap-2 p-3 rounded-2xl transition-all ${
+                          isMActive ? 'bg-hq-yellow text-hq-black scale-110 shadow-lg' : 'text-white/60 hover:text-white'
+                        }`}
+                      >
+                        <MIcon className="w-8 h-8" />
+                        <span className="text-[10px] font-mono uppercase tracking-wider font-bold">{m.label}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                <div className="bg-white/5 p-4 rounded-2xl border border-white/10 text-left">
+                  <div className="text-[10px] font-mono uppercase text-white/60 mb-2">5-Day HQ Harmony Average:</div>
+                  <div className="flex justify-between items-end h-20 pt-2 border-b border-white/10">
+                    {moodHistory.map((h, i) => (
+                      <div key={i} className="flex flex-col items-center gap-1">
+                        <div 
+                          className="w-6 bg-hq-yellow rounded-t" 
+                          style={{ height: `${h.score * 0.6}px` }}
+                        ></div>
+                        <span className="text-[10px] font-mono text-white/70">{h.day}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="text-center pt-3 text-xs font-mono text-hq-yellow font-bold">
+                    Current Wellness Pulse: 87.4%
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 px-6 md:px-12 text-center bg-hq-yellow text-hq-black border-t border-hq-black">
+        <h2 className="font-display text-4xl md:text-5xl tracking-tight font-semibold mb-4">
+          Deploy HappyU Across Your Organization
+        </h2>
+        <p className="font-body text-hq-black/80 max-w-xl mx-auto mb-8 font-light text-base">
+          Enterprise bulk licensing and custom dashboard reporting available for HR and wellness leaders.
+        </p>
+        <Link 
+          to="/contact" 
+          className="bg-hq-black text-hq-white font-display text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white hover:text-hq-black transition-all font-semibold shadow-xl"
+        >
+          Request Corporate Enterprise License
+        </Link>
       </section>
     </div>
   );

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Play, Sparkles, Mic2, Users, Calendar, ArrowRight, CheckCircle2, Radio, BookOpen, Award } from 'lucide-react';
+import { Play, Sparkles, Mic2, Users, Calendar, ArrowRight, CheckCircle2, Radio, BookOpen, Award, Phone } from 'lucide-react';
 import { useData } from '../context/DataContext';
 
 export default function Keynotes() {
-  const { addInquiry, founderProfile } = useData();
+  const { addInquiry } = useData();
   const [success, setSuccess] = useState(false);
   const [form, setForm] = useState({
     name: '',
@@ -18,40 +18,40 @@ export default function Keynotes() {
     {
       title: 'The Happiness Maverick: The Science of High Performance',
       duration: '60 - 90 Minutes',
-      desc: 'Manny Anchan\'s premier keynote unraveling how top Fortune 500 performers replace exhaustion with sustainable joy and biological vitality.',
+      desc: 'Manny Anchan\'s flagship corporate keynote unraveling how top Fortune 500 performers replace exhaustion with sustainable joy, purposeful clarity, and biological vitality.',
       audience: 'Global Townhalls, Annual Conventions, Leadership Summits'
     },
     {
-      title: 'Friday Talks: The 5-Minute Brain Shift & Ikigai',
-      duration: '45 Minutes + Q&A',
-      desc: 'A vibrant, high-energy session delivering immediate neuroscience hacks on purpose alignment and entering high-restoration weekends.',
-      audience: 'All-Hands, Friday Company Gatherings'
+      title: 'Friday Talks: Fast-Paced Employee Engagement',
+      duration: '45 Minutes + Interactive Q&A',
+      desc: 'A vibrant, high-energy session delivering immediate neuroscience hacks on purpose alignment, team cohesion, and entering high-restoration weekends.',
+      audience: 'Enterprise All-Hands, Friday Company Gatherings'
     },
     {
       title: 'Psychology of Wealth: Beyond Financial Scarcity',
       duration: '60 Minutes',
-      desc: 'Decoding financial anxiety, cultivating abundance mindsets, and aligning material stewardship with enduring personal legacy.',
+      desc: 'Decoding financial anxiety, cultivating abundance mindsets, and aligning material stewardship with enduring personal and enterprise legacy.',
       audience: 'Senior Executives, Family Offices, Corporate Bankers'
     },
     {
       title: 'Grit, Grace & Governance: Leading When Things Break',
       duration: '60 Minutes',
-      desc: 'Lessons from 25 years at GE Capital, Barclays & ABN AMRO on managing volatility, investor scrutiny, and cross-cultural team panic.',
+      desc: 'Lessons from 25 years at GE Capital, Barclays & ABN AMRO on managing volatility, investor scrutiny, and cross-cultural team panic with unshakeable calm.',
       audience: 'Senior Executives, Board Retreats'
     }
   ];
 
   const engageEvents = [
-    { city: 'Allahabad', title: 'TEDx - Katra', category: 'TEDx Talk' },
-    { city: 'Pune', title: 'TEDx ElPro Intl School', category: 'TEDx Talk' },
-    { city: 'Jaipur', title: 'TEDx Man Sagar Lake', category: 'TEDx Talk' },
-    { city: 'Vadodara', title: 'TEDx Navrachana International', category: 'TEDx Talk' },
+    { city: 'Allahabad', title: 'TEDx - Katra', category: 'TEDx Keynote' },
+    { city: 'Pune', title: 'TEDx ElPro Intl School', category: 'TEDx Keynote' },
+    { city: 'Jaipur', title: 'TEDx Man Sagar Lake', category: 'TEDx Keynote' },
+    { city: 'Vadodara', title: 'TEDx Navrachana International', category: 'TEDx Keynote' },
     { city: 'Mumbai', title: 'National Book Signing', category: 'Literature' },
     { city: 'Online / Radio', title: 'Radio Show with RJ Hrishik', category: 'Broadcast Media' },
     { city: 'Online', title: 'Book Beat - Audio Book', category: 'Digital Media' },
-    { city: 'Mumbai', title: 'Book Take with John Abraham', category: 'Celebrity Endorsement' },
+    { city: 'Mumbai', title: 'Book Take with John Abraham', category: 'Celebrity Feature' },
     { city: 'Mumbai', title: 'Friday Talk Show - Ikigai', category: 'Townhall Series' },
-    { city: 'Mumbai', title: 'FTS - Psychology of Wealth', category: 'Townhall Series' }
+    { city: 'Mumbai', title: 'Friday Talk Show - Psychology of Wealth', category: 'Townhall Series' }
   ];
 
   const handleSubmit = (e) => {
@@ -65,238 +65,292 @@ export default function Keynotes() {
 
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
-      {/* Hero */}
-      <section className="bg-hq-black text-hq-white pt-28 pb-20 px-6 md:px-12 border-b border-white/10">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-end gap-10">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-hq-yellow/20 border border-hq-yellow/40 rounded-full text-hq-yellow text-xs font-mono uppercase tracking-widest mb-4">
-              <Mic2 className="w-3.5 h-3.5" />
-              <span>Motivational Speaker • TEDx Keynotes</span>
-            </div>
-            <h1 className="font-display text-5xl md:text-7xl tracking-tighter font-semibold mb-4">
+      {/* Hero Header with Authentic Profile Imagery */}
+      <section className="bg-hq-black text-hq-white pt-36 pb-20 px-6 md:px-12 border-b border-white/10 relative overflow-hidden">
+        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-1/2 opacity-25 lg:opacity-40 pointer-events-none overflow-hidden">
+          <img 
+            src="/profile_assets/page_14_img_1_1042.jpeg" 
+            alt="Manny Anchan on Stage Keynote" 
+            className="w-full h-full object-cover object-top filter contrast-125"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-hq-black via-hq-black/80 to-transparent"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="max-w-2xl">
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-semibold mb-5">
               Insightful Keynotes & <br />
               <span className="text-hq-yellow">Friday Talks</span>
             </h1>
-            <p className="font-body text-base md:text-lg text-hq-white/80 max-w-xl font-light leading-relaxed">
-              Electrifying corporate talks and disruptive townhalls that shift organizational perspective from survival anxiety to flourishing eudaimonic momentum.
-            </p>
-          </div>
 
-          <div className="flex gap-4">
-            <a 
-              href="#book-keynote" 
-              className="bg-hq-yellow text-hq-black font-display font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white transition-all shadow-xl"
-            >
-              Check Manny's Speaking Calendar
-            </a>
+            <p className="font-body text-base md:text-xl text-hq-white/80 font-light leading-relaxed mb-8">
+              Corporate Keynotes underscore the significance of fostering productive relationships, maintaining physical health, aligning with organizational purpose, and practicing self-management and resilience. Prioritizing these aspects leads to enhanced team dynamics, improved operational efficiency, and greater corporate success.
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <a 
+                href="#book-keynote" 
+                className="bg-hq-yellow text-hq-black font-display font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white transition-all shadow-xl"
+              >
+                Check Manny's Speaking Calendar
+              </a>
+              <a 
+                href="tel:+919700100800" 
+                className="border border-white/30 text-white font-display text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all flex items-center gap-2"
+              >
+                <Phone className="w-3.5 h-3.5 text-hq-yellow" />
+                <span>Direct Hotline: +91 97001 00800</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Speaker Bio */}
+      {/* Friday Talks Spotlight (Profile Page 15) */}
+      <section className="py-16 px-6 md:px-12 bg-hq-yellow text-hq-black border-b border-hq-black">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 items-center justify-between">
+          <div className="max-w-2xl">
+            <div className="text-xs font-mono uppercase tracking-widest text-hq-black/70 font-bold mb-2">
+              Corporate Townhall Series • Page 15
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight mb-4">
+              Friday Talks: Catalyzing Workplace Vitality
+            </h2>
+            <p className="font-body text-base text-hq-black/85 font-light leading-relaxed mb-6">
+              Friday talks are an essential tool for promoting employee engagement, open communication, and holistic well-being in the workplace.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="bg-hq-black text-white p-4 rounded-xl border border-black shadow-md">
+                <div className="text-hq-yellow font-bold text-lg mb-1">01</div>
+                <div className="font-display text-sm font-semibold">Improve Operational Efficiency</div>
+              </div>
+              <div className="bg-hq-black text-white p-4 rounded-xl border border-black shadow-md">
+                <div className="text-hq-yellow font-bold text-lg mb-1">02</div>
+                <div className="font-display text-sm font-semibold">Improve Team Cohesion</div>
+              </div>
+              <div className="bg-hq-black text-white p-4 rounded-xl border border-black shadow-md">
+                <div className="text-hq-yellow font-bold text-lg mb-1">03</div>
+                <div className="font-display text-sm font-semibold">Improving Productivity</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full lg:w-4/12">
+            <div className="rounded-3xl overflow-hidden border-2 border-hq-black shadow-2xl bg-hq-black">
+              <img 
+                src="/profile_assets/page_15_img_1_1060.jpeg" 
+                alt="Friday Talks in Progress" 
+                className="w-full h-56 object-cover"
+              />
+              <div className="p-3 bg-hq-black text-white text-xs font-mono uppercase tracking-wider text-center">
+                Interactive Townhall Dialogue
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Speaker Bio with Authentic Photo from Profile Page 25 */}
       <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto border-b border-hq-black/10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="aspect-[4/3] bg-hq-gray border border-hq-black/15 overflow-hidden relative shadow-xl">
+          <div className="aspect-[4/3] bg-hq-gray border border-hq-black/15 overflow-hidden relative shadow-2xl rounded-2xl">
             <img 
-              src="https://images.unsplash.com/photo-1475721025505-1113afabc45c?auto=format&fit=crop&w=1200&q=80" 
-              alt="Manny Anchan speaking" 
-              className="w-full h-full object-cover transition-all duration-500"
+              src="/profile_assets/page_25_img_1_1682.jpeg" 
+              alt="Manny Anchan - Motivational Speaker" 
+              className="w-full h-full object-cover object-top transition-all duration-500"
             />
-            <div className="absolute bottom-4 left-4 bg-hq-black text-white px-4 py-2 font-display text-xs uppercase tracking-widest">
-              Live Keynote Delivery
+            <div className="absolute bottom-4 left-4 bg-hq-black text-white px-4 py-2 font-display text-xs uppercase tracking-widest rounded-lg">
+              Live Keynote Delivery • Manny Anchan
             </div>
           </div>
 
           <div>
             <div className="text-xs font-mono uppercase tracking-widest text-hq-black/50 mb-2 font-semibold">
-              Meet the Speaker
+              Meet the Speaker (Profile Page 25 & 26)
             </div>
-            <h2 className="font-display text-3xl md:text-5xl tracking-tight font-semibold mb-2">
+            <h2 className="font-display text-3xl md:text-5xl tracking-tight font-semibold mb-4">
               Manny Anchan
             </h2>
-            <p className="font-serif italic text-lg text-hq-black/70 mb-4">
+            <div className="font-serif italic text-lg text-hq-black/80 mb-6">
               "This Is How The Good Companies Find The Good Company"
+            </div>
+            <p className="font-body text-base text-hq-black/80 font-light leading-relaxed mb-6">
+              With 25 years of corporate management at GE Capital, HDFC Bank, ABN AMRO, Barclays, AUB, and FAB, Manny bridges high-pressure executive reality with scientific happiness research. A Harvard and Columbia Business School alumnus, Manny has delivered keynotes across 9 nations and 16 Indian states.
             </p>
-            <div className="space-y-3 font-body text-xs md:text-sm text-hq-black/80 font-light leading-relaxed mb-6">
-              <p>
-                Alumnus of <strong>Harvard & Columbia Business School</strong> with <strong>25 years in senior global management at GE Capital, HDFC Bank, ABN AMRO, Barclays, AUB, and FAB</strong>.
-              </p>
-              <p>
-                Having worked and lived across <strong>Asia, Africa, Europe, & North America</strong>, Manny's keynotes blend cross-cultural purpose frameworks (Ikigai, Hygge, Lagom, Sisu, Gross National Happiness) with hard-nosed corporate turnaround execution.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-3 gap-4 border-t border-hq-black/10 pt-4 text-center">
-              <div>
-                <div className="font-display text-2xl font-bold">50,000+</div>
-                <div className="text-[10px] font-mono text-hq-black/50 uppercase">Leaders Motivated</div>
-              </div>
-              <div>
-                <div className="font-display text-2xl font-bold">4 TEDx</div>
-                <div className="text-[10px] font-mono text-hq-black/50 uppercase">Featured Talks</div>
-              </div>
-              <div>
-                <div className="font-display text-2xl font-bold">9 Global</div>
-                <div className="text-[10px] font-mono text-hq-black/50 uppercase">Countries Reached</div>
-              </div>
+            <div className="grid grid-cols-2 gap-3 text-xs font-mono uppercase text-hq-black/70">
+              <div className="flex items-center gap-2 bg-hq-gray p-3 rounded-lg"><Sparkles className="w-4 h-4 text-hq-black" /> 4x TEDx Speaker</div>
+              <div className="flex items-center gap-2 bg-hq-gray p-3 rounded-lg"><Award className="w-4 h-4 text-hq-black" /> Harvard & Columbia Alum</div>
+              <div className="flex items-center gap-2 bg-hq-gray p-3 rounded-lg"><BookOpen className="w-4 h-4 text-hq-black" /> 6 Published Books</div>
+              <div className="flex items-center gap-2 bg-hq-gray p-3 rounded-lg"><Users className="w-4 h-4 text-hq-black" /> 100,000+ Leaders Impacted</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Engage and Inspire: Talks, Signings & Learning (From Page 11 of Profile) */}
-      <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto border-b border-hq-black/10">
-        <div className="text-center mb-16">
-          <div className="text-xs font-mono uppercase tracking-widest text-hq-black/50 mb-2 font-semibold">
-            Track Record • Page 11
-          </div>
-          <h2 className="font-display text-4xl md:text-5xl tracking-tight font-semibold mb-3">
-            Engage & Inspire: Talks, Signings, and Learning
-          </h2>
-          <p className="font-serif italic text-lg text-hq-black/70">
-            Inspiring impressionable minds and high-performing corporate teams nationwide.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          {engageEvents.map((evt, idx) => (
-            <div key={idx} className="p-5 bg-hq-gray border border-hq-black/15 shadow-sm hover:border-hq-black transition-all flex flex-col justify-between">
-              <div>
-                <span className="text-[10px] font-mono uppercase bg-hq-black text-hq-yellow px-2 py-0.5 rounded font-bold inline-block mb-3">
-                  {evt.city}
-                </span>
-                <h4 className="font-display text-base font-bold leading-tight mb-2">
-                  {evt.title}
-                </h4>
-              </div>
-              <div className="pt-3 border-t border-hq-black/10 text-[10px] font-mono text-hq-black/60 uppercase">
-                {evt.category}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Signature Keynote Topics */}
+      {/* Signature Keynote Catalog */}
       <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
-        <h2 className="font-display text-3xl md:text-5xl font-semibold text-center mb-16">
-          Signature Keynote Topics
-        </h2>
+        <div className="text-center mb-16">
+          <h2 className="font-display text-4xl md:text-5xl tracking-tight font-semibold">
+            Corporate Keynote Repertoire
+          </h2>
+        </div>
 
-        <div className="space-y-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           {topics.map((t, idx) => (
-            <div key={idx} className="p-8 bg-hq-gray border border-hq-black/15 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-              <div className="max-w-2xl">
-                <span className="text-xs font-mono bg-hq-black text-hq-yellow px-2.5 py-0.5 rounded uppercase font-semibold">
-                  {t.duration}
-                </span>
-                <h3 className="font-display text-2xl font-semibold mt-3 mb-2">
+            <div 
+              key={idx}
+              className="bg-hq-gray p-8 rounded-2xl border border-hq-black/15 shadow-sm hover:border-hq-black hover:shadow-xl transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex justify-between items-center mb-4">
+                  <span className="font-mono text-xs uppercase bg-hq-black text-hq-yellow px-3 py-1 rounded-full font-bold">
+                    {t.duration}
+                  </span>
+                  <span className="text-xs font-mono text-hq-black/60 font-semibold">
+                    Topic {(idx + 1).toString().padStart(2, '0')}
+                  </span>
+                </div>
+                <h3 className="font-display text-2xl font-bold tracking-tight mb-3">
                   {t.title}
                 </h3>
-                <p className="font-body text-xs text-hq-black/75 font-light leading-relaxed mb-3">
+                <p className="font-body text-xs text-hq-black/75 font-light leading-relaxed mb-6">
                   {t.desc}
                 </p>
-                <div className="text-[11px] font-mono text-hq-black/50 uppercase">
-                  Ideal for: {t.audience}
-                </div>
               </div>
-              <button
-                onClick={() => {
-                  setForm({ ...form, topic: t.title });
-                  document.getElementById('book-keynote')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="bg-hq-yellow text-hq-black font-display font-semibold text-xs uppercase tracking-widest px-6 py-3 rounded-full hover:bg-hq-black hover:text-white transition-all shrink-0 shadow-md"
-              >
-                Inquire For This Topic
-              </button>
+
+              <div className="pt-4 border-t border-hq-black/10 flex justify-between items-center">
+                <span className="text-[11px] font-mono text-hq-black/60">Target: {t.audience}</span>
+                <button
+                  onClick={() => {
+                    setForm({ ...form, topic: t.title });
+                    document.getElementById('book-keynote')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="bg-hq-black text-white font-display text-xs uppercase tracking-wider px-4 py-2 rounded-full hover:bg-hq-yellow hover:text-hq-black transition-colors font-semibold"
+                >
+                  Book Keynote
+                </button>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Lead Form */}
-        <div id="book-keynote" className="bg-hq-black text-hq-white p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl max-w-2xl mx-auto">
-          <div className="text-center mb-8">
-            <span className="text-xs font-mono text-hq-yellow uppercase tracking-widest">Speaking Inquiries</span>
-            <h3 className="font-display text-3xl font-semibold mt-1">Book Manny For Your Event</h3>
+        {/* Real Profile Page 31: Engage and Inspire Talks & Signings */}
+        <div className="bg-hq-black text-white p-8 md:p-12 rounded-3xl border border-black shadow-2xl">
+          <div className="text-center mb-10">
+            <span className="text-xs font-mono text-hq-yellow uppercase tracking-widest block font-bold mb-2">
+              Engage and Inspire (Profile Page 31)
+            </span>
+            <h3 className="font-display text-3xl font-bold">
+              Delivered Talks, Signings, and Media Broadcasts
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5">
+            {engageEvents.map((ev, i) => (
+              <div key={i} className="bg-white/5 border border-white/10 p-4 rounded-xl text-center">
+                <div className="text-[10px] font-mono text-hq-yellow uppercase tracking-wider mb-1 font-bold">
+                  {ev.city}
+                </div>
+                <div className="font-display text-sm font-bold text-white mb-1">
+                  {ev.title}
+                </div>
+                <div className="text-[11px] font-body text-white/60 font-light">
+                  {ev.category}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Booking Form */}
+      <section id="book-keynote" className="py-20 px-6 md:px-12 bg-hq-gray border-t border-hq-black/10">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-xs font-mono uppercase tracking-widest text-hq-black/60 block font-bold mb-2">Speaker Availability</span>
+            <h3 className="font-display text-3xl md:text-4xl font-bold">
+              Book Manny Anchan for Your Next Event
+            </h3>
           </div>
 
           {success ? (
             <div className="bg-hq-yellow text-hq-black p-8 rounded-2xl text-center">
-              <CheckCircle2 className="w-10 h-10 mx-auto mb-2" />
-              <h4 className="font-display text-xl font-semibold">Booking Request Received</h4>
-              <p className="text-xs font-body mt-1">Manny's speaking coordinator will check date availability within 24 hours.</p>
+              <CheckCircle2 className="w-12 h-12 mx-auto mb-3" />
+              <h4 className="font-display text-2xl font-bold mb-2">Keynote Request Registered</h4>
+              <p className="font-body text-sm font-light">
+                Manny's speaking bureau will review dates and reach out with the speaking rider and tech specifications.
+              </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4 text-xs font-body">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className="bg-white p-8 md:p-12 rounded-3xl border border-hq-black/15 shadow-xl space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-[10px] font-mono uppercase text-white/60 mb-1">Organizer Name *</label>
-                  <input 
-                    type="text" 
-                    required 
+                  <label className="text-xs font-mono uppercase tracking-wider text-hq-black/70 block mb-2">Contact Name</label>
+                  <input
+                    type="text"
+                    required
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    placeholder="e.g. Tanvi Joshi" 
-                    className="w-full bg-white/10 border border-white/20 p-3 text-white focus:outline-none focus:border-hq-yellow" 
+                    placeholder="e.g. Vikram Malhotra"
+                    className="w-full bg-hq-gray border border-hq-black/15 rounded-xl px-4 py-3 text-sm outline-none focus:border-hq-black"
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-mono uppercase text-white/60 mb-1">Company / Organization *</label>
-                  <input 
-                    type="text" 
-                    required 
+                  <label className="text-xs font-mono uppercase tracking-wider text-hq-black/70 block mb-2">Company / Organization</label>
+                  <input
+                    type="text"
+                    required
                     value={form.company}
                     onChange={(e) => setForm({ ...form, company: e.target.value })}
-                    placeholder="e.g. Barclays / TATA Motors" 
-                    className="w-full bg-white/10 border border-white/20 p-3 text-white focus:outline-none focus:border-hq-yellow" 
+                    placeholder="e.g. HDFC Life"
+                    className="w-full bg-hq-gray border border-hq-black/15 rounded-xl px-4 py-3 text-sm outline-none focus:border-hq-black"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-[10px] font-mono uppercase text-white/60 mb-1">Corporate Email *</label>
-                  <input 
-                    type="email" 
-                    required 
+                  <label className="text-xs font-mono uppercase tracking-wider text-hq-black/70 block mb-2">Work Email</label>
+                  <input
+                    type="email"
+                    required
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    placeholder="tanvi@barclays.com" 
-                    className="w-full bg-white/10 border border-white/20 p-3 text-white focus:outline-none focus:border-hq-yellow" 
+                    placeholder="e.g. v.malhotra@hdfclife.com"
+                    className="w-full bg-hq-gray border border-hq-black/15 rounded-xl px-4 py-3 text-sm outline-none focus:border-hq-black"
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-mono uppercase text-white/60 mb-1">Phone Number *</label>
-                  <input 
-                    type="tel" 
-                    required 
+                  <label className="text-xs font-mono uppercase tracking-wider text-hq-black/70 block mb-2">Phone Number</label>
+                  <input
+                    type="tel"
+                    required
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                    placeholder="+91 97001 00800" 
-                    className="w-full bg-white/10 border border-white/20 p-3 text-white focus:outline-none focus:border-hq-yellow font-mono" 
+                    placeholder="+91 98000 00000"
+                    className="w-full bg-hq-gray border border-hq-black/15 rounded-xl px-4 py-3 text-sm outline-none focus:border-hq-black"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-[10px] font-mono uppercase text-white/60 mb-1">Target Keynote Topic</label>
-                <select 
+                <label className="text-xs font-mono uppercase tracking-wider text-hq-black/70 block mb-2">Select Keynote Topic</label>
+                <select
                   value={form.topic}
                   onChange={(e) => setForm({ ...form, topic: e.target.value })}
-                  className="w-full bg-white/10 border border-white/20 p-3 text-white focus:outline-none focus:border-hq-yellow"
+                  className="w-full bg-hq-gray border border-hq-black/15 rounded-xl px-4 py-3 text-sm outline-none focus:border-hq-black"
                 >
-                  {topics.map((t, i) => (
-                    <option key={i} value={t.title} className="bg-hq-black">{t.title}</option>
+                  {topics.map((t, idx) => (
+                    <option key={idx} value={t.title}>{t.title} ({t.duration})</option>
                   ))}
-                  <option value="Custom Keynote" className="bg-hq-black">Custom Tailored Theme</option>
                 </select>
               </div>
 
-              <button 
+              <button
                 type="submit"
-                className="w-full bg-hq-yellow text-hq-black font-display font-semibold uppercase tracking-widest py-4 text-xs hover:bg-white transition-all rounded-full shadow-lg"
+                className="w-full bg-hq-black text-white font-display font-semibold uppercase tracking-widest py-4 rounded-xl text-sm hover:bg-hq-yellow hover:text-hq-black transition-all shadow-xl"
               >
-                Inquire For Speaking Engagement
+                Submit Keynote Booking Inquiry
               </button>
             </form>
           )}

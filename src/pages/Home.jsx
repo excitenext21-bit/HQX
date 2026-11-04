@@ -779,7 +779,7 @@ export default function Home() {
     <div className="w-full bg-hq-white dark:bg-[#07080B] text-hq-black dark:text-white transition-colors duration-200 relative">
       {/* FIXED BACK TO TOP WITH 1.5PX LONG-TAIL ARROW (POSITIONED AT BOTTOM-RIGHT TO PREVENT OVERLAPPING SECTION CONTENT, COMPLETELY REMOVED IN FOOTER) */}
       <div 
-        className={`fixed right-4 sm:right-6 lg:right-8 bottom-8 z-40 hidden md:flex flex-col items-center gap-2 transition-all duration-300 pointer-events-auto select-none ${
+        className={`fixed right-4 sm:right-6 lg:right-8 bottom-8 z-40 hidden md:flex flex-col items-center gap-2 transition-all duration-300 pointer-events-auto  ${
           showSideRails ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6 pointer-events-none'
         }`}
       >
@@ -823,7 +823,7 @@ export default function Home() {
 
           {/* Vertical text: Back to top */}
           <span 
-            className="font-display uppercase text-[10px] tracking-[0.25em] font-bold select-none group-hover:text-hq-yellow transition-colors duration-300"
+            className="font-display uppercase text-[10px] tracking-[0.25em] font-bold  group-hover:text-hq-yellow transition-colors duration-300"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
           >
             Back to top
@@ -840,14 +840,14 @@ export default function Home() {
         </div>
 
         {/* GIANT MONUMENTAL TYPOGRAPHY LAYER: "MANNY" & "ANCHAN" (MOVED 15% DOWN BELOW NAVIGATION, FRAMING CUTOUT) */}
-        <div className="absolute inset-x-0 top-[41%] sm:top-[42%] md:top-[43%] -translate-y-1/2 z-10 px-6 sm:px-10 md:px-14 lg:px-20 pointer-events-none select-none max-w-[1550px] mx-auto animate-hero-name">
+        <div className="absolute inset-x-0 top-[41%] sm:top-[42%] md:top-[43%] -translate-y-1/2 z-10 px-6 sm:px-10 md:px-14 lg:px-20 pointer-events-none  max-w-[1550px] mx-auto animate-hero-name">
           {/* Accessible H1 for SEO */}
           <h1 className="sr-only">Manny Anchan - The Happiness Samurai</h1>
           
           <div className="w-full flex justify-between items-center">
             {/* MANNY (Brought 10% closer to center) */}
             <span 
-              className="font-semibold tracking-tight select-none text-[#FFEFD6] drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)] inline-block translate-x-2 sm:translate-x-4 md:translate-x-7"
+              className="font-semibold tracking-tight  text-[#FFEFD6] drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)] inline-block pointer-events-auto select-text translate-x-2 sm:translate-x-4 md:translate-x-7"
               style={{
                 fontFamily: '"Bebas Neue", "Anton", "Oswald", sans-serif',
                 fontSize: 'clamp(4.2rem, 14vw, 14.5rem)',
@@ -863,7 +863,7 @@ export default function Home() {
 
             {/* ANCHAN (Brought 10% closer to center) */}
             <span 
-              className="font-semibold tracking-tight select-none text-[#FFEFD6] drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)] inline-block -translate-x-2 sm:-translate-x-4 md:-translate-x-7"
+              className="font-semibold tracking-tight  text-[#FFEFD6] drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)] inline-block pointer-events-auto select-text -translate-x-2 sm:-translate-x-4 md:-translate-x-7"
               style={{
                 fontFamily: '"Bebas Neue", "Anton", "Oswald", sans-serif',
                 fontSize: 'clamp(4.2rem, 14vw, 14.5rem)',
@@ -971,7 +971,7 @@ export default function Home() {
         <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-hq-yellow to-transparent z-10 pointer-events-none"></div>
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-hq-yellow to-transparent z-10 pointer-events-none"></div>
         
-        <div className="marquee-partners-track animate-marquee whitespace-nowrap inline-flex gap-10 md:gap-14 items-center px-4 select-none text-[#0A0A0A] dark:text-[#0A0A0A]">
+        <div className="marquee-partners-track animate-marquee whitespace-nowrap inline-flex gap-10 md:gap-14 items-center px-4  text-[#0A0A0A] dark:text-[#0A0A0A]">
           {[...corporatePartners, ...corporatePartners].map((partner, idx) => (
             <div key={idx} className="inline-flex items-center gap-2.5 h-8 flex-shrink-0 group text-[#0A0A0A] dark:text-[#0A0A0A]">
               <span className="flex items-center justify-center text-[#0A0A0A] dark:text-[#0A0A0A] group-hover:scale-110 transition-transform duration-200">
@@ -1060,7 +1060,7 @@ export default function Home() {
       </section>
 
       {/* 4. BALANCE WITHIN WORKLIFE (AESTHETIC ARCHED HORIZON SECTION - FIT TO SCREEN & BOTTOM ATTACHED) */}
-      <section id="worklife-section" className="section-reveal relative bg-[#000000] text-hq-white min-h-screen min-h-[660px] lg:h-screen flex flex-col justify-between pt-14 sm:pt-16 md:pt-20 pb-0 overflow-hidden border-b border-white/10 select-none">
+      <section id="worklife-section" className="section-reveal relative bg-[#000000] text-hq-white min-h-screen min-h-[660px] lg:h-screen flex flex-col justify-between pt-14 sm:pt-16 md:pt-20 pb-0 overflow-hidden border-b border-white/10 ">
         {/* Subtle Ambient Background Gradients */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[900px] h-[360px] bg-hq-yellow/[0.08] rounded-full blur-[140px]"></div>
@@ -1083,7 +1083,7 @@ export default function Home() {
           {/* SVG Arc and Concentric Glowing Horizon Layers */}
           <svg 
             viewBox="0 0 1000 500" 
-            className="absolute inset-0 w-full h-full overflow-visible select-none pointer-events-none"
+            className="absolute inset-0 w-full h-full overflow-visible  pointer-events-none"
             preserveAspectRatio="xMidYMax meet"
           >
             <defs>
@@ -1158,7 +1158,7 @@ export default function Home() {
               >
                 {/* Label above badge */}
                 <span 
-                  className={`font-display text-xs sm:text-sm md:text-base font-semibold tracking-wide mb-2 sm:mb-3 transition-all duration-300 select-none whitespace-nowrap ${
+                  className={`font-display text-xs sm:text-sm md:text-base font-semibold tracking-wide mb-2 sm:mb-3 transition-all duration-300  whitespace-nowrap ${
                     isActive 
                       ? 'text-hq-yellow scale-105 drop-shadow-[0_0_14px_rgba(255,199,44,0.7)] font-bold' 
                       : 'text-white/90 group-hover:text-hq-yellow'
@@ -1234,7 +1234,7 @@ export default function Home() {
               <div className="space-y-6 sm:space-y-8">
 
                 {/* Monumental "12 Key Theme" Display (12 in black color, not gradient) */}
-                <div className="select-none">
+                <div className="">
                   <div className="flex items-baseline gap-4 sm:gap-6">
                     <span className="font-display text-[100px] sm:text-[135px] lg:text-[155px] font-black leading-[0.8] tracking-tighter text-black dark:text-white drop-shadow-sm">
                       12
@@ -1390,7 +1390,7 @@ export default function Home() {
                   type="button"
                   onClick={() => setCurrentPairIdx(p => Math.max(p - 1, 0))}
                   disabled={currentPairIdx === 0}
-                  className={`inline-flex items-center gap-3 font-mono text-xs uppercase tracking-widest font-semibold transition-all group py-2 select-none ${
+                  className={`inline-flex items-center gap-3 font-mono text-xs uppercase tracking-widest font-semibold transition-all group py-2  ${
                     currentPairIdx === 0 
                       ? 'opacity-20 cursor-not-allowed text-hq-black/40 dark:text-white/40' 
                       : 'text-hq-black dark:text-white hover:text-hq-yellow cursor-pointer'
@@ -1402,7 +1402,7 @@ export default function Home() {
                 </button>
 
                 {/* Current Pair Tracker */}
-                <div className="flex items-center gap-2 font-mono text-xs select-none">
+                <div className="flex items-center gap-2 font-mono text-xs ">
                   <span className="uppercase tracking-[0.2em] font-bold text-hq-yellow">
                     {String(currentPairIdx * 2 + 1).padStart(2, '0')}&ndash;{String(currentPairIdx * 2 + 2).padStart(2, '0')}
                   </span>
@@ -1414,7 +1414,7 @@ export default function Home() {
                   type="button"
                   onClick={() => setCurrentPairIdx(p => Math.min(p + 1, 5))}
                   disabled={currentPairIdx === 5}
-                  className={`inline-flex items-center gap-3 font-mono text-xs uppercase tracking-widest font-semibold transition-all group py-2 select-none ${
+                  className={`inline-flex items-center gap-3 font-mono text-xs uppercase tracking-widest font-semibold transition-all group py-2  ${
                     currentPairIdx === 5 
                       ? 'opacity-20 cursor-not-allowed text-hq-black/40 dark:text-white/40' 
                       : 'text-hq-black dark:text-white hover:text-hq-yellow cursor-pointer'
@@ -1480,7 +1480,7 @@ export default function Home() {
             onMouseUp={handleMouseUp}
             onTouchStart={() => setIsTeamHovered(true)}
             onTouchEnd={() => setIsTeamHovered(false)}
-            className={`flex gap-8 sm:gap-12 md:gap-16 overflow-x-auto no-scrollbar py-4 select-none ${
+            className={`flex gap-8 sm:gap-12 md:gap-16 overflow-x-auto no-scrollbar py-4  ${
               isMouseDown ? 'cursor-grabbing scroll-auto' : 'cursor-grab scroll-smooth'
             }`}
             style={{ userSelect: 'none' }}
@@ -1488,7 +1488,7 @@ export default function Home() {
             {homeTeamMembers.map((member) => (
               <div 
                 key={member.id}
-                className="flex items-center gap-5 sm:gap-6 flex-shrink-0 group cursor-pointer select-none"
+                className="flex items-center gap-5 sm:gap-6 flex-shrink-0 group cursor-pointer "
                 onClick={() => {
                   if (!hasDragged) {
                     setSelectedTeamMember(member);
@@ -1501,12 +1501,12 @@ export default function Home() {
                     src={member.image} 
                     alt={member.name} 
                     draggable="false"
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-all duration-500 pointer-events-none select-none rounded-[3px]" 
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-all duration-500 pointer-events-none  rounded-[3px]" 
                   />
                 </div>
 
                 {/* Member Details */}
-                <div className="flex flex-col justify-center text-left max-w-[220px] sm:max-w-[260px] md:max-w-[290px] select-none">
+                <div className="flex flex-col justify-center text-left max-w-[220px] sm:max-w-[260px] md:max-w-[290px] ">
                   <h3 className="font-display text-lg sm:text-xl md:text-2xl font-medium font-[500] uppercase tracking-tight text-white mb-1 group-hover:text-hq-yellow transition-colors leading-tight">
                     {member.name}
                   </h3>
@@ -1574,7 +1574,7 @@ export default function Home() {
                   {engagementBenefits.slice(0, 5).map((benefit, idx) => (
                     <div 
                       key={idx}
-                      className="group flex items-center gap-3.5 cursor-default select-none py-1 sm:py-1.5"
+                      className="group flex items-center gap-3.5 cursor-default  py-1 sm:py-1.5"
                     >
                       <span className="w-[20px] h-[1.5px] bg-hq-yellow shrink-0 group-hover:w-[26px] transition-all duration-200 rounded-full" />
                       <span className="font-body text-[19.2px] font-[400] text-hq-black/85 dark:text-white/85 group-hover:text-hq-black dark:group-hover:text-white transition-colors leading-normal">
@@ -1589,7 +1589,7 @@ export default function Home() {
                   {engagementBenefits.slice(5, 10).map((benefit, idx) => (
                     <div 
                       key={idx}
-                      className="group flex items-center gap-3.5 cursor-default select-none py-1 sm:py-1.5"
+                      className="group flex items-center gap-3.5 cursor-default  py-1 sm:py-1.5"
                     >
                       <span className="w-[20px] h-[1.5px] bg-hq-yellow shrink-0 group-hover:w-[26px] transition-all duration-200 rounded-full" />
                       <span className="font-body text-[19.2px] font-[400] text-hq-black/85 dark:text-white/85 group-hover:text-hq-black dark:group-hover:text-white transition-colors leading-normal">
@@ -1614,9 +1614,6 @@ export default function Home() {
             {/* Left Column: Header text with description */}
             <div className="lg:col-span-5 flex flex-col items-start space-y-6">
               <div>
-                <span className="text-xs font-mono uppercase tracking-[0.25em] text-hq-yellow font-semibold mb-3 block">
-                  Corporate Interactions
-                </span>
                 <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[46px] font-bold tracking-tight text-white leading-[1.1]">
                   Global <br className="hidden sm:inline" />
                   <span className="text-hq-yellow">Footprint</span>
@@ -1676,9 +1673,6 @@ export default function Home() {
           {/* Header */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6">
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-hq-yellow font-semibold mb-2 block">
-                Stories, Mindset and Insights
-              </span>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[46px] tracking-tight font-bold text-hq-black dark:text-white leading-[1.1]">
                 HQX <span className="text-hq-yellow">Podcast</span>
               </h2>
@@ -1762,7 +1756,7 @@ export default function Home() {
               </div>
 
               {/* Scrollable list of thumbnails */}
-              <div className="space-y-3 max-h-[580px] overflow-y-auto pr-1 select-none no-scrollbar">
+              <div className="space-y-3 max-h-[580px] overflow-y-auto pr-1  no-scrollbar">
                 {podcasts.map((pod) => {
                   const isSelected = activePodcast?.id === pod.id;
                   return (
@@ -1837,9 +1831,6 @@ export default function Home() {
           {/* Section Header - Symmetrical with Other Major Sections */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12 pb-6 border-b border-white/10">
             <div>
-              <div className="text-xs font-mono uppercase tracking-[0.25em] text-hq-yellow font-semibold mb-3">
-                6 Seminal Publications • 2020 to 2025
-              </div>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[46px] font-bold tracking-tight text-white leading-[1.1]">
                 Books on <span className="text-hq-yellow">Well-Being & Happiness</span>
               </h2>

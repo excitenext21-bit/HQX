@@ -21,6 +21,8 @@ import Contact from './pages/Contact';
 import AdminCMS from './pages/AdminCMS';
 
 import AboutUs from './pages/AboutUs';
+import Founder from './pages/Founder';
+import WhyHQX from './pages/WhyHQX';
 
 // Scroll to top on route change (preserve hash navigation)
 function ScrollToTop() {
@@ -29,6 +31,19 @@ function ScrollToTop() {
   useEffect(() => {
     if (!hash) {
       window.scrollTo(0, 0);
+    } else {
+      const id = hash.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) {
+        setTimeout(() => {
+          const navbarHeight = 80;
+          const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({
+            top: elementPosition - navbarHeight,
+            behavior: 'smooth'
+          });
+        }, 100);
+      }
     }
   }, [pathname, hash]);
 
@@ -43,33 +58,32 @@ export default function App() {
           <ScrollToTop />
           <div className="flex flex-col min-h-screen bg-hq-white dark:bg-[#07080B] text-hq-black dark:text-white transition-colors duration-200">
             <Navbar />
-          <main className="flex-1">
-            <Routes>
-              {/* Only Home page is active as requested — all paths render Home directly without redirecting */}
-              <Route path="/" element={<Home />} />
-              {/* 
-                Temporarily disabled other routes (pages preserved):
-                /about-us, /about, /founder, /why-hqx -> <AboutUs />
-                /eudaimonic-transformation -> <EudaimonicTransformation />
-                /well-being-ethos -> <WellBeingEthos />
-                /leadership-deep-dive -> <LeadershipDeepDive />
-                /engaging-workshops -> <EngagingWorkshops />
-                /keynotes -> <Keynotes />
-                /micro-courses -> <MicroCourses />
-                /happyu-app -> <HappyUApp />
-                /team -> <Team />
-                /podcast -> <Podcast />
-                /books -> <Books />
-                /contact -> <Contact />
-                /admin -> <AdminCMS />
-              */}
-              <Route path="*" element={<Home />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </Router>
-    </DataProvider>
-  </ThemeProvider>
+            <main className="flex-1">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about-us" element={<AboutUs />} />
+                <Route path="/about" element={<AboutUs />} />
+                <Route path="/founder" element={<Founder />} />
+                <Route path="/why-hqx" element={<WhyHQX />} />
+                <Route path="/eudaimonic-transformation" element={<EudaimonicTransformation />} />
+                <Route path="/well-being-ethos" element={<WellBeingEthos />} />
+                <Route path="/leadership-deep-dive" element={<LeadershipDeepDive />} />
+                <Route path="/engaging-workshops" element={<EngagingWorkshops />} />
+                <Route path="/keynotes" element={<Keynotes />} />
+                <Route path="/micro-courses" element={<MicroCourses />} />
+                <Route path="/happyu-app" element={<HappyUApp />} />
+                <Route path="/team" element={<Team />} />
+                <Route path="/podcast" element={<Podcast />} />
+                <Route path="/books" element={<Books />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/admin" element={<AdminCMS />} />
+                <Route path="*" element={<Home />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+        </Router>
+      </DataProvider>
+    </ThemeProvider>
   );
 }

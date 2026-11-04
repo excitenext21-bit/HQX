@@ -1,7 +1,22 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Crown, CheckCircle2, Calendar, Users, MapPin, ArrowRight, ShieldCheck, Phone } from 'lucide-react';
+import { 
+  Crown, 
+  CheckCircle2, 
+  Calendar, 
+  Users, 
+  MapPin, 
+  ArrowRight, 
+  ShieldCheck, 
+  Phone, 
+  Target, 
+  Compass, 
+  Brain, 
+  Sparkles,
+  Zap
+} from 'lucide-react';
 import { useData } from '../context/DataContext';
+import CorporatePartnersMarquee from '../components/common/CorporatePartnersMarquee';
 
 export default function LeadershipDeepDive() {
   const { addInquiry } = useData();
@@ -25,215 +40,281 @@ export default function LeadershipDeepDive() {
     setSuccess(true);
   };
 
+  const keyBenefits = [
+    {
+      title: 'Strategic Thinking',
+      desc: 'Prioritize and strategize effectively through structured foresight and clarity.'
+    },
+    {
+      title: 'Resilience Development',
+      desc: 'Develop psychological and biological resilience to bounce back swiftly from market challenges.'
+    },
+    {
+      title: 'Deep Focus & Concentration',
+      desc: 'Enhance concentration, eliminate executive distraction, and command uninterrupted deep focus.'
+    },
+    {
+      title: 'Powering Purpose',
+      desc: 'Align executive decisions and organizational mandates directly with enduring authentic purpose.'
+    },
+    {
+      title: 'Balanced Growth Mindset',
+      desc: 'Foster a balanced growth mindset for holistic development and sustainable high performance.'
+    }
+  ];
+
+  const clientEngagements = [
+    { client: 'Ageas Federal Insurance', location: 'Mumbai', desc: 'Executive purpose and resilience offsite' },
+    { client: 'Cipla', location: 'Goa', desc: 'Senior leadership alignment and vitality immersion' },
+    { client: 'Amal Embroidery', location: 'Lonavala', desc: 'Strategic thinking and culture retreat' },
+    { client: 'Amana Bank', location: 'Tanzania', desc: 'International banking executive transformation' },
+    { client: 'Absa Bank', location: 'Mauritius', desc: 'Multi-regional corporate stewardship workshop' },
+    { client: 'TATA Motors', location: 'Pune', desc: 'Engineering & leadership high-performance focus' }
+  ];
+
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
-      {/* Hero */}
-      <section className="bg-hq-black text-hq-white pt-28 pb-20 px-6 md:px-12 relative overflow-hidden border-b border-white/10">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-end gap-10">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-hq-yellow/20 border border-hq-yellow/40 rounded-full text-hq-yellow text-xs font-mono uppercase tracking-widest mb-4">
-              <Crown className="w-3.5 h-3.5" />
-              <span>Flagship Executive Intervention</span>
-            </div>
-            <h1 className="font-display text-5xl md:text-7xl tracking-tighter font-semibold mb-4">
+      {/* Hero Header with Authentic Profile Imagery */}
+      <section className="bg-hq-black text-hq-white pt-36 pb-20 px-6 md:px-12 relative overflow-hidden border-b border-white/10">
+        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-1/2 opacity-25 lg:opacity-40 pointer-events-none overflow-hidden">
+          <img 
+            src="/profile_assets/page_12_img_1_999.jpeg" 
+            alt="Leadership Deep Dive Session" 
+            className="w-full h-full object-cover object-center filter contrast-125"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-hq-black via-hq-black/80 to-transparent"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="max-w-2xl">
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-semibold mb-5">
               Leadership <br />
               <span className="text-hq-yellow">Deep Dive</span>
             </h1>
-            <p className="font-body text-base md:text-lg text-hq-white/80 max-w-xl font-light leading-relaxed">
-              A transformative 2-to-3 day offsite immersion engineered specifically for Board Members, CXOs, and Vice Presidents navigating hyper-scale pressure.
-            </p>
-          </div>
 
-          <div className="bg-white/5 border border-white/10 p-6 rounded-2xl max-w-sm backdrop-blur-md">
-            <div className="text-xs font-mono uppercase text-hq-yellow mb-2">Program Snapshot</div>
-            <div className="text-sm font-body space-y-2 text-white/90">
-              <div className="flex items-center gap-2"><Calendar className="w-4 h-4 text-hq-yellow" /> 2 - 3 Full Days (Residential / Offsite)</div>
-              <div className="flex items-center gap-2"><Users className="w-4 h-4 text-hq-yellow" /> 15 to 60 Senior Leaders</div>
-              <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-hq-yellow" /> Domestic & Global Offsite Locations</div>
+            <p className="font-body text-base md:text-xl text-hq-white/80 font-light leading-relaxed mb-8">
+              Strategic Vision, Resilience Development, Enhanced Focus, Purpose Alignment, Balanced Growth Strategy, High-Performance Team Building, and Passion Drive. Unlock your potential, navigate complexity, bounce back, prioritize, align with purpose, learn and adapt, embrace fulfilment, build high-performing teams, and pursue passions.
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <a 
+                href="#book-immersion" 
+                className="bg-hq-yellow text-hq-black font-display font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white transition-all shadow-xl"
+              >
+                Reserve Executive Immersion
+              </a>
+              <a 
+                href="tel:+919700100800" 
+                className="border border-white/30 text-white font-display text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all flex items-center gap-2"
+              >
+                <Phone className="w-3.5 h-3.5 text-hq-yellow" />
+                <span>Priority Hotline: +91 97001 00800</span>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Curriculum Grid */}
+      {/* Snapshot Bar */}
+      <section className="bg-hq-yellow text-hq-black py-8 px-6 md:px-12 border-b border-hq-black">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 font-display">
+          <div className="flex items-center gap-3">
+            <Calendar className="w-6 h-6 stroke-[2]" />
+            <div>
+              <div className="text-xs uppercase tracking-widest font-bold">Format & Duration</div>
+              <div className="text-base font-semibold">2 - 3 Full Days (Residential / Offsite)</div>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <Users className="w-6 h-6 stroke-[2]" />
+            <div>
+              <div className="text-xs uppercase tracking-widest font-bold">Target Cohort</div>
+              <div className="text-base font-semibold">15 to 60 Senior CXOs & Board Members</div>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <MapPin className="w-6 h-6 stroke-[2]" />
+            <div>
+              <div className="text-xs uppercase tracking-widest font-bold">Locations Delivered</div>
+              <div className="text-base font-semibold">Domestic (Goa, Lonavala) & Global (Tanzania, Mauritius)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Benefits from Page 12 of Profile */}
       <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <div className="text-xs font-mono uppercase tracking-widest text-hq-black/50 mb-2 font-semibold">
-            The 5 Core Modules
-          </div>
-          <h2 className="font-display text-4xl md:text-5xl tracking-tight font-semibold">
-            Curriculum Architecture
+          <h2 className="font-display text-4xl md:text-6xl tracking-tight font-semibold mb-4">
+            Key Benefits of Leadership Deep Dive
           </h2>
+          <p className="font-body text-hq-black/70 max-w-xl mx-auto font-light text-base">
+            Equipping corporate decision-makers with the psychological and strategic tools to excel under intense scrutiny.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {[
-            {
-              module: 'Module 01',
-              title: 'Strategic Vision & Horizon Scanning',
-              desc: 'Shifting leaders from frantic day-to-day firefighting to expansive 3-year contextual foresight and purpose alignment.'
-            },
-            {
-              module: 'Module 02',
-              title: 'Biological & Mental Resilience',
-              desc: 'Mastering vagal tone stimulation, neuro-recovery protocols, and stress neutralization under extreme board scrutiny.'
-            },
-            {
-              module: 'Module 03',
-              title: 'Attentional Architecture & Deep Focus',
-              desc: 'Re-engineering executive calendar hygiene, eliminating cognitive debris, and institutionalizing uninterrupted flow states.'
-            },
-            {
-              module: 'Module 04',
-              title: 'High-Trust Team Cohesion',
-              desc: 'Conducting structured vulnerability exercises that break territorial silos and construct psychological safety.'
-            },
-            {
-              module: 'Module 05',
-              title: 'Eudaimonic Culture Stewardship',
-              desc: 'Equipping leaders with repeatable habits to cascade joy, enthusiasm, and uncompromising accountability down through their ranks.'
-            },
-            {
-              module: 'Bonus Immersion',
-              title: '1-on-1 Executive Diagnosis with Manny',
-              desc: 'Confidential strategic advisory session directly with Manny Anchan to audit personal stressors and life alignment.'
-            }
-          ].map((item, idx) => (
-            <div key={idx} className="p-8 bg-hq-gray border border-hq-black/15 shadow-sm hover:border-hq-black transition-all">
-              <span className="font-mono text-xs text-hq-yellow bg-hq-black px-2.5 py-1 rounded uppercase font-semibold">
-                {item.module}
-              </span>
-              <h3 className="font-display text-xl font-semibold mt-4 mb-3">
-                {item.title}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {keyBenefits.map((b, i) => (
+            <div key={i} className="bg-hq-gray p-8 rounded-2xl border border-hq-black/10 hover:border-hq-black hover:shadow-xl transition-all">
+              <div className="w-10 h-10 rounded-xl bg-hq-black text-hq-yellow flex items-center justify-center font-mono font-bold text-sm mb-4">
+                {(i + 1).toString().padStart(2, '0')}
+              </div>
+              <h3 className="font-display text-2xl font-bold mb-2">
+                {b.title}
               </h3>
-              <p className="font-body text-xs text-hq-black/70 font-light leading-relaxed">
-                {item.desc}
+              <p className="font-body text-sm text-hq-black/75 font-light leading-relaxed">
+                {b.desc}
               </p>
             </div>
           ))}
-        </div>
 
-        {/* Dedicated Lead-Gen Form as required by PDF */}
-        <div className="bg-hq-black text-hq-white p-8 md:p-14 rounded-3xl border border-hq-black/20 shadow-2xl">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-10">
-              <span className="font-mono text-xs uppercase tracking-widest text-hq-yellow">Dedicated Program Inquiries</span>
-              <h3 className="font-display text-3xl md:text-5xl tracking-tight font-semibold mt-2">
-                Book a Leadership Deep Dive
+          {/* Session Photo Card */}
+          <div className="bg-hq-black text-white p-8 rounded-2xl border border-black shadow-xl flex flex-col justify-between">
+            <div>
+              <div className="text-xs font-mono text-hq-yellow uppercase tracking-widest mb-2 font-semibold">
+                Experiential Delivery
+              </div>
+              <h3 className="font-display text-2xl font-bold mb-3">
+                Disruptive & Hands-on
               </h3>
-              <p className="font-body text-xs md:text-sm text-hq-white/70 font-light mt-2">
-                Connect with Manny's executive secretariat to evaluate dates and cohort customization.
+              <p className="font-body text-xs text-white/80 font-light leading-relaxed">
+                Directly conducted by Manny Anchan with advisory faculty mentors to align personal mastery with multi-year enterprise goals.
               </p>
             </div>
+            <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-display uppercase tracking-wider text-hq-yellow font-bold">
+              <span>Verified 98% CSAT</span>
+              <Sparkles className="w-4 h-4" />
+            </div>
+          </div>
+        </div>
 
-            {success ? (
-              <div className="bg-hq-yellow text-hq-black p-8 rounded-2xl text-center space-y-3">
-                <CheckCircle2 className="w-12 h-12 mx-auto stroke-[1.5]" />
-                <h4 className="font-display text-2xl font-semibold">Inquiry Dispatched</h4>
-                <p className="text-xs font-body font-light">
-                  Thank you! Manny Anchan's corporate office will respond within 24 hours. For immediate requests, call +91 97001 00800.
-                </p>
+        {/* Corporate Interactions & Client Track Record (Pages 27-31) */}
+        <div className="mt-20 pt-16 border-t border-hq-black/10">
+          <div className="text-center mb-12">
+            <div className="text-xs font-mono uppercase tracking-widest text-hq-black/50 mb-2 font-semibold">
+              Corporate Interactions Across The Nation & Globe
+            </div>
+            <h3 className="font-display text-3xl md:text-4xl font-bold">
+              Recent Leadership Immersion Client Roster
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {clientEngagements.map((item, idx) => (
+              <div key={idx} className="bg-white p-5 rounded-xl border border-hq-black/10 text-center shadow-sm">
+                <div className="text-[10px] font-mono text-hq-yellow bg-hq-black px-2 py-0.5 rounded-full uppercase tracking-wider inline-block mb-2 font-bold">
+                  {item.location}
+                </div>
+                <div className="font-display text-sm font-bold text-hq-black mb-1">
+                  {item.client}
+                </div>
+                <div className="text-[11px] font-body text-hq-black/60 font-light">
+                  {item.desc}
+                </div>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4 text-xs font-body">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block uppercase font-mono tracking-wider text-[10px] text-hq-white/60 mb-1">Your Full Name *</label>
-                    <input 
-                      type="text" 
-                      required
-                      value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      placeholder="e.g. Rajiv Mehta"
-                      className="w-full bg-white/10 border border-white/20 p-3 text-white placeholder:text-white/40 focus:border-hq-yellow focus:outline-none"
-                    />
-                  </div>
-                  <div>
-                    <label className="block uppercase font-mono tracking-wider text-[10px] text-hq-white/60 mb-1">Company / Organization *</label>
-                    <input 
-                      type="text" 
-                      required
-                      value={form.company}
-                      onChange={(e) => setForm({ ...form, company: e.target.value })}
-                      placeholder="e.g. TATA Capital / Global Corp"
-                      className="w-full bg-white/10 border border-white/20 p-3 text-white placeholder:text-white/40 focus:border-hq-yellow focus:outline-none"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block uppercase font-mono tracking-wider text-[10px] text-hq-white/60 mb-1">Corporate Email *</label>
-                    <input 
-                      type="email" 
-                      required
-                      value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      placeholder="r.mehta@tatacapital.com"
-                      className="w-full bg-white/10 border border-white/20 p-3 text-white placeholder:text-white/40 focus:border-hq-yellow focus:outline-none"
-                    />
-                  </div>
-                  <div>
-                    <label className="block uppercase font-mono tracking-wider text-[10px] text-hq-white/60 mb-1">Direct Phone Number *</label>
-                    <input 
-                      type="tel" 
-                      required
-                      value={form.phone}
-                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      placeholder="+91 98200 00000"
-                      className="w-full bg-white/10 border border-white/20 p-3 text-white placeholder:text-white/40 focus:border-hq-yellow focus:outline-none"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block uppercase font-mono tracking-wider text-[10px] text-hq-white/60 mb-1">Executive Headcount</label>
-                    <select 
-                      value={form.headcount}
-                      onChange={(e) => setForm({ ...form, headcount: e.target.value })}
-                      className="w-full bg-white/10 border border-white/20 p-3 text-white focus:border-hq-yellow focus:outline-none"
-                    >
-                      <option value="10-25 Executives" className="bg-hq-black">10-25 Senior Executives</option>
-                      <option value="25-50 Executives" className="bg-hq-black">25-50 Senior Executives</option>
-                      <option value="50-100 Executives" className="bg-hq-black">50-100 Senior Executives</option>
-                      <option value="100+ Enterprise" className="bg-hq-black">100+ Enterprise Cohort</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block uppercase font-mono tracking-wider text-[10px] text-hq-white/60 mb-1">Preferred Timeline / Quarter</label>
-                    <input 
-                      type="text" 
-                      value={form.preferredDate}
-                      onChange={(e) => setForm({ ...form, preferredDate: e.target.value })}
-                      placeholder="e.g. Q4 2026 / Next Month"
-                      className="w-full bg-white/10 border border-white/20 p-3 text-white placeholder:text-white/40 focus:border-hq-yellow focus:outline-none"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block uppercase font-mono tracking-wider text-[10px] text-hq-white/60 mb-1">Specific Objectives or Focus Areas</label>
-                  <textarea 
-                    rows={3}
-                    value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    placeholder="Briefly describe your team's current challenges or objectives..."
-                    className="w-full bg-white/10 border border-white/20 p-3 text-white placeholder:text-white/40 focus:border-hq-yellow focus:outline-none"
-                  ></textarea>
-                </div>
-
-                <button 
-                  type="submit"
-                  className="w-full bg-hq-yellow text-hq-black font-display font-semibold uppercase tracking-widest py-4 text-xs hover:bg-white transition-all shadow-xl rounded-full"
-                >
-                  Submit Leadership Deep Dive Request
-                </button>
-              </form>
-            )}
+            ))}
           </div>
         </div>
       </section>
+
+      {/* Booking Form Section */}
+      <section id="book-immersion" className="py-20 px-6 md:px-12 bg-hq-black text-hq-white border-t border-white/10">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight">
+              Reserve Leadership Deep Dive Immersion
+            </h2>
+          </div>
+
+          {success ? (
+            <div className="bg-hq-yellow text-hq-black p-8 rounded-2xl text-center">
+              <CheckCircle2 className="w-12 h-12 mx-auto mb-3" />
+              <h3 className="font-display text-2xl font-bold mb-2">Inquiry Successfully Registered!</h3>
+              <p className="font-body text-sm font-light">
+                Our executive coordinator will connect with your office within 4 business hours with custom immersion proposals.
+              </p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="bg-white/5 border border-white/10 p-8 md:p-12 rounded-3xl space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="text-xs font-mono uppercase tracking-wider text-white/70 block mb-2">Executive Name</label>
+                  <input
+                    type="text"
+                    required
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    placeholder="e.g. Rajiv Mehra"
+                    className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-hq-yellow"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs font-mono uppercase tracking-wider text-white/70 block mb-2">Organization / Enterprise</label>
+                  <input
+                    type="text"
+                    required
+                    value={form.company}
+                    onChange={(e) => setForm({ ...form, company: e.target.value })}
+                    placeholder="e.g. Cipla Global"
+                    className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-hq-yellow"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="text-xs font-mono uppercase tracking-wider text-white/70 block mb-2">Work Email</label>
+                  <input
+                    type="email"
+                    required
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    placeholder="e.g. r.mehra@cipla.com"
+                    className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-hq-yellow"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs font-mono uppercase tracking-wider text-white/70 block mb-2">Contact Number</label>
+                  <input
+                    type="tel"
+                    required
+                    value={form.phone}
+                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    placeholder="+91 98000 00000"
+                    className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-hq-yellow"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="text-xs font-mono uppercase tracking-wider text-white/70 block mb-2">Target Executive Headcount</label>
+                <select
+                  value={form.headcount}
+                  onChange={(e) => setForm({ ...form, headcount: e.target.value })}
+                  className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-hq-yellow"
+                >
+                  <option value="10-25 CXOs" className="bg-hq-black">10 - 25 CXOs & Board Members</option>
+                  <option value="25-50 Executives" className="bg-hq-black">25 - 50 Senior Executives</option>
+                  <option value="50-100 Senior Leaders" className="bg-hq-black">50 - 100 Senior Leaders</option>
+                  <option value="Enterprise-Wide" className="bg-hq-black">Enterprise-Wide Multi-City</option>
+                </select>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-hq-yellow text-hq-black font-display font-semibold uppercase tracking-widest py-4 rounded-xl text-sm hover:bg-white transition-all shadow-xl"
+              >
+                Submit Immersion Request
+              </button>
+            </form>
+          )}
+        </div>
+      </section>
+
+      {/* FULL-WIDTH TRUSTED BY OVER 40+ INDUSTRY TITANS MARQUEE TOUCHING ABOVE FOOTER WITHOUT GAP */}
+      <div className="w-full m-0 p-0">
+        <CorporatePartnersMarquee showHeader={true} title="Trusted by Over 40+ Industry Titans" reversed={true} />
+      </div>
     </div>
   );
 }

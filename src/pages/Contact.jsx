@@ -29,14 +29,10 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
       {/* Header */}
-      <section className="bg-hq-black text-hq-white pt-28 pb-20 px-6 md:px-12 border-b border-white/10">
+      <section className="bg-hq-black text-hq-white pt-36 pb-20 px-6 md:px-12 border-b border-white/10">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-end gap-10">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-hq-yellow/20 border border-hq-yellow/40 rounded-full text-hq-yellow text-xs font-mono uppercase tracking-widest mb-4">
-              <Calendar className="w-3.5 h-3.5" />
-              <span>Direct Corporate Engagements</span>
-            </div>
-            <h1 className="font-display text-5xl md:text-7xl tracking-tighter font-semibold mb-4">
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-semibold mb-4">
               Book <span className="text-hq-yellow">Manny Anchan</span>
             </h1>
             <p className="font-body text-base md:text-lg text-hq-white/80 max-w-xl font-light leading-relaxed">
@@ -62,9 +58,6 @@ export default function Contact() {
           {/* Left Details */}
           <div className="lg:col-span-5 space-y-8">
             <div>
-              <div className="text-xs font-mono uppercase tracking-widest text-hq-black/50 mb-2 font-semibold">
-                Client Relations
-              </div>
               <h2 className="font-display text-3xl md:text-4xl font-semibold mb-4">
                 Let's Transform Your Corporate Culture
               </h2>
