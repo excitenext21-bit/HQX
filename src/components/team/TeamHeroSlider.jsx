@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const SLIDE_DURATION = 4500; // 4.5s auto-advance interval
+const SLIDE_DURATION = 4000; // 4s seamless auto-advance interval
 
 export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
-  const activeFaculty = faculty.filter(f => f.active !== false);
+  // Exclude Manny Anchan from hero slider per user request
+  const activeFaculty = faculty.filter(
+    (f) => f.active !== false && f.id !== 'f-manny' && !f.name.toLowerCase().includes('manny')
+  );
+  
   const membersPerSlide = 4;
   const totalSlides = Math.max(1, Math.ceil(activeFaculty.length / membersPerSlide));
   
@@ -14,9 +17,9 @@ export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
   const [activeHoverId, setActiveHoverId] = useState(null);
   const timerRef = useRef(null);
 
-  // Auto-advance interval
+  // Auto-advance interval - pauses when user hovers over any image
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || totalSlides <= 1) return;
 
     timerRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % totalSlides);
@@ -25,19 +28,7 @@ export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [isPaused, totalSlides, currentSlide]);
-
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % totalSlides);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
-  };
+  }, [isPaused, totalSlides]);
 
   // Get current batch of 4 members
   const currentMembers = activeFaculty.slice(
@@ -51,7 +42,7 @@ export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* FULL VIEWPORT SLIDER WITH SLANTED DIVISIONS & CLEAN 2PX SOLID BLACK BORDER */}
+      {/* FULL VIEWPORT AUTO SLIDER WITH SLANTED DIVISIONS & CLEAN 2PX SOLID BLACK BORDER */}
       <div className="w-full h-full relative overflow-hidden rounded-none border-none bg-black flex-1">
         <AnimatePresence mode="wait">
           <motion.div
@@ -59,7 +50,7 @@ export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-col md:flex-row h-full w-[100%] md:w-[calc(100%+100px)] md:-ml-[50px] rounded-none border-none"
           >
             {currentMembers.map((member, index) => {
@@ -71,8 +62,14 @@ export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
                 <div
                   key={member.id}
                   onClick={() => onSelectMember && onSelectMember(member)}
-                  onMouseEnter={() => setActiveHoverId(member.id)}
-                  onMouseLeave={() => setActiveHoverId(null)}
+                  onMouseEnter={() => {
+                    setIsPaused(true);
+                    setActiveHoverId(member.id);
+                  }}
+                  onMouseLeave={() => {
+                    setIsPaused(false);
+                    setActiveHoverId(null);
+                  }}
                   className={`relative cursor-pointer overflow-hidden transition-all duration-700 ease-out flex flex-col justify-end p-6 sm:p-8 group rounded-none border-none md:[transform:skewX(-5deg)] ${
                     isFirst ? 'md:pl-16 lg:pl-20 md:pr-8' : isLast ? 'md:pl-8 md:pr-16 lg:pr-20' : 'md:px-8'
                   } ${isHovered ? 'md:flex-[1.32]' : 'md:flex-1'}`}
@@ -122,49 +119,6 @@ export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
             })}
           </motion.div>
         </AnimatePresence>
-
-        {/* Minimal Floating Nav Arrows */}
-        <button
-          onClick={prevSlide}
-          aria-label="Previous slide"
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-40 w-11 h-11 rounded-full bg-black/60 hover:bg-hq-yellow hover:text-black border border-white/20 hover:border-hq-yellow text-white flex items-center justify-center transition-all duration-300 backdrop-blur-sm opacity-60 hover:opacity-100 cursor-pointer"
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-
-        <button
-          onClick={nextSlide}
-          aria-label="Next slide"
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-40 w-11 h-11 rounded-full bg-black/60 hover:bg-hq-yellow hover:text-black border border-white/20 hover:border-hq-yellow text-white flex items-center justify-center transition-all duration-300 backdrop-blur-sm opacity-60 hover:opacity-100 cursor-pointer"
-        >
-          <ChevronRight className="w-5 h-5" />
-        </button>
-
-        {/* Bottom Slide Progress Indicators Bar */}
-        <div className="absolute bottom-5 left-8 sm:left-12 z-40 flex items-center gap-2">
-          {Array.from({ length: totalSlides }).map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => goToSlide(idx)}
-              aria-label={`Go to slide ${idx + 1}`}
-              className="relative h-1.5 rounded-full overflow-hidden transition-all duration-300 cursor-pointer"
-              style={{ width: currentSlide === idx ? '44px' : '14px' }}
-            >
-              <div className="absolute inset-0 bg-white/30"></div>
-              {currentSlide === idx && (
-                <motion.div
-                  className="absolute inset-y-0 left-0 bg-hq-yellow"
-                  initial={{ width: '0%' }}
-                  animate={{ width: isPaused ? '0%' : '100%' }}
-                  transition={{
-                    duration: isPaused ? 0 : SLIDE_DURATION / 1000,
-                    ease: 'linear'
-                  }}
-                />
-              )}
-            </button>
-          ))}
-        </div>
       </div>
     </section>
   );
