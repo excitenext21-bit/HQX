@@ -6,6 +6,7 @@ dist-ssr
 .DS_Store
 
 # Temporary scratch scripts
+scratch/
 scratch_*.py
 scratch_*.json
 build_svg.py
