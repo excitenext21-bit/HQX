@@ -48,7 +48,7 @@ export default function Navbar() {
         id="navbar"
         className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 flex items-center text-white ${
           scrolled || mobileMenuOpen
-            ? 'bg-[#0C0D0F]/90 backdrop-blur-md shadow-xl border-b border-white/10 py-3.5 sm:py-4'
+            ? 'bg-[#0C0D0F] shadow-xl border-b border-white/10 py-3.5 sm:py-4'
             : 'bg-transparent shadow-none border-b border-transparent py-4 sm:py-5'
         }`}
       >

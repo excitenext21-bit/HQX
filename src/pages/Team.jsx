@@ -38,7 +38,7 @@ export default function Team() {
           </div>
 
           {/* 4-5 Compiled Domain Filters - Sticky on Scroll with Yellow Active Underline */}
-          <div className="sticky top-20 z-30 -mx-6 md:-mx-12 px-6 md:px-12 bg-[#FAF8F5]/95 backdrop-blur-md py-4 border-b border-black/10 mb-12 sm:mb-16 transition-all duration-300 shadow-xs">
+          <div className="sticky top-20 z-30 -mx-6 md:-mx-12 px-6 md:px-12 bg-[#FAF8F5] py-4 border-b border-black/10 mb-12 sm:mb-16 transition-all duration-300 shadow-xs">
             <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-6 sm:gap-10">
               {categories.map((cat) => (
                 <button
