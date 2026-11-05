@@ -4,10 +4,10 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const SLIDE_DURATION = 4500; // 4.5s auto-advance interval
 
-export default function TeamHeroSlider({ faculty, onSelectMember }) {
-  // 4 vertical columns per slide
+export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
+  const activeFaculty = faculty.filter(f => f.active !== false);
   const membersPerSlide = 4;
-  const totalSlides = Math.ceil(faculty.length / membersPerSlide);
+  const totalSlides = Math.max(1, Math.ceil(activeFaculty.length / membersPerSlide));
   
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -40,27 +40,27 @@ export default function TeamHeroSlider({ faculty, onSelectMember }) {
   };
 
   // Get current batch of 4 members
-  const currentMembers = faculty.slice(
+  const currentMembers = activeFaculty.slice(
     currentSlide * membersPerSlide,
     currentSlide * membersPerSlide + membersPerSlide
   );
 
   return (
     <section 
-      className="w-full bg-[#000000] text-white pt-20 sm:pt-24 relative overflow-hidden select-none border-none rounded-none m-0 p-0"
+      className="w-full bg-[#000000] text-white pt-20 sm:pt-24 relative overflow-hidden select-none border-none rounded-none m-0 p-0 h-screen min-h-[640px] max-h-[1080px] flex flex-col justify-between"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* FULL-WIDTH EDGE-TO-EDGE MULTI-COLUMN SLIDER (NO BORDERS, NO RADIUS) */}
-      <div className="w-full relative overflow-hidden rounded-none border-none bg-black">
+      {/* FULL VIEWPORT SLIDER WITH SLANTED DIVISIONS & 5PX BLACK BORDER */}
+      <div className="w-full h-full relative overflow-hidden rounded-none border-none bg-black flex-1">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col md:flex-row h-[550px] sm:h-[640px] md:h-[720px] lg:h-[800px] w-full rounded-none border-none"
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col md:flex-row h-full w-[100%] md:w-[calc(100%+140px)] md:-ml-[70px] rounded-none border-none"
           >
             {currentMembers.map((member) => {
               const isHovered = activeHoverId === member.id;
@@ -71,34 +71,45 @@ export default function TeamHeroSlider({ faculty, onSelectMember }) {
                   onClick={() => onSelectMember && onSelectMember(member)}
                   onMouseEnter={() => setActiveHoverId(member.id)}
                   onMouseLeave={() => setActiveHoverId(null)}
-                  className={`relative cursor-pointer overflow-hidden transition-all duration-700 ease-out flex flex-col justify-end p-6 sm:p-8 md:p-10 group rounded-none border-none ${
-                    isHovered ? 'md:flex-[1.4]' : 'md:flex-1'
+                  className={`relative cursor-pointer overflow-hidden transition-all duration-700 ease-out flex flex-col justify-end p-6 sm:p-8 md:p-10 group rounded-none md:[transform:skewX(-7deg)] md:border-r-[5px] md:border-black border-b-[5px] md:border-b-0 border-black ${
+                    isHovered ? 'md:flex-[1.38]' : 'md:flex-1'
                   }`}
+                  style={{ transformOrigin: '50% 50%' }}
                 >
-                  {/* Black & Monochrome Portrait Background */}
-                  <div className="absolute inset-0 w-full h-full bg-black rounded-none">
+                  {/* Black & Monochrome Portrait Background - Counter-skewed to remain upright */}
+                  <div 
+                    className="absolute inset-0 w-full h-full bg-black rounded-none md:[transform:skewX(7deg)_scale(1.28)]"
+                    style={{ transformOrigin: '50% 50%' }}
+                  >
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover object-top transition-all duration-700 ease-out filter grayscale contrast-[1.3] brightness-[0.72] group-hover:brightness-[0.88] group-hover:contrast-[1.2] group-hover:scale-105 rounded-none"
+                      className="w-full h-full object-cover object-top transition-all duration-700 ease-out filter grayscale contrast-[1.3] brightness-[0.72] group-hover:brightness-[0.92] group-hover:contrast-[1.2] group-hover:scale-105 rounded-none"
                     />
                     {/* Deep Low-Key Cinematic Gradient Overlays */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-95 group-hover:opacity-85 transition-opacity duration-300"></div>
-                    <div className="absolute inset-0 bg-black/25 group-hover:bg-transparent transition-colors duration-300"></div>
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300"></div>
                   </div>
 
-                  {/* Member Name and Clean Details Overlay (No Yellow Eyebrow) */}
-                  <div className="relative z-10 transform transition-transform duration-300 group-hover:-translate-y-2">
-                    {/* Name in Bold Uppercase */}
-                    <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase tracking-tight text-white mb-2 leading-none">
+                  {/* 5px Slanted Black Divider on the right (and bottom for mobile) */}
+                  <div className="hidden md:block absolute top-0 bottom-0 right-0 w-[5px] bg-black z-30 pointer-events-none" />
+                  <div className="md:hidden absolute bottom-0 left-0 right-0 h-[5px] bg-black z-30 pointer-events-none" />
+
+                  {/* Member Name and Clean Details Overlay - Counter-skewed to remain upright */}
+                  <div 
+                    className="relative z-20 md:[transform:skewX(7deg)] transform transition-transform duration-300 group-hover:-translate-y-2"
+                    style={{ transformOrigin: 'bottom left' }}
+                  >
+                    {/* Name: Reduced 50% in size and font-weight 300 (font-light) */}
+                    <h3 className="font-display text-sm sm:text-base lg:text-[17px] font-[300] tracking-widest uppercase text-white mb-2 leading-snug">
                       {member.name}
                     </h3>
 
                     {/* Accent Yellow Underline Bar */}
-                    <div className="h-[3px] w-10 bg-hq-yellow rounded-full mb-3 transition-all duration-500 ease-out group-hover:w-20"></div>
+                    <div className="h-[2px] w-8 bg-hq-yellow rounded-full mb-2.5 transition-all duration-500 ease-out group-hover:w-16"></div>
 
-                    {/* Clean Role / Title */}
-                    <p className="font-body text-xs sm:text-sm text-white/75 font-light line-clamp-2 leading-relaxed">
+                    {/* Clean Role / Title: font-weight 300 */}
+                    <p className="font-body text-[11px] sm:text-xs text-white/70 font-[300] line-clamp-2 leading-relaxed max-w-sm">
                       {member.title}
                     </p>
                   </div>
@@ -112,7 +123,7 @@ export default function TeamHeroSlider({ faculty, onSelectMember }) {
         <button
           onClick={prevSlide}
           aria-label="Previous slide"
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/50 hover:bg-hq-yellow hover:text-black border border-white/20 hover:border-hq-yellow text-white flex items-center justify-center transition-all duration-300 backdrop-blur-sm opacity-60 hover:opacity-100"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-40 w-11 h-11 rounded-full bg-black/60 hover:bg-hq-yellow hover:text-black border border-white/20 hover:border-hq-yellow text-white flex items-center justify-center transition-all duration-300 backdrop-blur-sm opacity-60 hover:opacity-100 cursor-pointer"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
@@ -120,20 +131,20 @@ export default function TeamHeroSlider({ faculty, onSelectMember }) {
         <button
           onClick={nextSlide}
           aria-label="Next slide"
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/50 hover:bg-hq-yellow hover:text-black border border-white/20 hover:border-hq-yellow text-white flex items-center justify-center transition-all duration-300 backdrop-blur-sm opacity-60 hover:opacity-100"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-40 w-11 h-11 rounded-full bg-black/60 hover:bg-hq-yellow hover:text-black border border-white/20 hover:border-hq-yellow text-white flex items-center justify-center transition-all duration-300 backdrop-blur-sm opacity-60 hover:opacity-100 cursor-pointer"
         >
           <ChevronRight className="w-5 h-5" />
         </button>
 
         {/* Bottom Slide Progress Indicators Bar */}
-        <div className="absolute bottom-4 left-6 sm:left-10 z-20 flex items-center gap-2">
+        <div className="absolute bottom-5 left-8 sm:left-12 z-40 flex items-center gap-2">
           {Array.from({ length: totalSlides }).map((_, idx) => (
             <button
               key={idx}
               onClick={() => goToSlide(idx)}
               aria-label={`Go to slide ${idx + 1}`}
-              className="relative h-1 rounded-full overflow-hidden transition-all duration-300 cursor-pointer"
-              style={{ width: currentSlide === idx ? '40px' : '12px' }}
+              className="relative h-1.5 rounded-full overflow-hidden transition-all duration-300 cursor-pointer"
+              style={{ width: currentSlide === idx ? '44px' : '14px' }}
             >
               <div className="absolute inset-0 bg-white/30"></div>
               {currentSlide === idx && (
