@@ -184,10 +184,10 @@ export default function Founder() {
 
               {/* Motivational Speaker Bio (User Content Part 1) */}
               <div className="space-y-4 mb-8">
-                <p className="font-body text-sm sm:text-base text-[#1A1A1A] font-light leading-relaxed">
+                <p className="font-body text-sm sm:text-base text-[#1A1A1A] font-normal leading-relaxed">
                   Manny Anchan is a dynamic motivational speaker known for his engaging storytelling and powerful insights. With a passion for inspiring others, he shares his journey of overcoming challenges and achieving success.
                 </p>
-                <p className="font-body text-sm sm:text-base text-[#1A1A1A] font-light leading-relaxed">
+                <p className="font-body text-sm sm:text-base text-[#1A1A1A] font-normal leading-relaxed">
                   Manny's talks focus on personal growth, resilience, and the importance of a positive mindset. His relatable approach and practical advice resonate with audiences, making him a sought-after speaker at conferences and workshops.
                 </p>
               </div>
