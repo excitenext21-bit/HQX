@@ -195,7 +195,7 @@ const INITIAL_FACULTY = [
   {
     id: 'f-meera',
     name: 'Meera Chauhan',
-    category: 'Mindfulness',
+    category: 'Mindfulness & Well-Being',
     title: 'Director at Tricolite Electrical Industries | Warwick & Yale Fellow',
     bio: "Meera Chauhan is a Director with Tricolite Electrical Industries. She has done her Master's Degree in Industrial Relations and Personnel Management from Warwick Business School and also a mid career Fellowship at Yale University.",
     image: '/team/meera-chauhan.png',
@@ -205,7 +205,7 @@ const INITIAL_FACULTY = [
   {
     id: 'f-anil',
     name: 'Anil Kumar',
-    category: 'Personal Leadership',
+    category: 'Executive Leadership',
     title: "Recipient of 'SHAURYA CHAKRA' | LBS & ISB Alumnus",
     bio: "Anil, recipient of 'SHAURYA CHAKRA' award is a former military officer, motivational speaker, leadership expert, and fundraiser for alternative investment funds. Alumnus of London Business School and ISB.",
     image: '/team/anil-kumar.png',
@@ -215,7 +215,7 @@ const INITIAL_FACULTY = [
   {
     id: 'f-carolin',
     name: 'Carolin Nytra',
-    category: 'Spirituality',
+    category: 'Mindfulness & Well-Being',
     title: 'Retired German Olympic Hurdler & Holistic Well-Being Advocate',
     bio: "Carolin Nytra is a retired German Olympic hurdler, now a holistic well-being advocate. Now, a Cacao Priestess, she empowers others through mindset and spiritual guidance.",
     image: '/team/carolin-nytra.png',
@@ -225,7 +225,7 @@ const INITIAL_FACULTY = [
   {
     id: 'f-ajay',
     name: 'Ajay Srinivasan',
-    category: 'Business Leadership',
+    category: 'Executive Leadership',
     title: 'Seasoned Business Leader & Strategic Advisor',
     bio: "Ajay Srinivasan is a seasoned business leader with a diverse career, founding and expanding businesses in India and abroad, showcasing leadership across different organizational structures and industries.",
     image: '/team/ajay-srinivasan.png',
@@ -235,7 +235,7 @@ const INITIAL_FACULTY = [
   {
     id: 'f-rupinder',
     name: 'Rupinder Singh',
-    category: 'Sports',
+    category: 'Physical Vitality & Sports',
     title: 'Olympic Field Hockey Star & International Champion',
     bio: "Rupinder Pal Singh, born on Nov 11, 1990, in Faridkot, Punjab, is an Indian hockey star known for powerful drag-flicks, international victories, and inspiring young players.",
     image: '/team/rupinder-singh.png',
@@ -245,7 +245,7 @@ const INITIAL_FACULTY = [
   {
     id: 'f-parvej',
     name: 'Parvej Mantrri',
-    category: 'Fit Panda',
+    category: 'Physical Vitality & Sports',
     title: 'Versatile Entertainer & Celebrity Fitness Coach',
     bio: "Parvej, a versatile entertainer, excels as an actor, host, voice-over artist, and celebrity fitness coach, earning acclaim in various roles.",
     image: '/team/parvej-mantrri.png',
@@ -255,7 +255,7 @@ const INITIAL_FACULTY = [
   {
     id: 'f-bhakti',
     name: 'Bhakti Kapoor',
-    category: 'HealthTech professional',
+    category: 'Physical Vitality & Sports',
     title: 'Founder of HEALTHY HIGH & Nutritional Wellness Advisor',
     bio: "Bhakti is the founder of HEALTHY HIGH a virtual nutrition counselling platform. She is also on the advisory panel for Vitalyse wellness strips and Green Protein.",
     image: '/team/bhakti-kapoor.png',
@@ -265,7 +265,7 @@ const INITIAL_FACULTY = [
   {
     id: 'f-bijay',
     name: 'Bijay Anand',
-    category: 'Kundalini Yoga',
+    category: 'Mindfulness & Well-Being',
     title: 'Esteemed Kundalini Yoga Instructor & Holistic Wellness Mentor',
     bio: "Esteemed Kundalini Yoga instructor Bijay Anand fosters holistic wellness, integrating ancient wisdom and contemporary insights for a balanced, transformative practice.",
     image: '/team/bijay-anand.png',
@@ -275,7 +275,7 @@ const INITIAL_FACULTY = [
   {
     id: 'f-rajiv',
     name: 'Rajiv Gupta',
-    category: 'Japanese Life lessons',
+    category: 'Wisdom & Life Mastery',
     title: 'Manufacturing CEO & Author | HBS Alumnus & Ex-VP Honda Cars',
     bio: 'Mr. Gupta is currently the CEO of a leading manufacturing company. Author of "The Good Indian Employee\'s Guide to Surviving a Lala Company." Ex-VP and National Head of Sales & Marketing at Honda Cars. Alumnus of HBS.',
     image: '/team/rajiv-gupta.png',
@@ -285,7 +285,7 @@ const INITIAL_FACULTY = [
   {
     id: 'f-soha',
     name: 'Soha Ali Khan',
-    category: 'Parenting',
+    category: 'Wisdom & Life Mastery',
     title: 'Acclaimed Author & Modern Family Mentor | Oxford & LSE Alumna',
     bio: 'Soha Ali Khan, Indian actress from a noble lineage, blends regal charm with cinematic brilliance, symbolizing cultural richness in Bollywood. She also the author to the book "The Perils of being Moderately Famous"',
     image: '/team/soha-ali-khan.png',
@@ -295,7 +295,7 @@ const INITIAL_FACULTY = [
   {
     id: 'f-sanjay',
     name: 'Sanjay Arora',
-    category: 'Entrepreneurship Leader',
+    category: 'Executive Leadership',
     title: 'Healthcare Pioneer & Founder of Suburban Diagnostics',
     bio: "Dr. Sanjay Arora, healthcare pioneer, founded Suburban Diagnostics, prioritizing precision and patient care. Awards recognize his leadership, innovation, and entrepreneurial excellence.",
     image: '/team/sanjay-arora.png',
@@ -305,7 +305,7 @@ const INITIAL_FACULTY = [
   {
     id: 'f-bharati',
     name: 'Bharati Jaisingh',
-    category: 'Well Being Practitioner',
+    category: 'Mindfulness & Well-Being',
     title: 'Well Being Practitioner & Founder of IDHA',
     bio: "Bharati K. Jaisingh, Well Being Practitioner and founder of IDHA, utilizes dance and expressive arts to foster therapeutic experiences for individuals and communities.",
     image: '/team/bharati-jaisingh.png',
@@ -315,7 +315,7 @@ const INITIAL_FACULTY = [
   {
     id: 'f-manny',
     name: 'Manny Anchan',
-    category: 'Personal Leadership',
+    category: 'Executive Leadership',
     title: 'Founder & Chief Happiness Officer | Harvard & Columbia Alum',
     bio: '25 years in global management at GE Capital, HDFC Bank, ABN AMRO, Barclays, AUB, and FAB. Researched Ikigai, Hygge, Lagom, Sisu, and Gross National Happiness.',
     image: '/team/manny-anchan.png',
@@ -1013,7 +1013,7 @@ const INITIAL_INQUIRIES = [
 
 export function DataProvider({ children }) {
   const [faculty, setFaculty] = useState(() => {
-    const saved = localStorage.getItem('hqx_faculty_v2');
+    const saved = localStorage.getItem('hqx_faculty_v3');
     return saved ? JSON.parse(saved) : INITIAL_FACULTY;
   });
 
@@ -1058,7 +1058,7 @@ export function DataProvider({ children }) {
 
   // Sync to localStorage
   useEffect(() => {
-    localStorage.setItem('hqx_faculty_v2', JSON.stringify(faculty));
+    localStorage.setItem('hqx_faculty_v3', JSON.stringify(faculty));
   }, [faculty]);
 
   useEffect(() => {
@@ -1171,7 +1171,7 @@ export function DataProvider({ children }) {
   };
 
   const resetToDefaults = () => {
-    localStorage.removeItem('hqx_faculty_v2');
+    localStorage.removeItem('hqx_faculty_v3');
     localStorage.removeItem('hqx_courses_v2');
     localStorage.removeItem('hqx_books_v2');
     localStorage.removeItem('hqx_podcasts_v3');
