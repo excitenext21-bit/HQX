@@ -533,35 +533,6 @@ export default function WhyHQX() {
               );
             })}
           </div>
-
-          {/* Complete 28-Sector Master Pill Cloud */}
-          <div className="pt-8 border-t border-hq-black/15">
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
-              <span className="text-xs font-mono uppercase tracking-widest text-hq-black/60 font-semibold">
-                Comprehensive 28-Domain Industry & Academic Index (Slide 34):
-              </span>
-              <span className="text-xs font-mono text-hq-black/50">
-                28 Verified Domains
-              </span>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {[
-                'Banking', 'Mutual Funds', 'Corporate Finance', 'Life & General Insurance', 'Corporate Law', 
-                'Artificial Intelligence', 'Biotechnology', 'Pharmaceuticals', 'Electronics & Hardware', 'HealthTech', 
-                'Automotive Engineering', 'Heavy Manufacturing', 'Energy & Power', 'Construction & EPC', 'Cables & Conductors', 
-                'Transportation & Airlines', 'Global Logistics', 'Oil & Petrochemicals', 'Defense & Strategic Forces', 'Government & Public Policy', 
-                'IIMs', 'MBA Programs', 'Engineering Universities', 'Architecture', 'Sports Management', 
-                'Startup Incubators', 'BBM Graduation', 'K-12 International Schools'
-              ].map((item, idx) => (
-                <span
-                  key={idx}
-                  className="px-3 py-1.5 bg-white border border-hq-black/15 hover:border-hq-black hover:bg-hq-yellow hover:text-hq-black transition-all text-xs font-body font-medium text-hq-black cursor-default"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 

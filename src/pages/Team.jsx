@@ -24,7 +24,7 @@ export default function Team() {
           <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-semibold mb-5">
             Our <span className="text-hq-yellow">Faculty</span>
           </h1>
-          <p className="font-body text-base md:text-xl text-hq-white/80 max-w-3xl font-light leading-relaxed">
+          <p className="font-body text-base md:text-xl text-white max-w-3xl font-light leading-relaxed !text-[#E5E5E5]" style={{ color: '#E5E5E5' }}>
             World champions, industry CEOs, seasoned spiritual guides, Olympic athletes, and modern parenting authorities collaborating to cultivate human potential, resilience, and vitality across corporations.
           </p>
 

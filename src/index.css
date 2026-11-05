@@ -464,3 +464,13 @@ html.dark ::-webkit-scrollbar-track {
   transform: translateY(0);
   filter: blur(0px);
 }
+
+/* Prevent dark background paragraphs from being darkened */
+.bg-\[\#0A0A0A\] p,
+.bg-black p,
+.bg-hq-black p,
+.bg-\[\#0C0D0F\] p,
+.bg-\[\#0E0F12\] p,
+.bg-\[\#1C1D21\] p {
+  color: rgba(255, 255, 255, 0.85);
+}
