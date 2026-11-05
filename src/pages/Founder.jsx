@@ -56,22 +56,22 @@ export default function Founder() {
     <div className="min-h-screen bg-hq-white text-hq-black overflow-x-hidden selection:bg-hq-yellow selection:text-black">
       
       {/* =========================================================================
-          1. CINEMATIC EDITORIAL HERO SECTION (AWWWARDS-INSPIRED EDITORIAL MASTHEAD)
+          1. CINEMATIC EDITORIAL HERO SECTION (FIT TO SCREEN WITH DOCKED STATS STRIP)
           ========================================================================= */}
-      <section className="bg-[#0C0D0F] text-white border-b border-white/10 relative overflow-hidden min-h-[100svh] lg:h-screen lg:max-h-[960px] flex items-center pt-24 lg:pt-0">
+      <section className="bg-[#0C0D0F] text-white border-b border-white/10 relative overflow-hidden min-h-[100svh] lg:h-screen lg:max-h-screen flex flex-col justify-between pt-20 lg:pt-16">
         
         {/* Subtle Ambient Radial Light */}
         <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-hq-yellow/[0.04] rounded-full blur-[160px] pointer-events-none" />
         <div className="absolute bottom-0 left-10 w-[450px] h-[450px] bg-white/[0.02] rounded-full blur-[140px] pointer-events-none" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 w-full h-full min-h-[100svh] lg:min-h-0 lg:h-screen">
+        <div className="grid grid-cols-1 lg:grid-cols-12 w-full flex-1 items-center max-w-7xl mx-auto px-0 lg:px-6">
           
           {/* Left Column: High-Res Sharp Keynote Speaking Portrait with cinematic dissolve */}
           <motion.div 
             initial={{ opacity: 0, scale: 1.08 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.4, ease: luxuryEase }}
-            className="lg:col-span-6 relative h-[52vh] sm:h-[56vh] lg:h-full overflow-hidden bg-[#0C0D0F] flex items-center justify-center order-1 lg:order-1"
+            className="lg:col-span-6 relative h-[45vh] sm:h-[48vh] lg:h-full max-h-[74vh] overflow-hidden bg-[#0C0D0F] flex items-center justify-center order-1 lg:order-1"
           >
             <img 
               src="/images/hero_showcase/founder_hero_keynote_speaking.jpg"
@@ -81,19 +81,13 @@ export default function Founder() {
             />
 
             {/* Seamless multi-directional gradient masks */}
-            <div className="hidden lg:block absolute inset-y-0 right-0 w-48 bg-gradient-to-l from-[#0C0D0F] via-[#0C0D0F]/70 to-transparent pointer-events-none" />
-            <div className="lg:hidden absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#0C0D0F] via-[#0C0D0F]/85 to-transparent pointer-events-none" />
+            <div className="hidden lg:block absolute inset-y-0 right-0 w-36 bg-gradient-to-l from-[#0C0D0F] via-[#0C0D0F]/70 to-transparent pointer-events-none" />
+            <div className="lg:hidden absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0C0D0F] via-[#0C0D0F]/85 to-transparent pointer-events-none" />
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-[#0C0D0F]/60 pointer-events-none" />
-
-            {/* Awwwards Monospace Corner Tag */}
-            <div className="absolute top-6 left-6 z-20 hidden sm:flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-[11px] font-mono tracking-widest uppercase text-white/80">
-              <span className="w-1.5 h-1.5 rounded-full bg-hq-yellow animate-pulse" />
-              <span>LIVE KEYNOTE ARCHIVE</span>
-            </div>
           </motion.div>
 
           {/* Right Column: Oversized High-Fashion Editorial Manifesto */}
-          <div className="lg:col-span-6 flex flex-col justify-center px-6 sm:px-12 md:px-16 lg:px-16 xl:px-20 py-12 lg:py-0 relative z-10 bg-[#0C0D0F] order-2 lg:order-2">
+          <div className="lg:col-span-6 flex flex-col justify-center px-6 sm:px-10 md:px-14 lg:px-12 xl:px-16 py-8 lg:py-0 relative z-10 bg-[#0C0D0F] order-2 lg:order-2">
             
             <motion.div 
               variants={containerVariants}
@@ -101,40 +95,19 @@ export default function Founder() {
               animate="visible"
               className="max-w-xl flex flex-col"
             >
-              {/* Monospace Kicker */}
-              <motion.div variants={fadeUpVariants} className="flex items-center gap-3 mb-6">
-                <span className="text-[11px] font-mono uppercase tracking-[0.28em] text-hq-yellow font-medium">
-                  01 // ARCHETYPE &amp; VISION
-                </span>
-                <span className="w-12 h-[1px] bg-hq-yellow/40" />
-              </motion.div>
-
               {/* Massive Editorial Quote Headline */}
               <motion.blockquote 
                 variants={fadeUpVariants}
-                className="founder-hero-quote text-2xl sm:text-3xl md:text-4xl lg:text-[2.2rem] xl:text-[2.6rem] font-medium leading-[1.2] tracking-tight uppercase text-white mb-8 border-l-[3px] border-hq-yellow pl-5 sm:pl-7"
+                className="founder-hero-quote text-2xl sm:text-3xl md:text-4xl lg:text-[2.2rem] xl:text-[2.6rem] font-medium leading-[1.2] tracking-tight uppercase text-white mb-8 sm:mb-10 border-l-[3px] border-hq-yellow pl-5 sm:pl-7"
               >
                 “THIS IS HOW THE GOOD COMPANIES FIND THE GOOD COMPANY.”
               </motion.blockquote>
-
-              {/* Founder Credential Meta */}
-              <motion.div variants={fadeUpVariants} className="mb-10 pl-5 sm:pl-7">
-                <div className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-2 flex items-center gap-3">
-                  <span>Manny Anchan</span>
-                  <span className="text-xs font-mono uppercase tracking-widest text-hq-yellow px-2.5 py-1 rounded-full bg-white/5 border border-white/10 hidden sm:inline-block">
-                    Happiness Samurai
-                  </span>
-                </div>
-                <div className="text-xs sm:text-sm font-mono text-white/60 tracking-wider uppercase leading-relaxed">
-                  Founder &amp; Chief Happiness Officer, HQGPL • Author, <em>Happiness Samurai</em>
-                </div>
-              </motion.div>
 
               {/* Primary Action Button (Awwwards Magnetic Style) */}
               <motion.div variants={fadeUpVariants} className="pl-5 sm:pl-7">
                 <Link 
                   to="/contact" 
-                  className="group relative inline-flex items-center justify-between gap-8 py-4 px-2 font-display font-medium text-xs tracking-[0.2em] text-white hover:text-hq-yellow transition-colors duration-300 uppercase"
+                  className="group relative inline-flex items-center justify-between gap-8 py-3.5 px-2 font-display font-medium text-xs tracking-[0.2em] text-white hover:text-hq-yellow transition-colors duration-300 uppercase"
                 >
                   {/* Top hairline border line */}
                   <span className="absolute top-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
@@ -161,43 +134,31 @@ export default function Founder() {
           </div>
         </div>
 
-        {/* Bottom Editorial Coordinates Strip */}
-        <div className="absolute bottom-4 left-6 right-6 hidden lg:flex justify-between items-center text-[10px] font-mono tracking-[0.25em] text-white/40 border-t border-white/5 pt-3 pointer-events-none">
-          <span>PORTFOLIO // MANNY ANCHAN</span>
-          <span className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-hq-yellow" />
-            25+ YEARS GLOBAL EXECUTIVE TRAJECTORY
-          </span>
-          <span>SCROLL DOWN ↓</span>
+        {/* DOCKED STATS & REPUTATION TICKER STRIP (FIT TO SCREEN AT SCREEN BOTTOM) */}
+        <div className="w-full bg-[#121316]/95 backdrop-blur-md text-white/80 py-3.5 sm:py-4 px-6 border-t border-white/10 overflow-hidden relative z-20">
+          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
+            <div className="flex items-center gap-2">
+              <span className="text-hq-yellow font-bold">25+</span>
+              <span className="text-white/70">Years Boardroom Leadership</span>
+            </div>
+            <span className="text-white/20 hidden md:inline">•</span>
+            <div className="flex items-center gap-2">
+              <span className="text-hq-yellow font-bold">4x</span>
+              <span className="text-white/70">TEDx Keynote Stages</span>
+            </div>
+            <span className="text-white/20 hidden md:inline">•</span>
+            <div className="flex items-center gap-2">
+              <span className="text-hq-yellow font-bold">09</span>
+              <span className="text-white/70">Global Nations Impacted</span>
+            </div>
+            <span className="text-white/20 hidden md:inline">•</span>
+            <div className="flex items-center gap-2">
+              <span className="text-hq-yellow font-bold">16</span>
+              <span className="text-white/70">Indian States Traversed</span>
+            </div>
+          </div>
         </div>
       </section>
-
-      {/* =========================================================================
-          2. STATS & REPUTATION TICKER STRIP (AWWWARDS MINIMALIST STRIP)
-          ========================================================================= */}
-      <div className="w-full bg-[#121316] text-white/80 py-4 px-6 border-b border-white/10 overflow-hidden">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 text-xs font-mono uppercase tracking-widest">
-          <div className="flex items-center gap-2">
-            <span className="text-hq-yellow font-bold">25+</span>
-            <span className="text-white/60">Years Boardroom Leadership</span>
-          </div>
-          <span className="text-white/20 hidden md:inline">•</span>
-          <div className="flex items-center gap-2">
-            <span className="text-hq-yellow font-bold">4x</span>
-            <span className="text-white/60">TEDx Keynote Stages</span>
-          </div>
-          <span className="text-white/20 hidden md:inline">•</span>
-          <div className="flex items-center gap-2">
-            <span className="text-hq-yellow font-bold">09</span>
-            <span className="text-white/60">Global Nations Impacted</span>
-          </div>
-          <span className="text-white/20 hidden md:inline">•</span>
-          <div className="flex items-center gap-2">
-            <span className="text-hq-yellow font-bold">16</span>
-            <span className="text-white/60">Indian States Traversed</span>
-          </div>
-        </div>
-      </div>
 
       {/* =========================================================================
           3. MAIN CONTENT SECTION: 100% WIDTH DUAL-TONE (TOP WHITE / LOWER YELLOW)
