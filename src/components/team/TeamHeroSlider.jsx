@@ -34,9 +34,6 @@ export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
 
       {/* FULL VIEWPORT CONTINUOUS INFINITE MARQUEE SLIDER */}
       <div className="w-full h-full relative overflow-hidden rounded-none border-none bg-black flex-1">
-        {/* Subtle Top Black Seam where navigation ends - compact feather so heads/faces remain completely clear */}
-        <div className="absolute inset-x-0 top-0 h-10 sm:h-12 bg-gradient-to-b from-black/75 to-transparent z-20 pointer-events-none" />
-
         <div className="animate-hero-marquee md:-ml-[30px] md:w-[calc(100%+60px)]">
           {marqueeFaculty.map((member, index) => {
             return (
