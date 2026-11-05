@@ -53,41 +53,25 @@ export default function WhyHQX() {
 
   const getStepStyle = (stepIndex) => {
     const isCurrent = heroStep === stepIndex;
-    const isPassed = heroStep >= stepIndex;
 
     if (isCurrent) {
       return {
         color: '#FFCE00',
         textShadow: '0 0 14px rgba(255,206,0,0.95), 0 0 28px rgba(255,206,0,0.8), 0 0 50px rgba(255,206,0,0.55)',
-        transform: 'scale(1.04)',
-      };
-    }
-    if (isPassed) {
-      return {
-        color: '#FFCE00',
-        textShadow: '0 0 12px rgba(255,206,0,0.7), 0 0 24px rgba(255,206,0,0.4)',
-        transform: 'scale(1)',
+        transform: 'scale(1.05)',
       };
     }
     return {
-      color: 'rgba(255, 255, 255, 0.55)',
+      color: 'rgba(255, 255, 255, 0.7)',
       textShadow: 'none',
       transform: 'scale(1)',
     };
   };
 
-  const getDotStyle = (stepIndex) => {
-    if (heroStep >= stepIndex) {
-      return {
-        color: '#FFCE00',
-        textShadow: '0 0 10px rgba(255,206,0,0.8), 0 0 20px rgba(255,206,0,0.4)',
-      };
-    }
-    return {
-      color: 'rgba(255, 255, 255, 0.25)',
-      textShadow: 'none',
-    };
-  };
+  const getDotStyle = () => ({
+    color: 'rgba(255, 255, 255, 0.35)',
+    textShadow: 'none',
+  });
 
   const sectorClusters = [
     {
