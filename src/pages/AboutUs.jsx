@@ -616,13 +616,6 @@ export default function AboutUs() {
 
                   {/* Ambient bottom gradient and story info */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent flex flex-col justify-end p-5 sm:p-7">
-                    <div className="flex items-center gap-2 text-[11px] font-mono text-hq-yellow mb-1.5">
-                      <MapPin className="w-3 h-3 text-hq-yellow shrink-0" />
-                      <span>{item.location}</span>
-                      <span className="text-white/40">•</span>
-                      <span className="text-white/70">{item.attendees.split(' ')[0]} attendees</span>
-                    </div>
-
                     <h3 className="font-display text-xl sm:text-2xl font-semibold tracking-tight text-white group-hover:text-hq-yellow transition-colors duration-300 leading-snug">
                       {item.client}
                     </h3>
@@ -630,6 +623,13 @@ export default function AboutUs() {
                     <p className="font-body text-xs sm:text-sm text-white/70 font-light line-clamp-1 mt-1 opacity-80 group-hover:opacity-100 transition-opacity">
                       {item.desc}
                     </p>
+
+                    <div className="flex items-center gap-2 text-[11px] font-mono text-hq-yellow mt-2.5">
+                      <MapPin className="w-3 h-3 text-hq-yellow shrink-0" />
+                      <span>{item.location}</span>
+                      <span className="text-white/40">•</span>
+                      <span className="text-white/70">{item.attendees.split(' ')[0]} attendees</span>
+                    </div>
                   </div>
                 </div>
               );
@@ -784,17 +784,12 @@ export default function AboutUs() {
             </div>
 
             {/* 2. Center Column: DSLR Color Portrait of John Abraham & Manny Anchan holding book */}
-            <div className="flex-1 relative min-h-[200px] lg:h-[260px] bg-neutral-900 overflow-hidden flex items-center justify-center">
+            <div className="flex-1 relative min-h-[240px] sm:min-h-[280px] lg:h-[290px] xl:h-[310px] bg-[#0E0F12] overflow-hidden flex items-end justify-center">
               <img 
                 src="/images/celebrity/john_abraham_manny_book_color.jpg" 
                 alt="John Abraham & Manny Anchan with Happiness Samurai Bestseller" 
-                className="w-full h-full object-cover object-[center_20%] sm:object-center filter contrast-105 brightness-100 hover:scale-105 transition-all duration-700"
+                className="w-full h-full object-contain object-bottom filter contrast-105 brightness-100 hover:scale-105 transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:hidden pointer-events-none"></div>
-              <div className="absolute bottom-2 left-3 lg:hidden text-white">
-                <div className="font-display text-sm font-bold">John Abraham & Manny Anchan</div>
-                <div className="font-mono text-[9px] text-hq-yellow">Happiness Samurai Bestseller Foreword</div>
-              </div>
             </div>
 
             {/* 3. Right Column: Dark Charcoal Minimalist Sidebar with Commendation & Book Thumbnails */}
