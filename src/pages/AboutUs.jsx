@@ -220,52 +220,55 @@ export default function AboutUs() {
         <div className="absolute inset-0 bg-radial-gradient from-hq-yellow/10 via-transparent to-transparent pointer-events-none opacity-40"></div>
         <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-hq-yellow/5 rounded-full blur-[140px] pointer-events-none -mr-40"></div>
 
+        {/* Left Side Vertical Text: ABOUT HQX (Matching Why HQX Hero Style) */}
+        <div 
+          className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 top-1/2 -translate-y-1/2 z-20 flex items-center gap-3 sm:gap-4 select-none pointer-events-none"
+          style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+        >
+          <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
+            ABOUT HQX
+          </span>
+          <span className="w-px h-8 sm:h-14 bg-white/25"></span>
+        </div>
+
         {/* Framing Container: Exact Alignment with Navbar Logo (left) & Book Manny Button (right) */}
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10">
+        <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
             
-            {/* Left Column: High-Contrast Editorial Serif Headline & Subtext */}
+            {/* Left Column: High-Contrast Editorial Headline & Subtext (Removed Giant Bold Wordmark) */}
             <div className="lg:col-span-5 xl:col-span-5 flex flex-col justify-center">
-              <div className="mb-6 sm:mb-8">
-                <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.6rem] font-bold tracking-tight text-white leading-[0.92]">
-                  About
-                  <span className="block pl-6 sm:pl-12 md:pl-16 lg:pl-20 xl:pl-24 text-hq-yellow">
-                    HQX
-                  </span>
-                </h1>
-              </div>
-
               <div className="max-w-md">
-                <div className="text-xs font-mono uppercase tracking-widest text-hq-yellow font-semibold mb-2">
-                  Since 2020 • 25+ Yrs Global Pedigree
-                </div>
-                <div className="w-36 h-[1.5px] bg-hq-yellow/40 mb-4"></div>
-                <p className="font-body text-sm sm:text-base text-white/80 font-light leading-relaxed mb-6">
+                <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight text-white leading-[1.15] mb-5">
+                  Architecting Purpose, <br />
+                  <span className="text-hq-yellow">Vitality & Performance</span>
+                </h1>
+
+                <p className="font-body text-sm sm:text-base text-white/80 font-light leading-relaxed mb-8">
                   We specialize in architecting purpose, vitality and enterprise performance. Synthesizing empirical neuroscience, ancient Japanese eudaimonia, and boardroom stewardship across 9 nations and 16 Indian states.
                 </p>
 
                 <div className="pt-2">
                   <Link 
                     to="/why-hqx"
-                    className="group relative inline-flex items-center justify-between gap-6 py-3.5 px-1 font-display font-medium text-xs tracking-widest text-white hover:text-hq-yellow transition-colors duration-300 uppercase"
+                    className="group relative inline-flex items-center justify-between gap-8 py-3.5 px-2 font-display font-medium text-xs tracking-[0.2em] text-white hover:text-hq-yellow transition-colors duration-300 uppercase"
                   >
-                    {/* Top border line: 1.25px, white by default, on hover width decreases to 20% at right edge and turns theme yellow */}
-                    <span className="absolute top-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1.25px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none"></span>
+                    {/* Top border line */}
+                    <span className="absolute top-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
 
-                    <span className="relative z-10">Why Choose HQX</span>
+                    <span className="relative z-10 font-semibold tracking-widest">WHY CHOOSE HQX</span>
 
                     <svg 
-                      className="w-[20px] h-[10px] inline-block transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0" 
+                      className="w-[22px] h-[11px] inline-block transition-transform duration-300 group-hover:translate-x-1.5 flex-shrink-0" 
                       viewBox="0 0 20 10" 
                       fill="none" 
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <line x1="0" y1="5" x2="20" y2="5" stroke="currentColor" strokeWidth="1" />
-                      <polyline points="15 1, 20 5, 15 9" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+                      <line x1="0" y1="5" x2="20" y2="5" stroke="currentColor" strokeWidth="1.2" />
+                      <polyline points="15 1, 20 5, 15 9" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
 
-                    {/* Bottom border line: 1.25px, white by default, on hover width decreases to 20% at right edge and turns theme yellow */}
-                    <span className="absolute bottom-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1.25px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none"></span>
+                    {/* Bottom border line */}
+                    <span className="absolute bottom-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
                   </Link>
                 </div>
               </div>

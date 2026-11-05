@@ -123,12 +123,6 @@ export default function WhyHQX() {
         {/* Main Content Area (Vertically Centered in Viewport) */}
         <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 relative z-10 w-full flex-1 flex flex-col justify-center pt-28 sm:pt-32 pb-8">
           <div className="max-w-2xl lg:max-w-3xl">
-            {/* Headline with High-Contrast Typography */}
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[58px] tracking-tight font-semibold mb-6 leading-[1.08] text-white drop-shadow-md">
-              Why Global Enterprises <br />
-              <span className="text-hq-yellow">Choose HQX</span>
-            </h1>
-
             {/* Lead Narrative */}
             <p className="font-body text-base sm:text-lg md:text-xl text-white/90 max-w-2xl font-light leading-relaxed mb-8 sm:mb-10 drop-shadow-sm">
               Most corporate wellness programs fail because they offer fleeting hedonic perks. HQX delivers systematic eudaimonic transformation rooted in neuroscience, organizational psychology, and proven C-suite stewardship.
