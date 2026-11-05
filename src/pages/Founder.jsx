@@ -90,8 +90,8 @@ export default function Founder() {
         </div>
       </section>
 
-      {/* DETAILED NARRATIVE & PEDIGREE: 100% WIDTH DUAL-TONE (TOP HALF WHITE, LOWER HALF BRAND YELLOW) WITH CENTER PORTRAIT (NO BOX / NO BORDER) */}
-      <section id="pedigree" className="relative w-full py-16 sm:py-24 px-6 md:px-12 overflow-hidden">
+      {/* DETAILED NARRATIVE & PEDIGREE: 100% WIDTH DUAL-TONE (TOP HALF WHITE, LOWER HALF BRAND YELLOW) WITH 30% LARGER FULL-BODY CUTOUT (SHOES INCLUDED, NO BOX / NO BORDER) */}
+      <section id="pedigree" className="relative w-full py-16 sm:py-24 px-6 md:px-12 overflow-hidden border-none">
         {/* Split Dual-Tone Background: Top Half White, Lower Half Brand Yellow (100% Width) */}
         <div className="absolute inset-0 pointer-events-none z-0">
           <div className="h-1/2 w-full bg-[#FFFFFF]"></div>
@@ -99,34 +99,69 @@ export default function Founder() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-end">
             
-            {/* Left Column: Heading, Philosophy & Verified Pedigree */}
-            <div className="lg:col-span-4 flex flex-col gap-6 justify-center">
+            {/* Left Column: Heading, Bio (Image 2) & Personal Mission Narrative (Image 1) */}
+            <div className="lg:col-span-4 flex flex-col gap-6 justify-between self-stretch pb-2">
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 text-[#0A0A0A] text-xs font-mono uppercase tracking-widest font-semibold mb-3">
                   <span className="w-2 h-2 rounded-full bg-hq-yellow"></span>
                   Enterprise Stewardship
                 </div>
-                <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl tracking-tight font-bold text-[#0A0A0A] leading-tight mb-2">
+                <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl tracking-tight font-bold text-[#0A0A0A] leading-tight mb-3">
                   Manny <span className="text-hq-yellow bg-[#0A0A0A] px-2 py-0.5 inline-block">Anchan</span>
                 </h2>
-                <div className="font-prata text-lg sm:text-xl text-[#222222] italic font-normal leading-relaxed mb-4" style={{ fontFamily: '"Prata", serif' }}>
-                  "{FOUNDER_PROFILE.tagline}"
-                </div>
-                <p className="font-body text-xs sm:text-sm text-[#222222] font-light leading-relaxed">
-                  {FOUNDER_PROFILE.philosophy}
+                
+                {/* Image 2 Content: Motivational Speaker Narrative */}
+                <p className="font-body text-xs sm:text-sm text-[#1A1A1A] font-light leading-relaxed mb-3">
+                  Manny Anchan is a dynamic motivational speaker known for his engaging storytelling and powerful insights. With a passion for inspiring others, he shares his journey of overcoming challenges and achieving success.
+                </p>
+                <p className="font-body text-xs sm:text-sm text-[#1A1A1A] font-light leading-relaxed">
+                  Manny's talks focus on personal growth, resilience, and the importance of a positive mindset. His relatable approach and practical advice resonate with audiences, making him a sought-after speaker at conferences and workshops.
                 </p>
               </div>
 
-              {/* Verified Credentials Box */}
-              <div className="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-black/10 shadow-lg flex flex-col gap-4">
-                <h3 className="font-display text-base font-bold uppercase tracking-wider text-[#0A0A0A] border-b border-black/10 pb-2.5 flex items-center gap-2">
-                  <Award className="w-4 h-4 text-hq-yellow" />
-                  <span>Verified Pedigree</span>
-                </h3>
+              {/* Image 1 Content: 25-Year Truth & Personal Mission Card */}
+              <div className="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-black/10 shadow-lg flex flex-col gap-3">
+                <p className="font-body text-xs sm:text-sm text-[#1A1A1A] font-light leading-relaxed">
+                  I spent over twenty-five years building businesses, leading global teams, and navigating high-pressure boardrooms. Along the way, I discovered a truth that no business school teaches—success without wellbeing is simply another form of burnout.
+                </p>
+                <p className="font-body text-xs sm:text-sm text-[#1A1A1A] font-light leading-relaxed">
+                  Today, I help leaders and organizations pursue a different definition of excellence: one where high performance is fuelled by purpose, elite habits, emotional resilience and mental wealth. My mission is simple—to help people become happier humans and better performers.
+                </p>
+              </div>
+            </div>
 
-                <div className="flex flex-col gap-3 text-xs font-body">
+            {/* Center Column: 30% Larger Full-Body Cutout (Head to Shoes, No Box, No Border) */}
+            <div className="lg:col-span-4 flex flex-col items-center justify-end relative h-full min-h-[460px] sm:min-h-[580px] lg:min-h-[720px] xl:min-h-[780px] z-20">
+              <img 
+                src="/images/hero_showcase/manny_founder_fullbody_cutout.png" 
+                alt="Manny Anchan - Full-Length Standing Portrait" 
+                className="w-full max-w-[420px] sm:max-w-[480px] lg:max-w-[560px] xl:max-w-[620px] h-auto object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.3)] select-none pointer-events-none" 
+              />
+            </div>
+
+            {/* Right Column: Signature Quote (Image 3), Pedigree Box & Primary CTAs */}
+            <div className="lg:col-span-4 flex flex-col gap-6 justify-between self-stretch pb-2">
+              {/* Image 3 Quote Card: Calm over Chaos */}
+              <div className="bg-[#121316] text-white p-6 sm:p-7 rounded-2xl border border-white/10 shadow-2xl relative overflow-hidden">
+                <div className="font-prata text-lg sm:text-xl lg:text-[1.32rem] leading-snug font-normal text-[#E8E6E3] mb-4" style={{ fontFamily: '"Prata", serif' }}>
+                  “Work so hard that you have room only for <span className="text-hq-yellow italic font-medium">calm over chaos</span> — <span className="text-hq-yellow italic font-medium">discipline over distraction</span>, <span className="text-hq-yellow italic font-medium">purpose over pressure</span>.”
+                </div>
+                <div className="flex items-center justify-between pt-3 border-t border-white/10 text-xs font-mono">
+                  <span className="uppercase tracking-widest text-white/90 font-bold">~ MANNY ANCHAN</span>
+                  <span className="text-hq-yellow font-medium">Happiness Samurai</span>
+                </div>
+              </div>
+
+              {/* Verified Credentials Box */}
+              <div className="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-black/10 shadow-lg flex flex-col gap-3.5">
+                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest font-bold text-[#0A0A0A] border-b border-black/10 pb-2.5">
+                  <Award className="w-4 h-4 text-hq-yellow" />
+                  <span>Executive Pedigree & Stewardship</span>
+                </div>
+
+                <div className="flex flex-col gap-2.5 text-xs font-body">
                   <div className="flex items-start gap-2.5">
                     <GraduationCap className="w-4 h-4 text-[#0A0A0A] shrink-0 mt-0.5" />
                     <div>
@@ -144,82 +179,27 @@ export default function Founder() {
                   </div>
 
                   <div className="flex items-start gap-2.5">
+                    <Briefcase className="w-4 h-4 text-[#0A0A0A] shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-[#0A0A0A]">Corporate Leadership</div>
+                      <div className="text-[#333333]">GE Capital, HDFC Bank, Barclays, ABN AMRO, AUB, FAB</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-2.5">
                     <Globe className="w-4 h-4 text-[#0A0A0A] shrink-0 mt-0.5" />
                     <div>
                       <div className="font-semibold text-[#0A0A0A]">Global Impact Footprint</div>
                       <div className="text-[#333333]">Conducted high-trust summits across 9 nations &amp; 16 Indian states</div>
                     </div>
                   </div>
-
-                  <div className="flex items-start gap-2.5">
-                    <BookOpen className="w-4 h-4 text-[#0A0A0A] shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-semibold text-[#0A0A0A]">Literary Benchmark</div>
-                      <div className="text-[#333333]">Author of 6 published works including <em>Happiness Samurai</em> (Foreword by John Abraham)</div>
-                    </div>
-                  </div>
                 </div>
 
-                <div className="pt-3 border-t border-black/10 flex items-center justify-between">
+                <div className="pt-2.5 border-t border-black/10 flex items-center justify-between">
                   <span className="text-[11px] font-mono text-[#555555] uppercase">Secretariat:</span>
                   <a href="tel:+919700100800" className="text-xs font-mono font-bold text-[#0A0A0A] hover:underline flex items-center gap-1">
                     <Phone className="w-3 h-3 text-[#0A0A0A]" /> +91 97001 00800
                   </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Center Column: Portrait Image Cutout (No Box, No Border, Full Height Across Horizon) */}
-            <div className="lg:col-span-4 flex flex-col items-center justify-end relative h-full min-h-[360px] sm:min-h-[440px] lg:min-h-[580px] z-20">
-              <img 
-                src="/images/hero_showcase/manny_founder_cutout.png" 
-                alt="Manny Anchan - Founder & Chief Happiness Officer" 
-                className="w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[440px] h-auto object-contain drop-shadow-[0_25px_40px_rgba(0,0,0,0.25)] select-none pointer-events-none" 
-              />
-            </div>
-
-            {/* Right Column: 25-Yr Stewardship, Flourishing Science & Action */}
-            <div className="lg:col-span-4 flex flex-col gap-6 justify-center">
-              {/* 25-Year Global Corporate Pedigree */}
-              <div className="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-black/10 shadow-lg">
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest font-bold text-[#0A0A0A] mb-2.5">
-                  <Briefcase className="w-4 h-4 text-[#0A0A0A]" />
-                  <span>25+ Years Global Corporate Stewardship</span>
-                </div>
-                <p className="font-body text-xs sm:text-sm text-[#2B2B2B] font-light leading-relaxed mb-3">
-                  Senior leadership tenures at <strong>GE Capital</strong>, <strong>HDFC Bank</strong>, <strong>ABN AMRO</strong>, <strong>Barclays</strong>, <strong>Arab United Bank</strong>, and <strong>First Abu Dhabi Bank</strong>.
-                </p>
-                <p className="font-body text-xs sm:text-sm text-[#2B2B2B] font-light leading-relaxed">
-                  Having led multi-billion dollar operations across Asia, Europe, and North America, Manny brings an acute understanding of boardroom accountability, executive burnout, and organizational happiness.
-                </p>
-              </div>
-
-              {/* Research & Intellectual Foundations */}
-              <div className="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-black/10 shadow-lg">
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest font-bold text-[#0A0A0A] mb-2.5">
-                  <BookOpen className="w-4 h-4 text-hq-yellow" />
-                  <span>The Science of Human Flourishing</span>
-                </div>
-                <p className="font-body text-xs sm:text-sm text-[#2B2B2B] font-light leading-relaxed mb-3">
-                  Synthesizing universal well-being paradigms into actionable corporate blueprints:
-                </p>
-                <div className="grid grid-cols-2 gap-2 text-[11px] font-body">
-                  <div className="p-2.5 bg-black/5 rounded-lg border border-black/5">
-                    <strong className="block text-[#0A0A0A] font-semibold">Japan (Ikigai)</strong>
-                    <span className="text-[#444444]">Enterprise purpose.</span>
-                  </div>
-                  <div className="p-2.5 bg-black/5 rounded-lg border border-black/5">
-                    <strong className="block text-[#0A0A0A] font-semibold">Nordics (Hygge)</strong>
-                    <span className="text-[#444444]">Psychological safety.</span>
-                  </div>
-                  <div className="p-2.5 bg-black/5 rounded-lg border border-black/5">
-                    <strong className="block text-[#0A0A0A] font-semibold">Bhutan (GNH)</strong>
-                    <span className="text-[#444444]">Holistic prosperity.</span>
-                  </div>
-                  <div className="p-2.5 bg-black/5 rounded-lg border border-black/5">
-                    <strong className="block text-[#0A0A0A] font-semibold">Neuroscience</strong>
-                    <span className="text-[#444444]">Burnout immunity.</span>
-                  </div>
                 </div>
               </div>
 
@@ -227,14 +207,14 @@ export default function Founder() {
               <div className="flex flex-col sm:flex-row gap-3 pt-1">
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto text-center bg-[#0A0A0A] text-hq-yellow font-display text-xs uppercase tracking-widest px-6 py-3.5 rounded-full hover:bg-white hover:text-black transition-all font-semibold shadow-md flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto text-center bg-[#0A0A0A] text-hq-yellow font-display text-xs uppercase tracking-widest px-7 py-4 rounded-full hover:bg-white hover:text-black transition-all font-semibold shadow-md flex items-center justify-center gap-2"
                 >
                   <span>Book Manny</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
                 <Link
                   to="/books"
-                  className="w-full sm:w-auto text-center bg-white text-[#0A0A0A] border border-black/20 font-display text-xs uppercase tracking-widest px-6 py-3.5 rounded-full hover:bg-black/5 transition-all font-semibold flex items-center justify-center gap-2 shadow-sm"
+                  className="w-full sm:w-auto text-center bg-white text-[#0A0A0A] border border-black/20 font-display text-xs uppercase tracking-widest px-7 py-4 rounded-full hover:bg-black/5 transition-all font-semibold flex items-center justify-center gap-2 shadow-sm"
                 >
                   <span>Bestselling Books</span>
                   <BookOpen className="w-3.5 h-3.5" />
