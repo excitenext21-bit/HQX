@@ -28,14 +28,10 @@ export default function WhyHQX() {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const onTimeUpdate = () => {
+    const checkTime = () => {
+      const video = videoRef.current;
+      if (!video) return;
       const t = video.currentTime;
-      // Step 0 (Think): 0s - 2.0s
-      // Step 1 (Feel): 2.0s - 4.5s
-      // Step 2 (Perform): 4.5s - 8.6s
       if (t < 2.4) {
         setHeroStep(0);
       } else if (t < 5.0) {
@@ -45,9 +41,17 @@ export default function WhyHQX() {
       }
     };
 
-    video.addEventListener('timeupdate', onTimeUpdate);
+    const interval = setInterval(checkTime, 100);
+    const video = videoRef.current;
+    if (video) {
+      video.addEventListener('timeupdate', checkTime);
+    }
+
     return () => {
-      video.removeEventListener('timeupdate', onTimeUpdate);
+      clearInterval(interval);
+      if (video) {
+        video.removeEventListener('timeupdate', checkTime);
+      }
     };
   }, []);
 
@@ -142,12 +146,23 @@ export default function WhyHQX() {
         {/* Cinematic Background Video: Man Walking Toward Portal & Looking Outside */}
         <div className="absolute inset-0 w-full h-full pointer-events-none">
           <video
+            ref={videoRef}
             src="/videos/why_hqx_walking_portal.mp4"
             poster="/images/why-hqx-man-think.jpg"
             autoPlay
             loop
             muted
             playsInline
+            onTimeUpdate={(e) => {
+              const t = e.currentTarget.currentTime;
+              if (t < 2.4) {
+                setHeroStep(0);
+              } else if (t < 5.0) {
+                setHeroStep(1);
+              } else {
+                setHeroStep(2);
+              }
+            }}
             className="w-full h-full object-cover object-[72%_center] lg:object-[68%_center]"
           />
           {/* Multi-tier Contrast Scrim Overlays */}
@@ -276,12 +291,12 @@ export default function WhyHQX() {
 
 
 
-{/* WHY CHOOSE US / SUPPORTIVE GUIDANCE SHOWCASE (EXACT EDITORIAL DESIGN AS REQUESTED) */}
-      <section className="py-20 sm:py-24 px-6 md:px-12 bg-[#FAF8F5] border-b border-black/10">
-        <div className="max-w-7xl mx-auto space-y-16 lg:space-y-20">
+{/* WHY CHOOSE US / SUPPORTIVE GUIDANCE SHOWCASE (FIT TO SCREEN) */}
+      <section className="min-h-[100svh] lg:h-screen lg:min-h-[640px] lg:max-h-[1080px] px-6 md:px-12 bg-[#FAF8F5] border-b border-black/10 flex flex-col justify-center py-10 lg:py-12">
+        <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center space-y-8 sm:space-y-10 lg:space-y-12">
           
           {/* Section Header: Dual-Tone Title & Top Narrative (Exact Same As The Experts Behind Your Care Design) */}
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 pb-8 border-b border-black/10">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 pb-6 lg:pb-8 border-b border-black/10">
             <div>
               <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] dark:text-white leading-[1.08]">
                 Supportive Guidance <br />
@@ -293,62 +308,20 @@ export default function WhyHQX() {
             </p>
           </div>
 
-          {/* Consultation Showcase & Metric Rows */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            {/* Consultation Photo with Book Session CTA */}
-            <div className="lg:col-span-6 space-y-4">
-              <div className="w-full aspect-[4/3] rounded-[28px] sm:rounded-[34px] overflow-hidden bg-[#EFECE6] shadow-sm border border-black/5">
-                <img 
-                  src="/images/hero_showcase/why_hqx_consultation.jpg" 
-                  alt="Executive Guidance & Consultation" 
-                  className="w-full h-full object-cover filter contrast-[1.02] brightness-[0.99]"
-                />
-              </div>
-              <div className="flex items-center justify-between pt-1">
-                <span className="text-xs font-mono uppercase tracking-widest text-[#7A7067]">
-                  Evidence-Based Executive Care
-                </span>
-                <Link 
-                  to="/contact"
-                  className="inline-flex items-center gap-2 bg-[#1E1A17] hover:bg-black text-[#FAF8F5] px-6 py-2.5 rounded-full font-body text-xs font-medium uppercase tracking-wider transition-all duration-300 shadow-sm hover:shadow-md group"
-                >
-                  <span>Book Session</span>
-                  <span className="text-sm leading-none transition-transform duration-300 group-hover:translate-x-1">›</span>
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Column: 3 Metric Rows */}
-            <div className="lg:col-span-6 flex flex-col divide-y divide-black/10 border-b border-black/10">
-              <div className="py-5 sm:py-6 flex items-center justify-between">
-                <span className="font-display text-base sm:text-lg text-[#1E1915] font-medium">Happy Clients</span>
-                <span className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">120K+</span>
-              </div>
-              <div className="py-5 sm:py-6 flex items-center justify-between">
-                <span className="font-display text-base sm:text-lg text-[#1E1915] font-medium">Sessions Completed</span>
-                <span className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">200K+</span>
-              </div>
-              <div className="py-5 sm:py-6 flex items-center justify-between">
-                <span className="font-display text-base sm:text-lg text-[#1E1915] font-medium">Expert Therapists</span>
-                <span className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">50+</span>
-              </div>
-            </div>
-          </div>
-
           {/* Bottom Tier: Left 3 Stat Rows + Right 2x2 Feature Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
             
             {/* Left Column: 3 Metric Rows */}
             <div className="lg:col-span-6 flex flex-col divide-y divide-black/10 border-b border-black/10">
-              <div className="py-5 sm:py-6 flex items-center justify-between">
+              <div className="py-4 sm:py-5 lg:py-6 flex items-center justify-between">
                 <span className="font-display text-base sm:text-lg text-[#1E1915] font-medium">Happy Clients</span>
                 <span className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">120K+</span>
               </div>
-              <div className="py-5 sm:py-6 flex items-center justify-between">
+              <div className="py-4 sm:py-5 lg:py-6 flex items-center justify-between">
                 <span className="font-display text-base sm:text-lg text-[#1E1915] font-medium">Sessions Completed</span>
                 <span className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">200K+</span>
               </div>
-              <div className="py-5 sm:py-6 flex items-center justify-between">
+              <div className="py-4 sm:py-5 lg:py-6 flex items-center justify-between">
                 <span className="font-display text-base sm:text-lg text-[#1E1915] font-medium">Expert Therapists</span>
                 <span className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">50+</span>
               </div>
@@ -358,11 +331,11 @@ export default function WhyHQX() {
             <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2">
               
               {/* Feature 1: Personalized Care */}
-              <div className="p-6 sm:p-7 sm:border-r sm:border-b border-black/10">
-                <div className="w-11 h-11 rounded-2xl bg-[#EFECE6] text-[#6E645A] flex items-center justify-center mb-5 shadow-xs">
+              <div className="p-5 sm:p-6 lg:p-7 sm:border-r sm:border-b border-black/10">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-[#EFECE6] text-[#6E645A] flex items-center justify-center mb-4 shadow-xs">
                   <Brain className="w-5 h-5 stroke-[1.8]" />
                 </div>
-                <h3 className="font-display text-lg font-medium text-[#1E1915] mb-2">
+                <h3 className="font-display text-base sm:text-lg font-medium text-[#1E1915] mb-1.5">
                   Personalized Care
                 </h3>
                 <p className="font-body text-xs sm:text-sm text-[#6E6660] font-light leading-relaxed">
@@ -371,11 +344,11 @@ export default function WhyHQX() {
               </div>
 
               {/* Feature 2: Expert Therapist */}
-              <div className="p-6 sm:p-7 sm:border-b border-black/10 border-t sm:border-t-0">
-                <div className="w-11 h-11 rounded-2xl bg-[#EFECE6] text-[#6E645A] flex items-center justify-center mb-5 shadow-xs">
+              <div className="p-5 sm:p-6 lg:p-7 sm:border-b border-black/10 border-t sm:border-t-0">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-[#EFECE6] text-[#6E645A] flex items-center justify-center mb-4 shadow-xs">
                   <Award className="w-5 h-5 stroke-[1.8]" />
                 </div>
-                <h3 className="font-display text-lg font-medium text-[#1E1915] mb-2">
+                <h3 className="font-display text-base sm:text-lg font-medium text-[#1E1915] mb-1.5">
                   Expert Therapist
                 </h3>
                 <p className="font-body text-xs sm:text-sm text-[#6E6660] font-light leading-relaxed">
@@ -384,11 +357,11 @@ export default function WhyHQX() {
               </div>
 
               {/* Feature 3: Flexible Across */}
-              <div className="p-6 sm:p-7 sm:border-r border-black/10 border-t sm:border-t-0">
-                <div className="w-11 h-11 rounded-2xl bg-[#EFECE6] text-[#6E645A] flex items-center justify-center mb-5 shadow-xs">
+              <div className="p-5 sm:p-6 lg:p-7 sm:border-r border-black/10 border-t sm:border-t-0">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-[#EFECE6] text-[#6E645A] flex items-center justify-center mb-4 shadow-xs">
                   <Calendar className="w-5 h-5 stroke-[1.8]" />
                 </div>
-                <h3 className="font-display text-lg font-medium text-[#1E1915] mb-2">
+                <h3 className="font-display text-base sm:text-lg font-medium text-[#1E1915] mb-1.5">
                   Flexible Across
                 </h3>
                 <p className="font-body text-xs sm:text-sm text-[#6E6660] font-light leading-relaxed">
@@ -397,11 +370,11 @@ export default function WhyHQX() {
               </div>
 
               {/* Feature 4: Proven Support */}
-              <div className="p-6 sm:p-7 border-t sm:border-t-0 border-black/10">
-                <div className="w-11 h-11 rounded-2xl bg-[#EFECE6] text-[#6E645A] flex items-center justify-center mb-5 shadow-xs">
+              <div className="p-5 sm:p-6 lg:p-7 border-t sm:border-t-0 border-black/10">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-[#EFECE6] text-[#6E645A] flex items-center justify-center mb-4 shadow-xs">
                   <RotateCcw className="w-5 h-5 stroke-[1.8]" />
                 </div>
-                <h3 className="font-display text-lg font-medium text-[#1E1915] mb-2">
+                <h3 className="font-display text-base sm:text-lg font-medium text-[#1E1915] mb-1.5">
                   Proven Support
                 </h3>
                 <p className="font-body text-xs sm:text-sm text-[#6E6660] font-light leading-relaxed">
@@ -503,91 +476,158 @@ export default function WhyHQX() {
             ))}
           </div>
 
-          {/* PARADIGM SHIFT COMPARISON - ULTRA-MODERN DUAL LEDGER */}
-          <div className="pt-12 pb-16 border-t border-hq-black/15">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
-              <div>
-                <h3 className="font-display text-3xl sm:text-4xl font-semibold tracking-tight text-hq-black">
-                  The Paradigm Shift: How HQX Differs
-                </h3>
-              </div>
-              <p className="font-body text-xs sm:text-sm text-hq-black/60 max-w-sm font-light">
-                Why traditional corporate wellness efforts fail to move organizational needles, and how the eudaimonic model delivers compounding bottom-line value.
+        </div>
+      </section>
+
+      {/* THE PARADIGM SHIFT: HOW HQX COMPARES (BLACK EDITORIAL SEED-STYLE COMPARISON TABLE) */}
+      <section className="py-24 sm:py-32 px-6 md:px-12 bg-[#0C0D0C] text-white border-b border-white/10 relative overflow-hidden">
+        {/* Ambient Subtle Scrim / Glow */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[700px] bg-[#FFCE00]/[0.02] rounded-full blur-[160px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            
+            {/* Left Column: Heading and Narrative */}
+            <div className="lg:col-span-4 space-y-6">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#FFCE00] block">
+                The Paradigm Shift
+              </span>
+              <h2 className="font-display text-4xl sm:text-5xl lg:text-[54px] font-semibold tracking-tight text-white leading-[1.05]">
+                How HQX™ <br />
+                Compares:
+              </h2>
+              <p className="font-body text-sm sm:text-base text-white/60 font-light leading-relaxed">
+                Why traditional corporate wellness efforts fail to move organizational needles, and how our eudaimonic architecture delivers compounding bottom-line value.
               </p>
-            </div>
-
-            {/* Side-by-side Dual Column Ledger */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-              {/* Left Column: Traditional Model (Muted, Understated) */}
-              <div className="space-y-6">
-                <div className="pb-4 border-b-2 border-hq-black/20 flex items-center justify-between">
-                  <span className="font-display uppercase tracking-wider text-sm font-bold text-hq-black/60">
-                    Traditional Corporate Wellness
-                  </span>
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-red-600 bg-red-50 border border-red-200 px-2 py-0.5 font-bold">
-                    Hedonic & Fragile
-                  </span>
-                </div>
-
-                <div className="divide-y divide-hq-black/10 text-xs sm:text-sm font-body">
-                  <div className="py-4">
-                    <div className="font-mono text-[11px] text-hq-black/50 uppercase mb-1">01. Philosophical Core</div>
-                    <div className="text-hq-black/70 line-through decoration-red-400">Temporary stress masking, pizza lunches & superficial perks</div>
-                  </div>
-                  <div className="py-4">
-                    <div className="font-mono text-[11px] text-hq-black/50 uppercase mb-1">02. Cadence & Duration</div>
-                    <div className="text-hq-black/70">Single-day ad-hoc workshops with zero behavioural follow-through</div>
-                  </div>
-                  <div className="py-4">
-                    <div className="font-mono text-[11px] text-hq-black/50 uppercase mb-1">03. Executive Buy-in</div>
-                    <div className="text-hq-black/70">Delegated entirely to HR; senior leadership rarely participates</div>
-                  </div>
-                  <div className="py-4">
-                    <div className="font-mono text-[11px] text-hq-black/50 uppercase mb-1">04. Metric Accountability</div>
-                    <div className="text-hq-black/70">Anecdotal smile sheets & satisfaction surveys with ambiguous ROI</div>
-                  </div>
-                  <div className="py-4">
-                    <div className="font-mono text-[11px] text-hq-black/50 uppercase mb-1">05. Faculty Provenance</div>
-                    <div className="text-hq-black/70">Generic freelance trainers without corporate or boardroom background</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Column: HQX Eudaimonic Architecture (Bold, Illuminated with Yellow) */}
-              <div className="space-y-6 bg-hq-gray/30 p-6 sm:p-8 -mx-4 sm:mx-0 border-l-4 border-hq-yellow">
-                <div className="pb-4 border-b-2 border-hq-black flex items-center justify-between">
-                  <span className="font-display uppercase tracking-wider text-sm font-bold text-hq-black">
-                    The HQX Eudaimonic Model
-                  </span>
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-hq-black bg-hq-yellow px-2 py-0.5 font-bold">
-                    Eudaimonic & Antifragile
-                  </span>
-                </div>
-
-                <div className="divide-y divide-hq-black/10 text-xs sm:text-sm font-body">
-                  <div className="py-4">
-                    <div className="font-mono text-[11px] text-hq-black font-semibold uppercase mb-1">01. Philosophical Core</div>
-                    <div className="text-hq-black font-medium">Deep purpose alignment, self-mastery, Ikigai & lasting eudaimonic flourishing</div>
-                  </div>
-                  <div className="py-4">
-                    <div className="font-mono text-[11px] text-hq-black font-semibold uppercase mb-1">02. Cadence & Duration</div>
-                    <div className="text-hq-black font-medium">100-day structured habit architecture & cognitive neuroplastic rewiring</div>
-                  </div>
-                  <div className="py-4">
-                    <div className="font-mono text-[11px] text-hq-black font-semibold uppercase mb-1">03. Executive Buy-in</div>
-                    <div className="text-hq-black font-medium">Championed directly by the C-Suite and cascaded across top performers</div>
-                  </div>
-                  <div className="py-4">
-                    <div className="font-mono text-[11px] text-hq-black font-semibold uppercase mb-1">04. Metric Accountability</div>
-                    <div className="text-hq-black font-medium">Hard metrics: measurable retention surges, drop in absenteeism & EBITDA gains</div>
-                  </div>
-                  <div className="py-4">
-                    <div className="font-mono text-[11px] text-hq-black font-semibold uppercase mb-1">05. Faculty Provenance</div>
-                    <div className="text-hq-black font-medium">Olympic medalists, Fortune C-level veterans, Oxford/Harvard alumni & Shaurya Chakra awardees</div>
-                  </div>
+              <div className="pt-2">
+                <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10 text-xs font-mono text-white/80">
+                  <span className="w-2 h-2 rounded-full bg-[#FFCE00]" />
+                  <span>Eudaimonic vs. Hedonic Architecture</span>
                 </div>
               </div>
             </div>
+
+            {/* Right Column: Comparison Card (Exact Same Seed Style) */}
+            <div className="lg:col-span-8">
+              <div className="rounded-[28px] sm:rounded-[36px] bg-[#141514] border border-white/10 p-6 sm:p-9 lg:p-10 shadow-2xl overflow-x-auto">
+                <div className="min-w-[560px] relative">
+                  
+                  {/* Continuous Highlighted Capsule Track for HQX Column */}
+                  <div className="absolute -top-3 -bottom-3 left-1/2 -translate-x-1/2 w-[18%] bg-white/[0.08] border border-white/[0.08] rounded-[26px] pointer-events-none" />
+
+                  {/* Table Header */}
+                  <div className="grid grid-cols-12 items-center pb-6 border-b border-white/10 relative z-10">
+                    <div className="col-span-5 text-xs font-mono uppercase tracking-wider text-white/40">
+                      Dimension / Criteria
+                    </div>
+                    <div className="col-span-2 flex justify-center items-center">
+                      <span className="inline-flex items-center justify-center px-3.5 py-1 rounded-full border border-white/35 bg-white/10 text-xs sm:text-sm font-semibold tracking-wider text-white shadow-xs">
+                        HQX™
+                      </span>
+                    </div>
+                    <div className="col-span-2 text-center text-xs sm:text-sm font-display font-medium text-white/80 leading-snug px-1">
+                      Leading<br />Corporate Wellness
+                    </div>
+                    <div className="col-span-3 text-center text-xs sm:text-sm font-display font-medium text-white/80 leading-snug px-1">
+                      All-in-One<br />Apps & Perks
+                    </div>
+                  </div>
+
+                  {/* Table Body Rows */}
+                  <div className="divide-y divide-white/[0.06] relative z-10">
+                    {[
+                      { 
+                        feature: 'Stress resilience & foundational vitality', 
+                        hqx: true, 
+                        traditional: true, 
+                        apps: true 
+                      },
+                      { 
+                        feature: 'Aristotelian Eudaimonia & deep purpose alignment', 
+                        hqx: true, 
+                        traditional: false, 
+                        apps: false 
+                      },
+                      { 
+                        feature: '100-day neuroplastic habit rewiring architecture', 
+                        hqx: true, 
+                        traditional: false, 
+                        apps: false 
+                      },
+                      { 
+                        feature: 'Direct C-Suite engagement & boardroom alignment', 
+                        hqx: true, 
+                        traditional: false, 
+                        apps: false 
+                      },
+                      { 
+                        feature: 'Proprietary 360° 5-pillar ecosystem (Mental to Financial)', 
+                        hqx: true, 
+                        traditional: true, 
+                        apps: false 
+                      },
+                      { 
+                        feature: 'World-class faculty (Olympians, C-Suite, Ivy League)', 
+                        hqx: true, 
+                        traditional: false, 
+                        apps: false 
+                      },
+                      { 
+                        feature: 'Quantified EBITDA & hard enterprise ROI attribution', 
+                        hqx: true, 
+                        traditional: false, 
+                        apps: false 
+                      },
+                      { 
+                        feature: 'Sustainable antifragile culture (Zero employee cynicism)', 
+                        hqx: true, 
+                        traditional: false, 
+                        apps: false 
+                      }
+                    ].map((row, idx) => (
+                      <div 
+                        key={idx}
+                        className="grid grid-cols-12 items-center py-4 sm:py-4.5"
+                      >
+                        {/* Feature Name */}
+                        <div className="col-span-5 pr-4 text-xs sm:text-sm md:text-[14.5px] font-body text-white/90 font-light leading-snug">
+                          {row.feature}
+                        </div>
+
+                        {/* HQX Status (Solid White Dot with Subtle Glow) */}
+                        <div className="col-span-2 flex justify-center items-center">
+                          {row.hqx ? (
+                            <span className="w-3.5 h-3.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.7)]" />
+                          ) : (
+                            <span className="w-3.5 h-3.5 rounded-full border-[1.5px] border-white/40" />
+                          )}
+                        </div>
+
+                        {/* Traditional Wellness Status */}
+                        <div className="col-span-2 flex justify-center items-center">
+                          {row.traditional ? (
+                            <span className="w-3.5 h-3.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.7)]" />
+                          ) : (
+                            <span className="w-3.5 h-3.5 rounded-full border-[1.5px] border-white/40" />
+                          )}
+                        </div>
+
+                        {/* All-in-One Apps Status */}
+                        <div className="col-span-3 flex justify-center items-center">
+                          {row.apps ? (
+                            <span className="w-3.5 h-3.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.7)]" />
+                          ) : (
+                            <span className="w-3.5 h-3.5 rounded-full border-[1.5px] border-white/40" />
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

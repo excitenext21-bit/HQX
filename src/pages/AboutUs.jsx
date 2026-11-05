@@ -537,9 +537,9 @@ export default function AboutUs() {
                     className="absolute inset-0 w-full h-full"
                   >
                     {hoveredChapter === 'faculty' ? (
-                      <div className="w-full h-full grid grid-cols-4 grid-rows-3 gap-0 overflow-hidden bg-black">
+                      <div className="w-full h-full grid grid-cols-4 grid-rows-3 gap-[1px] bg-black/50 overflow-hidden">
                         {FACULTY_COLLAGE_IMAGES.map((src, i) => (
-                          <div key={i} className="relative w-full h-full overflow-hidden">
+                          <div key={i} className="relative w-full h-full overflow-hidden bg-[#E2DFD8]">
                             <img
                               src={src}
                               alt="Faculty Member"

@@ -145,16 +145,9 @@ export default function Navbar() {
                   </Link>
                   <Link
                     to="/well-being-ethos"
-                    className="px-6 py-4 text-[13.5px] tracking-wider border-b border-white/10 hover:bg-hq-yellow hover:text-black transition-colors flex items-center justify-between uppercase"
-                  >
-                    <span className="uppercase font-semibold">WELL-BEING ETHOS (5 PILLARS)</span>
-                    <ArrowUpRight className="w-4 h-4 opacity-60" />
-                  </Link>
-                  <Link
-                    to="/about-us#founder"
                     className="px-6 py-4 text-[13.5px] tracking-wider hover:bg-hq-yellow hover:text-black transition-colors flex items-center justify-between uppercase"
                   >
-                    <span className="uppercase font-semibold">MEET MANNY ANCHAN</span>
+                    <span className="uppercase font-semibold">WELL-BEING ETHOS (5 PILLARS)</span>
                     <ArrowUpRight className="w-4 h-4 opacity-60" />
                   </Link>
                 </div>
@@ -335,7 +328,6 @@ export default function Navbar() {
               <div className="flex flex-col gap-3 pl-3 text-sm uppercase font-body font-medium tracking-wider">
                 <Link to="/eudaimonic-transformation" onClick={() => setMobileMenuOpen(false)} className="hover:text-hq-yellow uppercase">EUDAIMONIC TRANSFORMATION</Link>
                 <Link to="/well-being-ethos" onClick={() => setMobileMenuOpen(false)} className="hover:text-hq-yellow uppercase">WELL-BEING ETHOS (5 PILLARS)</Link>
-                <Link to="/about-us#founder" onClick={() => setMobileMenuOpen(false)} className="hover:text-hq-yellow uppercase">MEET MANNY ANCHAN</Link>
               </div>
             </div>
 
