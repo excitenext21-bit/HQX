@@ -1,10 +1,8 @@
 import React from 'react';
 
 export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
-  // Exclude Manny Anchan from hero slider per user request
-  const activeFaculty = faculty.filter(
-    (f) => f.active !== false && f.id !== 'f-manny' && !f.name.toLowerCase().includes('manny')
-  );
+  // All active faculty including Manny Anchan
+  const activeFaculty = faculty.filter((f) => f.active !== false);
 
   // Duplicate for a seamless infinite loop
   const marqueeFaculty = [...activeFaculty, ...activeFaculty];
@@ -54,17 +52,21 @@ export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-[76%] sm:h-[78%] md:h-[82%] object-cover object-top transition-all duration-500 ease-out filter grayscale contrast-[1.25] brightness-[0.74] group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100 group-hover:scale-[1.03] rounded-none"
+                      style={{
+                        WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 45%, rgba(0,0,0,0.8) 65%, rgba(0,0,0,0) 90%)',
+                        maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 45%, rgba(0,0,0,0.8) 65%, rgba(0,0,0,0) 90%)'
+                      }}
+                      className="w-full h-[88%] sm:h-[90%] md:h-[92%] object-cover object-top transition-all duration-500 ease-out filter grayscale contrast-[1.25] brightness-[0.74] group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100 group-hover:scale-[1.03] rounded-none"
                     />
-                    {/* Deep Low-Key Cinematic Gradient Overlays to seamlessly blend into black */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-95 group-hover:opacity-70 transition-opacity duration-500 pointer-events-none"></div>
-                    <div className="absolute inset-0 bg-black/15 group-hover:bg-transparent transition-colors duration-500 pointer-events-none"></div>
+                    {/* Generous Deep Black Fadeout Gradient at Bottom to dissolve all photo edges seamlessly into bg */}
+                    <div className="absolute inset-x-0 bottom-0 h-[65%] bg-gradient-to-t from-black via-black/85 via-black/40 to-transparent z-10 pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-10 opacity-70 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none"></div>
                   </div>
                 </div>
 
-                {/* Clean 5px Solid Black Divider (+3px width per user request) */}
-                <div className="hidden md:block absolute top-0 bottom-0 right-0 w-[5px] bg-black z-30 pointer-events-none" />
-                <div className="md:hidden absolute bottom-0 left-0 right-0 h-[5px] bg-black z-30 pointer-events-none" />
+                {/* Clean 5px Skewed Divider: Solid Black by default, lights up brand yellow on hover */}
+                <div className="hidden md:block absolute top-0 bottom-0 right-0 w-[5px] bg-black group-hover:bg-hq-yellow transition-colors duration-300 z-30 pointer-events-none" />
+                <div className="md:hidden absolute bottom-0 left-0 right-0 h-[5px] bg-black group-hover:bg-hq-yellow transition-colors duration-300 z-30 pointer-events-none" />
 
                 {/* Member Name and Clean Details Overlay - Fully visible on left, counter-skewed to remain upright */}
                 <div 
