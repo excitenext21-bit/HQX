@@ -215,7 +215,7 @@ export default function AboutUs() {
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
       {/* ARCHITECTURAL EDITORIAL HERO SECTION - BLACK SCREEN-FITTING LUXURY */}
-      <section className="bg-[#0A0A0A] text-white min-h-[100svh] lg:h-screen lg:min-h-[660px] lg:max-h-[920px] flex items-center pt-28 pb-14 lg:py-0 border-b border-white/10 relative overflow-hidden w-full">
+      <section className="bg-[#0A0A0A] text-white min-h-[100svh] lg:h-screen lg:min-h-[660px] lg:max-h-[1080px] flex flex-col justify-between pt-24 sm:pt-28 pb-0 border-b border-white/10 relative overflow-hidden w-full">
         {/* Subtle Ambient Glows */}
         <div className="absolute inset-0 bg-radial-gradient from-hq-yellow/10 via-transparent to-transparent pointer-events-none opacity-40"></div>
         <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-hq-yellow/5 rounded-full blur-[140px] pointer-events-none -mr-40"></div>
@@ -234,7 +234,7 @@ export default function AboutUs() {
         </div>
 
         {/* Framing Container: Exact Alignment with Navbar Logo (left) & Book Manny Button (right) */}
-        <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 w-full relative z-10">
+        <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 w-full relative z-10 flex-1 flex items-center py-6 sm:py-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
             
             {/* Left Column: High-Contrast Editorial Headline & Subtext (Removed Giant Bold Wordmark) */}
@@ -345,6 +345,31 @@ export default function AboutUs() {
               </div>
             </div>
 
+          </div>
+        </div>
+
+        {/* DOCKED STATS & REPUTATION TICKER STRIP (MATCHING WHY HQX & FOUNDER HERO SECTION) */}
+        <div className="w-full bg-[#0A0A0A]/95 text-white/80 py-3.5 sm:py-4 px-6 border-t border-white/10 overflow-hidden relative z-20">
+          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
+            <div className="flex items-center gap-2">
+              <span className="text-hq-yellow font-bold">25+</span>
+              <span className="text-white/70">Years Boardroom Leadership</span>
+            </div>
+            <span className="text-white/20 hidden md:inline">•</span>
+            <div className="flex items-center gap-2">
+              <span className="text-hq-yellow font-bold">40+</span>
+              <span className="text-white/70">Corporate Conclaves</span>
+            </div>
+            <span className="text-white/20 hidden md:inline">•</span>
+            <div className="flex items-center gap-2">
+              <span className="text-hq-yellow font-bold">09</span>
+              <span className="text-white/70">Global Nations Impacted</span>
+            </div>
+            <span className="text-white/20 hidden md:inline">•</span>
+            <div className="flex items-center gap-2">
+              <span className="text-hq-yellow font-bold">16</span>
+              <span className="text-white/70">Indian States Traversed</span>
+            </div>
           </div>
         </div>
       </section>
