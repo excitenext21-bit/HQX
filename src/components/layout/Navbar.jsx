@@ -69,7 +69,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation Links (+10% font size: text-[13.5px]) */}
-          <div className="hidden lg:flex items-center gap-7 font-body text-[13.5px] tracking-widest uppercase font-medium">
+          <div className="hidden lg:flex items-center gap-7 font-body text-[13.5px] tracking-widest uppercase font-medium text-white">
             {/* Dropdown: About Us */}
             <div className="group relative">
               <Link

@@ -451,44 +451,64 @@ html.dark ::-webkit-scrollbar-track {
 
 
 /* ==========================================================================
+   TOP NAVIGATION: GUARANTEED CRISP WHITE VISIBILITY
+   ========================================================================== */
+#navbar,
+#navbar a,
+#navbar button,
+#navbar span {
+  color: #FFFFFF;
+}
+
+#navbar a:hover,
+#navbar button:hover {
+  color: #FFCC00;
+}
+
+#navbar .nav-book-btn,
+#navbar .nav-book-btn span {
+  color: #0A0A0A !important;
+}
+
+/* ==========================================================================
    20% DARKER PARAGRAPHS ON WHITE / LIGHT BACKGROUNDS (HEADINGS UNTOUCHED)
    ========================================================================== */
-html:not(.dark) p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
-html:not(.dark) .font-body:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not([class*="text-white"]):not([class*="text-hq-yellow"]),
-.bg-white p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
-.bg-\[\#FFFFFF\] p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
-.bg-\[\#FAF8F5\] p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
-.bg-\[\#FAF7F2\] p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
-.bg-hq-white p:not([class*="text-white"]):not([class*="text-hq-yellow"]) {
+/* Scoped ONLY to paragraphs (<p>) inside light/white background sections */
+:not(#navbar) .bg-white p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
+:not(#navbar) .bg-\[\#FFFFFF\] p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
+:not(#navbar) .bg-\[\#FAF8F5\] p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
+:not(#navbar) .bg-\[\#FAF7F2\] p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
+:not(#navbar) .bg-hq-white p:not([class*="text-white"]):not([class*="text-hq-yellow"]) {
   color: #1A1A1A;
 }
 
-html:not(.dark) p.text-hq-black\/50,
-html:not(.dark) p.text-hq-black\/60,
-html:not(.dark) p.text-black\/50,
-html:not(.dark) p.text-black\/60 {
+/* Darken opacity-reduced paragraphs on white/light backgrounds by 20% */
+html:not(.dark) main p.text-hq-black\/50,
+html:not(.dark) main p.text-hq-black\/60,
+html:not(.dark) main p.text-black\/50,
+html:not(.dark) main p.text-black\/60 {
   color: rgba(10, 10, 10, 0.78);
 }
 
-html:not(.dark) p.text-hq-black\/65,
-html:not(.dark) p.text-hq-black\/70,
-html:not(.dark) p.text-black\/65,
-html:not(.dark) p.text-black\/70 {
+html:not(.dark) main p.text-hq-black\/65,
+html:not(.dark) main p.text-hq-black\/70,
+html:not(.dark) main p.text-black\/65,
+html:not(.dark) main p.text-black\/70 {
   color: rgba(10, 10, 10, 0.88);
 }
 
-html:not(.dark) p.text-hq-black\/75,
-html:not(.dark) p.text-hq-black\/80,
-html:not(.dark) p.text-black\/75,
-html:not(.dark) p.text-black\/80 {
+html:not(.dark) main p.text-hq-black\/75,
+html:not(.dark) main p.text-hq-black\/80,
+html:not(.dark) main p.text-black\/75,
+html:not(.dark) main p.text-black\/80 {
   color: rgba(10, 10, 10, 0.95);
 }
 
-html:not(.dark) p.text-\[\#666666\],
-html:not(.dark) p.text-\[\#555555\] {
+html:not(.dark) main p.text-\[\#666666\],
+html:not(.dark) main p.text-\[\#555555\] {
   color: #333333;
 }
 
-html:not(.dark) p.text-\[\#444444\] {
+html:not(.dark) main p.text-\[\#444444\] {
   color: #222222;
 }
