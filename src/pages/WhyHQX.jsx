@@ -13,6 +13,10 @@ import {
   Building2,
   TrendingUp,
   ShieldCheck,
+  Brain,
+  Award,
+  Calendar,
+  RotateCcw
 } from 'lucide-react';
 import { STATES_COVERED, GLOBAL_FOOTPRINT_COUNTRIES } from '../context/DataContext';
 import CorporatePartnersMarquee from '../components/common/CorporatePartnersMarquee';
@@ -46,6 +50,44 @@ export default function WhyHQX() {
       video.removeEventListener('timeupdate', onTimeUpdate);
     };
   }, []);
+
+  const getStepStyle = (stepIndex) => {
+    const isCurrent = heroStep === stepIndex;
+    const isPassed = heroStep >= stepIndex;
+
+    if (isCurrent) {
+      return {
+        color: '#FFCE00',
+        textShadow: '0 0 14px rgba(255,206,0,0.95), 0 0 28px rgba(255,206,0,0.8), 0 0 50px rgba(255,206,0,0.55)',
+        transform: 'scale(1.04)',
+      };
+    }
+    if (isPassed) {
+      return {
+        color: '#FFCE00',
+        textShadow: '0 0 12px rgba(255,206,0,0.7), 0 0 24px rgba(255,206,0,0.4)',
+        transform: 'scale(1)',
+      };
+    }
+    return {
+      color: 'rgba(255, 255, 255, 0.55)',
+      textShadow: 'none',
+      transform: 'scale(1)',
+    };
+  };
+
+  const getDotStyle = (stepIndex) => {
+    if (heroStep >= stepIndex) {
+      return {
+        color: '#FFCE00',
+        textShadow: '0 0 10px rgba(255,206,0,0.8), 0 0 20px rgba(255,206,0,0.4)',
+      };
+    }
+    return {
+      color: 'rgba(255, 255, 255, 0.25)',
+      textShadow: 'none',
+    };
+  };
 
   const sectorClusters = [
     {
@@ -151,46 +193,39 @@ export default function WhyHQX() {
         {/* Main Content Area (Vertically Centered in Viewport) */}
         <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 relative z-10 w-full flex-1 flex flex-col justify-center pt-28 sm:pt-32 pb-8">
           <div className="max-w-md">
-            {/* Editorial Headline with synchronized video animation step highlighting */}
-            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight leading-[1.15] mb-5 drop-shadow-md select-none">
+            {/* Editorial Headline with luminous yellow neon glow synchronized to man animation actions */}
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight leading-[1.15] mb-5 select-none">
               <span 
-                className={`transition-all duration-500 inline-block ${
-                  heroStep >= 0 
-                    ? heroStep === 0 
-                      ? 'text-hq-yellow font-bold drop-shadow-[0_0_20px_rgba(255,206,0,0.85)] scale-[1.03]' 
-                      : 'text-hq-yellow font-semibold' 
-                    : 'text-white/60'
-                }`}
+                style={getStepStyle(0)}
+                className="transition-all duration-500 inline-block font-bold"
               >
                 Think
               </span>
 
-              <span className={`mx-2 sm:mx-2.5 transition-colors duration-500 ${heroStep >= 1 ? 'text-hq-yellow/80' : 'text-white/30'}`}>
+              <span 
+                style={getDotStyle(1)}
+                className="mx-2 sm:mx-2.5 transition-all duration-500 inline-block"
+              >
                 .
               </span>
 
               <span 
-                className={`transition-all duration-500 inline-block ${
-                  heroStep >= 1 
-                    ? heroStep === 1 
-                      ? 'text-hq-yellow font-bold drop-shadow-[0_0_20px_rgba(255,206,0,0.85)] scale-[1.03]' 
-                      : 'text-hq-yellow font-semibold' 
-                    : 'text-white/60'
-                }`}
+                style={getStepStyle(1)}
+                className="transition-all duration-500 inline-block font-bold"
               >
                 Feel
               </span>
 
-              <span className={`mx-2 sm:mx-2.5 transition-colors duration-500 ${heroStep >= 2 ? 'text-hq-yellow/80' : 'text-white/30'}`}>
+              <span 
+                style={getDotStyle(2)}
+                className="mx-2 sm:mx-2.5 transition-all duration-500 inline-block"
+              >
                 .
               </span>
 
               <span 
-                className={`transition-all duration-500 inline-block ${
-                  heroStep >= 2 
-                    ? 'text-hq-yellow font-bold drop-shadow-[0_0_20px_rgba(255,206,0,0.85)] scale-[1.03]' 
-                    : 'text-white/60'
-                }`}
+                style={getStepStyle(2)}
+                className="transition-all duration-500 inline-block font-bold"
               >
                 Perform
               </span>
@@ -257,7 +292,148 @@ export default function WhyHQX() {
 
 
 
-      {/* 4 PILLARS OF DISTINCTION - ULTRA-MODERN UNBOXED EDITORIAL ARCHITECTURE */}
+{/* WHY CHOOSE US / SUPPORTIVE GUIDANCE SHOWCASE (EXACT EDITORIAL DESIGN AS REQUESTED) */}
+      <section className="py-20 sm:py-24 px-6 md:px-12 bg-[#FAF8F5] border-b border-black/10">
+        <div className="max-w-7xl mx-auto space-y-16 lg:space-y-20">
+          
+          {/* Section Header: Dual-Tone Title & Top Narrative (Exact Same As The Experts Behind Your Care Design) */}
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 pb-8 border-b border-black/10">
+            <div>
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] dark:text-white leading-[1.08]">
+                Supportive Guidance <br />
+                <span className="text-[#666666] dark:text-white/60 font-light">You Can Count On</span>
+              </h2>
+            </div>
+            <p className="font-body text-sm sm:text-base text-hq-black/65 max-w-md font-light leading-relaxed lg:pb-1">
+              From everyday stress to life's biggest challenges, our caring professionals are here to guide you with personalized support and evidence-based approaches.
+            </p>
+          </div>
+
+          {/* Consultation Showcase & Metric Rows */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Consultation Photo with Book Session CTA */}
+            <div className="lg:col-span-6 space-y-4">
+              <div className="w-full aspect-[4/3] rounded-[28px] sm:rounded-[34px] overflow-hidden bg-[#EFECE6] shadow-sm border border-black/5">
+                <img 
+                  src="/images/hero_showcase/why_hqx_consultation.jpg" 
+                  alt="Executive Guidance & Consultation" 
+                  className="w-full h-full object-cover filter contrast-[1.02] brightness-[0.99]"
+                />
+              </div>
+              <div className="flex items-center justify-between pt-1">
+                <span className="text-xs font-mono uppercase tracking-widest text-[#7A7067]">
+                  Evidence-Based Executive Care
+                </span>
+                <Link 
+                  to="/contact"
+                  className="inline-flex items-center gap-2 bg-[#1E1A17] hover:bg-black text-[#FAF8F5] px-6 py-2.5 rounded-full font-body text-xs font-medium uppercase tracking-wider transition-all duration-300 shadow-sm hover:shadow-md group"
+                >
+                  <span>Book Session</span>
+                  <span className="text-sm leading-none transition-transform duration-300 group-hover:translate-x-1">›</span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column: 3 Metric Rows */}
+            <div className="lg:col-span-6 flex flex-col divide-y divide-black/10 border-b border-black/10">
+              <div className="py-5 sm:py-6 flex items-center justify-between">
+                <span className="font-display text-base sm:text-lg text-[#1E1915] font-medium">Happy Clients</span>
+                <span className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">120K+</span>
+              </div>
+              <div className="py-5 sm:py-6 flex items-center justify-between">
+                <span className="font-display text-base sm:text-lg text-[#1E1915] font-medium">Sessions Completed</span>
+                <span className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">200K+</span>
+              </div>
+              <div className="py-5 sm:py-6 flex items-center justify-between">
+                <span className="font-display text-base sm:text-lg text-[#1E1915] font-medium">Expert Therapists</span>
+                <span className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">50+</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Tier: Left 3 Stat Rows + Right 2x2 Feature Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+            
+            {/* Left Column: 3 Metric Rows */}
+            <div className="lg:col-span-6 flex flex-col divide-y divide-black/10 border-b border-black/10">
+              <div className="py-5 sm:py-6 flex items-center justify-between">
+                <span className="font-display text-base sm:text-lg text-[#1E1915] font-medium">Happy Clients</span>
+                <span className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">120K+</span>
+              </div>
+              <div className="py-5 sm:py-6 flex items-center justify-between">
+                <span className="font-display text-base sm:text-lg text-[#1E1915] font-medium">Sessions Completed</span>
+                <span className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">200K+</span>
+              </div>
+              <div className="py-5 sm:py-6 flex items-center justify-between">
+                <span className="font-display text-base sm:text-lg text-[#1E1915] font-medium">Expert Therapists</span>
+                <span className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">50+</span>
+              </div>
+            </div>
+
+            {/* Right Column: 2x2 Feature Grid with Crosshair Dividers */}
+            <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2">
+              
+              {/* Feature 1: Personalized Care */}
+              <div className="p-6 sm:p-7 sm:border-r sm:border-b border-black/10">
+                <div className="w-11 h-11 rounded-2xl bg-[#EFECE6] text-[#6E645A] flex items-center justify-center mb-5 shadow-xs">
+                  <Brain className="w-5 h-5 stroke-[1.8]" />
+                </div>
+                <h3 className="font-display text-lg font-medium text-[#1E1915] mb-2">
+                  Personalized Care
+                </h3>
+                <p className="font-body text-xs sm:text-sm text-[#6E6660] font-light leading-relaxed">
+                  Customized wellness plans tailored to your personal goals.
+                </p>
+              </div>
+
+              {/* Feature 2: Expert Therapist */}
+              <div className="p-6 sm:p-7 sm:border-b border-black/10 border-t sm:border-t-0">
+                <div className="w-11 h-11 rounded-2xl bg-[#EFECE6] text-[#6E645A] flex items-center justify-center mb-5 shadow-xs">
+                  <Award className="w-5 h-5 stroke-[1.8]" />
+                </div>
+                <h3 className="font-display text-lg font-medium text-[#1E1915] mb-2">
+                  Expert Therapist
+                </h3>
+                <p className="font-body text-xs sm:text-sm text-[#6E6660] font-light leading-relaxed">
+                  Certified therapists focused on your mental wellness journey.
+                </p>
+              </div>
+
+              {/* Feature 3: Flexible Across */}
+              <div className="p-6 sm:p-7 sm:border-r border-black/10 border-t sm:border-t-0">
+                <div className="w-11 h-11 rounded-2xl bg-[#EFECE6] text-[#6E645A] flex items-center justify-center mb-5 shadow-xs">
+                  <Calendar className="w-5 h-5 stroke-[1.8]" />
+                </div>
+                <h3 className="font-display text-lg font-medium text-[#1E1915] mb-2">
+                  Flexible Across
+                </h3>
+                <p className="font-body text-xs sm:text-sm text-[#6E6660] font-light leading-relaxed">
+                  Insurance-friendly with flexible online and in-person appointments.
+                </p>
+              </div>
+
+              {/* Feature 4: Proven Support */}
+              <div className="p-6 sm:p-7 border-t sm:border-t-0 border-black/10">
+                <div className="w-11 h-11 rounded-2xl bg-[#EFECE6] text-[#6E645A] flex items-center justify-center mb-5 shadow-xs">
+                  <RotateCcw className="w-5 h-5 stroke-[1.8]" />
+                </div>
+                <h3 className="font-display text-lg font-medium text-[#1E1915] mb-2">
+                  Proven Support
+                </h3>
+                <p className="font-body text-xs sm:text-sm text-[#6E6660] font-light leading-relaxed">
+                  Trusted care backed by 24/7 crisis support whenever needed.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      
+            {/* 4 PILLARS OF DISTINCTION - ULTRA-MODERN UNBOXED EDITORIAL ARCHITECTURE */}
       <section className="py-24 px-6 md:px-12 bg-white border-b border-hq-black/10">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
