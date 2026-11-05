@@ -90,8 +90,8 @@ export default function Founder() {
         </div>
       </section>
 
-      {/* DETAILED NARRATIVE & PEDIGREE: 100% WIDTH DUAL-TONE (TOP HALF WHITE, LOWER HALF BRAND YELLOW) WITH 30% LARGER FULL-BODY CUTOUT (SHOES INCLUDED, NO BOX / NO BORDER) */}
-      <section id="pedigree" className="relative w-full py-16 sm:py-24 px-6 md:px-12 overflow-hidden border-none">
+      {/* DETAILED NARRATIVE & PEDIGREE: 100% WIDTH DUAL-TONE (TOP HALF WHITE, LOWER HALF BRAND YELLOW) WITH 50% LARGER FULL-BODY CUTOUT (SHOES INCLUDED, NO BOX / NO BORDER) */}
+      <section id="pedigree" className="relative w-full py-20 sm:py-28 lg:py-36 px-6 md:px-12 overflow-hidden border-none">
         {/* Split Dual-Tone Background: Top Half White, Lower Half Brand Yellow (100% Width) */}
         <div className="absolute inset-0 pointer-events-none z-0">
           <div className="h-1/2 w-full bg-[#FFFFFF]"></div>
@@ -132,12 +132,12 @@ export default function Founder() {
               </div>
             </div>
 
-            {/* Center Column: 30% Larger Full-Body Cutout (Head to Shoes, No Box, No Border) */}
-            <div className="lg:col-span-4 flex flex-col items-center justify-end relative h-full min-h-[460px] sm:min-h-[580px] lg:min-h-[720px] xl:min-h-[780px] z-20">
+            {/* Center Column: 50% Larger Full-Body Cutout (Head to Shoes, No Box, No Border) */}
+            <div className="lg:col-span-4 flex flex-col items-center justify-end relative h-full min-h-[520px] sm:min-h-[660px] lg:min-h-[820px] xl:min-h-[920px] z-20">
               <img 
                 src="/images/hero_showcase/manny_founder_fullbody_cutout.png" 
                 alt="Manny Anchan - Full-Length Standing Portrait" 
-                className="w-full max-w-[420px] sm:max-w-[480px] lg:max-w-[560px] xl:max-w-[620px] h-auto object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.3)] select-none pointer-events-none" 
+                className="w-full max-w-[580px] sm:max-w-[680px] lg:max-w-[800px] xl:max-w-[900px] h-auto object-contain object-bottom drop-shadow-[0_35px_60px_rgba(0,0,0,0.35)] select-none pointer-events-none transform scale-125 sm:scale-135 lg:scale-145 xl:scale-150 origin-bottom transition-transform duration-500"
               />
             </div>
 

@@ -1,3 +1,9 @@
+/* ==========================================================================
+   HQX DESIGN SYSTEM & GLOBAL STYLESHEET
+   Harmonized & Standardized for Consistency & Performance
+   ========================================================================== */
+
+/* 1. TYPOGRAPHY ASSETS */
 @import url('https://fonts.cdnfonts.com/css/google-sans');
 @import url('https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600,700,800,900&display=swap');
 
@@ -17,10 +23,24 @@
   font-display: swap;
 }
 
+/* 2. DESIGN SYSTEM TOKENS */
+:root {
+  --hq-yellow: #FFCC00;
+  --hq-black: #0A0A0A;
+  --hq-white: #FFFFFF;
+  --hq-gray: #F5F5F5;
+  --hq-dark: #07080B;
+  --hq-card-dark: #121316;
+  --hq-border-light: rgba(10, 10, 10, 0.12);
+  --hq-border-dark: rgba(255, 255, 255, 0.12);
+}
+
+/* 3. TAILWIND DIRECTIVES */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* 4. BASE ELEMENT NORMALIZATION */
 @layer base {
   *,
   *::before,
@@ -31,6 +51,7 @@
   html {
     color-scheme: light;
     transition: background-color 0.25s ease, color 0.25s ease;
+    scroll-behavior: smooth;
   }
 
   html.dark {
@@ -39,24 +60,22 @@
 
   html,
   body {
-    background-color: #FFFFFF;
-    color: #0A0A0A;
+    background-color: var(--hq-white);
+    color: var(--hq-black);
     font-family: "Google Sans", "Product Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
 
   html.dark,
   html.dark body {
-    background-color: #07080B;
+    background-color: var(--hq-dark);
     color: #F5F5F5;
   }
 
-  /* Global Consistent Typography Hierarchy: Google Sans as clean modern default */
   h1, h2, h3, h4, h5, h6, .font-display, .font-heading, .founder-hero-quote {
     font-family: "Google Sans", "Product Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     letter-spacing: -0.02em;
   }
 
-  /* Standard Base Paragraph: Google Sans */
   p, .font-body {
     font-family: "Google Sans", "Product Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.65;
@@ -67,77 +86,54 @@
   }
 }
 
+/* 5. TYPOGRAPHY FAMILIES */
 .font-display,
 .font-heading,
-.font-jost {
-  font-family: "Google Sans", "Product Sans", sans-serif !important;
+.font-monda {
+  font-family: "Google Sans", "Product Sans", sans-serif;
 }
 
-.font-serif {
+.font-serif,
+.font-prata {
   font-family: "Prata", "Tenor Sans", Georgia, Cambria, serif !important;
 }
 
-/* Exclusive typography for 'shape tomorrow' matching attached Stella / Discretionary Ligature aesthetic */
 .font-stella {
   font-family: 'SansakertaMonda', 'Monda', 'Google Sans', sans-serif !important;
   font-feature-settings: "dlig" 1, "ss01" 1, "liga" 1, "calt" 1;
   letter-spacing: -0.03em;
 }
 
-.font-monda {
-  font-family: "Google Sans", "Product Sans", sans-serif !important;
-}
-
-/* Monospace fonts replaced with Google Sans globally */
 .font-mono,
 code,
 pre,
 kbd,
 samp {
-  font-family: "Google Sans", "Product Sans", "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-family: "Google Sans", "Product Sans", "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* 1px structural lines */
-.grid-line-top {
-  border-top: 1px solid rgba(10, 10, 10, 0.12);
-}
-.grid-line-bottom {
-  border-bottom: 1px solid rgba(10, 10, 10, 0.12);
-}
-.grid-line-left {
-  border-left: 1px solid rgba(10, 10, 10, 0.12);
-}
-.grid-line-right {
-  border-right: 1px solid rgba(10, 10, 10, 0.12);
-}
+/* 6. STRUCTURAL GRID LINES */
+.grid-line-top    { border-top: 1px solid var(--hq-border-light); }
+.grid-line-bottom { border-bottom: 1px solid var(--hq-border-light); }
+.grid-line-left   { border-left: 1px solid var(--hq-border-light); }
+.grid-line-right  { border-right: 1px solid var(--hq-border-light); }
 
-.dark .grid-line-top {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-}
-.dark .grid-line-bottom {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-.dark .grid-line-left {
-  border-left: 1px solid rgba(255, 255, 255, 0.12);
-}
-.dark .grid-line-right {
-  border-right: 1px solid rgba(255, 255, 255, 0.12);
-}
+.dark .grid-line-top    { border-top: 1px solid var(--hq-border-dark); }
+.dark .grid-line-bottom { border-bottom: 1px solid var(--hq-border-dark); }
+.dark .grid-line-left   { border-left: 1px solid var(--hq-border-dark); }
+.dark .grid-line-right  { border-right: 1px solid var(--hq-border-dark); }
 
-/* ==========================================================================
-   GLOBAL DARK MODE THEME ADAPTATION
-   ========================================================================== */
+/* 7. DARK MODE THEME ADAPTATION */
 html.dark .bg-hq-white {
-  background-color: #07080B !important;
+  background-color: var(--hq-dark) !important;
   color: #F5F5F5;
 }
 
 html.dark .bg-hq-gray {
-  background-color: #121316 !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
+  background-color: var(--hq-card-dark) !important;
+  border-color: var(--hq-border-dark) !important;
 }
 
-/* Dark mode typography adaptation - keeping yellow backgrounds readable */
 html.dark .text-hq-black:not(.bg-hq-yellow):not([class*="bg-hq-yellow"]) {
   color: #F5F5F5;
 }
@@ -158,34 +154,30 @@ html.dark .text-hq-black\/40 {
   color: rgba(245, 245, 245, 0.50);
 }
 
-/* Dark mode border adaptation */
 html.dark .border-hq-black\/10,
 html.dark .border-hq-black\/15,
 html.dark .border-hq-black\/20 {
-  border-color: rgba(255, 255, 255, 0.12) !important;
+  border-color: var(--hq-border-dark) !important;
 }
 
-/* High contrast typography rules */
+/* 8. BRAND COLORS & HIGH CONTRAST RULES */
 .text-hq-yellow {
-  color: #FFCC00;
+  color: var(--hq-yellow);
 }
 
-/* Yellow containers keep high contrast dark typography by default in BOTH light and dark modes */
+/* Yellow containers keep high contrast dark typography across both light and dark modes */
+.bg-hq-yellow,
 .bg-hq-yellow:not(:hover),
 html.dark .bg-hq-yellow:not(:hover) {
-  color: #0A0A0A !important;
+  color: var(--hq-black) !important;
 }
 
-/* Corporate Partner Marquee below hero - ALWAYS black on both light and dark mode */
+/* Corporate Partner Marquee - Default: Yellow background, Black text & logos */
 .bg-hq-yellow .animate-marquee,
-html.dark .bg-hq-yellow .animate-marquee,
 .bg-hq-yellow .animate-marquee *,
-html.dark .bg-hq-yellow .animate-marquee *,
-.bg-hq-yellow .marquee-partners-track,
-html.dark .bg-hq-yellow .marquee-partners-track,
-.bg-hq-yellow .marquee-partners-track *,
-html.dark .bg-hq-yellow .marquee-partners-track * {
-  color: #0A0A0A !important;
+html.dark .bg-hq-yellow .animate-marquee,
+html.dark .bg-hq-yellow .animate-marquee * {
+  color: var(--hq-black) !important;
 }
 
 .bg-hq-yellow .marquee-partners-dot,
@@ -193,28 +185,20 @@ html.dark .bg-hq-yellow .marquee-partners-dot {
   color: rgba(10, 10, 10, 0.4) !important;
 }
 
-/* Reversed Corporate Partner Marquee - Black background, Yellow logos */
+/* Reversed Corporate Partner Marquee - Black background, Yellow text & logos */
 .marquee-dark,
+.marquee-dark *,
 html.dark .marquee-dark,
-.marquee-dark .animate-marquee,
-html.dark .marquee-dark .animate-marquee,
-.marquee-dark .animate-marquee *,
-html.dark .marquee-dark .animate-marquee *,
-.marquee-dark .marquee-partners-track,
-html.dark .marquee-dark .marquee-partners-track,
-.marquee-dark .marquee-partners-track *,
-html.dark .marquee-dark .marquee-partners-track * {
-  color: #F8B012 !important;
+html.dark .marquee-dark * {
+  color: var(--hq-yellow) !important;
 }
 
 .marquee-dark .marquee-partners-dot,
 html.dark .marquee-dark .marquee-partners-dot {
-  color: rgba(248, 176, 18, 0.4) !important;
+  color: rgba(255, 204, 0, 0.4) !important;
 }
 
-/* ==========================================================================
-   OUR TEAM IMAGE RADIUS 3PX (KEPT AS REQUESTED)
-   ========================================================================== */
+/* Team Member Image Radius: 3px */
 .team-member-img,
 [data-team-img],
 img[src*="/team/"],
@@ -222,103 +206,133 @@ div:has(> img[src*="/team/"]) {
   border-radius: 3px !important;
 }
 
-/* ==========================================================================
-   TOP NAV CTA BUTTON (BOOK MANNY): GUARANTEED HOVER VISIBILITY & ROUNDED
-   ========================================================================== */
+/* 9. INTERACTIVE ELEMENTS & BUTTON CONTRAST */
 .nav-book-btn {
-  background-color: #FFCC00 !important;
-  color: #0A0A0A !important;
+  background-color: var(--hq-yellow) !important;
+  color: var(--hq-black) !important;
   border-radius: 9999px !important;
 }
 
 .nav-book-btn span,
 .nav-book-btn svg {
-  color: #0A0A0A !important;
+  color: var(--hq-black) !important;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
-/* Light mode hover: Jet black background with pure white text and icon */
 .nav-book-btn:hover {
-  background-color: #0A0A0A !important;
-  color: #FFFFFF !important;
+  background-color: var(--hq-black) !important;
+  color: var(--hq-white) !important;
 }
 
 .nav-book-btn:hover span,
 .nav-book-btn:hover svg {
-  color: #FFFFFF !important;
+  color: var(--hq-white) !important;
 }
 
-/* Dark mode hover: Crisp white background with jet black text and icon */
 html.dark .nav-book-btn:hover {
-  background-color: #FFFFFF !important;
-  color: #0A0A0A !important;
+  background-color: var(--hq-white) !important;
+  color: var(--hq-black) !important;
 }
 
 html.dark .nav-book-btn:hover span,
 html.dark .nav-book-btn:hover svg {
-  color: #0A0A0A !important;
+  color: var(--hq-black) !important;
 }
 
-/* Guaranteed high contrast on interactive elements & buttons (normal and hover states) */
 .hover\:bg-hq-yellow:hover,
 [class*="hover:bg-hq-yellow"]:hover {
-  background-color: #FFCC00 !important;
-  color: #0A0A0A !important;
+  background-color: var(--hq-yellow) !important;
+  color: var(--hq-black) !important;
 }
 
 .hover\:bg-hq-black:hover,
 .hover\:bg-black:hover,
 [class*="hover:bg-hq-black"]:hover,
 [class*="hover:bg-black"]:hover {
-  background-color: #0A0A0A !important;
-  color: #FFFFFF !important;
+  background-color: var(--hq-black) !important;
+  color: var(--hq-white) !important;
 }
 
 .hover\:bg-white:hover {
-  background-color: #FFFFFF !important;
-  color: #0A0A0A !important;
+  background-color: var(--hq-white) !important;
+  color: var(--hq-black) !important;
 }
 
-/* Semicircular Arc Curve Line Clean Shining (No rotation, no outer glow) */
-@keyframes lineCleanShine {
-  0%, 100% {
-    opacity: 0.4;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-.animate-line-clean-shine {
-  animation: lineCleanShine 2.6s ease-in-out infinite;
-}
-
-/* Explicit text hover color overrides */
 .hover\:text-white:hover,
 [class*="hover:text-white"]:hover {
-  color: #FFFFFF !important;
+  color: var(--hq-white) !important;
 }
 
 .hover\:text-hq-black:hover,
 .hover\:text-black:hover,
 [class*="hover:text-hq-black"]:hover,
 [class*="hover:text-black"]:hover {
-  color: #0A0A0A !important;
+  color: var(--hq-black) !important;
 }
 
 .hover\:text-hq-yellow:hover,
 [class*="hover:text-hq-yellow"]:hover {
-  color: #FFCC00 !important;
+  color: var(--hq-yellow) !important;
 }
 
-/* Scrolled Light Navbar: ensure hover text passes contrast (6.5:1 ratio) on white background */
-html:not(.dark) nav[class*="bg-white"] a[class*="hover:text-hq-yellow"]:hover,
-html:not(.dark) nav[class*="bg-white"] button[class*="hover:text-hq-yellow"]:hover {
-  color: #92400E !important;
+/* 10. TOP NAVIGATION ISOLATION: GUARANTEED CRISP VISIBILITY */
+#navbar,
+#navbar a,
+#navbar button,
+#navbar span {
+  color: #FFFFFF;
 }
 
+#navbar a:hover,
+#navbar button:hover {
+  color: var(--hq-yellow);
+}
 
-/* Hover reveal image clip-path */
+#navbar .nav-book-btn,
+#navbar .nav-book-btn span {
+  color: var(--hq-black) !important;
+}
+
+/* 11. 20% DARKER PARAGRAPHS ON LIGHT / WHITE BACKGROUNDS (HEADINGS UNTOUCHED) */
+:not(#navbar) .bg-white p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
+:not(#navbar) .bg-\[\#FFFFFF\] p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
+:not(#navbar) .bg-\[\#FAF8F5\] p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
+:not(#navbar) .bg-\[\#FAF7F2\] p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
+:not(#navbar) .bg-hq-white p:not([class*="text-white"]):not([class*="text-hq-yellow"]) {
+  color: #1A1A1A;
+}
+
+html:not(.dark) main p.text-hq-black\/50,
+html:not(.dark) main p.text-hq-black\/60,
+html:not(.dark) main p.text-black\/50,
+html:not(.dark) main p.text-black\/60 {
+  color: rgba(10, 10, 10, 0.78);
+}
+
+html:not(.dark) main p.text-hq-black\/65,
+html:not(.dark) main p.text-hq-black\/70,
+html:not(.dark) main p.text-black\/65,
+html:not(.dark) main p.text-black\/70 {
+  color: rgba(10, 10, 10, 0.88);
+}
+
+html:not(.dark) main p.text-hq-black\/75,
+html:not(.dark) main p.text-hq-black\/80,
+html:not(.dark) main p.text-black\/75,
+html:not(.dark) main p.text-black\/80 {
+  color: rgba(10, 10, 10, 0.95);
+}
+
+html:not(.dark) main p.text-\[\#666666\],
+html:not(.dark) main p.text-\[\#555555\] {
+  color: #333333;
+}
+
+html:not(.dark) main p.text-\[\#444444\] {
+  color: #222222;
+}
+
+/* 12. UTILITY & BEHAVIORAL HELPERS */
 .hover-reveal-img {
   clip-path: inset(100% 0 0 0);
   transition: clip-path 0.6s cubic-bezier(0.77, 0, 0.175, 1);
@@ -327,7 +341,6 @@ html:not(.dark) nav[class*="bg-white"] button[class*="hover:text-hq-yellow"]:hov
   clip-path: inset(0 0 0 0);
 }
 
-/* Hide scrollbar for timelines */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -336,23 +349,22 @@ html:not(.dark) nav[class*="bg-white"] button[class*="hover:text-hq-yellow"]:hov
   scrollbar-width: none;
 }
 
-/* Custom sleek scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F5F5F5;
+  background: var(--hq-gray);
 }
 html.dark ::-webkit-scrollbar-track {
-  background: #0A0A0A;
+  background: var(--hq-black);
 }
 ::-webkit-scrollbar-thumb {
-  background: #FFCC00;
+  background: var(--hq-yellow);
   border-radius: 3px;
 }
 
-/* Hero section luxury onload animations */
+/* 13. ANIMATIONS */
 @keyframes heroGlowOnload {
   0% {
     opacity: 0;
@@ -364,7 +376,6 @@ html.dark ::-webkit-scrollbar-track {
   }
 }
 
-/* Hero name Manny Anchan: Onload Zoom-in & Blur to Normal */
 @keyframes heroNameZoomBlurIn {
   0% {
     opacity: 0;
@@ -408,6 +419,11 @@ html.dark ::-webkit-scrollbar-track {
   }
 }
 
+@keyframes lineCleanShine {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
 .animate-hero-glow {
   animation: heroGlowOnload 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -429,9 +445,10 @@ html.dark ::-webkit-scrollbar-track {
   animation: heroContentFadeUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
 }
 
-/* ==========================================================================
-   SECTION ON-LOAD & SCROLL REVEAL ANIMATIONS
-   ========================================================================== */
+.animate-line-clean-shine {
+  animation: lineCleanShine 2.6s ease-in-out infinite;
+}
+
 .section-reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -446,69 +463,4 @@ html.dark ::-webkit-scrollbar-track {
   opacity: 1;
   transform: translateY(0);
   filter: blur(0px);
-}
-
-
-
-/* ==========================================================================
-   TOP NAVIGATION: GUARANTEED CRISP WHITE VISIBILITY
-   ========================================================================== */
-#navbar,
-#navbar a,
-#navbar button,
-#navbar span {
-  color: #FFFFFF;
-}
-
-#navbar a:hover,
-#navbar button:hover {
-  color: #FFCC00;
-}
-
-#navbar .nav-book-btn,
-#navbar .nav-book-btn span {
-  color: #0A0A0A !important;
-}
-
-/* ==========================================================================
-   20% DARKER PARAGRAPHS ON WHITE / LIGHT BACKGROUNDS (HEADINGS UNTOUCHED)
-   ========================================================================== */
-/* Scoped ONLY to paragraphs (<p>) inside light/white background sections */
-:not(#navbar) .bg-white p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
-:not(#navbar) .bg-\[\#FFFFFF\] p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
-:not(#navbar) .bg-\[\#FAF8F5\] p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
-:not(#navbar) .bg-\[\#FAF7F2\] p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
-:not(#navbar) .bg-hq-white p:not([class*="text-white"]):not([class*="text-hq-yellow"]) {
-  color: #1A1A1A;
-}
-
-/* Darken opacity-reduced paragraphs on white/light backgrounds by 20% */
-html:not(.dark) main p.text-hq-black\/50,
-html:not(.dark) main p.text-hq-black\/60,
-html:not(.dark) main p.text-black\/50,
-html:not(.dark) main p.text-black\/60 {
-  color: rgba(10, 10, 10, 0.78);
-}
-
-html:not(.dark) main p.text-hq-black\/65,
-html:not(.dark) main p.text-hq-black\/70,
-html:not(.dark) main p.text-black\/65,
-html:not(.dark) main p.text-black\/70 {
-  color: rgba(10, 10, 10, 0.88);
-}
-
-html:not(.dark) main p.text-hq-black\/75,
-html:not(.dark) main p.text-hq-black\/80,
-html:not(.dark) main p.text-black\/75,
-html:not(.dark) main p.text-black\/80 {
-  color: rgba(10, 10, 10, 0.95);
-}
-
-html:not(.dark) main p.text-\[\#666666\],
-html:not(.dark) main p.text-\[\#555555\] {
-  color: #333333;
-}
-
-html:not(.dark) main p.text-\[\#444444\] {
-  color: #222222;
 }
