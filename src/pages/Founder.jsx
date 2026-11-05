@@ -229,20 +229,9 @@ export default function Founder() {
 
               {/* Heading: Journey (Using Exact Heading Properties from About Page) */}
               <div className="border-t border-white/10 pt-6 sm:pt-8 mb-5">
-                <div className="flex items-center justify-between gap-4 mb-4">
-                  <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.08]">
-                    Journey
-                  </h2>
-
-                  {/* Secondary Photo from the Page Spread (Manny Reflecting / Reading) */}
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden shrink-0 border border-white/15 shadow-md bg-black">
-                    <img 
-                      src="/images/hero_showcase/manny_yellow_reading.jpg" 
-                      alt="Manny Anchan Journey Reflection" 
-                      className="w-full h-full object-cover object-top filter contrast-[1.05]"
-                    />
-                  </div>
-                </div>
+                <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.08] mb-4">
+                  Journey
+                </h2>
 
                 {/* Narrative Content from the Spread */}
                 <div className="space-y-4">

@@ -67,14 +67,7 @@ export default function Keynotes() {
     <div className="min-h-screen bg-hq-white text-hq-black">
       {/* Hero Header with Authentic Profile Imagery */}
       <section className="bg-hq-black text-hq-white pt-36 pb-20 px-6 md:px-12 border-b border-white/10 relative overflow-hidden">
-        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-1/2 opacity-25 lg:opacity-40 pointer-events-none overflow-hidden">
-          <img 
-            src="/profile_assets/page_14_img_1_1042.jpeg" 
-            alt="Manny Anchan on Stage Keynote" 
-            className="w-full h-full object-cover object-top filter contrast-125"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-hq-black via-hq-black/80 to-transparent"></div>
-        </div>
+
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="max-w-2xl">
