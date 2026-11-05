@@ -153,94 +153,89 @@ export default function Founder() {
 
 {/* =========================================================================
           2. ABOUT THE FOUNDER SECTION (MATCHING REFERENCE DESIGN)
-             CONTENT ON LEFT • ROUNDED STUDIO PORTRAIT ON RIGHT
+             CONTENT & EXECUTIVE PEDIGREE
              BACKGROUND: #FAF8F5 (MATCHING ABOUT PAGE)
           ========================================================================= */}
-      <section id="pedigree" className="relative w-full py-16 sm:py-24 lg:py-28 px-6 md:px-12 bg-[#FAF8F5] border-b border-black/10 overflow-hidden">
+      <section id="about-founder" className="relative w-full py-16 sm:py-24 lg:py-28 px-6 md:px-12 bg-[#FAF8F5] border-b border-black/10 overflow-hidden">
         
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
-            {/* Left Column: Content Manny Anchan */}
-            <motion.div 
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9, ease: luxuryEase }}
-              className="lg:col-span-7 flex flex-col justify-center pr-0 lg:pr-6"
-            >
-              {/* Reference Kicker: "About me" */}
-              <div className="text-sm font-serif italic text-hq-yellow/90 tracking-wide mb-3">
-                About the Founder
-              </div>
+        <div className="max-w-7xl mx-auto space-y-14 sm:space-y-16">
+          
+          {/* Top Block: Content Manny Anchan & MISSION */}
+          <div className="max-w-4xl">
+            {/* Reference Kicker: "About the Founder" */}
+            <div className="text-sm font-serif italic text-hq-yellow/90 tracking-wide mb-3">
+              About the Founder
+            </div>
 
-              {/* Exact Heading Properties from About Us Page */}
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-[3.6rem] font-semibold tracking-tight text-[#0A0A0A] leading-[1.08] mb-6">
-                Manny Anchan
-              </h2>
+            {/* Exact Heading Properties from About Us Page */}
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-[3.6rem] font-semibold tracking-tight text-[#0A0A0A] leading-[1.08] mb-6">
+              Manny Anchan
+            </h2>
 
-              {/* Motivational Speaker Bio (Font Weight: 400) */}
-              <div className="space-y-4 mb-8">
-                <p className="font-body text-sm sm:text-base text-[#1A1A1A] font-normal leading-relaxed">
-                  Manny Anchan is a dynamic motivational speaker known for his engaging storytelling and powerful insights. With a passion for inspiring others, he shares his journey of overcoming challenges and achieving success.
-                </p>
-                <p className="font-body text-sm sm:text-base text-[#1A1A1A] font-normal leading-relaxed">
-                  Manny's talks focus on personal growth, resilience, and the importance of a positive mindset. His relatable approach and practical advice resonate with audiences, making him a sought-after speaker at conferences and workshops.
-                </p>
-              </div>
+            {/* Motivational Speaker Bio (Font Weight: 400) */}
+            <div className="space-y-4 mb-8">
+              <p className="font-body text-sm sm:text-base text-[#1A1A1A] font-normal leading-relaxed">
+                Manny Anchan is a dynamic motivational speaker known for his engaging storytelling and powerful insights. With a passion for inspiring others, he shares his journey of overcoming challenges and achieving success.
+              </p>
+              <p className="font-body text-sm sm:text-base text-[#1A1A1A] font-normal leading-relaxed">
+                Manny's talks focus on personal growth, resilience, and the importance of a positive mindset. His relatable approach and practical advice resonate with audiences, making him a sought-after speaker at conferences and workshops.
+              </p>
+            </div>
 
-              {/* 25-Year Executive Epiphany / MISSION Card */}
-              <div className="bg-white/90 backdrop-blur-md p-6 sm:p-8 rounded-[24px] border border-black/10 shadow-[0_15px_35px_-10px_rgba(0,0,0,0.06)] mb-8 space-y-4">
-                <div className="flex items-center justify-between pb-3 border-b border-black/10">
-                  <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest font-bold text-[#0A0A0A]">
-                    <Sparkles className="w-4 h-4 text-hq-yellow fill-hq-yellow" />
-                    <span>25-Year Executive Epiphany</span>
-                  </div>
-                  <span className="text-[10px] font-mono uppercase tracking-widest font-bold text-[#0A0A0A] bg-hq-yellow/30 px-2.5 py-0.5 rounded-full">
-                    MISSION
-                  </span>
+            {/* 25-Year Executive Epiphany / MISSION Card */}
+            <div className="bg-white/90 backdrop-blur-md p-6 sm:p-8 rounded-[24px] border border-black/10 shadow-[0_15px_35px_-10px_rgba(0,0,0,0.06)] mb-8 space-y-4">
+              <div className="flex items-center justify-between pb-3 border-b border-black/10">
+                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest font-bold text-[#0A0A0A]">
+                  <Sparkles className="w-4 h-4 text-hq-yellow fill-hq-yellow" />
+                  <span>25-Year Executive Epiphany</span>
                 </div>
-
-                <p className="font-body text-xs sm:text-sm text-[#1A1A1A] font-light leading-relaxed">
-                  I spent over twenty-five years building businesses, leading global teams, and navigating high-pressure boardrooms. Along the way, I discovered a truth that no business school teaches—success without wellbeing is simply another form of burnout.
-                </p>
-                <p className="font-body text-xs sm:text-sm text-[#1A1A1A] font-light leading-relaxed pt-2 border-t border-black/5">
-                  Today, I help leaders and organizations pursue a different definition of excellence: one where high performance is fuelled by purpose, elite habits, emotional resilience and mental wealth. My mission is simple—to help people become happier humans and better performers.
-                </p>
+                <span className="text-[10px] font-mono uppercase tracking-widest font-bold text-[#0A0A0A] bg-hq-yellow/30 px-2.5 py-0.5 rounded-full">
+                  MISSION
+                </span>
               </div>
 
-              {/* Reference Pill Button: Book Manny with Round Circle Arrow */}
-              <div className="flex flex-wrap items-center gap-4">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center gap-3 bg-[#EAE6DF] hover:bg-[#0A0A0A] hover:text-white text-[#0A0A0A] pl-6 pr-2 py-2 rounded-full text-xs font-display font-semibold transition-all duration-300 shadow-sm group"
-                >
-                  <span className="tracking-wide">Book Manny</span>
-                  <span className="w-8 h-8 rounded-full bg-hq-yellow text-[#0A0A0A] flex items-center justify-center font-bold group-hover:scale-105 transition-transform">
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
-                </Link>
+              <p className="font-body text-xs sm:text-sm text-[#1A1A1A] font-light leading-relaxed">
+                I spent over twenty-five years building businesses, leading global teams, and navigating high-pressure boardrooms. Along the way, I discovered a truth that no business school teaches—success without wellbeing is simply another form of burnout.
+              </p>
+              <p className="font-body text-xs sm:text-sm text-[#1A1A1A] font-light leading-relaxed pt-2 border-t border-black/5">
+                Today, I help leaders and organizations pursue a different definition of excellence: one where high performance is fuelled by purpose, elite habits, emotional resilience and mental wealth. My mission is simple—to help people become happier humans and better performers.
+              </p>
+            </div>
 
-                <Link
-                  to="/books"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-display font-medium text-[#0A0A0A] hover:text-black border border-black/15 hover:border-black/30 transition-colors"
-                >
-                  <BookOpen className="w-3.5 h-3.5" />
-                  <span>Bestselling Books</span>
-                </Link>
-              </div>
+            {/* Reference Pill Button: Book Manny with Round Circle Arrow */}
+            <div className="flex flex-wrap items-center gap-4">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-3 bg-[#EAE6DF] hover:bg-[#0A0A0A] hover:text-white text-[#0A0A0A] pl-6 pr-2 py-2 rounded-full text-xs font-display font-semibold transition-all duration-300 shadow-sm group"
+              >
+                <span className="tracking-wide">Book Manny</span>
+                <span className="w-8 h-8 rounded-full bg-hq-yellow text-[#0A0A0A] flex items-center justify-center font-bold group-hover:scale-105 transition-transform">
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+              </Link>
 
-            </motion.div>
+              <Link
+                to="/books"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-display font-medium text-[#0A0A0A] hover:text-black border border-black/15 hover:border-black/30 transition-colors"
+              >
+                <BookOpen className="w-3.5 h-3.5" />
+                <span>Bestselling Books</span>
+              </Link>
+            </div>
+          </div>
 
-            {/* Right Column: Studio Portrait */}
+          {/* Dedicated Showcase: Photo at LEFT side • Executive Pedigree & Stewardship (01-04 stacked 1 below 1) at RIGHT side */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center pt-8 border-t border-black/10">
+            
+            {/* Left Column: About the Founder Photo */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 1.0, ease: luxuryEase }}
+              transition={{ duration: 0.9, ease: luxuryEase }}
               className="lg:col-span-5 flex items-center justify-center"
             >
-              <div className="relative w-full max-w-[480px] sm:max-w-[520px] lg:max-w-none h-[480px] sm:h-[580px] lg:h-[660px] xl:h-[700px] rounded-[32px] sm:rounded-[44px] overflow-hidden shadow-2xl bg-[#1C1D21] border border-black/10 group">
+              <div className="relative w-full max-w-[480px] sm:max-w-[520px] lg:max-w-none h-[480px] sm:h-[580px] lg:h-[640px] xl:h-[680px] rounded-[32px] sm:rounded-[44px] overflow-hidden shadow-2xl bg-[#1C1D21] border border-black/10 group">
                 <img 
                   src="/images/hero_showcase/manny_portrait_studio.jpg" 
                   alt="Manny Anchan - Executive Studio Portrait" 
@@ -252,7 +247,80 @@ export default function Founder() {
               </div>
             </motion.div>
 
+            {/* Right Column: Executive Pedigree & Stewardship (01-04 Stacked 1 below 1) */}
+            <motion.div 
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: luxuryEase }}
+              className="lg:col-span-7 bg-white p-7 sm:p-9 rounded-[32px] border border-black/10 shadow-lg flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center justify-between border-b border-black/10 pb-4 mb-5">
+                  <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-widest font-bold text-[#0A0A0A]">
+                    <Award className="w-4 h-4 text-hq-yellow" />
+                    <span>Executive Pedigree &amp; Stewardship</span>
+                  </div>
+                  <ShieldCheck className="w-4 h-4 text-black/40" />
+                </div>
+
+                {/* 01-04 Points Stacked 1 below 1 */}
+                <div className="flex flex-col gap-4 text-xs font-body">
+                  <div className="flex items-start gap-3.5 p-3 rounded-2xl bg-[#FAF8F5]/80 hover:bg-[#FAF8F5] transition-colors border border-black/5">
+                    <span className="w-6 h-6 rounded-full bg-black text-hq-yellow font-mono text-[10px] flex items-center justify-center shrink-0 mt-0.5 font-bold shadow-sm">
+                      01
+                    </span>
+                    <div>
+                      <div className="font-semibold text-sm text-[#0A0A0A]">Executive Education</div>
+                      <div className="text-[#333333] text-xs mt-0.5">Harvard &amp; Columbia Business School Alumni</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3.5 p-3 rounded-2xl bg-[#FAF8F5]/80 hover:bg-[#FAF8F5] transition-colors border border-black/5">
+                    <span className="w-6 h-6 rounded-full bg-black text-hq-yellow font-mono text-[10px] flex items-center justify-center shrink-0 mt-0.5 font-bold shadow-sm">
+                      02
+                    </span>
+                    <div>
+                      <div className="font-semibold text-sm text-[#0A0A0A]">Global Keynotes</div>
+                      <div className="text-[#333333] text-xs mt-0.5">4x TEDx Speaker (Katra, ElPro, Navrachana, Man Sagar)</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3.5 p-3 rounded-2xl bg-[#FAF8F5]/80 hover:bg-[#FAF8F5] transition-colors border border-black/5">
+                    <span className="w-6 h-6 rounded-full bg-black text-hq-yellow font-mono text-[10px] flex items-center justify-center shrink-0 mt-0.5 font-bold shadow-sm">
+                      03
+                    </span>
+                    <div>
+                      <div className="font-semibold text-sm text-[#0A0A0A]">Corporate Leadership</div>
+                      <div className="text-[#333333] text-xs mt-0.5">GE Capital, HDFC Bank, Barclays, ABN AMRO, AUB, FAB</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3.5 p-3 rounded-2xl bg-[#FAF8F5]/80 hover:bg-[#FAF8F5] transition-colors border border-black/5">
+                    <span className="w-6 h-6 rounded-full bg-black text-hq-yellow font-mono text-[10px] flex items-center justify-center shrink-0 mt-0.5 font-bold shadow-sm">
+                      04
+                    </span>
+                    <div>
+                      <div className="font-semibold text-sm text-[#0A0A0A]">Global Footprint</div>
+                      <div className="text-[#333333] text-xs mt-0.5">High-trust summits across 9 nations &amp; 16 Indian states</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-4 mt-5 border-t border-black/10 flex items-center justify-between">
+                <span className="text-[11px] font-mono text-[#555555] uppercase tracking-wider">Secretariat:</span>
+                <a 
+                  href="tel:+919700100800" 
+                  className="text-xs font-mono font-bold text-[#0A0A0A] hover:text-hq-yellow hover:underline flex items-center gap-1.5 transition-colors"
+                >
+                  <Phone className="w-3.5 h-3.5 text-[#0A0A0A]" /> +91 97001 00800
+                </a>
+              </div>
+            </motion.div>
+
           </div>
+
         </div>
       </section>
 
@@ -352,91 +420,21 @@ export default function Founder() {
       </section>
 
 {/* =========================================================================
-          4. SIGNATURE QUOTE & VERIFIED EXECUTIVE PEDIGREE
+          4. SIGNATURE QUOTE CARD
           ========================================================================= */}
       <section className="py-16 sm:py-20 px-6 md:px-12 bg-white border-b border-black/10">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="max-w-5xl mx-auto">
+          <div className="bg-[#0C0D0F] text-white p-8 sm:p-12 md:p-14 rounded-[32px] border border-white/10 shadow-2xl relative overflow-hidden group">
+            <QuoteIcon className="w-36 h-36 absolute -bottom-10 -right-8 text-white/[0.04] pointer-events-none" />
             
-            {/* Signature Quote Card: Calm over Chaos */}
-            <div className="lg:col-span-6 bg-[#0C0D0F] text-white p-7 sm:p-9 rounded-[28px] border border-white/10 shadow-xl flex flex-col justify-between relative overflow-hidden group">
-              <QuoteIcon className="w-24 h-24 absolute -bottom-6 -right-6 text-white/[0.04] pointer-events-none" />
-              
-              <div className="font-prata text-xl sm:text-2xl lg:text-[1.45rem] leading-relaxed font-normal text-[#E8E6E3] mb-6 relative z-10" style={{ fontFamily: '"Prata", serif' }}>
-                “Work so hard that you have room only for <span className="text-hq-yellow italic font-medium">calm over chaos</span> — <span className="text-hq-yellow italic font-medium">discipline over distraction</span>, <span className="text-hq-yellow italic font-medium">purpose over pressure</span>.”
-              </div>
-              
-              <div className="flex items-center justify-between pt-4 border-t border-white/10 text-xs font-mono relative z-10">
-                <span className="uppercase tracking-widest text-white/90 font-bold">~ MANNY ANCHAN</span>
-                <span className="text-hq-yellow font-medium">Happiness Samurai</span>
-              </div>
+            <div className="font-prata text-xl sm:text-2xl md:text-3xl lg:text-[2rem] leading-relaxed font-normal text-[#E8E6E3] mb-8 relative z-10" style={{ fontFamily: '"Prata", serif' }}>
+              “Work so hard that you have room only for <span className="text-hq-yellow italic font-medium">calm over chaos</span> — <span className="text-hq-yellow italic font-medium">discipline over distraction</span>, <span className="text-hq-yellow italic font-medium">purpose over pressure</span>.”
             </div>
-
-            {/* Verified Pedigree & Credentials */}
-            <div className="lg:col-span-6 bg-[#FAF8F5] p-7 sm:p-9 rounded-[28px] border border-black/10 shadow-md flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between border-b border-black/10 pb-3 mb-4">
-                  <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest font-bold text-[#0A0A0A]">
-                    <Award className="w-4 h-4 text-hq-yellow" />
-                    <span>Executive Pedigree &amp; Stewardship</span>
-                  </div>
-                  <ShieldCheck className="w-4 h-4 text-black/40" />
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-body">
-                  <div className="flex items-start gap-2.5">
-                    <span className="w-5 h-5 rounded-full bg-black/5 text-[#0A0A0A] font-mono text-[10px] flex items-center justify-center shrink-0 mt-0.5 font-bold">
-                      01
-                    </span>
-                    <div>
-                      <div className="font-semibold text-[#0A0A0A]">Executive Education</div>
-                      <div className="text-[#333333]">Harvard &amp; Columbia Business School Alumni</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-2.5">
-                    <span className="w-5 h-5 rounded-full bg-black/5 text-[#0A0A0A] font-mono text-[10px] flex items-center justify-center shrink-0 mt-0.5 font-bold">
-                      02
-                    </span>
-                    <div>
-                      <div className="font-semibold text-[#0A0A0A]">Global Keynotes</div>
-                      <div className="text-[#333333]">4x TEDx Speaker (Katra, ElPro, Navrachana, Man Sagar)</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-2.5">
-                    <span className="w-5 h-5 rounded-full bg-black/5 text-[#0A0A0A] font-mono text-[10px] flex items-center justify-center shrink-0 mt-0.5 font-bold">
-                      03
-                    </span>
-                    <div>
-                      <div className="font-semibold text-[#0A0A0A]">Corporate Leadership</div>
-                      <div className="text-[#333333]">GE Capital, HDFC Bank, Barclays, ABN AMRO, AUB, FAB</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-2.5">
-                    <span className="w-5 h-5 rounded-full bg-black/5 text-[#0A0A0A] font-mono text-[10px] flex items-center justify-center shrink-0 mt-0.5 font-bold">
-                      04
-                    </span>
-                    <div>
-                      <div className="font-semibold text-[#0A0A0A]">Global Footprint</div>
-                      <div className="text-[#333333]">High-trust summits across 9 nations &amp; 16 Indian states</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-4 mt-4 border-t border-black/10 flex items-center justify-between">
-                <span className="text-[11px] font-mono text-[#555555] uppercase tracking-wider">Secretariat:</span>
-                <a 
-                  href="tel:+919700100800" 
-                  className="text-xs font-mono font-bold text-[#0A0A0A] hover:text-hq-yellow hover:underline flex items-center gap-1.5 transition-colors"
-                >
-                  <Phone className="w-3.5 h-3.5 text-[#0A0A0A]" /> +91 97001 00800
-                </a>
-              </div>
+            
+            <div className="flex items-center justify-between pt-6 border-t border-white/10 text-xs sm:text-sm font-mono relative z-10">
+              <span className="uppercase tracking-widest text-white/90 font-bold">~ MANNY ANCHAN</span>
+              <span className="text-hq-yellow font-medium">Happiness Samurai</span>
             </div>
-
           </div>
         </div>
       </section>
