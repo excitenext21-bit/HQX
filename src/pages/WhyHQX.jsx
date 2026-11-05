@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   CheckCircle2, 
@@ -24,6 +24,32 @@ import GlobalFootprintMapSection from '../components/common/GlobalFootprintMapSe
 
 export default function WhyHQX() {
   const [activeFilter, setActiveFilter] = useState('all');
+  const [heroStep, setHeroStep] = useState(0); // 0: Think, 1: Feel, 2: Perform
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const onTimeUpdate = () => {
+      const t = video.currentTime;
+      // Step 0 (Think): 0s - 2.0s
+      // Step 1 (Feel): 2.0s - 4.5s
+      // Step 2 (Perform): 4.5s - 8.6s
+      if (t < 2.4) {
+        setHeroStep(0);
+      } else if (t < 5.0) {
+        setHeroStep(1);
+      } else {
+        setHeroStep(2);
+      }
+    };
+
+    video.addEventListener('timeupdate', onTimeUpdate);
+    return () => {
+      video.removeEventListener('timeupdate', onTimeUpdate);
+    };
+  }, []);
 
   const sectorClusters = [
     {
@@ -95,7 +121,7 @@ export default function WhyHQX() {
         <div className="absolute inset-0 w-full h-full pointer-events-none">
           <video
             src="/videos/why_hqx_walking_portal.mp4"
-            poster="/images/why-hqx-man-at-threshold.jpg"
+            poster="/images/why-hqx-man-think.jpg"
             autoPlay
             loop
             muted
@@ -129,9 +155,49 @@ export default function WhyHQX() {
         {/* Main Content Area (Vertically Centered in Viewport) */}
         <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 relative z-10 w-full flex-1 flex flex-col justify-center pt-28 sm:pt-32 pb-8">
           <div className="max-w-md">
-            {/* Editorial Headline matching About Us font properties */}
-            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight text-white leading-[1.15] mb-5 drop-shadow-md">
-              Think . Feel . <span className="text-hq-yellow">Perform</span>
+            {/* Editorial Headline with synchronized video animation step highlighting */}
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight leading-[1.15] mb-5 drop-shadow-md select-none">
+              <span 
+                className={`transition-all duration-500 inline-block ${
+                  heroStep >= 0 
+                    ? heroStep === 0 
+                      ? 'text-hq-yellow font-bold drop-shadow-[0_0_20px_rgba(255,206,0,0.85)] scale-[1.03]' 
+                      : 'text-hq-yellow font-semibold' 
+                    : 'text-white/60'
+                }`}
+              >
+                Think
+              </span>
+
+              <span className={`mx-2 sm:mx-2.5 transition-colors duration-500 ${heroStep >= 1 ? 'text-hq-yellow/80' : 'text-white/30'}`}>
+                .
+              </span>
+
+              <span 
+                className={`transition-all duration-500 inline-block ${
+                  heroStep >= 1 
+                    ? heroStep === 1 
+                      ? 'text-hq-yellow font-bold drop-shadow-[0_0_20px_rgba(255,206,0,0.85)] scale-[1.03]' 
+                      : 'text-hq-yellow font-semibold' 
+                    : 'text-white/60'
+                }`}
+              >
+                Feel
+              </span>
+
+              <span className={`mx-2 sm:mx-2.5 transition-colors duration-500 ${heroStep >= 2 ? 'text-hq-yellow/80' : 'text-white/30'}`}>
+                .
+              </span>
+
+              <span 
+                className={`transition-all duration-500 inline-block ${
+                  heroStep >= 2 
+                    ? 'text-hq-yellow font-bold drop-shadow-[0_0_20px_rgba(255,206,0,0.85)] scale-[1.03]' 
+                    : 'text-white/60'
+                }`}
+              >
+                Perform
+              </span>
             </h1>
 
             {/* Lead Narrative matching About Us font properties */}
