@@ -24,13 +24,15 @@ export default function Team() {
       {/* THE EXPERTS BEHIND YOUR CARE (MATCHING USER REFERENCE DESIGN) */}
       <section className="py-20 sm:py-24 px-6 md:px-12 bg-[#FAF8F5] border-b border-black/10">
         <div className="max-w-7xl mx-auto">
-          {/* Section Header: The Experts Behind Your Care */}
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-[54px] font-medium tracking-tight text-[#1E1915] leading-[1.08] mb-4">
-              The Experts <br />
-              <span className="text-[#8E8680] font-light">Behind Your Care</span>
-            </h2>
-            <p className="font-body text-sm sm:text-base text-[#6E6660] font-light leading-relaxed max-w-xl mx-auto">
+          {/* Section Header: Dual-Tone Title & Top Narrative (Matching About Us Dedicated Chapters Style) */}
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-12 sm:mb-14 pb-8 border-b border-black/10">
+            <div>
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] dark:text-white leading-[1.08]">
+                The Experts <br />
+                <span className="text-[#666666] dark:text-white/60 font-light">Behind Your Care</span>
+              </h2>
+            </div>
+            <p className="font-body text-sm sm:text-base text-hq-black/65 max-w-md font-light leading-relaxed lg:pb-1">
               Our team combines clinical expertise with genuine compassion to deliver personalized care tailored to your unique needs.
             </p>
           </div>
