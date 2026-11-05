@@ -151,106 +151,8 @@ export default function Founder() {
         </div>
       </section>
 
-      {/* =========================================================================
-          2. THE 2ND SECTION: JOURNEY
-             DARK EDITORIAL CANVAS • SIGNATURE QUOTE & NARRATIVE
-          ========================================================================= */}
-      <section id="journey" className="relative w-full py-20 sm:py-24 lg:py-28 px-6 md:px-12 bg-[#0E0F12] text-white border-b border-white/10 overflow-hidden">
-        
-        {/* Ambient Warm Golden Glow */}
-        <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-hq-yellow/[0.03] rounded-full blur-[150px] pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          
-          {/* Section Eyebrow / Kicker */}
-          <div className="flex items-center gap-3 mb-10 sm:mb-12 pb-4 border-b border-white/10">
-            <span className="text-xs font-mono uppercase tracking-[0.25em] text-hq-yellow font-bold">
-              MANNY ANCHAN
-            </span>
-            <span className="w-10 h-[1px] bg-hq-yellow/40" />
-            <span className="text-xs font-mono uppercase tracking-widest text-white/50">
-              02 // THE JOURNEY
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-            
-            {/* Left Column: Massive Signature Quote from the Spread */}
-            <motion.div 
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9, ease: luxuryEase }}
-              className="lg:col-span-5 flex flex-col justify-center"
-            >
-              <div className="relative pl-2">
-                <QuoteIcon className="w-20 h-20 text-white/[0.05] absolute -top-6 -left-4 pointer-events-none" />
-                
-                <blockquote 
-                  className="font-serif text-2xl sm:text-3xl lg:text-[2.2rem] xl:text-[2.5rem] leading-[1.25] text-[#E8E6E3] mb-6 relative z-10" 
-                  style={{ fontFamily: '"Prata", serif' }}
-                >
-                  “Be impatient with your <span className="text-hq-yellow italic font-normal">actions</span> and patient with your <span className="text-hq-yellow italic font-normal">outcomes</span>.”
-                </blockquote>
-                
-                <div className="flex items-center gap-2 text-xs font-mono text-white/60">
-                  <span className="text-white font-bold uppercase tracking-wider">~ MANNY ANCHAN</span>
-                  <span className="text-hq-yellow font-medium">• Happiness Samurai</span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Right Column: Heading "Journey" & Narrative Content */}
-            <motion.div 
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9, delay: 0.1, ease: luxuryEase }}
-              className="lg:col-span-7 flex flex-col justify-center lg:border-l lg:border-white/10 lg:pl-12"
-            >
-              {/* Heading: Journey (Using Exact Heading Properties from About Page) */}
-              <div className="mb-6">
-                <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.08] mb-6">
-                  Journey
-                </h2>
-
-                {/* Narrative Content from the Spread */}
-                <div className="space-y-5">
-                  <p className="font-body text-base sm:text-lg text-white/85 font-normal leading-relaxed">
-                    My journey has never been linear. From playing professional and international premier league cricket to spending over two decades in global banking, I experienced success, setbacks, leadership, loss, reinvention and purpose. Every chapter taught me that happiness isn't the destination—it is the operating system for sustained excellence.
-                  </p>
-                  <p className="font-body text-base sm:text-lg text-white/85 font-normal leading-relaxed">
-                    Walking away from corporate leadership wasn't about leaving success behind; it was about redefining it. Today, through HQX and the Happiness Samurai movement, I combine behavioural science, Japanese philosophy, neuroscience and practical business wisdom to help leaders build healthier cultures, stronger teams, and meaningful lives.
-                  </p>
-                </div>
-              </div>
-
-              {/* Action Link */}
-              <div className="pt-4 flex items-center gap-4">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-hq-yellow text-[#0A0A0A] font-display font-semibold text-xs uppercase tracking-widest hover:bg-white transition-all shadow-md group"
-                >
-                  <span>Connect with Manny</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link
-                  to="/books"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-xs font-display font-medium text-white/80 hover:text-white border border-white/20 hover:border-white/40 transition-colors uppercase tracking-widest"
-                >
-                  <BookOpen className="w-3.5 h-3.5 text-hq-yellow" />
-                  <span>The Book</span>
-                </Link>
-              </div>
-
-            </motion.div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          3. FOUNDER EDITORIAL PROFILE SECTION (MATCHING REFERENCE DESIGN)
+{/* =========================================================================
+          2. ABOUT THE FOUNDER SECTION (MATCHING REFERENCE DESIGN)
              CONTENT ON LEFT • ROUNDED STUDIO PORTRAIT ON RIGHT
              BACKGROUND: #FAF8F5 (MATCHING ABOUT PAGE)
           ========================================================================= */}
@@ -354,7 +256,102 @@ export default function Founder() {
         </div>
       </section>
 
-      {/* =========================================================================
+{/* =========================================================================
+          3. MANNY'S JOURNEY SECTION
+             DARK EDITORIAL CANVAS • SIGNATURE QUOTE & NARRATIVE
+          ========================================================================= */}
+      <section id="journey" className="relative w-full py-20 sm:py-24 lg:py-28 px-6 md:px-12 bg-[#0E0F12] text-white border-b border-white/10 overflow-hidden">
+        
+        {/* Ambient Warm Golden Glow */}
+        <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-hq-yellow/[0.03] rounded-full blur-[150px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          
+          {/* Section Eyebrow / Kicker */}
+          
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            
+            {/* Left Column: Massive Signature Quote from the Spread (Vertically Centered to Right Content) */}
+            <motion.div 
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: luxuryEase }}
+              className="lg:col-span-5 flex flex-col justify-center my-auto"
+            >
+              <div className="relative pl-2">
+                <QuoteIcon className="w-20 h-20 text-white/[0.05] absolute -top-6 -left-4 pointer-events-none" />
+                
+                <blockquote 
+                  className="font-serif text-2xl sm:text-3xl lg:text-[2.2rem] xl:text-[2.5rem] leading-[1.25] text-[#E8E6E3] mb-6 relative z-10" 
+                  style={{ fontFamily: '"Prata", serif' }}
+                >
+                  “Be impatient with your <span className="text-hq-yellow italic font-normal">actions</span> and patient with your <span className="text-hq-yellow italic font-normal">outcomes</span>.”
+                </blockquote>
+                
+                <div className="flex items-center gap-4 pt-2">
+                  <img 
+                    src="/images/hero_showcase/manny_signature.png" 
+                    alt="Manny Anchan Signature" 
+                    className="h-10 sm:h-12 w-auto object-contain filter brightness-125"
+                  />
+                  <span className="text-white/20 font-light">|</span>
+                  <span className="text-hq-yellow font-mono text-xs uppercase tracking-wider font-medium">Happiness Samurai</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right Column: Heading "Journey" & Narrative Content */}
+            <motion.div 
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, delay: 0.1, ease: luxuryEase }}
+              className="lg:col-span-7 flex flex-col justify-center lg:border-l lg:border-white/10 lg:pl-12"
+            >
+              {/* Heading: Journey (Using Exact Heading Properties from About Page) */}
+              <div className="mb-6">
+                <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.08] mb-6">
+                  Manny's Journey
+                </h2>
+
+                {/* Narrative Content from the Spread */}
+                <div className="space-y-5">
+                  <p className="font-body text-base sm:text-lg text-white/85 font-normal leading-relaxed">
+                    My journey has never been linear. From playing professional and international premier league cricket to spending over two decades in global banking, I experienced success, setbacks, leadership, loss, reinvention and purpose. Every chapter taught me that happiness isn't the destination—it is the operating system for sustained excellence.
+                  </p>
+                  <p className="font-body text-base sm:text-lg text-white/85 font-normal leading-relaxed">
+                    Walking away from corporate leadership wasn't about leaving success behind; it was about redefining it. Today, through HQX and the Happiness Samurai movement, I combine behavioural science, Japanese philosophy, neuroscience and practical business wisdom to help leaders build healthier cultures, stronger teams, and meaningful lives.
+                  </p>
+                </div>
+              </div>
+
+              {/* Action Link */}
+              <div className="pt-4 flex items-center gap-4">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-hq-yellow text-[#0A0A0A] font-display font-semibold text-xs uppercase tracking-widest hover:bg-white transition-all shadow-md group"
+                >
+                  <span>Connect with Manny</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link
+                  to="/books"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-xs font-display font-medium text-white/80 hover:text-white border border-white/20 hover:border-white/40 transition-colors uppercase tracking-widest"
+                >
+                  <BookOpen className="w-3.5 h-3.5 text-hq-yellow" />
+                  <span>The Book</span>
+                </Link>
+              </div>
+
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
+{/* =========================================================================
           4. SIGNATURE QUOTE & VERIFIED EXECUTIVE PEDIGREE
           ========================================================================= */}
       <section className="py-16 sm:py-20 px-6 md:px-12 bg-white border-b border-black/10">
