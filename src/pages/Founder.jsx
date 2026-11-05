@@ -152,8 +152,8 @@ export default function Founder() {
       </section>
 
       {/* =========================================================================
-          2. THE 2ND SECTION: JOURNEY (PAGE 14 SPREAD WITH CONTENT & PHOTO)
-             DARK EDITORIAL CANVAS • MANNY WITH YELLOW TYPEWRITER & BOOK
+          2. THE 2ND SECTION: JOURNEY
+             DARK EDITORIAL CANVAS • SIGNATURE QUOTE & NARRATIVE
           ========================================================================= */}
       <section id="journey" className="relative w-full py-20 sm:py-24 lg:py-28 px-6 md:px-12 bg-[#0E0F12] text-white border-b border-white/10 overflow-hidden">
         
@@ -173,49 +173,21 @@ export default function Founder() {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             
-            {/* Left Column: High-Res Editorial Photograph (Manny with Yellow Typewriter & Book) */}
+            {/* Left Column: Massive Signature Quote from the Spread */}
             <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.9, ease: luxuryEase }}
-              className="lg:col-span-6 flex items-center justify-center"
+              className="lg:col-span-5 flex flex-col justify-center"
             >
-              <div className="relative w-full h-[480px] sm:h-[580px] lg:h-[640px] rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] border border-white/10 group bg-black">
-                <img 
-                  src="/images/hero_showcase/manny_journey_typewriter_highres.jpg" 
-                  alt="Manny Anchan - The Journey with Yellow Typewriter and Happiness Samurai Book" 
-                  className="w-full h-full object-cover object-center filter contrast-[1.04] group-hover:scale-102 transition-transform duration-700 ease-out"
-                />
-                
-                {/* Subtle Luxury Inset Border */}
-                <div className="absolute inset-0 rounded-[28px] sm:rounded-[36px] border border-white/10 pointer-events-none" />
-                
-                {/* Book Badge */}
-                <div className="absolute bottom-5 left-5 z-20 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[11px] font-mono tracking-widest uppercase text-hq-yellow flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-hq-yellow" />
-                  <span>HAPPINESS SAMURAI • AUTHOR &amp; MENTOR</span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Right Column: Heading "Journey", Quote, Secondary Photo & Narrative Content */}
-            <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9, ease: luxuryEase }}
-              className="lg:col-span-6 flex flex-col justify-center"
-            >
-              
-              {/* Massive Signature Quote from the Spread */}
-              <div className="relative mb-8 sm:mb-10 pl-2">
+              <div className="relative pl-2">
                 <QuoteIcon className="w-20 h-20 text-white/[0.05] absolute -top-6 -left-4 pointer-events-none" />
                 
                 <blockquote 
-                  className="font-serif text-2xl sm:text-3xl lg:text-[2.2rem] xl:text-[2.45rem] leading-[1.25] text-[#E8E6E3] mb-4 relative z-10" 
+                  className="font-serif text-2xl sm:text-3xl lg:text-[2.2rem] xl:text-[2.5rem] leading-[1.25] text-[#E8E6E3] mb-6 relative z-10" 
                   style={{ fontFamily: '"Prata", serif' }}
                 >
                   “Be impatient with your <span className="text-hq-yellow italic font-normal">actions</span> and patient with your <span className="text-hq-yellow italic font-normal">outcomes</span>.”
@@ -226,19 +198,28 @@ export default function Founder() {
                   <span className="text-hq-yellow font-medium">• Happiness Samurai</span>
                 </div>
               </div>
+            </motion.div>
 
+            {/* Right Column: Heading "Journey" & Narrative Content */}
+            <motion.div 
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, delay: 0.1, ease: luxuryEase }}
+              className="lg:col-span-7 flex flex-col justify-center lg:border-l lg:border-white/10 lg:pl-12"
+            >
               {/* Heading: Journey (Using Exact Heading Properties from About Page) */}
-              <div className="border-t border-white/10 pt-6 sm:pt-8 mb-5">
-                <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.08] mb-4">
+              <div className="mb-6">
+                <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.08] mb-6">
                   Journey
                 </h2>
 
                 {/* Narrative Content from the Spread */}
-                <div className="space-y-4">
-                  <p className="font-body text-sm sm:text-[15px] text-white/80 font-normal leading-relaxed">
+                <div className="space-y-5">
+                  <p className="font-body text-base sm:text-lg text-white/85 font-normal leading-relaxed">
                     My journey has never been linear. From playing professional and international premier league cricket to spending over two decades in global banking, I experienced success, setbacks, leadership, loss, reinvention and purpose. Every chapter taught me that happiness isn't the destination—it is the operating system for sustained excellence.
                   </p>
-                  <p className="font-body text-sm sm:text-[15px] text-white/80 font-normal leading-relaxed">
+                  <p className="font-body text-base sm:text-lg text-white/85 font-normal leading-relaxed">
                     Walking away from corporate leadership wasn't about leaving success behind; it was about redefining it. Today, through HQX and the Happiness Samurai movement, I combine behavioural science, Japanese philosophy, neuroscience and practical business wisdom to help leaders build healthier cultures, stronger teams, and meaningful lives.
                   </p>
                 </div>
@@ -248,14 +229,14 @@ export default function Founder() {
               <div className="pt-4 flex items-center gap-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-hq-yellow text-[#0A0A0A] font-display font-semibold text-xs uppercase tracking-widest hover:bg-white transition-all shadow-md group"
+                  className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-hq-yellow text-[#0A0A0A] font-display font-semibold text-xs uppercase tracking-widest hover:bg-white transition-all shadow-md group"
                 >
                   <span>Connect with Manny</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   to="/books"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-display font-medium text-white/80 hover:text-white border border-white/20 hover:border-white/40 transition-colors uppercase tracking-widest"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-xs font-display font-medium text-white/80 hover:text-white border border-white/20 hover:border-white/40 transition-colors uppercase tracking-widest"
                 >
                   <BookOpen className="w-3.5 h-3.5 text-hq-yellow" />
                   <span>The Book</span>
