@@ -12,7 +12,8 @@ import {
   Award, 
   Sparkles, 
   Quote as QuoteIcon,
-  ShieldCheck
+  ShieldCheck,
+  Compass
 } from 'lucide-react';
 import CorporatePartnersMarquee from '../components/common/CorporatePartnersMarquee';
 
@@ -151,7 +152,135 @@ export default function Founder() {
       </section>
 
       {/* =========================================================================
-          2. FOUNDER CONTENT EDITORIAL SECTION (MATCHING USER REFERENCE DESIGN)
+          2. THE 2ND SECTION: JOURNEY (PAGE 14 SPREAD WITH CONTENT & PHOTO)
+             DARK EDITORIAL CANVAS • MANNY WITH YELLOW TYPEWRITER & BOOK
+          ========================================================================= */}
+      <section id="journey" className="relative w-full py-20 sm:py-24 lg:py-28 px-6 md:px-12 bg-[#0E0F12] text-white border-b border-white/10 overflow-hidden">
+        
+        {/* Ambient Warm Golden Glow */}
+        <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-hq-yellow/[0.03] rounded-full blur-[150px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          
+          {/* Section Eyebrow / Kicker */}
+          <div className="flex items-center gap-3 mb-10 sm:mb-12 pb-4 border-b border-white/10">
+            <span className="text-xs font-mono uppercase tracking-[0.25em] text-hq-yellow font-bold">
+              MANNY ANCHAN
+            </span>
+            <span className="w-10 h-[1px] bg-hq-yellow/40" />
+            <span className="text-xs font-mono uppercase tracking-widest text-white/50">
+              02 // THE JOURNEY
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            
+            {/* Left Column: High-Res Editorial Photograph (Manny with Yellow Typewriter & Book) */}
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: luxuryEase }}
+              className="lg:col-span-6 flex items-center justify-center"
+            >
+              <div className="relative w-full h-[480px] sm:h-[580px] lg:h-[640px] rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] border border-white/10 group bg-black">
+                <img 
+                  src="/images/hero_showcase/manny_journey_typewriter_highres.jpg" 
+                  alt="Manny Anchan - The Journey with Yellow Typewriter and Happiness Samurai Book" 
+                  className="w-full h-full object-cover object-center filter contrast-[1.04] group-hover:scale-102 transition-transform duration-700 ease-out"
+                />
+                
+                {/* Subtle Luxury Inset Border */}
+                <div className="absolute inset-0 rounded-[28px] sm:rounded-[36px] border border-white/10 pointer-events-none" />
+                
+                {/* Book Badge */}
+                <div className="absolute bottom-5 left-5 z-20 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[11px] font-mono tracking-widest uppercase text-hq-yellow flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-hq-yellow" />
+                  <span>HAPPINESS SAMURAI • AUTHOR &amp; MENTOR</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right Column: Heading "Journey", Quote, Secondary Photo & Narrative Content */}
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: luxuryEase }}
+              className="lg:col-span-6 flex flex-col justify-center"
+            >
+              
+              {/* Massive Signature Quote from the Spread */}
+              <div className="relative mb-8 sm:mb-10 pl-2">
+                <QuoteIcon className="w-20 h-20 text-white/[0.05] absolute -top-6 -left-4 pointer-events-none" />
+                
+                <blockquote 
+                  className="font-serif text-2xl sm:text-3xl lg:text-[2.2rem] xl:text-[2.45rem] leading-[1.25] text-[#E8E6E3] mb-4 relative z-10" 
+                  style={{ fontFamily: '"Prata", serif' }}
+                >
+                  “Be impatient with your <span className="text-hq-yellow italic font-normal">actions</span> and patient with your <span className="text-hq-yellow italic font-normal">outcomes</span>.”
+                </blockquote>
+                
+                <div className="flex items-center gap-2 text-xs font-mono text-white/60">
+                  <span className="text-white font-bold uppercase tracking-wider">~ MANNY ANCHAN</span>
+                  <span className="text-hq-yellow font-medium">• Happiness Samurai</span>
+                </div>
+              </div>
+
+              {/* Heading: Journey (Using Exact Heading Properties from About Page) */}
+              <div className="border-t border-white/10 pt-6 sm:pt-8 mb-5">
+                <div className="flex items-center justify-between gap-4 mb-4">
+                  <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.08]">
+                    Journey
+                  </h2>
+
+                  {/* Secondary Photo from the Page Spread (Manny Reflecting / Reading) */}
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden shrink-0 border border-white/15 shadow-md bg-black">
+                    <img 
+                      src="/images/hero_showcase/manny_yellow_reading.jpg" 
+                      alt="Manny Anchan Journey Reflection" 
+                      className="w-full h-full object-cover object-top filter contrast-[1.05]"
+                    />
+                  </div>
+                </div>
+
+                {/* Narrative Content from the Spread */}
+                <div className="space-y-4">
+                  <p className="font-body text-sm sm:text-[15px] text-white/80 font-normal leading-relaxed">
+                    My journey has never been linear. From playing professional and international premier league cricket to spending over two decades in global banking, I experienced success, setbacks, leadership, loss, reinvention and purpose. Every chapter taught me that happiness isn't the destination—it is the operating system for sustained excellence.
+                  </p>
+                  <p className="font-body text-sm sm:text-[15px] text-white/80 font-normal leading-relaxed">
+                    Walking away from corporate leadership wasn't about leaving success behind; it was about redefining it. Today, through HQX and the Happiness Samurai movement, I combine behavioural science, Japanese philosophy, neuroscience and practical business wisdom to help leaders build healthier cultures, stronger teams, and meaningful lives.
+                  </p>
+                </div>
+              </div>
+
+              {/* Action Link */}
+              <div className="pt-4 flex items-center gap-4">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-hq-yellow text-[#0A0A0A] font-display font-semibold text-xs uppercase tracking-widest hover:bg-white transition-all shadow-md group"
+                >
+                  <span>Connect with Manny</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link
+                  to="/books"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-display font-medium text-white/80 hover:text-white border border-white/20 hover:border-white/40 transition-colors uppercase tracking-widest"
+                >
+                  <BookOpen className="w-3.5 h-3.5 text-hq-yellow" />
+                  <span>The Book</span>
+                </Link>
+              </div>
+
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          3. FOUNDER EDITORIAL PROFILE SECTION (MATCHING REFERENCE DESIGN)
              CONTENT ON LEFT • ROUNDED STUDIO PORTRAIT ON RIGHT
              BACKGROUND: #FAF8F5 (MATCHING ABOUT PAGE)
           ========================================================================= */}
@@ -160,11 +289,7 @@ export default function Founder() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
-            {/* -----------------------------------------------------------------
-                Left Column: Content Manny Anchan (Matching Reference Image)
-                Heading Properties exact match with About Page:
-                font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] leading-[1.08]
-                ----------------------------------------------------------------- */}
+            {/* Left Column: Content Manny Anchan */}
             <motion.div 
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -182,7 +307,7 @@ export default function Founder() {
                 Manny Anchan
               </h2>
 
-              {/* Motivational Speaker Bio (User Content Part 1) */}
+              {/* Motivational Speaker Bio (Font Weight: 400) */}
               <div className="space-y-4 mb-8">
                 <p className="font-body text-sm sm:text-base text-[#1A1A1A] font-normal leading-relaxed">
                   Manny Anchan is a dynamic motivational speaker known for his engaging storytelling and powerful insights. With a passion for inspiring others, he shares his journey of overcoming challenges and achieving success.
@@ -192,7 +317,7 @@ export default function Founder() {
                 </p>
               </div>
 
-              {/* 25-Year Executive Epiphany / MISSION (User Content Part 2) */}
+              {/* 25-Year Executive Epiphany / MISSION Card */}
               <div className="bg-white/90 backdrop-blur-md p-6 sm:p-8 rounded-[24px] border border-black/10 shadow-[0_15px_35px_-10px_rgba(0,0,0,0.06)] mb-8 space-y-4">
                 <div className="flex items-center justify-between pb-3 border-b border-black/10">
                   <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest font-bold text-[#0A0A0A]">
@@ -212,7 +337,7 @@ export default function Founder() {
                 </p>
               </div>
 
-              {/* Reference Pill Button: Read more / Book Manny with Round Circle Arrow */}
+              {/* Reference Pill Button: Book Manny with Round Circle Arrow */}
               <div className="flex flex-wrap items-center gap-4">
                 <Link
                   to="/contact"
@@ -235,9 +360,7 @@ export default function Founder() {
 
             </motion.div>
 
-            {/* -----------------------------------------------------------------
-                Right Column: Large Tall Rounded Studio Portrait (Matching Reference)
-                ----------------------------------------------------------------- */}
+            {/* Right Column: Studio Portrait */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -262,7 +385,7 @@ export default function Founder() {
       </section>
 
       {/* =========================================================================
-          3. SIGNATURE QUOTE & VERIFIED EXECUTIVE PEDIGREE
+          4. SIGNATURE QUOTE & VERIFIED EXECUTIVE PEDIGREE
           ========================================================================= */}
       <section className="py-16 sm:py-20 px-6 md:px-12 bg-white border-b border-black/10">
         <div className="max-w-7xl mx-auto">
@@ -352,7 +475,7 @@ export default function Founder() {
       </section>
 
       {/* =========================================================================
-          4. FULL-WIDTH TRUSTED BY OVER 40+ INDUSTRY TITANS MARQUEE
+          5. FULL-WIDTH TRUSTED BY OVER 40+ INDUSTRY TITANS MARQUEE
           ========================================================================= */}
       <div className="w-full m-0 p-0 border-t border-white/10">
         <CorporatePartnersMarquee showHeader={true} title="Trusted by Over 40+ Industry Titans" reversed={true} />
