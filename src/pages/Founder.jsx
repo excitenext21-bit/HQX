@@ -52,14 +52,16 @@ export default function Founder() {
       <section className="bg-black text-white border-b border-white/10 relative overflow-hidden min-h-[100svh] lg:h-screen lg:max-h-screen flex flex-col justify-between pt-20 lg:pt-16">
 
         {/* Left Side Vertical Text: FOUNDER */}
-        <div 
-          className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 top-1/2 -translate-y-1/2 z-30 flex items-center gap-3 sm:gap-4 select-none pointer-events-none"
-          style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
-        >
-          <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
-            FOUNDER
-          </span>
-          <span className="w-px h-8 sm:h-14 bg-white/25"></span>
+        <div className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-30 flex flex-col justify-center items-center pointer-events-none select-none">
+          <div 
+            className="flex items-center gap-3 sm:gap-4"
+            style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+          >
+            <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
+              FOUNDER
+            </span>
+            <span className="w-px h-8 sm:h-14 bg-white/25"></span>
+          </div>
         </div>
 
         
