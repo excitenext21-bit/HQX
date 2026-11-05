@@ -51,7 +51,7 @@ export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* FULL VIEWPORT SLIDER WITH SLANTED DIVISIONS & 5PX BLACK BORDER */}
+      {/* FULL VIEWPORT SLIDER WITH SLANTED DIVISIONS & 50% THINNER (2.5PX) BLACK BORDER */}
       <div className="w-full h-full relative overflow-hidden rounded-none border-none bg-black flex-1">
         <AnimatePresence mode="wait">
           <motion.div
@@ -60,7 +60,7 @@ export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col md:flex-row h-full w-[100%] md:w-[calc(100%+140px)] md:-ml-[70px] rounded-none border-none"
+            className="flex flex-col md:flex-row h-full w-[100%] md:w-[calc(100%+100px)] md:-ml-[50px] rounded-none border-none"
           >
             {currentMembers.map((member) => {
               const isHovered = activeHoverId === member.id;
@@ -71,37 +71,40 @@ export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
                   onClick={() => onSelectMember && onSelectMember(member)}
                   onMouseEnter={() => setActiveHoverId(member.id)}
                   onMouseLeave={() => setActiveHoverId(null)}
-                  className={`relative cursor-pointer overflow-hidden transition-all duration-700 ease-out flex flex-col justify-end p-6 sm:p-8 md:p-10 group rounded-none md:[transform:skewX(-7deg)] md:border-r-[5px] md:border-black border-b-[5px] md:border-b-0 border-black ${
-                    isHovered ? 'md:flex-[1.38]' : 'md:flex-1'
+                  className={`relative cursor-pointer overflow-hidden transition-all duration-700 ease-out flex flex-col justify-end p-6 sm:p-8 md:p-10 group rounded-none md:[transform:skewX(-5deg)] md:border-r-[2px] md:border-black border-b-[2px] md:border-b-0 border-black ${
+                    isHovered ? 'md:flex-[1.32]' : 'md:flex-1'
                   }`}
                   style={{ transformOrigin: '50% 50%' }}
                 >
-                  {/* Black & Monochrome Portrait Background - Counter-skewed to remain upright */}
+                  {/* Black & Monochrome Portrait Background - Zoomed out comfortably, counter-skewed to remain upright */}
                   <div 
-                    className="absolute inset-0 w-full h-full bg-black rounded-none md:[transform:skewX(7deg)_scale(1.28)]"
+                    className="absolute inset-0 w-full h-full bg-black rounded-none md:[transform:skewX(5deg)_scale(1.1)] overflow-hidden"
                     style={{ transformOrigin: '50% 50%' }}
                   >
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover object-top transition-all duration-700 ease-out filter grayscale contrast-[1.3] brightness-[0.72] group-hover:brightness-[0.92] group-hover:contrast-[1.2] group-hover:scale-105 rounded-none"
-                    />
-                    {/* Deep Low-Key Cinematic Gradient Overlays */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-95 group-hover:opacity-85 transition-opacity duration-300"></div>
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300"></div>
+                    {/* Zoomed out portrait framing with generous headroom and breathing space */}
+                    <div className="w-full h-full relative flex items-start justify-center">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-[76%] sm:h-[78%] md:h-[82%] object-cover object-top transition-all duration-700 ease-out filter grayscale contrast-[1.25] brightness-[0.74] group-hover:brightness-[0.92] group-hover:contrast-[1.18] group-hover:scale-[1.03] rounded-none"
+                      />
+                      {/* Deep Low-Key Cinematic Gradient Overlays to seamlessly blend into black */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-95 group-hover:opacity-85 transition-opacity duration-300 pointer-events-none"></div>
+                      <div className="absolute inset-0 bg-black/15 group-hover:bg-transparent transition-colors duration-300 pointer-events-none"></div>
+                    </div>
                   </div>
 
-                  {/* 5px Slanted Black Divider on the right (and bottom for mobile) */}
-                  <div className="hidden md:block absolute top-0 bottom-0 right-0 w-[5px] bg-black z-30 pointer-events-none" />
-                  <div className="md:hidden absolute bottom-0 left-0 right-0 h-[5px] bg-black z-30 pointer-events-none" />
+                  {/* 50% Thinner (2.5px) Slanted Black Divider on the right (and bottom for mobile) */}
+                  <div className="hidden md:block absolute top-0 bottom-0 right-0 w-[2.5px] bg-black z-30 pointer-events-none" />
+                  <div className="md:hidden absolute bottom-0 left-0 right-0 h-[2.5px] bg-black z-30 pointer-events-none" />
 
                   {/* Member Name and Clean Details Overlay - Counter-skewed to remain upright */}
                   <div 
-                    className="relative z-20 md:[transform:skewX(7deg)] transform transition-transform duration-300 group-hover:-translate-y-2"
+                    className="relative z-20 md:[transform:skewX(5deg)] transform transition-transform duration-300 group-hover:-translate-y-2"
                     style={{ transformOrigin: 'bottom left' }}
                   >
                     {/* Name: Reduced 50% in size and font-weight 300 (font-light) */}
-                    <h3 className="font-display text-sm sm:text-base lg:text-[17px] font-[300] tracking-widest uppercase text-white mb-2 leading-snug">
+                    <h3 className="font-display text-sm sm:text-base lg:text-[16px] font-[300] tracking-widest uppercase text-white mb-2 leading-snug">
                       {member.name}
                     </h3>
 
