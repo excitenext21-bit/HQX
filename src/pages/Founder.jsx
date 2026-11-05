@@ -90,193 +90,159 @@ export default function Founder() {
         </div>
       </section>
 
-      {/* DETAILED NARRATIVE & PEDIGREE (SLIDE 26 & 27 PROFILE) */}
-      <section id="pedigree" className="py-20 sm:py-28 px-6 md:px-12 border-b border-hq-black/10">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-16 lg:gap-20 items-start">
+      {/* DETAILED NARRATIVE & PEDIGREE: 100% WIDTH DUAL-TONE (TOP HALF WHITE, LOWER HALF BRAND YELLOW) WITH CENTER PORTRAIT (NO BOX / NO BORDER) */}
+      <section id="pedigree" className="relative w-full py-16 sm:py-24 px-6 md:px-12 overflow-hidden">
+        {/* Split Dual-Tone Background: Top Half White, Lower Half Brand Yellow (100% Width) */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <div className="h-1/2 w-full bg-[#FFFFFF]"></div>
+          <div className="h-1/2 w-full bg-hq-yellow"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
-            {/* Left: Quick Facts, Key Accomplishments, & Academic Pedigree */}
-            <div className="w-full lg:w-5/12 flex flex-col gap-8 sticky top-28">
-              {/* Secondary Headshot in relaxed executive pose */}
-              <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-hq-gray border border-hq-black/10 shadow-md">
-                <img 
-                  src="/images/hero_showcase/manny_yellow_cab.jpg" 
-                  alt="Manny Anchan - Global Life & Well-Being Presence" 
-                  className="w-full h-full object-cover object-[center_35%]"
-                />
+            {/* Left Column: Heading, Philosophy & Verified Pedigree */}
+            <div className="lg:col-span-4 flex flex-col gap-6 justify-center">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 text-[#0A0A0A] text-xs font-mono uppercase tracking-widest font-semibold mb-3">
+                  <span className="w-2 h-2 rounded-full bg-hq-yellow"></span>
+                  Enterprise Stewardship
+                </div>
+                <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl tracking-tight font-bold text-[#0A0A0A] leading-tight mb-2">
+                  Manny <span className="text-hq-yellow bg-[#0A0A0A] px-2 py-0.5 inline-block">Anchan</span>
+                </h2>
+                <div className="font-prata text-lg sm:text-xl text-[#222222] italic font-normal leading-relaxed mb-4" style={{ fontFamily: '"Prata", serif' }}>
+                  "{FOUNDER_PROFILE.tagline}"
+                </div>
+                <p className="font-body text-xs sm:text-sm text-[#222222] font-light leading-relaxed">
+                  {FOUNDER_PROFILE.philosophy}
+                </p>
               </div>
 
               {/* Verified Credentials Box */}
-              <div className="bg-hq-gray/70 p-6 sm:p-8 rounded-2xl border border-hq-black/10 flex flex-col gap-6">
-                <h3 className="font-display text-xl font-bold uppercase tracking-wider text-hq-black border-b border-hq-black/10 pb-3 flex items-center gap-2">
-                  <Award className="w-5 h-5 text-hq-yellow" />
+              <div className="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-black/10 shadow-lg flex flex-col gap-4">
+                <h3 className="font-display text-base font-bold uppercase tracking-wider text-[#0A0A0A] border-b border-black/10 pb-2.5 flex items-center gap-2">
+                  <Award className="w-4 h-4 text-hq-yellow" />
                   <span>Verified Pedigree</span>
                 </h3>
 
-                <div className="flex flex-col gap-4 text-xs font-body">
-                  <div className="flex items-start gap-3">
-                    <GraduationCap className="w-4 h-4 text-hq-black shrink-0 mt-0.5" />
+                <div className="flex flex-col gap-3 text-xs font-body">
+                  <div className="flex items-start gap-2.5">
+                    <GraduationCap className="w-4 h-4 text-[#0A0A0A] shrink-0 mt-0.5" />
                     <div>
-                      <div className="font-semibold text-hq-black">Executive Education</div>
-                      <div className="text-hq-black/70">Harvard Business School &amp; Columbia Business School Alumni</div>
+                      <div className="font-semibold text-[#0A0A0A]">Executive Education</div>
+                      <div className="text-[#333333]">Harvard Business School &amp; Columbia Business School Alumni</div>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <Mic2 className="w-4 h-4 text-hq-black shrink-0 mt-0.5" />
+                  <div className="flex items-start gap-2.5">
+                    <Mic2 className="w-4 h-4 text-[#0A0A0A] shrink-0 mt-0.5" />
                     <div>
-                      <div className="font-semibold text-hq-black">Global Keynotes</div>
-                      <div className="text-hq-black/70">4x TEDx Speaker (Katra, ElPro International, Navrachana University, Man Sagar Lake)</div>
+                      <div className="font-semibold text-[#0A0A0A]">Global Keynotes</div>
+                      <div className="text-[#333333]">4x TEDx Speaker (Katra, ElPro, Navrachana, Man Sagar Lake)</div>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <Globe className="w-4 h-4 text-hq-black shrink-0 mt-0.5" />
+                  <div className="flex items-start gap-2.5">
+                    <Globe className="w-4 h-4 text-[#0A0A0A] shrink-0 mt-0.5" />
                     <div>
-                      <div className="font-semibold text-hq-black">Global Impact Footprint</div>
-                      <div className="text-hq-black/70">Conducted high-trust summits across 9 nations &amp; 16 Indian states</div>
+                      <div className="font-semibold text-[#0A0A0A]">Global Impact Footprint</div>
+                      <div className="text-[#333333]">Conducted high-trust summits across 9 nations &amp; 16 Indian states</div>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <BookOpen className="w-4 h-4 text-hq-black shrink-0 mt-0.5" />
+                  <div className="flex items-start gap-2.5">
+                    <BookOpen className="w-4 h-4 text-[#0A0A0A] shrink-0 mt-0.5" />
                     <div>
-                      <div className="font-semibold text-hq-black">Literary Benchmark</div>
-                      <div className="text-hq-black/70">Author of 6 published works including <em>Happiness Samurai</em> (Foreword by John Abraham)</div>
+                      <div className="font-semibold text-[#0A0A0A]">Literary Benchmark</div>
+                      <div className="text-[#333333]">Author of 6 published works including <em>Happiness Samurai</em> (Foreword by John Abraham)</div>
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-hq-black/10 flex items-center justify-between">
-                  <span className="text-[11px] font-mono text-hq-black/60 uppercase">Secretariat Contact:</span>
-                  <a href="tel:+919700100800" className="text-xs font-mono font-bold text-hq-yellow hover:underline flex items-center gap-1">
-                    <Phone className="w-3 h-3" /> +91 97001 00800
+                <div className="pt-3 border-t border-black/10 flex items-center justify-between">
+                  <span className="text-[11px] font-mono text-[#555555] uppercase">Secretariat:</span>
+                  <a href="tel:+919700100800" className="text-xs font-mono font-bold text-[#0A0A0A] hover:underline flex items-center gap-1">
+                    <Phone className="w-3 h-3 text-[#0A0A0A]" /> +91 97001 00800
                   </a>
                 </div>
               </div>
             </div>
 
-            {/* Right: Comprehensive Narrative & Credentials */}
-            <div className="w-full lg:w-7/12 flex flex-col gap-8">
-              <div>
-                <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl tracking-tight font-semibold mb-4 leading-tight">
-                  Manny <span className="text-hq-yellow bg-hq-black px-2 py-0.5 inline-block">Anchan</span>
-                </h2>
-                <div className="font-prata text-xl sm:text-2xl text-hq-black/80 italic font-normal leading-relaxed mb-6" style={{ fontFamily: '"Prata", serif' }}>
-                  "{FOUNDER_PROFILE.tagline}"
-                </div>
-                <p className="font-body text-base sm:text-lg text-hq-black/80 font-light leading-relaxed mb-6">
-                  {FOUNDER_PROFILE.philosophy}
-                </p>
-              </div>
+            {/* Center Column: Portrait Image Cutout (No Box, No Border, Full Height Across Horizon) */}
+            <div className="lg:col-span-4 flex flex-col items-center justify-end relative h-full min-h-[360px] sm:min-h-[440px] lg:min-h-[580px] z-20">
+              <img 
+                src="/images/hero_showcase/manny_founder_cutout.png" 
+                alt="Manny Anchan - Founder & Chief Happiness Officer" 
+                className="w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[440px] h-auto object-contain drop-shadow-[0_25px_40px_rgba(0,0,0,0.25)] select-none pointer-events-none" 
+              />
+            </div>
 
+            {/* Right Column: 25-Yr Stewardship, Flourishing Science & Action */}
+            <div className="lg:col-span-4 flex flex-col gap-6 justify-center">
               {/* 25-Year Global Corporate Pedigree */}
-              <div className="bg-hq-gray p-6 sm:p-8 border border-hq-black/10">
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest font-bold text-hq-black mb-3">
-                  <Briefcase className="w-4 h-4 text-hq-black" />
-                  <span>25+ Years Global Corporate Stewardship (Slide 26)</span>
+              <div className="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-black/10 shadow-lg">
+                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest font-bold text-[#0A0A0A] mb-2.5">
+                  <Briefcase className="w-4 h-4 text-[#0A0A0A]" />
+                  <span>25+ Years Global Corporate Stewardship</span>
                 </div>
-                <p className="font-body text-sm sm:text-base text-hq-black/80 font-light leading-relaxed mb-4">
-                  Before founding HQX, Manny spent a quarter-century at the pinnacle of global corporate finance and multinational executive management. His career encompasses senior leadership tenures at <strong>GE Capital</strong>, <strong>HDFC Bank</strong>, <strong>ABN AMRO</strong>, <strong>Barclays</strong>, <strong>Arab United Bank (AUB)</strong>, and <strong>First Abu Dhabi Bank (FAB)</strong>.
+                <p className="font-body text-xs sm:text-sm text-[#2B2B2B] font-light leading-relaxed mb-3">
+                  Senior leadership tenures at <strong>GE Capital</strong>, <strong>HDFC Bank</strong>, <strong>ABN AMRO</strong>, <strong>Barclays</strong>, <strong>Arab United Bank</strong>, and <strong>First Abu Dhabi Bank</strong>.
                 </p>
-                <p className="font-body text-sm sm:text-base text-hq-black/80 font-light leading-relaxed">
-                  Having lived and led multi-billion dollar operations across Asia, Africa, Europe, and North America, Manny brings an acute, firsthand understanding of corporate stress, boardroom accountability, executive burnout, and how organizational well-being fundamentally impacts EBITDA and enterprise valuation.
+                <p className="font-body text-xs sm:text-sm text-[#2B2B2B] font-light leading-relaxed">
+                  Having led multi-billion dollar operations across Asia, Europe, and North America, Manny brings an acute understanding of boardroom accountability, executive burnout, and organizational happiness.
                 </p>
               </div>
 
               {/* Research & Intellectual Foundations */}
-              <div className="border border-hq-black/15 p-6 sm:p-8">
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest font-bold text-hq-black mb-3">
+              <div className="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-black/10 shadow-lg">
+                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest font-bold text-[#0A0A0A] mb-2.5">
                   <BookOpen className="w-4 h-4 text-hq-yellow" />
                   <span>The Science of Human Flourishing</span>
                 </div>
-                <p className="font-body text-sm sm:text-base text-hq-black/80 font-light leading-relaxed mb-4">
-                  Manny has spent over a decade conducting rigorous field research across diverse cultures to synthesize universal well-being paradigms into actionable corporate blueprints:
+                <p className="font-body text-xs sm:text-sm text-[#2B2B2B] font-light leading-relaxed mb-3">
+                  Synthesizing universal well-being paradigms into actionable corporate blueprints:
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-body">
-                  <div className="p-3 bg-hq-gray/50 border border-hq-black/10">
-                    <strong className="block text-hq-black mb-1">Japan (Ikigai)</strong>
-                    <span className="text-hq-black/70">Connecting individual professional drive to systemic enterprise purpose.</span>
+                <div className="grid grid-cols-2 gap-2 text-[11px] font-body">
+                  <div className="p-2.5 bg-black/5 rounded-lg border border-black/5">
+                    <strong className="block text-[#0A0A0A] font-semibold">Japan (Ikigai)</strong>
+                    <span className="text-[#444444]">Enterprise purpose.</span>
                   </div>
-                  <div className="p-3 bg-hq-gray/50 border border-hq-black/10">
-                    <strong className="block text-hq-black mb-1">Nordics (Hygge &amp; Sisu)</strong>
-                    <span className="text-hq-black/70">Building stoic psychological fortitude alongside communal corporate warmth.</span>
+                  <div className="p-2.5 bg-black/5 rounded-lg border border-black/5">
+                    <strong className="block text-[#0A0A0A] font-semibold">Nordics (Hygge)</strong>
+                    <span className="text-[#444444]">Psychological safety.</span>
                   </div>
-                  <div className="p-3 bg-hq-gray/50 border border-hq-black/10">
-                    <strong className="block text-hq-black mb-1">Bhutan (GNH)</strong>
-                    <span className="text-hq-black/70">Measuring organizational prosperity beyond raw outputs to holistic wellness.</span>
+                  <div className="p-2.5 bg-black/5 rounded-lg border border-black/5">
+                    <strong className="block text-[#0A0A0A] font-semibold">Bhutan (GNH)</strong>
+                    <span className="text-[#444444]">Holistic prosperity.</span>
                   </div>
-                  <div className="p-3 bg-hq-gray/50 border border-hq-black/10">
-                    <strong className="block text-hq-black mb-1">Neuroscience (Eudaimonia)</strong>
-                    <span className="text-hq-black/70">Dopamine-oxytocin equilibrium for sustained stamina and burnout immunity.</span>
+                  <div className="p-2.5 bg-black/5 rounded-lg border border-black/5">
+                    <strong className="block text-[#0A0A0A] font-semibold">Neuroscience</strong>
+                    <span className="text-[#444444]">Burnout immunity.</span>
                   </div>
-                </div>
-              </div>
-
-              {/* Keynote Conclaves & Global Engagements */}
-              <div>
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest font-bold text-hq-black mb-3">
-                  <Mic2 className="w-4 h-4 text-hq-yellow" />
-                  <span>Keynote Conclaves &amp; Global Engagements</span>
-                </div>
-                <p className="font-body text-sm sm:text-base text-hq-black/80 font-light leading-relaxed mb-4">
-                  Manny has energized boardrooms and global summits for premier corporate and institutional clients:
-                </p>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-                  {[
-                    'Barclays Wealth',
-                    'Cipla Healthcare',
-                    'Tata Motors',
-                    'Indigo Airlines',
-                    'Ageas Federal Life',
-                    'Amana Bank (Tanzania)',
-                    'Absa Bank (Mauritius)',
-                    'Harvard Club of APAC',
-                    'TEDx Katra (J&K)',
-                    'TEDx Navrachana Univ.',
-                    'TEDx ElPro Int. School',
-                    'TEDx Man Sagar Lake'
-                  ].map((client, idx) => (
-                    <div key={idx} className="p-3 bg-hq-gray border border-hq-black/10 text-xs font-mono font-medium text-hq-black flex items-center gap-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-hq-yellow shrink-0" />
-                      <span className="truncate">{client}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Community & Advisory Engagements */}
-              <div>
-                <div className="text-xs font-mono uppercase tracking-widest font-bold text-hq-black mb-3">
-                  Community &amp; Academic Stewardship
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {FOUNDER_PROFILE.communityEngagement.map((item, idx) => (
-                    <span key={idx} className="px-3.5 py-1.5 bg-hq-gray text-xs font-display uppercase tracking-wider font-medium text-hq-black border border-hq-black/10">
-                      {item}
-                    </span>
-                  ))}
                 </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-4 flex flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 pt-1">
                 <Link
                   to="/contact"
-                  className="bg-hq-black text-hq-yellow font-display text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-hq-yellow hover:text-hq-black transition-all font-semibold shadow-lg flex items-center gap-2"
+                  className="w-full sm:w-auto text-center bg-[#0A0A0A] text-hq-yellow font-display text-xs uppercase tracking-widest px-6 py-3.5 rounded-full hover:bg-white hover:text-black transition-all font-semibold shadow-md flex items-center justify-center gap-2"
                 >
-                  <span>Book Manny For Your Organization</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <span>Book Manny</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
                 <Link
                   to="/books"
-                  className="bg-white text-hq-black border border-hq-black font-display text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-hq-gray transition-all font-semibold flex items-center gap-2"
+                  className="w-full sm:w-auto text-center bg-white text-[#0A0A0A] border border-black/20 font-display text-xs uppercase tracking-widest px-6 py-3.5 rounded-full hover:bg-black/5 transition-all font-semibold flex items-center justify-center gap-2 shadow-sm"
                 >
-                  <span>Explore Bestselling Books</span>
-                  <BookOpen className="w-4 h-4" />
+                  <span>Bestselling Books</span>
+                  <BookOpen className="w-3.5 h-3.5" />
                 </Link>
               </div>
+
             </div>
+
           </div>
         </div>
       </section>
