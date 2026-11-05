@@ -479,44 +479,44 @@ export default function WhyHQX() {
         </div>
       </section>
 
-      {/* THE PARADIGM SHIFT: HOW HQX COMPARES (BLACK EDITORIAL SEED-STYLE COMPARISON TABLE) */}
-      <section className="py-24 sm:py-32 px-6 md:px-12 bg-[#0C0D0C] text-white border-b border-white/10 relative overflow-hidden">
+      {/* THE PARADIGM SHIFT: HOW HQX COMPARES (FIT TO SCREEN BLACK SEED-STYLE COMPARISON TABLE) */}
+      <section className="min-h-[100svh] lg:h-screen lg:min-h-[640px] lg:max-h-[1080px] px-6 md:px-12 bg-[#0C0D0C] text-white border-b border-white/10 relative overflow-hidden flex flex-col justify-center py-8 lg:py-10">
         {/* Ambient Subtle Scrim / Glow */}
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[700px] bg-[#FFCE00]/[0.02] rounded-full blur-[160px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-14 items-center">
             
-            {/* Left Column: Heading and Narrative */}
-            <div className="lg:col-span-4 space-y-6">
+            {/* Left Column: Heading and Narrative (No colon after Compares) */}
+            <div className="lg:col-span-4 space-y-4 lg:space-y-5">
               <span className="text-xs font-mono uppercase tracking-widest text-[#FFCE00] block">
                 The Paradigm Shift
               </span>
-              <h2 className="font-display text-4xl sm:text-5xl lg:text-[54px] font-semibold tracking-tight text-white leading-[1.05]">
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-[46px] xl:text-[52px] font-semibold tracking-tight text-white leading-[1.06]">
                 How HQX™ <br />
-                Compares:
+                Compares
               </h2>
-              <p className="font-body text-sm sm:text-base text-white/60 font-light leading-relaxed">
+              <p className="font-body text-xs sm:text-sm lg:text-[15px] text-white/60 font-light leading-relaxed max-w-sm">
                 Why traditional corporate wellness efforts fail to move organizational needles, and how our eudaimonic architecture delivers compounding bottom-line value.
               </p>
-              <div className="pt-2">
-                <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10 text-xs font-mono text-white/80">
+              <div className="pt-1">
+                <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/10 text-xs font-mono text-white/80">
                   <span className="w-2 h-2 rounded-full bg-[#FFCE00]" />
                   <span>Eudaimonic vs. Hedonic Architecture</span>
                 </div>
               </div>
             </div>
 
-            {/* Right Column: Comparison Card (Exact Same Seed Style) */}
+            {/* Right Column: Comparison Card (Exact Same Seed Style, Fits Viewport) */}
             <div className="lg:col-span-8">
-              <div className="rounded-[28px] sm:rounded-[36px] bg-[#141514] border border-white/10 p-6 sm:p-9 lg:p-10 shadow-2xl overflow-x-auto">
-                <div className="min-w-[560px] relative">
+              <div className="rounded-[26px] sm:rounded-[32px] bg-[#141514] border border-white/10 p-5 sm:p-7 lg:p-8 shadow-2xl overflow-x-auto">
+                <div className="min-w-[540px] relative">
                   
                   {/* Continuous Highlighted Capsule Track for HQX Column */}
-                  <div className="absolute -top-3 -bottom-3 left-1/2 -translate-x-1/2 w-[18%] bg-white/[0.08] border border-white/[0.08] rounded-[26px] pointer-events-none" />
+                  <div className="absolute -top-2.5 -bottom-2.5 left-1/2 -translate-x-1/2 w-[18%] bg-white/[0.08] border border-white/[0.08] rounded-[24px] pointer-events-none" />
 
                   {/* Table Header */}
-                  <div className="grid grid-cols-12 items-center pb-6 border-b border-white/10 relative z-10">
+                  <div className="grid grid-cols-12 items-center pb-4 sm:pb-5 border-b border-white/10 relative z-10">
                     <div className="col-span-5 text-xs font-mono uppercase tracking-wider text-white/40">
                       Dimension / Criteria
                     </div>
@@ -587,10 +587,10 @@ export default function WhyHQX() {
                     ].map((row, idx) => (
                       <div 
                         key={idx}
-                        className="grid grid-cols-12 items-center py-4 sm:py-4.5"
+                        className="grid grid-cols-12 items-center py-2.5 sm:py-3 lg:py-3.5"
                       >
                         {/* Feature Name */}
-                        <div className="col-span-5 pr-4 text-xs sm:text-sm md:text-[14.5px] font-body text-white/90 font-light leading-snug">
+                        <div className="col-span-5 pr-4 text-xs sm:text-sm font-body text-white/90 font-light leading-snug">
                           {row.feature}
                         </div>
 
