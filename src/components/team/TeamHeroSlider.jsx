@@ -34,8 +34,8 @@ export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
 
       {/* FULL VIEWPORT CONTINUOUS INFINITE MARQUEE SLIDER */}
       <div className="w-full h-full relative overflow-hidden rounded-none border-none bg-black flex-1">
-        {/* Top Black Fadeout Gradient where navigation ends */}
-        <div className="absolute inset-x-0 top-0 h-32 sm:h-40 bg-gradient-to-b from-black via-black/80 to-transparent z-20 pointer-events-none" />
+        {/* Subtle Top Black Seam where navigation ends - compact feather so heads/faces remain completely clear */}
+        <div className="absolute inset-x-0 top-0 h-10 sm:h-12 bg-gradient-to-b from-black/75 to-transparent z-20 pointer-events-none" />
 
         <div className="animate-hero-marquee md:-ml-[30px] md:w-[calc(100%+60px)]">
           {marqueeFaculty.map((member, index) => {
@@ -56,13 +56,12 @@ export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
                       src={member.image}
                       alt={member.name}
                       style={{
-                        WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 12%, rgba(0,0,0,1) 24%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.8) 65%, rgba(0,0,0,0) 90%)',
-                        maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 12%, rgba(0,0,0,1) 24%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.8) 65%, rgba(0,0,0,0) 90%)'
+                        WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.8) 68%, rgba(0,0,0,0) 90%)',
+                        maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.8) 68%, rgba(0,0,0,0) 90%)'
                       }}
                       className="w-full h-[88%] sm:h-[90%] md:h-[92%] object-cover object-top transition-all duration-500 ease-out filter grayscale contrast-[1.25] brightness-[0.74] group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100 group-hover:scale-[1.03] rounded-none"
                     />
-                    {/* Top & Bottom Deep Black Fadeout Gradients to seamlessly blend from top navigation & bottom bg */}
-                    <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black via-black/60 to-transparent z-10 pointer-events-none"></div>
+                    {/* Bottom Deep Black Fadeout Gradient to dissolve photo edges seamlessly into bg */}
                     <div className="absolute inset-x-0 bottom-0 h-[65%] bg-gradient-to-t from-black via-black/85 via-black/40 to-transparent z-10 pointer-events-none"></div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-10 opacity-70 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none"></div>
                   </div>
