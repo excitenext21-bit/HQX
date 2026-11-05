@@ -344,190 +344,123 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* DEDICATED CHAPTERS OF HQX (SPLIT EDITORIAL SHOWCASE) */}
-      <section className="pt-14 sm:pt-16 pb-8 sm:pb-10 px-6 md:px-12 bg-[#FAF8F5] dark:bg-[#0E0F12] border-b border-hq-black/10">
-        <div className="max-w-7xl mx-auto">
-          {/* Header Row: Dual-Tone Title & Top Narrative */}
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-12 sm:mb-14 pb-8 border-b border-black/10">
-            <div>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] dark:text-white leading-[1.08]">
-                Dedicated Chapters <br />
-                <span className="text-[#666666] dark:text-white/60 font-light">of HQX</span>
-              </h2>
-            </div>
-            <p className="font-body text-sm sm:text-base text-hq-black/65 max-w-md font-light leading-relaxed lg:pb-1">
-              Explore our founder's 25-year pedigree, meet our multidisciplinary advisory faculty, or inspect why leading enterprises choose the eudaimonic model.
-            </p>
-          </div>
+      {/* DEDICATED CHAPTERS OF HQX (SPLIT DUAL-TONE SHOWCASE: 100% WIDTH WHITE TOP & BRAND YELLOW LOWER WITH CENTER PORTRAIT) */}
+      <section className="relative w-full py-16 sm:py-20 px-6 md:px-12 overflow-hidden border-b border-black/10">
+        {/* Split Dual-Tone Background: Top Half White, Lower Half Brand Yellow (100% Width) */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <div className="h-1/2 w-full bg-[#FFFFFF]"></div>
+          <div className="h-1/2 w-full bg-[#FFCC00]"></div>
+        </div>
 
-          {/* 2-Column Split: Interactive Stacked Rows (Left) & Serene Photographic Showcase (Right) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
-            {/* Left Column: 3 Clean Interactive Rows with Dynamic Hover Triggers */}
-            <div className="lg:col-span-7 flex flex-col divide-y divide-black/10 border-b border-black/10">
-              
+            {/* Left Column: Heading, Subtitle & Meet The Founder */}
+            <div className="lg:col-span-4 flex flex-col justify-center">
+              <div className="mb-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 text-[#0A0A0A] text-xs font-mono uppercase tracking-widest font-semibold mb-3">
+                  <span className="w-2 h-2 rounded-full bg-hq-yellow"></span>
+                  Enterprise Pedigree
+                </div>
+                <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.5rem] font-bold tracking-tight text-[#0A0A0A] leading-[1.08] mb-3">
+                  Dedicated Chapters <br />
+                  <span className="text-[#555555] font-light">of HQX</span>
+                </h2>
+                <p className="font-body text-xs sm:text-sm text-[#444444] font-light leading-relaxed">
+                  Explore our founder's 25-year pedigree, meet our multidisciplinary advisory faculty, or inspect why leading enterprises choose the eudaimonic model.
+                </p>
+              </div>
+
               {/* Row 1: Meet The Founder */}
               <Link 
                 to="/founder"
-                onMouseEnter={() => setHoveredChapter('founder')}
-                onFocus={() => setHoveredChapter('founder')}
-                className={`group py-7 sm:py-8 px-4 -mx-4 rounded-2xl flex items-center justify-between gap-4 transition-all duration-300 ${
-                  hoveredChapter === 'founder' ? 'bg-black/[0.03]' : 'hover:bg-black/[0.015]'
-                }`}
+                className="group p-5 sm:p-6 rounded-2xl bg-white/90 backdrop-blur-md border border-black/10 hover:border-black/30 hover:bg-white transition-all duration-300 flex items-start justify-between gap-4 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >
-                <div className="flex items-center gap-4 sm:gap-6 min-w-0">
-                  <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-all duration-300 shrink-0 shadow-sm ${
-                    hoveredChapter === 'founder' 
-                      ? 'bg-hq-black text-hq-yellow scale-105 shadow-md' 
-                      : 'bg-[#EFECE6] text-hq-black/80 group-hover:bg-hq-black group-hover:text-hq-yellow'
-                  }`}>
+                <div className="flex items-start gap-4 min-w-0">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-[#0A0A0A] text-hq-yellow shadow-md group-hover:scale-105 transition-transform">
                     <User className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
-                      <h3 className={`font-display text-xl sm:text-2xl font-semibold tracking-tight transition-colors duration-300 ${
-                        hoveredChapter === 'founder' ? 'text-hq-black font-bold' : 'text-hq-black group-hover:text-hq-yellow'
-                      }`}>
+                      <h3 className="font-display text-lg sm:text-xl font-bold tracking-tight text-[#0A0A0A] group-hover:text-black">
                         Meet The Founder
                       </h3>
-                      {hoveredChapter === 'founder' && (
-                        <span className="w-2 h-2 rounded-full bg-hq-yellow hidden sm:inline-block animate-pulse" />
-                      )}
+                      <span className="w-2 h-2 rounded-full bg-hq-yellow hidden sm:inline-block" />
                     </div>
-                    <p className="font-body text-xs sm:text-sm text-hq-black/65 font-light leading-relaxed mt-1 max-w-md">
-                      25 years in global management at GE Capital, Barclays & HDFC Bank. Harvard & Columbia alum and 4x TEDx speaker.
+                    <p className="font-body text-xs sm:text-sm text-[#555555] font-light leading-relaxed mt-1">
+                      25 years in global stewardship at GE Capital, Barclays &amp; HDFC Bank. Harvard &amp; Columbia alum and 4x TEDx speaker.
                     </p>
                   </div>
                 </div>
-
-                <div className="flex items-center gap-1.5 text-xs sm:text-sm font-body font-medium text-hq-black/80 group-hover:text-hq-black shrink-0 ml-2">
-                  <span>More Details</span>
-                  <span className={`inline-block transition-transform duration-300 ${
-                    hoveredChapter === 'founder' ? 'translate-x-1.5' : 'group-hover:translate-x-1.5'
-                  }`}>→</span>
+                <div className="flex items-center gap-1 text-xs font-semibold text-[#0A0A0A] shrink-0 mt-1">
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </div>
               </Link>
+            </div>
 
+            {/* Center Column: Portrait without box or border standing across split background */}
+            <div className="lg:col-span-4 flex flex-col items-center justify-end h-full min-h-[400px] sm:min-h-[480px] lg:min-h-[540px] relative">
+              <img 
+                src="/images/hero_showcase/manny_about_cutout.png" 
+                alt="Manny Anchan - Founder & Chief Happiness Officer"
+                onError={(e) => { e.target.src = '/images/hero_showcase/manny_about_studio.jpg'; }}
+                className="h-full max-h-[490px] sm:max-h-[530px] w-auto object-contain object-bottom pointer-events-none drop-shadow-[0_20px_40px_rgba(0,0,0,0.22)] hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            {/* Right Column: Multidisciplinary Faculty & Why Choose HQX */}
+            <div className="lg:col-span-4 flex flex-col gap-4 sm:gap-5 justify-center">
               {/* Row 2: Multidisciplinary Faculty */}
               <Link 
                 to="/team"
-                onMouseEnter={() => setHoveredChapter('faculty')}
-                onFocus={() => setHoveredChapter('faculty')}
-                className={`group py-7 sm:py-8 px-4 -mx-4 rounded-2xl flex items-center justify-between gap-4 transition-all duration-300 ${
-                  hoveredChapter === 'faculty' ? 'bg-black/[0.03]' : 'hover:bg-black/[0.015]'
-                }`}
+                className="group p-5 sm:p-6 rounded-2xl bg-white/90 backdrop-blur-md border border-black/10 hover:border-black/30 hover:bg-white transition-all duration-300 flex items-start justify-between gap-4 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >
-                <div className="flex items-center gap-4 sm:gap-6 min-w-0">
-                  <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-all duration-300 shrink-0 shadow-sm ${
-                    hoveredChapter === 'faculty' 
-                      ? 'bg-hq-black text-hq-yellow scale-105 shadow-md' 
-                      : 'bg-[#EFECE6] text-hq-black/80 group-hover:bg-hq-black group-hover:text-hq-yellow'
-                  }`}>
+                <div className="flex items-start gap-4 min-w-0">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-[#0A0A0A] text-hq-yellow shadow-md group-hover:scale-105 transition-transform">
                     <Users className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
-                      <h3 className={`font-display text-xl sm:text-2xl font-semibold tracking-tight transition-colors duration-300 ${
-                        hoveredChapter === 'faculty' ? 'text-hq-black font-bold' : 'text-hq-black group-hover:text-hq-yellow'
-                      }`}>
+                      <h3 className="font-display text-lg sm:text-xl font-bold tracking-tight text-[#0A0A0A] group-hover:text-black">
                         Multidisciplinary Faculty
                       </h3>
-                      {hoveredChapter === 'faculty' && (
-                        <span className="w-2 h-2 rounded-full bg-hq-yellow hidden sm:inline-block animate-pulse" />
-                      )}
+                      <span className="w-2 h-2 rounded-full bg-hq-yellow hidden sm:inline-block" />
                     </div>
-                    <p className="font-body text-xs sm:text-sm text-hq-black/65 font-light leading-relaxed mt-1 max-w-md">
-                      12 distinguished world champions, industry CEOs, Olympic athletes, Warwick & Yale fellows across 5 core domains.
+                    <p className="font-body text-xs sm:text-sm text-[#555555] font-light leading-relaxed mt-1">
+                      12 distinguished world champions, industry CEOs, Olympic athletes, Warwick &amp; Yale fellows across 5 core domains.
                     </p>
                   </div>
                 </div>
-
-                <div className="flex items-center gap-1.5 text-xs sm:text-sm font-body font-medium text-hq-black/80 group-hover:text-hq-black shrink-0 ml-2">
-                  <span>More Details</span>
-                  <span className={`inline-block transition-transform duration-300 ${
-                    hoveredChapter === 'faculty' ? 'translate-x-1.5' : 'group-hover:translate-x-1.5'
-                  }`}>→</span>
+                <div className="flex items-center gap-1 text-xs font-semibold text-[#0A0A0A] shrink-0 mt-1">
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </div>
               </Link>
 
               {/* Row 3: Why Choose HQX */}
               <Link 
                 to="/why-hqx"
-                onMouseEnter={() => setHoveredChapter('why')}
-                onFocus={() => setHoveredChapter('why')}
-                className={`group py-7 sm:py-8 px-4 -mx-4 rounded-2xl flex items-center justify-between gap-4 transition-all duration-300 ${
-                  hoveredChapter === 'why' ? 'bg-black/[0.03]' : 'hover:bg-black/[0.015]'
-                }`}
+                className="group p-5 sm:p-6 rounded-2xl bg-white/90 backdrop-blur-md border border-black/10 hover:border-black/30 hover:bg-white transition-all duration-300 flex items-start justify-between gap-4 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >
-                <div className="flex items-center gap-4 sm:gap-6 min-w-0">
-                  <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-all duration-300 shrink-0 shadow-sm ${
-                    hoveredChapter === 'why' 
-                      ? 'bg-hq-black text-hq-yellow scale-105 shadow-md' 
-                      : 'bg-[#EFECE6] text-hq-black/80 group-hover:bg-hq-black group-hover:text-hq-yellow'
-                  }`}>
+                <div className="flex items-start gap-4 min-w-0">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-[#0A0A0A] text-hq-yellow shadow-md group-hover:scale-105 transition-transform">
                     <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
-                      <h3 className={`font-display text-xl sm:text-2xl font-semibold tracking-tight transition-colors duration-300 ${
-                        hoveredChapter === 'why' ? 'text-hq-black font-bold' : 'text-hq-black group-hover:text-hq-yellow'
-                      }`}>
+                      <h3 className="font-display text-lg sm:text-xl font-bold tracking-tight text-[#0A0A0A] group-hover:text-black">
                         Why Choose HQX
                       </h3>
-                      {hoveredChapter === 'why' && (
-                        <span className="w-2 h-2 rounded-full bg-hq-yellow hidden sm:inline-block animate-pulse" />
-                      )}
+                      <span className="w-2 h-2 rounded-full bg-hq-yellow hidden sm:inline-block" />
                     </div>
-                    <p className="font-body text-xs sm:text-sm text-hq-black/65 font-light leading-relaxed mt-1 max-w-md">
+                    <p className="font-body text-xs sm:text-sm text-[#555555] font-light leading-relaxed mt-1">
                       The Four Pillars of Distinction, our 16-state footprint, and 28 impacted industries and academic tiers.
                     </p>
                   </div>
                 </div>
-
-                <div className="flex items-center gap-1.5 text-xs sm:text-sm font-body font-medium text-hq-black/80 group-hover:text-hq-black shrink-0 ml-2">
-                  <span>More Details</span>
-                  <span className={`inline-block transition-transform duration-300 ${
-                    hoveredChapter === 'why' ? 'translate-x-1.5' : 'group-hover:translate-x-1.5'
-                  }`}>→</span>
+                <div className="flex items-center gap-1 text-xs font-semibold text-[#0A0A0A] shrink-0 mt-1">
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </div>
               </Link>
-
-            </div>
-
-            {/* Right Column: Dynamic Photographic Showcase with Smooth Cross-Fade on Hover */}
-            <div className="lg:col-span-5 h-full flex items-center justify-center">
-              <div className="relative w-full h-[380px] sm:h-[440px] lg:h-[490px] rounded-[32px] overflow-hidden shadow-2xl border border-black/10 bg-[#EFECE6] group">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={hoveredChapter}
-                    initial={{ opacity: 0, scale: 1.03 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.98 }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="absolute inset-0 w-full h-full"
-                  >
-                    {hoveredChapter === 'faculty' ? (
-                      <div className="w-full h-full grid grid-cols-4 grid-rows-3 gap-0 overflow-hidden bg-black">
-                        {FACULTY_COLLAGE_IMAGES.map((src, i) => (
-                          <div key={i} className="relative w-full h-full overflow-hidden">
-                            <img
-                              src={src}
-                              alt="Faculty Member"
-                              className="w-full h-full object-cover filter contrast-105"
-                            />
-                          </div>
-                        ))}
-                      </div>
-                    ) : (
-                      <img 
-                        src={CHAPTER_SHOWCASE[hoveredChapter].image} 
-                        alt={CHAPTER_SHOWCASE[hoveredChapter].alt} 
-                        className="w-full h-full object-cover filter contrast-105 brightness-100" 
-                      />
-                    )}
-                  </motion.div>
-                </AnimatePresence>
-              </div>
             </div>
 
           </div>
