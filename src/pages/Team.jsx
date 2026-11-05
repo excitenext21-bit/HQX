@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Filter, Users, X, Award, ExternalLink, ArrowRight, Briefcase, Sparkles } from 'lucide-react';
 import { useData } from '../context/DataContext';
+import TeamHeroSlider from '../components/team/TeamHeroSlider';
 import CorporatePartnersMarquee from '../components/common/CorporatePartnersMarquee';
 
 export default function Team() {
@@ -17,37 +18,8 @@ export default function Team() {
 
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
-      {/* Header */}
-      <section className="bg-[#0A0A0A] text-hq-white pt-36 pb-20 px-6 md:px-12 border-b border-white/10 relative overflow-hidden">
-        <div className="absolute inset-0 bg-radial-gradient from-hq-yellow/5 via-transparent to-transparent pointer-events-none opacity-40"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-semibold mb-5">
-            Our <span className="text-hq-yellow">Faculty</span>
-          </h1>
-          <p className="font-body text-base md:text-xl text-white max-w-3xl font-light leading-relaxed !text-[#E5E5E5]" style={{ color: '#E5E5E5' }}>
-            World champions, industry CEOs, seasoned spiritual guides, Olympic athletes, and modern parenting authorities collaborating to cultivate human potential, resilience, and vitality across corporations.
-          </p>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-10 mt-10 border-t border-white/15">
-            <div>
-              <div className="font-display text-3xl font-bold text-hq-yellow">12+</div>
-              <div className="text-xs font-mono text-white/60 tracking-wider uppercase mt-1">Distinguished Faculty</div>
-            </div>
-            <div>
-              <div className="font-display text-3xl font-bold text-white">5</div>
-              <div className="text-xs font-mono text-white/60 tracking-wider uppercase mt-1">Holistic Domains</div>
-            </div>
-            <div>
-              <div className="font-display text-3xl font-bold text-hq-yellow">100%</div>
-              <div className="text-xs font-mono text-white/60 tracking-wider uppercase mt-1">Corporate Tailored</div>
-            </div>
-            <div>
-              <div className="font-display text-3xl font-bold text-white">40+</div>
-              <div className="text-xs font-mono text-white/60 tracking-wider uppercase mt-1">Global Client Engagements</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Interactive Multi-Column Auto-Advancing Hero Slider */}
+      <TeamHeroSlider faculty={faculty} onSelectMember={setSelectedMember} />
 
       {/* THE EXPERTS BEHIND YOUR CARE (MATCHING USER REFERENCE DESIGN) */}
       <section className="py-20 sm:py-24 px-6 md:px-12 bg-[#FAF8F5] border-b border-black/10">
@@ -63,21 +35,23 @@ export default function Team() {
             </p>
           </div>
 
-          {/* 4-5 Compiled Domain Filters - Unboxed & Minimalist Typography */}
-          <div className="flex flex-wrap items-center justify-center gap-5 sm:gap-10 mb-14 sm:mb-20 border-b border-black/10 pb-4">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`text-xs sm:text-sm font-display uppercase tracking-widest transition-all pb-3 relative font-semibold ${
-                  selectedCategory === cat
-                    ? 'text-[#1E1915] font-bold after:absolute after:bottom-[-17px] after:left-0 after:right-0 after:h-[2px] after:bg-[#1E1915]'
-                    : 'text-[#8E8680] hover:text-[#1E1915]'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
+          {/* 4-5 Compiled Domain Filters - Sticky on Scroll with Yellow Active Underline */}
+          <div className="sticky top-20 z-30 -mx-6 md:-mx-12 px-6 md:px-12 bg-[#FAF8F5]/95 backdrop-blur-md py-4 border-b border-black/10 mb-12 sm:mb-16 transition-all duration-300 shadow-xs">
+            <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`text-xs sm:text-sm font-display uppercase tracking-widest transition-all pb-2.5 relative font-semibold ${
+                    selectedCategory === cat
+                      ? 'text-[#1E1915] font-bold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[3px] after:bg-hq-yellow after:rounded-full'
+                      : 'text-[#8E8680] hover:text-[#1E1915]'
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Luxury Unboxed Editorial Faculty Showcase - Borderless & No Boxes */}
