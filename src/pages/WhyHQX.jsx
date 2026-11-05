@@ -91,11 +91,15 @@ export default function WhyHQX() {
     <div className="min-h-screen bg-hq-white text-hq-black">
       {/* HERO SECTION WITH CINEMATIC LIGHT PORTAL BACKGROUND (FIT TO SCREEN) */}
       <section className="bg-[#07080A] text-hq-white relative overflow-hidden h-screen min-h-[640px] max-h-[1080px] w-full flex flex-col justify-between border-b border-white/10">
-        {/* Cinematic Background Image */}
+        {/* Cinematic Background Video: Man Walking Toward Portal & Looking Outside */}
         <div className="absolute inset-0 w-full h-full pointer-events-none">
-          <img
-            src="/images/why-hqx-hero.jpg"
-            alt="The Gateway to Human Potential"
+          <video
+            src="/videos/why_hqx_walking_portal.mp4"
+            poster="/images/why-hqx-man-at-threshold.jpg"
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-full object-cover object-[72%_center] lg:object-[68%_center]"
           />
           {/* Multi-tier Contrast Scrim Overlays */}
@@ -124,7 +128,7 @@ export default function WhyHQX() {
 
         {/* Main Content Area (Vertically Centered in Viewport) */}
         <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 relative z-10 w-full flex-1 flex flex-col justify-center pt-28 sm:pt-32 pb-8">
-          <div className="max-w-2xl lg:max-w-3xl">
+          <div className="max-w-md">
             {/* Editorial Headline matching About Us font properties */}
             <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight text-white leading-[1.15] mb-5 drop-shadow-md">
               Think . Feel . <span className="text-hq-yellow">Perform</span>
@@ -132,7 +136,7 @@ export default function WhyHQX() {
 
             {/* Lead Narrative matching About Us font properties */}
             <p className="font-body text-sm sm:text-base text-white/80 font-light leading-relaxed mb-8 drop-shadow-sm">
-              Most corporate wellness programs fail because they offer fleeting hedonic perks. HQX delivers systematic eudaimonic transformation rooted in neuroscience, organizational psychology, and proven C-suite stewardship.
+              HQX delivers systematic eudaimonic transformation rooted in neuroscience, organizational psychology, and proven C-suite stewardship.
             </p>
 
             {/* Signature HQX Hero Button (Matching Founder & Home Hero Style) */}
