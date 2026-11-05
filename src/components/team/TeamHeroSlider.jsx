@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const SLIDE_DURATION = 4000; // 4s seamless auto-advance interval
+const SLIDE_DURATION = 4000; // 4s auto-advance interval
 
 export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
   // Exclude Manny Anchan from hero slider per user request
@@ -17,7 +17,7 @@ export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
   const [activeHoverId, setActiveHoverId] = useState(null);
   const timerRef = useRef(null);
 
-  // Auto-advance interval - pauses when user hovers over any image
+  // Auto-advance interval: slides from right to left in loop, pauses on hover
   useEffect(() => {
     if (isPaused || totalSlides <= 1) return;
 
@@ -28,7 +28,7 @@ export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [isPaused, totalSlides]);
+  }, [isPaused, totalSlides, currentSlide]);
 
   // Get current batch of 4 members
   const currentMembers = activeFaculty.slice(
@@ -42,16 +42,16 @@ export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* FULL VIEWPORT AUTO SLIDER WITH SLANTED DIVISIONS & CLEAN 2PX SOLID BLACK BORDER */}
+      {/* FULL VIEWPORT SLIDER: SMOOTH RIGHT-TO-LEFT SLIDE ANIMATION IN LOOP */}
       <div className="w-full h-full relative overflow-hidden rounded-none border-none bg-black flex-1">
-        <AnimatePresence mode="wait">
+        <AnimatePresence initial={false}>
           <motion.div
             key={currentSlide}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col md:flex-row h-full w-[100%] md:w-[calc(100%+100px)] md:-ml-[50px] rounded-none border-none"
+            initial={{ x: '100%' }}
+            animate={{ x: '0%' }}
+            exit={{ x: '-100%' }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute inset-0 flex flex-col md:flex-row h-full w-[100%] md:w-[calc(100%+100px)] md:-ml-[50px] rounded-none border-none"
           >
             {currentMembers.map((member, index) => {
               const isHovered = activeHoverId === member.id;
@@ -92,9 +92,9 @@ export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
                     </div>
                   </div>
 
-                  {/* Clean 2px Solid Black Divider (No dots, no blur/shadow artifacts) */}
-                  <div className="hidden md:block absolute top-0 bottom-0 right-0 w-[2px] bg-black z-30 pointer-events-none" />
-                  <div className="md:hidden absolute bottom-0 left-0 right-0 h-[2px] bg-black z-30 pointer-events-none" />
+                  {/* Clean 5px Solid Black Divider (+3px width per user request) */}
+                  <div className="hidden md:block absolute top-0 bottom-0 right-0 w-[5px] bg-black z-30 pointer-events-none" />
+                  <div className="md:hidden absolute bottom-0 left-0 right-0 h-[5px] bg-black z-30 pointer-events-none" />
 
                   {/* Member Name and Clean Details Overlay - Fully visible on left, counter-skewed to remain upright */}
                   <div 
