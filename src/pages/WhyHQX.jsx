@@ -451,31 +451,35 @@ export default function WhyHQX() {
                 className="group py-8 sm:py-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 lg:gap-12 hover:bg-hq-gray/30 -mx-4 sm:-mx-6 px-4 sm:px-6 transition-colors duration-300"
               >
                 {/* Number & Pillar Title */}
-                <div className="flex items-start sm:items-center gap-6 sm:gap-8 w-full lg:w-5/12">
-                  <span className="font-serif text-3xl sm:text-4xl md:text-5xl text-hq-black/25 group-hover:text-hq-yellow font-normal transition-colors shrink-0">
+                <div className="flex items-start sm:items-center gap-5 sm:gap-7 w-full lg:w-4/12">
+                  <span className="font-serif text-3xl sm:text-4xl md:text-5xl text-black/20 group-hover:text-[#FFCE00] font-normal transition-colors duration-300 shrink-0">
                     {pillar.num}
                   </span>
                   <div>
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-hq-black/50 block mb-1">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#7A7067] font-semibold block mb-1">
                       {pillar.tag}
                     </span>
-                    <h3 className="font-display text-xl sm:text-2xl lg:text-[26px] font-semibold text-hq-black group-hover:translate-x-1.5 transition-transform duration-300 leading-snug">
+                    <h3 className="font-display text-lg sm:text-xl lg:text-[22px] font-semibold text-[#1E1915] group-hover:translate-x-1 transition-transform duration-300 leading-snug">
                       {pillar.title}
                     </h3>
                   </div>
                 </div>
 
                 {/* Narrative Description */}
-                <div className="w-full lg:w-5/12 font-body text-sm sm:text-base text-hq-black/75 font-light leading-relaxed">
+                <div className="w-full lg:w-5/12 font-body text-xs sm:text-sm text-[#4A4540] font-normal leading-relaxed pr-2">
                   {pillar.desc}
                 </div>
 
-                {/* Metric Chip */}
-                <div className="w-full lg:w-2/12 flex lg:justify-end">
-                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-hq-gray border border-hq-black/10 group-hover:border-hq-black group-hover:bg-hq-yellow group-hover:text-hq-black text-xs font-mono font-semibold transition-all duration-300">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-hq-yellow group-hover:text-hq-black" />
-                    <span>{pillar.metric}</span>
-                  </span>
+                {/* Metric Chip (Redesigned Executive Proof Capsule) */}
+                <div className="w-full lg:w-3/12 flex lg:justify-end shrink-0">
+                  <div className="inline-flex items-center gap-2.5 px-3.5 sm:px-4 py-2 rounded-full bg-[#FAF8F5] border border-black/10 group-hover:border-black group-hover:bg-[#1E1A17] transition-all duration-300 shadow-xs">
+                    <span className="w-5 h-5 rounded-full bg-[#FFCE00]/25 text-[#1E1A17] group-hover:bg-[#FFCE00] group-hover:text-black flex items-center justify-center shrink-0 transition-colors duration-300">
+                      <CheckCircle2 className="w-3 h-3 stroke-[2.2]" />
+                    </span>
+                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#1E1915] group-hover:text-white transition-colors duration-300 whitespace-nowrap">
+                      {pillar.metric}
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}
