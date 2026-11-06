@@ -80,24 +80,26 @@ export default function WhyHQX() {
   const sectorClusters = [
     {
       id: 'finance',
+      num: '01',
       title: 'Banking, Capital Markets & Legal',
       category: 'Finance & Governance',
       icon: Landmark,
-      tagline: 'Psychology of wealth, risk composure & regulatory stewardship',
+      tagline: 'Psychology of wealth, risk composure & regulatory stewardship under market volatility.',
       sectors: [
         'Corporate Banking', 'Wealth Management', 'Mutual Funds', 
         'Life & General Insurance', 'Corporate Law', 'Private Equity', 
         'NBFCs & Microfinance', 'InsurTech'
       ],
       keyClients: ['Barclays', 'HDFC Life', 'HDFC ERGO', 'Absa Bank (Mauritius)', 'Amana Bank (Tanzania)', 'SMFG India', 'Shardul Amarchand'],
-      metric: '15+ Banking & Institutional Clients'
+      metric: '15+ Banking & Institutional Bastions'
     },
     {
       id: 'tech',
+      num: '02',
       title: 'DeepTech, AI & Life Sciences',
       category: 'Innovation & Healthcare',
       icon: Cpu,
-      tagline: 'Cognitive poise, burnout mitigation & purpose alignment in fast-growth pods',
+      tagline: 'Cognitive poise, burnout mitigation & purpose alignment in high-velocity tech pods.',
       sectors: [
         'Artificial Intelligence', 'Biotechnology', 'Pharmaceuticals', 
         'Semiconductors & Electronics', 'Cloud Infrastructure', 'HealthTech Diagnostics'
@@ -107,10 +109,11 @@ export default function WhyHQX() {
     },
     {
       id: 'industry',
+      num: '03',
       title: 'Manufacturing, Infrastructure & Energy',
       category: 'Industrial Scale',
       icon: Factory,
-      tagline: 'Operational stamina, plant-floor synergy & frontline executive leadership',
+      tagline: 'Operational stamina, plant-floor synergy & frontline executive leadership at scale.',
       sectors: [
         'Heavy Manufacturing', 'Automotive Engineering', 'Energy & Power', 
         'Construction & EPC', 'Cables & Conductors', 'Transportation & Airlines', 
@@ -121,10 +124,11 @@ export default function WhyHQX() {
     },
     {
       id: 'academia',
+      num: '04',
       title: 'Elite Academia & Global Institutions',
       category: 'Higher Ed & Research',
       icon: GraduationCap,
-      tagline: 'Cultivating tomorrow’s ethical, mindful and resilient global leaders',
+      tagline: 'Cultivating tomorrow’s ethical, mindful, and antifragile global business leaders.',
       sectors: [
         'IIMs & Premier B-Schools', 'MBA & BBM Programs', 'Engineering Universities', 
         'Architecture Institutes', 'Sports Management Academies', 'Startup Incubators & Accelerators', 
@@ -632,37 +636,66 @@ export default function WhyHQX() {
         </div>
       </section>
 
-      {/* CROSS-SECTOR VERSATILITY & INSTITUTIONS IMPACTED - ULTRA-MODERN AESTHETIC ECOSYSTEM */}
-      <section className="py-24 px-6 md:px-12 bg-white border-b border-hq-black/10">
-        <div className="max-w-7xl mx-auto">
-          {/* Header with Domain Filter */}
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-12">
-            <div>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-hq-black">
-                Industries & Academic Institutions Impacted
+      {/* INDUSTRIES & ACADEMIC INSTITUTIONS IMPACTED - ARCHITECTURAL LUXURY REDESIGN */}
+      <section className="py-20 sm:py-28 px-6 md:px-12 bg-[#FAF8F5] border-b border-black/10 relative overflow-hidden">
+        {/* Subtle Ambient Radial Highlight */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#FFCE00]/[0.03] rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto relative z-10 space-y-10 sm:space-y-12">
+          
+          {/* Section Header */}
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 pb-8 border-b border-black/10">
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 border border-black/10 text-xs font-mono uppercase tracking-widest text-[#1E1915]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FFCE00]" />
+                <span>Cross-Sector Institutional Reach</span>
+              </div>
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] leading-[1.08]">
+                Industries & Academic <br />
+                <span className="text-[#666666] font-light">Institutions Impacted</span>
               </h2>
             </div>
-            <p className="font-body text-xs sm:text-sm text-hq-black/70 max-w-md font-light leading-relaxed">
-              From Ivy League universities and premier management institutes to Fortune conglomerates, heavy infrastructure, and biotech frontier labs.
+            <p className="font-body text-sm sm:text-base text-[#2E2A27] max-w-md font-normal leading-relaxed lg:pb-1">
+              From Fortune conglomerates and global investment banks to Ivy League leadership forums and high-velocity frontier labs.
             </p>
           </div>
 
-          {/* Category Filter Tabs */}
-          <div className="flex flex-wrap gap-2 mb-10 pb-6 border-b border-hq-black/10">
+          {/* Institutional Proof Highlights Strip */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-5 sm:p-6 bg-white rounded-2xl border border-black/10 shadow-xs">
+            <div className="text-center sm:text-left sm:border-r border-black/10 sm:pr-4">
+              <div className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">15+</div>
+              <div className="text-xs font-mono uppercase tracking-wider text-[#6E645A] mt-0.5">Banking & Legal Bastions</div>
+            </div>
+            <div className="text-center sm:text-left md:border-r border-black/10 sm:px-4">
+              <div className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">250K+</div>
+              <div className="text-xs font-mono uppercase tracking-wider text-[#6E645A] mt-0.5">Plant & Field Workforce</div>
+            </div>
+            <div className="text-center sm:text-left sm:border-r border-black/10 sm:px-4">
+              <div className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">18+</div>
+              <div className="text-xs font-mono uppercase tracking-wider text-[#6E645A] mt-0.5">Premier Academic Bastions</div>
+            </div>
+            <div className="text-center sm:text-left sm:pl-4">
+              <div className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">100%</div>
+              <div className="text-xs font-mono uppercase tracking-wider text-[#6E645A] mt-0.5">C-Suite Sponsorship</div>
+            </div>
+          </div>
+
+          {/* Interactive Category Filter Pills */}
+          <div className="flex flex-wrap items-center gap-2">
             {[
               { id: 'all', label: 'All Ecosystems' },
-              { id: 'finance', label: 'Finance & Banking' },
+              { id: 'finance', label: 'Finance & Governance' },
               { id: 'tech', label: 'DeepTech & Life Sciences' },
-              { id: 'industry', label: 'Heavy Industry & Logistics' },
-              { id: 'academia', label: 'Elite Academic Institutions' }
+              { id: 'industry', label: 'Manufacturing & Energy' },
+              { id: 'academia', label: 'Elite Academic Bastions' }
             ].map(tab => (
               <button
                 key={tab.id}
                 onClick={() => setActiveFilter(tab.id)}
-                className={`px-4 py-2 text-xs font-display uppercase tracking-wider font-semibold rounded-full transition-all ${
+                className={`px-4 py-2 text-xs font-body uppercase tracking-wider font-semibold rounded-full transition-all duration-200 cursor-pointer ${
                   activeFilter === tab.id
-                    ? 'bg-hq-black text-hq-yellow shadow-md'
-                    : 'bg-hq-gray text-hq-black/75 hover:bg-white hover:border-hq-black border border-hq-black/10'
+                    ? 'bg-[#1E1A17] text-[#FFCE00] shadow-sm scale-[1.02]'
+                    : 'bg-white text-[#4A4540] hover:text-black hover:border-black/30 border border-black/10'
                 }`}
               >
                 {tab.label}
@@ -670,77 +703,100 @@ export default function WhyHQX() {
             ))}
           </div>
 
-          {/* 4 Architectural Domain Streams (Unboxed Editorial Rows) */}
-          <div className="divide-y divide-hq-black/15 mb-14">
+          {/* 4 Architectural Cards Grid (2x2 Balanced Luxury Layout) */}
+          <div className={`grid grid-cols-1 ${activeFilter === 'all' ? 'lg:grid-cols-2' : 'lg:grid-cols-1'} gap-6 sm:gap-8`}>
             {filteredClusters.map((cluster) => {
               const IconComponent = cluster.icon;
               return (
                 <div 
                   key={cluster.id}
-                  className="py-8 sm:py-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start group hover:bg-hq-gray/30 -mx-4 sm:-mx-6 px-4 sm:px-6 transition-colors duration-300"
+                  className="bg-white rounded-3xl border border-black/10 hover:border-black/25 p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 hover:shadow-lg group relative overflow-hidden"
                 >
-                  {/* Column 1: Cluster Identity */}
-                  <div className="lg:col-span-4 space-y-2">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-hq-black text-hq-yellow flex items-center justify-center shrink-0 shadow-sm">
-                        <IconComponent className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <div className="text-[10px] font-mono uppercase tracking-widest text-hq-black/50 font-semibold">
-                          {cluster.category}
+                  {/* Accent Top Border Bar on Hover */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-[#1E1A17] opacity-0 group-hover:opacity-100 group-hover:bg-[#FFCE00] transition-opacity duration-300" />
+
+                  <div className="space-y-6">
+                    {/* Header Row: Category Pill, Number & Icon */}
+                    <div className="flex items-center justify-between pb-4 border-b border-black/10">
+                      <div className="flex items-center gap-3">
+                        <div className="w-11 h-11 rounded-2xl bg-[#EFECE6] text-[#1E1A17] group-hover:bg-[#1E1A17] group-hover:text-[#FFCE00] flex items-center justify-center shrink-0 transition-colors duration-300 shadow-xs">
+                          <IconComponent className="w-5 h-5 stroke-[1.8]" />
                         </div>
-                        <h3 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-hq-black group-hover:text-hq-yellow transition-colors">
-                          {cluster.title}
-                        </h3>
+                        <div>
+                          <span className="text-[10px] font-mono uppercase tracking-widest text-[#7A7067] font-semibold block">
+                            {cluster.category}
+                          </span>
+                          <span className="text-xs font-mono font-bold text-[#1E1A17] tracking-wider">
+                            Sector Cluster {cluster.num}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                    <p className="font-body text-xs text-hq-black/75 font-light leading-relaxed pt-2">
-                      {cluster.tagline}
-                    </p>
-                    <div className="pt-1">
-                      <span className="text-[11px] font-mono text-hq-black font-bold uppercase tracking-wider">
-                        ✓ {cluster.metric}
+                      <span className="font-serif text-3xl text-black/15 group-hover:text-black/30 transition-colors">
+                        {cluster.num}
                       </span>
                     </div>
+
+                    {/* Cluster Title & Strategic Purpose */}
+                    <div className="space-y-2">
+                      <h3 className="font-display text-xl sm:text-2xl font-semibold tracking-tight text-[#1E1915] leading-snug">
+                        {cluster.title}
+                      </h3>
+                      <p className="font-body text-xs sm:text-sm text-[#4A4540] font-normal leading-relaxed">
+                        {cluster.tagline}
+                      </p>
+                    </div>
+
+                    {/* Representative Institutional Clients Showcase */}
+                    <div className="space-y-2.5 pt-1">
+                      <div className="text-[11px] font-mono uppercase tracking-widest text-[#7A7067] font-semibold">
+                        Representative Institutional Engagements
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {cluster.keyClients.map((client, idx) => (
+                          <span
+                            key={idx}
+                            className="px-3 py-1.5 bg-[#FAF8F5] border border-black/10 text-xs font-mono font-medium text-[#1E1915] rounded-md shadow-xs hover:border-black/30 transition-colors"
+                          >
+                            {client}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Covered Sub-Sectors */}
+                    <div className="space-y-2 pt-1">
+                      <div className="text-[11px] font-mono uppercase tracking-widest text-[#7A7067] font-semibold">
+                        Covered Domain Sectors
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {cluster.sectors.map((sec, idx) => (
+                          <span
+                            key={idx}
+                            className="px-2.5 py-1 bg-white border border-black/10 text-[11px] font-body text-[#5A524C] rounded-sm"
+                          >
+                            {sec}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
 
-                  {/* Column 2: Sectors Tags */}
-                  <div className="lg:col-span-4 space-y-2">
-                    <div className="text-[11px] font-mono uppercase tracking-widest text-hq-black/50 font-semibold mb-2">
-                      Covered Sectors:
-                    </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {cluster.sectors.map((sec, idx) => (
-                        <span
-                          key={idx}
-                          className="px-2.5 py-1 bg-white border border-hq-black/15 text-xs font-body font-medium text-hq-black group-hover:border-hq-black transition-colors"
-                        >
-                          {sec}
-                        </span>
-                      ))}
-                    </div>
+                  {/* Card Bottom: Metric Anchor Pill */}
+                  <div className="pt-6 mt-6 border-t border-black/10 flex items-center justify-between">
+                    <span className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-[#1E1915]">
+                      <span className="w-2 h-2 rounded-full bg-[#FFCE00]" />
+                      <span>{cluster.metric}</span>
+                    </span>
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#7A7067] bg-[#FAF8F5] px-2.5 py-1 rounded border border-black/5">
+                      Verified Impact
+                    </span>
                   </div>
 
-                  {/* Column 3: Representative Engagements */}
-                  <div className="lg:col-span-4 space-y-2">
-                    <div className="text-[11px] font-mono uppercase tracking-widest text-hq-black/50 font-semibold mb-2">
-                      Representative Engagements:
-                    </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {cluster.keyClients.map((client, idx) => (
-                        <span
-                          key={idx}
-                          className="px-2.5 py-1 bg-hq-gray border border-hq-black/10 text-xs font-mono font-medium text-hq-black/80"
-                        >
-                          {client}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
                 </div>
               );
             })}
           </div>
+
         </div>
       </section>
 
