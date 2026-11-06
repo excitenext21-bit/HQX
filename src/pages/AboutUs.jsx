@@ -789,15 +789,15 @@ export default function AboutUs() {
         </div>
       )}
 
-      {/* CELEBRITY ENDORSEMENT BANNER - COMPACT 50% HEIGHT EDITORIAL SHOWCASE (WHITE BG, NO BORDER, VISIBLE DROPSHADOW) */}
-      <section className="bg-white text-hq-black py-4 sm:py-6 px-4 sm:px-6 md:px-12 border-b border-black/10 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto">
+      {/* CELEBRITY ENDORSEMENT BANNER - EDITORIAL SHOWCASE ALIGNED WITH LOGO & BOOK MANNY BUTTON */}
+      <section className="bg-white text-hq-black py-4 sm:py-6 px-6 md:px-12 border-b border-black/10 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full">
           
-          {/* Main Showcase Container (Flex layout: snug text, prominent photo, zero wasted white space) */}
+          {/* Main Showcase Container (Left aligns with Logo, Right aligns with Book Manny Button) */}
           <div className="rounded-[18px] sm:rounded-[24px] overflow-hidden shadow-[0_22px_55px_-12px_rgba(0,0,0,0.22),0_8px_20px_-4px_rgba(0,0,0,0.08)] relative bg-[#0E0F12] flex flex-col lg:flex-row items-stretch min-h-fit">
             
-            {/* 1. Left White Panel (Clean Editorial Card - reduced white space & gap) */}
-            <div className="lg:w-[320px] xl:w-[350px] shrink-0 bg-[#FFFFFF] text-[#141414] p-6 sm:p-7 lg:p-8 flex flex-col justify-center relative z-20">
+            {/* 1. Left White Panel (Clean Editorial Card - Aligns with Navbar Logo) */}
+            <div className="lg:w-[340px] xl:w-[370px] shrink-0 bg-[#FFFFFF] text-[#141414] p-6 sm:p-8 lg:p-9 flex flex-col justify-center relative z-20">
               {/* Headline text matching user specification */}
               <div>
                 <h2 className="font-display text-2xl sm:text-3xl lg:text-[2rem] font-bold tracking-tight text-[#0A0A0A] leading-[1.08] mb-2">
@@ -808,22 +808,19 @@ export default function AboutUs() {
                   A Must Read! • foreword & commendation / by <span className="font-bold text-[#0A0A0A]">JOHN ABRAHAM</span>
                 </div>
               </div>
-
-              {/* Decorative White Notch overlapping into center column on desktop */}
-              <div className="hidden lg:block absolute -right-3.5 top-1/2 -translate-y-1/2 w-3.5 h-16 bg-[#FFFFFF] rounded-r-lg pointer-events-none"></div>
             </div>
 
-            {/* 2. Center Column: DSLR Color Portrait of John Abraham & Manny Anchan holding book */}
-            <div className="flex-1 relative min-h-[240px] sm:min-h-[280px] lg:h-[290px] xl:h-[310px] bg-[#0E0F12] overflow-hidden flex items-end justify-center">
+            {/* 2. Center Column: DSLR Color Portrait of John Abraham & Manny Anchan holding book (Fills area completely with 0 black void and 0 cropping) */}
+            <div className="shrink-0 relative w-full lg:w-auto h-[280px] sm:h-[320px] lg:h-[340px] xl:h-[360px] aspect-[1024/1010] bg-[#0E0F12] overflow-hidden flex items-center justify-center">
               <img 
                 src="/images/celebrity/john_abraham_manny_book_color.jpg" 
                 alt="John Abraham & Manny Anchan with Happiness Samurai Bestseller" 
-                className="w-full h-full object-contain object-bottom filter contrast-105 brightness-100 hover:scale-105 transition-all duration-700"
+                className="w-full h-full object-cover object-center filter contrast-105 brightness-100 hover:scale-105 transition-all duration-700"
               />
             </div>
 
-            {/* 3. Right Column: Dark Charcoal Minimalist Sidebar with Commendation & Book Thumbnails */}
-            <div className="lg:w-[350px] xl:w-[380px] shrink-0 bg-[#111215] p-5 sm:p-6 lg:p-7 flex flex-col justify-center relative z-10 gap-3">
+            {/* 3. Right Column: Dark Charcoal Minimalist Sidebar (Flex-1 stretches to right edge under Book Manny button) */}
+            <div className="flex-1 bg-[#111215] p-5 sm:p-6 lg:p-7 flex flex-col justify-center relative z-10 gap-3">
               
               {/* Commendation Quote */}
               <div>
