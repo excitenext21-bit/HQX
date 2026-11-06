@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
   CheckCircle2, 
@@ -23,7 +24,7 @@ import CorporatePartnersMarquee from '../components/common/CorporatePartnersMarq
 import GlobalFootprintMapSection from '../components/common/GlobalFootprintMapSection';
 
 export default function WhyHQX() {
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [hoveredSector, setHoveredSector] = useState(null);
   const [heroStep, setHeroStep] = useState(0); // 0: Think, 1: Feel, 2: Perform
   const videoRef = useRef(null);
 
@@ -139,9 +140,7 @@ export default function WhyHQX() {
     }
   ];
 
-  const filteredClusters = activeFilter === 'all' 
-    ? sectorClusters 
-    : sectorClusters.filter(c => c.id === activeFilter);
+
 
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
@@ -631,7 +630,7 @@ export default function WhyHQX() {
       </section>
 
       {/* INDUSTRIES & ACADEMIC INSTITUTIONS IMPACTED - ARCHITECTURAL LUXURY REDESIGN */}
-      <section className="py-20 sm:py-28 px-6 md:px-12 bg-[#FAF8F5] border-b border-black/10 relative overflow-hidden">
+      <section className="py-20 sm:py-28 px-6 md:px-12 bg-[#FAF8F5] border-b border-black/10 relative overflow-visible">
         {/* Subtle Ambient Radial Highlight */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#FFCE00]/[0.03] rounded-full blur-3xl pointer-events-none" />
 
@@ -650,138 +649,157 @@ export default function WhyHQX() {
             </p>
           </div>
 
-          {/* Institutional Proof Highlights Strip */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-5 sm:p-6 bg-white rounded-2xl border border-black/10 shadow-xs">
-            <div className="text-center sm:text-left sm:border-r border-black/10 sm:pr-4">
-              <div className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">15+</div>
-              <div className="text-xs font-mono uppercase tracking-wider text-[#6E645A] mt-0.5">Banking & Legal Bastions</div>
-            </div>
-            <div className="text-center sm:text-left md:border-r border-black/10 sm:px-4">
-              <div className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">250K+</div>
-              <div className="text-xs font-mono uppercase tracking-wider text-[#6E645A] mt-0.5">Plant & Field Workforce</div>
-            </div>
-            <div className="text-center sm:text-left sm:border-r border-black/10 sm:px-4">
-              <div className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">18+</div>
-              <div className="text-xs font-mono uppercase tracking-wider text-[#6E645A] mt-0.5">Premier Academic Bastions</div>
-            </div>
-            <div className="text-center sm:text-left sm:pl-4">
-              <div className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">100%</div>
-              <div className="text-xs font-mono uppercase tracking-wider text-[#6E645A] mt-0.5">C-Suite Sponsorship</div>
-            </div>
-          </div>
-
-          {/* Interactive Category Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2">
-            {[
-              { id: 'all', label: 'All Ecosystems' },
-              { id: 'finance', label: 'Finance & Governance' },
-              { id: 'tech', label: 'DeepTech & Life Sciences' },
-              { id: 'industry', label: 'Manufacturing & Energy' },
-              { id: 'academia', label: 'Elite Academic Bastions' }
-            ].map(tab => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveFilter(tab.id)}
-                className={`px-4 py-2 text-xs font-body uppercase tracking-wider font-semibold rounded-full transition-all duration-200 cursor-pointer ${
-                  activeFilter === tab.id
-                    ? 'bg-[#1E1A17] text-[#FFCE00] shadow-sm scale-[1.02]'
-                    : 'bg-white text-[#4A4540] hover:text-black hover:border-black/30 border border-black/10'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-
-          {/* 4 Architectural Cards Grid (2x2 Balanced Luxury Layout) */}
-          <div className={`grid grid-cols-1 ${activeFilter === 'all' ? 'lg:grid-cols-2' : 'lg:grid-cols-1'} gap-6 sm:gap-8`}>
-            {filteredClusters.map((cluster) => {
+          {/* 4 ELEGANT UNBOXED SECTORS (GIVEN STYLE: HIGH-CLASS ICONS WITH SYNCHRONIZED ANIMATION & HOVER TOOLTIPS) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-24 gap-y-12 sm:gap-y-16 py-4 sm:py-8">
+            {sectorClusters.map((cluster, index) => {
               const IconComponent = cluster.icon;
               return (
                 <div 
                   key={cluster.id}
-                  className="bg-white rounded-3xl border border-black/10 hover:border-black/25 p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 hover:shadow-lg group relative overflow-hidden"
+                  onMouseEnter={() => setHoveredSector(cluster.id)}
+                  onMouseLeave={() => setHoveredSector(null)}
+                  onClick={() => setHoveredSector(hoveredSector === cluster.id ? null : cluster.id)}
+                  className="relative group cursor-pointer flex items-center gap-5 sm:gap-7 select-none"
                 >
-                  {/* Accent Top Border Bar on Hover */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-[#1E1A17] opacity-0 group-hover:opacity-100 group-hover:bg-[#FFCE00] transition-opacity duration-300" />
+                  {/* High Class Elegant Icon Container with Synchronized Animation on Exact Same Pace */}
+                  <div className="relative shrink-0">
+                    {/* Synchronized Ambient Halo */}
+                    <motion.div 
+                      animate={{
+                        opacity: [0.25, 0.65, 0.25],
+                        scale: [1, 1.15, 1]
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                      className="absolute -inset-1 rounded-2xl bg-[#FFCE00]/30 blur-xs pointer-events-none"
+                    />
 
-                  <div className="space-y-6">
-                    {/* Header Row: Category Pill, Number & Icon */}
-                    <div className="flex items-center justify-between pb-4 border-b border-black/10">
-                      <div className="flex items-center gap-3">
-                        <div className="w-11 h-11 rounded-2xl bg-[#EFECE6] text-[#1E1A17] group-hover:bg-[#1E1A17] group-hover:text-[#FFCE00] flex items-center justify-center shrink-0 transition-colors duration-300 shadow-xs">
-                          <IconComponent className="w-5 h-5 stroke-[1.8]" />
-                        </div>
-                        <div>
-                          <span className="text-[10px] font-mono uppercase tracking-widest text-[#7A7067] font-semibold block">
-                            {cluster.category}
-                          </span>
-                          <span className="text-xs font-mono font-bold text-[#1E1A17] tracking-wider">
-                            Sector Cluster {cluster.num}
-                          </span>
-                        </div>
-                      </div>
-                      <span className="font-serif text-3xl text-black/15 group-hover:text-black/30 transition-colors">
-                        {cluster.num}
-                      </span>
+                    {/* Synchronized Floating Icon Container */}
+                    <motion.div
+                      animate={{
+                        y: [0, -5, 0],
+                        scale: [1, 1.025, 1]
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                      className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#1E1A17] text-[#FFCE00] group-hover:bg-[#FFCE00] group-hover:text-[#1E1A17] flex items-center justify-center shadow-lg group-hover:shadow-[0_12px_30px_rgba(255,206,0,0.35)] transition-colors duration-300 relative z-10"
+                    >
+                      <IconComponent className="w-8 h-8 sm:w-9 sm:h-9 stroke-[1.6]" />
+                    </motion.div>
+                  </div>
+
+                  {/* Clean Typography Title & Prompt (Matching Given Reference Style) */}
+                  <div className="min-w-0">
+                    <div className="text-[11px] font-mono uppercase tracking-widest text-[#7A7067] font-semibold mb-1 flex items-center gap-2">
+                      <span>Sector Cluster {cluster.num}</span>
+                      <span className="w-1 h-1 rounded-full bg-black/20" />
+                      <span>{cluster.category}</span>
                     </div>
-
-                    {/* Cluster Title & Strategic Purpose */}
-                    <div className="space-y-2">
-                      <h3 className="font-display text-xl sm:text-2xl font-semibold tracking-tight text-[#1E1915] leading-snug">
-                        {cluster.title}
-                      </h3>
-                      <p className="font-body text-xs sm:text-sm text-[#4A4540] font-normal leading-relaxed">
-                        {cluster.tagline}
-                      </p>
-                    </div>
-
-                    {/* Representative Institutional Clients Showcase */}
-                    <div className="space-y-2.5 pt-1">
-                      <div className="text-[11px] font-mono uppercase tracking-widest text-[#7A7067] font-semibold">
-                        Representative Institutional Engagements
-                      </div>
-                      <div className="flex flex-wrap gap-1.5">
-                        {cluster.keyClients.map((client, idx) => (
-                          <span
-                            key={idx}
-                            className="px-3 py-1.5 bg-[#FAF8F5] border border-black/10 text-xs font-mono font-medium text-[#1E1915] rounded-md shadow-xs hover:border-black/30 transition-colors"
-                          >
-                            {client}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Covered Sub-Sectors */}
-                    <div className="space-y-2 pt-1">
-                      <div className="text-[11px] font-mono uppercase tracking-widest text-[#7A7067] font-semibold">
-                        Covered Domain Sectors
-                      </div>
-                      <div className="flex flex-wrap gap-1.5">
-                        {cluster.sectors.map((sec, idx) => (
-                          <span
-                            key={idx}
-                            className="px-2.5 py-1 bg-white border border-black/10 text-[11px] font-body text-[#5A524C] rounded-sm"
-                          >
-                            {sec}
-                          </span>
-                        ))}
-                      </div>
+                    <h3 className="font-display text-xl sm:text-2xl lg:text-[26px] font-semibold text-[#1E1915] group-hover:text-black leading-snug tracking-tight transition-colors">
+                      {cluster.title}
+                    </h3>
+                    <div className="mt-2 flex items-center gap-1.5 text-xs font-mono text-[#7A7067] group-hover:text-[#1E1A17] transition-colors">
+                      <span className="font-medium">Hover to view sector details & partners</span>
+                      <span className="text-[#FFCE00] group-hover:translate-x-1 transition-transform">›</span>
                     </div>
                   </div>
 
-                  {/* Card Bottom: Metric Anchor Pill */}
-                  <div className="pt-6 mt-6 border-t border-black/10 flex items-center justify-between">
-                    <span className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-[#1E1915]">
-                      <span className="w-2 h-2 rounded-full bg-[#FFCE00]" />
-                      <span>{cluster.metric}</span>
-                    </span>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#7A7067] bg-[#FAF8F5] px-2.5 py-1 rounded border border-black/5">
-                      Verified Impact
-                    </span>
-                  </div>
+                  {/* Clean Tooltip Popup with Smooth Animation */}
+                  <AnimatePresence>
+                    {hoveredSector === cluster.id && (
+                      <motion.div
+                        initial={{ opacity: 0, y: index < 2 ? 10 : -10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: index < 2 ? 8 : -8, scale: 0.95 }}
+                        transition={{ duration: 0.22, ease: "easeOut" }}
+                        className={`absolute z-50 w-[330px] sm:w-[420px] pointer-events-auto shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] ${
+                          index < 2 ? 'top-full mt-4' : 'bottom-full mb-4'
+                        } ${
+                          index % 2 === 0 ? 'left-0 sm:left-4' : 'right-0 sm:right-4'
+                        }`}
+                      >
+                        <div className="bg-[#121316]/95 backdrop-blur-xl border border-white/15 text-white p-6 sm:p-7 rounded-2xl relative shadow-2xl">
+                          {/* Triangle Indicator Arrow */}
+                          <div className={`absolute w-3.5 h-3.5 bg-[#121316] border-white/15 rotate-45 ${
+                            index < 2 
+                              ? '-top-2 border-t border-l ' + (index % 2 === 0 ? 'left-8' : 'right-8') 
+                              : '-bottom-2 border-b border-r ' + (index % 2 === 0 ? 'left-8' : 'right-8')
+                          }`} />
 
+                          {/* Tooltip Header */}
+                          <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-3">
+                            <span className="text-[10px] font-mono uppercase tracking-widest text-[#FFCE00] font-bold">
+                              {cluster.category}
+                            </span>
+                            <span className="text-xs font-mono font-bold text-white/50 tracking-wider">
+                              SECTOR CLUSTER {cluster.num}
+                            </span>
+                          </div>
+
+                          {/* Title & Tagline */}
+                          <div className="mb-4">
+                            <h4 className="font-display text-lg font-semibold text-white mb-1.5">
+                              {cluster.title}
+                            </h4>
+                            <p className="font-body text-xs sm:text-[13px] text-white/80 font-light leading-relaxed">
+                              "{cluster.tagline}"
+                            </p>
+                          </div>
+
+                          {/* Representative Institutional Engagements */}
+                          <div className="mb-4">
+                            <div className="text-[10px] font-mono uppercase tracking-widest text-white/50 font-semibold mb-2">
+                              Representative Institutional Engagements
+                            </div>
+                            <div className="flex flex-wrap gap-1.5">
+                              {cluster.keyClients.map((client, idx) => (
+                                <span
+                                  key={idx}
+                                  className="px-2.5 py-1 bg-white/10 hover:bg-white/15 border border-white/10 text-xs font-mono font-medium text-white rounded-md transition-colors"
+                                >
+                                  {client}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Covered Domain Sectors */}
+                          <div className="mb-4">
+                            <div className="text-[10px] font-mono uppercase tracking-widest text-white/50 font-semibold mb-2">
+                              Covered Domain Sectors
+                            </div>
+                            <div className="flex flex-wrap gap-1.5">
+                              {cluster.sectors.map((sec, idx) => (
+                                <span
+                                  key={idx}
+                                  className="px-2 py-0.5 bg-black/50 border border-white/5 text-[11px] font-body text-white/70 rounded"
+                                >
+                                  {sec}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Card Bottom: Verified Impact Metric */}
+                          <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono">
+                            <span className="inline-flex items-center gap-2 font-semibold text-white">
+                              <span className="w-2 h-2 rounded-full bg-[#FFCE00]" />
+                              <span>{cluster.metric}</span>
+                            </span>
+                            <span className="text-[10px] uppercase tracking-wider text-white/40 bg-white/5 px-2 py-0.5 rounded">
+                              Verified Impact
+                            </span>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               );
             })}
