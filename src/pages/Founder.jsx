@@ -420,13 +420,13 @@ export default function Founder() {
       </section>
 
 {/* =========================================================================
-          4. SIGNATURE QUOTE - SWISS EDITORIAL MASTERPIECE (SLEEK / FIT TO SCREEN)
+          4. SIGNATURE QUOTE - SWISS EDITORIAL MASTERPIECE (SLEEK BY 25% / FIT TO SCREEN)
           ========================================================================= */}
-      <section className="py-10 sm:py-14 md:py-16 px-6 md:px-12 bg-[#FAF9F6] border-b border-black/10 flex items-center justify-center relative overflow-hidden">
+      <section className="py-7 sm:py-9 md:py-10 px-6 md:px-12 bg-[#FAF9F6] border-b border-black/10 flex items-center justify-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto w-full">
           
-          {/* Typographic Poster Canvas (Sleek, Razor-Sharp Vector Stepped Layout) */}
-          <div className="grid grid-cols-3 gap-2.5 sm:gap-3.5 md:gap-4 items-stretch max-w-[560px] sm:max-w-[620px] lg:max-w-[680px] mx-auto">
+          {/* Typographic Poster Canvas (Sleek, Scaled 25% More Compact Stepped Layout) */}
+          <div className="grid grid-cols-3 gap-2 sm:gap-2.5 md:gap-3 items-stretch max-w-[430px] sm:max-w-[490px] lg:max-w-[530px] mx-auto">
             
             {/* Col 1, Rows 1-2: Giant Opening Quote Glyph in VIBRANT HQX YELLOW (#FFCE00) */}
             <div className="col-start-1 row-start-1 row-span-2 flex items-end justify-center text-[#FFCE00]">
@@ -436,8 +436,8 @@ export default function Founder() {
             </div>
 
             {/* Col 2-3, Row 1: Quote Narrative Text (Aligned Above Glyph 2 & Photo) */}
-            <div className="col-start-2 col-span-2 row-start-1 flex flex-col justify-end pb-2 sm:pb-3 md:pb-3 pl-1 sm:pl-2">
-              <h3 className="font-display text-lg sm:text-2xl md:text-[26px] lg:text-[30px] font-light text-[#141414] leading-[1.18] tracking-tight">
+            <div className="col-start-2 col-span-2 row-start-1 flex flex-col justify-end pb-1.5 sm:pb-2 md:pb-2.5 pl-1 sm:pl-1.5">
+              <h3 className="font-display text-base sm:text-lg md:text-[21px] lg:text-[23px] font-light text-[#141414] leading-[1.18] tracking-tight">
                 “Work so hard that you have room only for calm over chaos — discipline over distraction, purpose over pressure.”
               </h3>
             </div>
@@ -459,14 +459,14 @@ export default function Founder() {
             </div>
 
             {/* Col 3, Row 3: Author Name & Designation */}
-            <div className="col-start-3 row-start-3 pt-2 sm:pt-2.5 pl-0.5">
-              <div className="font-display font-semibold text-sm sm:text-base text-[#141414] tracking-tight">
+            <div className="col-start-3 row-start-3 pt-1.5 sm:pt-2 pl-0.5">
+              <div className="font-display font-semibold text-xs sm:text-[13px] md:text-sm text-[#141414] tracking-tight">
                 Manny Anchan
               </div>
-              <div className="font-body text-xs sm:text-[13px] text-[#5A5A5A] font-normal leading-snug mt-0.5">
+              <div className="font-body text-[10px] sm:text-[11px] md:text-xs text-[#5A5A5A] font-normal leading-snug mt-0.5">
                 Founder, Happiness Samurai
               </div>
-              <div className="font-mono text-[9px] sm:text-[10px] text-[#888888] uppercase tracking-wider mt-0.5">
+              <div className="font-mono text-[8px] sm:text-[9px] text-[#888888] uppercase tracking-wider mt-0.5">
                 Author & Global Speaker
               </div>
             </div>
