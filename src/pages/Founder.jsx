@@ -420,57 +420,53 @@ export default function Founder() {
       </section>
 
 {/* =========================================================================
-          4. SIGNATURE QUOTE - SWISS EDITORIAL MASTERPIECE
+          4. SIGNATURE QUOTE - SWISS EDITORIAL MASTERPIECE (SLEEK / FIT TO SCREEN)
           ========================================================================= */}
-      <section className="py-20 sm:py-28 md:py-32 px-6 md:px-12 bg-[#FAF9F6] border-b border-black/10 overflow-hidden">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-10 sm:py-14 md:py-16 px-6 md:px-12 bg-[#FAF9F6] border-b border-black/10 flex items-center justify-center relative overflow-hidden">
+        <div className="max-w-4xl mx-auto w-full">
           
-          {/* Typographic Poster Canvas (Exact Reference Layout) */}
-          <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 items-stretch max-w-[680px] lg:max-w-[760px] mx-auto">
+          {/* Typographic Poster Canvas (Sleek, Razor-Sharp Vector Stepped Layout) */}
+          <div className="grid grid-cols-3 gap-2.5 sm:gap-3.5 md:gap-4 items-stretch max-w-[560px] sm:max-w-[620px] lg:max-w-[680px] mx-auto">
             
-            {/* Col 1, Rows 1-2: Giant Opening Quote Glyph */}
-            <div className="col-start-1 row-start-1 row-span-2 flex items-end justify-center">
-              <img 
-                src="/images/hero_showcase/quote_glyph.png" 
-                alt="Opening Quote" 
-                className="w-full h-full object-contain object-bottom select-none pointer-events-none drop-shadow-xs"
-              />
+            {/* Col 1, Rows 1-2: Giant Opening Quote Glyph in VIBRANT HQX YELLOW (#FFCE00) */}
+            <div className="col-start-1 row-start-1 row-span-2 flex items-end justify-center text-[#FFCE00]">
+              <svg viewBox="0 0 192 376" className="w-full h-full drop-shadow-xs" fill="currentColor">
+                <path d="M 192 0 L 192 75 C 192 145, 155 197, 104 197 L 192 197 L 192 376 L 0 376 L 0 197 C 0 90, 85 0, 192 0 Z" />
+              </svg>
             </div>
 
             {/* Col 2-3, Row 1: Quote Narrative Text (Aligned Above Glyph 2 & Photo) */}
-            <div className="col-start-2 col-span-2 row-start-1 flex flex-col justify-end pb-3 sm:pb-5 md:pb-6 pl-1 sm:pl-2">
-              <h3 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-[34px] xl:text-[38px] font-light text-[#141414] leading-[1.16] tracking-tight">
+            <div className="col-start-2 col-span-2 row-start-1 flex flex-col justify-end pb-2 sm:pb-3 md:pb-3 pl-1 sm:pl-2">
+              <h3 className="font-display text-lg sm:text-2xl md:text-[26px] lg:text-[30px] font-light text-[#141414] leading-[1.18] tracking-tight">
                 “Work so hard that you have room only for calm over chaos — discipline over distraction, purpose over pressure.”
               </h3>
             </div>
 
-            {/* Col 2, Rows 2-3: Giant Closing Quote Glyph (Rotated 180deg) */}
-            <div className="col-start-2 row-start-2 row-span-2 flex items-start justify-center">
-              <img 
-                src="/images/hero_showcase/quote_glyph_rot180.png" 
-                alt="Closing Quote" 
-                className="w-full h-full object-contain object-top select-none pointer-events-none drop-shadow-xs"
-              />
+            {/* Col 2, Rows 2-3: Giant Closing Quote Glyph in SLEEK BLACK (#141414) */}
+            <div className="col-start-2 row-start-2 row-span-2 flex items-start justify-center text-[#141414]">
+              <svg viewBox="0 0 192 376" className="w-full h-full rotate-180 drop-shadow-xs" fill="currentColor">
+                <path d="M 192 0 L 192 75 C 192 145, 155 197, 104 197 L 192 197 L 192 376 L 0 376 L 0 197 C 0 90, 85 0, 192 0 Z" />
+              </svg>
             </div>
 
-            {/* Col 3, Row 2: Square Black & White Portrait of Manny Anchan */}
-            <div className="col-start-3 row-start-2 aspect-square bg-[#0E0F12] overflow-hidden shadow-sm">
+            {/* Col 3, Row 2: Square Black & White / Moody Studio Portrait of Manny Anchan */}
+            <div className="col-start-3 row-start-2 aspect-square bg-[#0E0F12] overflow-hidden shadow-sm relative group">
               <img 
-                src="/images/hero_showcase/manny_quote_portrait_bw.jpg" 
+                src="/images/hero_showcase/manny_cap_square.jpg" 
                 alt="Manny Anchan - Founder, Happiness Samurai" 
-                className="w-full h-full object-cover filter contrast-110 brightness-100 hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover filter contrast-105 brightness-100 group-hover:scale-105 transition-transform duration-700"
               />
             </div>
 
             {/* Col 3, Row 3: Author Name & Designation */}
-            <div className="col-start-3 row-start-3 pt-3 sm:pt-4 pl-0.5">
-              <div className="font-display font-semibold text-sm sm:text-base md:text-lg text-[#141414] tracking-tight">
+            <div className="col-start-3 row-start-3 pt-2 sm:pt-2.5 pl-0.5">
+              <div className="font-display font-semibold text-sm sm:text-base text-[#141414] tracking-tight">
                 Manny Anchan
               </div>
-              <div className="font-body text-xs sm:text-sm text-[#5A5A5A] font-normal leading-snug mt-0.5">
+              <div className="font-body text-xs sm:text-[13px] text-[#5A5A5A] font-normal leading-snug mt-0.5">
                 Founder, Happiness Samurai
               </div>
-              <div className="font-mono text-[10px] sm:text-[11px] text-[#888888] uppercase tracking-wider mt-1">
+              <div className="font-mono text-[9px] sm:text-[10px] text-[#888888] uppercase tracking-wider mt-0.5">
                 Author & Global Speaker
               </div>
             </div>

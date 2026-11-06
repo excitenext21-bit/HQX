@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
   CheckCircle2, 
@@ -27,15 +27,34 @@ import GlobalFootprintMapSection from '../components/common/GlobalFootprintMapSe
 
 export default function WhyHQX() {
   const [activeIndustry, setActiveIndustry] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const industriesContainerRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: industriesContainerRef,
+    offset: ["start start", "end end"]
+  });
 
   useEffect(() => {
-    if (isPaused) return;
-    const timer = setInterval(() => {
-      setActiveIndustry((prev) => (prev + 1) % 4);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [isPaused]);
+    const unsubscribe = scrollYProgress.on("change", (latest) => {
+      const step = Math.min(3, Math.max(0, Math.floor(latest * 4)));
+      setActiveIndustry(step);
+    });
+    return () => unsubscribe();
+  }, [scrollYProgress]);
+
+  const scrollToIndustry = (index) => {
+    setActiveIndustry(index);
+    if (industriesContainerRef.current) {
+      const rect = industriesContainerRef.current.getBoundingClientRect();
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const containerTop = rect.top + scrollTop;
+      const scrollableHeight = rect.height - window.innerHeight;
+      if (scrollableHeight > 0) {
+        const targetScroll = containerTop + (index / 3) * scrollableHeight;
+        window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+      }
+    }
+  };
   const [heroStep, setHeroStep] = useState(0); // 0: Think, 1: Feel, 2: Perform
   const videoRef = useRef(null);
 
@@ -762,177 +781,138 @@ export default function WhyHQX() {
         </div>
       </section>
 
-      {/* INDUSTRIES & ACADEMIC INSTITUTIONS IMPACTED - ACCORDION / SEQUENTIAL DETAIL CARDS WITH LOW-OPACITY LOGOS */}
+      {/* INDUSTRIES & ACADEMIC INSTITUTIONS IMPACTED - SCROLL-DRIVEN SEQUENTIAL DETAIL CARDS */}
       <section 
-        className="py-16 sm:py-24 px-6 md:px-12 bg-[#FAF8F5] border-b border-black/10 relative overflow-hidden"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
+        ref={industriesContainerRef}
+        className="relative h-[260vh] sm:h-[300vh] bg-[#FAF8F5] border-b border-black/10"
       >
-        <div className="max-w-7xl mx-auto relative z-10 space-y-10 sm:space-y-12">
-          
-          {/* Section Header */}
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 pb-8 border-b border-black/10">
-            <div>
-              <div className="flex items-center gap-2 mb-3">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#1E1A17] inline-block" />
-                <span className="font-mono text-xs uppercase tracking-widest text-[#7A7067] font-semibold">
-                  Sectors Impacted
-                </span>
-              </div>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] leading-[1.08]">
-                Industries & Academic <br />
-                <span className="text-[#666666] font-light">Institutions Impacted</span>
-              </h2>
-            </div>
+        {/* Sticky Viewport Container */}
+        <div className="sticky top-20 sm:top-24 w-full py-10 sm:py-14 px-6 md:px-12 flex flex-col justify-center">
+          <div className="max-w-7xl mx-auto w-full relative z-10 space-y-6 sm:space-y-8">
             
-            {/* Sequential Carousel Navigation Controls */}
-            <div className="flex items-center gap-3">
-              <div className="font-mono text-xs text-[#7A7067] tracking-wider mr-2">
-                <span className="font-bold text-[#1E1915] text-sm">{IMPACTED_INDUSTRIES[activeIndustry].num}</span>
-                <span className="opacity-40"> / 04</span>
+            {/* Section Header (No eyebrow text, clean typography & controls) */}
+            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 pb-6 border-b border-black/10">
+              <div>
+                <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] leading-[1.08]">
+                  Industries & Academic <br />
+                  <span className="text-[#666666] font-light">Institutions Impacted</span>
+                </h2>
               </div>
-              <button
-                onClick={() => setActiveIndustry((prev) => (prev - 1 + 4) % 4)}
-                className="w-10 h-10 rounded-full border border-black/15 hover:border-black hover:bg-black hover:text-white flex items-center justify-center transition-all cursor-pointer"
-                aria-label="Previous industry"
-              >
-                <ChevronLeft className="w-4 h-4 stroke-[2]" />
-              </button>
-              <button
-                onClick={() => setActiveIndustry((prev) => (prev + 1) % 4)}
-                className="w-10 h-10 rounded-full border border-black/15 hover:border-black hover:bg-black hover:text-white flex items-center justify-center transition-all cursor-pointer"
-                aria-label="Next industry"
-              >
-                <ChevronRight className="w-4 h-4 stroke-[2]" />
-              </button>
-            </div>
-          </div>
-
-          {/* Stepper Selector Bar: 01, 02, 03, 04 Quick Tabs */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
-            {IMPACTED_INDUSTRIES.map((ind, idx) => (
-              <button
-                key={ind.id}
-                onClick={() => setActiveIndustry(idx)}
-                className={`text-left p-3.5 sm:p-4 rounded-xl border transition-all duration-300 cursor-pointer flex flex-col justify-between ${
-                  activeIndustry === idx 
-                    ? 'bg-[#1E1A17] text-white border-[#1E1A17] shadow-md' 
-                    : 'bg-white hover:bg-black/[0.02] text-[#4A4540] border-black/10'
-                }`}
-              >
-                <div className="flex items-center justify-between w-full mb-1">
-                  <span className={`font-mono text-xs font-bold ${activeIndustry === idx ? 'text-[#FFCE00]' : 'text-[#7A7067]'}`}>
-                    {ind.num}
-                  </span>
-                  {activeIndustry === idx && (
-                    <span className="w-2 h-2 rounded-full bg-[#FFCE00] animate-pulse" />
-                  )}
+              
+              {/* Sequential Navigation & Step Progress Indicator */}
+              <div className="flex items-center gap-4">
+                {/* 4-Step Pill Progress Indicators */}
+                <div className="flex items-center gap-1.5">
+                  {IMPACTED_INDUSTRIES.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => scrollToIndustry(idx)}
+                      className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                        activeIndustry === idx 
+                          ? 'w-8 bg-[#1E1A17]' 
+                          : 'w-2 bg-black/20 hover:bg-black/40'
+                      }`}
+                      aria-label={`Go to industry ${idx + 1}`}
+                    />
+                  ))}
                 </div>
-                <div className="font-display text-xs sm:text-[13px] font-semibold leading-tight line-clamp-1">
-                  {ind.title.split(',')[0]}
-                </div>
-              </button>
-            ))}
-          </div>
 
-          {/* THE DETAIL CARD (EXACT LAYOUT FROM REFERENCE IMAGE: PARAGRAPHS LEFT, ARCHED PHOTO RIGHT, LOW-OPACITY LOGOS BG) */}
-          <div className="relative min-h-[460px] sm:min-h-[420px] bg-white rounded-3xl sm:rounded-[32px] border border-black/10 overflow-hidden shadow-[0_15px_45px_-10px_rgba(0,0,0,0.06)]">
-            <AnimatePresence mode="wait">
-              {(() => {
-                const item = IMPACTED_INDUSTRIES[activeIndustry];
-                return (
-                  <motion.div
-                    key={item.id}
-                    initial={{ opacity: 0, y: 14 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -14 }}
-                    transition={{ duration: 0.35, ease: "easeOut" }}
-                    className="relative w-full h-full p-8 sm:p-12 lg:p-14 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-14"
+                <div className="font-mono text-xs text-[#7A7067] tracking-wider ml-1">
+                  <span className="font-bold text-[#1E1915] text-sm">{IMPACTED_INDUSTRIES[activeIndustry].num}</span>
+                  <span className="opacity-40"> / 04</span>
+                </div>
+
+                <div className="flex items-center gap-1.5">
+                  <button
+                    onClick={() => scrollToIndustry((activeIndustry - 1 + 4) % 4)}
+                    className="w-9 h-9 rounded-full border border-black/15 hover:border-black hover:bg-black hover:text-white flex items-center justify-center transition-all cursor-pointer"
+                    aria-label="Previous industry"
                   >
-                    {/* BACKGROUND WATERMARK LOGOS: Brand logos in grey color with low opacity in bg */}
-                    <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 flex items-center justify-around opacity-[0.07] px-6">
-                      {item.brandLogos.map((brand, bIdx) => (
-                        <div 
-                          key={bIdx} 
-                          className="text-[#1E1A17] transform -rotate-12 hover:rotate-0 transition-transform duration-700"
-                        >
-                          {brand.svg}
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* LEFT CONTENT: Title, Number, and Detailed Descriptive Paragraphs (Not in points) */}
-                    <div className="relative z-10 flex-1 max-w-2xl space-y-6">
-                      <div className="flex items-center gap-3">
-                        <span className="font-mono text-base sm:text-lg font-bold text-[#1E1915]">
-                          {item.num}
-                        </span>
-                        <h3 className="font-display text-2xl sm:text-3xl lg:text-[34px] font-semibold text-[#141414] tracking-tight leading-tight">
-                          {item.title}
-                        </h3>
-                      </div>
-
-                      {/* Paragraph 1: What we did in this industry */}
-                      <p className="font-body text-sm sm:text-[15px] text-[#3A3530] font-normal leading-relaxed text-justify">
-                        {item.whatWeDid}
-                      </p>
-
-                      {/* Paragraph 2: How it was impactful */}
-                      <p className="font-body text-sm sm:text-[15px] text-[#4A4540] font-light leading-relaxed text-justify">
-                        {item.howItWasImpactful}
-                      </p>
-
-                      {/* Verified Impact Metric Capsule */}
-                      <div className="pt-2 flex items-center gap-2 text-xs font-mono text-[#1E1915]">
-                        <span className="w-2 h-2 rounded-full bg-[#FFCE00]" />
-                        <span className="font-bold tracking-wider">{item.metric}</span>
-                      </div>
-                    </div>
-
-                    {/* RIGHT IMAGE: Large Semicircular / Arched Window (Directly matching media_1793957892897_2331fc18.jpg) */}
-                    <div className="relative z-10 w-full sm:w-[320px] lg:w-[380px] xl:w-[420px] aspect-square shrink-0 flex items-center justify-center">
-                      <div className="w-full h-full rounded-full lg:rounded-l-full overflow-hidden shadow-2xl border-4 border-white bg-[#0E0F12] relative group">
-                        <img 
-                          src={item.image} 
-                          alt={item.title} 
-                          className="w-full h-full object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })()}
-            </AnimatePresence>
-          </div>
-
-          {/* Collapsed Peeking Accordion Rows Below Active Card (Matching media_1793957892897_2331fc18.jpg) */}
-          <div className="space-y-3 pt-2">
-            {IMPACTED_INDUSTRIES.map((ind, idx) => {
-              if (idx === activeIndustry) return null;
-              return (
-                <div
-                  key={ind.id}
-                  onClick={() => setActiveIndustry(idx)}
-                  className="bg-white hover:bg-[#FAF8F5] p-5 sm:p-6 rounded-2xl border border-black/10 flex items-center justify-between cursor-pointer transition-all duration-300 group shadow-xs hover:shadow-md"
-                >
-                  <div className="flex items-center gap-4">
-                    <span className="font-mono text-sm sm:text-base font-bold text-[#7A7067] group-hover:text-black">
-                      {ind.num}
-                    </span>
-                    <h4 className="font-display text-lg sm:text-xl font-semibold text-[#1E1915] group-hover:text-black transition-colors">
-                      {ind.title}
-                    </h4>
-                  </div>
-                  <div className="flex items-center gap-2 font-mono text-xs text-[#7A7067] group-hover:text-black">
-                    <span className="hidden sm:inline">View Detailed Impact</span>
-                    <span className="text-[#FFCE00] group-hover:translate-x-1 transition-transform">›</span>
-                  </div>
+                    <ChevronLeft className="w-4 h-4 stroke-[2]" />
+                  </button>
+                  <button
+                    onClick={() => scrollToIndustry((activeIndustry + 1) % 4)}
+                    className="w-9 h-9 rounded-full border border-black/15 hover:border-black hover:bg-black hover:text-white flex items-center justify-center transition-all cursor-pointer"
+                    aria-label="Next industry"
+                  >
+                    <ChevronRight className="w-4 h-4 stroke-[2]" />
+                  </button>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            </div>
 
+            {/* THE DETAIL CARD IN SAME PLACE (EXACT LAYOUT: PARAGRAPHS LEFT, ARCHED PHOTO RIGHT, LOW-OPACITY LOGOS BG) */}
+            <div className="relative min-h-[440px] sm:min-h-[400px] bg-white rounded-3xl sm:rounded-[32px] border border-black/10 overflow-hidden shadow-[0_15px_45px_-10px_rgba(0,0,0,0.06)]">
+              <AnimatePresence mode="wait">
+                {(() => {
+                  const item = IMPACTED_INDUSTRIES[activeIndustry];
+                  return (
+                    <motion.div
+                      key={item.id}
+                      initial={{ opacity: 0, y: 16 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -16 }}
+                      transition={{ duration: 0.35, ease: "easeOut" }}
+                      className="relative w-full h-full p-8 sm:p-12 lg:p-14 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-14"
+                    >
+                      {/* BACKGROUND WATERMARK LOGOS: Brand logos in grey color with low opacity in bg */}
+                      <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 flex items-center justify-around opacity-[0.07] px-6">
+                        {item.brandLogos.map((brand, bIdx) => (
+                          <div 
+                            key={bIdx} 
+                            className="text-[#1E1A17] transform -rotate-12 hover:rotate-0 transition-transform duration-700"
+                          >
+                            {brand.svg}
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* LEFT CONTENT: Title, Number, and Detailed Descriptive Paragraphs (Not in points) */}
+                      <div className="relative z-10 flex-1 max-w-2xl space-y-5 sm:space-y-6">
+                        <div className="flex items-center gap-3">
+                          <span className="font-mono text-base sm:text-lg font-bold text-[#1E1915]">
+                            {item.num}
+                          </span>
+                          <h3 className="font-display text-2xl sm:text-3xl lg:text-[34px] font-semibold text-[#141414] tracking-tight leading-tight">
+                            {item.title}
+                          </h3>
+                        </div>
+
+                        {/* Paragraph 1: What we did in this industry */}
+                        <p className="font-body text-sm sm:text-[15px] text-[#3A3530] font-normal leading-relaxed text-justify">
+                          {item.whatWeDid}
+                        </p>
+
+                        {/* Paragraph 2: How it was impactful */}
+                        <p className="font-body text-sm sm:text-[15px] text-[#4A4540] font-light leading-relaxed text-justify">
+                          {item.howItWasImpactful}
+                        </p>
+
+                        {/* Verified Impact Metric Capsule */}
+                        <div className="pt-1 flex items-center gap-2 text-xs font-mono text-[#1E1915]">
+                          <span className="w-2 h-2 rounded-full bg-[#FFCE00]" />
+                          <span className="font-bold tracking-wider">{item.metric}</span>
+                        </div>
+                      </div>
+
+                      {/* RIGHT IMAGE: Large Semicircular / Arched Window (Directly matching reference) */}
+                      <div className="relative z-10 w-full sm:w-[320px] lg:w-[380px] xl:w-[420px] aspect-square shrink-0 flex items-center justify-center">
+                        <div className="w-full h-full rounded-full lg:rounded-l-full overflow-hidden shadow-2xl border-4 border-white bg-[#0E0F12] relative group">
+                          <img 
+                            src={item.image} 
+                            alt={item.title} 
+                            className="w-full h-full object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })()}
+              </AnimatePresence>
+            </div>
+
+          </div>
         </div>
       </section>
 
