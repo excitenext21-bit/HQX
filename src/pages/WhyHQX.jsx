@@ -483,156 +483,158 @@ export default function WhyHQX() {
         </div>
       </section>
 
-      {/* THE PARADIGM SHIFT: HOW HQX COMPARES (FIT TO SCREEN BLACK SEED-STYLE COMPARISON TABLE) */}
-      <section className="min-h-[100svh] lg:h-screen lg:min-h-[640px] lg:max-h-[1080px] px-6 md:px-12 bg-[#0C0D0C] text-white border-b border-white/10 relative overflow-hidden flex flex-col justify-center py-8 lg:py-10">
-        {/* Ambient Subtle Scrim / Glow */}
-        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[700px] bg-[#FFCE00]/[0.02] rounded-full blur-[160px] pointer-events-none" />
+      {/* THE PARADIGM SHIFT: HOW HQX COMPARES (UNIFIED DARK BOX MATCHING SUPPORTIVE GUIDANCE WIDTH & LAYOUT) */}
+      <section className="min-h-[100svh] lg:h-screen lg:min-h-[640px] lg:max-h-[1080px] px-6 md:px-12 bg-[#FAF8F5] border-b border-black/10 flex flex-col justify-center py-6 sm:py-8 lg:py-10">
+        <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center">
+          
+          {/* Unified Dark Box Enclosing Header + Comparison Table */}
+          <div className="rounded-[28px] sm:rounded-[36px] bg-[#0C0D0C] text-white border border-white/10 p-6 sm:p-8 lg:p-9 shadow-2xl relative overflow-hidden flex flex-col justify-center">
+            {/* Ambient Radial Highlight */}
+            <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-[#FFCE00]/[0.03] rounded-full blur-[140px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-14 items-center">
-            
-            {/* Left Column: Heading and Narrative (No colon after Compares) */}
-            <div className="lg:col-span-4 space-y-4 lg:space-y-5">
-              <span className="text-xs font-mono uppercase tracking-widest text-[#FFCE00] block">
-                The Paradigm Shift
-              </span>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-[46px] xl:text-[52px] font-semibold tracking-tight text-white leading-[1.06]">
-                How HQX™ <br />
-                Compares
-              </h2>
-              <p className="font-body text-xs sm:text-sm lg:text-[15px] text-white/60 font-light leading-relaxed max-w-sm">
-                Why traditional corporate wellness efforts fail to move organizational needles, and how our eudaimonic architecture delivers compounding bottom-line value.
-              </p>
-              <div className="pt-1">
-                <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/10 text-xs font-mono text-white/80">
-                  <span className="w-2 h-2 rounded-full bg-[#FFCE00]" />
+            {/* Section Header Inside Dark Box (Exact Same Layout as Supportive Guidance) */}
+            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-5 pb-5 lg:pb-6 border-b border-white/10 relative z-10">
+              <div>
+                <span className="text-xs font-mono uppercase tracking-widest text-[#FFCE00] block mb-1.5">
+                  The Paradigm Shift
+                </span>
+                <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-white leading-[1.08]">
+                  How HQX™ <br />
+                  <span className="text-white/60 font-light">Compares</span>
+                </h2>
+              </div>
+              <div className="max-w-md space-y-2.5">
+                <p className="font-body text-xs sm:text-sm text-white/70 font-normal leading-relaxed">
+                  Why traditional corporate wellness efforts fail to move organizational needles, and how our eudaimonic architecture delivers compounding bottom-line value.
+                </p>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-xs font-mono text-white/80">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FFCE00]" />
                   <span>Eudaimonic vs. Hedonic Architecture</span>
                 </div>
               </div>
             </div>
 
-            {/* Right Column: Comparison Card (Exact Same Seed Style, Fits Viewport) */}
-            <div className="lg:col-span-8">
-              <div className="rounded-[26px] sm:rounded-[32px] bg-[#141514] border border-white/10 p-5 sm:p-7 lg:p-8 shadow-2xl overflow-x-auto">
-                <div className="min-w-[540px] relative">
-                  
-                  {/* Continuous Highlighted Capsule Track for HQX Column */}
-                  <div className="absolute -top-2.5 -bottom-2.5 left-1/2 -translate-x-1/2 w-[18%] bg-white/[0.08] border border-white/[0.08] rounded-[24px] pointer-events-none" />
+            {/* Full-Width Comparison Table Inside Dark Box */}
+            <div className="mt-5 lg:mt-6 overflow-x-auto relative z-10">
+              <div className="min-w-[600px] relative">
+                
+                {/* Continuous Highlighted Capsule Track for HQX Column */}
+                <div className="absolute -top-2 -bottom-2 left-1/2 -translate-x-1/2 w-[18%] bg-white/[0.08] border border-white/[0.08] rounded-[22px] pointer-events-none" />
 
-                  {/* Table Header */}
-                  <div className="grid grid-cols-12 items-center pb-4 sm:pb-5 border-b border-white/10 relative z-10">
-                    <div className="col-span-5 text-xs font-mono uppercase tracking-wider text-white/40">
-                      Dimension / Criteria
-                    </div>
-                    <div className="col-span-2 flex justify-center items-center">
-                      <span className="inline-flex items-center justify-center px-3.5 py-1 rounded-full border border-white/35 bg-white/10 text-xs sm:text-sm font-semibold tracking-wider text-white shadow-xs">
-                        HQX™
-                      </span>
-                    </div>
-                    <div className="col-span-2 text-center text-xs sm:text-sm font-display font-medium text-white/80 leading-snug px-1">
-                      Leading<br />Corporate Wellness
-                    </div>
-                    <div className="col-span-3 text-center text-xs sm:text-sm font-display font-medium text-white/80 leading-snug px-1">
-                      All-in-One<br />Apps & Perks
-                    </div>
+                {/* Table Header */}
+                <div className="grid grid-cols-12 items-center pb-3.5 border-b border-white/10 relative z-10">
+                  <div className="col-span-5 text-xs font-mono uppercase tracking-wider text-white/40">
+                    Dimension / Criteria
                   </div>
-
-                  {/* Table Body Rows */}
-                  <div className="divide-y divide-white/[0.06] relative z-10">
-                    {[
-                      { 
-                        feature: 'Stress resilience & foundational vitality', 
-                        hqx: true, 
-                        traditional: true, 
-                        apps: true 
-                      },
-                      { 
-                        feature: 'Aristotelian Eudaimonia & deep purpose alignment', 
-                        hqx: true, 
-                        traditional: false, 
-                        apps: false 
-                      },
-                      { 
-                        feature: '100-day neuroplastic habit rewiring architecture', 
-                        hqx: true, 
-                        traditional: false, 
-                        apps: false 
-                      },
-                      { 
-                        feature: 'Direct C-Suite engagement & boardroom alignment', 
-                        hqx: true, 
-                        traditional: false, 
-                        apps: false 
-                      },
-                      { 
-                        feature: 'Proprietary 360° 5-pillar ecosystem (Mental to Financial)', 
-                        hqx: true, 
-                        traditional: true, 
-                        apps: false 
-                      },
-                      { 
-                        feature: 'World-class faculty (Olympians, C-Suite, Ivy League)', 
-                        hqx: true, 
-                        traditional: false, 
-                        apps: false 
-                      },
-                      { 
-                        feature: 'Quantified EBITDA & hard enterprise ROI attribution', 
-                        hqx: true, 
-                        traditional: false, 
-                        apps: false 
-                      },
-                      { 
-                        feature: 'Sustainable antifragile culture (Zero employee cynicism)', 
-                        hqx: true, 
-                        traditional: false, 
-                        apps: false 
-                      }
-                    ].map((row, idx) => (
-                      <div 
-                        key={idx}
-                        className="grid grid-cols-12 items-center py-2.5 sm:py-3 lg:py-3.5"
-                      >
-                        {/* Feature Name */}
-                        <div className="col-span-5 pr-4 text-xs sm:text-sm font-body text-white/90 font-light leading-snug">
-                          {row.feature}
-                        </div>
-
-                        {/* HQX Status (Solid White Dot with Subtle Glow) */}
-                        <div className="col-span-2 flex justify-center items-center">
-                          {row.hqx ? (
-                            <span className="w-3.5 h-3.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.7)]" />
-                          ) : (
-                            <span className="w-3.5 h-3.5 rounded-full border-[1.5px] border-white/40" />
-                          )}
-                        </div>
-
-                        {/* Traditional Wellness Status */}
-                        <div className="col-span-2 flex justify-center items-center">
-                          {row.traditional ? (
-                            <span className="w-3.5 h-3.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.7)]" />
-                          ) : (
-                            <span className="w-3.5 h-3.5 rounded-full border-[1.5px] border-white/40" />
-                          )}
-                        </div>
-
-                        {/* All-in-One Apps Status */}
-                        <div className="col-span-3 flex justify-center items-center">
-                          {row.apps ? (
-                            <span className="w-3.5 h-3.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.7)]" />
-                          ) : (
-                            <span className="w-3.5 h-3.5 rounded-full border-[1.5px] border-white/40" />
-                          )}
-                        </div>
-                      </div>
-                    ))}
+                  <div className="col-span-2 flex justify-center items-center">
+                    <span className="inline-flex items-center justify-center px-3.5 py-1 rounded-full border border-white/35 bg-white/10 text-xs sm:text-sm font-semibold tracking-wider text-white shadow-xs">
+                      HQX™
+                    </span>
                   </div>
-
+                  <div className="col-span-2 text-center text-xs sm:text-sm font-display font-medium text-white/80 leading-snug px-1">
+                    Leading<br />Corporate Wellness
+                  </div>
+                  <div className="col-span-3 text-center text-xs sm:text-sm font-display font-medium text-white/80 leading-snug px-1">
+                    All-in-One<br />Apps & Perks
+                  </div>
                 </div>
+
+                {/* Table Body Rows */}
+                <div className="divide-y divide-white/[0.06] relative z-10">
+                  {[
+                    { 
+                      feature: 'Stress resilience & foundational vitality', 
+                      hqx: true, 
+                      traditional: true, 
+                      apps: true 
+                    },
+                    { 
+                      feature: 'Aristotelian Eudaimonia & deep purpose alignment', 
+                      hqx: true, 
+                      traditional: false, 
+                      apps: false 
+                    },
+                    { 
+                      feature: '100-day neuroplastic habit rewiring architecture', 
+                      hqx: true, 
+                      traditional: false, 
+                      apps: false 
+                    },
+                    { 
+                      feature: 'Direct C-Suite engagement & boardroom alignment', 
+                      hqx: true, 
+                      traditional: false, 
+                      apps: false 
+                    },
+                    { 
+                      feature: 'Proprietary 360° 5-pillar ecosystem (Mental to Financial)', 
+                      hqx: true, 
+                      traditional: true, 
+                      apps: false 
+                    },
+                    { 
+                      feature: 'World-class faculty (Olympians, C-Suite, Ivy League)', 
+                      hqx: true, 
+                      traditional: false, 
+                      apps: false 
+                    },
+                    { 
+                      feature: 'Quantified EBITDA & hard enterprise ROI attribution', 
+                      hqx: true, 
+                      traditional: false, 
+                      apps: false 
+                    },
+                    { 
+                      feature: 'Sustainable antifragile culture (Zero employee cynicism)', 
+                      hqx: true, 
+                      traditional: false, 
+                      apps: false 
+                    }
+                  ].map((row, idx) => (
+                    <div 
+                      key={idx}
+                      className="grid grid-cols-12 items-center py-2 sm:py-2.5"
+                    >
+                      {/* Feature Name */}
+                      <div className="col-span-5 pr-4 text-xs sm:text-sm font-body text-white/90 font-light leading-snug">
+                        {row.feature}
+                      </div>
+
+                      {/* HQX Status (Solid White Dot with Subtle Glow) */}
+                      <div className="col-span-2 flex justify-center items-center">
+                        {row.hqx ? (
+                          <span className="w-3.5 h-3.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.7)]" />
+                        ) : (
+                          <span className="w-3.5 h-3.5 rounded-full border-[1.5px] border-white/40" />
+                        )}
+                      </div>
+
+                      {/* Traditional Wellness Status */}
+                      <div className="col-span-2 flex justify-center items-center">
+                        {row.traditional ? (
+                          <span className="w-3.5 h-3.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.7)]" />
+                        ) : (
+                          <span className="w-3.5 h-3.5 rounded-full border-[1.5px] border-white/40" />
+                        )}
+                      </div>
+
+                      {/* All-in-One Apps Status */}
+                      <div className="col-span-3 flex justify-center items-center">
+                        {row.apps ? (
+                          <span className="w-3.5 h-3.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.7)]" />
+                        ) : (
+                          <span className="w-3.5 h-3.5 rounded-full border-[1.5px] border-white/40" />
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
               </div>
             </div>
 
           </div>
+
         </div>
       </section>
 
