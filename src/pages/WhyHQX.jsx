@@ -394,23 +394,24 @@ export default function WhyHQX() {
       </section>
 
       
-            {/* 4 PILLARS OF DISTINCTION - ULTRA-MODERN UNBOXED EDITORIAL ARCHITECTURE */}
-      <section className="py-24 px-6 md:px-12 bg-white border-b border-hq-black/10">
+            {/* 4 PILLARS OF DISTINCTION - ULTRA-MODERN UNBOXED EDITORIAL ARCHITECTURE (MINIMIZED BOTTOM WHITE SPACE) */}
+      <section className="pt-16 sm:pt-20 pb-8 sm:pb-10 px-6 md:px-12 bg-white border-b border-hq-black/10">
         <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-12 pb-8 border-b border-hq-black/15">
+          {/* Section Header: Dual-Tone Title & Top Narrative (Matches Supportive Guidance style) */}
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-8 sm:mb-10 pb-6 sm:pb-8 border-b border-black/10">
             <div>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-hq-black">
-                The Four Pillars of Distinction
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] leading-[1.08]">
+                The Four Pillars <br />
+                <span className="text-[#666666] font-light">of Distinction</span>
               </h2>
             </div>
-            <p className="font-body text-xs sm:text-sm text-hq-black/70 max-w-md font-light leading-relaxed">
+            <p className="font-body text-sm sm:text-base text-hq-black/65 max-w-md font-normal leading-relaxed lg:pb-1">
               Moving beyond superficial wellness trends to engineer compounding executive resilience, ethical governance, and quantified EBITDA growth.
             </p>
           </div>
 
-          {/* Open Architectural Horizontal Rows (No Box Style) */}
-          <div className="divide-y divide-hq-black/15 mb-16">
+          {/* Open Architectural Horizontal Rows (No Box Style - Clean Zero Margin Below Pillar 4) */}
+          <div className="divide-y divide-hq-black/15 mb-0">
             {[
               {
                 num: '01',
@@ -483,48 +484,48 @@ export default function WhyHQX() {
         </div>
       </section>
 
-      {/* HOW HQX COMPARES (FULL BG BLACK - FIT TO SCREEN) */}
-      <section className="min-h-[100svh] lg:h-screen lg:min-h-[640px] lg:max-h-[1080px] px-6 md:px-12 bg-black text-white border-b border-white/10 relative overflow-hidden flex flex-col justify-center py-8 lg:py-12">
+      {/* HOW HQX COMPARES (FULL BG BLACK - FIT TO SCREEN WITHOUT VERTICAL SCROLL) */}
+      <section className="min-h-[100svh] lg:h-screen lg:min-h-[600px] lg:max-h-[1080px] px-6 md:px-12 bg-black text-white border-b border-white/10 relative overflow-hidden flex flex-col justify-center py-6 sm:py-8 lg:py-8">
         {/* Subtle Ambient Radial Highlight */}
         <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[700px] h-[700px] bg-[#FFCE00]/[0.02] rounded-full blur-[160px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center space-y-6 sm:space-y-8 lg:space-y-10 relative z-10">
+        <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center space-y-4 sm:space-y-5 lg:space-y-6 relative z-10">
           
           {/* Section Header: Dual-Tone Title & Top Narrative (Matches Supportive Guidance layout) */}
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 pb-6 lg:pb-8 border-b border-white/10">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-5 pb-4 sm:pb-5 lg:pb-6 border-b border-white/10">
             <div>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.08]">
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-white leading-[1.08]">
                 How HQX™ <br />
                 <span className="text-white/60 font-light">Compares</span>
               </h2>
             </div>
-            <p className="font-body text-sm sm:text-base text-white/70 max-w-md font-normal leading-relaxed lg:pb-1">
+            <p className="font-body text-xs sm:text-sm lg:text-[14.5px] text-white/70 max-w-md font-normal leading-relaxed lg:pb-1">
               Why traditional corporate wellness efforts fail to move organizational needles, and how our eudaimonic architecture delivers compounding bottom-line value.
             </p>
           </div>
 
-          {/* Full-Width Comparison Table (No outer rounded box, on full black background) */}
-          <div className="overflow-x-auto">
-            <div className="min-w-[640px] relative">
+          {/* Full-Width Comparison Table (No vertical scroll inside section) */}
+          <div className="overflow-x-auto overflow-y-hidden">
+            <div className="min-w-[640px] relative py-1">
               
-              {/* Continuous Highlighted Capsule Track for HQX Column */}
-              <div className="absolute -top-2.5 -bottom-2.5 left-1/2 -translate-x-1/2 w-[18%] bg-white/[0.08] border border-white/[0.08] rounded-[22px] pointer-events-none" />
+              {/* Continuous Highlighted Capsule Track for HQX Column (Contained within bounds) */}
+              <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[18%] bg-white/[0.08] border border-white/[0.08] rounded-[20px] pointer-events-none" />
 
               {/* Table Header */}
               <div className="grid grid-cols-12 items-center pb-4 sm:pb-5 border-b border-white/10 text-white relative z-10">
-                <div className="col-span-5 text-xs font-mono uppercase tracking-wider text-white/40">
-                  Dimension / Criteria
+                <div className="col-span-5 text-xs font-mono uppercase tracking-wider font-bold text-white/70">
+                  DIMENSION / CRITERIA
                 </div>
                 <div className="col-span-2 flex justify-center items-center">
-                  <span className="inline-flex items-center justify-center px-3.5 py-1 rounded-full border border-white/35 bg-white/10 text-xs sm:text-sm font-semibold tracking-wider text-white shadow-xs">
+                  <span className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-white/40 bg-white/10 text-xs sm:text-sm font-bold tracking-wider text-white shadow-xs uppercase">
                     HQX™
                   </span>
                 </div>
-                <div className="col-span-2 text-center text-xs sm:text-sm font-display font-medium text-white/80 leading-snug px-1">
-                  Leading<br />Corporate Wellness
+                <div className="col-span-2 text-center text-xs sm:text-sm font-display font-bold uppercase tracking-wider text-white leading-snug px-1">
+                  LEADING<br />CORPORATE WELLNESS
                 </div>
-                <div className="col-span-3 text-center text-xs sm:text-sm font-display font-medium text-white/80 leading-snug px-1">
-                  All-in-One<br />Apps & Perks
+                <div className="col-span-3 text-center text-xs sm:text-sm font-display font-bold uppercase tracking-wider text-white leading-snug px-1">
+                  ALL-IN-ONE<br />APPS & PERKS
                 </div>
               </div>
 
@@ -582,7 +583,7 @@ export default function WhyHQX() {
                 ].map((row, idx) => (
                   <div 
                     key={idx}
-                    className="grid grid-cols-12 items-center py-2.5 sm:py-3"
+                    className="grid grid-cols-12 items-center py-2 sm:py-2.5"
                   >
                     {/* Feature Name */}
                     <div className="col-span-5 pr-4 text-xs sm:text-sm font-body text-white/90 font-light leading-snug">
