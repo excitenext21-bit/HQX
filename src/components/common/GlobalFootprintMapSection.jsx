@@ -142,9 +142,9 @@ export default function GlobalFootprintMapSection() {
           
           {/* Left Column: Big Bold Statement */}
           <div className="max-w-xl">
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-[46px] font-bold tracking-tight text-[#0A0A0A] leading-[1.08] mb-3">
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-[34px] font-semibold tracking-tight text-[#0A0A0A] leading-[1.1] mb-3">
               Engineered for Global Scale. <br />
-              <span className="text-[#0A0A0A]/85 font-semibold">Transform Without Borders.</span>
+              <span className="text-[#666666] font-light">Transform Without Borders.</span>
             </h2>
             <p className="font-body text-sm sm:text-base text-[#0A0A0A]/60 font-light leading-relaxed">
               Empowering enterprise resilience and leadership vitality across 16 Indian states and 9 sovereign global jurisdictions with localized cultural nuance.

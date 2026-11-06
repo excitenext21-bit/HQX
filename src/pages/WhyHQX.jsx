@@ -453,7 +453,7 @@ export default function WhyHQX() {
           {/* Section Header: Dual-Tone Title & Top Narrative (Exact Same As The Experts Behind Your Care Design) */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 pb-6 lg:pb-8 border-b border-black/10">
             <div>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] dark:text-white leading-[1.08]">
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-[34px] font-semibold tracking-tight text-[#0A0A0A] dark:text-white leading-[1.1]">
                 Supportive Guidance <br />
                 <span className="text-[#666666] dark:text-white/60 font-light">You Can Count On</span>
               </h2>
@@ -551,7 +551,7 @@ export default function WhyHQX() {
           {/* Section Header: Dual-Tone Title & Top Narrative (Matches Supportive Guidance style) */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-8 sm:mb-10 pb-6 sm:pb-8 border-b border-black/10">
             <div>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] leading-[1.08]">
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-[34px] font-semibold tracking-tight text-[#0A0A0A] leading-[1.1]">
                 The Four Pillars <br />
                 <span className="text-[#666666] font-light">of Distinction</span>
               </h2>
@@ -781,26 +781,26 @@ export default function WhyHQX() {
         </div>
       </section>
 
-      {/* INDUSTRIES & ACADEMIC INSTITUTIONS IMPACTED - SCROLL-DRIVEN SEQUENTIAL DETAIL CARDS */}
+      {/* INDUSTRIES & ACADEMIC INSTITUTIONS IMPACTED - SCROLL-DRIVEN SEQUENTIAL DETAIL CARDS (FIT TO SCREEN) */}
       <section 
         ref={industriesContainerRef}
-        className="relative h-[260vh] sm:h-[300vh] bg-[#FAF8F5] border-b border-black/10"
+        className="relative h-[250vh] sm:h-[280vh] bg-[#FAF8F5] border-b border-black/10"
       >
-        {/* Sticky Viewport Container */}
-        <div className="sticky top-20 sm:top-24 w-full py-10 sm:py-14 px-6 md:px-12 flex flex-col justify-center">
-          <div className="max-w-7xl mx-auto w-full relative z-10 space-y-6 sm:space-y-8">
+        {/* Sticky Viewport Container - Exactly Pinned and Centered to Fit the Screen Below Navbar */}
+        <div className="sticky top-16 sm:top-20 h-[calc(100svh-4rem)] sm:h-[calc(100svh-5rem)] max-h-[820px] w-full px-6 md:px-12 flex flex-col justify-center py-2 sm:py-3">
+          <div className="max-w-7xl mx-auto w-full relative z-10 space-y-4 sm:space-y-5">
             
-            {/* Section Header (No eyebrow text, clean typography & controls) */}
-            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 pb-6 border-b border-black/10">
+            {/* Section Header (Compact, No eyebrow text, clean typography & controls) */}
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3 sm:gap-4 pb-3 sm:pb-4 border-b border-black/10">
               <div>
-                <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] leading-[1.08]">
+                <h2 className="font-display text-2xl sm:text-3xl lg:text-[34px] font-semibold tracking-tight text-[#0A0A0A] leading-[1.1]">
                   Industries & Academic <br />
                   <span className="text-[#666666] font-light">Institutions Impacted</span>
                 </h2>
               </div>
               
               {/* Sequential Navigation & Step Progress Indicator */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3.5">
                 {/* 4-Step Pill Progress Indicators */}
                 <div className="flex items-center gap-1.5">
                   {IMPACTED_INDUSTRIES.map((_, idx) => (
@@ -809,7 +809,7 @@ export default function WhyHQX() {
                       onClick={() => scrollToIndustry(idx)}
                       className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                         activeIndustry === idx 
-                          ? 'w-8 bg-[#1E1A17]' 
+                          ? 'w-7 bg-[#1E1A17]' 
                           : 'w-2 bg-black/20 hover:bg-black/40'
                       }`}
                       aria-label={`Go to industry ${idx + 1}`}
@@ -817,46 +817,46 @@ export default function WhyHQX() {
                   ))}
                 </div>
 
-                <div className="font-mono text-xs text-[#7A7067] tracking-wider ml-1">
+                <div className="font-mono text-xs text-[#7A7067] tracking-wider ml-0.5">
                   <span className="font-bold text-[#1E1915] text-sm">{IMPACTED_INDUSTRIES[activeIndustry].num}</span>
                   <span className="opacity-40"> / 04</span>
                 </div>
 
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-1">
                   <button
                     onClick={() => scrollToIndustry((activeIndustry - 1 + 4) % 4)}
-                    className="w-9 h-9 rounded-full border border-black/15 hover:border-black hover:bg-black hover:text-white flex items-center justify-center transition-all cursor-pointer"
+                    className="w-8 h-8 rounded-full border border-black/15 hover:border-black hover:bg-black hover:text-white flex items-center justify-center transition-all cursor-pointer"
                     aria-label="Previous industry"
                   >
-                    <ChevronLeft className="w-4 h-4 stroke-[2]" />
+                    <ChevronLeft className="w-3.5 h-3.5 stroke-[2]" />
                   </button>
                   <button
                     onClick={() => scrollToIndustry((activeIndustry + 1) % 4)}
-                    className="w-9 h-9 rounded-full border border-black/15 hover:border-black hover:bg-black hover:text-white flex items-center justify-center transition-all cursor-pointer"
+                    className="w-8 h-8 rounded-full border border-black/15 hover:border-black hover:bg-black hover:text-white flex items-center justify-center transition-all cursor-pointer"
                     aria-label="Next industry"
                   >
-                    <ChevronRight className="w-4 h-4 stroke-[2]" />
+                    <ChevronRight className="w-3.5 h-3.5 stroke-[2]" />
                   </button>
                 </div>
               </div>
             </div>
 
             {/* THE DETAIL CARD IN SAME PLACE (EXACT LAYOUT: PARAGRAPHS LEFT, ARCHED PHOTO RIGHT, LOW-OPACITY LOGOS BG) */}
-            <div className="relative min-h-[440px] sm:min-h-[400px] bg-white rounded-3xl sm:rounded-[32px] border border-black/10 overflow-hidden shadow-[0_15px_45px_-10px_rgba(0,0,0,0.06)]">
+            <div className="relative bg-white rounded-2xl sm:rounded-3xl border border-black/10 overflow-hidden shadow-[0_12px_40px_-10px_rgba(0,0,0,0.06)]">
               <AnimatePresence mode="wait">
                 {(() => {
                   const item = IMPACTED_INDUSTRIES[activeIndustry];
                   return (
                     <motion.div
                       key={item.id}
-                      initial={{ opacity: 0, y: 16 }}
+                      initial={{ opacity: 0, y: 12 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -16 }}
-                      transition={{ duration: 0.35, ease: "easeOut" }}
-                      className="relative w-full h-full p-8 sm:p-12 lg:p-14 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-14"
+                      exit={{ opacity: 0, y: -12 }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      className="relative w-full p-5 sm:p-7 md:p-8 lg:p-8 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8"
                     >
                       {/* BACKGROUND WATERMARK LOGOS: Brand logos in grey color with low opacity in bg */}
-                      <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 flex items-center justify-around opacity-[0.07] px-6">
+                      <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 flex items-center justify-around opacity-[0.06] px-6">
                         {item.brandLogos.map((brand, bIdx) => (
                           <div 
                             key={bIdx} 
@@ -868,36 +868,36 @@ export default function WhyHQX() {
                       </div>
 
                       {/* LEFT CONTENT: Title, Number, and Detailed Descriptive Paragraphs (Not in points) */}
-                      <div className="relative z-10 flex-1 max-w-2xl space-y-5 sm:space-y-6">
-                        <div className="flex items-center gap-3">
-                          <span className="font-mono text-base sm:text-lg font-bold text-[#1E1915]">
+                      <div className="relative z-10 flex-1 max-w-2xl space-y-3 sm:space-y-3.5">
+                        <div className="flex items-center gap-2.5">
+                          <span className="font-mono text-sm sm:text-base font-bold text-[#1E1915]">
                             {item.num}
                           </span>
-                          <h3 className="font-display text-2xl sm:text-3xl lg:text-[34px] font-semibold text-[#141414] tracking-tight leading-tight">
+                          <h3 className="font-display text-xl sm:text-2xl lg:text-[26px] font-semibold text-[#141414] tracking-tight leading-tight">
                             {item.title}
                           </h3>
                         </div>
 
                         {/* Paragraph 1: What we did in this industry */}
-                        <p className="font-body text-sm sm:text-[15px] text-[#3A3530] font-normal leading-relaxed text-justify">
+                        <p className="font-body text-xs sm:text-[13.5px] lg:text-[14px] text-[#3A3530] font-normal leading-relaxed text-justify">
                           {item.whatWeDid}
                         </p>
 
                         {/* Paragraph 2: How it was impactful */}
-                        <p className="font-body text-sm sm:text-[15px] text-[#4A4540] font-light leading-relaxed text-justify">
+                        <p className="font-body text-xs sm:text-[13.5px] lg:text-[14px] text-[#4A4540] font-light leading-relaxed text-justify">
                           {item.howItWasImpactful}
                         </p>
 
                         {/* Verified Impact Metric Capsule */}
-                        <div className="pt-1 flex items-center gap-2 text-xs font-mono text-[#1E1915]">
+                        <div className="pt-0.5 flex items-center gap-2 text-[11px] sm:text-xs font-mono text-[#1E1915]">
                           <span className="w-2 h-2 rounded-full bg-[#FFCE00]" />
                           <span className="font-bold tracking-wider">{item.metric}</span>
                         </div>
                       </div>
 
                       {/* RIGHT IMAGE: Large Semicircular / Arched Window (Directly matching reference) */}
-                      <div className="relative z-10 w-full sm:w-[320px] lg:w-[380px] xl:w-[420px] aspect-square shrink-0 flex items-center justify-center">
-                        <div className="w-full h-full rounded-full lg:rounded-l-full overflow-hidden shadow-2xl border-4 border-white bg-[#0E0F12] relative group">
+                      <div className="relative z-10 w-44 sm:w-56 md:w-64 lg:w-72 xl:w-80 aspect-square shrink-0 flex items-center justify-center">
+                        <div className="w-full h-full rounded-full lg:rounded-l-full overflow-hidden shadow-xl border-[3px] border-white bg-[#0E0F12] relative group">
                           <img 
                             src={item.image} 
                             alt={item.title} 

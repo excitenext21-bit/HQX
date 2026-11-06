@@ -209,7 +209,7 @@ export default function Founder() {
               </div>
 
               {/* Exact Heading Properties from About Us Page */}
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-[3.6rem] font-semibold tracking-tight text-[#0A0A0A] leading-[1.08] mb-6">
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-[34px] font-semibold tracking-tight text-[#0A0A0A] leading-[1.1] mb-6">
                 Manny Anchan
               </h2>
 
@@ -380,7 +380,7 @@ export default function Founder() {
             >
               {/* Heading: Journey (Using Exact Heading Properties from About Page) */}
               <div className="mb-6">
-                <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.08] mb-6">
+                <h2 className="font-display text-2xl sm:text-3xl lg:text-[34px] font-semibold tracking-tight text-white leading-[1.1] mb-6">
                   Manny's Journey
                 </h2>
 
