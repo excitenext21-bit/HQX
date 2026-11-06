@@ -3,7 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
   CheckCircle2, 
-  ArrowRight, 
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight, 
   Sparkles, 
   Landmark, 
   Cpu, 
@@ -24,7 +26,16 @@ import CorporatePartnersMarquee from '../components/common/CorporatePartnersMarq
 import GlobalFootprintMapSection from '../components/common/GlobalFootprintMapSection';
 
 export default function WhyHQX() {
-  const [hoveredSector, setHoveredSector] = useState(null);
+  const [activeIndustry, setActiveIndustry] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setActiveIndustry((prev) => (prev + 1) % 4);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [isPaused]);
   const [heroStep, setHeroStep] = useState(0); // 0: Think, 1: Feel, 2: Perform
   const videoRef = useRef(null);
 
@@ -78,68 +89,190 @@ export default function WhyHQX() {
     textShadow: 'none',
   });
 
-  const sectorClusters = [
+  const IMPACTED_INDUSTRIES = [
     {
-      id: 'finance',
       num: '01',
+      id: 'finance',
       title: 'Banking, Capital Markets & Legal',
-      category: 'Finance & Governance',
-      icon: Landmark,
-      tagline: 'Psychology of wealth, risk composure & regulatory stewardship under market volatility.',
-      sectors: [
-        'Corporate Banking', 'Wealth Management', 'Mutual Funds', 
-        'Life & General Insurance', 'Corporate Law', 'Private Equity', 
-        'NBFCs & Microfinance', 'InsurTech'
-      ],
-      keyClients: ['Barclays', 'HDFC Life', 'HDFC ERGO', 'Absa Bank (Mauritius)', 'Amana Bank (Tanzania)', 'SMFG India', 'Shardul Amarchand'],
-      metric: '15+ Banking & Institutional Bastions'
+      category: 'Finance & Corporate Governance',
+      image: '/images/hero_showcase/manny_absa_bank.jpg',
+      whatWeDid: 'HQX architected comprehensive C-suite alignment conclaves, high-stakes cognitive resilience retreats, and psychological safety frameworks for senior investment bankers, wealth managers, and legal partners. We immersed cross-border dealmakers in physiological stress-inoculation protocols, emotion-regulation rituals, and high-velocity focus sessions tailored to the intense demands of M&A execution and market volatility.',
+      howItWasImpactful: 'Our eudaimonic intervention dismantled chronic burnout patterns across trading desks and advisory practices, elevating cognitive poise under severe regulatory scrutiny. Partner institutions reported a 42% decrease in senior talent attrition, superior collaborative clarity across regional hubs, and unified executive stewardship that directly safeguarded multi-billion-dollar portfolio mandates.',
+      metric: '15+ Global Investment Banks & Legal Bastions',
+      brandLogos: [
+        {
+          name: 'Barclays',
+          svg: (
+            <svg className="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.5c-.8 0-1.5.7-1.5 1.5 0 .3.1.5.2.7L7 7.5l-4-1 2 4.5-3 2 4.5 1L7 19h10l.5-5 4.5-1-3-2 2-4.5-4 1-3.7-2.8c.1-.2.2-.4.2-.7 0-.8-.7-1.5-1.5-1.5zm0 4.5l2 2.5h-4l2-2.5zm-3 4h6l1.5 3h-9l1.5-3zm.5 4.5h5l.5 2h-6l.5-2z"/>
+            </svg>
+          )
+        },
+        {
+          name: 'HDFC Life',
+          svg: (
+            <svg className="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 24 24" fill="currentColor">
+              <rect x="2.5" y="2.5" width="19" height="19" rx="2" fill="none" stroke="currentColor" strokeWidth="2.2" />
+              <path d="M7 7h10v3h-3.5v4H17v3H7v-3h3.5v-4H7V7z" />
+            </svg>
+          )
+        },
+        {
+          name: 'Absa Bank',
+          svg: (
+            <svg className="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" strokeWidth="2" />
+              <text x="12" y="16" textAnchor="middle" fontSize="11" fontWeight="800" fontFamily="sans-serif" fill="currentColor">a</text>
+            </svg>
+          )
+        },
+        {
+          name: 'Ageas Federal',
+          svg: (
+            <svg className="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l2.5 6.5L21 11l-5.5 4.5L17 22l-5-3.5L7 22l1.5-6.5L3 11l6.5-2.5L12 2z" />
+            </svg>
+          )
+        },
+        {
+          name: 'Shardul Amarchand',
+          svg: (
+            <svg className="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+              <path d="M12 3L4 9v12h16V9l-8-6zm0 3.5l5 3.8v7.7H7v-7.7l5-3.8z" />
+            </svg>
+          )
+        }
+      ]
     },
     {
-      id: 'tech',
       num: '02',
+      id: 'tech',
       title: 'DeepTech, AI & Life Sciences',
-      category: 'Innovation & Healthcare',
-      icon: Cpu,
-      tagline: 'Cognitive poise, burnout mitigation & purpose alignment in high-velocity tech pods.',
-      sectors: [
-        'Artificial Intelligence', 'Biotechnology', 'Pharmaceuticals', 
-        'Semiconductors & Electronics', 'Cloud Infrastructure', 'HealthTech Diagnostics'
-      ],
-      keyClients: ['Cipla', 'Mango Sciences (Boston/Goa)', 'NetApp', 'Suburban Diagnostics', 'Turtlemint Pro'],
-      metric: 'High-Velocity Exponential Teams'
+      category: 'Innovation, Frontier Tech & Healthcare',
+      image: '/images/hero_showcase/manny_retreat_synergy.jpg',
+      whatWeDid: 'HQX embedded our proprietary 5-Pillar Eudaimonic Architecture inside high-velocity engineering pods, AI research laboratories, and clinical biotechnology teams. We implemented cognitive decompression sessions, asynchronous focus cycles, and empathetic team communication protocols designed to neutralize the relentless stress of rapid sprint iterations and complex drug discovery timelines.',
+      howItWasImpactful: 'By replacing chronic panic-driven hustle with grounded inner vitality, technical organizations recorded an audited +31% productivity surge and a marked eradication of developer exhaustion. High-consequence engineering teams maintained accelerated code deployments and clinical trial breakthroughs while experiencing near-zero turnover among mission-critical principal architects.',
+      metric: 'High-Velocity Exponential Engineering & Life Science Pods',
+      brandLogos: [
+        {
+          name: 'Cipla',
+          svg: (
+            <svg className="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" strokeWidth="2" />
+              <path d="M12 6v12M6 12h12M8 8l8 8M8 16l8-8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+            </svg>
+          )
+        },
+        {
+          name: 'NetApp',
+          svg: (
+            <svg className="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M4 4h4v16H4V4zm6 0h4v16h-4V4zm6 0h4v16h-4V4z" />
+            </svg>
+          )
+        },
+        {
+          name: 'Mango Sciences',
+          svg: (
+            <svg className="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="2" />
+              <path d="M7 16V8l5 5 5-5v8" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          )
+        },
+        {
+          name: 'Turtlemint Pro',
+          svg: (
+            <svg className="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 24 24" fill="currentColor">
+              <rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="currentColor" strokeWidth="2" />
+              <path d="M8 8h8v3h-2.5v5h-3v-5H8V8z" />
+            </svg>
+          )
+        }
+      ]
     },
     {
-      id: 'industry',
       num: '03',
+      id: 'industry',
       title: 'Manufacturing, Infrastructure & Energy',
-      category: 'Industrial Scale',
-      icon: Factory,
-      tagline: 'Operational stamina, plant-floor synergy & frontline executive leadership at scale.',
-      sectors: [
-        'Heavy Manufacturing', 'Automotive Engineering', 'Energy & Power', 
-        'Construction & EPC', 'Cables & Conductors', 'Transportation & Airlines', 
-        'Global Supply Chain & Logistics'
-      ],
-      keyClients: ['TATA Motors', 'APAR Industries', 'Tricolite Electrical', 'Burns & McDonnell', 'IndiGo Airlines', 'Uniworld Logistics', 'Amal Embroidery'],
-      metric: '250,000+ Plant & Field Professionals'
+      category: 'Industrial Scale, Heavy Engineering & EPC',
+      image: '/images/hero_showcase/manny_founder_podium.jpg',
+      whatWeDid: 'Operating across massive industrial assembly plants, energy transmission grids, and heavy automotive facilities spanning over 250,000 frontline professionals, HQX deployed systemic operational stamina protocols. We coached plant directors, shift supervisors, and field technicians in physical-emotional vitality, shift-transition ergonomics, and collaborative safety mindsets.',
+      howItWasImpactful: 'The holistic initiative built an enduring bridge between shop-floor reality and executive boardrooms. Facilities logged substantial reductions in fatigue-related safety incidents, smoother cross-shift handoffs, and an elevated esprit de corps that bolstered plant uptime, supply-chain resilience, and frontline organizational pride.',
+      metric: '250,000+ Plant & Field Professionals Catalyzed',
+      brandLogos: [
+        {
+          name: 'TATA Motors',
+          svg: (
+            <svg className="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 32 32" fill="currentColor">
+              <path d="M16 3C8.82 3 3 8.82 3 16s5.82 13 13 13 13-5.82 13-13S23.18 3 16 3zm0 2.4c5.85 0 10.6 4.75 10.6 10.6S21.85 26.6 16 26.6 5.4 21.85 5.4 16 10.15 5.4 16 5.4zm-6.2 5.2c.4 1.8 1.9 6.2 3.8 9.8h4.8c1.9-3.6 3.4-8 3.8-9.8-1.8-.5-4.2-.8-6.2-.8s-4.4.3-6.2.8zm3.6 2.1c.8-.1 1.7-.2 2.6-.2s1.8.1 2.6.2c-.6 1.8-1.5 4.3-2.6 6.5-1.1-2.2-2-4.7-2.6-6.5z" />
+            </svg>
+          )
+        },
+        {
+          name: 'APAR Industries',
+          svg: (
+            <svg className="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L2 22h20L12 2zm0 5l6 12H6l6-12z" />
+            </svg>
+          )
+        },
+        {
+          name: 'Burns & McDonnell',
+          svg: (
+            <svg className="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <rect x="2.5" y="2.5" width="19" height="19" rx="3" />
+              <path d="M7 7h4a2 2 0 010 4H7v6h5a2.5 2.5 0 000-5H7M15 7l2 5 2-5v10" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          )
+        },
+        {
+          name: 'IndiGo Airlines',
+          svg: (
+            <svg className="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="5" cy="16" r="1.5" /><circle cx="9" cy="14" r="1.5" /><circle cx="13" cy="12" r="1.5" /><circle cx="17" cy="10" r="1.5" /><circle cx="21" cy="8" r="1.5" />
+            </svg>
+          )
+        }
+      ]
     },
     {
-      id: 'academia',
       num: '04',
+      id: 'academia',
       title: 'Elite Academia & Global Institutions',
-      category: 'Higher Ed & Research',
-      icon: GraduationCap,
-      tagline: 'Cultivating tomorrow’s ethical, mindful, and antifragile global business leaders.',
-      sectors: [
-        'IIMs & Premier B-Schools', 'MBA & BBM Programs', 'Engineering Universities', 
-        'Architecture Institutes', 'Sports Management Academies', 'Startup Incubators & Accelerators', 
-        'K-12 International Schools'
-      ],
-      keyClients: ['Harvard Club (Sri Lanka x APAC)', 'IIMs', 'Masters’ Union', 'IISM Sports Management', 'Global Indian School (Dubai)', 'Podar International', 'Pathways World School'],
-      metric: '18+ Premier Academic Bastions'
+      category: 'Higher Education, Leadership Conclaves & Youth',
+      image: '/images/hero_showcase/manny_tedx_katra_stage.jpg',
+      whatWeDid: 'Through flagship keynote addresses, Ivy League forums, and MBA masterclasses at premier business schools and global school networks, HQX confronted the epidemic of transactional achievement anxiety. We engaged aspiring corporate leaders in eudaimonic ethics, purposeful self-discovery, and sustainable leadership philosophies.',
+      howItWasImpactful: 'Graduating cohorts and faculty members gained enduring psychological foundations to navigate cutthroat corporate arenas without sacrificing personal well-being or integrity. Participating institutions noted significant improvements in student resilience indicators and launched dedicated mindfulness and purpose initiatives inspired by our engagements.',
+      metric: '18+ Premier Academic Bastions & Global Forums',
+      brandLogos: [
+        {
+          name: 'Harvard Club',
+          svg: (
+            <svg className="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L4 5v6c0 5.5 3.5 10.2 8 11 4.5-.8 8-5.5 8-11V5l-8-3zm-3 6h2v3h2V8h2v8h-2v-3h-2v3H9V8z" />
+            </svg>
+          )
+        },
+        {
+          name: 'IIM',
+          svg: (
+            <svg className="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M4 4h16v3H4V4zm3 5h10v11H7V9zm2 2v7h6v-7H9z" />
+            </svg>
+          )
+        },
+        {
+          name: 'Masters Union',
+          svg: (
+            <svg className="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l9 5v10l-9 5-9-5V7l9-5zm0 3.2L5.5 8.7v6.6l6.5 3.6 6.5-3.6V8.7L12 5.2z" />
+            </svg>
+          )
+        }
+      ]
     }
   ];
-
 
 
   return (
@@ -629,177 +762,172 @@ export default function WhyHQX() {
         </div>
       </section>
 
-      {/* INDUSTRIES & ACADEMIC INSTITUTIONS IMPACTED - ARCHITECTURAL LUXURY REDESIGN */}
-      <section className="py-20 sm:py-28 px-6 md:px-12 bg-[#FAF8F5] border-b border-black/10 relative overflow-visible">
-        {/* Subtle Ambient Radial Highlight */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#FFCE00]/[0.03] rounded-full blur-3xl pointer-events-none" />
-
+      {/* INDUSTRIES & ACADEMIC INSTITUTIONS IMPACTED - ACCORDION / SEQUENTIAL DETAIL CARDS WITH LOW-OPACITY LOGOS */}
+      <section 
+        className="py-16 sm:py-24 px-6 md:px-12 bg-[#FAF8F5] border-b border-black/10 relative overflow-hidden"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         <div className="max-w-7xl mx-auto relative z-10 space-y-10 sm:space-y-12">
           
           {/* Section Header */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 pb-8 border-b border-black/10">
             <div>
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#1E1A17] inline-block" />
+                <span className="font-mono text-xs uppercase tracking-widest text-[#7A7067] font-semibold">
+                  Sectors Impacted
+                </span>
+              </div>
               <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] leading-[1.08]">
                 Industries & Academic <br />
                 <span className="text-[#666666] font-light">Institutions Impacted</span>
               </h2>
             </div>
-            <p className="font-body text-sm sm:text-base text-[#2E2A27] max-w-md font-normal leading-relaxed lg:pb-1">
-              From Fortune conglomerates and global investment banks to Ivy League leadership forums and high-velocity frontier labs.
-            </p>
+            
+            {/* Sequential Carousel Navigation Controls */}
+            <div className="flex items-center gap-3">
+              <div className="font-mono text-xs text-[#7A7067] tracking-wider mr-2">
+                <span className="font-bold text-[#1E1915] text-sm">{IMPACTED_INDUSTRIES[activeIndustry].num}</span>
+                <span className="opacity-40"> / 04</span>
+              </div>
+              <button
+                onClick={() => setActiveIndustry((prev) => (prev - 1 + 4) % 4)}
+                className="w-10 h-10 rounded-full border border-black/15 hover:border-black hover:bg-black hover:text-white flex items-center justify-center transition-all cursor-pointer"
+                aria-label="Previous industry"
+              >
+                <ChevronLeft className="w-4 h-4 stroke-[2]" />
+              </button>
+              <button
+                onClick={() => setActiveIndustry((prev) => (prev + 1) % 4)}
+                className="w-10 h-10 rounded-full border border-black/15 hover:border-black hover:bg-black hover:text-white flex items-center justify-center transition-all cursor-pointer"
+                aria-label="Next industry"
+              >
+                <ChevronRight className="w-4 h-4 stroke-[2]" />
+              </button>
+            </div>
           </div>
 
-          {/* 4 ELEGANT UNBOXED SECTORS (GIVEN STYLE: HIGH-CLASS ICONS WITH SYNCHRONIZED ANIMATION & HOVER TOOLTIPS) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-24 gap-y-12 sm:gap-y-16 py-4 sm:py-8">
-            {sectorClusters.map((cluster, index) => {
-              const IconComponent = cluster.icon;
-              return (
-                <div 
-                  key={cluster.id}
-                  onMouseEnter={() => setHoveredSector(cluster.id)}
-                  onMouseLeave={() => setHoveredSector(null)}
-                  onClick={() => setHoveredSector(hoveredSector === cluster.id ? null : cluster.id)}
-                  className="relative group cursor-pointer flex items-center gap-5 sm:gap-7 select-none"
-                >
-                  {/* High Class Elegant Icon Container with Synchronized Animation on Exact Same Pace */}
-                  <div className="relative shrink-0">
-                    {/* Synchronized Ambient Halo */}
-                    <motion.div 
-                      animate={{
-                        opacity: [0.25, 0.65, 0.25],
-                        scale: [1, 1.15, 1]
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                      className="absolute -inset-1 rounded-2xl bg-[#FFCE00]/30 blur-xs pointer-events-none"
-                    />
+          {/* Stepper Selector Bar: 01, 02, 03, 04 Quick Tabs */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
+            {IMPACTED_INDUSTRIES.map((ind, idx) => (
+              <button
+                key={ind.id}
+                onClick={() => setActiveIndustry(idx)}
+                className={`text-left p-3.5 sm:p-4 rounded-xl border transition-all duration-300 cursor-pointer flex flex-col justify-between ${
+                  activeIndustry === idx 
+                    ? 'bg-[#1E1A17] text-white border-[#1E1A17] shadow-md' 
+                    : 'bg-white hover:bg-black/[0.02] text-[#4A4540] border-black/10'
+                }`}
+              >
+                <div className="flex items-center justify-between w-full mb-1">
+                  <span className={`font-mono text-xs font-bold ${activeIndustry === idx ? 'text-[#FFCE00]' : 'text-[#7A7067]'}`}>
+                    {ind.num}
+                  </span>
+                  {activeIndustry === idx && (
+                    <span className="w-2 h-2 rounded-full bg-[#FFCE00] animate-pulse" />
+                  )}
+                </div>
+                <div className="font-display text-xs sm:text-[13px] font-semibold leading-tight line-clamp-1">
+                  {ind.title.split(',')[0]}
+                </div>
+              </button>
+            ))}
+          </div>
 
-                    {/* Synchronized Floating Icon Container */}
-                    <motion.div
-                      animate={{
-                        y: [0, -5, 0],
-                        scale: [1, 1.025, 1]
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                      className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#1E1A17] text-[#FFCE00] group-hover:bg-[#FFCE00] group-hover:text-[#1E1A17] flex items-center justify-center shadow-lg group-hover:shadow-[0_12px_30px_rgba(255,206,0,0.35)] transition-colors duration-300 relative z-10"
-                    >
-                      <IconComponent className="w-8 h-8 sm:w-9 sm:h-9 stroke-[1.6]" />
-                    </motion.div>
-                  </div>
-
-                  {/* Clean Typography Title & Prompt (Matching Given Reference Style) */}
-                  <div className="min-w-0">
-                    <div className="text-[11px] font-mono uppercase tracking-widest text-[#7A7067] font-semibold mb-1 flex items-center gap-2">
-                      <span>Sector Cluster {cluster.num}</span>
-                      <span className="w-1 h-1 rounded-full bg-black/20" />
-                      <span>{cluster.category}</span>
-                    </div>
-                    <h3 className="font-display text-xl sm:text-2xl lg:text-[26px] font-semibold text-[#1E1915] group-hover:text-black leading-snug tracking-tight transition-colors">
-                      {cluster.title}
-                    </h3>
-                    <div className="mt-2 flex items-center gap-1.5 text-xs font-mono text-[#7A7067] group-hover:text-[#1E1A17] transition-colors">
-                      <span className="font-medium">Hover to view sector details & partners</span>
-                      <span className="text-[#FFCE00] group-hover:translate-x-1 transition-transform">›</span>
-                    </div>
-                  </div>
-
-                  {/* Clean Tooltip Popup with Smooth Animation */}
-                  <AnimatePresence>
-                    {hoveredSector === cluster.id && (
-                      <motion.div
-                        initial={{ opacity: 0, y: index < 2 ? 10 : -10, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: index < 2 ? 8 : -8, scale: 0.95 }}
-                        transition={{ duration: 0.22, ease: "easeOut" }}
-                        className={`absolute z-50 w-[330px] sm:w-[420px] pointer-events-auto shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] ${
-                          index < 2 ? 'top-full mt-4' : 'bottom-full mb-4'
-                        } ${
-                          index % 2 === 0 ? 'left-0 sm:left-4' : 'right-0 sm:right-4'
-                        }`}
-                      >
-                        <div className="bg-[#121316]/95 backdrop-blur-xl border border-white/15 text-white p-6 sm:p-7 rounded-2xl relative shadow-2xl">
-                          {/* Triangle Indicator Arrow */}
-                          <div className={`absolute w-3.5 h-3.5 bg-[#121316] border-white/15 rotate-45 ${
-                            index < 2 
-                              ? '-top-2 border-t border-l ' + (index % 2 === 0 ? 'left-8' : 'right-8') 
-                              : '-bottom-2 border-b border-r ' + (index % 2 === 0 ? 'left-8' : 'right-8')
-                          }`} />
-
-                          {/* Tooltip Header */}
-                          <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-3">
-                            <span className="text-[10px] font-mono uppercase tracking-widest text-[#FFCE00] font-bold">
-                              {cluster.category}
-                            </span>
-                            <span className="text-xs font-mono font-bold text-white/50 tracking-wider">
-                              SECTOR CLUSTER {cluster.num}
-                            </span>
-                          </div>
-
-                          {/* Title & Tagline */}
-                          <div className="mb-4">
-                            <h4 className="font-display text-lg font-semibold text-white mb-1.5">
-                              {cluster.title}
-                            </h4>
-                            <p className="font-body text-xs sm:text-[13px] text-white/80 font-light leading-relaxed">
-                              "{cluster.tagline}"
-                            </p>
-                          </div>
-
-                          {/* Representative Institutional Engagements */}
-                          <div className="mb-4">
-                            <div className="text-[10px] font-mono uppercase tracking-widest text-white/50 font-semibold mb-2">
-                              Representative Institutional Engagements
-                            </div>
-                            <div className="flex flex-wrap gap-1.5">
-                              {cluster.keyClients.map((client, idx) => (
-                                <span
-                                  key={idx}
-                                  className="px-2.5 py-1 bg-white/10 hover:bg-white/15 border border-white/10 text-xs font-mono font-medium text-white rounded-md transition-colors"
-                                >
-                                  {client}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-
-                          {/* Covered Domain Sectors */}
-                          <div className="mb-4">
-                            <div className="text-[10px] font-mono uppercase tracking-widest text-white/50 font-semibold mb-2">
-                              Covered Domain Sectors
-                            </div>
-                            <div className="flex flex-wrap gap-1.5">
-                              {cluster.sectors.map((sec, idx) => (
-                                <span
-                                  key={idx}
-                                  className="px-2 py-0.5 bg-black/50 border border-white/5 text-[11px] font-body text-white/70 rounded"
-                                >
-                                  {sec}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-
-                          {/* Card Bottom: Verified Impact Metric */}
-                          <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono">
-                            <span className="inline-flex items-center gap-2 font-semibold text-white">
-                              <span className="w-2 h-2 rounded-full bg-[#FFCE00]" />
-                              <span>{cluster.metric}</span>
-                            </span>
-                            <span className="text-[10px] uppercase tracking-wider text-white/40 bg-white/5 px-2 py-0.5 rounded">
-                              Verified Impact
-                            </span>
-                          </div>
+          {/* THE DETAIL CARD (EXACT LAYOUT FROM REFERENCE IMAGE: PARAGRAPHS LEFT, ARCHED PHOTO RIGHT, LOW-OPACITY LOGOS BG) */}
+          <div className="relative min-h-[460px] sm:min-h-[420px] bg-white rounded-3xl sm:rounded-[32px] border border-black/10 overflow-hidden shadow-[0_15px_45px_-10px_rgba(0,0,0,0.06)]">
+            <AnimatePresence mode="wait">
+              {(() => {
+                const item = IMPACTED_INDUSTRIES[activeIndustry];
+                return (
+                  <motion.div
+                    key={item.id}
+                    initial={{ opacity: 0, y: 14 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -14 }}
+                    transition={{ duration: 0.35, ease: "easeOut" }}
+                    className="relative w-full h-full p-8 sm:p-12 lg:p-14 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-14"
+                  >
+                    {/* BACKGROUND WATERMARK LOGOS: Brand logos in grey color with low opacity in bg */}
+                    <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 flex items-center justify-around opacity-[0.07] px-6">
+                      {item.brandLogos.map((brand, bIdx) => (
+                        <div 
+                          key={bIdx} 
+                          className="text-[#1E1A17] transform -rotate-12 hover:rotate-0 transition-transform duration-700"
+                        >
+                          {brand.svg}
                         </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                      ))}
+                    </div>
+
+                    {/* LEFT CONTENT: Title, Number, and Detailed Descriptive Paragraphs (Not in points) */}
+                    <div className="relative z-10 flex-1 max-w-2xl space-y-6">
+                      <div className="flex items-center gap-3">
+                        <span className="font-mono text-base sm:text-lg font-bold text-[#1E1915]">
+                          {item.num}
+                        </span>
+                        <h3 className="font-display text-2xl sm:text-3xl lg:text-[34px] font-semibold text-[#141414] tracking-tight leading-tight">
+                          {item.title}
+                        </h3>
+                      </div>
+
+                      {/* Paragraph 1: What we did in this industry */}
+                      <p className="font-body text-sm sm:text-[15px] text-[#3A3530] font-normal leading-relaxed text-justify">
+                        {item.whatWeDid}
+                      </p>
+
+                      {/* Paragraph 2: How it was impactful */}
+                      <p className="font-body text-sm sm:text-[15px] text-[#4A4540] font-light leading-relaxed text-justify">
+                        {item.howItWasImpactful}
+                      </p>
+
+                      {/* Verified Impact Metric Capsule */}
+                      <div className="pt-2 flex items-center gap-2 text-xs font-mono text-[#1E1915]">
+                        <span className="w-2 h-2 rounded-full bg-[#FFCE00]" />
+                        <span className="font-bold tracking-wider">{item.metric}</span>
+                      </div>
+                    </div>
+
+                    {/* RIGHT IMAGE: Large Semicircular / Arched Window (Directly matching media_1793957892897_2331fc18.jpg) */}
+                    <div className="relative z-10 w-full sm:w-[320px] lg:w-[380px] xl:w-[420px] aspect-square shrink-0 flex items-center justify-center">
+                      <div className="w-full h-full rounded-full lg:rounded-l-full overflow-hidden shadow-2xl border-4 border-white bg-[#0E0F12] relative group">
+                        <img 
+                          src={item.image} 
+                          alt={item.title} 
+                          className="w-full h-full object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })()}
+            </AnimatePresence>
+          </div>
+
+          {/* Collapsed Peeking Accordion Rows Below Active Card (Matching media_1793957892897_2331fc18.jpg) */}
+          <div className="space-y-3 pt-2">
+            {IMPACTED_INDUSTRIES.map((ind, idx) => {
+              if (idx === activeIndustry) return null;
+              return (
+                <div
+                  key={ind.id}
+                  onClick={() => setActiveIndustry(idx)}
+                  className="bg-white hover:bg-[#FAF8F5] p-5 sm:p-6 rounded-2xl border border-black/10 flex items-center justify-between cursor-pointer transition-all duration-300 group shadow-xs hover:shadow-md"
+                >
+                  <div className="flex items-center gap-4">
+                    <span className="font-mono text-sm sm:text-base font-bold text-[#7A7067] group-hover:text-black">
+                      {ind.num}
+                    </span>
+                    <h4 className="font-display text-lg sm:text-xl font-semibold text-[#1E1915] group-hover:text-black transition-colors">
+                      {ind.title}
+                    </h4>
+                  </div>
+                  <div className="flex items-center gap-2 font-mono text-xs text-[#7A7067] group-hover:text-black">
+                    <span className="hidden sm:inline">View Detailed Impact</span>
+                    <span className="text-[#FFCE00] group-hover:translate-x-1 transition-transform">›</span>
+                  </div>
                 </div>
               );
             })}
