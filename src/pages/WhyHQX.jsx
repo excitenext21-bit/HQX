@@ -517,14 +517,14 @@ export default function WhyHQX() {
                   DIMENSION / CRITERIA
                 </div>
                 <div className="col-span-2 flex justify-center items-center">
-                  <span className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-white/40 bg-white/10 text-xs sm:text-sm font-bold tracking-wider text-white shadow-xs uppercase">
+                  <span className="inline-flex items-center justify-center px-3.5 py-1 rounded-full border border-[#FFCE00]/50 bg-[#FFCE00]/15 text-xs font-bold tracking-wider text-[#FFCE00] shadow-xs uppercase">
                     HQX™
                   </span>
                 </div>
-                <div className="col-span-2 text-center text-xs sm:text-sm font-display font-bold uppercase tracking-wider text-white leading-snug px-1">
+                <div className="col-span-2 text-center text-xs font-bold uppercase tracking-wider text-white leading-snug px-1">
                   LEADING<br />CORPORATE WELLNESS
                 </div>
-                <div className="col-span-3 text-center text-xs sm:text-sm font-display font-bold uppercase tracking-wider text-white leading-snug px-1">
+                <div className="col-span-3 text-center text-xs font-bold uppercase tracking-wider text-white leading-snug px-1">
                   ALL-IN-ONE<br />APPS & PERKS
                 </div>
               </div>
@@ -590,12 +590,12 @@ export default function WhyHQX() {
                       {row.feature}
                     </div>
 
-                    {/* HQX Status (Solid White Dot with Subtle Glow) */}
+                    {/* HQX Status (Solid Yellow Dot with Subtle Glow) */}
                     <div className="col-span-2 flex justify-center items-center">
                       {row.hqx ? (
-                        <span className="w-3.5 h-3.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.7)]" />
+                        <span className="w-3.5 h-3.5 rounded-full bg-[#FFCE00] shadow-[0_0_10px_rgba(255,206,0,0.8)]" />
                       ) : (
-                        <span className="w-3.5 h-3.5 rounded-full border-[1.5px] border-white/40" />
+                        <span className="w-3.5 h-3.5 rounded-full border-[1.5px] border-[#FFCE00]/50" />
                       )}
                     </div>
 
@@ -635,11 +635,7 @@ export default function WhyHQX() {
           
           {/* Section Header */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 pb-8 border-b border-black/10">
-            <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 border border-black/10 text-xs font-mono uppercase tracking-widest text-[#1E1915]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#FFCE00]" />
-                <span>Cross-Sector Institutional Reach</span>
-              </div>
+            <div>
               <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] leading-[1.08]">
                 Industries & Academic <br />
                 <span className="text-[#666666] font-light">Institutions Impacted</span>
