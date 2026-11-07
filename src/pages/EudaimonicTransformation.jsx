@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
   Crown, 
@@ -118,45 +119,28 @@ export default function EudaimonicTransformation() {
       id: 'career',
       label: 'Career & Executive Direction',
       icon: Briefcase,
-      image: '/profile_assets/page_4_img_2_311.jpeg',
+      image: '/profile_assets/page_7_img_3_521.jpeg',
       problems: [
-        'Career uncertainty amidst rapid AI disruption and restructuring',
-        'Difficulty in understanding purpose beyond mere financial survival',
-        'Indecision, decision fatigue, and lack of intrinsic motivation',
-        'Lack of financial literacy and long-term wealth stewardship',
-        'Stagnation in personal development and leadership readiness'
+        'Lack of clarity regarding executive trajectory and next milestones',
+        'Fear of failure, catastrophic thinking, and risk aversion in leadership',
+        'Inability to make sound, grounded decisions under intense market pressure',
+        'Weak work ethic, procrastination, and dopamine-distraction cycles',
+        'Unrealistic professional expectations vs actual capability benchmarks',
+        'Misalignment with management vision and organizational mission'
       ],
       interventions: [
-        'Finance Management & Psychology of Wealth literacy',
-        'Networking & professional mentorship advice across sectors',
-        'Time Management & 10x Productivity Architecture',
-        'Purposeful Decision Making & strategic clarity roadmaps'
-      ]
-    },
-    family: {
-      id: 'family',
-      label: 'Relation with Family',
-      icon: HomeIcon,
-      image: '/profile_assets/page_4_img_3_317.jpeg',
-      problems: [
-        'Lack of independence in decision making',
-        'Generational gap and lack of understanding with modern youth',
-        'Deep communication gaps between demanding work and home life',
-        'Difficulty in expressing authentic thoughts and vulnerable feelings',
-        'Imposing personal unfulfilled corporate ambitions on children',
-        'Constant pressure to excel at work spilling over into family friction'
-      ],
-      interventions: [
-        'Work-Life Balance integration protocols and emotional boundaries',
-        'Modern Conscious Parenting with expert guidance (Soha Ali Khan)',
-        'Social harmony at home through empathetic listening rituals'
+        'Decision Making Frameworks: Inverting problems and second-order thinking',
+        'Self Direction & Focus: Deep work rituals and cognitive firewall architecture',
+        'Goal Formulation: 90-day actionable OKRs tied to quarterly KPIs',
+        'Problem Solving: Cross-functional post-mortems and root-cause mapping',
+        'Work Ethics & Accountability: High-trust peer review mechanisms'
       ]
     },
     social: {
       id: 'social',
-      label: 'Social & Cultural Dynamics',
-      icon: Users,
-      image: '/profile_assets/page_4_img_4_323.jpeg',
+      label: 'Relationships & Social Cohesion',
+      icon: HeartHandshake,
+      image: '/profile_assets/page_6_img_1_419.jpeg',
       problems: [
         'Lack of meaningful connections and superficial workplace networks',
         'Preference for extreme isolation (Post-Covid psychological retreat)',
@@ -197,46 +181,267 @@ export default function EudaimonicTransformation() {
 
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
-      {/* Hero Banner with Authentic Profile Imagery */}
-      <section className="bg-hq-black text-hq-white pt-36 pb-20 px-6 md:px-12 border-b border-white/10 relative overflow-hidden">
-        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-1/2 opacity-20 lg:opacity-35 pointer-events-none overflow-hidden">
-          <img 
-            src="/profile_assets/page_1_img_1_71.jpeg" 
-            alt="Manny Anchan - Eudaimonic Transformation" 
-            className="w-full h-full object-cover object-top filter grayscale contrast-125"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-hq-black via-hq-black/80 to-transparent"></div>
-        </div>
+      {/* =========================================================================
+          HERO BANNER - KINETIC GLASSMORPHIC BENTO & EUDAIMONIA ORBITAL CORE (CONCEPT 1)
+          ========================================================================= */}
+      <section className="bg-[#0A0B0E] text-white pt-28 sm:pt-32 pb-16 sm:pb-20 px-6 md:px-12 border-b border-white/10 relative overflow-hidden">
+        
+        {/* Ambient Studio Lighting Mesh */}
+        <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-hq-yellow/[0.05] rounded-full blur-[160px] pointer-events-none" />
+        <div className="absolute top-1/2 right-10 w-[500px] h-[500px] bg-sky-500/[0.03] rounded-full blur-[140px] pointer-events-none" />
+        
+        {/* Geometric Micro-Grid Backdrop */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="max-w-2xl">
-            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-semibold mb-5">
-              Eudaimonic <br />
-              <span className="text-hq-yellow">Transformation</span>
-            </h1>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             
-            <blockquote className="font-serif italic text-xl md:text-2xl text-hq-yellow mb-6">
-              "To Simply Put: Those Who Work Better, Deliver Better."
-            </blockquote>
+            {/* LEFT COLUMN: Editorial Authority & Eudaimonic Philosophy */}
+            <motion.div 
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-6 space-y-6"
+            >
+              {/* Eyebrow Kicker */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-md">
+                <span className="w-2 h-2 rounded-full bg-hq-yellow animate-pulse" />
+                <span className="font-mono text-[11px] uppercase tracking-widest text-hq-yellow font-bold">
+                  The HQ Functional Enhancement Model
+                </span>
+              </div>
 
-            <p className="font-body text-base md:text-xl text-hq-white/80 font-light leading-relaxed mb-8">
-              The <strong>HQ Functional Enhancement Model</strong> is a framework designed to boost corporate efficiency by encouraging individuals to develop effective habits and make informed decisions that enhance their professional performance and productivity.
-            </p>
+              {/* Title */}
+              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[54px] tracking-tight font-semibold text-white leading-[1.08]">
+                Eudaimonic <br />
+                <span className="text-hq-yellow font-light">Transformation™</span>
+              </h1>
 
-            <div className="flex flex-wrap gap-4">
-              <Link 
-                to="/leadership-deep-dive" 
-                className="bg-hq-yellow text-hq-black font-display font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white transition-all shadow-xl"
-              >
-                Book Leadership Deep Dive
-              </Link>
-              <Link 
-                to="/contact" 
-                className="border border-white/30 text-white font-display text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all"
-              >
-                Request Enterprise Audit
-              </Link>
-            </div>
+              {/* Authoritative Quote Capsule */}
+              <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-md relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-hq-yellow/[0.05] rounded-full blur-2xl pointer-events-none" />
+                <p className="font-serif italic text-base sm:text-lg text-white/95 leading-snug">
+                  “To Simply Put: Those Who Work Better, Deliver Better.”
+                </p>
+                <div className="flex items-center justify-between pt-3 mt-3 border-t border-white/10 text-xs font-mono text-white/60">
+                  <span className="text-hq-yellow font-semibold uppercase tracking-wider">— Manny Anchan</span>
+                  <span className="text-white/40">Founder, Happiness Samurai</span>
+                </div>
+              </div>
+
+              {/* Narrative Description */}
+              <p className="font-body text-sm sm:text-[15px] text-white/75 font-normal leading-relaxed text-justify">
+                Moving beyond superficial wellness perks. The <strong>HQ Functional Enhancement Model</strong> is an executive framework engineered to cultivate Aristotle's classical <span className="text-hq-yellow font-medium">Eudaimonia</span>—sustainable human flourishing through purpose, virtue, and cognitive sovereignty—translating employee resilience directly into quantified organizational output.
+              </p>
+
+              {/* Action Buttons */}
+              <div className="pt-2 flex flex-wrap items-center gap-3.5">
+                <Link 
+                  to="/leadership-deep-dive" 
+                  className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-full bg-hq-yellow hover:bg-white text-black font-display font-semibold text-xs uppercase tracking-widest transition-all shadow-lg hover:shadow-xl group"
+                >
+                  <span>Book Leadership Deep Dive</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link 
+                  to="/contact" 
+                  className="inline-flex items-center gap-2 px-6 sm:px-7 py-3.5 rounded-full bg-white/[0.05] hover:bg-white/15 text-white border border-white/20 font-display text-xs uppercase tracking-widest transition-all"
+                >
+                  <span>Request Enterprise Audit</span>
+                </Link>
+              </div>
+
+              {/* 3 Live Mini-Stats Pills */}
+              <div className="pt-2 flex flex-wrap items-center gap-2 sm:gap-2.5 text-[11px] font-mono text-white/60">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/5">
+                  <CheckCircle2 className="w-3 h-3 text-hq-yellow" />
+                  <span>+31% Productivity Surge</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/5">
+                  <CheckCircle2 className="w-3 h-3 text-hq-yellow" />
+                  <span>Zero Executive Cynicism</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/5">
+                  <CheckCircle2 className="w-3 h-3 text-hq-yellow" />
+                  <span>100-Day Neuroplastic Stacking</span>
+                </span>
+              </div>
+
+            </motion.div>
+
+            {/* RIGHT COLUMN: Interactive Kinetic Glassmorphic Bento & Eudaimonia Orbital Core */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-6 relative"
+            >
+              {/* The Glass Bento Card */}
+              <div className="bg-[#101217]/90 backdrop-blur-2xl rounded-3xl sm:rounded-[36px] border border-white/15 p-6 sm:p-8 shadow-[0_30px_70px_-20px_rgba(0,0,0,0.8)] relative overflow-hidden">
+                
+                {/* Ambient Inner Gradient Ring */}
+                <div className="absolute top-0 right-0 w-80 h-80 bg-hq-yellow/[0.08] rounded-full blur-3xl pointer-events-none" />
+                
+                {/* Bento Header */}
+                <div className="flex items-center justify-between pb-4 mb-6 border-b border-white/10 relative z-10">
+                  <div className="flex items-center gap-2.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-hq-yellow animate-pulse" />
+                    <span className="font-display font-semibold text-xs uppercase tracking-widest text-white/90">
+                      5 Pillars of Eudaimonic Flourishing
+                    </span>
+                  </div>
+                  <div className="text-[10px] font-mono text-hq-yellow uppercase tracking-wider hidden sm:block">
+                    Interactive Model • Click to Inspect
+                  </div>
+                </div>
+
+                {/* 5-Pillar Interactive Orbit Navigation Pills */}
+                <div className="grid grid-cols-5 gap-1.5 sm:gap-2 mb-6 relative z-10">
+                  {Object.keys(pillars).map((key) => {
+                    const p = pillars[key];
+                    const Icon = p.icon;
+                    const isActive = activePillar === key;
+                    return (
+                      <button
+                        key={key}
+                        onClick={() => setActivePillar(key)}
+                        className={`p-2 sm:p-2.5 rounded-2xl border transition-all duration-300 flex flex-col items-center justify-center gap-1.5 cursor-pointer group ${
+                          isActive 
+                            ? 'bg-hq-yellow text-black border-hq-yellow shadow-lg scale-105' 
+                            : 'bg-white/[0.03] hover:bg-white/[0.08] text-white/70 border-white/10 hover:border-white/30'
+                        }`}
+                        aria-label={p.title}
+                      >
+                        <Icon className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110 ${isActive ? 'stroke-[2.2]' : 'stroke-[1.8]'}`} />
+                        <span className="font-mono text-[9px] sm:text-[10px] font-bold tracking-tight uppercase truncate max-w-full">
+                          {key}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Central Orbital Kinetic Canvas (Rotating Enso Geometry) */}
+                <div className="relative py-4 flex items-center justify-center">
+                  
+                  {/* SVG Orbital Geometric Rings */}
+                  <svg viewBox="0 0 400 400" className="w-52 h-52 sm:w-60 sm:h-60 pointer-events-none">
+                    {/* Outer Dashed Orbit Ring */}
+                    <circle
+                      cx="200"
+                      cy="200"
+                      r="180"
+                      fill="none"
+                      stroke="rgba(255, 205, 0, 0.15)"
+                      strokeWidth="1.5"
+                      strokeDasharray="6 8"
+                      className="animate-[spin_40s_linear_infinite]"
+                    />
+                    {/* Middle Dashed Orbit Ring (Reversed) */}
+                    <circle
+                      cx="200"
+                      cy="200"
+                      r="135"
+                      fill="none"
+                      stroke="rgba(255, 255, 255, 0.12)"
+                      strokeWidth="1.2"
+                      strokeDasharray="4 6"
+                      className="animate-[spin_25s_linear_infinite_reverse]"
+                    />
+                    {/* Inner Solid Subtle Ring */}
+                    <circle
+                      cx="200"
+                      cy="200"
+                      r="85"
+                      fill="rgba(255, 205, 0, 0.03)"
+                      stroke="rgba(255, 205, 0, 0.25)"
+                      strokeWidth="1"
+                    />
+                  </svg>
+
+                  {/* Glowing Core Badge in Center */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                    <motion.div
+                      key={activePillar}
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                      className="w-20 h-20 sm:w-22 sm:h-22 rounded-full bg-gradient-to-br from-hq-yellow/20 to-black/80 border border-hq-yellow/40 backdrop-blur-md flex flex-col items-center justify-center shadow-[0_0_30px_rgba(255,205,0,0.25)]"
+                    >
+                      <ActivePillarIcon className="w-6 h-6 sm:w-7 sm:h-7 text-hq-yellow stroke-[1.8] mb-1" />
+                      <span className="font-mono text-[9px] font-bold text-white uppercase tracking-wider">
+                        {activePillar}
+                      </span>
+                    </motion.div>
+                  </div>
+
+                  {/* Floating Bento Badge 1: Aristotelian Eudaimonia */}
+                  <motion.div
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute -top-1 left-2 sm:left-4 px-3 py-1.5 rounded-full bg-[#181A20]/90 border border-white/10 backdrop-blur-md shadow-md text-[10px] font-mono text-white/80 flex items-center gap-1.5 pointer-events-none"
+                  >
+                    <Sparkles className="w-3 h-3 text-hq-yellow" />
+                    <span>Aristotelian Purpose</span>
+                  </motion.div>
+
+                  {/* Floating Bento Badge 2: Habit Stacking */}
+                  <motion.div
+                    animate={{ y: [0, 6, 0] }}
+                    transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                    className="absolute -bottom-1 right-2 sm:right-4 px-3 py-1.5 rounded-full bg-[#181A20]/90 border border-white/10 backdrop-blur-md shadow-md text-[10px] font-mono text-white/80 flex items-center gap-1.5 pointer-events-none"
+                  >
+                    <Zap className="w-3 h-3 text-hq-yellow" />
+                    <span>100-Day Rewiring</span>
+                  </motion.div>
+
+                </div>
+
+                {/* Morphing Dynamic Content Card for Active Pillar */}
+                <div className="mt-4 pt-4 border-t border-white/10 relative z-10">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activePillar}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.25 }}
+                      className="space-y-3"
+                    >
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <span className="font-mono text-xs font-bold text-hq-yellow">
+                            {pillars[activePillar].title}
+                          </span>
+                          <h3 className="font-display font-semibold text-base sm:text-lg text-white">
+                            {pillars[activePillar].subtitle}
+                          </h3>
+                        </div>
+                        <div className="px-3 py-1 rounded-full bg-hq-yellow/15 border border-hq-yellow/30 text-hq-yellow font-mono text-[11px] font-bold">
+                          {pillars[activePillar].metric}
+                        </div>
+                      </div>
+
+                      <p className="font-body text-xs sm:text-[13px] text-white/70 font-light leading-relaxed">
+                        {pillars[activePillar].summary}
+                      </p>
+
+                      {/* Pillar Points Preview */}
+                      <div className="space-y-1.5 pt-1">
+                        {pillars[activePillar].breakdown.map((item, idx) => (
+                          <div key={idx} className="flex items-start gap-2 text-xs font-body text-white/85">
+                            <span className="text-hq-yellow mt-0.5 font-bold">›</span>
+                            <span className="line-clamp-1">{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </section>
@@ -264,7 +469,7 @@ export default function EudaimonicTransformation() {
                   <h3 className="font-display text-xl font-bold uppercase tracking-wider mb-2 text-hq-yellow">
                     {lever.title}
                   </h3>
-                  <p className="font-body text-xs text-white/80 leading-relaxed font-light">
+                  <p className="font-body text-sm text-hq-white/80 leading-relaxed font-light">
                     {lever.desc}
                   </p>
                 </div>
@@ -274,209 +479,222 @@ export default function EudaimonicTransformation() {
         </div>
       </section>
 
-      {/* BALANCE within WORKLIFE: 5 Pivotal Elements (Page 3 of Profile) */}
-      <section className="py-20 px-6 md:px-12 bg-hq-gray border-b border-hq-black/10">
+      {/* The 5 Pillars of Enterprise Sovereignty - Full Interactive Tabs */}
+      <section className="py-20 px-6 md:px-12 bg-hq-white text-hq-black border-b border-hq-black/10">
         <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl mb-14">
-            <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight mb-4">
-              Perpetual Employee Evolution
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-mono uppercase tracking-widest text-hq-yellow font-bold bg-hq-black px-4 py-1.5 rounded-full inline-block mb-4">
+              5 Pillars of Sovereignty
+            </span>
+            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-4">
+              The Architecture of Flourishing
             </h2>
-            <p className="font-body text-base text-hq-black/75 font-light leading-relaxed">
-              Perpetual employee evolution is a comprehensive notion that acknowledges the interrelation between various facets of an employee's life within a corporate setting. Here are the 5 pivotal elements contributing to organizational mastery:
+            <p className="font-body text-base text-hq-black/70">
+              Moving beyond superficial wellness trends to engineer compounding executive resilience, ethical governance, and quantified EBITDA growth.
             </p>
           </div>
 
-          {/* Pillar Selector Tabs */}
-          <div className="flex flex-wrap gap-2.5 mb-10">
+          {/* Interactive Pillar Selector Tabs */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
             {Object.keys(pillars).map((key) => {
               const p = pillars[key];
               const Icon = p.icon;
-              const isActive = activePillar === key;
               return (
                 <button
                   key={key}
                   onClick={() => setActivePillar(key)}
-                  className={`flex items-center gap-2 px-6 py-3.5 border transition-all text-xs font-display uppercase tracking-widest font-semibold rounded-full ${
-                    isActive 
-                      ? 'bg-hq-black text-hq-white border-hq-black shadow-lg scale-105' 
-                      : 'bg-white text-hq-black border-hq-black/15 hover:border-hq-yellow hover:bg-hq-yellow/10'
+                  className={`flex items-center gap-3 px-6 py-4 rounded-xl border font-display text-sm uppercase tracking-wider transition-all duration-300 ${
+                    activePillar === key
+                      ? 'bg-hq-black text-hq-yellow border-hq-black shadow-lg scale-105 font-bold'
+                      : 'bg-white text-hq-black/70 border-hq-black/15 hover:border-hq-black/40 hover:bg-hq-black/5'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-hq-yellow' : 'text-hq-black'}`} />
+                  <Icon className="w-4 h-4 stroke-[2]" />
                   <span>{key}</span>
                 </button>
               );
             })}
           </div>
 
-          {/* Active Pillar Detail Card */}
-          <div className="bg-white p-8 md:p-12 border border-hq-black/15 shadow-2xl relative rounded-2xl">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-6 border-b border-hq-black/10 mb-8">
-              <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-hq-yellow flex items-center justify-center text-hq-black shrink-0">
-                  <ActivePillarIcon className="w-7 h-7 stroke-[1.5]" />
-                </div>
-                <div>
-                  <h3 className="font-display text-2xl md:text-3xl font-semibold">
-                    {pillars[activePillar].title}
-                  </h3>
-                  <div className="text-xs font-mono text-hq-black/60 uppercase">
-                    {pillars[activePillar].subtitle}
+          {/* Active Pillar Detail Box */}
+          <div className="bg-hq-black text-white p-8 md:p-14 rounded-3xl border border-black/20 shadow-2xl relative overflow-hidden">
+            <div className="max-w-3xl relative z-10">
+              <div className="flex items-center gap-3 text-xs font-mono text-hq-yellow uppercase tracking-widest mb-2">
+                <ActivePillarIcon className="w-4 h-4" />
+                <span>{pillars[activePillar].title}</span>
+              </div>
+              <h3 className="font-display text-2xl md:text-4xl font-bold mb-4 text-white">
+                {pillars[activePillar].subtitle}
+              </h3>
+              <p className="font-body text-lg text-hq-white/80 leading-relaxed font-light mb-8">
+                {pillars[activePillar].summary}
+              </p>
+
+              <div className="space-y-4 mb-8">
+                {pillars[activePillar].breakdown.map((point, index) => (
+                  <div key={index} className="flex items-start gap-4">
+                    <CheckCircle2 className="w-5 h-5 text-hq-yellow shrink-0 mt-0.5" />
+                    <p className="font-body text-sm md:text-base text-hq-white/90 leading-relaxed">
+                      {point}
+                    </p>
                   </div>
-                </div>
+                ))}
               </div>
-              <div className="bg-hq-black text-hq-yellow font-display font-bold text-xs uppercase tracking-widest px-4 py-2 rounded-full">
-                {pillars[activePillar].metric}
+
+              <div className="inline-flex items-center gap-3 bg-white/10 px-5 py-2.5 rounded-full border border-white/20 text-xs font-mono text-hq-yellow">
+                <TrendingUp className="w-4 h-4" />
+                <span>Impact Metric: {pillars[activePillar].metric}</span>
               </div>
-            </div>
-
-            <p className="font-body text-lg text-hq-black/85 font-light mb-8 max-w-3xl leading-relaxed">
-              {pillars[activePillar].summary}
-            </p>
-
-            <div className="space-y-3 mb-8">
-              <div className="text-xs font-mono uppercase tracking-widest text-hq-black/50 font-semibold">
-                Core Organizational Deliverables:
-              </div>
-              {pillars[activePillar].breakdown.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3 bg-hq-gray p-4 rounded-xl border border-hq-black/5">
-                  <CheckCircle2 className="w-5 h-5 text-hq-yellow shrink-0 mt-0.5 bg-hq-black rounded-full p-0.5" />
-                  <span className="font-body text-sm text-hq-black/80">{item}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="pt-6 border-t border-hq-black/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-              <span className="text-xs font-mono text-hq-black/60">
-                Applicable for C-Suite, Managing Directors, and High-Potential Leaders
-              </span>
-              <Link 
-                to="/contact" 
-                className="bg-hq-yellow text-hq-black font-display font-semibold text-xs uppercase tracking-widest px-6 py-3 rounded-full hover:bg-hq-black hover:text-white transition-all flex items-center gap-2"
-              >
-                <span>Deploy {pillars[activePillar].title.split('.')[1]} Framework</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Problem Identification vs. Interventions Matrix (Page 4 of Profile Deck) */}
-      <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-hq-yellow/30 border border-hq-yellow text-hq-black text-xs font-mono uppercase tracking-widest rounded-full mb-3 font-bold">
-            Profile Matrix • Page 4
+      {/* Pages 4-8 Matrix: Problem Identification vs. Interventions Framework */}
+      <section className="py-20 px-6 md:px-12 bg-white border-b border-black/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-12 pb-6 border-b border-black/10">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-widest text-black/60 font-bold block mb-2">
+                Empirical Intervention Framework
+              </span>
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] leading-[1.08]">
+                Problem Identification <br />
+                <span className="text-[#666666] font-light">& Strategic Interventions</span>
+              </h2>
+            </div>
+            <p className="font-body text-sm sm:text-base text-black/65 max-w-md font-light leading-relaxed">
+              Synthesizing root stressors and deploying validated behavioral and psychological architectures across 4 core operational domains.
+            </p>
           </div>
-          <h2 className="font-display text-4xl md:text-6xl tracking-tight font-semibold mb-4">
-            Problem Identification & Interventions
-          </h2>
-          <p className="font-body text-hq-black/70 max-w-2xl mx-auto font-light text-base">
-            Detailed clinical diagnosis of root workplace dysfunctions mapped against proven eudaimonic transformation protocols.
-          </p>
-        </div>
 
-        {/* Domain Navigation Tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {Object.keys(matrixDomains).map((dKey) => {
-            const d = matrixDomains[dKey];
-            const DIcon = d.icon;
-            const isSelected = activeDomain === dKey;
-            return (
-              <button
-                key={dKey}
-                onClick={() => setActiveDomain(dKey)}
-                className={`flex items-center gap-2.5 px-5 py-3 rounded-xl border text-xs font-display uppercase tracking-wider font-semibold transition-all ${
-                  isSelected 
-                    ? 'bg-hq-black text-hq-yellow border-hq-black shadow-xl' 
-                    : 'bg-white text-hq-black/70 border-hq-black/15 hover:border-hq-black hover:text-hq-black'
-                }`}
-              >
-                <DIcon className={`w-4 h-4 ${isSelected ? 'text-hq-yellow' : 'text-hq-black/60'}`} />
-                <span>{d.label}</span>
-              </button>
-            );
-          })}
-        </div>
+          {/* Domain Tabs */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
+            {Object.keys(matrixDomains).map((domainKey) => {
+              const dom = matrixDomains[domainKey];
+              const Icon = dom.icon;
+              const isSelected = activeDomain === domainKey;
+              return (
+                <button
+                  key={domainKey}
+                  onClick={() => setActiveDomain(domainKey)}
+                  className={`p-4 rounded-2xl border text-left transition-all duration-300 flex items-center gap-3 cursor-pointer ${
+                    isSelected 
+                      ? 'bg-[#1E1A17] text-white border-black shadow-md' 
+                      : 'bg-[#FAF8F5] text-black/70 border-black/10 hover:bg-black/5 hover:text-black'
+                  }`}
+                >
+                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
+                    isSelected ? 'bg-hq-yellow text-black' : 'bg-white border border-black/10 text-black'
+                  }`}>
+                    <Icon className="w-4 h-4" />
+                  </div>
+                  <span className="font-display text-xs sm:text-sm font-semibold leading-snug">
+                    {dom.label}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
 
-        {/* Domain Matrix Card */}
-        <div className="bg-hq-gray border border-hq-black/15 rounded-3xl p-8 md:p-12 shadow-2xl">
-          <div className="flex flex-col lg:flex-row gap-10 items-start">
-            {/* Visual Thumbnail & Domain Info */}
-            <div className="w-full lg:w-4/12">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-6 border border-hq-black/10 shadow-lg bg-hq-black/5">
-                <img 
-                  src={currentDomain.image} 
-                  alt={currentDomain.label}
-                  className="w-full h-full object-cover" 
-                />
-              </div>
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-xl bg-hq-yellow text-hq-black flex items-center justify-center">
-                  <DomainIcon className="w-5 h-5 stroke-[2]" />
+          {/* Split Matrix Presentation */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+            
+            {/* Left Column: Problems Identified */}
+            <div className="lg:col-span-6 bg-[#FAF8F5] p-6 sm:p-8 rounded-3xl border border-black/10 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-wider text-red-600 font-bold mb-4">
+                  <AlertTriangle className="w-4 h-4" />
+                  <span>Underlying Corporate Friction (Audit)</span>
                 </div>
-                <h3 className="font-display text-2xl font-bold">
+                <h3 className="font-display text-xl sm:text-2xl font-semibold text-[#0A0A0A] mb-6">
                   {currentDomain.label}
                 </h3>
+
+                <div className="space-y-3">
+                  {currentDomain.problems.map((prob, idx) => (
+                    <div key={idx} className="flex items-start gap-3 p-3 rounded-xl bg-white border border-black/5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2 shrink-0" />
+                      <p className="font-body text-xs sm:text-[13px] text-[#2A2A2A] font-normal leading-relaxed">
+                        {prob}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <p className="font-body text-xs text-hq-black/70 font-light leading-relaxed">
-                By diagnosing deep root causes instead of superficial symptoms, the HQX framework creates structural change that lasts.
-              </p>
             </div>
 
-            {/* Problems vs Interventions Columns */}
-            <div className="w-full lg:w-8/12 grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Problem Identification */}
-              <div className="bg-white p-6 rounded-2xl border border-red-200/60 shadow-sm">
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest font-bold text-red-600 mb-4 pb-2 border-b border-red-100">
-                  <AlertTriangle className="w-4 h-4" />
-                  <span>Identified Friction & Problems</span>
+            {/* Right Column: Strategic Interventions */}
+            <div className="lg:col-span-6 bg-[#0E0F12] text-white p-6 sm:p-8 rounded-3xl border border-white/10 flex flex-col justify-between shadow-xl">
+              <div>
+                <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-wider text-hq-yellow font-bold mb-4">
+                  <Sparkles className="w-4 h-4" />
+                  <span>Validated HQX Interventions</span>
                 </div>
-                <ul className="space-y-3 font-body text-xs text-hq-black/80">
-                  {currentDomain.problems.map((prob, pIdx) => (
-                    <li key={pIdx} className="flex items-start gap-2.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-500 mt-1.5 shrink-0"></span>
-                      <span>{prob}</span>
-                    </li>
+                <h3 className="font-display text-xl sm:text-2xl font-semibold text-white mb-6">
+                  Transformative Solutions
+                </h3>
+
+                <div className="space-y-3">
+                  {currentDomain.interventions.map((sol, idx) => (
+                    <div key={idx} className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                      <CheckCircle2 className="w-4 h-4 text-hq-yellow mt-0.5 shrink-0" />
+                      <p className="font-body text-xs sm:text-[13px] text-white/90 font-light leading-relaxed">
+                        {sol}
+                      </p>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
 
-              {/* Proven HQX Interventions */}
-              <div className="bg-hq-black text-white p-6 rounded-2xl border border-black shadow-lg">
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest font-bold text-hq-yellow mb-4 pb-2 border-b border-white/10">
-                  <CheckCircle2 className="w-4 h-4 text-hq-yellow" />
-                  <span>HQX Interventions & Protocols</span>
-                </div>
-                <ul className="space-y-3 font-body text-xs text-white/90">
-                  {currentDomain.interventions.map((inte, iIdx) => (
-                    <li key={iIdx} className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-hq-yellow shrink-0 mt-0.5" />
-                      <span>{inte}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
+                <span className="text-xs font-mono text-white/50">
+                  Target Domain: {currentDomain.label}
+                </span>
+                <Link
+                  to="/leadership-deep-dive"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono text-hq-yellow hover:underline uppercase tracking-wider font-semibold"
+                >
+                  <span>Explore Masterclass</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* Call to Action Banner */}
+      <section className="py-20 px-6 md:px-12 bg-hq-black text-white text-center relative overflow-hidden">
+        <div className="max-w-4xl mx-auto relative z-10">
+          <span className="text-xs font-mono uppercase tracking-widest text-hq-yellow font-bold bg-white/10 px-4 py-1.5 rounded-full inline-block mb-4">
+            Begin the Evolution
+          </span>
+          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-6">
+            Ready to Engineer an Antifragile Executive Culture?
+          </h2>
+          <p className="font-body text-base md:text-lg text-hq-white/80 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+            Move beyond transactional wellness. Deploy the HQ Functional Enhancement Model across your leadership pods and corporate tiers.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link 
+              to="/contact" 
+              className="bg-hq-yellow text-hq-black font-display font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white transition-all shadow-xl"
+            >
+              Initiate Enterprise Engagement
+            </Link>
+            <Link 
+              to="/keynotes" 
+              className="border border-white/30 text-white font-display text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all"
+            >
+              Explore Keynote Addresses
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-6 md:px-12 text-center bg-hq-yellow text-hq-black border-t border-hq-black">
-        <h2 className="font-display text-4xl md:text-5xl tracking-tight font-semibold mb-4">
-          Ready to Elevate Your Organization's Functional Quotient?
-        </h2>
-        <p className="font-body text-hq-black/80 max-w-xl mx-auto mb-8 font-light text-base">
-          Speak with Manny Anchan directly to tailor an enterprise transformation roadmap for your executives.
-        </p>
-        <Link 
-          to="/contact" 
-          className="bg-hq-black text-hq-white font-display text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white hover:text-hq-black transition-all font-semibold shadow-xl"
-        >
-          Book Consultation Now (+91 97001 00800)
-        </Link>
-      </section>
     </div>
   );
 }
