@@ -21,7 +21,9 @@ import {
   Activity,
   Briefcase,
   Home as HomeIcon,
-  Globe2
+  Globe2,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 
 export default function EudaimonicTransformation() {
@@ -30,7 +32,8 @@ export default function EudaimonicTransformation() {
 
   const pillars = {
     leadership: {
-      title: '01. Leadership',
+      num: '01',
+      title: 'Leadership',
       subtitle: 'From Coercion to Inspiration',
       icon: Crown,
       summary: 'True leadership is anchored in moral clarity, personal sovereignty, and emotional equilibrium.',
@@ -39,10 +42,13 @@ export default function EudaimonicTransformation() {
         'Psychological Safety Architectures: Structuring corporate rituals where candor is celebrated and risks are rewarded.',
         'Visionary Delegation: Empowering middle management with high contextual autonomy and zero micromanagement.'
       ],
-      metric: '38% Lift in Team Ownership Metrics'
+      metric: '38% Lift in Team Ownership Metrics',
+      teaser: 'Anchoring executive presence in moral clarity and unshakeable emotional equilibrium.',
+      image: '/images/hero_showcase/founder_hero_keynote_hires.jpg'
     },
     adaptability: {
-      title: '02. Adaptability',
+      num: '02',
+      title: 'Adaptability',
       subtitle: 'Thriving Amid Disruption',
       icon: GitMerge,
       summary: 'The capacity to rapidly unlearn obsolete organizational patterns without triggering amygdala panic.',
@@ -51,10 +57,13 @@ export default function EudaimonicTransformation() {
         'Cross-Functional Speed: Eliminating bureaucratic bottlenecks through rapid stand-ups and decoupled sprint teams.',
         'Anti-Fragility Training: Designing systems that actually gain strength from volatile market fluctuations.'
       ],
-      metric: '45% Faster Strategic Pivots'
+      metric: '45% Faster Strategic Pivots',
+      teaser: 'Rewiring corporate patterns to rapidly unlearn obsolete models without cognitive friction.',
+      image: '/images/hero_showcase/manny_big_bold_brave.jpg'
     },
     resilience: {
-      title: '03. Resilience',
+      num: '03',
+      title: 'Resilience',
       subtitle: 'Grit Without Burnout',
       icon: Shield,
       summary: 'Developing sustainable endurance that enables executives to withstand peak stress while maintaining calm clarity.',
@@ -63,10 +72,13 @@ export default function EudaimonicTransformation() {
         'Cognitive Reframing: Turning setbacks from existential threats into tactical operational puzzles.',
         'Strategic Downtime: Implementing institutional rest and detachment protocols that supercharge creative throughput.'
       ],
-      metric: '42% Reduction in Executive Burnout'
+      metric: '42% Reduction in Executive Burnout',
+      teaser: 'Developing sustainable somatic regulation and cognitive reframing under peak pressure.',
+      image: '/images/why-hqx-man-think.jpg'
     },
     discipline: {
-      title: '04. Discipline',
+      num: '04',
+      title: 'Discipline',
       subtitle: 'Systematizing Daily Excellence',
       icon: Target,
       summary: 'Replacing erratic motivational bursts with seamless, automatic micro-habits that generate compound advantages.',
@@ -75,10 +87,13 @@ export default function EudaimonicTransformation() {
         'Friction Elimination: Removing micro-distractions and cognitive drains from high-stakes decision makers.',
         'Continuous Accountability: Transparent metric trackers and peer feedback pods that ensure execution.'
       ],
-      metric: '3.2x Improvement in Sprint Completion'
+      metric: '3.2x Improvement in Sprint Completion',
+      teaser: 'Replacing erratic motivation with automatic high-leverage focus rituals.',
+      image: '/images/hero_showcase/manny_absa_bank.jpg'
     },
     flexibility: {
-      title: '05. Flexibility',
+      num: '05',
+      title: 'Flexibility',
       subtitle: 'Fluid Collaboration Across Generations',
       icon: Move,
       summary: 'Dissolving dogmatic rigidity while upholding rigorous high-performance quality benchmarks.',
@@ -87,7 +102,9 @@ export default function EudaimonicTransformation() {
         'Dynamic Role Fluidity: Encouraging talent to rotate seamlessly into cross-domain emergency crisis pods.',
         'Empathic Negotiation: Reaching win-win commercial and relational agreements with internal and external stakeholders.'
       ],
-      metric: '29% Increase in Inter-Departmental Synergy'
+      metric: '29% Increase in Inter-Departmental Synergy',
+      teaser: 'Dissolving dogmatic silos to harmonize multigenerational executive talent.',
+      image: '/images/hero_showcase/chapters_wellness_clean.jpg'
     }
   };
 
@@ -175,7 +192,7 @@ export default function EudaimonicTransformation() {
     }
   };
 
-  const ActivePillarIcon = pillars[activePillar].icon;
+  const ActivePillarIcon = activePillar && pillars[activePillar] ? pillars[activePillar].icon : null;
   const currentDomain = matrixDomains[activeDomain];
   const DomainIcon = currentDomain.icon;
 
@@ -486,74 +503,149 @@ export default function EudaimonicTransformation() {
         </div>
       </section>
 
-      {/* The 5 Pillars of Enterprise Sovereignty - Full Interactive Tabs */}
-      <section id="pillars-detail" className="py-20 px-6 md:px-12 bg-hq-white text-hq-black border-b border-hq-black/10">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-mono uppercase tracking-widest text-hq-yellow font-bold bg-hq-black px-4 py-1.5 rounded-full inline-block mb-4">
-              5 Pillars of Sovereignty
-            </span>
-            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-4">
-              The Architecture of Flourishing
-            </h2>
-            <p className="font-body text-base text-hq-black/70">
-              Moving beyond superficial wellness trends to engineer compounding executive resilience, ethical governance, and quantified EBITDA growth.
-            </p>
+      {/* The Architecture of Flourishing - Accordion Section (Matching Reference Style) */}
+      <section id="pillars-detail" className="py-20 sm:py-28 px-6 md:px-12 bg-[#F8F9FA] text-hq-black border-b border-black/10">
+        <div className="max-w-6xl mx-auto">
+          
+          {/* Header Section: Left Accent Tag & Bold Title • Right Contextual Summary */}
+          <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 md:gap-12 mb-12 sm:mb-16">
+            {/* Left Column: Step-by-Step Accent Tag & Main Headline */}
+            <div className="max-w-xl">
+              <span className="text-[#FF5500] font-display font-semibold text-xs sm:text-sm tracking-wider uppercase block mb-3">
+                Step-by-Step
+              </span>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 leading-[1.12]">
+                The Architecture of Flourishing
+              </h2>
+            </div>
+
+            {/* Right Column: Explanatory Context */}
+            <div className="md:max-w-md lg:max-w-lg md:pt-4">
+              <p className="font-body text-sm sm:text-base text-neutral-600 font-normal leading-relaxed">
+                From foundational self-regulation to boardroom execution, our five pillars systematize behavioral neuroscience and moral leadership into quantified enterprise resilience.
+              </p>
+            </div>
           </div>
 
-          {/* Interactive Pillar Selector Tabs */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {/* 5 Elements Accordion */}
+          <div className="space-y-3 sm:space-y-4">
             {Object.keys(pillars).map((key) => {
-              const p = pillars[key];
-              const Icon = p.icon;
+              const item = pillars[key];
+              const isActive = activePillar === key;
+              const Icon = item.icon;
+
               return (
-                <button
-                  key={key}
-                  onClick={() => setActivePillar(key)}
-                  className={`flex items-center gap-3 px-6 py-4 rounded-xl border font-display text-sm uppercase tracking-wider transition-all duration-300 ${
-                    activePillar === key
-                      ? 'bg-hq-black text-hq-yellow border-hq-black shadow-lg scale-105 font-bold'
-                      : 'bg-white text-hq-black/70 border-hq-black/15 hover:border-hq-black/40 hover:bg-hq-black/5'
-                  }`}
-                >
-                  <Icon className="w-4 h-4 stroke-[2]" />
-                  <span>{key}</span>
-                </button>
+                <div key={key} className="transition-all duration-300">
+                  {isActive ? (
+                    /* ACTIVE ACCORDION CARD - VIBRANT ORANGE CAPSULE (MATCHING REFERENCE ROW 02) */
+                    <div className="w-full bg-[#FF5500] text-white rounded-2xl sm:rounded-3xl shadow-[0_12px_36px_rgba(255,85,0,0.22)] overflow-hidden transition-all duration-300">
+                      {/* Clickable Header Row */}
+                      <button
+                        type="button"
+                        onClick={() => setActivePillar(isActive ? null : key)}
+                        className="w-full text-left py-4 sm:py-5 px-6 sm:px-8 flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
+                      >
+                        {/* Left: Indicator, Number, and Title */}
+                        <div className="flex items-center gap-4 sm:gap-6 min-w-0">
+                          <span className="w-[3px] h-6 sm:h-7 bg-white/70 rounded-full shrink-0" />
+                          <span className="font-display font-bold text-2xl sm:text-3xl text-white tracking-tight w-12 sm:w-14 shrink-0">
+                            {item.num}
+                          </span>
+                          <span className="font-display font-bold text-xl sm:text-2xl text-white tracking-tight truncate">
+                            {item.title}
+                          </span>
+                        </div>
+
+                        {/* Right: Inset Cinematic Image Thumbnail & Collapse Chevron */}
+                        <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+                          <div className="w-24 sm:w-40 md:w-56 h-10 sm:h-12 rounded-xl sm:rounded-2xl overflow-hidden border border-white/20 shadow-inner bg-black/20">
+                            <img 
+                              src={item.image} 
+                              alt={item.title} 
+                              className="w-full h-full object-cover filter contrast-105"
+                            />
+                          </div>
+                          <ChevronUp className="w-5 h-5 text-white/90 shrink-0" />
+                        </div>
+                      </button>
+
+                      {/* Smooth Expanded Accordion Body */}
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.35, ease: 'easeOut' }}
+                        className="px-6 sm:px-10 pb-7 pt-1 border-t border-white/15"
+                      >
+                        <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-white/80 font-semibold mb-2">
+                          <Icon className="w-3.5 h-3.5 text-white" />
+                          <span>{item.subtitle}</span>
+                        </div>
+
+                        <p className="font-body text-sm sm:text-base text-white/95 font-light leading-relaxed mb-6 max-w-3xl">
+                          {item.summary}
+                        </p>
+
+                        {/* 3 Breakdown Highlights */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 mb-6">
+                          {item.breakdown.map((point, idx) => (
+                            <div 
+                              key={idx} 
+                              className="bg-black/15 backdrop-blur-sm p-3.5 sm:p-4 rounded-xl border border-white/15 flex items-start gap-2.5"
+                            >
+                              <CheckCircle2 className="w-4 h-4 text-white shrink-0 mt-0.5" />
+                              <p className="font-body text-xs sm:text-[13px] text-white/95 leading-relaxed font-light">
+                                {point}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Impact Metric Footer */}
+                        <div className="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-white/15">
+                          <div className="inline-flex items-center gap-2.5 bg-black/25 text-white border border-white/20 px-4 py-2 rounded-full text-xs font-mono">
+                            <TrendingUp className="w-3.5 h-3.5 text-white" />
+                            <span>Impact Metric: {item.metric}</span>
+                          </div>
+
+                          <span className="text-xs font-mono text-white/70 uppercase tracking-widest hidden sm:inline">
+                            Pillar {item.num} of 05 • Sovereign Enterprise Framework
+                          </span>
+                        </div>
+                      </motion.div>
+                    </div>
+                  ) : (
+                    /* INACTIVE ACCORDION ROW (MATCHING REFERENCE ROWS 01, 03, 04, 05) */
+                    <button
+                      type="button"
+                      onClick={() => setActivePillar(key)}
+                      className="w-full text-left py-4 sm:py-5 px-6 sm:px-8 rounded-2xl sm:rounded-3xl hover:bg-white hover:shadow-[0_4px_24px_rgba(0,0,0,0.04)] transition-all duration-200 cursor-pointer flex items-center justify-between gap-4 group border border-transparent hover:border-black/5 focus:outline-none"
+                    >
+                      {/* Left: Indicator, Number, and Title */}
+                      <div className="flex items-center gap-4 sm:gap-6 min-w-0">
+                        <span className="w-[3px] h-6 sm:h-7 bg-[#FF5500] rounded-full shrink-0 group-hover:scale-y-110 transition-transform duration-200" />
+                        <span className="font-display font-bold text-2xl sm:text-3xl text-neutral-900 tracking-tight w-12 sm:w-14 shrink-0">
+                          {item.num}
+                        </span>
+                        <span className="font-display font-semibold text-lg sm:text-xl text-neutral-900 group-hover:text-black tracking-tight whitespace-nowrap">
+                          {item.title}
+                        </span>
+                      </div>
+
+                      {/* Center/Right: Subtitle / Teaser */}
+                      <p className="font-body text-xs sm:text-sm text-neutral-400 font-light truncate max-w-xs md:max-w-md lg:max-w-lg hidden sm:block">
+                        {item.teaser}
+                      </p>
+
+                      {/* Right: Expand Chevron */}
+                      <ChevronDown className="w-5 h-5 text-neutral-400 group-hover:text-neutral-700 transition-transform duration-200 shrink-0 ml-2" />
+                    </button>
+                  )}
+                </div>
               );
             })}
           </div>
 
-          {/* Active Pillar Detail Box */}
-          <div className="bg-hq-black text-white p-8 md:p-14 rounded-3xl border border-black/20 shadow-2xl relative overflow-hidden">
-            <div className="max-w-3xl relative z-10">
-              <div className="flex items-center gap-3 text-xs font-mono text-hq-yellow uppercase tracking-widest mb-2">
-                <ActivePillarIcon className="w-4 h-4" />
-                <span>{pillars[activePillar].title}</span>
-              </div>
-              <h3 className="font-display text-2xl md:text-4xl font-bold mb-4 text-white">
-                {pillars[activePillar].subtitle}
-              </h3>
-              <p className="font-body text-lg text-hq-white/80 leading-relaxed font-light mb-8">
-                {pillars[activePillar].summary}
-              </p>
-
-              <div className="space-y-4 mb-8">
-                {pillars[activePillar].breakdown.map((point, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <CheckCircle2 className="w-5 h-5 text-hq-yellow shrink-0 mt-0.5" />
-                    <p className="font-body text-sm md:text-base text-hq-white/90 leading-relaxed">
-                      {point}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="inline-flex items-center gap-3 bg-white/10 px-5 py-2.5 rounded-full border border-white/20 text-xs font-mono text-hq-yellow">
-                <TrendingUp className="w-4 h-4" />
-                <span>Impact Metric: {pillars[activePillar].metric}</span>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
