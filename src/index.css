@@ -545,3 +545,58 @@ p {
 * {
   text-rendering: optimizeLegibility;
 }
+
+/* 7. Stadium Tunnel & Left-Corner-to-Top Yellow Buffering Animations */
+@keyframes stadiumBufferGlow {
+  0% {
+    transform: translate(-30%, 30%) scale(0.85);
+    opacity: 0.2;
+  }
+  45% {
+    opacity: 0.85;
+  }
+  70% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(35%, -35%) scale(1.35);
+    opacity: 0.15;
+  }
+}
+
+@keyframes stadiumBufferStroke {
+  0% {
+    stroke-dashoffset: 1400;
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.35;
+  }
+}
+
+@keyframes stardustTwinkle {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.4);
+  }
+}
+
+.animate-stadium-glow {
+  animation: stadiumBufferGlow 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-stadium-stroke {
+  animation: stadiumBufferStroke 5s linear infinite;
+}
+
+.animate-stardust {
+  animation: stardustTwinkle 4s ease-in-out infinite;
+}
