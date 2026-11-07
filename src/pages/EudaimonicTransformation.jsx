@@ -280,67 +280,70 @@ export default function EudaimonicTransformation() {
               {/* Stadium Wave Gradient 6 (Outermost Deep Bronze/Amber fading into pure black) */}
               <linearGradient id="yellowWave6" x1="1" y1="0.5" x2="0" y2="0.5">
                 <stop offset="0%" stopColor="#261700" stopOpacity="0.45" />
-                <stop offset="65%" stopColor="#140a00" stopOpacity="0.25" />
+                <stop offset="65%" stopColor="#140a00" stopOpacity="0.20" />
                 <stop offset="100%" stopColor="#000000" stopOpacity="0" />
               </linearGradient>
 
               {/* Stadium Wave Gradient 5 */}
               <linearGradient id="yellowWave5" x1="1" y1="0.5" x2="0" y2="0.5">
                 <stop offset="0%" stopColor="#4d2c00" stopOpacity="0.55" />
-                <stop offset="65%" stopColor="#261400" stopOpacity="0.35" />
+                <stop offset="65%" stopColor="#261400" stopOpacity="0.25" />
                 <stop offset="100%" stopColor="#000000" stopOpacity="0" />
               </linearGradient>
 
               {/* Stadium Wave Gradient 4 */}
               <linearGradient id="yellowWave4" x1="1" y1="0.5" x2="0" y2="0.5">
-                <stop offset="0%" stopColor="#7a4700" stopOpacity="0.68" />
-                <stop offset="65%" stopColor="#402300" stopOpacity="0.45" />
+                <stop offset="0%" stopColor="#7a4700" stopOpacity="0.65" />
+                <stop offset="65%" stopColor="#402300" stopOpacity="0.30" />
                 <stop offset="100%" stopColor="#000000" stopOpacity="0" />
               </linearGradient>
 
               {/* Stadium Wave Gradient 3 */}
               <linearGradient id="yellowWave3" x1="1" y1="0.5" x2="0" y2="0.5">
-                <stop offset="0%" stopColor="#ab6b00" stopOpacity="0.78" />
-                <stop offset="65%" stopColor="#633b00" stopOpacity="0.55" />
+                <stop offset="0%" stopColor="#ab6b00" stopOpacity="0.75" />
+                <stop offset="65%" stopColor="#633b00" stopOpacity="0.38" />
                 <stop offset="100%" stopColor="#000000" stopOpacity="0" />
               </linearGradient>
 
               {/* Stadium Wave Gradient 2 */}
               <linearGradient id="yellowWave2" x1="1" y1="0.5" x2="0" y2="0.5">
-                <stop offset="0%" stopColor="#d98c00" stopOpacity="0.86" />
-                <stop offset="65%" stopColor="#8a5400" stopOpacity="0.65" />
+                <stop offset="0%" stopColor="#d98c00" stopOpacity="0.82" />
+                <stop offset="65%" stopColor="#8a5400" stopOpacity="0.45" />
                 <stop offset="100%" stopColor="#000000" stopOpacity="0" />
               </linearGradient>
 
               {/* Stadium Wave Gradient 1 */}
               <linearGradient id="yellowWave1" x1="1" y1="0.5" x2="0" y2="0.5">
-                <stop offset="0%" stopColor="#f5aa00" stopOpacity="0.94" />
-                <stop offset="65%" stopColor="#b87a00" stopOpacity="0.75" />
+                <stop offset="0%" stopColor="#f5aa00" stopOpacity="0.90" />
+                <stop offset="60%" stopColor="#b87a00" stopOpacity="0.55" />
+                <stop offset="85%" stopColor="#7a4b00" stopOpacity="0.20" />
                 <stop offset="100%" stopColor="#000000" stopOpacity="0" />
               </linearGradient>
 
-              {/* Stadium Wave Gradient 0 (Innermost Glowing Core, Luminous Brand Yellow) */}
+              {/* Stadium Wave Gradient 0 (Innermost Core, Highly Diffused Golden Yellow) */}
               <linearGradient id="yellowWave0" x1="1" y1="0.5" x2="0" y2="0.5">
-                <stop offset="0%" stopColor="#FFF4B8" stopOpacity="0.98" />
-                <stop offset="50%" stopColor="#FFCC00" stopOpacity="0.90" />
-                <stop offset="100%" stopColor="#E5A800" stopOpacity="0.78" />
+                <stop offset="0%" stopColor="#FFF4B8" stopOpacity="0.95" />
+                <stop offset="45%" stopColor="#FFCC00" stopOpacity="0.75" />
+                <stop offset="75%" stopColor="#E5A800" stopOpacity="0.35" />
+                <stop offset="92%" stopColor="#996500" stopOpacity="0.10" />
+                <stop offset="100%" stopColor="#000000" stopOpacity="0" />
               </linearGradient>
 
-              {/* Soft Edge Feathering Filter for ultra-smooth lineless blend */}
-              <filter id="softFeatherYellow" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="6" />
+              {/* High-Diffusion Soft Edge Blur Filter for completely seamless, velvety rounded edges */}
+              <filter id="softFeatherYellow" x="-60%" y="-60%" width="220%" height="220%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="48" />
               </filter>
             </defs>
 
-            {/* Lineless Concentric Stadium Capsules Radiating with Staggered Light-to-Dark Breathing Wave */}
+            {/* Lineless Concentric Stadium Capsules Radiating with Staggered Light-to-Dark Breathing Wave & Deep Blur */}
             {[
-              { id: 6, x: 260, y: -160, width: 1040, height: 1360, rx: 680, ry: 680, grad: 'yellowWave6', minOp: 0.22, maxOp: 0.52, delay: 0 },
-              { id: 5, x: 380, y: -60,  width: 920,  height: 1160, rx: 580, ry: 580, grad: 'yellowWave5', minOp: 0.32, maxOp: 0.65, delay: 0.8 },
-              { id: 4, x: 500, y: 40,   width: 800,  height: 960,  rx: 480, ry: 480, grad: 'yellowWave4', minOp: 0.42, maxOp: 0.75, delay: 1.6 },
-              { id: 3, x: 610, y: 140,  width: 690,  height: 760,  rx: 380, ry: 380, grad: 'yellowWave3', minOp: 0.52, maxOp: 0.84, delay: 2.4 },
-              { id: 2, x: 710, y: 230,  width: 590,  height: 580,  rx: 290, ry: 290, grad: 'yellowWave2', minOp: 0.60, maxOp: 0.90, delay: 3.2 },
-              { id: 1, x: 800, y: 320,  width: 500,  height: 400,  rx: 200, ry: 200, grad: 'yellowWave1', minOp: 0.68, maxOp: 0.95, delay: 4.0 },
-              { id: 0, x: 880, y: 400,  width: 420,  height: 240,  rx: 120, ry: 120, grad: 'yellowWave0', minOp: 0.76, maxOp: 1.0, delay: 4.8 },
+              { id: 6, x: 260, y: -160, width: 1200, height: 1360, rx: 680, ry: 680, grad: 'yellowWave6', minOp: 0.22, maxOp: 0.52, delay: 0 },
+              { id: 5, x: 380, y: -60,  width: 1100, height: 1160, rx: 580, ry: 580, grad: 'yellowWave5', minOp: 0.32, maxOp: 0.65, delay: 0.8 },
+              { id: 4, x: 500, y: 40,   width: 1000, height: 960,  rx: 480, ry: 480, grad: 'yellowWave4', minOp: 0.42, maxOp: 0.75, delay: 1.6 },
+              { id: 3, x: 610, y: 140,  width: 900,  height: 760,  rx: 380, ry: 380, grad: 'yellowWave3', minOp: 0.52, maxOp: 0.84, delay: 2.4 },
+              { id: 2, x: 710, y: 230,  width: 800,  height: 580,  rx: 290, ry: 290, grad: 'yellowWave2', minOp: 0.60, maxOp: 0.90, delay: 3.2 },
+              { id: 1, x: 800, y: 320,  width: 700,  height: 400,  rx: 200, ry: 200, grad: 'yellowWave1', minOp: 0.68, maxOp: 0.95, delay: 4.0 },
+              { id: 0, x: 880, y: 400,  width: 650,  height: 240,  rx: 120, ry: 120, grad: 'yellowWave0', minOp: 0.76, maxOp: 1.0, delay: 4.8 },
             ].map((layer) => (
               <motion.rect
                 key={layer.id}
@@ -425,38 +428,58 @@ export default function EudaimonicTransformation() {
         </div>
       </section>
 
-            {/* 4 Core Levers of Enterprise Transformation (Page 2 of Profile) */}
-      <section className="py-16 px-6 md:px-12 bg-hq-yellow text-hq-black border-b border-hq-black">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight mb-8">
-            Helping Your Employees Succeed And Thrive!
-          </h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { title: 'Engagement', icon: Zap, desc: 'Fostering deep psychological connection with daily enterprise missions.' },
-              { title: 'Productivity', icon: TrendingUp, desc: 'Optimizing attentional architecture and eliminating cognitive friction.' },
-              { title: 'Collaboration', icon: Users, desc: 'Eradicating departmental silos through radical trust and camaraderie.' },
-              { title: 'Profitability', icon: DollarSign, desc: 'Translating employee vitality and resilience directly into bottom-line gains.' }
-            ].map((lever, i) => {
-              const Icon = lever.icon;
-              return (
-                <div key={i} className="bg-hq-black text-white p-6 rounded-2xl shadow-xl border border-black/20">
-                  <div className="w-12 h-12 rounded-xl bg-hq-yellow text-hq-black flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 stroke-[2]" />
-                  </div>
-                  <h3 className="font-display text-xl font-bold uppercase tracking-wider mb-2 text-hq-yellow">
-                    {lever.title}
-                  </h3>
-                  <p className="font-body text-sm text-hq-white/80 leading-relaxed font-light">
-                    {lever.desc}
-                  </p>
-                </div>
-              );
-            })}
+            {/* DOCKED ENTERPRISE LEVERS STRIP (MATCHING FOUNDER SECTION BELOW HERO) */}
+      <div className="w-full bg-[#0A0A0A] text-white/80 py-4 sm:py-5 px-6 border-t border-b border-white/10 overflow-hidden relative z-20">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-5 md:gap-4">
+          
+          {/* Engagement */}
+          <div className="flex flex-col gap-1 max-w-[260px]">
+            <span className="text-hq-yellow font-bold font-mono text-xs uppercase tracking-widest">
+              Engagement
+            </span>
+            <span className="text-white/70 text-xs font-light leading-snug">
+              Fostering deep psychological connection with daily enterprise missions.
+            </span>
           </div>
+
+          <span className="text-white/20 hidden md:inline text-sm">•</span>
+
+          {/* Productivity */}
+          <div className="flex flex-col gap-1 max-w-[260px]">
+            <span className="text-hq-yellow font-bold font-mono text-xs uppercase tracking-widest">
+              Productivity
+            </span>
+            <span className="text-white/70 text-xs font-light leading-snug">
+              Optimizing attentional architecture and eliminating cognitive friction.
+            </span>
+          </div>
+
+          <span className="text-white/20 hidden md:inline text-sm">•</span>
+
+          {/* Collaboration */}
+          <div className="flex flex-col gap-1 max-w-[260px]">
+            <span className="text-hq-yellow font-bold font-mono text-xs uppercase tracking-widest">
+              Collaboration
+            </span>
+            <span className="text-white/70 text-xs font-light leading-snug">
+              Eradicating departmental silos through radical trust and camaraderie.
+            </span>
+          </div>
+
+          <span className="text-white/20 hidden md:inline text-sm">•</span>
+
+          {/* Profitability */}
+          <div className="flex flex-col gap-1 max-w-[260px]">
+            <span className="text-hq-yellow font-bold font-mono text-xs uppercase tracking-widest">
+              Profitability
+            </span>
+            <span className="text-white/70 text-xs font-light leading-snug">
+              Translating employee vitality and resilience directly into bottom-line gains.
+            </span>
+          </div>
+
         </div>
-      </section>
+      </div>
 
       {/* The 5 Pillars of Enterprise Sovereignty - Full Interactive Tabs */}
       <section id="pillars-detail" className="py-20 px-6 md:px-12 bg-hq-white text-hq-black border-b border-hq-black/10">
