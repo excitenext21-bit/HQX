@@ -27,7 +27,6 @@ import {
 export default function EudaimonicTransformation() {
   const [activePillar, setActivePillar] = useState('leadership');
   const [activeDomain, setActiveDomain] = useState('physical');
-  const [heroMode, setHeroMode] = useState('stadium'); // 'stadium' (matching image) or 'brain' (3D neural loop)
 
   const pillars = {
     leadership: {
@@ -183,41 +182,37 @@ export default function EudaimonicTransformation() {
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
       {/* =========================================================================
-          HERO BANNER - CONCENTRIC GLOWING STADIUM BOXES (EXACT MATCH TO REFERENCE IMAGE)
-          Reference: media_1794037417876_58f2792d.jpg (Mappetplace Hero Style)
+          HERO BANNER - CLEAN LINELESS AMBIENT PURPLE STADIUM ANIMATION ON PURE BLACK
           - Screen-fitting height: min-h-[100svh] lg:h-screen lg:min-h-[660px] lg:max-h-[1080px]
-          - Background: Cosmic void (#02030d to #060719) with subtle twinkling stardust
-          - Concentric Stadium Rings: Radiating from right with violet/purple gradients
-          - Slow Rhythmic Glowing Animation: Breathing light-to-dark pulse across layers
-          - Core Glowing Pill Button: Matching reference image "BROWSE APPS" capsule
-          - Left Vertical Text: EUDAIMONIC TRANSFORMATION with Arrow (Matching About Us)
+          - Background: Pure pitch black (#000000) - ZERO blue, ZERO cyan, ZERO indigo
+          - Lines: ZERO grid lines, ZERO stroke lines, ZERO border lines
+          - Background Animation: Clean, lineless concentric purple stadium waves
+            pulsing smoothly from light to dark with organic breathing orbs
+          - Left Vertical Text: EUDAIMONIC TRANSFORMATION with Arrow (No divider line)
           - Heading: text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight (About Us text properties)
           - 3-line paragraph: text-sm sm:text-base text-white/80 font-light leading-relaxed
-          - Button: Explore Pillars with Home hero top/bottom animated lines
+          - Button: Clean, glowing pill button with zero wire lines
           ========================================================================= */}
-      <section className="bg-[#02030d] text-white min-h-[100svh] lg:h-screen lg:min-h-[660px] lg:max-h-[1080px] flex items-center border-b border-white/10 relative overflow-hidden w-full pt-20 sm:pt-24 pb-12 sm:pb-16 select-none">
+      <section className="bg-black text-white min-h-[100svh] lg:h-screen lg:min-h-[660px] lg:max-h-[1080px] flex items-center relative overflow-hidden w-full pt-20 sm:pt-24 pb-12 sm:pb-16 select-none">
         
-        {/* Subtle Cosmic Star Dust Particle Field */}
+        {/* Subtle Stardust Twinkle (Soft 1.5px dots, clean and minimal) */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-10">
           {[
-            { top: '10%', left: '8%', size: 2, delay: '0s' },
-            { top: '18%', left: '22%', size: 2.5, delay: '1.2s' },
-            { top: '8%', left: '46%', size: 1.5, delay: '0.6s' },
-            { top: '16%', left: '68%', size: 2.5, delay: '2.1s' },
-            { top: '28%', left: '86%', size: 2, delay: '1.5s' },
-            { top: '44%', left: '94%', size: 3, delay: '0.8s' },
-            { top: '68%', left: '82%', size: 1.5, delay: '2.4s' },
-            { top: '84%', left: '90%', size: 2.5, delay: '1.0s' },
-            { top: '78%', left: '58%', size: 2, delay: '1.8s' },
-            { top: '90%', left: '36%', size: 1.5, delay: '0.4s' },
-            { top: '64%', left: '14%', size: 2.5, delay: '2.7s' },
-            { top: '82%', left: '5%', size: 2, delay: '1.1s' },
-            { top: '38%', left: '30%', size: 1.5, delay: '1.9s' },
-            { top: '24%', left: '50%', size: 2, delay: '2.3s' },
-            { top: '6%', left: '78%', size: 2, delay: '0.5s' },
-            { top: '94%', left: '72%', size: 2.5, delay: '1.6s' },
-            { top: '52%', left: '44%', size: 1.5, delay: '2.9s' },
-            { top: '34%', left: '64%', size: 2, delay: '0.7s' },
+            { top: '12%', left: '10%', size: 1.5, delay: '0s' },
+            { top: '22%', left: '26%', size: 2, delay: '1.2s' },
+            { top: '10%', left: '48%', size: 1.5, delay: '0.6s' },
+            { top: '18%', left: '72%', size: 2, delay: '2.1s' },
+            { top: '32%', left: '88%', size: 1.5, delay: '1.5s' },
+            { top: '48%', left: '94%', size: 2, delay: '0.8s' },
+            { top: '70%', left: '80%', size: 1.5, delay: '2.4s' },
+            { top: '86%', left: '88%', size: 2, delay: '1.0s' },
+            { top: '76%', left: '56%', size: 1.5, delay: '1.8s' },
+            { top: '90%', left: '34%', size: 1.5, delay: '0.4s' },
+            { top: '62%', left: '16%', size: 2, delay: '2.7s' },
+            { top: '80%', left: '6%', size: 1.5, delay: '1.1s' },
+            { top: '40%', left: '32%', size: 1.5, delay: '1.9s' },
+            { top: '26%', left: '52%', size: 2, delay: '2.3s' },
+            { top: '8%', left: '80%', size: 1.5, delay: '0.5s' },
           ].map((star, idx) => (
             <div
               key={idx}
@@ -233,181 +228,154 @@ export default function EudaimonicTransformation() {
           ))}
         </div>
 
-        {/* Geometric Micro-Grid Backdrop */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-10" />
+        {/* Ambient Warm Purple Organic Light Orbs (Floating & Breathing on pure black, NO BLUE) */}
+        <motion.div 
+          animate={{
+            scale: [1, 1.18, 1],
+            opacity: [0.28, 0.48, 0.28],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute top-1/2 right-[10%] -translate-y-1/2 w-[650px] h-[650px] rounded-full bg-purple-600 blur-[160px] pointer-events-none z-0" 
+        />
+        <motion.div 
+          animate={{
+            scale: [1.1, 0.95, 1.1],
+            opacity: [0.15, 0.32, 0.15],
+          }}
+          transition={{
+            duration: 9.5,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: 1.5,
+          }}
+          className="absolute bottom-[-10%] right-[30%] w-[450px] h-[450px] rounded-full bg-fuchsia-700 blur-[140px] pointer-events-none z-0" 
+        />
 
-        {/* Ambient Atmospheric Diffuse Glows */}
-        <div className="absolute top-1/2 right-[12%] -translate-y-1/2 w-[650px] h-[650px] rounded-full bg-purple-600/[0.22] blur-[160px] pointer-events-none z-0" />
-        <div className="absolute -bottom-24 -left-24 w-[450px] h-[450px] rounded-full bg-indigo-600/[0.12] blur-[140px] pointer-events-none z-0" />
-
-        {/* Left Side Vertical Text: EUDAIMONIC TRANSFORMATION with Arrow (Matching About Us Hero Style) */}
+        {/* Left Side Vertical Text: EUDAIMONIC TRANSFORMATION with Arrow (Clean, NO divider line) */}
         <div className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-30 flex flex-col justify-center items-center pointer-events-none select-none">
           <div 
-            className="flex items-center gap-3 sm:gap-4"
+            className="flex items-center gap-2.5 sm:gap-3"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
           >
             <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-white/90 drop-shadow-md">
               EUDAIMONIC TRANSFORMATION
             </span>
-            <span className="w-px h-8 sm:h-14 bg-white/25"></span>
-            <ArrowRight className="w-3.5 h-3.5 text-violet-400" />
+            <ArrowRight className="w-3.5 h-3.5 text-purple-400" />
           </div>
         </div>
 
-        {/* BACKGROUND ANIMATION LAYER: CONCENTRIC GLOWING STADIUM BOXES (Matching media_1794037417876_58f2792d.jpg) */}
-        {heroMode === 'stadium' ? (
-          <div className="absolute inset-0 pointer-events-none select-none overflow-hidden z-10 flex items-center justify-end">
-            <svg
-              viewBox="0 0 1200 680"
-              preserveAspectRatio="xMidYMid slice"
-              className="w-full h-full object-cover"
-            >
-              <defs>
-                {/* Stadium Capsule Gradient 6 (Outermost, Midnight Indigo) */}
-                <linearGradient id="stadiumGrad6" x1="1" y1="0.5" x2="0" y2="0.5">
-                  <stop offset="0%" stopColor="#1a073a" stopOpacity="0.45" />
-                  <stop offset="60%" stopColor="#100326" stopOpacity="0.30" />
-                  <stop offset="100%" stopColor="#080214" stopOpacity="0.10" />
-                </linearGradient>
-
-                {/* Stadium Capsule Gradient 5 */}
-                <linearGradient id="stadiumGrad5" x1="1" y1="0.5" x2="0" y2="0.5">
-                  <stop offset="0%" stopColor="#290c58" stopOpacity="0.60" />
-                  <stop offset="60%" stopColor="#1d0640" stopOpacity="0.42" />
-                  <stop offset="100%" stopColor="#12042e" stopOpacity="0.18" />
-                </linearGradient>
-
-                {/* Stadium Capsule Gradient 4 */}
-                <linearGradient id="stadiumGrad4" x1="1" y1="0.5" x2="0" y2="0.5">
-                  <stop offset="0%" stopColor="#401382" stopOpacity="0.75" />
-                  <stop offset="60%" stopColor="#2c095c" stopOpacity="0.55" />
-                  <stop offset="100%" stopColor="#1a0538" stopOpacity="0.25" />
-                </linearGradient>
-
-                {/* Stadium Capsule Gradient 3 */}
-                <linearGradient id="stadiumGrad3" x1="1" y1="0.5" x2="0" y2="0.5">
-                  <stop offset="0%" stopColor="#5d1eb5" stopOpacity="0.85" />
-                  <stop offset="60%" stopColor="#421183" stopOpacity="0.68" />
-                  <stop offset="100%" stopColor="#260952" stopOpacity="0.35" />
-                </linearGradient>
-
-                {/* Stadium Capsule Gradient 2 */}
-                <linearGradient id="stadiumGrad2" x1="1" y1="0.5" x2="0" y2="0.5">
-                  <stop offset="0%" stopColor="#7e2fd6" stopOpacity="0.92" />
-                  <stop offset="60%" stopColor="#5c1bad" stopOpacity="0.78" />
-                  <stop offset="100%" stopColor="#370d6e" stopOpacity="0.48" />
-                </linearGradient>
-
-                {/* Stadium Capsule Gradient 1 */}
-                <linearGradient id="stadiumGrad1" x1="1" y1="0.5" x2="0" y2="0.5">
-                  <stop offset="0%" stopColor="#a34ee8" stopOpacity="0.98" />
-                  <stop offset="60%" stopColor="#7c2dd6" stopOpacity="0.88" />
-                  <stop offset="100%" stopColor="#4c148f" stopOpacity="0.62" />
-                </linearGradient>
-
-                {/* Stadium Capsule Gradient 0 (Innermost Core, Electric Violet) */}
-                <linearGradient id="stadiumGrad0" x1="1" y1="0.5" x2="0" y2="0.5">
-                  <stop offset="0%" stopColor="#c084fc" stopOpacity="1" />
-                  <stop offset="50%" stopColor="#a855f7" stopOpacity="0.95" />
-                  <stop offset="100%" stopColor="#7e22ce" stopOpacity="0.85" />
-                </linearGradient>
-              </defs>
-
-              {/* Concentric Stadium Capsules Radiating Outwards with Staggered Breathing Pulse (Light to Dark Animation) */}
-              {[
-                { id: 6, x: 260, y: -160, width: 1040, height: 1360, rx: 680, ry: 680, grad: 'stadiumGrad6', stroke: 'rgba(255,255,255,0.06)', strokeWidth: 1, minOp: 0.25, maxOp: 0.55, delay: 0 },
-                { id: 5, x: 380, y: -60,  width: 920,  height: 1160, rx: 580, ry: 580, grad: 'stadiumGrad5', stroke: 'rgba(255,255,255,0.09)', strokeWidth: 1, minOp: 0.35, maxOp: 0.70, delay: 0.8 },
-                { id: 4, x: 500, y: 40,   width: 800,  height: 960,  rx: 480, ry: 480, grad: 'stadiumGrad4', stroke: 'rgba(255,255,255,0.14)', strokeWidth: 1.2, minOp: 0.45, maxOp: 0.82, delay: 1.6 },
-                { id: 3, x: 610, y: 140,  width: 690,  height: 760,  rx: 380, ry: 380, grad: 'stadiumGrad3', stroke: 'rgba(255,255,255,0.18)', strokeWidth: 1.4, minOp: 0.55, maxOp: 0.90, delay: 2.4 },
-                { id: 2, x: 710, y: 230,  width: 590,  height: 580,  rx: 290, ry: 290, grad: 'stadiumGrad2', stroke: 'rgba(255,255,255,0.24)', strokeWidth: 1.5, minOp: 0.65, maxOp: 0.95, delay: 3.2 },
-                { id: 1, x: 800, y: 320,  width: 500,  height: 400,  rx: 200, ry: 200, grad: 'stadiumGrad1', stroke: 'rgba(255,255,255,0.32)', strokeWidth: 1.8, minOp: 0.72, maxOp: 1.0, delay: 4.0 },
-                { id: 0, x: 880, y: 400,  width: 420,  height: 240,  rx: 120, ry: 120, grad: 'stadiumGrad0', stroke: 'rgba(255,255,255,0.45)', strokeWidth: 2, minOp: 0.80, maxOp: 1.0, delay: 4.8 },
-              ].map((layer) => (
-                <motion.rect
-                  key={layer.id}
-                  x={layer.x}
-                  y={layer.y}
-                  width={layer.width}
-                  height={layer.height}
-                  rx={layer.rx}
-                  ry={layer.ry}
-                  fill={`url(#${layer.grad})`}
-                  stroke={layer.stroke}
-                  strokeWidth={layer.strokeWidth}
-                  animate={{
-                    opacity: [layer.minOp, layer.maxOp, layer.minOp],
-                    filter: [
-                      'drop-shadow(0 0 10px rgba(168,85,247,0.25))',
-                      'drop-shadow(0 0 35px rgba(192,132,252,0.85))',
-                      'drop-shadow(0 0 10px rgba(168,85,247,0.25))'
-                    ]
-                  }}
-                  transition={{
-                    duration: 6.5,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                    delay: layer.delay
-                  }}
-                />
-              ))}
-            </svg>
-
-            {/* Seamless Left Edge Void Blend */}
-            <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#02030d] via-[#02030d]/80 to-transparent pointer-events-none" />
-          </div>
-        ) : (
-          /* ALTERNATE VIEW: 3D HOLOGRAPHIC NEURAL BRAIN VIDEO (Pinterest Pin) */
-          <div className="absolute inset-y-0 right-0 w-full lg:w-[65%] xl:w-[70%] h-full pointer-events-none select-none overflow-hidden flex items-center justify-center lg:justify-end z-10">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              poster="/images/eudaimonia_brain_clean_poster.jpg"
-              className="w-full h-full object-cover lg:object-contain object-center lg:object-right filter contrast-125 brightness-110 drop-shadow-[0_0_30px_rgba(139,92,246,0.3)]"
-            >
-              <source src="/videos/eudaimonia_brain_clean.mp4" type="video/mp4" />
-            </video>
-
-            {/* Smooth edge gradient blends */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#02030d] via-[#02030d]/40 to-transparent pointer-events-none" />
-            <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#02030d] to-transparent pointer-events-none" />
-            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#02030d] to-transparent pointer-events-none" />
-            <div className="absolute right-0 inset-y-0 w-12 sm:w-20 bg-gradient-to-l from-[#02030d] to-transparent pointer-events-none" />
-          </div>
-        )}
-
-        {/* Visual Mode Switcher (Discrete in Top Right Corner) */}
-        <div className="absolute top-6 right-6 sm:right-10 z-30 flex items-center gap-1.5 p-1 rounded-full bg-white/[0.06] backdrop-blur-md border border-white/10 text-xs font-mono">
-          <button
-            onClick={() => setHeroMode('stadium')}
-            className={`px-3 py-1 rounded-full transition-all duration-200 ${
-              heroMode === 'stadium' 
-                ? 'bg-violet-600 text-white shadow-[0_0_15px_rgba(147,51,234,0.6)] font-medium' 
-                : 'text-white/60 hover:text-white'
-            }`}
+        {/* BACKGROUND ANIMATION LAYER: LINELESS CONCENTRIC PURPLE STADIUM WAVES */}
+        {/* Completely line-free (stroke: none, strokeWidth: 0), smooth feathered gradient fills */}
+        <div className="absolute inset-0 pointer-events-none select-none overflow-hidden z-10 flex items-center justify-end">
+          <svg
+            viewBox="0 0 1200 680"
+            preserveAspectRatio="xMidYMid slice"
+            className="w-full h-full object-cover"
           >
-            Glowing Stadium
-          </button>
-          <button
-            onClick={() => setHeroMode('brain')}
-            className={`px-3 py-1 rounded-full transition-all duration-200 ${
-              heroMode === 'brain' 
-                ? 'bg-violet-600 text-white shadow-[0_0_15px_rgba(147,51,234,0.6)] font-medium' 
-                : 'text-white/60 hover:text-white'
-            }`}
-          >
-            3D Neural Brain
-          </button>
+            <defs>
+              {/* Stadium Wave Gradient 6 (Outermost Deep Purple fading to pure black) */}
+              <linearGradient id="cleanWave6" x1="1" y1="0.5" x2="0" y2="0.5">
+                <stop offset="0%" stopColor="#1a0033" stopOpacity="0.45" />
+                <stop offset="65%" stopColor="#0d001a" stopOpacity="0.25" />
+                <stop offset="100%" stopColor="#000000" stopOpacity="0" />
+              </linearGradient>
+
+              {/* Stadium Wave Gradient 5 */}
+              <linearGradient id="cleanWave5" x1="1" y1="0.5" x2="0" y2="0.5">
+                <stop offset="0%" stopColor="#2e0259" stopOpacity="0.58" />
+                <stop offset="65%" stopColor="#1a0033" stopOpacity="0.35" />
+                <stop offset="100%" stopColor="#000000" stopOpacity="0" />
+              </linearGradient>
+
+              {/* Stadium Wave Gradient 4 */}
+              <linearGradient id="cleanWave4" x1="1" y1="0.5" x2="0" y2="0.5">
+                <stop offset="0%" stopColor="#45087a" stopOpacity="0.70" />
+                <stop offset="65%" stopColor="#29024f" stopOpacity="0.48" />
+                <stop offset="100%" stopColor="#000000" stopOpacity="0" />
+              </linearGradient>
+
+              {/* Stadium Wave Gradient 3 */}
+              <linearGradient id="cleanWave3" x1="1" y1="0.5" x2="0" y2="0.5">
+                <stop offset="0%" stopColor="#640da8" stopOpacity="0.80" />
+                <stop offset="65%" stopColor="#3d056b" stopOpacity="0.58" />
+                <stop offset="100%" stopColor="#000000" stopOpacity="0" />
+              </linearGradient>
+
+              {/* Stadium Wave Gradient 2 */}
+              <linearGradient id="cleanWave2" x1="1" y1="0.5" x2="0" y2="0.5">
+                <stop offset="0%" stopColor="#8318cf" stopOpacity="0.88" />
+                <stop offset="65%" stopColor="#550991" stopOpacity="0.68" />
+                <stop offset="100%" stopColor="#000000" stopOpacity="0" />
+              </linearGradient>
+
+              {/* Stadium Wave Gradient 1 */}
+              <linearGradient id="cleanWave1" x1="1" y1="0.5" x2="0" y2="0.5">
+                <stop offset="0%" stopColor="#a334e8" stopOpacity="0.95" />
+                <stop offset="65%" stopColor="#6e0fb8" stopOpacity="0.78" />
+                <stop offset="100%" stopColor="#000000" stopOpacity="0" />
+              </linearGradient>
+
+              {/* Stadium Wave Gradient 0 (Innermost Glowing Core, Rich Electric Purple) */}
+              <linearGradient id="cleanWave0" x1="1" y1="0.5" x2="0" y2="0.5">
+                <stop offset="0%" stopColor="#c084fc" stopOpacity="0.95" />
+                <stop offset="50%" stopColor="#a855f7" stopOpacity="0.88" />
+                <stop offset="100%" stopColor="#7e22ce" stopOpacity="0.75" />
+              </linearGradient>
+
+              {/* Soft Edge Feathering Filter for ultra-smooth lineless blend */}
+              <filter id="softFeather" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="6" />
+              </filter>
+            </defs>
+
+            {/* Lineless Concentric Stadium Capsules Radiating with Staggered Light-to-Dark Breathing Wave */}
+            {[
+              { id: 6, x: 260, y: -160, width: 1040, height: 1360, rx: 680, ry: 680, grad: 'cleanWave6', minOp: 0.25, maxOp: 0.55, delay: 0 },
+              { id: 5, x: 380, y: -60,  width: 920,  height: 1160, rx: 580, ry: 580, grad: 'cleanWave5', minOp: 0.35, maxOp: 0.68, delay: 0.8 },
+              { id: 4, x: 500, y: 40,   width: 800,  height: 960,  rx: 480, ry: 480, grad: 'cleanWave4', minOp: 0.45, maxOp: 0.78, delay: 1.6 },
+              { id: 3, x: 610, y: 140,  width: 690,  height: 760,  rx: 380, ry: 380, grad: 'cleanWave3', minOp: 0.55, maxOp: 0.86, delay: 2.4 },
+              { id: 2, x: 710, y: 230,  width: 590,  height: 580,  rx: 290, ry: 290, grad: 'cleanWave2', minOp: 0.62, maxOp: 0.92, delay: 3.2 },
+              { id: 1, x: 800, y: 320,  width: 500,  height: 400,  rx: 200, ry: 200, grad: 'cleanWave1', minOp: 0.70, maxOp: 0.96, delay: 4.0 },
+              { id: 0, x: 880, y: 400,  width: 420,  height: 240,  rx: 120, ry: 120, grad: 'cleanWave0', minOp: 0.78, maxOp: 1.0, delay: 4.8 },
+            ].map((layer) => (
+              <motion.rect
+                key={layer.id}
+                x={layer.x}
+                y={layer.y}
+                width={layer.width}
+                height={layer.height}
+                rx={layer.rx}
+                ry={layer.ry}
+                fill={`url(#${layer.grad})`}
+                filter="url(#softFeather)"
+                animate={{
+                  opacity: [layer.minOp, layer.maxOp, layer.minOp],
+                }}
+                transition={{
+                  duration: 6.5,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                  delay: layer.delay,
+                }}
+              />
+            ))}
+          </svg>
+
+          {/* Smooth left-edge void blend into pure black */}
+          <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-black via-black/85 to-transparent pointer-events-none" />
         </div>
 
         {/* Main Content Area */}
         <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 w-full relative z-20 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12">
           
-          {/* Left Text Column: Headline, Paragraph, and Explore Pillars Button */}
+          {/* Left Column: Headline, Paragraph, and Explore Pillars Button */}
           <div className="max-w-2xl">
             
-            {/* Headline with exact About Us text properties:
+            {/* Headline with exact About Us text properties (NO BLUE in gradient):
                 font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight text-white leading-[1.15] mb-5 */}
             <motion.h1 
               initial={{ opacity: 0, y: 24 }}
@@ -416,7 +384,7 @@ export default function EudaimonicTransformation() {
               className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight text-white leading-[1.15] mb-5"
             >
               The new <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-indigo-200 to-white font-bold">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-200 via-purple-100 to-white font-bold">
                 Operating System
               </span> <br />
               for human flourishing
@@ -432,7 +400,7 @@ export default function EudaimonicTransformation() {
               An executive architecture engineered to cultivate Aristotelian eudaimonia—translating employee vitality, purpose, and behavioral neuroscience into quantified organizational output and sustainable enterprise flourishing.
             </motion.p>
 
-            {/* Explore Pillars Button (Exact Home Page Hero Style with Animated Top & Bottom Borders) */}
+            {/* Explore Pillars Button (Clean, modern pill button - ZERO lines) */}
             <motion.div 
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -445,51 +413,34 @@ export default function EudaimonicTransformation() {
                   e.preventDefault();
                   document.getElementById('pillars-detail')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="group relative inline-flex items-center justify-between gap-8 py-3.5 px-2 font-display font-medium text-xs tracking-[0.2em] text-white hover:text-violet-300 transition-colors duration-300 uppercase cursor-pointer"
+                className="group inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-white text-black font-display font-semibold text-xs tracking-[0.18em] uppercase hover:bg-purple-100 transition-all duration-300 shadow-[0_0_25px_rgba(255,255,255,0.35),0_0_50px_rgba(168,85,247,0.35)] hover:shadow-[0_0_35px_rgba(255,255,255,0.6),0_0_70px_rgba(168,85,247,0.55)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
               >
-                {/* Top border line */}
-                <span className="absolute top-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-violet-400 transition-all duration-300 ease-out pointer-events-none" />
-
-                <span className="relative z-10 font-semibold tracking-widest">EXPLORE PILLARS</span>
-
-                <svg 
-                  className="w-[22px] h-[11px] inline-block transition-transform duration-300 group-hover:translate-x-1.5 flex-shrink-0" 
-                  viewBox="0 0 20 10" 
-                  fill="none" 
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <line x1="0" y1="5" x2="20" y2="5" stroke="currentColor" strokeWidth="1.2" />
-                  <polyline points="15 1, 20 5, 15 9" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-
-                {/* Bottom border line */}
-                <span className="absolute bottom-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-violet-400 transition-all duration-300 ease-out pointer-events-none" />
+                <span>EXPLORE PILLARS</span>
+                <ArrowRight className="w-3.5 h-3.5 text-black transition-transform duration-300 group-hover:translate-x-1" />
               </a>
             </motion.div>
 
           </div>
 
-          {/* Right Core Pill Button: Matching "BROWSE APPS" in reference image media_1794037417876_58f2792d.jpg */}
-          {heroMode === 'stadium' && (
-            <div className="hidden lg:flex items-center justify-end pr-8 xl:pr-16 z-20">
-              <motion.a
-                href="#pillars-detail"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('pillars-detail')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.97 }}
-                transition={{ duration: 0.4 }}
-                className="group relative px-9 py-4 rounded-full bg-white text-black font-display font-semibold text-xs sm:text-sm tracking-[0.15em] uppercase shadow-[0_0_35px_rgba(255,255,255,0.7),0_0_70px_rgba(168,85,247,0.55)] hover:shadow-[0_0_50px_rgba(255,255,255,0.9),0_0_90px_rgba(168,85,247,0.75)] transition-all duration-300 flex items-center gap-3 cursor-pointer select-none"
-              >
-                <span>EXPLORE PILLARS</span>
-                <ArrowRight className="w-4 h-4 text-black transition-transform duration-300 group-hover:translate-x-1" />
-              </motion.a>
-            </div>
-          )}
+          {/* Right Core Pill Button: Matching "BROWSE APPS" in reference image (Clean, lineless) */}
+          <div className="hidden lg:flex items-center justify-end pr-8 xl:pr-16 z-20">
+            <motion.a
+              href="#pillars-detail"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('pillars-detail')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.4 }}
+              className="group relative px-9 py-4 rounded-full bg-white text-black font-display font-semibold text-xs sm:text-sm tracking-[0.15em] uppercase shadow-[0_0_35px_rgba(255,255,255,0.7),0_0_70px_rgba(168,85,247,0.55)] hover:shadow-[0_0_50px_rgba(255,255,255,0.9),0_0_90px_rgba(168,85,247,0.75)] transition-all duration-300 flex items-center gap-3 cursor-pointer select-none"
+            >
+              <span>EXPLORE PILLARS</span>
+              <ArrowRight className="w-4 h-4 text-black transition-transform duration-300 group-hover:translate-x-1" />
+            </motion.a>
+          </div>
 
         </div>
       </section>
