@@ -600,3 +600,19 @@ p {
 .animate-stardust {
   animation: stardustTwinkle 4s ease-in-out infinite;
 }
+
+/* 8. Stadium Boxes Slow Glow Animation: Transitions from Light to Dark */
+@keyframes stadiumSlowGlow {
+  0%, 100% {
+    opacity: 0.95;
+    filter: drop-shadow(0 0 25px rgba(255, 204, 0, 0.5));
+  }
+  50% {
+    opacity: 0.22;
+    filter: drop-shadow(0 0 3px rgba(255, 204, 0, 0.05));
+  }
+}
+
+.animate-stadium-slow-glow {
+  animation: stadiumSlowGlow 8s ease-in-out infinite;
+}

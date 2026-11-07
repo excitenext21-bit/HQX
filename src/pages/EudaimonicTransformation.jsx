@@ -182,11 +182,15 @@ export default function EudaimonicTransformation() {
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
       {/* =========================================================================
-          HERO BANNER - BLACK & YELLOW CONCENTRIC STADIUM WAVE & BUFFERING LIGHT
-          Aesthetic Inspired by Pinterest Stadium Tunnel (media_1794035984298_f60214cc.jpg)
-          Buffering Motion: Streaming from Left Corner to Top
+          HERO BANNER - BLACK & YELLOW STADIUM TUNNEL (MATCHING REFERENCE IMAGE)
+          - Left Vertical Text: EUDAIMONIC TRANSFORMATION with Arrow
+          - Heading text properties matching About Us hero:
+            font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight text-white leading-[1.15] mb-5
+          - 3-line paragraph matching About Us font-body style
+          - Explore Pillars button with Home Hero top/bottom animated lines
+          - Concentric Stadium wave with slow light-to-dark breathing glow animation
           ========================================================================= */}
-      <section className="bg-[#060709] text-white pt-28 sm:pt-32 pb-16 sm:pb-24 px-6 md:px-12 border-b border-white/10 relative overflow-hidden">
+      <section className="bg-[#060709] text-white pt-28 sm:pt-36 pb-20 sm:pb-28 px-6 md:px-12 border-b border-white/10 relative overflow-hidden min-h-[84vh] flex items-center w-full">
         
         {/* Subtle Star Dust Particle Field */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -227,274 +231,170 @@ export default function EudaimonicTransformation() {
         {/* Geometric Micro-Grid Backdrop */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        {/* Left Side Vertical Text: EUDAIMONIC TRANSFORMATION with Arrow (Matching About Us Hero Style) */}
+        <div className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex flex-col justify-center items-center pointer-events-none select-none">
+          <div 
+            className="flex items-center gap-3 sm:gap-4"
+            style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+          >
+            <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
+              EUDAIMONIC TRANSFORMATION
+            </span>
+            <span className="w-px h-8 sm:h-14 bg-white/25"></span>
+            <ArrowRight className="w-3.5 h-3.5 text-hq-yellow" />
+          </div>
+        </div>
+
+        {/* Yellow Buffering Radiant Light Aura (Sweeps continuously from Left Corner to Top) */}
+        <div 
+          className="absolute -bottom-24 -left-24 w-[500px] h-[500px] sm:w-[650px] sm:h-[650px] rounded-full bg-gradient-to-tr from-hq-yellow/35 via-[#FFE566]/20 to-transparent blur-[110px] pointer-events-none animate-stadium-glow" 
+        />
+        <div 
+          className="absolute -top-20 right-10 w-[400px] h-[400px] rounded-full bg-hq-yellow/[0.05] blur-[130px] pointer-events-none" 
+        />
+
+        {/* Concentric Stadium Wave SVG System (Matching reference image with slow light-to-dark glow animation) */}
+        <div className="absolute inset-y-0 right-0 w-full lg:w-3/4 pointer-events-none select-none overflow-hidden flex items-center justify-end">
+          <svg 
+            viewBox="0 0 1100 700" 
+            preserveAspectRatio="xMidYMid slice"
+            className="w-full h-full min-h-[550px] sm:min-h-[650px] opacity-95"
+          >
+            <defs>
+              {/* Linear Gradient for Stroke Buffering from Left Corner (0%, 100%) to Top (75%, 0%) */}
+              <linearGradient id="bufferStrokeGrad" x1="0%" y1="100%" x2="75%" y2="0%">
+                <stop offset="0%" stopColor="#FFCC00" stopOpacity="0.95" />
+                <stop offset="35%" stopColor="#FFE566" stopOpacity="0.85" />
+                <stop offset="65%" stopColor="#FFCC00" stopOpacity="0.3" />
+                <stop offset="100%" stopColor="#FFCC00" stopOpacity="0.05" />
+              </linearGradient>
+
+              {/* Radial Fill Gradients for Stadium Bands */}
+              <radialGradient id="stadiumFillGrad" cx="72%" cy="74%" r="85%">
+                <stop offset="0%" stopColor="#FFCC00" stopOpacity="0.18" />
+                <stop offset="40%" stopColor="#FFCC00" stopOpacity="0.08" />
+                <stop offset="80%" stopColor="#090A0E" stopOpacity="0.95" />
+              </radialGradient>
+            </defs>
+
+            {/* Concentric Stadium Capsules (Stepped from light innermost to dark outermost with slow glow) */}
+            {[
+              { id: 7, w: 1600, h: 760, rx: 380, fill: 'rgba(255,204,0,0.02)', stroke: 'rgba(255,204,0,0.15)', dash: '180 600', delay: '0s', glowDelay: '0s' },
+              { id: 6, w: 1360, h: 630, rx: 315, fill: 'rgba(255,204,0,0.035)', stroke: 'rgba(255,204,0,0.20)', dash: '200 550', delay: '0.4s', glowDelay: '1.2s' },
+              { id: 5, w: 1140, h: 510, rx: 255, fill: 'rgba(255,204,0,0.05)', stroke: 'rgba(255,204,0,0.26)', dash: '220 500', delay: '0.8s', glowDelay: '2.4s' },
+              { id: 4, w: 920, h: 400, rx: 200, fill: 'rgba(255,204,0,0.07)', stroke: 'rgba(255,204,0,0.32)', dash: '240 450', delay: '1.2s', glowDelay: '3.6s' },
+              { id: 3, w: 720, h: 300, rx: 150, fill: 'rgba(255,204,0,0.09)', stroke: 'rgba(255,204,0,0.40)', dash: '260 400', delay: '1.6s', glowDelay: '4.8s' },
+              { id: 2, w: 520, h: 210, rx: 105, fill: 'rgba(255,204,0,0.12)', stroke: 'rgba(255,204,0,0.50)', dash: '280 350', delay: '2.0s', glowDelay: '6.0s' },
+              { id: 1, w: 350, h: 130, rx: 65, fill: 'url(#stadiumFillGrad)', stroke: 'rgba(255,204,0,0.75)', dash: '300 300', delay: '2.4s', glowDelay: '7.2s' },
+            ].map((tier) => {
+              const cx = 780;
+              const cy = 520;
+              const x = cx - tier.w / 2;
+              const y = cy - tier.h / 2;
+              return (
+                <g 
+                  key={tier.id}
+                  className="animate-stadium-slow-glow"
+                  style={{ animationDelay: tier.glowDelay }}
+                >
+                  {/* Stepped Stadium Band glowing from light to dark */}
+                  <rect
+                    x={x}
+                    y={y}
+                    width={tier.w}
+                    height={tier.h}
+                    rx={tier.rx}
+                    fill={tier.fill}
+                    stroke={tier.stroke}
+                    strokeWidth="1.3"
+                  />
+                  {/* Dynamic Buffering Light Beam Tracing from Left Corner to Top */}
+                  <rect
+                    x={x}
+                    y={y}
+                    width={tier.w}
+                    height={tier.h}
+                    rx={tier.rx}
+                    fill="none"
+                    stroke="url(#bufferStrokeGrad)"
+                    strokeWidth="2.2"
+                    strokeDasharray={tier.dash}
+                    className="animate-stadium-stroke"
+                    style={{ animationDelay: tier.delay }}
+                  />
+                </g>
+              );
+            })}
+          </svg>
+        </div>
+
+        {/* Framing Container: Exact Alignment with Left Vertical Margin */}
+        <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 w-full relative z-10">
+          <div className="max-w-2xl">
             
-            {/* LEFT COLUMN: Editorial Authority & Eudaimonic Philosophy */}
-            <motion.div 
+            {/* Headline with exact About Us text properties:
+                font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight text-white leading-[1.15] mb-5 */}
+            <motion.h1 
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-5 space-y-6 relative z-20"
+              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight text-white leading-[1.15] mb-5"
             >
-              {/* Eyebrow Kicker */}
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-hq-yellow opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-hq-yellow" />
-                </span>
-                <span className="font-mono text-[11px] uppercase tracking-widest text-hq-yellow font-bold">
-                  The HQ Functional Enhancement Model
-                </span>
-              </div>
+              The new <br />
+              <span className="text-hq-yellow">Operating System</span> <br />
+              for human flourishing
+            </motion.h1>
 
-              {/* High-Impact Headline (Pinterest Layout Alignment) */}
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-[56px] xl:text-[62px] tracking-tight font-medium text-white leading-[1.05]">
-                The new <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-hq-yellow via-[#FFE566] to-white font-bold">
-                  Operating System
-                </span> <br />
-                for human flourishing
-              </h1>
+            {/* 3-line paragraph related to Eudaimonic Transformation (matching About Us text properties) */}
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="font-body text-sm sm:text-base text-white/80 font-light leading-relaxed mb-8 max-w-xl"
+            >
+              An executive architecture engineered to cultivate Aristotelian eudaimonia—translating employee vitality, purpose, and behavioral neuroscience into quantified organizational output and sustainable enterprise flourishing.
+            </motion.p>
 
-              {/* Authoritative Quote Capsule */}
-              <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md relative overflow-hidden group">
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-hq-yellow via-[#FFE566] to-transparent" />
-                <p className="font-serif italic text-base sm:text-lg text-white/95 leading-snug">
-                  “To Simply Put: Those Who Work Better, Deliver Better.”
-                </p>
-                <div className="flex items-center justify-between pt-3 mt-3 border-t border-white/10 text-xs font-mono text-white/60">
-                  <span className="text-hq-yellow font-semibold uppercase tracking-wider">— Manny Anchan</span>
-                  <span className="text-white/40">Founder, Happiness Samurai</span>
-                </div>
-              </div>
-
-              {/* Narrative Description */}
-              <p className="font-body text-sm sm:text-[15px] text-white/75 font-normal leading-relaxed text-justify">
-                Moving beyond superficial wellness perks. The <strong>HQ Functional Enhancement Model</strong> is an executive framework engineered to cultivate Aristotle's classical <span className="text-hq-yellow font-medium">Eudaimonia</span>—sustainable human flourishing through purpose, virtue, and cognitive sovereignty—translating employee resilience directly into quantified organizational output.
-              </p>
-
-              {/* Action Buttons */}
-              <div className="pt-2 flex flex-wrap items-center gap-3.5">
-                <Link 
-                  to="/leadership-deep-dive" 
-                  className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-full bg-hq-yellow hover:bg-white text-black font-display font-semibold text-xs uppercase tracking-widest transition-all shadow-[0_0_30px_rgba(255,204,0,0.35)] hover:shadow-[0_0_40px_rgba(255,255,255,0.5)] group"
-                >
-                  <span>Book Leadership Deep Dive</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <a 
-                  href="#pillars-detail" 
-                  className="inline-flex items-center gap-2 px-6 sm:px-7 py-3.5 rounded-full bg-white/[0.05] hover:bg-white/15 text-white border border-white/20 font-display text-xs uppercase tracking-widest transition-all"
-                >
-                  <span>Explore 5 Pillars</span>
-                </a>
-              </div>
-
-              {/* 3 Live Mini-Stats Pills */}
-              <div className="pt-2 flex flex-wrap items-center gap-2 sm:gap-2.5 text-[11px] font-mono text-white/60">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/5">
-                  <CheckCircle2 className="w-3 h-3 text-hq-yellow" />
-                  <span>+31% Productivity Surge</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/5">
-                  <CheckCircle2 className="w-3 h-3 text-hq-yellow" />
-                  <span>Zero Executive Cynicism</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/5">
-                  <CheckCircle2 className="w-3 h-3 text-hq-yellow" />
-                  <span>100-Day Neuroplastic Stacking</span>
-                </span>
-              </div>
-
-            </motion.div>
-
-            {/* RIGHT COLUMN: The Concentric Stadium Amphitheater with Left-Corner-to-Top Yellow Buffering */}
+            {/* Explore Pillars Button (Exact Home Page Hero Style with Animated Top & Bottom Borders) */}
             <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-7 relative min-h-[480px] sm:min-h-[580px] lg:min-h-[640px] flex items-center justify-center overflow-visible"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="pt-2"
             >
-              {/* STADIUM CONTAINER */}
-              <div className="relative w-full h-full min-h-[480px] sm:min-h-[580px] lg:min-h-[640px] rounded-3xl overflow-hidden border border-white/10 bg-[#090A0E]/80 backdrop-blur-xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.9)]">
-                
-                {/* 1. Yellow Buffering Light Beam (Sweeps continuously from Left Corner to Top) */}
-                <div 
-                  className="absolute -bottom-24 -left-24 w-[420px] h-[420px] sm:w-[540px] sm:h-[540px] rounded-full bg-gradient-to-tr from-hq-yellow/40 via-[#FFE566]/25 to-transparent blur-[90px] pointer-events-none animate-stadium-glow" 
-                />
+              <a 
+                href="#pillars-detail" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('pillars-detail')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="group relative inline-flex items-center justify-between gap-8 py-3.5 px-2 font-display font-medium text-xs tracking-[0.2em] text-white hover:text-hq-yellow transition-colors duration-300 uppercase cursor-pointer"
+              >
+                {/* Top border line: 1.25px, white by default, on hover width decreases to 20% at right edge and turns theme yellow */}
+                <span className="absolute top-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
 
-                {/* Secondary ambient top-right return glow */}
-                <div 
-                  className="absolute -top-16 -right-16 w-[360px] h-[360px] rounded-full bg-hq-yellow/[0.06] blur-[120px] pointer-events-none" 
-                />
+                <span className="relative z-10 font-semibold tracking-widest">EXPLORE PILLARS</span>
 
-                {/* 2. Concentric Stadium Wave SVG System */}
                 <svg 
-                  viewBox="0 0 1100 700" 
-                  preserveAspectRatio="xMidYMid slice"
-                  className="absolute inset-0 w-full h-full pointer-events-none select-none"
+                  className="w-[22px] h-[11px] inline-block transition-transform duration-300 group-hover:translate-x-1.5 flex-shrink-0" 
+                  viewBox="0 0 20 10" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <defs>
-                    {/* Linear Gradient for Stroke Buffering from Left Corner (0%, 100%) to Top (75%, 0%) */}
-                    <linearGradient id="bufferStrokeGrad" x1="0%" y1="100%" x2="75%" y2="0%">
-                      <stop offset="0%" stopColor="#FFCC00" stopOpacity="0.95" />
-                      <stop offset="35%" stopColor="#FFE566" stopOpacity="0.85" />
-                      <stop offset="65%" stopColor="#FFCC00" stopOpacity="0.3" />
-                      <stop offset="100%" stopColor="#FFCC00" stopOpacity="0.05" />
-                    </linearGradient>
-
-                    {/* Radial Fill Gradients for Stadium Bands */}
-                    <radialGradient id="stadiumFillGrad" cx="72%" cy="74%" r="85%">
-                      <stop offset="0%" stopColor="#FFCC00" stopOpacity="0.14" />
-                      <stop offset="40%" stopColor="#FFCC00" stopOpacity="0.06" />
-                      <stop offset="80%" stopColor="#090A0E" stopOpacity="0.9" />
-                    </radialGradient>
-                  </defs>
-
-                  {/* Concentric Stadium Capsules (Center origin at cx: 780, cy: 520) */}
-                  {[
-                    { id: 7, w: 1600, h: 760, rx: 380, fill: 'rgba(255,204,0,0.015)', stroke: 'rgba(255,204,0,0.12)', dash: '180 600', delay: '0s' },
-                    { id: 6, w: 1360, h: 630, rx: 315, fill: 'rgba(255,204,0,0.025)', stroke: 'rgba(255,204,0,0.16)', dash: '200 550', delay: '0.4s' },
-                    { id: 5, w: 1140, h: 510, rx: 255, fill: 'rgba(255,204,0,0.035)', stroke: 'rgba(255,204,0,0.22)', dash: '220 500', delay: '0.8s' },
-                    { id: 4, w: 920, h: 400, rx: 200, fill: 'rgba(255,204,0,0.045)', stroke: 'rgba(255,204,0,0.28)', dash: '240 450', delay: '1.2s' },
-                    { id: 3, w: 720, h: 300, rx: 150, fill: 'rgba(255,204,0,0.06)', stroke: 'rgba(255,204,0,0.35)', dash: '260 400', delay: '1.6s' },
-                    { id: 2, w: 520, h: 210, rx: 105, fill: 'rgba(255,204,0,0.08)', stroke: 'rgba(255,204,0,0.45)', dash: '280 350', delay: '2.0s' },
-                    { id: 1, w: 350, h: 130, rx: 65, fill: 'url(#stadiumFillGrad)', stroke: 'rgba(255,204,0,0.65)', dash: '300 300', delay: '2.4s' },
-                  ].map((tier) => {
-                    const cx = 780;
-                    const cy = 520;
-                    const x = cx - tier.w / 2;
-                    const y = cy - tier.h / 2;
-                    return (
-                      <g key={tier.id}>
-                        {/* Static Base Stadium Band */}
-                        <rect
-                          x={x}
-                          y={y}
-                          width={tier.w}
-                          height={tier.h}
-                          rx={tier.rx}
-                          fill={tier.fill}
-                          stroke={tier.stroke}
-                          strokeWidth="1.2"
-                        />
-                        {/* Dynamic Buffering Light Beam Tracing from Left Corner to Top */}
-                        <rect
-                          x={x}
-                          y={y}
-                          width={tier.w}
-                          height={tier.h}
-                          rx={tier.rx}
-                          fill="none"
-                          stroke="url(#bufferStrokeGrad)"
-                          strokeWidth="2.2"
-                          strokeDasharray={tier.dash}
-                          className="animate-stadium-stroke"
-                          style={{ animationDelay: tier.delay }}
-                        />
-                      </g>
-                    );
-                  })}
+                  <line x1="0" y1="5" x2="20" y2="5" stroke="currentColor" strokeWidth="1.2" />
+                  <polyline points="15 1, 20 5, 15 9" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
 
-                {/* 3. Top Header Bar inside Bento: 5 Pillars Interactive Selector */}
-                <div className="absolute top-4 sm:top-6 left-4 sm:left-6 right-4 sm:right-6 z-20 flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-white/10">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-hq-yellow animate-pulse" />
-                    <span className="font-display font-semibold text-xs uppercase tracking-widest text-white/90">
-                      The 5 Pillars of Flourishing
-                    </span>
-                  </div>
-                  
-                  {/* Interactive Pillar Chips */}
-                  <div className="flex items-center gap-1.5 overflow-x-auto py-0.5">
-                    {Object.keys(pillars).map((key) => {
-                      const p = pillars[key];
-                      const Icon = p.icon;
-                      const isActive = activePillar === key;
-                      return (
-                        <button
-                          key={key}
-                          onClick={() => setActivePillar(key)}
-                          className={
-                            "px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-mono uppercase tracking-wider transition-all flex items-center gap-1.5 cursor-pointer " +
-                            (isActive
-                              ? "bg-hq-yellow text-black font-bold shadow-[0_0_15px_rgba(255,204,0,0.5)] scale-105"
-                              : "bg-white/[0.04] text-white/70 hover:bg-white/[0.08] hover:text-white border border-white/10")
-                          }
-                        >
-                          <Icon className="w-3 h-3" />
-                          <span>{key}</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* 4. Active Pillar Dynamic Floating Card */}
-                <div className="absolute top-20 sm:top-24 left-4 sm:left-6 max-w-[280px] sm:max-w-[340px] z-20 pointer-events-none">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={activePillar}
-                      initial={{ opacity: 0, x: -12 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: 12 }}
-                      transition={{ duration: 0.3 }}
-                      className="p-3.5 sm:p-4 rounded-2xl bg-black/75 border border-hq-yellow/30 backdrop-blur-md shadow-xl"
-                    >
-                      <div className="flex items-center justify-between mb-1.5">
-                        <span className="font-mono text-[10px] uppercase font-bold text-hq-yellow flex items-center gap-1.5">
-                          <ActivePillarIcon className="w-3.5 h-3.5" />
-                          <span>{pillars[activePillar].title}</span>
-                        </span>
-                        <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-hq-yellow/20 text-hq-yellow border border-hq-yellow/40">
-                          {pillars[activePillar].metric}
-                        </span>
-                      </div>
-                      <p className="text-xs text-white/80 font-body line-clamp-2 leading-relaxed">
-                        {pillars[activePillar].summary}
-                      </p>
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
-
-                {/* 5. Center Glowing Pill Button (Pinterest 'BROWSE APPS' Match) */}
-                <div className="absolute right-8 sm:right-12 md:right-16 bottom-8 sm:bottom-12 z-30 flex flex-col items-end gap-2">
-                  <div className="text-[10px] font-mono text-hq-yellow/80 uppercase tracking-widest hidden sm:block">
-                    ● Center Core
-                  </div>
-                  <a
-                    href="#pillars-detail"
-                    className="group relative inline-flex items-center gap-3 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full bg-white hover:bg-hq-yellow text-black font-display font-bold text-xs sm:text-sm uppercase tracking-widest shadow-[0_0_40px_rgba(255,204,0,0.45),0_15px_30px_rgba(0,0,0,0.8)] hover:shadow-[0_0_60px_rgba(255,204,0,0.85)] hover:scale-105 active:scale-95 transition-all duration-300"
-                  >
-                    <span>EXPLORE 5 PILLARS</span>
-                    <ArrowRight className="w-4 h-4 text-black group-hover:translate-x-1.5 transition-transform" />
-                  </a>
-                </div>
-
-                {/* 6. Bottom-Left Buffering Stream Indicator */}
-                <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 z-20 flex items-center gap-2.5 px-3 sm:px-4 py-2 rounded-full bg-black/70 border border-hq-yellow/30 backdrop-blur-md shadow-lg pointer-events-none">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-hq-yellow opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-hq-yellow" />
-                  </span>
-                  <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-wider text-hq-yellow font-semibold">
-                    Buffering: Left Corner → Top
-                  </span>
-                  <div className="w-14 sm:w-20 h-1.5 rounded-full bg-white/10 overflow-hidden relative">
-                    <div className="h-full bg-gradient-to-r from-hq-yellow to-[#FFE566] rounded-full animate-pulse" style={{ width: '85%' }} />
-                  </div>
-                </div>
-
-              </div>
+                {/* Bottom border line: 1.25px, white by default, on hover width decreases to 20% at right edge and turns theme yellow */}
+                <span className="absolute bottom-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
+              </a>
             </motion.div>
 
           </div>
         </div>
       </section>
 
-      {/* 4 Core Levers of Enterprise Transformation (Page 2 of Profile) */}
+            {/* 4 Core Levers of Enterprise Transformation (Page 2 of Profile) */}
       <section className="py-16 px-6 md:px-12 bg-hq-yellow text-hq-black border-b border-hq-black">
         <div className="max-w-7xl mx-auto">
           <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight mb-8">
