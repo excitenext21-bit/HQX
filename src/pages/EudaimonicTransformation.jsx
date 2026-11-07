@@ -193,7 +193,7 @@ export default function EudaimonicTransformation() {
           - 3-line paragraph: text-sm sm:text-base text-white/80 font-light leading-relaxed
           - Button: SINGLE clean, glowing pill button under the copy
           ========================================================================= */}
-      <section className="bg-black text-white min-h-[100svh] lg:h-screen lg:min-h-[660px] lg:max-h-[1080px] flex items-center relative overflow-hidden w-full pt-20 sm:pt-24 pb-12 sm:pb-16 select-none">
+      <section className="bg-black text-white min-h-[100svh] lg:h-screen lg:max-h-screen flex flex-col justify-between pt-20 sm:pt-22 lg:pt-16 pb-0 relative overflow-hidden w-full select-none">
         
         {/* Subtle Stardust Twinkle (Soft 1.5px dots, clean and minimal) */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-10">
@@ -228,23 +228,23 @@ export default function EudaimonicTransformation() {
           ))}
         </div>
 
-        {/* Ambient Warm Golden Yellow Organic Light Orbs (Floating & Breathing on pure black) */}
+        {/* Ambient Warm Golden Yellow Organic Light Orbs (Floating & Breathing with heavy blur) */}
         <motion.div 
           animate={{
-            scale: [1, 1.18, 1],
-            opacity: [0.20, 0.38, 0.20],
+            scale: [1, 1.2, 1],
+            opacity: [0.18, 0.32, 0.18],
           }}
           transition={{
             duration: 8,
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="absolute top-1/2 right-[10%] -translate-y-1/2 w-[650px] h-[650px] rounded-full bg-[#FFCC00] blur-[170px] pointer-events-none z-0" 
+          className="absolute top-1/2 right-[5%] -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#FFCC00] blur-[200px] pointer-events-none z-0" 
         />
         <motion.div 
           animate={{
-            scale: [1.1, 0.95, 1.1],
-            opacity: [0.12, 0.26, 0.12],
+            scale: [1.1, 0.92, 1.1],
+            opacity: [0.10, 0.22, 0.10],
           }}
           transition={{
             duration: 9.5,
@@ -252,7 +252,7 @@ export default function EudaimonicTransformation() {
             ease: 'easeInOut',
             delay: 1.5,
           }}
-          className="absolute bottom-[-10%] right-[30%] w-[450px] h-[450px] rounded-full bg-amber-500 blur-[150px] pointer-events-none z-0" 
+          className="absolute bottom-[-15%] right-[20%] w-[550px] h-[550px] rounded-full bg-amber-500 blur-[180px] pointer-events-none z-0" 
         />
 
         {/* Left Side Vertical Text: EUDAIMONIC TRANSFORMATION with Yellow Arrow (Clean, NO divider line) */}
@@ -268,82 +268,85 @@ export default function EudaimonicTransformation() {
           </div>
         </div>
 
-        {/* BACKGROUND ANIMATION LAYER: LINELESS CONCENTRIC GOLDEN YELLOW STADIUM WAVES */}
-        {/* Completely line-free (stroke: none, strokeWidth: 0), smooth feathered gradient fills in shades of yellow */}
+        {/* BACKGROUND ANIMATION LAYER: ULTRA-DIFFUSED GOLDEN YELLOW STADIUM WAVES */}
+        {/* Soft, velvety Gaussian blur (stdDeviation 130-160px) ensures ZERO visible rounded edges or contours */}
         <div className="absolute inset-0 pointer-events-none select-none overflow-hidden z-10 flex items-center justify-end">
           <svg
-            viewBox="0 0 1200 680"
+            viewBox="0 0 1400 750"
             preserveAspectRatio="xMidYMid slice"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover filter blur-[20px]"
           >
             <defs>
               {/* Stadium Wave Gradient 6 (Outermost Deep Bronze/Amber fading into pure black) */}
               <linearGradient id="yellowWave6" x1="1" y1="0.5" x2="0" y2="0.5">
-                <stop offset="0%" stopColor="#261700" stopOpacity="0.45" />
-                <stop offset="65%" stopColor="#140a00" stopOpacity="0.20" />
+                <stop offset="0%" stopColor="#261700" stopOpacity="0.40" />
+                <stop offset="60%" stopColor="#140a00" stopOpacity="0.15" />
                 <stop offset="100%" stopColor="#000000" stopOpacity="0" />
               </linearGradient>
 
               {/* Stadium Wave Gradient 5 */}
               <linearGradient id="yellowWave5" x1="1" y1="0.5" x2="0" y2="0.5">
-                <stop offset="0%" stopColor="#4d2c00" stopOpacity="0.55" />
-                <stop offset="65%" stopColor="#261400" stopOpacity="0.25" />
+                <stop offset="0%" stopColor="#4d2c00" stopOpacity="0.50" />
+                <stop offset="60%" stopColor="#261400" stopOpacity="0.20" />
                 <stop offset="100%" stopColor="#000000" stopOpacity="0" />
               </linearGradient>
 
               {/* Stadium Wave Gradient 4 */}
               <linearGradient id="yellowWave4" x1="1" y1="0.5" x2="0" y2="0.5">
-                <stop offset="0%" stopColor="#7a4700" stopOpacity="0.65" />
-                <stop offset="65%" stopColor="#402300" stopOpacity="0.30" />
+                <stop offset="0%" stopColor="#7a4700" stopOpacity="0.60" />
+                <stop offset="60%" stopColor="#402300" stopOpacity="0.25" />
                 <stop offset="100%" stopColor="#000000" stopOpacity="0" />
               </linearGradient>
 
               {/* Stadium Wave Gradient 3 */}
               <linearGradient id="yellowWave3" x1="1" y1="0.5" x2="0" y2="0.5">
-                <stop offset="0%" stopColor="#ab6b00" stopOpacity="0.75" />
-                <stop offset="65%" stopColor="#633b00" stopOpacity="0.38" />
+                <stop offset="0%" stopColor="#ab6b00" stopOpacity="0.70" />
+                <stop offset="60%" stopColor="#633b00" stopOpacity="0.30" />
                 <stop offset="100%" stopColor="#000000" stopOpacity="0" />
               </linearGradient>
 
               {/* Stadium Wave Gradient 2 */}
               <linearGradient id="yellowWave2" x1="1" y1="0.5" x2="0" y2="0.5">
-                <stop offset="0%" stopColor="#d98c00" stopOpacity="0.82" />
-                <stop offset="65%" stopColor="#8a5400" stopOpacity="0.45" />
+                <stop offset="0%" stopColor="#d98c00" stopOpacity="0.75" />
+                <stop offset="60%" stopColor="#8a5400" stopOpacity="0.35" />
                 <stop offset="100%" stopColor="#000000" stopOpacity="0" />
               </linearGradient>
 
               {/* Stadium Wave Gradient 1 */}
               <linearGradient id="yellowWave1" x1="1" y1="0.5" x2="0" y2="0.5">
-                <stop offset="0%" stopColor="#f5aa00" stopOpacity="0.90" />
-                <stop offset="60%" stopColor="#b87a00" stopOpacity="0.55" />
-                <stop offset="85%" stopColor="#7a4b00" stopOpacity="0.20" />
+                <stop offset="0%" stopColor="#f5aa00" stopOpacity="0.80" />
+                <stop offset="55%" stopColor="#b87a00" stopOpacity="0.45" />
+                <stop offset="85%" stopColor="#7a4b00" stopOpacity="0.15" />
                 <stop offset="100%" stopColor="#000000" stopOpacity="0" />
               </linearGradient>
 
-              {/* Stadium Wave Gradient 0 (Innermost Core, Highly Diffused Golden Yellow) */}
+              {/* Stadium Wave Gradient 0 (Innermost Core, Diffused Golden Light Fading Smoothly to Edge) */}
               <linearGradient id="yellowWave0" x1="1" y1="0.5" x2="0" y2="0.5">
-                <stop offset="0%" stopColor="#FFF4B8" stopOpacity="0.95" />
-                <stop offset="45%" stopColor="#FFCC00" stopOpacity="0.75" />
-                <stop offset="75%" stopColor="#E5A800" stopOpacity="0.35" />
-                <stop offset="92%" stopColor="#996500" stopOpacity="0.10" />
+                <stop offset="0%" stopColor="#FFF2A0" stopOpacity="0.85" />
+                <stop offset="35%" stopColor="#FFCC00" stopOpacity="0.65" />
+                <stop offset="65%" stopColor="#E5A800" stopOpacity="0.30" />
+                <stop offset="85%" stopColor="#996500" stopOpacity="0.08" />
                 <stop offset="100%" stopColor="#000000" stopOpacity="0" />
               </linearGradient>
 
-              {/* High-Diffusion Soft Edge Blur Filter for completely seamless, velvety rounded edges */}
-              <filter id="softFeatherYellow" x="-60%" y="-60%" width="220%" height="220%">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="48" />
+              {/* Deep Diffusion Soft Edge Blur Filters for completely seamless, velvety gradients */}
+              <filter id="softFeatherYellow" x="-100%" y="-100%" width="300%" height="300%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="130" />
+              </filter>
+              <filter id="ultraFeatherYellow" x="-100%" y="-100%" width="300%" height="300%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="160" />
               </filter>
             </defs>
 
-            {/* Lineless Concentric Stadium Capsules Radiating with Staggered Light-to-Dark Breathing Wave & Deep Blur */}
+            {/* Lineless Concentric Stadium Shapes with massive blur to eliminate any rounded edge contour */}
             {[
-              { id: 6, x: 260, y: -160, width: 1200, height: 1360, rx: 680, ry: 680, grad: 'yellowWave6', minOp: 0.22, maxOp: 0.52, delay: 0 },
-              { id: 5, x: 380, y: -60,  width: 1100, height: 1160, rx: 580, ry: 580, grad: 'yellowWave5', minOp: 0.32, maxOp: 0.65, delay: 0.8 },
-              { id: 4, x: 500, y: 40,   width: 1000, height: 960,  rx: 480, ry: 480, grad: 'yellowWave4', minOp: 0.42, maxOp: 0.75, delay: 1.6 },
-              { id: 3, x: 610, y: 140,  width: 900,  height: 760,  rx: 380, ry: 380, grad: 'yellowWave3', minOp: 0.52, maxOp: 0.84, delay: 2.4 },
-              { id: 2, x: 710, y: 230,  width: 800,  height: 580,  rx: 290, ry: 290, grad: 'yellowWave2', minOp: 0.60, maxOp: 0.90, delay: 3.2 },
-              { id: 1, x: 800, y: 320,  width: 700,  height: 400,  rx: 200, ry: 200, grad: 'yellowWave1', minOp: 0.68, maxOp: 0.95, delay: 4.0 },
-              { id: 0, x: 880, y: 400,  width: 650,  height: 240,  rx: 120, ry: 120, grad: 'yellowWave0', minOp: 0.76, maxOp: 1.0, delay: 4.8 },
+              { id: 6, x: 200, y: -200, width: 1400, height: 1450, rx: 725, ry: 725, grad: 'yellowWave6', minOp: 0.20, maxOp: 0.45, delay: 0, filter: 'softFeatherYellow' },
+              { id: 5, x: 340, y: -100, width: 1300, height: 1250, rx: 625, ry: 625, grad: 'yellowWave5', minOp: 0.28, maxOp: 0.55, delay: 0.8, filter: 'softFeatherYellow' },
+              { id: 4, x: 480, y: 0,    width: 1200, height: 1050, rx: 525, ry: 525, grad: 'yellowWave4', minOp: 0.36, maxOp: 0.65, delay: 1.6, filter: 'softFeatherYellow' },
+              { id: 3, x: 620, y: 100,  width: 1100, height: 850,  rx: 425, ry: 425, grad: 'yellowWave3', minOp: 0.44, maxOp: 0.72, delay: 2.4, filter: 'softFeatherYellow' },
+              { id: 2, x: 760, y: 200,  width: 1000, height: 680,  rx: 340, ry: 340, grad: 'yellowWave2', minOp: 0.52, maxOp: 0.80, delay: 3.2, filter: 'softFeatherYellow' },
+              { id: 1, x: 880, y: 280,  width: 900,  height: 520,  rx: 260, ry: 260, grad: 'yellowWave1', minOp: 0.60, maxOp: 0.85, delay: 4.0, filter: 'ultraFeatherYellow' },
+              { id: 0, x: 980, y: 350,  width: 850,  height: 400,  rx: 200, ry: 200, grad: 'yellowWave0', minOp: 0.68, maxOp: 0.90, delay: 4.8, filter: 'ultraFeatherYellow' },
             ].map((layer) => (
               <motion.rect
                 key={layer.id}
@@ -354,7 +357,7 @@ export default function EudaimonicTransformation() {
                 rx={layer.rx}
                 ry={layer.ry}
                 fill={`url(#${layer.grad})`}
-                filter="url(#softFeatherYellow)"
+                filter={`url(#${layer.filter})`}
                 animate={{
                   opacity: [layer.minOp, layer.maxOp, layer.minOp],
                 }}
@@ -369,11 +372,13 @@ export default function EudaimonicTransformation() {
           </svg>
 
           {/* Smooth left-edge void blend into pure black */}
-          <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-black via-black/85 to-transparent pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-3/5 bg-gradient-to-r from-black via-black/85 to-transparent pointer-events-none" />
+          {/* Subtle bottom gradient to ensure zero harsh cutoff before the docked ticker strip */}
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black via-black/60 to-transparent pointer-events-none" />
         </div>
 
-        {/* Main Content Area */}
-        <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 w-full relative z-20">
+        {/* Main Content Area - Vertically centered between header and docked strip */}
+        <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 w-full flex-1 flex items-center py-4 lg:py-6 relative z-20">
           
           {/* Headline, Paragraph, and the SINGLE Explore Pillars Button */}
           <div className="max-w-2xl">
@@ -384,7 +389,7 @@ export default function EudaimonicTransformation() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight text-white leading-[1.15] mb-5"
+              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight text-white leading-[1.15] mb-4 sm:mb-5"
             >
               The new <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-100 to-white font-bold">
@@ -398,7 +403,7 @@ export default function EudaimonicTransformation() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-body text-sm sm:text-base text-white/80 font-light leading-relaxed mb-8 max-w-xl"
+              className="font-body text-xs sm:text-sm md:text-base text-white/80 font-light leading-relaxed mb-6 sm:mb-8 max-w-xl"
             >
               An executive architecture engineered to cultivate Aristotelian eudaimonia—translating employee vitality, purpose, and behavioral neuroscience into quantified organizational output and sustainable enterprise flourishing.
             </motion.p>
@@ -408,7 +413,7 @@ export default function EudaimonicTransformation() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="pt-2"
+              className="pt-1"
             >
               <a 
                 href="#pillars-detail" 
@@ -416,7 +421,7 @@ export default function EudaimonicTransformation() {
                   e.preventDefault();
                   document.getElementById('pillars-detail')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="group inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-white text-black font-display font-semibold text-xs tracking-[0.18em] uppercase hover:bg-hq-yellow hover:text-hq-black transition-all duration-300 shadow-[0_0_25px_rgba(255,255,255,0.35),0_0_50px_rgba(255,204,0,0.3)] hover:shadow-[0_0_35px_rgba(255,204,0,0.65),0_0_70px_rgba(255,204,0,0.45)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                className="group inline-flex items-center gap-3 px-7 sm:px-8 py-3 sm:py-3.5 rounded-full bg-white text-black font-display font-semibold text-xs tracking-[0.18em] uppercase hover:bg-hq-yellow hover:text-hq-black transition-all duration-300 shadow-[0_0_25px_rgba(255,255,255,0.35),0_0_50px_rgba(255,204,0,0.3)] hover:shadow-[0_0_35px_rgba(255,204,0,0.65),0_0_70px_rgba(255,204,0,0.45)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
               >
                 <span>EXPLORE PILLARS</span>
                 <ArrowRight className="w-3.5 h-3.5 text-black transition-transform duration-300 group-hover:translate-x-1" />
@@ -426,60 +431,60 @@ export default function EudaimonicTransformation() {
           </div>
 
         </div>
-      </section>
 
-            {/* DOCKED ENTERPRISE LEVERS STRIP (MATCHING FOUNDER SECTION BELOW HERO) */}
-      <div className="w-full bg-[#0A0A0A] text-white/80 py-4 sm:py-5 px-6 border-t border-b border-white/10 overflow-hidden relative z-20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-5 md:gap-4">
-          
-          {/* Engagement */}
-          <div className="flex flex-col gap-1 max-w-[260px]">
-            <span className="text-hq-yellow font-bold font-mono text-xs uppercase tracking-widest">
-              Engagement
-            </span>
-            <span className="text-white/70 text-xs font-light leading-snug">
-              Fostering deep psychological connection with daily enterprise missions.
-            </span>
+        {/* DOCKED 4 ENTERPRISE LEVERS STRIP (INSIDE HERO SECTION, FIT TO SCREEN AT BOTTOM LIKE FOUNDER HERO) */}
+        <div className="w-full bg-[#0A0A0A] text-white/80 py-3 sm:py-3.5 px-6 sm:px-10 border-t border-white/10 overflow-hidden relative z-20 mt-auto">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-4">
+            
+            {/* Engagement */}
+            <div className="flex flex-col gap-0.5 max-w-[270px]">
+              <span className="text-hq-yellow font-bold font-mono text-xs uppercase tracking-widest">
+                Engagement
+              </span>
+              <span className="text-white/70 text-[11px] sm:text-xs font-light leading-snug">
+                Fostering deep psychological connection with daily enterprise missions.
+              </span>
+            </div>
+
+            <span className="text-white/20 hidden md:inline text-sm">•</span>
+
+            {/* Productivity */}
+            <div className="flex flex-col gap-0.5 max-w-[270px]">
+              <span className="text-hq-yellow font-bold font-mono text-xs uppercase tracking-widest">
+                Productivity
+              </span>
+              <span className="text-white/70 text-[11px] sm:text-xs font-light leading-snug">
+                Optimizing attentional architecture and eliminating cognitive friction.
+              </span>
+            </div>
+
+            <span className="text-white/20 hidden md:inline text-sm">•</span>
+
+            {/* Collaboration */}
+            <div className="flex flex-col gap-0.5 max-w-[270px]">
+              <span className="text-hq-yellow font-bold font-mono text-xs uppercase tracking-widest">
+                Collaboration
+              </span>
+              <span className="text-white/70 text-[11px] sm:text-xs font-light leading-snug">
+                Eradicating departmental silos through radical trust and camaraderie.
+              </span>
+            </div>
+
+            <span className="text-white/20 hidden md:inline text-sm">•</span>
+
+            {/* Profitability */}
+            <div className="flex flex-col gap-0.5 max-w-[270px]">
+              <span className="text-hq-yellow font-bold font-mono text-xs uppercase tracking-widest">
+                Profitability
+              </span>
+              <span className="text-white/70 text-[11px] sm:text-xs font-light leading-snug">
+                Translating employee vitality and resilience directly into bottom-line gains.
+              </span>
+            </div>
+
           </div>
-
-          <span className="text-white/20 hidden md:inline text-sm">•</span>
-
-          {/* Productivity */}
-          <div className="flex flex-col gap-1 max-w-[260px]">
-            <span className="text-hq-yellow font-bold font-mono text-xs uppercase tracking-widest">
-              Productivity
-            </span>
-            <span className="text-white/70 text-xs font-light leading-snug">
-              Optimizing attentional architecture and eliminating cognitive friction.
-            </span>
-          </div>
-
-          <span className="text-white/20 hidden md:inline text-sm">•</span>
-
-          {/* Collaboration */}
-          <div className="flex flex-col gap-1 max-w-[260px]">
-            <span className="text-hq-yellow font-bold font-mono text-xs uppercase tracking-widest">
-              Collaboration
-            </span>
-            <span className="text-white/70 text-xs font-light leading-snug">
-              Eradicating departmental silos through radical trust and camaraderie.
-            </span>
-          </div>
-
-          <span className="text-white/20 hidden md:inline text-sm">•</span>
-
-          {/* Profitability */}
-          <div className="flex flex-col gap-1 max-w-[260px]">
-            <span className="text-hq-yellow font-bold font-mono text-xs uppercase tracking-widest">
-              Profitability
-            </span>
-            <span className="text-white/70 text-xs font-light leading-snug">
-              Translating employee vitality and resilience directly into bottom-line gains.
-            </span>
-          </div>
-
         </div>
-      </div>
+      </section>
 
       {/* The 5 Pillars of Enterprise Sovereignty - Full Interactive Tabs */}
       <section id="pillars-detail" className="py-20 px-6 md:px-12 bg-hq-white text-hq-black border-b border-hq-black/10">
