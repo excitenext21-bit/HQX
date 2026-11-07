@@ -182,20 +182,19 @@ export default function EudaimonicTransformation() {
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
       {/* =========================================================================
-          HERO BANNER - FIT-TO-SCREEN PURPLE STADIUM TUNNEL (MATCHING REFERENCE IMAGE)
+          HERO BANNER - 3D HOLOGRAPHIC NEURAL BRAIN (EXACT MATCH TO PINTEREST PIN)
+          Reference: https://in.pinterest.com/pin/683280574723568563/ (Dala Brain Animation)
           - Screen-fitting height: min-h-[100svh] lg:h-screen lg:min-h-[660px] lg:max-h-[1080px]
-          - Yellow color completely removed (pure purple, violet, indigo, and white)
-          - Left Vertical Text: EUDAIMONIC TRANSFORMATION with Arrow
-          - Heading text properties matching About Us hero:
-            font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight text-white leading-[1.15] mb-5
-          - 3-line paragraph matching About Us font-body style
-          - Explore Pillars button with Home Hero top/bottom animated lines
-          - Concentric Stadium boxes with slow light-to-dark breathing glow animation
+          - Video Background: High-Definition 3D Rotating Holographic Brain Loop
+          - Left Vertical Text: EUDAIMONIC TRANSFORMATION with Arrow (Matching About Us)
+          - Heading: text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight (About Us text properties)
+          - 3-line paragraph: text-sm sm:text-base text-white/80 font-light leading-relaxed
+          - Button: Explore Pillars with Home hero top/bottom animated lines
           ========================================================================= */}
-      <section className="bg-[#070814] text-white min-h-[100svh] lg:h-screen lg:min-h-[660px] lg:max-h-[1080px] flex items-center border-b border-white/10 relative overflow-hidden w-full pt-20 sm:pt-24 pb-12 sm:pb-16">
+      <section className="bg-[#050608] text-white min-h-[100svh] lg:h-screen lg:min-h-[660px] lg:max-h-[1080px] flex items-center border-b border-white/10 relative overflow-hidden w-full pt-20 sm:pt-24 pb-12 sm:pb-16">
         
         {/* Subtle Star Dust Particle Field */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-10">
           {[
             { top: '10%', left: '8%', size: 2, delay: '0s' },
             { top: '18%', left: '22%', size: 2.5, delay: '1.2s' },
@@ -231,9 +230,9 @@ export default function EudaimonicTransformation() {
         </div>
 
         {/* Geometric Micro-Grid Backdrop */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-10" />
 
-        {/* Left Side Vertical Text: EUDAIMONIC TRANSFORMATION with Arrow (Matching About Us Hero Style - Zero Yellow) */}
+        {/* Left Side Vertical Text: EUDAIMONIC TRANSFORMATION with Arrow (Matching About Us Hero Style) */}
         <div className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex flex-col justify-center items-center pointer-events-none select-none">
           <div 
             className="flex items-center gap-3 sm:gap-4"
@@ -247,91 +246,36 @@ export default function EudaimonicTransformation() {
           </div>
         </div>
 
-        {/* Ambient Radiant Glow (Purple & Indigo - Matching Reference Image) */}
+        {/* Ambient Atmospheric Glows */}
         <div 
-          className="absolute -bottom-24 -left-24 w-[500px] h-[500px] sm:w-[650px] sm:h-[650px] rounded-full bg-gradient-to-tr from-purple-700/30 via-indigo-600/20 to-transparent blur-[120px] pointer-events-none animate-stadium-glow" 
+          className="absolute top-1/2 right-[18%] -translate-y-1/2 w-[550px] h-[550px] rounded-full bg-purple-600/[0.14] blur-[150px] pointer-events-none" 
         />
         <div 
-          className="absolute -top-20 right-10 w-[400px] h-[400px] rounded-full bg-violet-600/[0.10] blur-[140px] pointer-events-none" 
+          className="absolute -bottom-24 -left-24 w-[450px] h-[450px] rounded-full bg-indigo-600/[0.10] blur-[130px] pointer-events-none" 
         />
 
-        {/* Concentric Stadium Wave SVG System (Exact match to given purple reference image) */}
-        <div className="absolute inset-y-0 right-0 w-full lg:w-3/4 pointer-events-none select-none overflow-hidden flex items-center justify-end">
-          <svg 
-            viewBox="0 0 1100 700" 
-            preserveAspectRatio="xMidYMid slice"
-            className="w-full h-full min-h-[550px] sm:min-h-[650px] opacity-95"
+        {/* 3D HOLOGRAPHIC NEURAL BRAIN VIDEO ANIMATION (Exact match to Pinterest Pin) */}
+        <div className="absolute inset-y-0 right-0 w-full lg:w-[65%] xl:w-[70%] h-full pointer-events-none select-none overflow-hidden flex items-center justify-center lg:justify-end">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/images/eudaimonia_brain_poster.jpg"
+            className="w-full h-full object-cover lg:object-contain object-center lg:object-right filter contrast-125 brightness-105 opacity-90"
           >
-            <defs>
-              {/* Linear Gradient for Stroke Buffering from Left Corner (0%, 100%) to Top (75%, 0%) */}
-              <linearGradient id="bufferStrokeGrad" x1="0%" y1="100%" x2="75%" y2="0%">
-                <stop offset="0%" stopColor="#C4B5FD" stopOpacity="0.95" />
-                <stop offset="35%" stopColor="#A78BFA" stopOpacity="0.85" />
-                <stop offset="65%" stopColor="#818CF8" stopOpacity="0.35" />
-                <stop offset="100%" stopColor="#6366F1" stopOpacity="0.05" />
-              </linearGradient>
+            <source src="/videos/eudaimonia_brain_hero.mp4" type="video/mp4" />
+          </video>
 
-              {/* Radial Fill Gradients for Stadium Bands */}
-              <radialGradient id="stadiumFillGrad" cx="72%" cy="74%" r="85%">
-                <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.55" />
-                <stop offset="45%" stopColor="#6D28D9" stopOpacity="0.25" />
-                <stop offset="85%" stopColor="#070814" stopOpacity="0.95" />
-              </radialGradient>
-            </defs>
-
-            {/* Concentric Stadium Capsules (Stepped from light innermost purple to dark outermost navy with slow glow) */}
-            {[
-              { id: 7, w: 1600, h: 760, rx: 380, fill: 'rgba(99,102,241,0.025)', stroke: 'rgba(167,139,250,0.14)', dash: '180 600', delay: '0s', glowDelay: '0s' },
-              { id: 6, w: 1360, h: 630, rx: 315, fill: 'rgba(124,58,237,0.045)', stroke: 'rgba(167,139,250,0.20)', dash: '200 550', delay: '0.4s', glowDelay: '1.2s' },
-              { id: 5, w: 1140, h: 510, rx: 255, fill: 'rgba(139,92,246,0.07)', stroke: 'rgba(167,139,250,0.28)', dash: '220 500', delay: '0.8s', glowDelay: '2.4s' },
-              { id: 4, w: 920, h: 400, rx: 200, fill: 'rgba(139,92,246,0.10)', stroke: 'rgba(167,139,250,0.36)', dash: '240 450', delay: '1.2s', glowDelay: '3.6s' },
-              { id: 3, w: 720, h: 300, rx: 150, fill: 'rgba(139,92,246,0.15)', stroke: 'rgba(167,139,250,0.48)', dash: '260 400', delay: '1.6s', glowDelay: '4.8s' },
-              { id: 2, w: 520, h: 210, rx: 105, fill: 'rgba(139,92,246,0.22)', stroke: 'rgba(167,139,250,0.65)', dash: '280 350', delay: '2.0s', glowDelay: '6.0s' },
-              { id: 1, w: 350, h: 130, rx: 65, fill: 'url(#stadiumFillGrad)', stroke: 'rgba(196,181,253,0.85)', dash: '300 300', delay: '2.4s', glowDelay: '7.2s' },
-            ].map((tier) => {
-              const cx = 780;
-              const cy = 520;
-              const x = cx - tier.w / 2;
-              const y = cy - tier.h / 2;
-              return (
-                <g 
-                  key={tier.id}
-                  className="animate-stadium-slow-glow"
-                  style={{ animationDelay: tier.glowDelay }}
-                >
-                  {/* Stepped Stadium Band glowing slowly from light to dark */}
-                  <rect
-                    x={x}
-                    y={y}
-                    width={tier.w}
-                    height={tier.h}
-                    rx={tier.rx}
-                    fill={tier.fill}
-                    stroke={tier.stroke}
-                    strokeWidth="1.3"
-                  />
-                  {/* Dynamic Buffering Light Beam Tracing from Left Corner to Top */}
-                  <rect
-                    x={x}
-                    y={y}
-                    width={tier.w}
-                    height={tier.h}
-                    rx={tier.rx}
-                    fill="none"
-                    stroke="url(#bufferStrokeGrad)"
-                    strokeWidth="2.2"
-                    strokeDasharray={tier.dash}
-                    className="animate-stadium-stroke"
-                    style={{ animationDelay: tier.delay }}
-                  />
-                </g>
-              );
-            })}
-          </svg>
+          {/* Smooth edge gradient blends to merge seamlessly with the page void */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050608] via-[#050608]/50 to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#050608] to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#050608] to-transparent pointer-events-none" />
+          <div className="absolute right-0 inset-y-0 w-12 sm:w-20 bg-gradient-to-l from-[#050608] to-transparent pointer-events-none" />
         </div>
 
         {/* Framing Container: Exact Alignment with Left Vertical Margin */}
-        <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 w-full relative z-10">
+        <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 w-full relative z-20">
           <div className="max-w-2xl">
             
             {/* Headline with exact About Us text properties:
@@ -359,7 +303,7 @@ export default function EudaimonicTransformation() {
               An executive architecture engineered to cultivate Aristotelian eudaimonia—translating employee vitality, purpose, and behavioral neuroscience into quantified organizational output and sustainable enterprise flourishing.
             </motion.p>
 
-            {/* Explore Pillars Button (Exact Home Page Hero Style with Animated Top & Bottom Borders - Zero Yellow) */}
+            {/* Explore Pillars Button (Exact Home Page Hero Style with Animated Top & Bottom Borders) */}
             <motion.div 
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
