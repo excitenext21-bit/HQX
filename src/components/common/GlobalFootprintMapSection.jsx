@@ -124,13 +124,6 @@ export default function GlobalFootprintMapSection() {
   const [activeHub, setActiveHub] = useState(null);
   const [activeState, setActiveState] = useState(null);
 
-  const handleStateSelect = (state) => {
-    setActiveState(state);
-    if (viewMode !== 'india') {
-      setViewMode('india');
-    }
-  };
-
   return (
     <section className="py-16 md:py-24 px-6 md:px-12 bg-[#FAF8F5] text-[#0A0A0A] relative overflow-visible border-t border-b border-black/5">
       {/* Subtle Studio Ambient Highlight */}
@@ -538,85 +531,6 @@ export default function GlobalFootprintMapSection() {
             )}
           </AnimatePresence>
 
-        </div>
-
-        {/* ========================================================
-            4. 16 INDIAN STATES INTERACTIVE SELECTOR (Integrated Below Map)
-           ======================================================== */}
-        <div className="mt-8 pt-6 border-t border-black/10">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 mb-4">
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-hq-yellow" />
-              <h3 className="font-display text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0A0A0A]">
-                Pan-India Footprint Across 16 States
-              </h3>
-            </div>
-            <div className="text-xs font-mono text-[#0A0A0A]/50">
-              Click any state to zoom in & view what was organized
-            </div>
-          </div>
-
-          <div className="flex flex-wrap gap-2 sm:gap-2.5">
-            {indiaStatesData.map((state) => {
-              const isSelected = activeState?.id === state.id;
-              return (
-                <button
-                  key={state.id}
-                  onClick={() => handleStateSelect(state)}
-                  className={`px-3 py-1.5 text-xs font-mono uppercase tracking-wider rounded-lg border transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
-                    isSelected 
-                      ? 'bg-[#1E1A17] text-white border-[#1E1A17] shadow-sm' 
-                      : (state.isHQ 
-                          ? 'bg-white hover:bg-black/5 text-[#0A0A0A] border-hq-yellow/80 font-bold' 
-                          : 'bg-white hover:bg-[#1E1A17] hover:text-white text-[#0A0A0A]/80 border-black/10')
-                  }`}
-                >
-                  <span>{state.shortName}</span>
-                  {state.isHQ && (
-                    <span className={`text-[8px] px-1 py-0.2 rounded font-bold ${isSelected ? 'bg-hq-yellow text-black' : 'bg-hq-yellow text-black'}`}>
-                      HQ
-                    </span>
-                  )}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Active State Detail Panel when a state is selected below */}
-          <AnimatePresence>
-            {activeState && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="mt-4 p-4 rounded-xl bg-white border border-black/10 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
-              >
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="font-display font-semibold text-sm text-[#0A0A0A]">
-                      {activeState.name} ({activeState.city})
-                    </span>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-black/5 text-black/70">
-                      {activeState.category}
-                    </span>
-                  </div>
-                  <p className="font-body text-xs text-[#0A0A0A]/70 leading-relaxed">
-                    <strong className="text-[#0A0A0A]">Programs Organized:</strong> {activeState.programs}
-                  </p>
-                  <p className="font-body text-xs text-[#0A0A0A]/60 leading-relaxed">
-                    <strong className="text-[#0A0A0A]">Institutions & Clients:</strong> {activeState.clients}
-                  </p>
-                </div>
-                
-                <button
-                  onClick={() => setActiveState(null)}
-                  className="shrink-0 text-xs font-mono text-black/50 hover:text-black underline cursor-pointer"
-                >
-                  Close Detail
-                </button>
-              </motion.div>
-            )}
-          </AnimatePresence>
         </div>
 
       </div>
