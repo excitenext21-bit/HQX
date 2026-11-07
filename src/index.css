@@ -605,11 +605,11 @@ p {
 @keyframes stadiumSlowGlow {
   0%, 100% {
     opacity: 0.95;
-    filter: drop-shadow(0 0 25px rgba(255, 204, 0, 0.5));
+    filter: drop-shadow(0 0 25px rgba(167, 139, 250, 0.55));
   }
   50% {
     opacity: 0.22;
-    filter: drop-shadow(0 0 3px rgba(255, 204, 0, 0.05));
+    filter: drop-shadow(0 0 3px rgba(139, 92, 246, 0.08));
   }
 }
 

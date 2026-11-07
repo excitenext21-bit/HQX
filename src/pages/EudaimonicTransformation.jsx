@@ -182,15 +182,17 @@ export default function EudaimonicTransformation() {
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
       {/* =========================================================================
-          HERO BANNER - BLACK & YELLOW STADIUM TUNNEL (MATCHING REFERENCE IMAGE)
+          HERO BANNER - FIT-TO-SCREEN PURPLE STADIUM TUNNEL (MATCHING REFERENCE IMAGE)
+          - Screen-fitting height: min-h-[100svh] lg:h-screen lg:min-h-[660px] lg:max-h-[1080px]
+          - Yellow color completely removed (pure purple, violet, indigo, and white)
           - Left Vertical Text: EUDAIMONIC TRANSFORMATION with Arrow
           - Heading text properties matching About Us hero:
             font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight text-white leading-[1.15] mb-5
           - 3-line paragraph matching About Us font-body style
           - Explore Pillars button with Home Hero top/bottom animated lines
-          - Concentric Stadium wave with slow light-to-dark breathing glow animation
+          - Concentric Stadium boxes with slow light-to-dark breathing glow animation
           ========================================================================= */}
-      <section className="bg-[#060709] text-white pt-28 sm:pt-36 pb-20 sm:pb-28 px-6 md:px-12 border-b border-white/10 relative overflow-hidden min-h-[84vh] flex items-center w-full">
+      <section className="bg-[#070814] text-white min-h-[100svh] lg:h-screen lg:min-h-[660px] lg:max-h-[1080px] flex items-center border-b border-white/10 relative overflow-hidden w-full pt-20 sm:pt-24 pb-12 sm:pb-16">
         
         {/* Subtle Star Dust Particle Field */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -231,29 +233,29 @@ export default function EudaimonicTransformation() {
         {/* Geometric Micro-Grid Backdrop */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
-        {/* Left Side Vertical Text: EUDAIMONIC TRANSFORMATION with Arrow (Matching About Us Hero Style) */}
+        {/* Left Side Vertical Text: EUDAIMONIC TRANSFORMATION with Arrow (Matching About Us Hero Style - Zero Yellow) */}
         <div className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex flex-col justify-center items-center pointer-events-none select-none">
           <div 
             className="flex items-center gap-3 sm:gap-4"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
           >
-            <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
+            <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-white/90 drop-shadow-md">
               EUDAIMONIC TRANSFORMATION
             </span>
             <span className="w-px h-8 sm:h-14 bg-white/25"></span>
-            <ArrowRight className="w-3.5 h-3.5 text-hq-yellow" />
+            <ArrowRight className="w-3.5 h-3.5 text-violet-400" />
           </div>
         </div>
 
-        {/* Yellow Buffering Radiant Light Aura (Sweeps continuously from Left Corner to Top) */}
+        {/* Ambient Radiant Glow (Purple & Indigo - Matching Reference Image) */}
         <div 
-          className="absolute -bottom-24 -left-24 w-[500px] h-[500px] sm:w-[650px] sm:h-[650px] rounded-full bg-gradient-to-tr from-hq-yellow/35 via-[#FFE566]/20 to-transparent blur-[110px] pointer-events-none animate-stadium-glow" 
+          className="absolute -bottom-24 -left-24 w-[500px] h-[500px] sm:w-[650px] sm:h-[650px] rounded-full bg-gradient-to-tr from-purple-700/30 via-indigo-600/20 to-transparent blur-[120px] pointer-events-none animate-stadium-glow" 
         />
         <div 
-          className="absolute -top-20 right-10 w-[400px] h-[400px] rounded-full bg-hq-yellow/[0.05] blur-[130px] pointer-events-none" 
+          className="absolute -top-20 right-10 w-[400px] h-[400px] rounded-full bg-violet-600/[0.10] blur-[140px] pointer-events-none" 
         />
 
-        {/* Concentric Stadium Wave SVG System (Matching reference image with slow light-to-dark glow animation) */}
+        {/* Concentric Stadium Wave SVG System (Exact match to given purple reference image) */}
         <div className="absolute inset-y-0 right-0 w-full lg:w-3/4 pointer-events-none select-none overflow-hidden flex items-center justify-end">
           <svg 
             viewBox="0 0 1100 700" 
@@ -263,29 +265,29 @@ export default function EudaimonicTransformation() {
             <defs>
               {/* Linear Gradient for Stroke Buffering from Left Corner (0%, 100%) to Top (75%, 0%) */}
               <linearGradient id="bufferStrokeGrad" x1="0%" y1="100%" x2="75%" y2="0%">
-                <stop offset="0%" stopColor="#FFCC00" stopOpacity="0.95" />
-                <stop offset="35%" stopColor="#FFE566" stopOpacity="0.85" />
-                <stop offset="65%" stopColor="#FFCC00" stopOpacity="0.3" />
-                <stop offset="100%" stopColor="#FFCC00" stopOpacity="0.05" />
+                <stop offset="0%" stopColor="#C4B5FD" stopOpacity="0.95" />
+                <stop offset="35%" stopColor="#A78BFA" stopOpacity="0.85" />
+                <stop offset="65%" stopColor="#818CF8" stopOpacity="0.35" />
+                <stop offset="100%" stopColor="#6366F1" stopOpacity="0.05" />
               </linearGradient>
 
               {/* Radial Fill Gradients for Stadium Bands */}
               <radialGradient id="stadiumFillGrad" cx="72%" cy="74%" r="85%">
-                <stop offset="0%" stopColor="#FFCC00" stopOpacity="0.18" />
-                <stop offset="40%" stopColor="#FFCC00" stopOpacity="0.08" />
-                <stop offset="80%" stopColor="#090A0E" stopOpacity="0.95" />
+                <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.55" />
+                <stop offset="45%" stopColor="#6D28D9" stopOpacity="0.25" />
+                <stop offset="85%" stopColor="#070814" stopOpacity="0.95" />
               </radialGradient>
             </defs>
 
-            {/* Concentric Stadium Capsules (Stepped from light innermost to dark outermost with slow glow) */}
+            {/* Concentric Stadium Capsules (Stepped from light innermost purple to dark outermost navy with slow glow) */}
             {[
-              { id: 7, w: 1600, h: 760, rx: 380, fill: 'rgba(255,204,0,0.02)', stroke: 'rgba(255,204,0,0.15)', dash: '180 600', delay: '0s', glowDelay: '0s' },
-              { id: 6, w: 1360, h: 630, rx: 315, fill: 'rgba(255,204,0,0.035)', stroke: 'rgba(255,204,0,0.20)', dash: '200 550', delay: '0.4s', glowDelay: '1.2s' },
-              { id: 5, w: 1140, h: 510, rx: 255, fill: 'rgba(255,204,0,0.05)', stroke: 'rgba(255,204,0,0.26)', dash: '220 500', delay: '0.8s', glowDelay: '2.4s' },
-              { id: 4, w: 920, h: 400, rx: 200, fill: 'rgba(255,204,0,0.07)', stroke: 'rgba(255,204,0,0.32)', dash: '240 450', delay: '1.2s', glowDelay: '3.6s' },
-              { id: 3, w: 720, h: 300, rx: 150, fill: 'rgba(255,204,0,0.09)', stroke: 'rgba(255,204,0,0.40)', dash: '260 400', delay: '1.6s', glowDelay: '4.8s' },
-              { id: 2, w: 520, h: 210, rx: 105, fill: 'rgba(255,204,0,0.12)', stroke: 'rgba(255,204,0,0.50)', dash: '280 350', delay: '2.0s', glowDelay: '6.0s' },
-              { id: 1, w: 350, h: 130, rx: 65, fill: 'url(#stadiumFillGrad)', stroke: 'rgba(255,204,0,0.75)', dash: '300 300', delay: '2.4s', glowDelay: '7.2s' },
+              { id: 7, w: 1600, h: 760, rx: 380, fill: 'rgba(99,102,241,0.025)', stroke: 'rgba(167,139,250,0.14)', dash: '180 600', delay: '0s', glowDelay: '0s' },
+              { id: 6, w: 1360, h: 630, rx: 315, fill: 'rgba(124,58,237,0.045)', stroke: 'rgba(167,139,250,0.20)', dash: '200 550', delay: '0.4s', glowDelay: '1.2s' },
+              { id: 5, w: 1140, h: 510, rx: 255, fill: 'rgba(139,92,246,0.07)', stroke: 'rgba(167,139,250,0.28)', dash: '220 500', delay: '0.8s', glowDelay: '2.4s' },
+              { id: 4, w: 920, h: 400, rx: 200, fill: 'rgba(139,92,246,0.10)', stroke: 'rgba(167,139,250,0.36)', dash: '240 450', delay: '1.2s', glowDelay: '3.6s' },
+              { id: 3, w: 720, h: 300, rx: 150, fill: 'rgba(139,92,246,0.15)', stroke: 'rgba(167,139,250,0.48)', dash: '260 400', delay: '1.6s', glowDelay: '4.8s' },
+              { id: 2, w: 520, h: 210, rx: 105, fill: 'rgba(139,92,246,0.22)', stroke: 'rgba(167,139,250,0.65)', dash: '280 350', delay: '2.0s', glowDelay: '6.0s' },
+              { id: 1, w: 350, h: 130, rx: 65, fill: 'url(#stadiumFillGrad)', stroke: 'rgba(196,181,253,0.85)', dash: '300 300', delay: '2.4s', glowDelay: '7.2s' },
             ].map((tier) => {
               const cx = 780;
               const cy = 520;
@@ -297,7 +299,7 @@ export default function EudaimonicTransformation() {
                   className="animate-stadium-slow-glow"
                   style={{ animationDelay: tier.glowDelay }}
                 >
-                  {/* Stepped Stadium Band glowing from light to dark */}
+                  {/* Stepped Stadium Band glowing slowly from light to dark */}
                   <rect
                     x={x}
                     y={y}
@@ -341,7 +343,9 @@ export default function EudaimonicTransformation() {
               className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight text-white leading-[1.15] mb-5"
             >
               The new <br />
-              <span className="text-hq-yellow">Operating System</span> <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-indigo-200 to-white font-bold">
+                Operating System
+              </span> <br />
               for human flourishing
             </motion.h1>
 
@@ -355,7 +359,7 @@ export default function EudaimonicTransformation() {
               An executive architecture engineered to cultivate Aristotelian eudaimonia—translating employee vitality, purpose, and behavioral neuroscience into quantified organizational output and sustainable enterprise flourishing.
             </motion.p>
 
-            {/* Explore Pillars Button (Exact Home Page Hero Style with Animated Top & Bottom Borders) */}
+            {/* Explore Pillars Button (Exact Home Page Hero Style with Animated Top & Bottom Borders - Zero Yellow) */}
             <motion.div 
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -368,10 +372,10 @@ export default function EudaimonicTransformation() {
                   e.preventDefault();
                   document.getElementById('pillars-detail')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="group relative inline-flex items-center justify-between gap-8 py-3.5 px-2 font-display font-medium text-xs tracking-[0.2em] text-white hover:text-hq-yellow transition-colors duration-300 uppercase cursor-pointer"
+                className="group relative inline-flex items-center justify-between gap-8 py-3.5 px-2 font-display font-medium text-xs tracking-[0.2em] text-white hover:text-violet-300 transition-colors duration-300 uppercase cursor-pointer"
               >
-                {/* Top border line: 1.25px, white by default, on hover width decreases to 20% at right edge and turns theme yellow */}
-                <span className="absolute top-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
+                {/* Top border line */}
+                <span className="absolute top-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-violet-400 transition-all duration-300 ease-out pointer-events-none" />
 
                 <span className="relative z-10 font-semibold tracking-widest">EXPLORE PILLARS</span>
 
@@ -385,8 +389,8 @@ export default function EudaimonicTransformation() {
                   <polyline points="15 1, 20 5, 15 9" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
 
-                {/* Bottom border line: 1.25px, white by default, on hover width decreases to 20% at right edge and turns theme yellow */}
-                <span className="absolute bottom-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
+                {/* Bottom border line */}
+                <span className="absolute bottom-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-violet-400 transition-all duration-300 ease-out pointer-events-none" />
               </a>
             </motion.div>
 
