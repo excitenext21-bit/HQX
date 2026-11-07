@@ -182,16 +182,16 @@ export default function EudaimonicTransformation() {
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
       {/* =========================================================================
-          HERO BANNER - CLEAN LINELESS AMBIENT PURPLE STADIUM ANIMATION ON PURE BLACK
+          HERO BANNER - CLEAN LINELESS AMBIENT GOLDEN YELLOW STADIUM ANIMATION ON PURE BLACK
           - Screen-fitting height: min-h-[100svh] lg:h-screen lg:min-h-[660px] lg:max-h-[1080px]
-          - Background: Pure pitch black (#000000) - ZERO blue, ZERO cyan, ZERO indigo
+          - Background: Pure pitch black (#000000) base void
           - Lines: ZERO grid lines, ZERO stroke lines, ZERO border lines
-          - Background Animation: Clean, lineless concentric purple stadium waves
+          - Background Animation: Clean, lineless concentric golden yellow / amber stadium waves
             pulsing smoothly from light to dark with organic breathing orbs
-          - Left Vertical Text: EUDAIMONIC TRANSFORMATION with Arrow (No divider line)
+          - Left Vertical Text: EUDAIMONIC TRANSFORMATION with Yellow Arrow (No divider line)
           - Heading: text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight (About Us text properties)
           - 3-line paragraph: text-sm sm:text-base text-white/80 font-light leading-relaxed
-          - Button: Clean, glowing pill button with zero wire lines
+          - Button: SINGLE clean, glowing pill button under the copy
           ========================================================================= */}
       <section className="bg-black text-white min-h-[100svh] lg:h-screen lg:min-h-[660px] lg:max-h-[1080px] flex items-center relative overflow-hidden w-full pt-20 sm:pt-24 pb-12 sm:pb-16 select-none">
         
@@ -228,23 +228,23 @@ export default function EudaimonicTransformation() {
           ))}
         </div>
 
-        {/* Ambient Warm Purple Organic Light Orbs (Floating & Breathing on pure black, NO BLUE) */}
+        {/* Ambient Warm Golden Yellow Organic Light Orbs (Floating & Breathing on pure black) */}
         <motion.div 
           animate={{
             scale: [1, 1.18, 1],
-            opacity: [0.28, 0.48, 0.28],
+            opacity: [0.20, 0.38, 0.20],
           }}
           transition={{
             duration: 8,
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="absolute top-1/2 right-[10%] -translate-y-1/2 w-[650px] h-[650px] rounded-full bg-purple-600 blur-[160px] pointer-events-none z-0" 
+          className="absolute top-1/2 right-[10%] -translate-y-1/2 w-[650px] h-[650px] rounded-full bg-[#FFCC00] blur-[170px] pointer-events-none z-0" 
         />
         <motion.div 
           animate={{
             scale: [1.1, 0.95, 1.1],
-            opacity: [0.15, 0.32, 0.15],
+            opacity: [0.12, 0.26, 0.12],
           }}
           transition={{
             duration: 9.5,
@@ -252,10 +252,10 @@ export default function EudaimonicTransformation() {
             ease: 'easeInOut',
             delay: 1.5,
           }}
-          className="absolute bottom-[-10%] right-[30%] w-[450px] h-[450px] rounded-full bg-fuchsia-700 blur-[140px] pointer-events-none z-0" 
+          className="absolute bottom-[-10%] right-[30%] w-[450px] h-[450px] rounded-full bg-amber-500 blur-[150px] pointer-events-none z-0" 
         />
 
-        {/* Left Side Vertical Text: EUDAIMONIC TRANSFORMATION with Arrow (Clean, NO divider line) */}
+        {/* Left Side Vertical Text: EUDAIMONIC TRANSFORMATION with Yellow Arrow (Clean, NO divider line) */}
         <div className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-30 flex flex-col justify-center items-center pointer-events-none select-none">
           <div 
             className="flex items-center gap-2.5 sm:gap-3"
@@ -264,12 +264,12 @@ export default function EudaimonicTransformation() {
             <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-white/90 drop-shadow-md">
               EUDAIMONIC TRANSFORMATION
             </span>
-            <ArrowRight className="w-3.5 h-3.5 text-purple-400" />
+            <ArrowRight className="w-3.5 h-3.5 text-hq-yellow" />
           </div>
         </div>
 
-        {/* BACKGROUND ANIMATION LAYER: LINELESS CONCENTRIC PURPLE STADIUM WAVES */}
-        {/* Completely line-free (stroke: none, strokeWidth: 0), smooth feathered gradient fills */}
+        {/* BACKGROUND ANIMATION LAYER: LINELESS CONCENTRIC GOLDEN YELLOW STADIUM WAVES */}
+        {/* Completely line-free (stroke: none, strokeWidth: 0), smooth feathered gradient fills in shades of yellow */}
         <div className="absolute inset-0 pointer-events-none select-none overflow-hidden z-10 flex items-center justify-end">
           <svg
             viewBox="0 0 1200 680"
@@ -277,70 +277,70 @@ export default function EudaimonicTransformation() {
             className="w-full h-full object-cover"
           >
             <defs>
-              {/* Stadium Wave Gradient 6 (Outermost Deep Purple fading to pure black) */}
-              <linearGradient id="cleanWave6" x1="1" y1="0.5" x2="0" y2="0.5">
-                <stop offset="0%" stopColor="#1a0033" stopOpacity="0.45" />
-                <stop offset="65%" stopColor="#0d001a" stopOpacity="0.25" />
+              {/* Stadium Wave Gradient 6 (Outermost Deep Bronze/Amber fading into pure black) */}
+              <linearGradient id="yellowWave6" x1="1" y1="0.5" x2="0" y2="0.5">
+                <stop offset="0%" stopColor="#261700" stopOpacity="0.45" />
+                <stop offset="65%" stopColor="#140a00" stopOpacity="0.25" />
                 <stop offset="100%" stopColor="#000000" stopOpacity="0" />
               </linearGradient>
 
               {/* Stadium Wave Gradient 5 */}
-              <linearGradient id="cleanWave5" x1="1" y1="0.5" x2="0" y2="0.5">
-                <stop offset="0%" stopColor="#2e0259" stopOpacity="0.58" />
-                <stop offset="65%" stopColor="#1a0033" stopOpacity="0.35" />
+              <linearGradient id="yellowWave5" x1="1" y1="0.5" x2="0" y2="0.5">
+                <stop offset="0%" stopColor="#4d2c00" stopOpacity="0.55" />
+                <stop offset="65%" stopColor="#261400" stopOpacity="0.35" />
                 <stop offset="100%" stopColor="#000000" stopOpacity="0" />
               </linearGradient>
 
               {/* Stadium Wave Gradient 4 */}
-              <linearGradient id="cleanWave4" x1="1" y1="0.5" x2="0" y2="0.5">
-                <stop offset="0%" stopColor="#45087a" stopOpacity="0.70" />
-                <stop offset="65%" stopColor="#29024f" stopOpacity="0.48" />
+              <linearGradient id="yellowWave4" x1="1" y1="0.5" x2="0" y2="0.5">
+                <stop offset="0%" stopColor="#7a4700" stopOpacity="0.68" />
+                <stop offset="65%" stopColor="#402300" stopOpacity="0.45" />
                 <stop offset="100%" stopColor="#000000" stopOpacity="0" />
               </linearGradient>
 
               {/* Stadium Wave Gradient 3 */}
-              <linearGradient id="cleanWave3" x1="1" y1="0.5" x2="0" y2="0.5">
-                <stop offset="0%" stopColor="#640da8" stopOpacity="0.80" />
-                <stop offset="65%" stopColor="#3d056b" stopOpacity="0.58" />
+              <linearGradient id="yellowWave3" x1="1" y1="0.5" x2="0" y2="0.5">
+                <stop offset="0%" stopColor="#ab6b00" stopOpacity="0.78" />
+                <stop offset="65%" stopColor="#633b00" stopOpacity="0.55" />
                 <stop offset="100%" stopColor="#000000" stopOpacity="0" />
               </linearGradient>
 
               {/* Stadium Wave Gradient 2 */}
-              <linearGradient id="cleanWave2" x1="1" y1="0.5" x2="0" y2="0.5">
-                <stop offset="0%" stopColor="#8318cf" stopOpacity="0.88" />
-                <stop offset="65%" stopColor="#550991" stopOpacity="0.68" />
+              <linearGradient id="yellowWave2" x1="1" y1="0.5" x2="0" y2="0.5">
+                <stop offset="0%" stopColor="#d98c00" stopOpacity="0.86" />
+                <stop offset="65%" stopColor="#8a5400" stopOpacity="0.65" />
                 <stop offset="100%" stopColor="#000000" stopOpacity="0" />
               </linearGradient>
 
               {/* Stadium Wave Gradient 1 */}
-              <linearGradient id="cleanWave1" x1="1" y1="0.5" x2="0" y2="0.5">
-                <stop offset="0%" stopColor="#a334e8" stopOpacity="0.95" />
-                <stop offset="65%" stopColor="#6e0fb8" stopOpacity="0.78" />
+              <linearGradient id="yellowWave1" x1="1" y1="0.5" x2="0" y2="0.5">
+                <stop offset="0%" stopColor="#f5aa00" stopOpacity="0.94" />
+                <stop offset="65%" stopColor="#b87a00" stopOpacity="0.75" />
                 <stop offset="100%" stopColor="#000000" stopOpacity="0" />
               </linearGradient>
 
-              {/* Stadium Wave Gradient 0 (Innermost Glowing Core, Rich Electric Purple) */}
-              <linearGradient id="cleanWave0" x1="1" y1="0.5" x2="0" y2="0.5">
-                <stop offset="0%" stopColor="#c084fc" stopOpacity="0.95" />
-                <stop offset="50%" stopColor="#a855f7" stopOpacity="0.88" />
-                <stop offset="100%" stopColor="#7e22ce" stopOpacity="0.75" />
+              {/* Stadium Wave Gradient 0 (Innermost Glowing Core, Luminous Brand Yellow) */}
+              <linearGradient id="yellowWave0" x1="1" y1="0.5" x2="0" y2="0.5">
+                <stop offset="0%" stopColor="#FFF4B8" stopOpacity="0.98" />
+                <stop offset="50%" stopColor="#FFCC00" stopOpacity="0.90" />
+                <stop offset="100%" stopColor="#E5A800" stopOpacity="0.78" />
               </linearGradient>
 
               {/* Soft Edge Feathering Filter for ultra-smooth lineless blend */}
-              <filter id="softFeather" x="-20%" y="-20%" width="140%" height="140%">
+              <filter id="softFeatherYellow" x="-20%" y="-20%" width="140%" height="140%">
                 <feGaussianBlur in="SourceGraphic" stdDeviation="6" />
               </filter>
             </defs>
 
             {/* Lineless Concentric Stadium Capsules Radiating with Staggered Light-to-Dark Breathing Wave */}
             {[
-              { id: 6, x: 260, y: -160, width: 1040, height: 1360, rx: 680, ry: 680, grad: 'cleanWave6', minOp: 0.25, maxOp: 0.55, delay: 0 },
-              { id: 5, x: 380, y: -60,  width: 920,  height: 1160, rx: 580, ry: 580, grad: 'cleanWave5', minOp: 0.35, maxOp: 0.68, delay: 0.8 },
-              { id: 4, x: 500, y: 40,   width: 800,  height: 960,  rx: 480, ry: 480, grad: 'cleanWave4', minOp: 0.45, maxOp: 0.78, delay: 1.6 },
-              { id: 3, x: 610, y: 140,  width: 690,  height: 760,  rx: 380, ry: 380, grad: 'cleanWave3', minOp: 0.55, maxOp: 0.86, delay: 2.4 },
-              { id: 2, x: 710, y: 230,  width: 590,  height: 580,  rx: 290, ry: 290, grad: 'cleanWave2', minOp: 0.62, maxOp: 0.92, delay: 3.2 },
-              { id: 1, x: 800, y: 320,  width: 500,  height: 400,  rx: 200, ry: 200, grad: 'cleanWave1', minOp: 0.70, maxOp: 0.96, delay: 4.0 },
-              { id: 0, x: 880, y: 400,  width: 420,  height: 240,  rx: 120, ry: 120, grad: 'cleanWave0', minOp: 0.78, maxOp: 1.0, delay: 4.8 },
+              { id: 6, x: 260, y: -160, width: 1040, height: 1360, rx: 680, ry: 680, grad: 'yellowWave6', minOp: 0.22, maxOp: 0.52, delay: 0 },
+              { id: 5, x: 380, y: -60,  width: 920,  height: 1160, rx: 580, ry: 580, grad: 'yellowWave5', minOp: 0.32, maxOp: 0.65, delay: 0.8 },
+              { id: 4, x: 500, y: 40,   width: 800,  height: 960,  rx: 480, ry: 480, grad: 'yellowWave4', minOp: 0.42, maxOp: 0.75, delay: 1.6 },
+              { id: 3, x: 610, y: 140,  width: 690,  height: 760,  rx: 380, ry: 380, grad: 'yellowWave3', minOp: 0.52, maxOp: 0.84, delay: 2.4 },
+              { id: 2, x: 710, y: 230,  width: 590,  height: 580,  rx: 290, ry: 290, grad: 'yellowWave2', minOp: 0.60, maxOp: 0.90, delay: 3.2 },
+              { id: 1, x: 800, y: 320,  width: 500,  height: 400,  rx: 200, ry: 200, grad: 'yellowWave1', minOp: 0.68, maxOp: 0.95, delay: 4.0 },
+              { id: 0, x: 880, y: 400,  width: 420,  height: 240,  rx: 120, ry: 120, grad: 'yellowWave0', minOp: 0.76, maxOp: 1.0, delay: 4.8 },
             ].map((layer) => (
               <motion.rect
                 key={layer.id}
@@ -351,7 +351,7 @@ export default function EudaimonicTransformation() {
                 rx={layer.rx}
                 ry={layer.ry}
                 fill={`url(#${layer.grad})`}
-                filter="url(#softFeather)"
+                filter="url(#softFeatherYellow)"
                 animate={{
                   opacity: [layer.minOp, layer.maxOp, layer.minOp],
                 }}
@@ -370,12 +370,12 @@ export default function EudaimonicTransformation() {
         </div>
 
         {/* Main Content Area */}
-        <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 w-full relative z-20 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12">
+        <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 w-full relative z-20">
           
-          {/* Left Column: Headline, Paragraph, and Explore Pillars Button */}
+          {/* Headline, Paragraph, and the SINGLE Explore Pillars Button */}
           <div className="max-w-2xl">
             
-            {/* Headline with exact About Us text properties (NO BLUE in gradient):
+            {/* Headline with exact About Us text properties:
                 font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight text-white leading-[1.15] mb-5 */}
             <motion.h1 
               initial={{ opacity: 0, y: 24 }}
@@ -384,7 +384,7 @@ export default function EudaimonicTransformation() {
               className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight text-white leading-[1.15] mb-5"
             >
               The new <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-200 via-purple-100 to-white font-bold">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-100 to-white font-bold">
                 Operating System
               </span> <br />
               for human flourishing
@@ -400,7 +400,7 @@ export default function EudaimonicTransformation() {
               An executive architecture engineered to cultivate Aristotelian eudaimonia—translating employee vitality, purpose, and behavioral neuroscience into quantified organizational output and sustainable enterprise flourishing.
             </motion.p>
 
-            {/* Explore Pillars Button (Clean, modern pill button - ZERO lines) */}
+            {/* SINGLE Explore Pillars Button (Clean, modern pill button - ZERO lines, warm golden hover glow) */}
             <motion.div 
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -413,33 +413,13 @@ export default function EudaimonicTransformation() {
                   e.preventDefault();
                   document.getElementById('pillars-detail')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="group inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-white text-black font-display font-semibold text-xs tracking-[0.18em] uppercase hover:bg-purple-100 transition-all duration-300 shadow-[0_0_25px_rgba(255,255,255,0.35),0_0_50px_rgba(168,85,247,0.35)] hover:shadow-[0_0_35px_rgba(255,255,255,0.6),0_0_70px_rgba(168,85,247,0.55)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                className="group inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-white text-black font-display font-semibold text-xs tracking-[0.18em] uppercase hover:bg-hq-yellow hover:text-hq-black transition-all duration-300 shadow-[0_0_25px_rgba(255,255,255,0.35),0_0_50px_rgba(255,204,0,0.3)] hover:shadow-[0_0_35px_rgba(255,204,0,0.65),0_0_70px_rgba(255,204,0,0.45)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
               >
                 <span>EXPLORE PILLARS</span>
                 <ArrowRight className="w-3.5 h-3.5 text-black transition-transform duration-300 group-hover:translate-x-1" />
               </a>
             </motion.div>
 
-          </div>
-
-          {/* Right Core Pill Button: Matching "BROWSE APPS" in reference image (Clean, lineless) */}
-          <div className="hidden lg:flex items-center justify-end pr-8 xl:pr-16 z-20">
-            <motion.a
-              href="#pillars-detail"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('pillars-detail')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ duration: 0.4 }}
-              className="group relative px-9 py-4 rounded-full bg-white text-black font-display font-semibold text-xs sm:text-sm tracking-[0.15em] uppercase shadow-[0_0_35px_rgba(255,255,255,0.7),0_0_70px_rgba(168,85,247,0.55)] hover:shadow-[0_0_50px_rgba(255,255,255,0.9),0_0_90px_rgba(168,85,247,0.75)] transition-all duration-300 flex items-center gap-3 cursor-pointer select-none"
-            >
-              <span>EXPLORE PILLARS</span>
-              <ArrowRight className="w-4 h-4 text-black transition-transform duration-300 group-hover:translate-x-1" />
-            </motion.a>
           </div>
 
         </div>
