@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
   Brain, 
@@ -292,75 +292,172 @@ export default function WellBeingEthos() {
       </section>
 
 
-      {/* BALANCE Beyond WORKLIFE: 5 Pivotal Dimensions (Page 7 of Profile) */}
-      <section id="pillars" className="py-20 px-6 md:px-12 max-w-7xl mx-auto scroll-mt-20">
-        <div className="text-center mb-16">
-          <h2 className="font-display text-4xl md:text-6xl tracking-tight font-semibold mb-4">
-            The 5 Well-Being Pillars
+      {/* BALANCE Beyond WORKLIFE: The 5 Well-Being Pillars (Fixonic-Inspired Split Philosophy Section) */}
+      <section id="pillars" className="py-20 lg:py-28 px-4 sm:px-6 md:px-10 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
+        
+        {/* Section Header */}
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="text-xs font-mono uppercase tracking-[0.25em] text-hq-black/50 mb-3 font-semibold">
+            BALANCE Beyond WORKLIFE • 5 Pivotal Dimensions
+          </div>
+          <h2 
+            style={{ fontFamily: '"Geist", Arial, sans-serif', fontWeight: 300 }}
+            className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight font-light mb-4 text-hq-black"
+          >
+            The 5 <span style={{ fontFamily: '"Geist", Arial, sans-serif' }} className="font-bold text-hq-black">Well-Being Pillars</span>
           </h2>
-          <p className="font-body text-hq-black/70 max-w-xl mx-auto font-light text-base">
-            Employee well-being acknowledges the interrelation between various facets of an employee's life within and beyond a corporate setting.
+          <p className="font-body text-hq-black/70 max-w-2xl mx-auto font-light text-sm sm:text-base leading-relaxed">
+            Employee well-being acknowledges the deep interrelation between various facets of an individual’s life within and beyond a corporate setting.
           </p>
         </div>
 
-        {/* Pillar Switcher Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {pillars.map((pillar) => {
-            const Icon = pillar.icon;
-            const isSelected = selectedPillar === pillar.id;
-            return (
-              <button
-                key={pillar.id}
-                onClick={() => setSelectedPillar(pillar.id)}
-                className={`flex items-center gap-2.5 px-6 py-3.5 rounded-full border text-xs font-display uppercase tracking-wider font-semibold transition-all ${
-                  isSelected 
-                    ? 'bg-hq-black text-hq-yellow border-hq-black shadow-lg scale-105' 
-                    : 'bg-white text-hq-black/70 border-hq-black/15 hover:border-hq-black hover:text-hq-black'
-                }`}
-              >
-                <Icon className={`w-4 h-4 ${isSelected ? 'text-hq-yellow' : 'text-hq-black/70'}`} />
-                <span>{pillar.name}</span>
-              </button>
-            );
-          })}
-        </div>
+        {/* Fixonic-Inspired 2-Column Split Architectural Frame */}
+        <div className="border border-hq-black/15 shadow-2xl rounded-2xl md:rounded-3xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 bg-white">
+          
+          {/* Left Column: Dark Accordion Side with 5 Pillars (5 of 12 cols) */}
+          <div className="lg:col-span-5 bg-black text-white p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10">
+            <div>
+              <div className="space-y-0 divide-y divide-white/10">
+                {pillars.map((pillar) => {
+                  const isSelected = selectedPillar === pillar.id;
+                  return (
+                    <div 
+                      key={pillar.id}
+                      onClick={() => setSelectedPillar(pillar.id)}
+                      className="group cursor-pointer py-5 sm:py-6 transition-colors"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="flex items-start gap-3.5 flex-1">
+                          {/* Accent line: bright brand yellow when active */}
+                          <div className="pt-1 shrink-0">
+                            <span 
+                              className={`block w-1 rounded-full transition-all duration-300 ${
+                                isSelected ? 'h-6 bg-hq-yellow' : 'h-0 bg-transparent'
+                              }`} 
+                            />
+                          </div>
 
-        {/* Selected Pillar Spotlight */}
-        <div className="p-8 md:p-12 border border-hq-black/15 shadow-2xl bg-white rounded-3xl flex flex-col lg:flex-row gap-10 items-start">
-          <div className="w-full lg:w-4/12">
-            <div className="w-16 h-16 rounded-2xl bg-hq-black text-hq-yellow flex items-center justify-center mb-6 shadow-md">
-              <PillarIcon className="w-8 h-8 stroke-[1.5]" />
+                          <div className="flex-1 pr-2">
+                            <h3 
+                              style={{ fontFamily: '"Geist", Arial, sans-serif' }}
+                              className={`text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider transition-colors duration-200 ${
+                                isSelected ? 'text-white' : 'text-white/70 group-hover:text-white'
+                              }`}
+                            >
+                              {pillar.name}
+                            </h3>
+
+                            {/* Small Description below active pillar */}
+                            {isSelected && (
+                              <motion.p
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: 'auto' }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.3, ease: 'easeOut' }}
+                                className="font-body text-xs sm:text-sm text-white/70 font-light leading-relaxed mt-2.5 max-w-sm"
+                              >
+                                {pillar.tagline}
+                              </motion.p>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Accordion Toggle Symbol: Horizontal Minus when active, Plus when collapsed */}
+                        <div className="shrink-0 pt-0.5 text-white/80 select-none">
+                          {isSelected ? (
+                            <span className="inline-block w-4 text-center font-bold text-hq-yellow text-xl leading-none">—</span>
+                          ) : (
+                            <span className="inline-block w-4 text-center font-bold text-white/40 text-xl leading-none group-hover:text-white transition-colors">+</span>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-            <h3 className="font-display text-3xl font-semibold mb-2">
-              {currentPillar.name}
-            </h3>
-            <div className="text-xs font-mono text-hq-black/60 uppercase mb-4 font-semibold">
-              {currentPillar.tagline}
-            </div>
-            <div className="bg-hq-yellow text-hq-black font-display text-xs uppercase tracking-wider font-bold px-4 py-2 rounded-full inline-block shadow-sm">
-              {currentPillar.impact}
+
+            {/* Subtle bottom tag on dark column */}
+            <div className="pt-8 border-t border-white/10 mt-8 hidden sm:flex items-center justify-between text-[11px] font-mono text-white/40 uppercase tracking-widest">
+              <span>5 Executive Pillars</span>
+              <span className="text-hq-yellow font-bold">100% Quantified Impact</span>
             </div>
           </div>
 
-          <div className="w-full lg:w-8/12 border-t lg:border-t-0 lg:border-l border-hq-black/10 pt-6 lg:pt-0 lg:pl-10">
-            <p className="font-body text-base text-hq-black/80 font-light leading-relaxed mb-6">
-              {currentPillar.overview}
-            </p>
+          {/* Right Column: Crisp White Detailed Description Side (7 of 12 cols) */}
+          <div className="lg:col-span-7 bg-white text-hq-black p-6 sm:p-10 md:p-12 lg:p-14 flex flex-col justify-between relative min-h-[460px] lg:min-h-[560px]">
             
-            <div className="text-xs font-mono uppercase tracking-widest text-hq-black/60 font-semibold mb-4">
-              Actionable Enterprise Protocols:
+            {/* Top-Left Flush Brand Badge (Matching Fixonic's top banner) */}
+            <div className="absolute top-0 left-0 bg-hq-yellow text-hq-black font-display text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] px-5 sm:px-6 py-2.5 shadow-sm">
+              HQ WELL-BEING ETHOS
             </div>
 
-            <ul className="space-y-3 font-body text-sm text-hq-black/85">
-              {currentPillar.practices.map((practice, pIdx) => (
-                <li key={pIdx} className="flex items-start gap-3 bg-hq-gray p-4 rounded-xl border border-hq-black/5">
-                  <Check className="w-4 h-4 text-hq-yellow shrink-0 mt-0.5 bg-hq-black rounded-full p-0.5" />
-                  <span>{practice}</span>
-                </li>
-              ))}
-            </ul>
+            {/* Main Center Editorial Content */}
+            <div className="flex-1 flex flex-col justify-center pt-12 sm:pt-14 pb-14 sm:pb-16">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentPillar.id}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  className="space-y-6"
+                >
+                  {/* Large Impactful Editorial Description (Geist Typography) */}
+                  <h3 
+                    style={{ fontFamily: '"Geist", Arial, sans-serif' }}
+                    className="font-normal text-xl sm:text-2xl md:text-3xl lg:text-[28px] text-hq-black leading-[1.38] tracking-tight"
+                  >
+                    {currentPillar.overview}
+                  </h3>
+
+                  {/* Impact Metric Strip */}
+                  <div className="pt-4 border-t border-hq-black/10 flex flex-wrap items-center gap-3 sm:gap-4">
+                    <div className="inline-flex items-center gap-2 bg-hq-gray border border-hq-black/10 px-3.5 py-1.5 rounded-full text-xs font-display font-semibold uppercase tracking-wider text-hq-black shadow-sm">
+                      <span className="w-2 h-2 rounded-full bg-hq-yellow" />
+                      <span>Executive Benchmark: <strong className="text-hq-black font-bold">{currentPillar.impact}</strong></span>
+                    </div>
+                    <div className="text-xs font-mono uppercase tracking-wider text-hq-black/50 font-semibold">
+                      Continuous Stewardship
+                    </div>
+                  </div>
+
+                  {/* Actionable Enterprise Protocols */}
+                  <div className="space-y-2.5 pt-2">
+                    <div className="text-[11px] font-mono uppercase tracking-widest text-hq-black/60 font-bold mb-2">
+                      Actionable Enterprise Protocols:
+                    </div>
+                    <div className="grid grid-cols-1 gap-2">
+                      {currentPillar.practices.map((practice, pIdx) => (
+                        <div key={pIdx} className="flex items-start gap-3 text-xs sm:text-sm text-hq-black/85 font-body">
+                          <Check className="w-4 h-4 text-hq-yellow shrink-0 mt-0.5 bg-hq-black rounded-full p-0.5" />
+                          <span className="leading-relaxed">{practice}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Bottom-Right Flush Action Button (Fixonic Signature Split Block with Black '+' Box) */}
+            <div className="absolute bottom-0 right-0">
+              <Link
+                to="/contact"
+                className="inline-flex items-stretch group overflow-hidden shadow-lg transition-transform duration-200 active:scale-95"
+              >
+                <div className="bg-hq-yellow group-hover:bg-[#FFD633] text-hq-black font-display font-bold text-xs uppercase tracking-[0.2em] px-6 sm:px-8 py-3.5 sm:py-4 flex items-center transition-colors">
+                  MORE ABOUT US
+                </div>
+                <div className="bg-hq-black text-white group-hover:text-hq-yellow w-12 sm:w-14 flex items-center justify-center transition-colors">
+                  <span className="text-lg sm:text-xl font-bold transition-transform duration-300 group-hover:rotate-90">+</span>
+                </div>
+              </Link>
+            </div>
+
           </div>
         </div>
+
       </section>
 
       {/* The 12 KEY THEMES (Profile Pages 8 & 9) */}
