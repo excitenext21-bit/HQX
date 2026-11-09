@@ -104,25 +104,44 @@ export default function WellBeingEthos() {
 
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
-      {/* HERO SECTION MATCHING WHY-HQX HERO STYLE */}
-      <section className="bg-[#07080A] text-hq-white relative overflow-hidden h-screen min-h-[640px] max-h-[1080px] w-full flex flex-col justify-between border-b border-white/10 select-none">
+      {/* HERO SECTION MATCHING WHY-HQX HERO STYLE WITH UNIFIED PURE BLACK BACKGROUND */}
+      <section className="bg-black text-hq-white relative overflow-hidden h-screen min-h-[640px] max-h-[1080px] w-full flex flex-col justify-between border-b border-white/10 select-none">
         
-        {/* Background Visual: Halo Man (Positioned naturally on the right, fully visible, matching reference) */}
+        {/* Background Visual: Halo Man on 100% Pure Black with Subpixel-Locked Halo Glow & Face Reflection */}
         <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
+          
+          {/* Base Man Image (Anchored naturally to the right, fully visible, pure black void) */}
           <img 
             src="/images/wellbeing-halo-man.jpg" 
             alt="Well-Being Ethos - Those Who Feel Better Work Better" 
             className="absolute right-0 top-0 h-full w-auto max-w-none object-contain object-right filter contrast-110 brightness-100"
           />
-          {/* Multi-tier Contrast Scrim Overlays (Exact WhyHQX Lighting System) */}
+
+          {/* Specular Pass: Ring Glow & Facial Reflection (Exact Subpixel Match to Photograph) */}
+          <motion.img
+            src="/images/wellbeing-halo-glow-layer.png"
+            alt=""
+            aria-hidden="true"
+            animate={{
+              opacity: [0.35, 1, 0.35],
+            }}
+            transition={{
+              duration: 3.4,
+              repeat: Infinity,
+              ease: 'easeInOut'
+            }}
+            className="absolute right-0 top-0 h-full w-auto max-w-none object-contain object-right pointer-events-none mix-blend-screen"
+          />
+
+          {/* Unified 100% Pure Black Multi-Tier Scrims (Zero blue tint, pure seamless obsidian black) */}
           {/* Left-to-right gradient to guarantee crystal-clear contrast for headline & narrative */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#07080A]/95 via-[#07080A]/85 sm:via-[#07080A]/70 lg:via-[#07080A]/35 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 sm:via-black/75 lg:via-black/35 to-transparent pointer-events-none" />
           {/* Mobile dark wash for narrow screens */}
-          <div className="absolute inset-0 bg-[#07080A]/45 lg:hidden pointer-events-none" />
+          <div className="absolute inset-0 bg-black/45 lg:hidden pointer-events-none" />
           {/* Top seam fade beneath fixed navbar */}
-          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#07080A] via-[#07080A]/60 to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black via-black/60 to-transparent pointer-events-none" />
           {/* Bottom seam fade into docked stats strip */}
-          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#07080A] via-[#07080A]/80 to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none" />
         </div>
 
         {/* Left Side Vertical Text: WELL-BEING ETHOS (Exact WhyHQX Style) */}
@@ -186,8 +205,8 @@ export default function WellBeingEthos() {
           </div>
         </div>
 
-        {/* DOCKED STATS TICKER STRIP (EXACT SAME AS WHY-HQX & FOUNDER HERO SECTION) */}
-        <div className="w-full bg-[#0A0A0A]/95 backdrop-blur-md text-white/80 py-3.5 sm:py-4 px-6 md:px-12 border-t border-white/10 overflow-hidden relative z-20">
+        {/* DOCKED STATS TICKER STRIP (PURE UNIFIED BLACK BACKGROUND) */}
+        <div className="w-full bg-black/95 backdrop-blur-md text-white/80 py-3.5 sm:py-4 px-6 md:px-12 border-t border-white/10 overflow-hidden relative z-20">
           <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
             <div className="flex items-center gap-2">
               <span className="text-hq-yellow font-bold">+34%</span>
