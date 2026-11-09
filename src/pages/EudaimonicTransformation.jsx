@@ -662,9 +662,9 @@ export default function EudaimonicTransformation() {
           {/* Elevated Floating UI Canvas Card (Matching Reference Mockup) */}
           <div className="bg-white rounded-3xl sm:rounded-[36px] p-6 sm:p-10 md:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-black/5">
             
-            {/* Top Bar: 4 Domain Tabs at the position of Audit / Intervene / Quantify */}
-            <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-black/5">
-              <div className="flex flex-wrap items-center gap-1.5 bg-[#F3F4F6] p-1.5 rounded-2xl sm:rounded-full">
+            {/* Top Bar: 4 Domain Tabs Right-Aligned with 20% Bigger Font */}
+            <div className="flex justify-end mb-8 pb-6 border-b border-black/5">
+              <div className="flex flex-wrap items-center gap-2 bg-[#F3F4F6] p-1.5 rounded-2xl sm:rounded-full">
                 {Object.keys(matrixDomains).map((domainKey) => {
                   const dom = matrixDomains[domainKey];
                   const isSelected = activeDomain === domainKey;
@@ -672,23 +672,19 @@ export default function EudaimonicTransformation() {
                     <button
                       key={domainKey}
                       onClick={() => setActiveDomain(domainKey)}
-                      className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-[13px] font-display transition-all duration-200 cursor-pointer flex items-center gap-2 focus:outline-none ${
+                      className={`px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-display transition-all duration-200 cursor-pointer flex items-center gap-2 focus:outline-none ${
                         isSelected
                           ? 'bg-white text-black font-bold shadow-xs border border-black/5 border-b-2 border-b-hq-yellow'
                           : 'text-neutral-500 hover:text-black font-medium'
                       }`}
                     >
                       {isSelected && (
-                        <span className="w-1.5 h-1.5 rounded-full bg-hq-yellow shrink-0" />
+                        <span className="w-2 h-2 rounded-full bg-hq-yellow shrink-0" />
                       )}
                       <span>{dom.label}</span>
                     </button>
                   );
                 })}
-              </div>
-
-              <div className="text-xs font-mono text-neutral-400 uppercase tracking-widest hidden lg:block">
-                Domain Matrix • 04 Pillars
               </div>
             </div>
 
