@@ -425,7 +425,7 @@ export default function EudaimonicTransformation() {
               An executive architecture engineered to cultivate Aristotelian eudaimonia—translating employee vitality, purpose, and behavioral neuroscience into quantified organizational output and sustainable enterprise flourishing.
             </motion.p>
 
-            {/* SINGLE Explore Pillars Button (Clean, modern pill button - ZERO lines, warm golden hover glow) */}
+            {/* Explore Pillars Button - EXACT Signature HQX Hero Button from Home Page */}
             <motion.div 
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -438,10 +438,25 @@ export default function EudaimonicTransformation() {
                   e.preventDefault();
                   document.getElementById('pillars-detail')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="group inline-flex items-center gap-3 px-7 sm:px-8 py-3 sm:py-3.5 rounded-full bg-white text-black font-display font-semibold text-xs tracking-[0.18em] uppercase hover:bg-hq-yellow hover:text-hq-black transition-all duration-300 shadow-[0_0_25px_rgba(255,255,255,0.35),0_0_50px_rgba(255,204,0,0.3)] hover:shadow-[0_0_35px_rgba(255,204,0,0.65),0_0_70px_rgba(255,204,0,0.45)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                className="group relative inline-flex items-center justify-between gap-6 py-3.5 px-1 font-display font-medium text-xs tracking-widest text-white hover:text-hq-yellow transition-colors duration-300"
               >
-                <span>EXPLORE PILLARS</span>
-                <ArrowRight className="w-3.5 h-3.5 text-black transition-transform duration-300 group-hover:translate-x-1" />
+                {/* Top border line: 1.25px, white by default, on hover width decreases to 20% at right edge and turns theme yellow */}
+                <span className="absolute top-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1.25px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
+
+                <span className="relative z-10 uppercase tracking-[0.2em]">EXPLORE PILLARS</span>
+
+                <svg 
+                  className="w-[20px] h-[10px] inline-block transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0" 
+                  viewBox="0 0 20 10" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line x1="0" y1="5" x2="20" y2="5" stroke="currentColor" strokeWidth="1" />
+                  <polyline points="15 1, 20 5, 15 9" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+
+                {/* Bottom border line: 1.25px, white by default, on hover width decreases to 20% at right edge and turns theme yellow */}
+                <span className="absolute bottom-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1.25px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
               </a>
             </motion.div>
 
@@ -662,9 +677,9 @@ export default function EudaimonicTransformation() {
           {/* Elevated Floating UI Canvas Card (Matching Reference Mockup) */}
           <div className="bg-white rounded-3xl sm:rounded-[36px] p-6 sm:p-10 md:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-black/5">
             
-            {/* Top Bar: 4 Domain Tabs Right-Aligned with Yellow Active Pill Background */}
-            <div className="flex justify-end mb-8 pb-6 border-b border-black/5">
-              <div className="flex flex-wrap items-center gap-2 bg-[#F3F4F6] p-1.5 rounded-2xl sm:rounded-full">
+            {/* Top Bar: 4 Domain Tabs Right-Aligned (Segmented Pill Style Matching Reference Mockup) */}
+            <div className="flex justify-end mb-8 pb-6 border-b border-black/5 overflow-x-auto">
+              <div className="inline-flex items-center bg-[#EFF1F4] p-1.5 rounded-full shadow-inner-xs max-w-full overflow-x-auto">
                 {Object.keys(matrixDomains).map((domainKey) => {
                   const dom = matrixDomains[domainKey];
                   const isSelected = activeDomain === domainKey;
@@ -672,12 +687,20 @@ export default function EudaimonicTransformation() {
                     <button
                       key={domainKey}
                       onClick={() => setActiveDomain(domainKey)}
-                      className={`px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-display transition-all duration-200 cursor-pointer flex items-center gap-2 focus:outline-none ${
+                      className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm md:text-[15px] font-display font-semibold transition-all duration-150 cursor-pointer flex items-center focus:outline-none whitespace-nowrap shrink-0 ${
                         isSelected
-                          ? 'bg-hq-yellow text-hq-black font-bold shadow-sm'
-                          : 'text-neutral-600 hover:text-black font-medium hover:bg-black/5'
+                          ? 'bg-white text-neutral-900 shadow-[0_2px_8px_rgba(0,0,0,0.06)]'
+                          : 'text-neutral-500 hover:text-neutral-900 bg-transparent'
                       }`}
                     >
+                      {/* Zero-jerk glowing dot indicator (preserved geometry across states) */}
+                      <span
+                        className={`w-2.5 h-2.5 rounded-full shrink-0 mr-2 transition-all duration-150 ${
+                          isSelected
+                            ? 'bg-gradient-to-r from-amber-500 to-yellow-400 shadow-[0_0_8px_rgba(255,154,36,0.6)] opacity-100 scale-100'
+                            : 'opacity-0 scale-75'
+                        }`}
+                      />
                       <span>{dom.label}</span>
                     </button>
                   );
@@ -713,7 +736,7 @@ export default function EudaimonicTransformation() {
                   </div>
 
                   {/* List of Audited Friction Items */}
-                  <div className="space-y-2 mb-6">
+                  <div className="space-y-2">
                     {currentDomain.problems.slice(1, 4).map((prob, idx) => (
                       <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-[13px] text-neutral-700">
                         <span className="w-1.5 h-1.5 rounded-full bg-red-500/70 mt-1.5 shrink-0" />
@@ -721,17 +744,6 @@ export default function EudaimonicTransformation() {
                       </div>
                     ))}
                   </div>
-                </div>
-
-                {/* Left Card Footer: Metric Count & Action Link */}
-                <div className="flex items-center justify-between pt-6 border-t border-black/5 text-xs font-mono text-neutral-500">
-                  <span>({currentDomain.problems.length}) root stressors identified</span>
-                  <Link 
-                    to="/leadership-deep-dive" 
-                    className="font-semibold text-neutral-900 underline underline-offset-4 hover:text-hq-yellow transition-colors"
-                  >
-                    Read audit &rarr;
-                  </Link>
                 </div>
               </div>
 
@@ -761,18 +773,13 @@ export default function EudaimonicTransformation() {
                   </div>
                 </div>
 
-                {/* Right Card Footer: Deployed Status & Deploy Button */}
-                <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-white/10 mt-6">
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-800/50 text-emerald-400 text-xs font-mono">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>Protocol Active</span>
-                  </div>
-
+                {/* Right Card Footer: Solution Button in Normal Case */}
+                <div className="flex justify-end pt-6 border-t border-white/10 mt-6">
                   <Link 
                     to="/leadership-deep-dive"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider hover:bg-hq-yellow hover:text-black transition-all"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-black font-semibold text-sm hover:bg-hq-yellow hover:text-black transition-all shadow-sm"
                   >
-                    <span>Deploy Protocol</span>
+                    <span>Solution</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>

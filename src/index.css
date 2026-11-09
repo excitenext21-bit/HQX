@@ -174,8 +174,11 @@ html.dark .border-hq-black\/20 {
 
 /* Yellow containers keep high contrast dark typography across both light and dark modes */
 .bg-hq-yellow,
-.bg-hq-yellow:not(:hover),
-html.dark .bg-hq-yellow:not(:hover) {
+.bg-hq-yellow:hover,
+.bg-hq-yellow:focus,
+html.dark .bg-hq-yellow,
+html.dark .bg-hq-yellow:hover,
+html.dark .bg-hq-yellow:focus {
   color: var(--hq-black) !important;
 }
 
