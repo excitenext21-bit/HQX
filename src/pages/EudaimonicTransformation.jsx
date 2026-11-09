@@ -780,7 +780,7 @@ export default function EudaimonicTransformation() {
                 {/* Right Card Footer: Solution Button in Normal Case */}
                 <div className="flex justify-end pt-6 border-t border-white/10 mt-6">
                   <Link 
-                    to="/leadership-deep-dive"
+                    to="/well-being-ethos"
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-black font-semibold text-sm hover:bg-hq-yellow hover:text-black transition-all shadow-sm"
                   >
                     <span>Solution</span>

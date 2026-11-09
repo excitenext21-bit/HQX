@@ -53,46 +53,31 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center text-center relative z-10 pb-8 sm:pb-12 pt-8">
 
         {/* Site Map Columns (+10% Text Size - Sleek compact vertical rhythm) */}
-        <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-8 text-left py-8 sm:py-9 border-t border-b border-hq-black/20 text-[13.5px] tracking-wider uppercase font-display">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-left py-8 sm:py-9 border-t border-b border-hq-black/20 text-[13.5px] tracking-wider uppercase font-display">
           <div>
-            <div className="font-bold text-[15.5px] mb-4 text-hq-black">About & Ethos</div>
+            <div className="font-bold text-[15.5px] mb-4 text-hq-black">About HQX</div>
             <ul className="space-y-2.5 font-body text-[13.5px] normal-case text-hq-black/80">
               <li><Link to="/about-us" className="hover:underline font-semibold">About Us</Link></li>
-              <li><Link to="/about-us#founder" className="hover:underline">Founder (Manny Anchan)</Link></li>
+              <li><Link to="/founder" className="hover:underline">Founder (Manny Anchan)</Link></li>
               <li><Link to="/team" className="hover:underline">Our Team & Faculty</Link></li>
-              <li><Link to="/about-us#why-hqx" className="hover:underline">Why HQX</Link></li>
+              <li><Link to="/why-hqx" className="hover:underline">Why HQX</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="font-bold text-[15.5px] mb-4 text-hq-black">Executive Ethos</div>
+            <ul className="space-y-2.5 font-body text-[13.5px] normal-case text-hq-black/80">
               <li><Link to="/eudaimonic-transformation" className="hover:underline">Eudaimonic Transformation</Link></li>
               <li><Link to="/well-being-ethos" className="hover:underline">5 Well-Being Pillars</Link></li>
             </ul>
           </div>
 
           <div>
-            <div className="font-bold text-[15.5px] mb-4 text-hq-black">Corporate Interventions</div>
+            <div className="font-bold text-[15.5px] mb-4 text-hq-black">Global Secretariat</div>
             <ul className="space-y-2.5 font-body text-[13.5px] normal-case text-hq-black/80">
-              <li><Link to="/leadership-deep-dive" className="hover:underline">Leadership Deep Dive</Link></li>
-              <li><Link to="/engaging-workshops" className="hover:underline">Engaging Workshops</Link></li>
-              <li><Link to="/keynotes" className="hover:underline">Keynotes & Friday Talks</Link></li>
-              <li><Link to="/contact" className="hover:underline">Custom Executive Coaching</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <div className="font-bold text-[15.5px] mb-4 text-hq-black">Digital Offerings</div>
-            <ul className="space-y-2.5 font-body text-[13.5px] normal-case text-hq-black/80">
-              <li><Link to="/happyu-app" className="hover:underline">HappyU App (iOS / Android)</Link></li>
-              <li><Link to="/micro-courses" className="hover:underline">100-Day Micro Courses</Link></li>
-              <li><Link to="/micro-courses" className="hover:underline">Finding Your Ikigai</Link></li>
-              <li><Link to="/micro-courses" className="hover:underline">Happiness in Money</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <div className="font-bold text-[15.5px] mb-4 text-hq-black">Media & Publications</div>
-            <ul className="space-y-2.5 font-body text-[13.5px] normal-case text-hq-black/80">
-              <li><Link to="/podcast" className="hover:underline">HQX Fortnightly Podcast</Link></li>
-              <li><Link to="/books" className="hover:underline">Books (2020-2025)</Link></li>
-              <li><Link to="/team" className="hover:underline">Global Faculty Directory</Link></li>
-              <li><Link to="/contact" className="hover:underline">Book Manny Anchan</Link></li>
+              <li>Serving 9 Nations & 16 Indian States</li>
+              <li><a href="tel:+919700100800" className="hover:underline font-semibold">+91 97001 00800</a></li>
+              <li>Executive Ingestion & Advisory</li>
             </ul>
           </div>
         </div>

@@ -295,20 +295,24 @@ export default function WellBeingEthos() {
       {/* BALANCE Beyond WORKLIFE: The 5 Well-Being Pillars (Fixonic-Inspired Split Philosophy Section) */}
       <section id="pillars" className="py-20 lg:py-28 px-4 sm:px-6 md:px-10 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
         
-        {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <div className="text-xs font-mono uppercase tracking-[0.25em] text-hq-black/50 mb-3 font-semibold">
-            BALANCE Beyond WORKLIFE • 5 Pivotal Dimensions
+        {/* Section Header: Left Bold Title • Right Explanatory Context (Matching The Architecture of Flourishing Style) */}
+        <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 md:gap-12 mb-12 sm:mb-16">
+          {/* Left Column: Main Headline */}
+          <div className="max-w-xl">
+            <h2 
+              style={{ fontFamily: '"Geist", Arial, sans-serif' }}
+              className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 leading-[1.12]"
+            >
+              The 5 Well-Being Pillars
+            </h2>
           </div>
-          <h2 
-            style={{ fontFamily: '"Geist", Arial, sans-serif', fontWeight: 300 }}
-            className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight font-light mb-4 text-hq-black"
-          >
-            The 5 <span style={{ fontFamily: '"Geist", Arial, sans-serif' }} className="font-bold text-hq-black">Well-Being Pillars</span>
-          </h2>
-          <p className="font-body text-hq-black/70 max-w-2xl mx-auto font-light text-sm sm:text-base leading-relaxed">
-            Employee well-being acknowledges the deep interrelation between various facets of an individual’s life within and beyond a corporate setting.
-          </p>
+
+          {/* Right Column: Explanatory Context */}
+          <div className="md:max-w-md lg:max-w-lg md:pt-2">
+            <p className="font-body text-sm sm:text-base text-neutral-600 font-normal leading-relaxed">
+              Employee well-being acknowledges the deep interrelation between various facets of an individual’s life within and beyond a corporate setting.
+            </p>
+          </div>
         </div>
 
         {/* Fixonic-Inspired 2-Column Split Architectural Frame */}
