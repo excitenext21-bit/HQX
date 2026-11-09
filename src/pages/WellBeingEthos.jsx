@@ -156,8 +156,13 @@ export default function WellBeingEthos() {
           <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none" />
         </div>
 
-        {/* Left Side Vertical Text: WELL-BEING ETHOS (Exact WhyHQX Style) */}
-        <div className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex flex-col justify-center items-center pointer-events-none select-none">
+        {/* Left Side Vertical Text: WELL-BEING ETHOS (On-Load Kinetic Entrance Animation) */}
+        <motion.div 
+          initial={{ opacity: 0, x: -24 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex flex-col justify-center items-center pointer-events-none select-none"
+        >
           <div 
             className="flex items-center gap-3 sm:gap-4"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
@@ -165,27 +170,61 @@ export default function WellBeingEthos() {
             <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
               WELL-BEING ETHOS
             </span>
-            <span className="w-px h-8 sm:h-14 bg-white/25" />
+            <motion.span 
+              initial={{ scaleY: 0 }}
+              animate={{ scaleY: 1 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="w-px h-8 sm:h-14 bg-white/25 origin-top" 
+            />
           </div>
-        </div>
+        </motion.div>
 
         {/* Main Content Area (Vertically Centered in Viewport Matching WhyHQX) */}
         <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 relative z-10 w-full flex-1 flex flex-col justify-center pt-28 sm:pt-32 pb-8">
           <div className="max-w-xl">
             
-            {/* Editorial Headline with WhyHQX text properties */}
-            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight leading-[1.15] mb-5 select-none text-white">
-              Those Who Feel Better <br />
-              <span className="text-hq-yellow font-bold">Work Better</span>
-            </h1>
+            {/* Editorial Headline with On-Load Stagger Animation */}
+            <motion.h1 
+              initial={{ opacity: 0, y: 28, filter: 'blur(6px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{ duration: 0.85, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight leading-[1.15] mb-5 select-none text-white"
+            >
+              <motion.span
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                className="inline-block"
+              >
+                Those Who Feel Better
+              </motion.span> <br />
+              <motion.span 
+                initial={{ opacity: 0, y: 16, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.85, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                className="text-hq-yellow font-bold inline-block drop-shadow-[0_0_25px_rgba(255,204,0,0.35)]"
+              >
+                Work Better
+              </motion.span>
+            </motion.h1>
 
-            {/* Lead Narrative with WhyHQX text properties */}
-            <p className="font-body text-sm sm:text-base text-white/80 font-light leading-relaxed mb-8 max-w-xl drop-shadow-sm">
+            {/* Lead Narrative with On-Load Slide-Up Animation */}
+            <motion.p 
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.85, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+              className="font-body text-sm sm:text-base text-white/80 font-light leading-relaxed mb-8 max-w-xl drop-shadow-sm"
+            >
               The <strong className="text-hq-yellow font-medium">HQ Well-being Model</strong> is an executive framework that promotes holistic vitality by encouraging individuals to develop good habits and make informed decisions that benefit their mental, physical, and emotional health. By prioritizing well-being, leaders reduce stress, elevate cognitive clarity, and drive sustainable enterprise flourishing.
-            </p>
+            </motion.p>
 
-            {/* Signature HQX Hero Button (Exact WhyHQX & Home Style) */}
-            <div className="pt-1">
+            {/* Signature HQX Hero Button with On-Load Reveal Animation */}
+            <motion.div 
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.85, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="pt-1"
+            >
               <a
                 href="#pillars"
                 onClick={(e) => {
@@ -212,13 +251,18 @@ export default function WellBeingEthos() {
                 {/* Bottom hairline border line */}
                 <span className="absolute bottom-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
               </a>
-            </div>
+            </motion.div>
 
           </div>
         </div>
 
-        {/* DOCKED STATS TICKER STRIP (PURE UNIFIED BLACK BACKGROUND) */}
-        <div className="w-full bg-black/95 backdrop-blur-md text-white/80 py-3.5 sm:py-4 px-6 md:px-12 border-t border-white/10 overflow-hidden relative z-20">
+        {/* DOCKED STATS TICKER STRIP (PURE UNIFIED BLACK BACKGROUND WITH ON-LOAD ENTRANCE) */}
+        <motion.div 
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full bg-black/95 backdrop-blur-md text-white/80 py-3.5 sm:py-4 px-6 md:px-12 border-t border-white/10 overflow-hidden relative z-20"
+        >
           <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
             <div className="flex items-center gap-2">
               <span className="text-hq-yellow font-bold">+34%</span>
@@ -240,7 +284,7 @@ export default function WellBeingEthos() {
               <span className="text-white/70">Continuous Stewardship</span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
       </section>
 

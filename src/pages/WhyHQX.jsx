@@ -331,8 +331,13 @@ export default function WhyHQX() {
           <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#07080A] via-[#07080A]/80 to-transparent"></div>
         </div>
 
-        {/* Left Side Vertical Text: WHY HQX */}
-        <div className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex flex-col justify-center items-center pointer-events-none select-none">
+        {/* Left Side Vertical Text: WHY HQX (On-Load Kinetic Entrance) */}
+        <motion.div 
+          initial={{ opacity: 0, x: -24 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex flex-col justify-center items-center pointer-events-none select-none"
+        >
           <div 
             className="flex items-center gap-3 sm:gap-4"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
@@ -340,15 +345,25 @@ export default function WhyHQX() {
             <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
               WHY HQX
             </span>
-            <span className="w-px h-8 sm:h-14 bg-white/25"></span>
+            <motion.span 
+              initial={{ scaleY: 0 }}
+              animate={{ scaleY: 1 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="w-px h-8 sm:h-14 bg-white/25 origin-top" 
+            />
           </div>
-        </div>
+        </motion.div>
 
         {/* Main Content Area (Vertically Centered in Viewport) */}
         <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 relative z-10 w-full flex-1 flex flex-col justify-center pt-28 sm:pt-32 pb-8">
           <div className="max-w-md">
-            {/* Editorial Headline with luminous yellow neon glow synchronized to man animation actions */}
-            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight leading-[1.15] mb-5 select-none">
+            {/* Editorial Headline with on-load entrance and luminous yellow neon glow synchronized to man animation actions */}
+            <motion.h1 
+              initial={{ opacity: 0, y: 28, filter: 'blur(6px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{ duration: 0.85, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight leading-[1.15] mb-5 select-none"
+            >
               <span 
                 style={getStepStyle(0)}
                 className="transition-all duration-500 inline-block font-bold"
@@ -383,15 +398,25 @@ export default function WhyHQX() {
               >
                 Perform
               </span>
-            </h1>
+            </motion.h1>
 
-            {/* Lead Narrative matching About Us font properties */}
-            <p className="font-body text-sm sm:text-base text-white/80 font-light leading-relaxed mb-8 drop-shadow-sm">
+            {/* Lead Narrative with on-load slide-up */}
+            <motion.p 
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.85, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="font-body text-sm sm:text-base text-white/80 font-light leading-relaxed mb-8 drop-shadow-sm"
+            >
               HQX delivers systematic eudaimonic transformation rooted in neuroscience, organizational psychology, and proven C-suite stewardship.
-            </p>
+            </motion.p>
 
-            {/* Signature HQX Hero Button (Matching Founder & Home Hero Style) */}
-            <div className="pt-1">
+            {/* Signature HQX Hero Button with on-load reveal */}
+            <motion.div 
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.85, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+              className="pt-1"
+            >
               <Link
                 to="/about-us"
                 className="group relative inline-flex items-center justify-between gap-8 py-3.5 px-2 font-display font-medium text-xs tracking-[0.2em] text-white hover:text-hq-yellow transition-colors duration-300 uppercase"
@@ -414,12 +439,17 @@ export default function WhyHQX() {
                 {/* Bottom hairline border line */}
                 <span className="absolute bottom-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
               </Link>
-            </div>
+            </motion.div>
           </div>
         </div>
 
-        {/* DOCKED STATS & REPUTATION TICKER STRIP (EXACT SAME AS FOUNDER HERO SECTION) */}
-        <div className="w-full bg-[#0A0A0A]/95 backdrop-blur-md text-white/80 py-3.5 sm:py-4 px-6 md:px-12 border-t border-white/10 overflow-hidden relative z-20">
+        {/* DOCKED STATS & REPUTATION TICKER STRIP with on-load entrance */}
+        <motion.div 
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full bg-[#0A0A0A]/95 backdrop-blur-md text-white/80 py-3.5 sm:py-4 px-6 md:px-12 border-t border-white/10 overflow-hidden relative z-20"
+        >
           <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
             <div className="flex items-center gap-2">
               <span className="text-hq-yellow font-bold">+31%</span>
@@ -441,7 +471,7 @@ export default function WhyHQX() {
               <span className="text-white/70">Behavioral Rewiring</span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
 
