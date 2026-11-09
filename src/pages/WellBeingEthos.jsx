@@ -117,18 +117,30 @@ export default function WellBeingEthos() {
             className="absolute right-0 top-0 h-full w-auto max-w-none object-contain object-right filter contrast-110 brightness-100"
           />
 
-          {/* Specular Pass: Ring Glow & Facial Reflection (Exact Subpixel Match to Photograph) */}
+          {/* Specular Pass: 30% Reduced RGB Spectrum Glow on Ring & Facial Reflection */}
           <motion.img
-            src="/images/wellbeing-halo-glow-layer.png"
+            src="/images/wellbeing-halo-rgb-layer.png"
             alt=""
             aria-hidden="true"
             animate={{
-              opacity: [0.35, 1, 0.35],
+              opacity: [0.35, 0.70, 0.35],
+              filter: [
+                'hue-rotate(0deg) saturate(160%)',
+                'hue-rotate(180deg) saturate(180%)',
+                'hue-rotate(360deg) saturate(160%)'
+              ]
             }}
             transition={{
-              duration: 3.4,
-              repeat: Infinity,
-              ease: 'easeInOut'
+              opacity: {
+                duration: 3.4,
+                repeat: Infinity,
+                ease: 'easeInOut'
+              },
+              filter: {
+                duration: 8.5,
+                repeat: Infinity,
+                ease: 'linear'
+              }
             }}
             className="absolute right-0 top-0 h-full w-auto max-w-none object-contain object-right pointer-events-none mix-blend-screen"
           />
