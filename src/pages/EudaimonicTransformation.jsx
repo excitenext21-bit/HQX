@@ -507,65 +507,60 @@ export default function EudaimonicTransformation() {
       <section id="pillars-detail" className="py-20 sm:py-28 px-6 md:px-12 bg-[#F8F9FA] text-hq-black border-b border-black/10">
         <div className="max-w-6xl mx-auto">
           
-          {/* Header Section: Left Accent Tag & Bold Title • Right Contextual Summary */}
+          {/* Header Section: Bold Title • Right Contextual Summary (No Eyebrow Text) */}
           <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 md:gap-12 mb-12 sm:mb-16">
-            {/* Left Column: Step-by-Step Accent Tag & Main Headline */}
+            {/* Left Column: Main Headline */}
             <div className="max-w-xl">
-              <span className="text-[#FF5500] font-display font-semibold text-xs sm:text-sm tracking-wider uppercase block mb-3">
-                Step-by-Step
-              </span>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 leading-[1.12]">
                 The Architecture of Flourishing
               </h2>
             </div>
 
             {/* Right Column: Explanatory Context */}
-            <div className="md:max-w-md lg:max-w-lg md:pt-4">
+            <div className="md:max-w-md lg:max-w-lg md:pt-2">
               <p className="font-body text-sm sm:text-base text-neutral-600 font-normal leading-relaxed">
                 From foundational self-regulation to boardroom execution, our five pillars systematize behavioral neuroscience and moral leadership into quantified enterprise resilience.
               </p>
             </div>
           </div>
 
-          {/* 5 Elements Accordion */}
+          {/* 5 Elements Accordion (Yellow Accent, Alternate White Tabs, No Numbers) */}
           <div className="space-y-3 sm:space-y-4">
-            {Object.keys(pillars).map((key) => {
+            {Object.keys(pillars).map((key, index) => {
               const item = pillars[key];
               const isActive = activePillar === key;
+              const isAlternate = index % 2 === 1;
               const Icon = item.icon;
 
               return (
                 <div key={key} className="transition-all duration-300">
                   {isActive ? (
-                    /* ACTIVE ACCORDION CARD - VIBRANT ORANGE CAPSULE (MATCHING REFERENCE ROW 02) */
-                    <div className="w-full bg-[#FF5500] text-white rounded-2xl sm:rounded-3xl shadow-[0_12px_36px_rgba(255,85,0,0.22)] overflow-hidden transition-all duration-300">
+                    /* ACTIVE ACCORDION CARD - VIBRANT BRAND YELLOW CAPSULE (HIGH-CONTRAST LUXURY) */
+                    <div className="w-full bg-hq-yellow text-hq-black rounded-2xl sm:rounded-3xl shadow-[0_12px_36px_rgba(255,204,0,0.28)] border border-black/10 overflow-hidden transition-all duration-300">
                       {/* Clickable Header Row */}
                       <button
                         type="button"
                         onClick={() => setActivePillar(isActive ? null : key)}
                         className="w-full text-left py-4 sm:py-5 px-6 sm:px-8 flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
                       >
-                        {/* Left: Indicator, Number, and Title */}
+                        {/* Left: Indicator Line and Title (No numbers) */}
                         <div className="flex items-center gap-4 sm:gap-6 min-w-0">
-                          <span className="w-[3px] h-6 sm:h-7 bg-white/70 rounded-full shrink-0" />
-                          <span className="font-display font-bold text-2xl sm:text-3xl text-white tracking-tight w-12 sm:w-14 shrink-0">
-                            {item.num}
-                          </span>
-                          <span className="font-display font-bold text-xl sm:text-2xl text-white tracking-tight truncate">
+                          <span className="w-[3.5px] h-6 sm:h-7 bg-hq-black rounded-full shrink-0" />
+                          <span className="font-display font-bold text-xl sm:text-2xl text-hq-black tracking-tight truncate">
                             {item.title}
                           </span>
                         </div>
 
                         {/* Right: Inset Cinematic Image Thumbnail & Collapse Chevron */}
                         <div className="flex items-center gap-3 sm:gap-4 shrink-0">
-                          <div className="w-24 sm:w-40 md:w-56 h-10 sm:h-12 rounded-xl sm:rounded-2xl overflow-hidden border border-white/20 shadow-inner bg-black/20">
+                          <div className="w-24 sm:w-40 md:w-56 h-10 sm:h-12 rounded-xl sm:rounded-2xl overflow-hidden border border-black/15 shadow-inner bg-black/10">
                             <img 
                               src={item.image} 
                               alt={item.title} 
                               className="w-full h-full object-cover filter contrast-105"
                             />
                           </div>
-                          <ChevronUp className="w-5 h-5 text-white/90 shrink-0" />
+                          <ChevronUp className="w-5 h-5 text-hq-black/80 shrink-0" />
                         </div>
                       </button>
 
@@ -575,14 +570,14 @@ export default function EudaimonicTransformation() {
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.35, ease: 'easeOut' }}
-                        className="px-6 sm:px-10 pb-7 pt-1 border-t border-white/15"
+                        className="px-6 sm:px-10 pb-7 pt-1 border-t border-black/10"
                       >
-                        <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-white/80 font-semibold mb-2">
-                          <Icon className="w-3.5 h-3.5 text-white" />
+                        <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-hq-black/80 font-bold mb-2">
+                          <Icon className="w-3.5 h-3.5 text-hq-black" />
                           <span>{item.subtitle}</span>
                         </div>
 
-                        <p className="font-body text-sm sm:text-base text-white/95 font-light leading-relaxed mb-6 max-w-3xl">
+                        <p className="font-body text-sm sm:text-base text-hq-black/90 font-light leading-relaxed mb-6 max-w-3xl">
                           {item.summary}
                         </p>
 
@@ -591,10 +586,10 @@ export default function EudaimonicTransformation() {
                           {item.breakdown.map((point, idx) => (
                             <div 
                               key={idx} 
-                              className="bg-black/15 backdrop-blur-sm p-3.5 sm:p-4 rounded-xl border border-white/15 flex items-start gap-2.5"
+                              className="bg-black/5 hover:bg-black/[0.08] p-3.5 sm:p-4 rounded-xl border border-black/10 flex items-start gap-2.5 transition-colors"
                             >
-                              <CheckCircle2 className="w-4 h-4 text-white shrink-0 mt-0.5" />
-                              <p className="font-body text-xs sm:text-[13px] text-white/95 leading-relaxed font-light">
+                              <CheckCircle2 className="w-4 h-4 text-hq-black shrink-0 mt-0.5" />
+                              <p className="font-body text-xs sm:text-[13px] text-hq-black/90 leading-relaxed font-normal">
                                 {point}
                               </p>
                             </div>
@@ -602,31 +597,32 @@ export default function EudaimonicTransformation() {
                         </div>
 
                         {/* Impact Metric Footer */}
-                        <div className="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-white/15">
-                          <div className="inline-flex items-center gap-2.5 bg-black/25 text-white border border-white/20 px-4 py-2 rounded-full text-xs font-mono">
-                            <TrendingUp className="w-3.5 h-3.5 text-white" />
+                        <div className="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-black/10">
+                          <div className="inline-flex items-center gap-2.5 bg-hq-black text-hq-yellow border border-black px-4 py-2 rounded-full text-xs font-mono font-semibold">
+                            <TrendingUp className="w-3.5 h-3.5 text-hq-yellow" />
                             <span>Impact Metric: {item.metric}</span>
                           </div>
 
-                          <span className="text-xs font-mono text-white/70 uppercase tracking-widest hidden sm:inline">
-                            Pillar {item.num} of 05 • Sovereign Enterprise Framework
+                          <span className="text-xs font-mono text-hq-black/70 uppercase tracking-widest font-medium hidden sm:inline">
+                            Sovereign Enterprise Framework
                           </span>
                         </div>
                       </motion.div>
                     </div>
                   ) : (
-                    /* INACTIVE ACCORDION ROW (MATCHING REFERENCE ROWS 01, 03, 04, 05) */
+                    /* INACTIVE ACCORDION ROW (WITH ALTERNATE WHITE BACKGROUND & YELLOW ACCENT LINE, NO NUMBERS) */
                     <button
                       type="button"
                       onClick={() => setActivePillar(key)}
-                      className="w-full text-left py-4 sm:py-5 px-6 sm:px-8 rounded-2xl sm:rounded-3xl hover:bg-white hover:shadow-[0_4px_24px_rgba(0,0,0,0.04)] transition-all duration-200 cursor-pointer flex items-center justify-between gap-4 group border border-transparent hover:border-black/5 focus:outline-none"
+                      className={`w-full text-left py-4 sm:py-5 px-6 sm:px-8 rounded-2xl sm:rounded-3xl transition-all duration-200 cursor-pointer flex items-center justify-between gap-4 group focus:outline-none ${
+                        isAlternate 
+                          ? 'bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-black/5 hover:shadow-[0_4px_20px_rgba(0,0,0,0.07)]' 
+                          : 'bg-transparent hover:bg-white hover:shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-transparent hover:border-black/5'
+                      }`}
                     >
-                      {/* Left: Indicator, Number, and Title */}
+                      {/* Left: Yellow Indicator Line and Title (No numbers) */}
                       <div className="flex items-center gap-4 sm:gap-6 min-w-0">
-                        <span className="w-[3px] h-6 sm:h-7 bg-[#FF5500] rounded-full shrink-0 group-hover:scale-y-110 transition-transform duration-200" />
-                        <span className="font-display font-bold text-2xl sm:text-3xl text-neutral-900 tracking-tight w-12 sm:w-14 shrink-0">
-                          {item.num}
-                        </span>
+                        <span className="w-[3.5px] h-6 sm:h-7 bg-hq-yellow rounded-full shrink-0 shadow-sm group-hover:scale-y-110 transition-transform duration-200" />
                         <span className="font-display font-semibold text-lg sm:text-xl text-neutral-900 group-hover:text-black tracking-tight whitespace-nowrap">
                           {item.title}
                         </span>
