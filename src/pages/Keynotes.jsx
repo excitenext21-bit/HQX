@@ -71,9 +71,17 @@ export default function Keynotes() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="max-w-2xl">
-            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-semibold mb-5">
+            <h1 
+              style={{ fontFamily: '"Geist", Arial, sans-serif', fontWeight: 300 }}
+              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-light mb-5"
+            >
               Insightful Keynotes & <br />
-              <span className="text-hq-yellow">Friday Talks</span>
+              <span 
+                style={{ fontFamily: '"Geist", Arial, sans-serif' }}
+                className="text-hq-yellow font-bold"
+              >
+                Friday Talks
+              </span>
             </h1>
 
             <p className="font-body text-base md:text-xl text-hq-white/80 font-light leading-relaxed mb-8">

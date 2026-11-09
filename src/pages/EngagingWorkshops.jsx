@@ -93,9 +93,17 @@ export default function EngagingWorkshops() {
       <section className="bg-[#0A0A0A] text-hq-white pt-36 pb-20 px-6 md:px-12 border-b border-white/10 relative overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10">
           <div className="max-w-2xl">
-            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-semibold mb-5">
+            <h1 
+              style={{ fontFamily: '"Geist", Arial, sans-serif', fontWeight: 300 }}
+              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-light mb-5"
+            >
               Engaging <br />
-              <span className="text-hq-yellow">Workshops</span>
+              <span 
+                style={{ fontFamily: '"Geist", Arial, sans-serif' }}
+                className="text-hq-yellow font-bold"
+              >
+                Workshops
+              </span>
             </h1>
             <p className="font-body text-base md:text-xl font-light text-hq-white/80 leading-relaxed">
               Interactive Corporate Workshops designed to enhance professional skills and organizational effectiveness. Focusing on strategic thinking, resilience development, performance optimization, leadership skills, effective communication, and stress management.

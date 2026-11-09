@@ -32,8 +32,11 @@ export default function Contact() {
       <section className="bg-hq-black text-hq-white pt-36 pb-20 px-6 md:px-12 border-b border-white/10">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-end gap-10">
           <div>
-            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-semibold mb-4">
-              Book <span className="text-hq-yellow">Manny Anchan</span>
+            <h1 
+              style={{ fontFamily: '"Geist", Arial, sans-serif', fontWeight: 300 }}
+              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-light mb-4"
+            >
+              Book <span style={{ fontFamily: '"Geist", Arial, sans-serif' }} className="text-hq-yellow font-bold">Manny Anchan</span>
             </h1>
             <p className="font-body text-base md:text-lg text-hq-white/80 max-w-xl font-light leading-relaxed">
               Reserve leadership immersions, executive offsites, disruptive townhalls, or digital enterprise licenses.

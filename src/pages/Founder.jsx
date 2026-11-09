@@ -103,7 +103,8 @@ export default function Founder() {
               {/* Massive Editorial Quote Headline */}
               <motion.blockquote 
                 variants={fadeUpVariants}
-                className="founder-hero-quote text-2xl sm:text-3xl md:text-4xl lg:text-[2.2rem] xl:text-[2.6rem] font-medium leading-[1.2] tracking-tight uppercase text-white mb-8 sm:mb-10 border-l-[3px] border-hq-yellow pl-5 sm:pl-7"
+                style={{ fontWeight: 300 }}
+                className="founder-hero-quote text-2xl sm:text-3xl md:text-4xl lg:text-[2.2rem] xl:text-[2.6rem] font-light leading-[1.2] tracking-tight uppercase text-white mb-8 sm:mb-10 border-l-[3px] border-hq-yellow pl-5 sm:pl-7"
               >
                 “THIS IS HOW THE GOOD COMPANIES FIND THE GOOD COMPANY.”
               </motion.blockquote>

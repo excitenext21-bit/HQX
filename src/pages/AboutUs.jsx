@@ -240,9 +240,17 @@ export default function AboutUs() {
             {/* Left Column: High-Contrast Editorial Headline & Subtext (Removed Giant Bold Wordmark) */}
             <div className="lg:col-span-5 xl:col-span-5 flex flex-col justify-center">
               <div className="max-w-md">
-                <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight text-white leading-[1.15] mb-5">
+                <h1 
+                  style={{ fontFamily: '"Geist", Arial, sans-serif', fontWeight: 300 }}
+                  className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-light tracking-tight text-white leading-[1.15] mb-5"
+                >
                   Architecting Purpose, <br />
-                  <span className="text-hq-yellow">Vitality & Performance</span>
+                  <span 
+                    style={{ fontFamily: '"Geist", Arial, sans-serif' }}
+                    className="text-hq-yellow font-bold"
+                  >
+                    Vitality & Performance
+                  </span>
                 </h1>
 
                 <p className="font-body text-sm sm:text-base text-white/80 font-light leading-relaxed mb-8">

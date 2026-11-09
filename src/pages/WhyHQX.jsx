@@ -362,8 +362,8 @@ export default function WhyHQX() {
               initial={{ opacity: 0, y: 28, filter: 'blur(6px)' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               transition={{ duration: 0.85, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              style={{ fontFamily: '"Geist", Arial, sans-serif' }}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-semibold tracking-tight leading-[1.15] mb-5 select-none"
+              style={{ fontFamily: '"Geist", Arial, sans-serif', fontWeight: 300 }}
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-light tracking-tight leading-[1.15] mb-5 select-none"
             >
               <span 
                 style={{ ...getStepStyle(0), fontFamily: '"Geist", Arial, sans-serif' }}

@@ -100,8 +100,11 @@ export default function HappyUApp() {
       <section className="bg-hq-black text-hq-white pt-36 pb-20 px-6 md:px-12 border-b border-white/10 relative overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-12">
           <div className="max-w-2xl">
-            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-semibold mb-5">
-              HappyU <span className="text-hq-yellow">App</span>
+            <h1 
+              style={{ fontFamily: '"Geist", Arial, sans-serif', fontWeight: 300 }}
+              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-light mb-5"
+            >
+              HappyU <span style={{ fontFamily: '"Geist", Arial, sans-serif' }} className="text-hq-yellow font-bold">App</span>
             </h1>
             <p className="font-body text-base md:text-xl text-hq-white/80 font-light leading-relaxed mb-8">
               HappyU is an app that aims to improve the user's overall well-being and sense of happiness. Packed with meditation exercises, gratitude journaling, positive affirmations, and mood tracking to develop lasting daily micro-habits.
