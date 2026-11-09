@@ -104,177 +104,200 @@ export default function WellBeingEthos() {
 
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
-      {/* Hero Header Matching Exact Reference Design */}
-      <header className="relative w-full min-h-[100svh] lg:h-screen lg:max-h-[1080px] bg-[#050505] text-white flex flex-col justify-between pt-24 sm:pt-28 md:pt-32 pb-8 overflow-hidden select-none border-b border-white/10">
+      {/* HERO SECTION MATCHING WHY-HQX HERO STYLE */}
+      <section className="bg-[#07080A] text-hq-white relative overflow-hidden h-screen min-h-[640px] max-h-[1080px] w-full flex flex-col justify-between border-b border-white/10 select-none">
         
-        {/* Background Image & Lighting Atmosphere */}
-        <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
-          <img 
-            src="/images/wellbeing-ethos-hero.jpg" 
-            alt="Well-Being Architecture - Engineered For Excellence" 
-            className="w-full h-full object-cover object-[78%_center] sm:object-[82%_center] lg:object-right filter contrast-110 brightness-95 opacity-85 sm:opacity-95 lg:opacity-100"
-          />
-          {/* Smooth left-edge void blend into pure obsidian black */}
-          <div className="absolute inset-y-0 left-0 w-full lg:w-3/5 bg-gradient-to-r from-[#050505] via-[#050505]/90 lg:via-[#050505]/70 to-transparent z-10 pointer-events-none" />
-          {/* Subtle bottom gradient to blend into next section */}
-          <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#050505] via-[#050505]/70 to-transparent z-10 pointer-events-none" />
-          {/* Glowing Halo Breathing Aura */}
-          <motion.div 
-            animate={{ 
-              opacity: [0.12, 0.28, 0.12], 
-              scale: [1, 1.05, 1] 
-            }} 
-            transition={{ 
-              duration: 6, 
-              repeat: Infinity, 
-              ease: 'easeInOut' 
-            }} 
-            className="absolute top-[20%] right-[15%] w-[320px] h-[320px] rounded-full bg-white/20 blur-[100px] pointer-events-none z-10" 
-          />
+        {/* Background Visual: Halo Man Sized to Display Completely with Glowing Ring & Face Reflection */}
+        <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
+          
+          {/* Right Dedicated Visual Container: Perfectly sized so entire man, jacket, and halo fit inside with 0% cropping */}
+          <div className="absolute right-0 sm:right-4 md:right-8 lg:right-16 xl:right-24 top-1/2 -translate-y-1/2 w-full sm:w-9/12 md:w-7/12 lg:w-1/2 max-w-[540px] h-[58vh] sm:h-[66vh] md:h-[72vh] max-h-[640px] pointer-events-none flex items-center justify-center select-none z-10">
+            <div className="relative w-full h-full flex items-center justify-center">
+              
+              {/* Man Image with Halo - Contained with ZERO cropping */}
+              <img 
+                src="/images/wellbeing-halo-man.jpg" 
+                alt="Well-Being Architecture - Halo Visionary" 
+                className="w-full h-full object-contain filter contrast-115 brightness-100"
+              />
+
+              {/* 1. Luminous Ring Core Shine & Pulsing Corona */}
+              <motion.div
+                animate={{
+                  opacity: [0.75, 1, 0.75],
+                  scale: [1, 1.06, 1],
+                  filter: [
+                    'drop-shadow(0 0 15px rgba(255,255,255,0.85)) drop-shadow(0 0 35px rgba(255,245,210,0.5))',
+                    'drop-shadow(0 0 28px rgba(255,255,255,1)) drop-shadow(0 0 55px rgba(255,230,170,0.85)) drop-shadow(0 0 85px rgba(255,204,0,0.45))',
+                    'drop-shadow(0 0 15px rgba(255,255,255,0.85)) drop-shadow(0 0 35px rgba(255,245,210,0.5))'
+                  ]
+                }}
+                transition={{
+                  duration: 3.2,
+                  repeat: Infinity,
+                  ease: 'easeInOut'
+                }}
+                className="absolute -translate-x-1/2 -translate-y-1/2 pointer-events-none rounded-full"
+                style={{
+                  left: '74.9%',
+                  top: '26.7%',
+                  width: '27%',
+                  height: '27%',
+                }}
+              >
+                {/* Tilted Elliptical Ring Aura */}
+                <div 
+                  className="w-full h-full rounded-full border-[2.5px] sm:border-[3.5px] border-white/90 shadow-[0_0_20px_#ffffff,inset_0_0_15px_#ffffff]"
+                  style={{ transform: 'rotate(-18deg) scaleY(0.55)' }}
+                />
+              </motion.div>
+
+              {/* 2. Ambient Downward Halo Light Spill */}
+              <motion.div
+                animate={{
+                  opacity: [0.35, 0.65, 0.35],
+                  scale: [0.96, 1.05, 0.96],
+                }}
+                transition={{
+                  duration: 3.2,
+                  repeat: Infinity,
+                  ease: 'easeInOut'
+                }}
+                className="absolute -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+                style={{
+                  left: '74%',
+                  top: '32%',
+                  width: '44%',
+                  height: '44%',
+                  background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.35) 0%, rgba(255,235,190,0.18) 40%, transparent 70%)',
+                  transform: 'rotate(-15deg)',
+                  mixBlendMode: 'screen'
+                }}
+              />
+
+              {/* 3. Dynamic Specular Light Reflection on Face (Cheekbone, Brow, Temple & Jaw) */}
+              <motion.div
+                animate={{
+                  opacity: [0.45, 0.9, 0.45],
+                  scale: [0.95, 1.05, 0.95],
+                }}
+                transition={{
+                  duration: 3.2,
+                  repeat: Infinity,
+                  ease: 'easeInOut'
+                }}
+                className="absolute -translate-x-1/2 -translate-y-1/2 pointer-events-none rounded-full"
+                style={{
+                  left: '67%',
+                  top: '46%',
+                  width: '24%',
+                  height: '30%',
+                  background: 'radial-gradient(ellipse at 40% 30%, rgba(255,255,255,0.7) 0%, rgba(255,245,210,0.38) 40%, rgba(255,204,0,0.15) 65%, transparent 85%)',
+                  mixBlendMode: 'color-dodge',
+                  filter: 'blur(5px)'
+                }}
+              />
+
+            </div>
+          </div>
+
+          {/* Multi-tier Contrast Scrim Overlays */}
+          {/* Left-to-right gradient to guarantee crystal-clear contrast for headline & narrative */}
+          <div className="absolute inset-y-0 left-0 w-full sm:w-4/5 lg:w-3/5 bg-gradient-to-r from-[#07080A] via-[#07080A]/90 lg:via-[#07080A]/70 to-transparent z-15 pointer-events-none" />
+          {/* Top seam fade beneath fixed navbar */}
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#07080A] via-[#07080A]/60 to-transparent z-15 pointer-events-none" />
+          {/* Bottom seam fade into docked stats strip */}
+          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#07080A] via-[#07080A]/80 to-transparent z-15 pointer-events-none" />
         </div>
 
-        {/* Main Content Area: Left Editorial Column */}
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 w-full flex-1 flex flex-col justify-center relative z-20 py-8 lg:py-12">
-          <div className="max-w-2xl">
+        {/* Left Side Vertical Text: WELL-BEING ETHOS (Exact WhyHQX Style) */}
+        <div className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex flex-col justify-center items-center pointer-events-none select-none">
+          <div 
+            className="flex items-center gap-3 sm:gap-4"
+            style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+          >
+            <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
+              WELL-BEING ETHOS
+            </span>
+            <span className="w-px h-8 sm:h-14 bg-white/25" />
+          </div>
+        </div>
+
+        {/* Main Content Area (Vertically Centered in Viewport Matching WhyHQX) */}
+        <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 relative z-10 w-full flex-1 flex flex-col justify-center pt-28 sm:pt-32 pb-8">
+          <div className="max-w-xl">
             
-            {/* Eyebrow Pill: ● ENGINEERED FOR EXCELLENCE */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/10 backdrop-blur-md mb-6 w-fit shadow-xs"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#10B981] shadow-[0_0_8px_rgba(16,185,129,0.9)]" />
-              <span className="font-mono text-[11px] sm:text-xs tracking-[0.2em] uppercase text-white/90 font-medium">
-                ENGINEERED FOR EXCELLENCE
-              </span>
-            </motion.div>
+            {/* Editorial Headline with WhyHQX text properties */}
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight leading-[1.15] mb-5 select-none text-white">
+              Those Who Feel Better <br />
+              <span className="text-hq-yellow font-bold">Work Better</span>
+            </h1>
 
-            {/* Monumental Headline: Built With Purpose. Driven by Vision. */}
-            <motion.h1
-              initial={{ opacity: 0, y: 22 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold tracking-tight text-white leading-[1.04] mb-5 max-w-xl"
-            >
-              Built With Purpose. <br />
-              <span className="text-white">Driven by Vision.</span>
-            </motion.h1>
+            {/* Lead Narrative with WhyHQX text properties */}
+            <p className="font-body text-sm sm:text-base text-white/80 font-light leading-relaxed mb-8 max-w-xl drop-shadow-sm">
+              The <strong className="text-hq-yellow font-medium">HQ Well-being Model</strong> is an executive framework that promotes holistic vitality by encouraging individuals to develop good habits and make informed decisions that benefit their mental, physical, and emotional health. By prioritizing well-being, leaders reduce stress, elevate cognitive clarity, and drive sustainable enterprise flourishing.
+            </p>
 
-            {/* 2-line Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="font-body text-sm sm:text-base md:text-lg text-white/70 font-light leading-relaxed mb-8 max-w-lg"
-            >
-              Structured systems designed for consistency, control, and long-term operation.
-            </motion.p>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="flex flex-wrap items-center gap-5 sm:gap-6"
-            >
-              {/* Primary Button: White Pill with ArrowUpRight */}
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-3 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-white text-black font-display font-semibold text-sm hover:bg-hq-yellow hover:text-black transition-all shadow-[0_4px_20px_rgba(255,255,255,0.18)] hover:shadow-[0_4px_25px_rgba(255,204,0,0.4)] active:scale-[0.98]"
-              >
-                <span>Start Free Trial</span>
-                <div className="w-5 h-5 rounded bg-black/10 flex items-center justify-center shrink-0">
-                  <ArrowUpRight className="w-3.5 h-3.5 text-black stroke-[2.5]" />
-                </div>
-              </Link>
-
-              {/* Secondary Link: Explore Benefits → */}
+            {/* Signature HQX Hero Button (Exact WhyHQX & Home Style) */}
+            <div className="pt-1">
               <a
                 href="#pillars"
                 onClick={(e) => {
                   e.preventDefault();
                   document.getElementById('pillars')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="group inline-flex items-center gap-2 text-white/80 hover:text-white font-display font-medium text-sm transition-colors py-2 cursor-pointer"
+                className="group relative inline-flex items-center justify-between gap-8 py-3.5 px-2 font-display font-medium text-xs tracking-[0.2em] text-white hover:text-hq-yellow transition-colors duration-300 uppercase cursor-pointer"
               >
-                <span>Explore Benefits</span>
-                <ArrowRight className="w-4 h-4 text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all" />
+                {/* Top hairline border line */}
+                <span className="absolute top-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
+
+                <span className="relative z-10 font-semibold tracking-widest">EXPLORE 5 PILLARS</span>
+
+                <svg 
+                  className="w-[22px] h-[11px] inline-block transition-transform duration-300 group-hover:translate-x-1.5 flex-shrink-0" 
+                  viewBox="0 0 20 10" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line x1="0" y1="5" x2="20" y2="5" stroke="currentColor" strokeWidth="1.2" />
+                  <polyline points="15 1, 20 5, 15 9" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+
+                {/* Bottom hairline border line */}
+                <span className="absolute bottom-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
               </a>
-            </motion.div>
+            </div>
 
           </div>
         </div>
 
-        {/* Bottom Editorial Bar: TRUSTED BY INNOVATIVE TEAMS & SCROLL TO EXPLORE */}
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 w-full relative z-20 flex flex-col sm:flex-row sm:items-end justify-between gap-6 pt-4">
-          
-          {/* Left: Trusted By */}
-          <div className="max-w-lg">
-            <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-white/40 block mb-3 font-semibold">
-              TRUSTED BY INNOVATIVE TEAMS
-            </span>
-            <div className="flex flex-wrap items-center gap-6 sm:gap-8 opacity-65 hover:opacity-90 transition-opacity">
-              <div className="flex items-center gap-2 text-white/90 font-display text-xs sm:text-sm tracking-wider font-semibold">
-                <ShieldCheck className="w-4 h-4 text-white/70" />
-                <span>TATA MOTORS</span>
-              </div>
-              <div className="flex items-center gap-2 text-white/90 font-display text-xs sm:text-sm tracking-wider font-semibold">
-                <Award className="w-4 h-4 text-white/70" />
-                <span>BARCLAYS</span>
-              </div>
-              <div className="flex items-center gap-2 text-white/90 font-display text-xs sm:text-sm tracking-wider font-semibold">
-                <Sparkles className="w-4 h-4 text-white/70" />
-                <span>HDFC LIFE</span>
-              </div>
-              <div className="flex items-center gap-2 text-white/90 font-display text-xs sm:text-sm tracking-wider font-semibold">
-                <Activity className="w-4 h-4 text-white/70" />
-                <span>CIPLA</span>
-              </div>
+        {/* DOCKED STATS TICKER STRIP (EXACT SAME AS WHY-HQX & FOUNDER HERO SECTION) */}
+        <div className="w-full bg-[#0A0A0A]/95 backdrop-blur-md text-white/80 py-3.5 sm:py-4 px-6 md:px-12 border-t border-white/10 overflow-hidden relative z-20">
+          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
+            <div className="flex items-center gap-2">
+              <span className="text-hq-yellow font-bold">+34%</span>
+              <span className="text-white/70">Strategic Clarity</span>
+            </div>
+            <span className="text-white/20 hidden md:inline">•</span>
+            <div className="flex items-center gap-2">
+              <span className="text-hq-yellow font-bold">-42%</span>
+              <span className="text-white/70">Burnout Reduction</span>
+            </div>
+            <span className="text-white/20 hidden md:inline">•</span>
+            <div className="flex items-center gap-2">
+              <span className="text-hq-yellow font-bold">+28%</span>
+              <span className="text-white/70">Cross-Functional Synergy</span>
+            </div>
+            <span className="text-white/20 hidden md:inline">•</span>
+            <div className="flex items-center gap-2">
+              <span className="text-hq-yellow font-bold">365 Days</span>
+              <span className="text-white/70">Continuous Stewardship</span>
             </div>
           </div>
-
-          {/* Right/Center: SCROLL TO EXPLORE */}
-          <div className="hidden sm:flex justify-end">
-            <a
-              href="#pillars"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('pillars')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="group flex flex-col items-center gap-1.5 text-white/40 hover:text-white transition-colors cursor-pointer"
-            >
-              <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.25em]">
-                SCROLL TO EXPLORE
-              </span>
-              <ChevronDown className="w-4 h-4 animate-bounce group-hover:text-hq-yellow" />
-            </a>
-          </div>
-
         </div>
 
-      </header>
-
-      {/* 4 Core Levers (Page 6 of Profile) */}
-      <section className="py-14 px-6 md:px-12 bg-hq-black text-white border-b border-white/10">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {[
-            { label: 'Engagement', desc: 'Promoting voluntary, enthusiastic participation' },
-            { label: 'Productivity', desc: 'Sustained energy and sharper cognitive output' },
-            { label: 'Collaboration', desc: 'Radical empathy and mutual accountability' },
-            { label: 'Culture', desc: 'A thriving ecosystem where talent flourishes' }
-          ].map((item, idx) => (
-            <div key={idx} className="p-6 bg-white/5 rounded-2xl border border-white/10">
-              <div className="font-display text-2xl md:text-3xl font-bold text-hq-yellow mb-2 uppercase tracking-wide">
-                {item.label}
-              </div>
-              <p className="font-body text-xs text-white/70 font-light leading-relaxed">
-                {item.desc}
-              </p>
-            </div>
-          ))}
-        </div>
       </section>
+
 
       {/* BALANCE Beyond WORKLIFE: 5 Pivotal Dimensions (Page 7 of Profile) */}
       <section id="pillars" className="py-20 px-6 md:px-12 max-w-7xl mx-auto scroll-mt-20">
