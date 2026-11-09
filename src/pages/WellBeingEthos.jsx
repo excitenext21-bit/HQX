@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
   Brain, 
@@ -7,6 +8,8 @@ import {
   Activity, 
   Coins, 
   ArrowRight, 
+  ArrowUpRight,
+  ChevronDown,
   Check, 
   Award, 
   Sparkles, 
@@ -101,43 +104,156 @@ export default function WellBeingEthos() {
 
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
-      {/* Hero Header with Authentic Profile Imagery */}
-      <section className="bg-[#0A0A0A] text-hq-white pt-36 pb-20 px-6 md:px-12 border-b border-white/10 relative overflow-hidden">
-        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-5/12 opacity-20 lg:opacity-35 pointer-events-none overflow-hidden">
+      {/* Hero Header Matching Exact Reference Design */}
+      <header className="relative w-full min-h-[100svh] lg:h-screen lg:max-h-[1080px] bg-[#050505] text-white flex flex-col justify-between pt-24 sm:pt-28 md:pt-32 pb-8 overflow-hidden select-none border-b border-white/10">
+        
+        {/* Background Image & Lighting Atmosphere */}
+        <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
           <img 
-            src="/profile_assets/page_5_img_1_485.jpeg" 
-            alt="Manny Anchan - Well-Being 365 Days" 
-            className="w-full h-full object-cover object-top filter grayscale contrast-125"
+            src="/images/wellbeing-ethos-hero.jpg" 
+            alt="Well-Being Architecture - Engineered For Excellence" 
+            className="w-full h-full object-cover object-[78%_center] sm:object-[82%_center] lg:object-right filter contrast-110 brightness-95 opacity-85 sm:opacity-95 lg:opacity-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent"></div>
+          {/* Smooth left-edge void blend into pure obsidian black */}
+          <div className="absolute inset-y-0 left-0 w-full lg:w-3/5 bg-gradient-to-r from-[#050505] via-[#050505]/90 lg:via-[#050505]/70 to-transparent z-10 pointer-events-none" />
+          {/* Subtle bottom gradient to blend into next section */}
+          <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#050505] via-[#050505]/70 to-transparent z-10 pointer-events-none" />
+          {/* Glowing Halo Breathing Aura */}
+          <motion.div 
+            animate={{ 
+              opacity: [0.12, 0.28, 0.12], 
+              scale: [1, 1.05, 1] 
+            }} 
+            transition={{ 
+              duration: 6, 
+              repeat: Infinity, 
+              ease: 'easeInOut' 
+            }} 
+            className="absolute top-[20%] right-[15%] w-[320px] h-[320px] rounded-full bg-white/20 blur-[100px] pointer-events-none z-10" 
+          />
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-semibold mb-5">
-            Those Who Feel Better <br />
-            <span className="text-hq-yellow">Work Better</span>
-          </h1>
-
-          <p className="font-body text-base md:text-xl font-light text-hq-white/80 max-w-2xl leading-relaxed mb-8">
-            The <strong className="text-hq-yellow">HQ Well-being Model</strong> is a framework that promotes overall well-being by encouraging individuals to develop good habits and make informed decisions that benefit their mental, physical, and emotional health. By prioritizing their wellbeing, individuals reduce stress, improve quality of life, and contribute to a healthier society.
-          </p>
-
-          <div className="flex flex-wrap gap-4">
-            <Link 
-              to="/contact" 
-              className="bg-hq-yellow text-hq-black font-display text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all font-semibold shadow-xl"
+        {/* Main Content Area: Left Editorial Column */}
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 w-full flex-1 flex flex-col justify-center relative z-20 py-8 lg:py-12">
+          <div className="max-w-2xl">
+            
+            {/* Eyebrow Pill: ● ENGINEERED FOR EXCELLENCE */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/10 backdrop-blur-md mb-6 w-fit shadow-xs"
             >
-              Order Enterprise Well-Being Audit
-            </Link>
-            <Link 
-              to="/micro-courses" 
-              className="bg-white/10 text-white border border-white/20 font-display text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all font-semibold"
+              <span className="w-2 h-2 rounded-full bg-[#10B981] shadow-[0_0_8px_rgba(16,185,129,0.9)]" />
+              <span className="font-mono text-[11px] sm:text-xs tracking-[0.2em] uppercase text-white/90 font-medium">
+                ENGINEERED FOR EXCELLENCE
+              </span>
+            </motion.div>
+
+            {/* Monumental Headline: Built With Purpose. Driven by Vision. */}
+            <motion.h1
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold tracking-tight text-white leading-[1.04] mb-5 max-w-xl"
             >
-              Explore 100-Day Micro Courses
-            </Link>
+              Built With Purpose. <br />
+              <span className="text-white">Driven by Vision.</span>
+            </motion.h1>
+
+            {/* 2-line Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="font-body text-sm sm:text-base md:text-lg text-white/70 font-light leading-relaxed mb-8 max-w-lg"
+            >
+              Structured systems designed for consistency, control, and long-term operation.
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="flex flex-wrap items-center gap-5 sm:gap-6"
+            >
+              {/* Primary Button: White Pill with ArrowUpRight */}
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-3 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-white text-black font-display font-semibold text-sm hover:bg-hq-yellow hover:text-black transition-all shadow-[0_4px_20px_rgba(255,255,255,0.18)] hover:shadow-[0_4px_25px_rgba(255,204,0,0.4)] active:scale-[0.98]"
+              >
+                <span>Start Free Trial</span>
+                <div className="w-5 h-5 rounded bg-black/10 flex items-center justify-center shrink-0">
+                  <ArrowUpRight className="w-3.5 h-3.5 text-black stroke-[2.5]" />
+                </div>
+              </Link>
+
+              {/* Secondary Link: Explore Benefits → */}
+              <a
+                href="#pillars"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('pillars')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="group inline-flex items-center gap-2 text-white/80 hover:text-white font-display font-medium text-sm transition-colors py-2 cursor-pointer"
+              >
+                <span>Explore Benefits</span>
+                <ArrowRight className="w-4 h-4 text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all" />
+              </a>
+            </motion.div>
+
           </div>
         </div>
-      </section>
+
+        {/* Bottom Editorial Bar: TRUSTED BY INNOVATIVE TEAMS & SCROLL TO EXPLORE */}
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 w-full relative z-20 flex flex-col sm:flex-row sm:items-end justify-between gap-6 pt-4">
+          
+          {/* Left: Trusted By */}
+          <div className="max-w-lg">
+            <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-white/40 block mb-3 font-semibold">
+              TRUSTED BY INNOVATIVE TEAMS
+            </span>
+            <div className="flex flex-wrap items-center gap-6 sm:gap-8 opacity-65 hover:opacity-90 transition-opacity">
+              <div className="flex items-center gap-2 text-white/90 font-display text-xs sm:text-sm tracking-wider font-semibold">
+                <ShieldCheck className="w-4 h-4 text-white/70" />
+                <span>TATA MOTORS</span>
+              </div>
+              <div className="flex items-center gap-2 text-white/90 font-display text-xs sm:text-sm tracking-wider font-semibold">
+                <Award className="w-4 h-4 text-white/70" />
+                <span>BARCLAYS</span>
+              </div>
+              <div className="flex items-center gap-2 text-white/90 font-display text-xs sm:text-sm tracking-wider font-semibold">
+                <Sparkles className="w-4 h-4 text-white/70" />
+                <span>HDFC LIFE</span>
+              </div>
+              <div className="flex items-center gap-2 text-white/90 font-display text-xs sm:text-sm tracking-wider font-semibold">
+                <Activity className="w-4 h-4 text-white/70" />
+                <span>CIPLA</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right/Center: SCROLL TO EXPLORE */}
+          <div className="hidden sm:flex justify-end">
+            <a
+              href="#pillars"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('pillars')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="group flex flex-col items-center gap-1.5 text-white/40 hover:text-white transition-colors cursor-pointer"
+            >
+              <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.25em]">
+                SCROLL TO EXPLORE
+              </span>
+              <ChevronDown className="w-4 h-4 animate-bounce group-hover:text-hq-yellow" />
+            </a>
+          </div>
+
+        </div>
+
+      </header>
 
       {/* 4 Core Levers (Page 6 of Profile) */}
       <section className="py-14 px-6 md:px-12 bg-hq-black text-white border-b border-white/10">
@@ -161,7 +277,7 @@ export default function WellBeingEthos() {
       </section>
 
       {/* BALANCE Beyond WORKLIFE: 5 Pivotal Dimensions (Page 7 of Profile) */}
-      <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
+      <section id="pillars" className="py-20 px-6 md:px-12 max-w-7xl mx-auto scroll-mt-20">
         <div className="text-center mb-16">
           <h2 className="font-display text-4xl md:text-6xl tracking-tight font-semibold mb-4">
             The 5 Well-Being Pillars
