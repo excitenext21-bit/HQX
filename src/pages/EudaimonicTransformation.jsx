@@ -570,42 +570,38 @@ export default function EudaimonicTransformation() {
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.35, ease: 'easeOut' }}
-                        className="px-6 sm:px-10 pb-7 pt-1 border-t border-black/10"
+                        className="px-6 sm:px-10 pb-7 pt-4 border-t border-black/10"
                       >
-                        <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-hq-black/80 font-bold mb-2">
-                          <Icon className="w-3.5 h-3.5 text-hq-black" />
-                          <span>{item.subtitle}</span>
-                        </div>
-
                         <p className="font-body text-sm sm:text-base text-hq-black/90 font-light leading-relaxed mb-6 max-w-3xl">
                           {item.summary}
                         </p>
 
-                        {/* 3 Breakdown Highlights */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 mb-6">
-                          {item.breakdown.map((point, idx) => (
-                            <div 
-                              key={idx} 
-                              className="bg-black/5 hover:bg-black/[0.08] p-3.5 sm:p-4 rounded-xl border border-black/10 flex items-start gap-2.5 transition-colors"
-                            >
-                              <CheckCircle2 className="w-4 h-4 text-hq-black shrink-0 mt-0.5" />
-                              <p className="font-body text-xs sm:text-[13px] text-hq-black/90 leading-relaxed font-normal">
-                                {point}
-                              </p>
-                            </div>
-                          ))}
-                        </div>
+                        {/* 3 Breakdown Highlights - Clean vertical 1px divider lines, zero boxes, zero icons, bold text before ':' */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-black/15 pt-2">
+                          {item.breakdown.map((point, idx) => {
+                            const colonIndex = point.indexOf(':');
+                            const hasColon = colonIndex !== -1;
+                            const title = hasColon ? point.substring(0, colonIndex + 1) : '';
+                            const body = hasColon ? point.substring(colonIndex + 1) : point;
 
-                        {/* Impact Metric Footer */}
-                        <div className="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-black/10">
-                          <div className="inline-flex items-center gap-2.5 bg-hq-black text-hq-yellow border border-black px-4 py-2 rounded-full text-xs font-mono font-semibold">
-                            <TrendingUp className="w-3.5 h-3.5 text-hq-yellow" />
-                            <span>Impact Metric: {item.metric}</span>
-                          </div>
-
-                          <span className="text-xs font-mono text-hq-black/70 uppercase tracking-widest font-medium hidden sm:inline">
-                            Sovereign Enterprise Framework
-                          </span>
+                            return (
+                              <div 
+                                key={idx} 
+                                className={`${idx === 0 ? 'md:pr-6' : idx === item.breakdown.length - 1 ? 'md:pl-6' : 'md:px-6'} py-2 md:py-0`}
+                              >
+                                <p className="font-body text-xs sm:text-[13px] text-hq-black/90 leading-relaxed">
+                                  {hasColon ? (
+                                    <>
+                                      <strong className="font-bold text-hq-black">{title}</strong>
+                                      <span className="font-light text-hq-black/85">{body}</span>
+                                    </>
+                                  ) : (
+                                    <span className="font-normal text-hq-black/90">{point}</span>
+                                  )}
+                                </p>
+                              </div>
+                            );
+                          })}
                         </div>
                       </motion.div>
                     </div>
@@ -646,14 +642,14 @@ export default function EudaimonicTransformation() {
       </section>
 
       {/* Pages 4-8 Matrix: Problem Identification vs. Interventions Framework */}
-      <section className="py-20 px-6 md:px-12 bg-white border-b border-black/10">
+      {/* Problem Identification & Strategic Interventions Section */}
+      <section className="py-20 px-6 md:px-12 bg-[#F8F9FA] border-b border-black/10">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-12 pb-6 border-b border-black/10">
+          
+          {/* Section Header */}
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-10 pb-6 border-b border-black/10">
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-black/60 font-bold block mb-2">
-                Empirical Intervention Framework
-              </span>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] leading-[1.08]">
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0A0A0A] leading-[1.08]">
                 Problem Identification <br />
                 <span className="text-[#666666] font-light">& Strategic Interventions</span>
               </h2>
@@ -663,130 +659,143 @@ export default function EudaimonicTransformation() {
             </p>
           </div>
 
-          {/* Domain Tabs */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
+          {/* Simple Clean Domain Tabs: Bold & Underline Light in Yellow on Active Tab (No round borders) */}
+          <div className="flex flex-wrap items-center gap-6 sm:gap-10 border-b border-black/10 mb-10">
             {Object.keys(matrixDomains).map((domainKey) => {
               const dom = matrixDomains[domainKey];
-              const Icon = dom.icon;
               const isSelected = activeDomain === domainKey;
               return (
                 <button
                   key={domainKey}
                   onClick={() => setActiveDomain(domainKey)}
-                  className={`p-4 rounded-2xl border text-left transition-all duration-300 flex items-center gap-3 cursor-pointer ${
-                    isSelected 
-                      ? 'bg-[#1E1A17] text-white border-black shadow-md' 
-                      : 'bg-[#FAF8F5] text-black/70 border-black/10 hover:bg-black/5 hover:text-black'
+                  className={`pb-3.5 text-sm sm:text-base cursor-pointer transition-all duration-200 relative focus:outline-none ${
+                    isSelected
+                      ? 'font-bold text-black border-b-2 border-hq-yellow'
+                      : 'font-normal text-black/60 hover:text-black border-b-2 border-transparent'
                   }`}
                 >
-                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
-                    isSelected ? 'bg-hq-yellow text-black' : 'bg-white border border-black/10 text-black'
-                  }`}>
-                    <Icon className="w-4 h-4" />
-                  </div>
-                  <span className="font-display text-xs sm:text-sm font-semibold leading-snug">
-                    {dom.label}
-                  </span>
+                  {dom.label}
                 </button>
               );
             })}
           </div>
 
-          {/* Split Matrix Presentation */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+          {/* Elevated Floating UI Canvas Card (Matching Reference Mockup) */}
+          <div className="bg-white rounded-3xl sm:rounded-[36px] p-6 sm:p-10 md:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-black/5">
             
-            {/* Left Column: Problems Identified */}
-            <div className="lg:col-span-6 bg-[#FAF8F5] p-6 sm:p-8 rounded-3xl border border-black/10 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-wider text-red-600 font-bold mb-4">
-                  <AlertTriangle className="w-4 h-4" />
-                  <span>Underlying Corporate Friction (Audit)</span>
-                </div>
-                <h3 className="font-display text-xl sm:text-2xl font-semibold text-[#0A0A0A] mb-6">
-                  {currentDomain.label}
-                </h3>
+            {/* Top Row: Two-Tone Heading + Segmented Status Pill */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+              <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-normal text-neutral-400">
+                Smarter systems spot problems <span className="font-bold text-neutral-900">— and Solve them</span>
+              </h3>
 
-                <div className="space-y-3">
-                  {currentDomain.problems.map((prob, idx) => (
-                    <div key={idx} className="flex items-start gap-3 p-3 rounded-xl bg-white border border-black/5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2 shrink-0" />
-                      <p className="font-body text-xs sm:text-[13px] text-[#2A2A2A] font-normal leading-relaxed">
-                        {prob}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column: Strategic Interventions */}
-            <div className="lg:col-span-6 bg-[#0E0F12] text-white p-6 sm:p-8 rounded-3xl border border-white/10 flex flex-col justify-between shadow-xl">
-              <div>
-                <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-wider text-hq-yellow font-bold mb-4">
-                  <Sparkles className="w-4 h-4" />
-                  <span>Validated HQX Interventions</span>
-                </div>
-                <h3 className="font-display text-xl sm:text-2xl font-semibold text-white mb-6">
-                  Transformative Solutions
-                </h3>
-
-                <div className="space-y-3">
-                  {currentDomain.interventions.map((sol, idx) => (
-                    <div key={idx} className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
-                      <CheckCircle2 className="w-4 h-4 text-hq-yellow mt-0.5 shrink-0" />
-                      <p className="font-body text-xs sm:text-[13px] text-white/90 font-light leading-relaxed">
-                        {sol}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
-                <span className="text-xs font-mono text-white/50">
-                  Target Domain: {currentDomain.label}
+              <div className="inline-flex items-center bg-[#F3F4F6] p-1 rounded-full text-xs font-mono self-start sm:self-auto shrink-0">
+                <span className="bg-white text-black px-3 py-1 rounded-full shadow-xs font-semibold flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-hq-yellow" />
+                  Audit
                 </span>
-                <Link
-                  to="/leadership-deep-dive"
-                  className="inline-flex items-center gap-1.5 text-xs font-mono text-hq-yellow hover:underline uppercase tracking-wider font-semibold"
-                >
-                  <span>Explore Masterclass</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
+                <span className="text-black/60 px-3 py-1 font-medium">Intervene</span>
+                <span className="text-black/60 px-3 py-1 font-medium">Quantify</span>
               </div>
+            </div>
+
+            {/* Split Two-Card Container Side-by-Side */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+              
+              {/* Left Card: The Problem Identification / Diagnostic Audit */}
+              <div className="bg-[#F6F7F9] rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col justify-between border border-black/[0.04]">
+                <div>
+                  <h4 className="font-display text-lg sm:text-xl md:text-2xl font-bold text-neutral-900 mb-3 leading-snug">
+                    {currentDomain.problems[0]}
+                  </h4>
+
+                  <p className="font-body text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed mb-6">
+                    Chronic cognitive friction and unstructured recovery patterns trigger sustained cortisol elevations, destabilizing middle management and depleting executive decision velocity.
+                  </p>
+
+                  {/* Attribute Tags (Matching Reference v2.8.5, Open source, database) */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <span className="px-3 py-1 rounded-full bg-white text-xs font-mono text-black/70 border border-black/5 shadow-2xs">
+                      Executive Audit
+                    </span>
+                    <span className="px-3 py-1 rounded-full bg-white text-xs font-mono text-black/70 border border-black/5 shadow-2xs">
+                      Somatic Friction
+                    </span>
+                    <span className="px-3 py-1 rounded-full bg-white text-xs font-mono text-black/70 border border-black/5 shadow-2xs">
+                      EBITDA Drag
+                    </span>
+                  </div>
+
+                  {/* List of Audited Friction Items */}
+                  <div className="space-y-2 mb-6">
+                    {currentDomain.problems.slice(1, 4).map((prob, idx) => (
+                      <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-[13px] text-neutral-700">
+                        <span className="w-1.5 h-1.5 rounded-full bg-red-500/70 mt-1.5 shrink-0" />
+                        <span className="font-normal leading-relaxed">{prob}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Left Card Footer: Metric Count & Action Link */}
+                <div className="flex items-center justify-between pt-6 border-t border-black/5 text-xs font-mono text-neutral-500">
+                  <span>({currentDomain.problems.length}) root stressors identified</span>
+                  <Link 
+                    to="/leadership-deep-dive" 
+                    className="font-semibold text-neutral-900 underline underline-offset-4 hover:text-hq-yellow transition-colors"
+                  >
+                    Read audit &rarr;
+                  </Link>
+                </div>
+              </div>
+
+              {/* Right Card: Strategic Interventions (Dark Charcoal / Black) */}
+              <div className="bg-[#18191B] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-xl border border-white/10">
+                <div>
+                  <h4 className="font-display text-lg sm:text-xl md:text-2xl font-bold text-white mb-3">
+                    Validated HQX Architecture
+                  </h4>
+
+                  <p className="font-body text-xs sm:text-sm text-white/80 font-light leading-relaxed mb-6">
+                    {currentDomain.interventions[0]}
+                  </p>
+
+                  {/* Secondary Interventions */}
+                  <div className="space-y-2.5 mb-6">
+                    {currentDomain.interventions.slice(1, 4).map((sol, idx) => (
+                      <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-[13px] text-white/90">
+                        <CheckCircle2 className="w-4 h-4 text-hq-yellow mt-0.5 shrink-0" />
+                        <span className="font-light leading-relaxed">{sol}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="text-white/40 text-xs font-mono">
+                    HQX Behavioral Protocol • Empirically Calibrated
+                  </div>
+                </div>
+
+                {/* Right Card Footer: Deployed Status & Deploy Button */}
+                <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-white/10 mt-6">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-800/50 text-emerald-400 text-xs font-mono">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>Protocol Active</span>
+                  </div>
+
+                  <Link 
+                    to="/leadership-deep-dive"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider hover:bg-hq-yellow hover:text-black transition-all"
+                  >
+                    <span>Deploy Protocol</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+
             </div>
 
           </div>
 
-        </div>
-      </section>
-
-      {/* Call to Action Banner */}
-      <section className="py-20 px-6 md:px-12 bg-hq-black text-white text-center relative overflow-hidden">
-        <div className="max-w-4xl mx-auto relative z-10">
-          <span className="text-xs font-mono uppercase tracking-widest text-hq-yellow font-bold bg-white/10 px-4 py-1.5 rounded-full inline-block mb-4">
-            Begin the Evolution
-          </span>
-          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-6">
-            Ready to Engineer an Antifragile Executive Culture?
-          </h2>
-          <p className="font-body text-base md:text-lg text-hq-white/80 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            Move beyond transactional wellness. Deploy the HQ Functional Enhancement Model across your leadership pods and corporate tiers.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link 
-              to="/contact" 
-              className="bg-hq-yellow text-hq-black font-display font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white transition-all shadow-xl"
-            >
-              Initiate Enterprise Engagement
-            </Link>
-            <Link 
-              to="/keynotes" 
-              className="border border-white/30 text-white font-display text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all"
-            >
-              Explore Keynote Addresses
-            </Link>
-          </div>
         </div>
       </section>
 
