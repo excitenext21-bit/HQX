@@ -52,32 +52,47 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center text-center relative z-10 pb-8 sm:pb-12 pt-8">
 
-        {/* Site Map Columns (+10% Text Size - Sleek compact vertical rhythm) */}
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-left py-8 sm:py-9 border-t border-b border-hq-black/20 text-[13.5px] tracking-wider uppercase font-display">
+        {/* Site Map Columns (+10% Text Size - Sleek compact vertical rhythm, Inactive Sections Disabled) */}
+        <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-8 text-left py-8 sm:py-9 border-t border-b border-hq-black/20 text-[13.5px] tracking-wider uppercase font-display">
           <div>
-            <div className="font-bold text-[15.5px] mb-4 text-hq-black">About HQX</div>
+            <div className="font-bold text-[15.5px] mb-4 text-hq-black">About & Ethos</div>
             <ul className="space-y-2.5 font-body text-[13.5px] normal-case text-hq-black/80">
               <li><Link to="/about-us" className="hover:underline font-semibold">About Us</Link></li>
               <li><Link to="/founder" className="hover:underline">Founder (Manny Anchan)</Link></li>
               <li><Link to="/team" className="hover:underline">Our Team & Faculty</Link></li>
               <li><Link to="/why-hqx" className="hover:underline">Why HQX</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <div className="font-bold text-[15.5px] mb-4 text-hq-black">Executive Ethos</div>
-            <ul className="space-y-2.5 font-body text-[13.5px] normal-case text-hq-black/80">
               <li><Link to="/eudaimonic-transformation" className="hover:underline">Eudaimonic Transformation</Link></li>
               <li><Link to="/well-being-ethos" className="hover:underline">5 Well-Being Pillars</Link></li>
             </ul>
           </div>
 
           <div>
-            <div className="font-bold text-[15.5px] mb-4 text-hq-black">Global Secretariat</div>
-            <ul className="space-y-2.5 font-body text-[13.5px] normal-case text-hq-black/80">
-              <li>Serving 9 Nations & 16 Indian States</li>
-              <li><a href="tel:+919700100800" className="hover:underline font-semibold">+91 97001 00800</a></li>
-              <li>Executive Ingestion & Advisory</li>
+            <div className="font-bold text-[15.5px] mb-4 text-hq-black">Corporate Interventions</div>
+            <ul className="space-y-2.5 font-body text-[13.5px] normal-case text-hq-black/60">
+              <li onClick={(e) => e.preventDefault()} className="cursor-not-allowed">Leadership Deep Dive</li>
+              <li onClick={(e) => e.preventDefault()} className="cursor-not-allowed">Engaging Workshops</li>
+              <li onClick={(e) => e.preventDefault()} className="cursor-not-allowed">Keynotes & Friday Talks</li>
+              <li onClick={(e) => e.preventDefault()} className="cursor-not-allowed">Custom Executive Coaching</li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="font-bold text-[15.5px] mb-4 text-hq-black">Digital Offerings</div>
+            <ul className="space-y-2.5 font-body text-[13.5px] normal-case text-hq-black/60">
+              <li onClick={(e) => e.preventDefault()} className="cursor-not-allowed">HappyU App (iOS / Android)</li>
+              <li onClick={(e) => e.preventDefault()} className="cursor-not-allowed">100-Day Micro Courses</li>
+              <li onClick={(e) => e.preventDefault()} className="cursor-not-allowed">Finding Your Ikigai</li>
+              <li onClick={(e) => e.preventDefault()} className="cursor-not-allowed">Happiness in Money</li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="font-bold text-[15.5px] mb-4 text-hq-black">Media & Publications</div>
+            <ul className="space-y-2.5 font-body text-[13.5px] normal-case text-hq-black/60">
+              <li onClick={(e) => e.preventDefault()} className="cursor-not-allowed">HQX Fortnightly Podcast</li>
+              <li onClick={(e) => e.preventDefault()} className="cursor-not-allowed">Books (2020-2025)</li>
+              <li onClick={(e) => e.preventDefault()} className="cursor-not-allowed">Global Faculty Directory</li>
+              <li onClick={(e) => e.preventDefault()} className="cursor-not-allowed">Book Manny Anchan</li>
             </ul>
           </div>
         </div>

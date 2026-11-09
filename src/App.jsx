@@ -5,6 +5,7 @@ import { ThemeProvider } from './context/ThemeContext';
 
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
+import FluexaPageTransition from './components/common/FluexaPageTransition';
 
 import Home from './pages/Home';
 import EudaimonicTransformation from './pages/EudaimonicTransformation';
@@ -56,6 +57,7 @@ export default function App() {
       <DataProvider>
         <Router>
           <ScrollToTop />
+          <FluexaPageTransition />
           <div className="flex flex-col min-h-screen bg-hq-white dark:bg-[#07080B] text-hq-black dark:text-white transition-colors duration-200">
             <Navbar />
             <main className="flex-1">
