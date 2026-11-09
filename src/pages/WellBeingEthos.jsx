@@ -107,107 +107,22 @@ export default function WellBeingEthos() {
       {/* HERO SECTION MATCHING WHY-HQX HERO STYLE */}
       <section className="bg-[#07080A] text-hq-white relative overflow-hidden h-screen min-h-[640px] max-h-[1080px] w-full flex flex-col justify-between border-b border-white/10 select-none">
         
-        {/* Background Visual: Halo Man Sized to Display Completely with Glowing Ring & Face Reflection */}
+        {/* Background Visual: Halo Man (Positioned naturally on the right, fully visible, matching reference) */}
         <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
-          
-          {/* Right Dedicated Visual Container: Perfectly sized so entire man, jacket, and halo fit inside with 0% cropping */}
-          <div className="absolute right-0 sm:right-4 md:right-8 lg:right-16 xl:right-24 top-1/2 -translate-y-1/2 w-full sm:w-9/12 md:w-7/12 lg:w-1/2 max-w-[540px] h-[58vh] sm:h-[66vh] md:h-[72vh] max-h-[640px] pointer-events-none flex items-center justify-center select-none z-10">
-            <div className="relative w-full h-full flex items-center justify-center">
-              
-              {/* Man Image with Halo - Contained with ZERO cropping */}
-              <img 
-                src="/images/wellbeing-halo-man.jpg" 
-                alt="Well-Being Architecture - Halo Visionary" 
-                className="w-full h-full object-contain filter contrast-115 brightness-100"
-              />
-
-              {/* 1. Luminous Ring Core Shine & Pulsing Corona */}
-              <motion.div
-                animate={{
-                  opacity: [0.75, 1, 0.75],
-                  scale: [1, 1.06, 1],
-                  filter: [
-                    'drop-shadow(0 0 15px rgba(255,255,255,0.85)) drop-shadow(0 0 35px rgba(255,245,210,0.5))',
-                    'drop-shadow(0 0 28px rgba(255,255,255,1)) drop-shadow(0 0 55px rgba(255,230,170,0.85)) drop-shadow(0 0 85px rgba(255,204,0,0.45))',
-                    'drop-shadow(0 0 15px rgba(255,255,255,0.85)) drop-shadow(0 0 35px rgba(255,245,210,0.5))'
-                  ]
-                }}
-                transition={{
-                  duration: 3.2,
-                  repeat: Infinity,
-                  ease: 'easeInOut'
-                }}
-                className="absolute -translate-x-1/2 -translate-y-1/2 pointer-events-none rounded-full"
-                style={{
-                  left: '74.9%',
-                  top: '26.7%',
-                  width: '27%',
-                  height: '27%',
-                }}
-              >
-                {/* Tilted Elliptical Ring Aura */}
-                <div 
-                  className="w-full h-full rounded-full border-[2.5px] sm:border-[3.5px] border-white/90 shadow-[0_0_20px_#ffffff,inset_0_0_15px_#ffffff]"
-                  style={{ transform: 'rotate(-18deg) scaleY(0.55)' }}
-                />
-              </motion.div>
-
-              {/* 2. Ambient Downward Halo Light Spill */}
-              <motion.div
-                animate={{
-                  opacity: [0.35, 0.65, 0.35],
-                  scale: [0.96, 1.05, 0.96],
-                }}
-                transition={{
-                  duration: 3.2,
-                  repeat: Infinity,
-                  ease: 'easeInOut'
-                }}
-                className="absolute -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-                style={{
-                  left: '74%',
-                  top: '32%',
-                  width: '44%',
-                  height: '44%',
-                  background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.35) 0%, rgba(255,235,190,0.18) 40%, transparent 70%)',
-                  transform: 'rotate(-15deg)',
-                  mixBlendMode: 'screen'
-                }}
-              />
-
-              {/* 3. Dynamic Specular Light Reflection on Face (Cheekbone, Brow, Temple & Jaw) */}
-              <motion.div
-                animate={{
-                  opacity: [0.45, 0.9, 0.45],
-                  scale: [0.95, 1.05, 0.95],
-                }}
-                transition={{
-                  duration: 3.2,
-                  repeat: Infinity,
-                  ease: 'easeInOut'
-                }}
-                className="absolute -translate-x-1/2 -translate-y-1/2 pointer-events-none rounded-full"
-                style={{
-                  left: '67%',
-                  top: '46%',
-                  width: '24%',
-                  height: '30%',
-                  background: 'radial-gradient(ellipse at 40% 30%, rgba(255,255,255,0.7) 0%, rgba(255,245,210,0.38) 40%, rgba(255,204,0,0.15) 65%, transparent 85%)',
-                  mixBlendMode: 'color-dodge',
-                  filter: 'blur(5px)'
-                }}
-              />
-
-            </div>
-          </div>
-
-          {/* Multi-tier Contrast Scrim Overlays */}
+          <img 
+            src="/images/wellbeing-halo-man.jpg" 
+            alt="Well-Being Ethos - Those Who Feel Better Work Better" 
+            className="absolute right-0 top-0 h-full w-auto max-w-none object-contain object-right filter contrast-110 brightness-100"
+          />
+          {/* Multi-tier Contrast Scrim Overlays (Exact WhyHQX Lighting System) */}
           {/* Left-to-right gradient to guarantee crystal-clear contrast for headline & narrative */}
-          <div className="absolute inset-y-0 left-0 w-full sm:w-4/5 lg:w-3/5 bg-gradient-to-r from-[#07080A] via-[#07080A]/90 lg:via-[#07080A]/70 to-transparent z-15 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#07080A]/95 via-[#07080A]/85 sm:via-[#07080A]/70 lg:via-[#07080A]/35 to-transparent pointer-events-none" />
+          {/* Mobile dark wash for narrow screens */}
+          <div className="absolute inset-0 bg-[#07080A]/45 lg:hidden pointer-events-none" />
           {/* Top seam fade beneath fixed navbar */}
-          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#07080A] via-[#07080A]/60 to-transparent z-15 pointer-events-none" />
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#07080A] via-[#07080A]/60 to-transparent pointer-events-none" />
           {/* Bottom seam fade into docked stats strip */}
-          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#07080A] via-[#07080A]/80 to-transparent z-15 pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#07080A] via-[#07080A]/80 to-transparent pointer-events-none" />
         </div>
 
         {/* Left Side Vertical Text: WELL-BEING ETHOS (Exact WhyHQX Style) */}
