@@ -406,10 +406,14 @@ export default function EudaimonicTransformation() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight text-white leading-[1.15] mb-4 sm:mb-5"
+              style={{ fontFamily: '"Geist", Arial, sans-serif' }}
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-semibold tracking-tight text-white leading-[1.14] mb-4 sm:mb-5"
             >
               The new <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-100 to-white font-bold">
+              <span 
+                style={{ fontFamily: '"Geist", Arial, sans-serif' }}
+                className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-100 to-white font-extrabold"
+              >
                 Operating System
               </span> <br />
               for human flourishing

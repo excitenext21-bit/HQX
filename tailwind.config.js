@@ -19,6 +19,7 @@ export default {
         }
       },
       fontFamily: {
+        geist: ['"Geist"', 'Arial', 'sans-serif'],
         monda: ['"Monda"', '"Google Sans"', 'sans-serif'],
         display: ['"Google Sans"', '"Product Sans"', '"Plus Jakarta Sans"', '"General Sans"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
         heading: ['"Google Sans"', '"Product Sans"', '"Plus Jakarta Sans"', '"General Sans"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],

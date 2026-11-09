@@ -183,12 +183,13 @@ export default function WellBeingEthos() {
         <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 relative z-10 w-full flex-1 flex flex-col justify-center pt-28 sm:pt-32 pb-8">
           <div className="max-w-xl">
             
-            {/* Editorial Headline with On-Load Stagger Animation */}
+            {/* Editorial Headline with Geist, Arial, sans-serif Typography */}
             <motion.h1 
               initial={{ opacity: 0, y: 28, filter: 'blur(6px)' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               transition={{ duration: 0.85, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight leading-[1.15] mb-5 select-none text-white"
+              style={{ fontFamily: '"Geist", Arial, sans-serif' }}
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-semibold tracking-tight leading-[1.14] mb-5 select-none text-white"
             >
               <motion.span
                 initial={{ opacity: 0, y: 16 }}
@@ -202,7 +203,8 @@ export default function WellBeingEthos() {
                 initial={{ opacity: 0, y: 16, scale: 0.98 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.85, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                className="text-hq-yellow font-bold inline-block drop-shadow-[0_0_25px_rgba(255,204,0,0.35)]"
+                style={{ fontFamily: '"Geist", Arial, sans-serif' }}
+                className="text-hq-yellow font-extrabold inline-block drop-shadow-[0_0_25px_rgba(255,204,0,0.35)] tracking-tight"
               >
                 Work Better
               </motion.span>
