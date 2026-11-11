@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { 
-  Crown, 
-  GitMerge, 
-  Shield, 
-  Target, 
-  Move, 
-  ArrowRight, 
-  CheckCircle2, 
-  AlertTriangle, 
-  Sparkles, 
-  Zap, 
-  TrendingUp, 
-  Users, 
-  DollarSign, 
+import {
+  Crown,
+  GitMerge,
+  Shield,
+  Target,
+  Move,
+  ArrowRight,
+  CheckCircle2,
+  AlertTriangle,
+  Sparkles,
+  Zap,
+  TrendingUp,
+  Users,
+  DollarSign,
   HeartHandshake,
   Compass,
   Smile,
@@ -211,7 +211,7 @@ export default function EudaimonicTransformation() {
           - Button: SINGLE clean, glowing pill button under the copy
           ========================================================================= */}
       <section className="bg-black text-white min-h-[100svh] lg:h-screen lg:max-h-screen flex flex-col justify-between pt-20 sm:pt-22 lg:pt-16 pb-0 relative overflow-hidden w-full select-none">
-        
+
         {/* Subtle Stardust Twinkle (Soft 1.5px dots, clean and minimal) */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-10">
           {[
@@ -246,7 +246,7 @@ export default function EudaimonicTransformation() {
         </div>
 
         {/* Ambient Warm Golden Yellow Organic Light Orbs (Floating & Breathing with heavy blur) */}
-        <motion.div 
+        <motion.div
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.18, 0.32, 0.18],
@@ -256,9 +256,9 @@ export default function EudaimonicTransformation() {
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="absolute top-1/2 right-[5%] -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#FFCC00] blur-[200px] pointer-events-none z-0" 
+          className="absolute top-1/2 right-[5%] -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#FFCC00] blur-[200px] pointer-events-none z-0"
         />
-        <motion.div 
+        <motion.div
           animate={{
             scale: [1.1, 0.92, 1.1],
             opacity: [0.10, 0.22, 0.10],
@@ -269,12 +269,12 @@ export default function EudaimonicTransformation() {
             ease: 'easeInOut',
             delay: 1.5,
           }}
-          className="absolute bottom-[-15%] right-[20%] w-[550px] h-[550px] rounded-full bg-amber-500 blur-[180px] pointer-events-none z-0" 
+          className="absolute bottom-[-15%] right-[20%] w-[550px] h-[550px] rounded-full bg-amber-500 blur-[180px] pointer-events-none z-0"
         />
 
         {/* Left Side Vertical Text: EUDAIMONIC TRANSFORMATION with Yellow Arrow (Clean, NO divider line) */}
         <div className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-30 flex flex-col justify-center items-center pointer-events-none select-none">
-          <div 
+          <div
             className="flex items-center gap-2.5 sm:gap-3"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
           >
@@ -359,11 +359,11 @@ export default function EudaimonicTransformation() {
             {[
               { id: 6, x: 200, y: -200, width: 1400, height: 1450, rx: 725, ry: 725, grad: 'yellowWave6', minOp: 0.20, maxOp: 0.45, delay: 0, filter: 'softFeatherYellow' },
               { id: 5, x: 340, y: -100, width: 1300, height: 1250, rx: 625, ry: 625, grad: 'yellowWave5', minOp: 0.28, maxOp: 0.55, delay: 0.8, filter: 'softFeatherYellow' },
-              { id: 4, x: 480, y: 0,    width: 1200, height: 1050, rx: 525, ry: 525, grad: 'yellowWave4', minOp: 0.36, maxOp: 0.65, delay: 1.6, filter: 'softFeatherYellow' },
-              { id: 3, x: 620, y: 100,  width: 1100, height: 850,  rx: 425, ry: 425, grad: 'yellowWave3', minOp: 0.44, maxOp: 0.72, delay: 2.4, filter: 'softFeatherYellow' },
-              { id: 2, x: 760, y: 200,  width: 1000, height: 680,  rx: 340, ry: 340, grad: 'yellowWave2', minOp: 0.52, maxOp: 0.80, delay: 3.2, filter: 'softFeatherYellow' },
-              { id: 1, x: 880, y: 280,  width: 900,  height: 520,  rx: 260, ry: 260, grad: 'yellowWave1', minOp: 0.60, maxOp: 0.85, delay: 4.0, filter: 'ultraFeatherYellow' },
-              { id: 0, x: 980, y: 350,  width: 850,  height: 400,  rx: 200, ry: 200, grad: 'yellowWave0', minOp: 0.68, maxOp: 0.90, delay: 4.8, filter: 'ultraFeatherYellow' },
+              { id: 4, x: 480, y: 0, width: 1200, height: 1050, rx: 525, ry: 525, grad: 'yellowWave4', minOp: 0.36, maxOp: 0.65, delay: 1.6, filter: 'softFeatherYellow' },
+              { id: 3, x: 620, y: 100, width: 1100, height: 850, rx: 425, ry: 425, grad: 'yellowWave3', minOp: 0.44, maxOp: 0.72, delay: 2.4, filter: 'softFeatherYellow' },
+              { id: 2, x: 760, y: 200, width: 1000, height: 680, rx: 340, ry: 340, grad: 'yellowWave2', minOp: 0.52, maxOp: 0.80, delay: 3.2, filter: 'softFeatherYellow' },
+              { id: 1, x: 880, y: 280, width: 900, height: 520, rx: 260, ry: 260, grad: 'yellowWave1', minOp: 0.60, maxOp: 0.85, delay: 4.0, filter: 'ultraFeatherYellow' },
+              { id: 0, x: 980, y: 350, width: 850, height: 400, rx: 200, ry: 200, grad: 'yellowWave0', minOp: 0.68, maxOp: 0.90, delay: 4.8, filter: 'ultraFeatherYellow' },
             ].map((layer) => (
               <motion.rect
                 key={layer.id}
@@ -396,13 +396,13 @@ export default function EudaimonicTransformation() {
 
         {/* Main Content Area - Vertically centered between header and docked strip */}
         <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 w-full flex-1 flex items-center py-4 lg:py-6 relative z-20">
-          
+
           {/* Headline, Paragraph, and the SINGLE Explore Pillars Button */}
           <div className="max-w-2xl">
-            
+
             {/* Headline with exact About Us text properties:
                 font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-tight text-white leading-[1.15] mb-5 */}
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -410,7 +410,7 @@ export default function EudaimonicTransformation() {
               className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-light tracking-tight text-white leading-[1.14] mb-4 sm:mb-5"
             >
               The new <br />
-              <span 
+              <span
                 style={{ fontFamily: '"Geist", Arial, sans-serif' }}
                 className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-100 to-white font-extrabold"
               >
@@ -420,7 +420,7 @@ export default function EudaimonicTransformation() {
             </motion.h1>
 
             {/* 3-line paragraph related to Eudaimonic Transformation (matching About Us text properties) */}
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -430,14 +430,14 @@ export default function EudaimonicTransformation() {
             </motion.p>
 
             {/* Explore Pillars Button - EXACT Signature HQX Hero Button from Home Page */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="pt-1"
             >
-              <a 
-                href="#pillars-detail" 
+              <a
+                href="#pillars-detail"
                 onClick={(e) => {
                   e.preventDefault();
                   document.getElementById('pillars-detail')?.scrollIntoView({ behavior: 'smooth' });
@@ -449,10 +449,10 @@ export default function EudaimonicTransformation() {
 
                 <span className="relative z-10 uppercase tracking-[0.2em]">EXPLORE PILLARS</span>
 
-                <svg 
-                  className="w-[20px] h-[10px] inline-block transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0" 
-                  viewBox="0 0 20 10" 
-                  fill="none" 
+                <svg
+                  className="w-[20px] h-[10px] inline-block transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0"
+                  viewBox="0 0 20 10"
+                  fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <line x1="0" y1="5" x2="20" y2="5" stroke="currentColor" strokeWidth="1" />
@@ -471,7 +471,7 @@ export default function EudaimonicTransformation() {
         {/* DOCKED 4 ENTERPRISE LEVERS STRIP (INSIDE HERO SECTION, FIT TO SCREEN AT BOTTOM LIKE FOUNDER HERO) */}
         <div className="w-full bg-[#0A0A0A] text-white/80 py-3 sm:py-3.5 px-6 sm:px-10 border-t border-white/10 overflow-hidden relative z-20 mt-auto">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-4">
-            
+
             {/* Engagement */}
             <div className="flex flex-col gap-0.5 max-w-[270px]">
               <span className="text-hq-yellow font-bold font-mono text-xs uppercase tracking-widest">
@@ -525,13 +525,14 @@ export default function EudaimonicTransformation() {
       {/* The Architecture of Flourishing - Accordion Section (Matching Reference Style) */}
       <section id="pillars-detail" className="py-20 sm:py-28 px-6 md:px-12 bg-[#F8F9FA] text-hq-black border-b border-black/10">
         <div className="max-w-6xl mx-auto">
-          
+
           {/* Header Section: Bold Title • Right Contextual Summary (No Eyebrow Text) */}
           <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 md:gap-12 mb-12 sm:mb-16">
             {/* Left Column: Main Headline */}
             <div className="max-w-xl">
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 leading-[1.12]">
-                The Architecture of Flourishing
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] dark:text-white leading-[1.08]">
+                The Architecture <br />
+                <span className="text-[#666666] dark:text-white/60 font-light">of Flourishing</span>
               </h2>
             </div>
 
@@ -573,9 +574,9 @@ export default function EudaimonicTransformation() {
                         {/* Right: Inset Cinematic Image Thumbnail & Collapse Chevron */}
                         <div className="flex items-center gap-3 sm:gap-4 shrink-0">
                           <div className="w-24 sm:w-40 md:w-56 h-10 sm:h-12 rounded-xl sm:rounded-2xl overflow-hidden border border-black/15 shadow-inner bg-black/10">
-                            <img 
-                              src={item.image} 
-                              alt={item.title} 
+                            <img
+                              src={item.image}
+                              alt={item.title}
                               className="w-full h-full object-cover filter contrast-105"
                             />
                           </div>
@@ -604,8 +605,8 @@ export default function EudaimonicTransformation() {
                             const body = hasColon ? point.substring(colonIndex + 1) : point;
 
                             return (
-                              <div 
-                                key={idx} 
+                              <div
+                                key={idx}
                                 className={`${idx === 0 ? 'md:pr-6' : idx === item.breakdown.length - 1 ? 'md:pl-6' : 'md:px-6'} py-2 md:py-0`}
                               >
                                 <p className="font-body text-xs sm:text-[13px] text-hq-black/90 leading-relaxed">
@@ -629,11 +630,10 @@ export default function EudaimonicTransformation() {
                     <button
                       type="button"
                       onClick={() => setActivePillar(key)}
-                      className={`w-full text-left py-4 sm:py-5 px-6 sm:px-8 rounded-2xl sm:rounded-3xl transition-all duration-200 cursor-pointer flex items-center justify-between gap-4 group focus:outline-none ${
-                        isAlternate 
-                          ? 'bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-black/5 hover:shadow-[0_4px_20px_rgba(0,0,0,0.07)]' 
-                          : 'bg-transparent hover:bg-white hover:shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-transparent hover:border-black/5'
-                      }`}
+                      className={`w-full text-left py-4 sm:py-5 px-6 sm:px-8 rounded-2xl sm:rounded-3xl transition-all duration-200 cursor-pointer flex items-center justify-between gap-4 group focus:outline-none ${isAlternate
+                        ? 'bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-black/5 hover:shadow-[0_4px_20px_rgba(0,0,0,0.07)]'
+                        : 'bg-transparent hover:bg-white hover:shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-transparent hover:border-black/5'
+                        }`}
                     >
                       {/* Left: Yellow Indicator Line and Title (No numbers) */}
                       <div className="flex items-center gap-4 sm:gap-6 min-w-0">
@@ -664,7 +664,7 @@ export default function EudaimonicTransformation() {
       {/* Problem Identification & Strategic Interventions Section */}
       <section className="py-20 px-6 md:px-12 bg-[#F8F9FA] border-b border-black/10">
         <div className="max-w-7xl mx-auto">
-          
+
           {/* Section Header */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-10 pb-6 border-b border-black/10">
             <div>
@@ -680,7 +680,7 @@ export default function EudaimonicTransformation() {
 
           {/* Elevated Floating UI Canvas Card (Matching Reference Mockup) */}
           <div className="bg-white rounded-3xl sm:rounded-[36px] p-6 sm:p-10 md:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-black/5">
-            
+
             {/* Top Bar: 4 Domain Tabs Right-Aligned (Segmented Pill Style Matching Reference Mockup) */}
             <div className="flex justify-end mb-8 pb-6 border-b border-black/5 overflow-x-auto">
               <div className="inline-flex items-center bg-[#EFF1F4] p-1.5 rounded-full shadow-inner-xs max-w-full overflow-x-auto">
@@ -691,19 +691,17 @@ export default function EudaimonicTransformation() {
                     <button
                       key={domainKey}
                       onClick={() => setActiveDomain(domainKey)}
-                      className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm md:text-[15px] font-display font-semibold transition-all duration-150 cursor-pointer flex items-center focus:outline-none whitespace-nowrap shrink-0 ${
-                        isSelected
-                          ? 'bg-white text-neutral-900 shadow-[0_2px_8px_rgba(0,0,0,0.06)]'
-                          : 'text-neutral-500 hover:text-neutral-900 bg-transparent'
-                      }`}
+                      className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm md:text-[15px] font-display font-semibold transition-all duration-150 cursor-pointer flex items-center focus:outline-none whitespace-nowrap shrink-0 ${isSelected
+                        ? 'bg-white text-neutral-900 shadow-[0_2px_8px_rgba(0,0,0,0.06)]'
+                        : 'text-neutral-500 hover:text-neutral-900 bg-transparent'
+                        }`}
                     >
                       {/* Zero-jerk glowing dot indicator (preserved geometry across states) */}
                       <span
-                        className={`w-2.5 h-2.5 rounded-full shrink-0 mr-2 transition-all duration-150 ${
-                          isSelected
-                            ? 'bg-gradient-to-r from-amber-500 to-yellow-400 shadow-[0_0_8px_rgba(255,154,36,0.6)] opacity-100 scale-100'
-                            : 'opacity-0 scale-75'
-                        }`}
+                        className={`w-2.5 h-2.5 rounded-full shrink-0 mr-2 transition-all duration-150 ${isSelected
+                          ? 'bg-gradient-to-r from-amber-500 to-yellow-400 shadow-[0_0_8px_rgba(255,154,36,0.6)] opacity-100 scale-100'
+                          : 'opacity-0 scale-75'
+                          }`}
                       />
                       <span>{dom.label}</span>
                     </button>
@@ -714,7 +712,7 @@ export default function EudaimonicTransformation() {
 
             {/* Split Two-Card Container Side-by-Side */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
-              
+
               {/* Left Card: The Problem Identification / Diagnostic Audit */}
               <div className="bg-[#F6F7F9] rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col justify-between border border-black/[0.04]">
                 <div>
@@ -779,7 +777,7 @@ export default function EudaimonicTransformation() {
 
                 {/* Right Card Footer: Solution Button in Normal Case */}
                 <div className="flex justify-end pt-6 border-t border-white/10 mt-6">
-                  <Link 
+                  <Link
                     to="/well-being-ethos"
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-black font-semibold text-sm hover:bg-hq-yellow hover:text-black transition-all shadow-sm"
                   >

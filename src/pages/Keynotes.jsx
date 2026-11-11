@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Play, Sparkles, Mic2, Users, Calendar, ArrowRight, CheckCircle2, Radio, BookOpen, Award, Phone } from 'lucide-react';
+import { Play, Sparkles, Mic2, Users, Calendar, ArrowRight, CheckCircle2, Radio, BookOpen, Award, ShieldCheck, Coins } from 'lucide-react';
 import { useData } from '../context/DataContext';
+import ConferenceStage3D from '../components/keynotes/ConferenceStage3D';
 
 export default function Keynotes() {
   const { addInquiry } = useData();
+  const [activeTopic, setActiveTopic] = useState(0);
   const [success, setSuccess] = useState(false);
   const [form, setForm] = useState({
     name: '',
@@ -18,24 +20,28 @@ export default function Keynotes() {
     {
       title: 'The Happiness Maverick: The Science of High Performance',
       duration: '60 - 90 Minutes',
+      icon: Sparkles,
       desc: 'Manny Anchan\'s flagship corporate keynote unraveling how top Fortune 500 performers replace exhaustion with sustainable joy, purposeful clarity, and biological vitality.',
       audience: 'Global Townhalls, Annual Conventions, Leadership Summits'
     },
     {
       title: 'Friday Talks: Fast-Paced Employee Engagement',
       duration: '45 Minutes + Interactive Q&A',
+      icon: Mic2,
       desc: 'A vibrant, high-energy session delivering immediate neuroscience hacks on purpose alignment, team cohesion, and entering high-restoration weekends.',
       audience: 'Enterprise All-Hands, Friday Company Gatherings'
     },
     {
       title: 'Psychology of Wealth: Beyond Financial Scarcity',
       duration: '60 Minutes',
+      icon: Coins,
       desc: 'Decoding financial anxiety, cultivating abundance mindsets, and aligning material stewardship with enduring personal and enterprise legacy.',
       audience: 'Senior Executives, Family Offices, Corporate Bankers'
     },
     {
       title: 'Grit, Grace & Governance: Leading When Things Break',
       duration: '60 Minutes',
+      icon: ShieldCheck,
       desc: 'Lessons from 25 years at GE Capital, Barclays & ABN AMRO on managing volatility, investor scrutiny, and cross-cultural team panic with unshakeable calm.',
       audience: 'Senior Executives, Board Retreats'
     }
@@ -65,46 +71,67 @@ export default function Keynotes() {
 
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
-      {/* Hero Header with Authentic Profile Imagery */}
-      <section className="bg-hq-black text-hq-white pt-36 pb-20 px-6 md:px-12 border-b border-white/10 relative overflow-hidden">
+      {/* Hero Section: Full-Screen 3D Curved Conference Stage with 3D-Synced Content on Screen */}
+      <section className="bg-[#0A0A0A] text-white h-[100svh] min-h-[640px] max-h-[1080px] border-b border-white/10 relative overflow-hidden w-full">
+        {/* Left Side Vertical Text: KEYNOTES & TALKS (Matching About Us Hero Style) */}
+        <div className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex flex-col justify-center items-center pointer-events-none select-none">
+          <div
+            className="flex items-center gap-3 sm:gap-4"
+            style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+          >
+            <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
+              KEYNOTES &amp; TALKS
+            </span>
+            <span className="w-px h-8 sm:h-14 bg-white/25" />
+          </div>
+        </div>
 
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="max-w-2xl">
-            <h1 
+        {/* Full-Screen Interactive 3D Conference Stage with Content Locked to the Yellow Screen */}
+        <ConferenceStage3D>
+          <div className="text-center px-4 select-none">
+            <h1
               style={{ fontFamily: '"Geist", Arial, sans-serif', fontWeight: 300 }}
-              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-light mb-5"
+              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-light tracking-tight text-[#0A0A0A] leading-[1.15] mb-3.5"
             >
-              Insightful Keynotes & <br />
-              <span 
+              Insightful Keynotes &amp;{' '}
+              <span
                 style={{ fontFamily: '"Geist", Arial, sans-serif' }}
-                className="text-hq-yellow font-bold"
+                className="text-[#0A0A0A] font-bold"
               >
                 Friday Talks
               </span>
             </h1>
 
-            <p className="font-body text-base md:text-xl text-hq-white/80 font-light leading-relaxed mb-8">
-              Corporate Keynotes underscore the significance of fostering productive relationships, maintaining physical health, aligning with organizational purpose, and practicing self-management and resilience. Prioritizing these aspects leads to enhanced team dynamics, improved operational efficiency, and greater corporate success.
+            <p className="font-body text-xs sm:text-sm md:text-base text-[#0A0A0A]/80 font-light leading-relaxed max-w-xl mx-auto mb-6">
+              Productive teams &amp; human cohesion, resilience &amp; vitality driving clarity, and purpose-led corporate execution across 9 nations and 16 Indian states.
             </p>
 
-            <div className="flex flex-wrap gap-4">
-              <a 
-                href="#book-keynote" 
-                className="bg-hq-yellow text-hq-black font-display font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white transition-all shadow-xl"
+            <div className="flex items-center justify-center pointer-events-auto">
+              <a
+                href="#book-keynote"
+                className="group relative inline-flex items-center justify-between gap-7 py-3 px-2 font-display font-medium text-xs tracking-[0.2em] text-[#0A0A0A] hover:text-black transition-colors duration-300 uppercase"
               >
-                Check Manny's Speaking Calendar
-              </a>
-              <a 
-                href="tel:+919700100800" 
-                className="border border-white/30 text-white font-display text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all flex items-center gap-2"
-              >
-                <Phone className="w-3.5 h-3.5 text-hq-yellow" />
-                <span>Direct Hotline: +91 97001 00800</span>
+                {/* Top border line */}
+                <span className="absolute top-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-[#0A0A0A]/55 group-hover:bg-[#0A0A0A] transition-all duration-300 ease-out pointer-events-none" />
+
+                <span className="relative z-10 font-semibold tracking-widest">CHECK SPEAKING CALENDAR</span>
+
+                <svg
+                  className="w-[22px] h-[11px] inline-block transition-transform duration-300 group-hover:translate-x-1.5 flex-shrink-0"
+                  viewBox="0 0 20 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line x1="0" y1="5" x2="20" y2="5" stroke="currentColor" strokeWidth="1.2" />
+                  <polyline points="15 1, 20 5, 15 9" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+
+                {/* Bottom border line */}
+                <span className="absolute bottom-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-[#0A0A0A]/55 group-hover:bg-[#0A0A0A] transition-all duration-300 ease-out pointer-events-none" />
               </a>
             </div>
           </div>
-        </div>
+        </ConferenceStage3D>
       </section>
 
       {/* Friday Talks Spotlight (Profile Page 15) */}
@@ -188,52 +215,82 @@ export default function Keynotes() {
         </div>
       </section>
 
-      {/* Signature Keynote Catalog */}
-      <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-display text-4xl md:text-5xl tracking-tight font-semibold">
-            Corporate Keynote Repertoire
-          </h2>
-        </div>
+      {/* Signature Keynote Catalog (Editorial 4-Column Tab Strip in HQX Theme Font & Colors) */}
+      <section className="py-20 sm:py-24 px-6 md:px-12 bg-hq-white text-hq-black">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-14 sm:mb-16">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl tracking-tight font-semibold text-hq-black">
+              Corporate Keynote Repertoire
+            </h2>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-          {topics.map((t, idx) => (
-            <div 
-              key={idx}
-              className="bg-hq-gray p-8 rounded-2xl border border-hq-black/15 shadow-sm hover:border-hq-black hover:shadow-xl transition-all flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex justify-between items-center mb-4">
-                  <span className="font-mono text-xs uppercase bg-hq-black text-hq-yellow px-3 py-1 rounded-full font-bold">
-                    {t.duration}
-                  </span>
-                  <span className="text-xs font-mono text-hq-black/60 font-semibold">
-                    Topic {(idx + 1).toString().padStart(2, '0')}
-                  </span>
-                </div>
-                <h3 className="font-display text-2xl font-bold tracking-tight mb-3">
-                  {t.title}
-                </h3>
-                <p className="font-body text-xs text-hq-black/75 font-light leading-relaxed mb-6">
-                  {t.desc}
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-hq-black/10 flex justify-between items-center">
-                <span className="text-[11px] font-mono text-hq-black/60">Target: {t.audience}</span>
-                <button
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-9 mb-20">
+            {topics.map((t, idx) => {
+              const TopicIcon = t.icon;
+              const isActive = activeTopic === idx;
+              return (
+                <div
+                  key={idx}
+                  onMouseEnter={() => setActiveTopic(idx)}
                   onClick={() => {
+                    setActiveTopic(idx);
                     setForm({ ...form, topic: t.title });
-                    document.getElementById('book-keynote')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="bg-hq-black text-white font-display text-xs uppercase tracking-wider px-4 py-2 rounded-full hover:bg-hq-yellow hover:text-hq-black transition-colors font-semibold"
+                  className="group cursor-pointer flex flex-col justify-between transition-all duration-300"
                 >
-                  Book Keynote
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
+                  <div>
+                    {/* Top Progress Hairline: Solid HQX Yellow When Active, Dashed Muted When Inactive */}
+                    <div
+                      className={`w-full mb-7 transition-all duration-300 ${
+                        isActive
+                          ? 'border-t-2 border-hq-yellow'
+                          : 'border-t border-dashed border-hq-black/20 group-hover:border-hq-yellow/70'
+                      }`}
+                    />
+
+                    {/* Thin-Stroke Minimalist Icon */}
+                    <TopicIcon
+                      className={`w-8 h-8 mb-6 stroke-[1.25] transition-colors duration-300 ${
+                        isActive
+                          ? 'text-hq-yellow'
+                          : 'text-hq-black/80 group-hover:text-hq-yellow'
+                      }`}
+                    />
+
+                    {/* Theme Display Font Title */}
+                    <h3 className="font-display text-xl sm:text-[22px] font-semibold tracking-tight text-hq-black leading-snug mb-3">
+                      {t.title}
+                    </h3>
+
+                    {/* Concise Body Copy */}
+                    <p className="font-body text-xs sm:text-[13px] text-hq-black/70 font-light leading-relaxed mb-5">
+                      {t.desc}
+                    </p>
+                  </div>
+
+                  {/* Subtle Metadata & Booking Trigger */}
+                  <div className="pt-3 flex items-center justify-between gap-2 text-[11px] font-mono text-hq-black/60">
+                    <span>{t.duration}</span>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveTopic(idx);
+                        setForm({ ...form, topic: t.title });
+                        document.getElementById('book-keynote')?.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      className={`inline-flex items-center gap-1 font-display uppercase tracking-wider font-bold transition-colors ${
+                        isActive ? 'text-hq-yellow' : 'text-hq-black/80 group-hover:text-hq-yellow'
+                      }`}
+                    >
+                      <span>Book</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
 
         {/* Real Profile Page 31: Engage and Inspire Talks & Signings */}
         <div className="bg-hq-black text-white p-8 md:p-12 rounded-3xl border border-black shadow-2xl">
@@ -261,6 +318,7 @@ export default function Keynotes() {
               </div>
             ))}
           </div>
+        </div>
         </div>
       </section>
 

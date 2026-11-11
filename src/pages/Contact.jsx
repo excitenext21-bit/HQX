@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, CheckCircle2, Calendar, Users, Building, ArrowRight, MessageSquare, ShieldCheck } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Phone, Mail, MapPin, CheckCircle2, ShieldCheck } from 'lucide-react';
 import { useData } from '../context/DataContext';
 
 export default function Contact() {
@@ -28,35 +29,216 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
-      {/* Header */}
-      <section className="bg-hq-black text-hq-white pt-36 pb-20 px-6 md:px-12 border-b border-white/10">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-end gap-10">
-          <div>
-            <h1 
-              style={{ fontFamily: '"Geist", Arial, sans-serif', fontWeight: 300 }}
-              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-light mb-4"
-            >
-              Book <span style={{ fontFamily: '"Geist", Arial, sans-serif' }} className="text-hq-yellow font-bold">Manny Anchan</span>
-            </h1>
-            <p className="font-body text-base md:text-lg text-hq-white/80 max-w-xl font-light leading-relaxed">
-              Reserve leadership immersions, executive offsites, disruptive townhalls, or digital enterprise licenses.
-            </p>
-          </div>
+      {/* Dark Hero Section: 3D Open Envelope with Rotating Golden Paper-Plane Arrows — Exact Fit to Screen */}
+      <section className="bg-black text-white min-h-[100svh] lg:h-[100svh] lg:min-h-[560px] lg:max-h-[1080px] flex flex-col justify-between pt-20 sm:pt-24 pb-0 border-b border-white/10 relative overflow-hidden w-full">
+        {/* Ambient Studio Lighting */}
+        <div className="absolute top-1/3 right-[15%] w-[460px] h-[460px] bg-hq-yellow/[0.08] rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute bottom-1/4 right-[28%] w-[340px] h-[340px] bg-white/[0.04] rounded-full blur-[130px] pointer-events-none" />
 
-          <div className="bg-hq-yellow text-hq-black p-6 rounded-2xl max-w-sm shadow-xl w-full lg:w-auto">
-            <div className="text-[10px] font-mono uppercase tracking-widest text-hq-black/70 mb-1">Direct Priority Desk</div>
-            <a href="tel:+919700100800" className="text-2xl font-display font-bold hover:underline block mb-2">
-              +91 97001 00800
+        {/* Left Side Vertical Text */}
+        <div className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex flex-col justify-center items-center pointer-events-none select-none">
+          <div
+            className="flex items-center gap-3 sm:gap-4"
+            style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+          >
+            <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
+              CONTACT HQX
+            </span>
+            <span className="w-px h-8 sm:h-14 bg-white/25" />
+          </div>
+        </div>
+
+        {/* Main Framing Container */}
+        <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 w-full relative z-10 flex-1 flex items-center py-3 sm:py-4 min-h-0">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center w-full">
+            {/* Left Column: Existing Content in About Us Editorial Style */}
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-5 flex flex-col justify-center"
+            >
+              <div className="max-w-md">
+                <h1
+                  style={{ fontFamily: '"Geist", Arial, sans-serif', fontWeight: 300 }}
+                  className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-light tracking-tight text-white leading-[1.15] mb-5"
+                >
+                  Book <br />
+                  <span
+                    style={{ fontFamily: '"Geist", Arial, sans-serif' }}
+                    className="text-hq-yellow font-bold"
+                  >
+                    Manny Anchan
+                  </span>
+                </h1>
+
+                <p className="font-body text-sm sm:text-base text-white/80 font-light leading-relaxed mb-8">
+                  Reserve leadership immersions, executive offsites, disruptive townhalls, or digital enterprise licenses.
+                </p>
+
+                <div className="pt-2 flex flex-wrap items-center gap-6">
+                  <a
+                    href="#contact-form"
+                    className="group relative inline-flex items-center justify-between gap-8 py-3.5 px-2 font-display font-medium text-xs tracking-[0.2em] text-white hover:text-hq-yellow transition-colors duration-300 uppercase"
+                  >
+                    {/* Top border line */}
+                    <span className="absolute top-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
+
+                    <span className="relative z-10 font-semibold tracking-widest">INITIATE INQUIRY</span>
+
+                    <svg
+                      className="w-[22px] h-[11px] inline-block transition-transform duration-300 group-hover:translate-x-1.5 flex-shrink-0"
+                      viewBox="0 0 20 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <line x1="0" y1="5" x2="20" y2="5" stroke="currentColor" strokeWidth="1.2" />
+                      <polyline points="15 1, 20 5, 15 9" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+
+                    {/* Bottom border line */}
+                    <span className="absolute bottom-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right Column: Floating 3D Open Envelope with Orbiting Golden Paper-Plane Arrows */}
+            <div className="lg:col-span-7 flex items-center justify-center relative min-h-[250px] sm:min-h-[320px] lg:min-h-0 select-none">
+              <div className="relative w-[270px] h-[250px] sm:w-[360px] sm:h-[330px] lg:w-[440px] lg:h-[360px] xl:h-[410px] flex items-center justify-center">
+                {/* Subtle Elliptical Orbital Rings Around Envelope */}
+                <div
+                  aria-hidden="true"
+                  className="absolute w-[280px] sm:w-[360px] lg:w-[420px] h-[110px] sm:h-[135px] lg:h-[155px] rounded-[100%] border border-hq-yellow/15 -rotate-12 pointer-events-none"
+                />
+                <div
+                  aria-hidden="true"
+                  className="absolute w-[260px] sm:w-[340px] lg:w-[400px] h-[95px] sm:h-[120px] lg:h-[140px] rounded-[100%] border border-white/[0.07] rotate-12 pointer-events-none"
+                />
+
+                {/* Central Levitating 3D Open Envelope */}
+                <motion.div
+                  animate={{ y: [0, -10, 0], rotate: [-1.5, 1.5, -1.5] }}
+                  transition={{ duration: 6.5, repeat: Infinity, ease: 'easeInOut' }}
+                  className="relative z-20 w-44 sm:w-56 lg:w-64 drop-shadow-[0_32px_60px_rgba(0,0,0,0.9)]"
+                >
+                  <img
+                    src="/images/contact-envelope.png"
+                    alt="Executive Correspondence — Open 3D Envelope"
+                    className="w-full h-auto object-contain pointer-events-none"
+                  />
+                </motion.div>
+
+                {/* Orbiting Golden Arrow #1 (Tilted Orbit Passing In Front & Behind Envelope) */}
+                <motion.div
+                  animate={{
+                    x: [0, 130, 185, 130, 0, -130, -185, -130, 0],
+                    y: [64, 40, -14, -56, -72, -46, 12, 54, 64],
+                    scale: [1.06, 0.96, 0.82, 0.72, 0.68, 0.76, 0.90, 1.02, 1.06],
+                    rotate: [-16, -38, -85, -145, -185, -225, -275, -330, -376],
+                    opacity: [1, 0.95, 0.85, 0.72, 0.65, 0.75, 0.88, 0.98, 1],
+                    zIndex: [30, 30, 15, 10, 10, 10, 25, 30, 30]
+                  }}
+                  transition={{
+                    duration: 11,
+                    repeat: Infinity,
+                    ease: 'linear'
+                  }}
+                  className="hidden sm:block absolute w-24 lg:w-28 drop-shadow-[0_14px_28px_rgba(255,206,0,0.28)] pointer-events-none"
+                >
+                  <img
+                    src="/images/contact-arrow.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="w-full h-auto object-contain"
+                  />
+                </motion.div>
+
+                {/* Orbiting Golden Arrow #2 (Opposite Phase Counter-Tilted Orbit) */}
+                <motion.div
+                  animate={{
+                    x: [0, -125, -175, -125, 0, 125, 175, 125, 0],
+                    y: [-66, -42, 12, 56, 70, 44, -14, -56, -66],
+                    scale: [0.68, 0.76, 0.90, 1.02, 1.06, 0.96, 0.82, 0.72, 0.68],
+                    rotate: [155, 120, 75, 25, -15, -55, -105, -160, -205],
+                    opacity: [0.65, 0.75, 0.88, 0.98, 1, 0.95, 0.85, 0.72, 0.65],
+                    zIndex: [10, 10, 25, 30, 30, 30, 15, 10, 10]
+                  }}
+                  transition={{
+                    duration: 11,
+                    repeat: Infinity,
+                    ease: 'linear'
+                  }}
+                  className="hidden sm:block absolute w-20 lg:w-24 drop-shadow-[0_14px_28px_rgba(255,206,0,0.25)] pointer-events-none"
+                >
+                  <img
+                    src="/images/contact-arrow.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="w-full h-auto object-contain"
+                  />
+                </motion.div>
+
+                {/* Mobile Orbiting Golden Arrows (Compact Radius) */}
+                <motion.div
+                  animate={{
+                    x: [0, 88, 118, 88, 0, -88, -118, -88, 0],
+                    y: [46, 28, -10, -40, -52, -32, 10, 38, 46],
+                    scale: [1, 0.9, 0.78, 0.7, 0.66, 0.74, 0.86, 0.96, 1],
+                    rotate: [-16, -38, -85, -145, -185, -225, -275, -330, -376],
+                    zIndex: [30, 30, 15, 10, 10, 10, 25, 30, 30]
+                  }}
+                  transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+                  className="sm:hidden absolute w-16 drop-shadow-[0_10px_20px_rgba(255,206,0,0.25)] pointer-events-none"
+                >
+                  <img src="/images/contact-arrow.png" alt="" aria-hidden="true" className="w-full h-auto object-contain" />
+                </motion.div>
+                <motion.div
+                  animate={{
+                    x: [0, -85, -115, -85, 0, 85, 115, 85, 0],
+                    y: [-48, -30, 10, 40, 50, 32, -10, -40, -48],
+                    scale: [0.66, 0.74, 0.86, 0.96, 1, 0.9, 0.78, 0.7, 0.66],
+                    rotate: [155, 120, 75, 25, -15, -55, -105, -160, -205],
+                    zIndex: [10, 10, 25, 30, 30, 30, 15, 10, 10]
+                  }}
+                  transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+                  className="sm:hidden absolute w-14 drop-shadow-[0_10px_20px_rgba(255,206,0,0.25)] pointer-events-none"
+                >
+                  <img src="/images/contact-arrow.png" alt="" aria-hidden="true" className="w-full h-auto object-contain" />
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* DOCKED PRIORITY DESK STRIP (MATCHING ABOUT US HERO SECTION) */}
+        <div className="w-full bg-[#0A0A0A]/95 text-white/80 py-3.5 sm:py-4 px-6 border-t border-white/10 overflow-hidden relative z-20">
+          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
+            <a href="tel:+919700100800" className="flex items-center gap-2 hover:text-hq-yellow transition-colors">
+              <span className="text-hq-yellow font-bold">PRIORITY DESK</span>
+              <span className="text-white/80">+91 97001 00800</span>
             </a>
-            <div className="text-xs font-body font-light text-hq-black/80">
-              Immediate WhatsApp / Executive Secretariat Ingestion
+            <span className="text-white/20 hidden md:inline">•</span>
+            <a href="mailto:connect@happinesssamurai.com" className="flex items-center gap-2 hover:text-hq-yellow transition-colors">
+              <span className="text-hq-yellow font-bold">EMAIL</span>
+              <span className="text-white/80">connect@happinesssamurai.com</span>
+            </a>
+            <span className="text-white/20 hidden md:inline">•</span>
+            <div className="flex items-center gap-2">
+              <span className="text-hq-yellow font-bold">24 HRS</span>
+              <span className="text-white/70">Executive Desk Turnaround</span>
+            </div>
+            <span className="text-white/20 hidden md:inline">•</span>
+            <div className="flex items-center gap-2">
+              <span className="text-hq-yellow font-bold">MUMBAI HQ</span>
+              <span className="text-white/70">NDA Confidentiality Assured</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Main Grid: Form & Corporate Details */}
-      <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
+      <section id="contact-form" className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Details */}
           <div className="lg:col-span-5 space-y-8">

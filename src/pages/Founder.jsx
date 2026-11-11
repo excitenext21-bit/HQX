@@ -209,9 +209,10 @@ export default function Founder() {
                 About the Founder
               </div>
 
-              {/* Exact Heading Properties from About Us Page */}
-              <h2 className="font-display text-2xl sm:text-3xl lg:text-[34px] font-semibold tracking-tight text-[#0A0A0A] leading-[1.1] mb-6">
-                Manny Anchan
+              {/* Exact Heading Style Matching Dedicated Chapters */}
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] leading-[1.08] mb-6">
+                Manny <br />
+                <span className="text-[#666666] font-light">Anchan</span>
               </h2>
 
               {/* Motivational Speaker Bio (Font Weight: 400) */}
@@ -379,10 +380,11 @@ export default function Founder() {
               transition={{ duration: 0.9, delay: 0.1, ease: luxuryEase }}
               className="lg:col-span-7 flex flex-col justify-center lg:border-l lg:border-white/10 lg:pl-12"
             >
-              {/* Heading: Journey (Using Exact Heading Properties from About Page) */}
+              {/* Heading: Journey (Matching Dual-Tone Dedicated Chapters Style) */}
               <div className="mb-6">
-                <h2 className="font-display text-2xl sm:text-3xl lg:text-[34px] font-semibold tracking-tight text-white leading-[1.1] mb-6">
-                  Manny's Journey
+                <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.08] mb-6">
+                  Manny's <br />
+                  <span className="text-white/60 font-light">Journey</span>
                 </h2>
 
                 {/* Narrative Content from the Spread */}

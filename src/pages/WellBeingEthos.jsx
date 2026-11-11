@@ -23,12 +23,14 @@ import {
   BookOpen,
   DollarSign,
   Scale,
-  Sparkle
+  Sparkle,
+  Target
 } from 'lucide-react';
-import { KEY_THEMES, WELLBEING_INVESTMENT_PILLARS, ENGAGEMENT_BENEFITS } from '../context/DataContext';
+import { KEY_THEMES, WELLBEING_INVESTMENT_PILLARS } from '../context/DataContext';
 
 export default function WellBeingEthos() {
   const [selectedPillar, setSelectedPillar] = useState('mental');
+  const [activeInvestment, setActiveInvestment] = useState(0);
 
   // The 5 Pillars from Profile Page 7 (BALANCE Beyond WORKLIFE)
   const pillars = [
@@ -98,6 +100,21 @@ export default function WellBeingEthos() {
       impact: '+45% higher retention of high-potential talent'
     }
   ];
+
+  const themeImages = {
+    ikigai: '/profile_assets/page_8_img_3_618.jpeg',
+    finance: '/profile_assets/page_8_img_2_610.jpeg',
+    stress: '/profile_assets/page_8_img_6_642.jpeg',
+    fitness: '/profile_assets/page_8_img_5_634.jpeg',
+    leadership: '/profile_assets/page_8_img_4_626.jpeg',
+    values: '/profile_assets/page_9_img_5_708.jpeg',
+    balance: '/images/hero_showcase/happy_wellbeing.jpg',
+    meditation: '/profile_assets/page_9_img_2_684.jpeg',
+    'psychology-wealth': '/profile_assets/page_9_img_4_700.jpeg',
+    'habit-building': '/profile_assets/page_9_img_6_717.jpeg',
+    healing: '/profile_assets/page_9_img_3_692.jpeg',
+    nutrition: '/profile_assets/page_8_img_1_602.jpeg',
+  };
 
   const currentPillar = pillars.find(p => p.id === selectedPillar) || pillars[0];
   const PillarIcon = currentPillar.icon;
@@ -299,11 +316,9 @@ export default function WellBeingEthos() {
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 md:gap-12 mb-12 sm:mb-16">
           {/* Left Column: Main Headline */}
           <div className="max-w-xl">
-            <h2 
-              style={{ fontFamily: '"Geist", Arial, sans-serif' }}
-              className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 leading-[1.12]"
-            >
-              The 5 Well-Being Pillars
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] dark:text-white leading-[1.08]">
+              The 5 Well-Being <br />
+              <span className="text-[#666666] dark:text-white/60 font-light">Pillars</span>
             </h2>
           </div>
 
@@ -464,145 +479,377 @@ export default function WellBeingEthos() {
 
       </section>
 
+      {/* Engagement Outcomes Feature Strip */}
+      <section className="relative bg-[#060607] text-white overflow-hidden border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 sm:py-14 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 md:divide-x md:divide-white/10">
+            
+            {/* Pillar 1 */}
+            <div className="text-left md:pr-8 flex items-start gap-4 group">
+              <Target className="w-8 h-8 text-white/80 group-hover:text-hq-yellow shrink-0 stroke-[1.2] mt-0.5 transition-colors" />
+              <div>
+                <h4 className="font-display text-xs sm:text-[13px] font-bold uppercase tracking-wider text-white mb-1.5 group-hover:text-hq-yellow transition-colors">
+                  FOCUS ON ENGAGEMENT
+                </h4>
+                <p className="font-body text-xs text-white/55 font-light leading-relaxed">
+                  Keeps interest alive, promotes voluntary participation, and sparks lasting executive commitment.
+                </p>
+              </div>
+            </div>
+
+            {/* Pillar 2 */}
+            <div className="text-left md:px-8 flex items-start gap-4 group">
+              <Zap className="w-8 h-8 text-white/80 group-hover:text-hq-yellow shrink-0 stroke-[1.2] mt-0.5 transition-colors" />
+              <div>
+                <h4 className="font-display text-xs sm:text-[13px] font-bold uppercase tracking-wider text-white mb-1.5 group-hover:text-hq-yellow transition-colors">
+                  STRATEGIES THAT DRIVE IMPACT
+                </h4>
+                <p className="font-body text-xs text-white/55 font-light leading-relaxed">
+                  Boosts productivity, sharpens memory retention, improves understanding, and builds speaker confidence.
+                </p>
+              </div>
+            </div>
+
+            {/* Pillar 3 */}
+            <div className="text-left md:pl-8 flex items-start gap-4 group">
+              <Users className="w-8 h-8 text-white/80 group-hover:text-hq-yellow shrink-0 stroke-[1.2] mt-0.5 transition-colors" />
+              <div>
+                <h4 className="font-display text-xs sm:text-[13px] font-bold uppercase tracking-wider text-white mb-1.5 group-hover:text-hq-yellow transition-colors">
+                  SYNERGY &amp; STRONG CULTURE
+                </h4>
+                <p className="font-body text-xs text-white/55 font-light leading-relaxed">
+                  Fosters camaraderie, increases collaboration across silos, and strengthens high-trust culture.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* The 12 KEY THEMES (Profile Pages 8 & 9) */}
       <section className="py-20 px-6 md:px-12 bg-hq-gray border-t border-b border-hq-black/10">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-6xl tracking-tight font-semibold mb-4">
-              The 12 Key Themes of Well-Being
-            </h2>
-            <p className="font-body text-hq-black/70 max-w-xl mx-auto font-light text-base">
-              The foundational modules deployed across our corporate workshops, keynotes, and digital micro-courses.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {KEY_THEMES.map((theme, idx) => (
-              <div 
-                key={theme.id || idx}
-                className="bg-white p-7 rounded-2xl border border-hq-black/10 hover:border-hq-black hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
-              >
-                <div>
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="font-mono text-xs font-bold text-hq-black/40 group-hover:text-hq-yellow transition-colors">
-                      {(idx + 1).toString().padStart(2, '0')}.
-                    </span>
-                    <span className="text-[10px] font-mono uppercase tracking-widest bg-hq-black/5 px-2.5 py-1 rounded-full text-hq-black/60 group-hover:bg-hq-yellow group-hover:text-hq-black transition-colors font-medium">
-                      Theme
-                    </span>
-                  </div>
-                  <h3 className="font-display text-2xl font-bold tracking-tight mb-3 group-hover:text-hq-yellow transition-colors">
-                    {theme.title}
-                  </h3>
-                  <p className="font-body text-xs text-hq-black/75 font-light leading-relaxed">
-                    {theme.desc}
-                  </p>
-                </div>
-
-                <div className="mt-6 pt-4 border-t border-hq-black/5 flex items-center justify-between text-xs font-display uppercase tracking-wider font-semibold text-hq-black/60 group-hover:text-hq-black">
-                  <span>Explore Module</span>
-                  <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WHY Strategic Investment in Well-Being? (Profile Page 10) */}
-      <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12 items-center mb-16">
-          <div className="w-full lg:w-7/12">
-            <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight mb-6">
-              Why Strategic Investment in Well-Being?
-            </h2>
-            <p className="font-body text-base text-hq-black/80 font-light leading-relaxed mb-6">
-              Hands-on. Immersive. Experiential. Disciplined. Investment in employee well-being is not an expense—it is a measurable strategic driver of corporate durability.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {WELLBEING_INVESTMENT_PILLARS.map((item, idx) => (
-                <div key={idx} className="bg-hq-gray p-5 rounded-2xl border border-hq-black/10">
-                  <h4 className="font-display text-base font-bold text-hq-black mb-1">
-                    {item.title}
-                  </h4>
-                  <p className="font-body text-xs text-hq-black/75 font-light leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
+          {/* Section Header: Left Bold Dual-Tone Title • Right Explanatory Context */}
+          <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 md:gap-12 mb-12 sm:mb-16">
+            {/* Left Column: Main Headline */}
+            <div className="max-w-xl">
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] dark:text-white leading-[1.08]">
+                The 12 Key Themes <br />
+                <span className="text-[#666666] dark:text-white/60 font-light">of Well-Being</span>
+              </h2>
             </div>
-          </div>
 
-          <div className="w-full lg:w-5/12">
-            <div className="bg-hq-black text-white p-8 rounded-3xl border border-black shadow-2xl relative overflow-hidden">
-              <div className="absolute right-0 top-0 w-32 h-32 bg-hq-yellow/10 rounded-full blur-2xl"></div>
-              
-              <div className="w-14 h-14 rounded-2xl bg-hq-yellow text-hq-black flex items-center justify-center mb-6">
-                <Award className="w-7 h-7 stroke-[2]" />
-              </div>
-
-              <div className="text-xs font-mono text-hq-yellow uppercase tracking-widest mb-1 font-semibold">
-                Industry Recognition
-              </div>
-              <h3 className="font-display text-2xl font-bold mb-3">
-                Award-Winning Methodology
-              </h3>
-              <p className="font-body text-xs text-white/80 font-light leading-relaxed mb-6">
-                Featured among top leadership development approaches and recognized across global platforms for experiential discipline and measurable corporate impact.
+            {/* Right Column: Explanatory Context */}
+            <div className="md:max-w-md lg:max-w-lg md:pt-2">
+              <p className="font-body text-sm sm:text-base text-neutral-600 font-normal leading-relaxed">
+                The foundational modules deployed across our corporate workshops, keynotes, and digital micro-courses.
               </p>
-
-              <div className="p-4 bg-white/10 rounded-xl border border-white/10 flex items-center gap-3">
-                <Check className="w-5 h-5 text-hq-yellow shrink-0" />
-                <span className="font-display text-xs uppercase tracking-wider font-semibold text-white">
-                  G2 Best Software & Frameworks Benchmark
-                </span>
-              </div>
             </div>
           </div>
-        </div>
 
-        {/* Benefits of Engagement (Profile Page 11) */}
-        <div className="bg-hq-black text-white p-8 md:p-12 rounded-3xl border border-black shadow-2xl">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <div className="text-xs font-mono uppercase tracking-widest text-hq-yellow mb-2 font-bold">
-              Benefits • Importance of Engagement (Page 11)
-            </div>
-            <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-white">
-              Why Engagement Transforms Everything
-            </h3>
-          </div>
+          {/* Halsa-Inspired 4-Column Alternating Checkerboard Grid (Photo Tiles + White / Yellow / Black Cards) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+            {KEY_THEMES.map((theme, idx) => {
+              const rowIndex = Math.floor(idx / 2);
+              const isPhotoFirst = rowIndex % 2 === 0;
+              const imgSrc = themeImages[theme.id] || '/images/hero_showcase/happy_wellbeing.jpg';
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5">
-            {ENGAGEMENT_BENEFITS.map((benefit, bIdx) => (
-              <div 
-                key={bIdx}
-                className="bg-white/5 border border-white/10 p-4 rounded-xl text-center hover:bg-hq-yellow hover:text-hq-black transition-all group"
-              >
-                <div className="w-2 h-2 rounded-full bg-hq-yellow group-hover:bg-hq-black mx-auto mb-2"></div>
-                <span className="font-display text-xs uppercase tracking-wider font-semibold">
-                  {benefit}
-                </span>
-              </div>
-            ))}
+              const variantKey = ['white', 'yellow', 'black'][idx % 3];
+              const cardTheme = {
+                white: {
+                  container: 'bg-white border-black/[0.06] hover:border-black/15 shadow-[0_2px_16px_rgba(0,0,0,0.03)]',
+                  quote: 'text-[#0A0A0A] group-hover:text-hq-yellow',
+                  title: 'text-[#0A0A0A]',
+                  desc: 'text-neutral-500',
+                },
+                yellow: {
+                  container: 'bg-hq-yellow border-black/10 hover:border-black/30 shadow-[0_4px_20px_rgba(255,204,0,0.18)]',
+                  quote: 'text-[#0A0A0A]',
+                  title: 'text-[#0A0A0A]',
+                  desc: 'text-[#0A0A0A]/80',
+                },
+                black: {
+                  container: 'bg-[#0B0B0B] border-white/10 hover:border-hq-yellow/50 shadow-xl',
+                  quote: 'text-hq-yellow',
+                  title: 'text-white',
+                  desc: 'text-white/70',
+                },
+              }[variantKey];
+
+              const photoTile = (
+                <div
+                  key={`${theme.id}-photo`}
+                  className="group relative rounded-2xl sm:rounded-[20px] overflow-hidden bg-black/5 min-h-[260px] sm:min-h-[290px] lg:min-h-[310px] h-full shadow-sm border border-black/[0.05]"
+                >
+                  <img
+                    src={imgSrc}
+                    alt={theme.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent pointer-events-none" />
+                </div>
+              );
+
+              const cardTile = (
+                <div
+                  key={`${theme.id}-card`}
+                  className={`${cardTheme.container} p-6 sm:p-7 rounded-2xl sm:rounded-[20px] border hover:shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[260px] sm:min-h-[290px] lg:min-h-[310px] h-full group`}
+                >
+                  {/* Top: Clean Quote Mark + Theme Heading (Halsa Editorial Styling) */}
+                  <div>
+                    <span className={`inline-block font-serif text-2xl sm:text-[26px] leading-none mb-2 select-none transition-colors ${cardTheme.quote}`}>
+                      &rdquo;
+                    </span>
+                    <h3
+                      style={{ fontFamily: '"Geist", Arial, sans-serif' }}
+                      className={`text-xl sm:text-[22px] font-semibold tracking-tight leading-[1.2] mb-4 ${cardTheme.title}`}
+                    >
+                      {theme.title}
+                    </h3>
+                  </div>
+
+                  {/* Bottom: Concise Narrative Description */}
+                  <div className="pt-8 mt-auto">
+                    <p className={`font-body text-xs sm:text-[13px] font-normal leading-relaxed ${cardTheme.desc}`}>
+                      {theme.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+
+              return isPhotoFirst ? (
+                <React.Fragment key={theme.id || idx}>
+                  {photoTile}
+                  {cardTile}
+                </React.Fragment>
+              ) : (
+                <React.Fragment key={theme.id || idx}>
+                  {cardTile}
+                  {photoTile}
+                </React.Fragment>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 px-6 md:px-12 text-center bg-hq-yellow text-hq-black border-t border-hq-black">
-        <h2 className="font-display text-4xl md:text-5xl tracking-tight font-semibold mb-4">
-          Empower Your Workforce with 365 Days of Well-Being
-        </h2>
-        <p className="font-body text-hq-black/80 max-w-xl mx-auto mb-8 font-light text-base">
-          Connect directly with Manny Anchan to tailor a functional well-being framework for your enterprise.
-        </p>
-        <Link 
-          to="/contact" 
-          className="bg-hq-black text-hq-white font-display text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white hover:text-hq-black transition-all font-semibold shadow-xl"
-        >
-          Book Manny Anchan (+91 97001 00800)
-        </Link>
+      {/* WHY Strategic Investment in Well-Being? (Profile Page 10 - Solid Pure Black Canvas) */}
+      <section className="relative bg-[#000000] text-white overflow-hidden border-t border-b border-white/10">
+
+        {/* Main Content Grid */}
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 lg:py-24 relative z-10">
+          
+          {/* Section Header: Left Bold Dual-Tone Title • Right Explanatory Context (Matching The 12 Key Themes Header Style) */}
+          <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 md:gap-12 mb-12 sm:mb-16">
+            {/* Left Column: Main Headline */}
+            <div className="max-w-xl">
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.08]">
+                Why Strategic Investment <br />
+                <span className="text-white/55 font-light">in Well-Being?</span>
+              </h2>
+            </div>
+
+            {/* Right Column: Explanatory Context */}
+            <div className="md:max-w-md lg:max-w-lg md:pt-2">
+              <p className="font-body text-sm sm:text-base text-white/75 font-light leading-relaxed">
+                Hands-on. Immersive. Experiential. Disciplined. Investment in employee well-being is not an expense—it is a measurable strategic driver of corporate durability.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            
+            {/* Left Column: Interactive 4 Full-Width Investment Pillars */}
+            <div className="lg:col-span-6">
+              {/* Interactive Full-Width Architectural Bottom-Border Rows */}
+              <div className="flex flex-col w-full">
+                {WELLBEING_INVESTMENT_PILLARS.map((item, idx) => {
+                  const isActive = activeInvestment === idx;
+                  return (
+                    <button
+                      type="button"
+                      key={idx}
+                      onClick={() => setActiveInvestment(idx)}
+                      onMouseEnter={() => setActiveInvestment(idx)}
+                      className={`w-full text-left py-5 px-2 sm:px-3 border-b transition-all duration-300 cursor-pointer focus:outline-none ${
+                        isActive
+                          ? 'bg-white/[0.04] border-hq-yellow'
+                          : 'bg-transparent border-white/15 hover:bg-white/[0.02] hover:border-white/35'
+                      }`}
+                    >
+                      <div className="flex items-center gap-2 mb-1.5">
+                        <span
+                          className={`w-2 h-2 shrink-0 transition-colors ${
+                            isActive ? 'bg-hq-yellow' : 'bg-white/30'
+                          }`}
+                          style={{ clipPath: 'polygon(0 0, 100% 0, 0 100%)' }}
+                        />
+                        <h4 className="font-display text-sm sm:text-[15px] font-semibold text-white tracking-tight">
+                          {item.title}
+                        </h4>
+                      </div>
+                      <p className="font-body text-xs text-white/65 font-light leading-relaxed pl-4">
+                        {item.desc}
+                      </p>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Right Column: Chamfered Frosted Glass HUD Card (Exact Axi Reference Layout) */}
+            <div className="lg:col-span-6">
+              {(() => {
+                const activeItem = WELLBEING_INVESTMENT_PILLARS[activeInvestment] || WELLBEING_INVESTMENT_PILLARS[0];
+                const telemetryMap = [
+                  {
+                    bigStat: '365 Days',
+                    kpi1Label: 'Intrinsic Alignment',
+                    kpi1Sub: 'Personal values translated into daily corporate execution metrics.',
+                    kpi1Val: '+38%',
+                    kpi2Label: 'Value Adoption Rate',
+                    kpi2Sub: 'Sustained cultural buy-in benchmark across executive cohorts.',
+                    kpi2Val: '92%',
+                  },
+                  {
+                    bigStat: '3.2× ROI',
+                    kpi1Label: 'Productivity Lift',
+                    kpi1Sub: 'Deep-work cognitive output increase across participating teams.',
+                    kpi1Val: '109%',
+                    kpi2Label: 'Sprint Completion',
+                    kpi2Sub: 'Measured delivery consistency across global leadership sprints.',
+                    kpi2Val: '97%',
+                  },
+                  {
+                    bigStat: '16 States',
+                    kpi1Label: 'Talent Retention Lift',
+                    kpi1Sub: 'Increase in retention across high-potential leadership tiers.',
+                    kpi1Val: '+45%',
+                    kpi2Label: 'Burnout Reduction',
+                    kpi2Sub: 'Measurable drop in chronic executive stress biomarkers.',
+                    kpi2Val: '-42%',
+                  },
+                  {
+                    bigStat: '9 Nations',
+                    kpi1Label: 'Engagement Lift',
+                    kpi1Sub: 'Voluntary, enthusiastic participation across enterprise offsites.',
+                    kpi1Val: '+64%',
+                    kpi2Label: 'Team Synergy',
+                    kpi2Sub: 'Faster cross-functional alignment and psychological safety.',
+                    kpi2Val: '+28%',
+                  },
+                ];
+                const metric = telemetryMap[activeInvestment] || telemetryMap[0];
+
+                return (
+                  <div
+                    style={{ clipPath: 'polygon(0 0, calc(100% - 48px) 0, 100% 48px, 100% 100%, 0 100%)' }}
+                    className="relative rounded-2xl bg-white/[0.06] backdrop-blur-2xl border border-white/15 shadow-[0_32px_90px_rgba(0,0,0,0.75)] p-6 sm:p-8 lg:p-9"
+                  >
+                    {/* Top Header Row inside Chamfered HUD */}
+                    <div className="pb-5 border-b border-white/15">
+                      <h3
+                        style={{ fontFamily: '"Geist", Arial, sans-serif' }}
+                        className="text-2xl sm:text-3xl font-light tracking-tight text-white leading-none"
+                      >
+                        Strategic Impact
+                      </h3>
+                    </div>
+
+                    {/* Middle Telemetry Summary Row */}
+                    <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 py-6">
+                      <div className="max-w-sm">
+                        <div className="mb-2">
+                          <div className="text-xs sm:text-sm font-display font-medium text-white leading-snug">
+                            Award-Winning Methodology <br />
+                            <span className="text-hq-yellow text-[11px] font-mono uppercase tracking-wider">
+                              G2 Benchmark Verified
+                            </span>
+                          </div>
+                        </div>
+
+                        <p className="font-body text-[11px] sm:text-xs text-white/65 font-light leading-relaxed">
+                          {activeItem.desc}
+                        </p>
+                      </div>
+
+                      <AnimatePresence mode="wait">
+                        <motion.div
+                          key={metric.bigStat}
+                          initial={{ opacity: 0, y: 8 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -8 }}
+                          transition={{ duration: 0.25 }}
+                          style={{ fontFamily: '"Geist", Arial, sans-serif' }}
+                          className="text-4xl sm:text-5xl font-light tracking-tight text-white shrink-0"
+                        >
+                          {metric.bigStat}
+                        </motion.div>
+                      </AnimatePresence>
+                    </div>
+
+                    {/* Bottom Split Metric Cards: Left Solid Brand Yellow Box, Right Matte Dark Charcoal Box */}
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={activeInvestment}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.25 }}
+                        className="grid grid-cols-1 sm:grid-cols-2 gap-3.5"
+                      >
+                        {/* Left Primary KPI Box (Solid HQX Brand Yellow - High Impact like Axi Red Box) */}
+                        <div className="bg-hq-yellow text-[#0A0A0A] rounded-xl p-5 flex flex-col justify-between min-h-[168px] shadow-lg">
+                          <div>
+                            <div
+                              style={{ fontFamily: '"Geist", Arial, sans-serif' }}
+                              className="text-sm sm:text-[15px] font-semibold tracking-tight leading-snug mb-1.5"
+                            >
+                              {metric.kpi1Label}
+                            </div>
+                            <p className="text-[11px] font-body text-[#0A0A0A]/80 leading-relaxed">
+                              {metric.kpi1Sub}
+                            </p>
+                          </div>
+                          <div
+                            style={{ fontFamily: '"Geist", Arial, sans-serif' }}
+                            className="text-4xl sm:text-[44px] font-normal tracking-tight leading-none mt-4"
+                          >
+                            {metric.kpi1Val}
+                          </div>
+                        </div>
+
+                        {/* Right Secondary KPI Box (Matte Slate Charcoal - Matching Axi Grey Box) */}
+                        <div className="bg-white/[0.14] text-white rounded-xl p-5 border border-white/10 flex flex-col justify-between min-h-[168px]">
+                          <div>
+                            <div
+                              style={{ fontFamily: '"Geist", Arial, sans-serif' }}
+                              className="text-sm sm:text-[15px] font-semibold tracking-tight leading-snug mb-1.5"
+                            >
+                              {metric.kpi2Label}
+                            </div>
+                            <p className="text-[11px] font-body text-white/70 leading-relaxed">
+                              {metric.kpi2Sub}
+                            </p>
+                          </div>
+                          <div
+                            style={{ fontFamily: '"Geist", Arial, sans-serif' }}
+                            className="text-4xl sm:text-[44px] font-normal tracking-tight leading-none mt-4"
+                          >
+                            {metric.kpi2Val}
+                          </div>
+                        </div>
+                      </motion.div>
+                    </AnimatePresence>
+                  </div>
+                );
+              })()}
+            </div>
+
+          </div>
+        </div>
       </section>
     </div>
   );

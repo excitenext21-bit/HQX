@@ -1,23 +1,65 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
-  Radio, 
   Play, 
   Calendar, 
   Clock, 
-  Share2, 
-  ExternalLink, 
-  Sparkles, 
-  Newspaper, 
-  Mic2,
-  Users,
-  Award
+  Newspaper,
+  Wifi
 } from 'lucide-react';
 import { useData } from '../context/DataContext';
 
 export default function Podcast() {
   const { podcasts, printMedia } = useData();
   const [activeEpisode, setActiveEpisode] = useState(podcasts[0] || null);
+  const [centerSlide, setCenterSlide] = useState(2);
+
+  const heroSlides = [
+    {
+      id: 'slide-0',
+      type: 'video',
+      src: '/videos/happiness_samurai_john_abraham.mp4',
+      poster: '/profile_assets/page_32_img_11_2380.jpeg',
+      alt: 'HQX Podcast Guest Dialogue',
+      episodeIdx: 3,
+      objPos: 'object-center'
+    },
+    {
+      id: 'slide-1',
+      type: 'image',
+      src: '/images/hero_showcase/manny_podcast_mayank.jpg',
+      alt: 'HQX Podcast Studio Conversation',
+      episodeIdx: 1,
+      objPos: 'object-[25%_25%]'
+    },
+    {
+      id: 'slide-2',
+      type: 'video',
+      src: '/videos/happiness_samurai_ikigai.mp4',
+      poster: '/profile_assets/page_21_img_1_1306.jpeg',
+      alt: 'HQX Podcast — Stories, Mindset and Insights',
+      episodeIdx: 0,
+      objPos: 'object-center'
+    },
+    {
+      id: 'slide-3',
+      type: 'video',
+      src: '/videos/happiness_samurai_mental_health.mp4',
+      poster: '/profile_assets/page_32_img_15_2398.jpeg',
+      alt: 'HQX Podcast Executive Dialogue',
+      episodeIdx: 2,
+      objPos: 'object-center'
+    },
+    {
+      id: 'slide-4',
+      type: 'image',
+      src: '/images/hero_showcase/manny_podcast_rakesh.jpg',
+      alt: 'HQX Podcast Studio Recording',
+      episodeIdx: 5,
+      objPos: 'object-[20%_25%]'
+    }
+  ];
 
   // Exact Featured Guests from Profile Page 32
   const profileGuests = [
@@ -71,58 +113,186 @@ export default function Podcast() {
     }
   ];
 
+  const handleSelectSlide = (idx, offset) => {
+    if (offset === 0) {
+      const epIdx = heroSlides[idx].episodeIdx;
+      if (podcasts[epIdx]) {
+        setActiveEpisode(podcasts[epIdx]);
+      }
+      const el = document.getElementById('featured-player');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      return;
+    }
+    setCenterSlide(idx);
+    const epIdx = heroSlides[idx].episodeIdx;
+    if (podcasts[epIdx]) {
+      setActiveEpisode(podcasts[epIdx]);
+    }
+  };
+
+  const stepSlide = (delta) => {
+    setCenterSlide((prev) => {
+      const next = (prev + delta + heroSlides.length) % heroSlides.length;
+      const epIdx = heroSlides[next].episodeIdx;
+      if (podcasts[epIdx]) {
+        setActiveEpisode(podcasts[epIdx]);
+      }
+      return next;
+    });
+  };
+
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
-      {/* Header with Authentic Podcast Cover */}
-      <section className="bg-hq-black text-hq-white pt-36 pb-20 px-6 md:px-12 border-b border-white/10 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-12">
-          <div className="max-w-2xl">
-            <h1 
-              style={{ fontFamily: '"Geist", Arial, sans-serif', fontWeight: 300 }}
-              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-light mb-5"
-            >
-              HQX <span style={{ fontFamily: '"Geist", Arial, sans-serif' }} className="text-hq-yellow font-bold">Podcast</span>
-            </h1>
-            <p className="font-serif italic text-xl text-hq-yellow mb-4">
-              "Stories, Mindset and Insights"
-            </p>
-            <p className="font-body text-base md:text-xl text-hq-white/80 font-light leading-relaxed mb-8">
-              A regular fortnightly audio and video program hosted by Manny Anchan providing in-depth discussions into mental, emotional, and physical health. Featuring titans of industry, Olympic athletes, authors, and spiritual pioneers sharing concrete wisdom.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <a 
-                href="https://youtube.com" 
-                target="_blank" 
-                rel="noreferrer"
-                className="bg-hq-yellow text-hq-black font-display font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white transition-all shadow-xl"
-              >
-                Watch on YouTube
-              </a>
-              <a 
-                href="https://spotify.com" 
-                target="_blank" 
-                rel="noreferrer"
-                className="border border-white/30 text-white font-display text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all"
-              >
-                Listen on Spotify
-              </a>
-            </div>
-          </div>
+      {/* Hero Banner: Centered Editorial Text (No Buttons) + Interactive Scrollable 5-Card Stepped Fan */}
+      <section className="bg-gradient-to-b from-[#060607] via-[#100B0B] to-black text-white min-h-[100svh] lg:h-[100svh] lg:min-h-[580px] lg:max-h-[1080px] pt-24 sm:pt-28 pb-0 px-4 sm:px-6 md:px-12 border-b border-white/10 relative overflow-hidden flex flex-col justify-between">
+        {/* Subtle Warm Stage Backlight Behind Center Phone */}
+        <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-[560px] h-[280px] bg-hq-yellow/[0.08] rounded-full blur-[140px] pointer-events-none" />
 
-          {/* Real Podcast Artwork from Profile Page 21 */}
-          <div className="w-56 sm:w-64 rounded-3xl overflow-hidden border-4 border-hq-yellow shadow-2xl bg-black shrink-0 transform hover:scale-105 transition-transform duration-300">
-            <img 
-              src="/profile_assets/page_21_img_1_1306.jpeg" 
-              alt="HQX Podcast with Manny Anchan" 
-              className="w-full h-auto object-cover"
-            />
-          </div>
-        </div>
+        {/* Centered Editorial Headline & Subtitle Only (Without Any Buttons) */}
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center max-w-3xl mx-auto pt-2 sm:pt-4 pb-6 sm:pb-8 relative z-20 shrink-0"
+        >
+          <h1
+            style={{ fontFamily: '"Geist", Arial, sans-serif', fontWeight: 300 }}
+            className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[52px] tracking-tight font-light leading-[1.12] mb-3 text-white"
+          >
+            HQX <span style={{ fontFamily: '"Geist", Arial, sans-serif' }} className="text-hq-yellow font-bold">Podcast</span>
+          </h1>
+          <p className="font-serif italic text-base sm:text-lg md:text-xl text-white/75 leading-relaxed">
+            “Stories, Mindset and Insights” — Fortnightly dialogues hosted by Manny Anchan.
+          </p>
+        </motion.div>
+
+        {/* Interactive 5-Card Stepped Perspective Podcast Fan Anchored to Bottom */}
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          onPanEnd={(_, info) => {
+            if (info.offset.x < -45) stepSlide(1);
+            else if (info.offset.x > 45) stepSlide(-1);
+          }}
+          className="relative z-10 w-full max-w-6xl mx-auto flex items-end justify-center mt-auto h-[290px] sm:h-[340px] lg:h-[calc(100vh-270px)] lg:min-h-[285px] lg:max-h-[420px] select-none touch-pan-y"
+        >
+          {heroSlides.map((slide, idx) => {
+            const raw = (idx - centerSlide + heroSlides.length) % heroSlides.length;
+            const offset = raw > 2 ? raw - heroSlides.length : raw; // -2, -1, 0, +1, +2
+            const absOffset = Math.abs(offset);
+            const isCenter = offset === 0;
+
+            const targetX =
+              offset === 0
+                ? '0%'
+                : offset === -1
+                ? '-72%'
+                : offset === 1
+                ? '72%'
+                : offset === -2
+                ? '-134%'
+                : '134%';
+
+            const targetScale = isCenter ? 1 : absOffset === 1 ? 0.82 : 0.65;
+            const targetZ = isCenter ? 30 : absOffset === 1 ? 20 : 10;
+            const targetBrightness = isCenter ? 1 : absOffset === 1 ? 0.72 : 0.48;
+
+            return (
+              <motion.div
+                key={slide.id}
+                onClick={() => handleSelectSlide(idx, offset)}
+                role="button"
+                tabIndex={0}
+                aria-label={isCenter ? `Watch ${slide.alt}` : `Bring ${slide.alt} to center`}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleSelectSlide(idx, offset);
+                  }
+                }}
+                initial={false}
+                animate={{
+                  x: `calc(-50% + ${targetX})`,
+                  scale: targetScale,
+                  zIndex: targetZ,
+                  filter: `brightness(${targetBrightness})`
+                }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 240,
+                  damping: 26,
+                  mass: 0.9
+                }}
+                style={{ transformOrigin: 'bottom center' }}
+                className={`absolute bottom-0 left-1/2 w-[195px] sm:w-[245px] lg:w-[285px] h-full overflow-hidden cursor-pointer bg-black group ${
+                  isCenter
+                    ? 'rounded-t-[32px] sm:rounded-t-[40px] border-[6px] sm:border-[8px] border-[#1A1C21] border-b-0 shadow-[0_-14px_65px_rgba(0,0,0,0.95)]'
+                    : absOffset === 1
+                    ? 'rounded-t-2xl sm:rounded-t-3xl border border-white/15 border-b-0 shadow-2xl hover:border-hq-yellow/50'
+                    : 'hidden sm:block rounded-t-2xl border border-white/10 border-b-0 hover:border-white/30'
+                }`}
+              >
+                {slide.type === 'video' ? (
+                  <video
+                    src={slide.src}
+                    poster={slide.poster}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className={`w-full h-full object-cover ${slide.objPos} transition-transform duration-700 ${
+                      isCenter ? 'group-hover:scale-105' : ''
+                    }`}
+                  />
+                ) : (
+                  <img
+                    src={slide.src}
+                    alt={slide.alt}
+                    className={`w-full h-full object-cover ${slide.objPos} transition-transform duration-700 ${
+                      isCenter ? 'group-hover:scale-105' : ''
+                    }`}
+                  />
+                )}
+
+                <div
+                  className={`absolute inset-0 pointer-events-none ${
+                    isCenter
+                      ? 'bg-gradient-to-t from-black/50 via-transparent to-black/35'
+                      : 'bg-gradient-to-t from-black/60 via-transparent to-black/20'
+                  }`}
+                />
+
+                {/* Top Phone Dynamic Island & Play Triangle ONLY when Centered */}
+                {isCenter && (
+                  <>
+                    <div className="absolute top-3 inset-x-4 z-20 flex items-center justify-between pointer-events-none">
+                      <span className="text-[9px] font-mono text-white/80 font-semibold">9:41</span>
+                      <div className="w-14 sm:w-16 h-3.5 rounded-full bg-black border border-white/10" />
+                      <Wifi className="w-3 h-3 text-white/80 stroke-[1.5]" />
+                    </div>
+
+                    <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center group-hover:scale-110 group-hover:bg-hq-yellow group-hover:border-hq-yellow transition-all duration-300 shadow-lg">
+                        <Play className="w-4 h-4 sm:w-5 sm:h-5 fill-white text-white group-hover:fill-black group-hover:text-black ml-0.5 transition-colors" />
+                      </div>
+                    </div>
+                  </>
+                )}
+              </motion.div>
+            );
+          })}
+        </motion.div>
+
+        {/* Subtle Bottom Edge Shadow Blend */}
+        <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-black/80 to-transparent z-40 pointer-events-none" />
       </section>
 
       {/* Featured Video Player */}
       {activeEpisode && (
-        <section className="py-16 px-6 md:px-12 max-w-7xl mx-auto border-b border-hq-black/10">
+        <section id="featured-player" className="py-16 px-6 md:px-12 max-w-7xl mx-auto border-b border-hq-black/10">
           <div className="bg-hq-black text-white p-6 md:p-8 rounded-3xl shadow-2xl">
             <div className="flex flex-col lg:flex-row gap-8 items-center">
               {/* Responsive 16:9 YouTube Embed */}

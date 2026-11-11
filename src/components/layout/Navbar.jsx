@@ -154,114 +154,117 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Dropdown: Programs (Visible, Disabled Navigation) */}
+            {/* Dropdown: Programs */}
             <div className="group relative">
-              <div
-                onClick={(e) => e.preventDefault()}
-                className="flex items-center gap-1.5 hover:text-hq-yellow transition-colors duration-200 py-3 uppercase cursor-default select-none"
+              <Link
+                to="/leadership-deep-dive"
+                className="flex items-center gap-1.5 hover:text-hq-yellow transition-colors duration-200 py-3 uppercase cursor-pointer"
               >
                 PROGRAMS <ChevronDown className="w-4 h-4 stroke-[1.5] group-hover:rotate-180 transition-transform duration-300" />
-              </div>
+              </Link>
+              {/* Seamless hover bridge: no gap, guaranteed catch */}
               <div className="absolute top-full left-0 pt-2 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 flex flex-col pointer-events-none group-hover:pointer-events-auto z-50 before:absolute before:-top-3 before:left-0 before:right-0 before:h-4 before:content-['']">
                 <div className="bg-[#121316] text-white border border-white/15 shadow-2xl flex flex-col uppercase rounded-[6px] overflow-hidden">
-                  <div
-                    onClick={(e) => e.preventDefault()}
-                    className="px-6 py-4 text-[13.5px] tracking-wider border-b border-white/10 opacity-80 hover:opacity-100 transition-opacity flex items-center justify-between cursor-not-allowed select-none"
+                  <Link
+                    to="/leadership-deep-dive"
+                    className="px-6 py-4 text-[13.5px] tracking-wider border-b border-white/10 hover:bg-hq-yellow hover:text-black transition-colors flex items-center justify-between"
                   >
                     <div>
                       <div className="font-semibold text-[13.5px] uppercase">LEADERSHIP DEEP DIVE</div>
-                      <div className="text-[11px] text-white/50 font-medium uppercase tracking-wider">EXECUTIVE RETREAT & PURPOSE ALIGNMENT</div>
+                      <div className="text-[11px] text-white/60 font-medium uppercase tracking-wider">EXECUTIVE RETREAT & PURPOSE ALIGNMENT</div>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 opacity-40" />
-                  </div>
-                  <div
-                    onClick={(e) => e.preventDefault()}
-                    className="px-6 py-4 text-[13.5px] tracking-wider border-b border-white/10 opacity-80 hover:opacity-100 transition-opacity flex items-center justify-between cursor-not-allowed select-none"
+                    <ArrowUpRight className="w-4 h-4 opacity-60" />
+                  </Link>
+                  <Link
+                    to="/engaging-workshops"
+                    className="px-6 py-4 text-[13.5px] tracking-wider border-b border-white/10 hover:bg-hq-yellow hover:text-black transition-colors flex items-center justify-between"
                   >
                     <div>
                       <div className="font-semibold text-[13.5px] uppercase">ENGAGING WORKSHOPS</div>
-                      <div className="text-[11px] text-white/50 font-medium uppercase tracking-wider">MINDFULNESS, PRODUCTIVITY & GRIT</div>
+                      <div className="text-[11px] text-white/60 font-medium uppercase tracking-wider">MINDFULNESS, PRODUCTIVITY & GRIT</div>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 opacity-40" />
-                  </div>
-                  <div
-                    onClick={(e) => e.preventDefault()}
-                    className="px-6 py-4 text-[13.5px] tracking-wider opacity-80 hover:opacity-100 transition-opacity flex items-center justify-between cursor-not-allowed select-none"
+                    <ArrowUpRight className="w-4 h-4 opacity-60" />
+                  </Link>
+                  <Link
+                    to="/keynotes"
+                    className="px-6 py-4 text-[13.5px] tracking-wider hover:bg-hq-yellow hover:text-black transition-colors flex items-center justify-between"
                   >
                     <div>
                       <div className="font-semibold text-[13.5px] uppercase">KEYNOTES & FRIDAY TALKS</div>
-                      <div className="text-[11px] text-white/50 font-medium uppercase tracking-wider">DISRUPTIVE CORPORATE TOWNHALLS</div>
+                      <div className="text-[11px] text-white/60 font-medium uppercase tracking-wider">DISRUPTIVE CORPORATE TOWNHALLS</div>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 opacity-40" />
-                  </div>
+                    <ArrowUpRight className="w-4 h-4 opacity-60" />
+                  </Link>
                 </div>
               </div>
             </div>
 
-            {/* Dropdown: Digital (Visible, Disabled Navigation) */}
+            {/* Dropdown: Digital */}
             <div className="group relative">
-              <div
-                onClick={(e) => e.preventDefault()}
-                className="flex items-center gap-1.5 hover:text-hq-yellow transition-colors duration-200 py-3 uppercase cursor-default select-none"
+              <Link
+                to="/micro-courses"
+                className="flex items-center gap-1.5 hover:text-hq-yellow transition-colors duration-200 py-3 uppercase cursor-pointer"
               >
                 DIGITAL <ChevronDown className="w-4 h-4 stroke-[1.5] group-hover:rotate-180 transition-transform duration-300" />
-              </div>
+              </Link>
+              {/* Seamless hover bridge: no gap, guaranteed catch */}
               <div className="absolute top-full left-0 pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 flex flex-col pointer-events-none group-hover:pointer-events-auto z-50 before:absolute before:-top-3 before:left-0 before:right-0 before:h-4 before:content-['']">
                 <div className="bg-[#121316] text-white border border-white/15 shadow-2xl flex flex-col uppercase rounded-[6px] overflow-hidden">
-                  <div
-                    onClick={(e) => e.preventDefault()}
-                    className="px-6 py-4 text-[13.5px] tracking-wider border-b border-white/10 opacity-80 hover:opacity-100 transition-opacity flex items-center justify-between cursor-not-allowed select-none"
+                  <Link
+                    to="/micro-courses"
+                    className="px-6 py-4 text-[13.5px] tracking-wider border-b border-white/10 hover:bg-hq-yellow hover:text-black transition-colors flex items-center justify-between"
                   >
                     <div>
                       <div className="font-semibold text-[13.5px] uppercase">MICRO COURSES</div>
-                      <div className="text-[11px] text-white/50 font-medium uppercase tracking-wider">100-DAY MASTERY BLUEPRINTS</div>
+                      <div className="text-[11px] text-white/60 font-medium uppercase tracking-wider">100-DAY MASTERY BLUEPRINTS</div>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 opacity-40" />
-                  </div>
-                  <div
-                    onClick={(e) => e.preventDefault()}
-                    className="px-6 py-4 text-[13.5px] tracking-wider opacity-80 hover:opacity-100 transition-opacity flex items-center justify-between cursor-not-allowed select-none"
+                    <ArrowUpRight className="w-4 h-4 opacity-60" />
+                  </Link>
+                  <Link
+                    to="/happyu-app"
+                    className="px-6 py-4 text-[13.5px] tracking-wider hover:bg-hq-yellow hover:text-black transition-colors flex items-center justify-between"
                   >
                     <div>
                       <div className="font-semibold text-[13.5px] uppercase">HAPPYU APP</div>
-                      <div className="text-[11px] text-white/50 font-medium uppercase tracking-wider">MEDITATION, GRATITUDE & MOOD TRACK</div>
+                      <div className="text-[11px] text-white/60 font-medium uppercase tracking-wider">MEDITATION, GRATITUDE & MOOD TRACK</div>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 opacity-40" />
-                  </div>
+                    <ArrowUpRight className="w-4 h-4 opacity-60" />
+                  </Link>
                 </div>
               </div>
             </div>
 
-            {/* Dropdown: Media & Books (Visible, Disabled Navigation) */}
+            {/* Dropdown: Media & Books */}
             <div className="group relative">
-              <div
-                onClick={(e) => e.preventDefault()}
-                className="flex items-center gap-1.5 hover:text-hq-yellow transition-colors duration-200 py-3 uppercase cursor-default select-none"
+              <Link
+                to="/podcast"
+                className="flex items-center gap-1.5 hover:text-hq-yellow transition-colors duration-200 py-3 uppercase cursor-pointer"
               >
                 MEDIA & BOOKS <ChevronDown className="w-4 h-4 stroke-[1.5] group-hover:rotate-180 transition-transform duration-300" />
-              </div>
+              </Link>
+              {/* Seamless hover bridge: no gap, guaranteed catch */}
               <div className="absolute top-full right-0 pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 flex flex-col pointer-events-none group-hover:pointer-events-auto z-50 before:absolute before:-top-3 before:left-0 before:right-0 before:h-4 before:content-['']">
                 <div className="bg-[#121316] text-white border border-white/15 shadow-2xl flex flex-col uppercase rounded-[6px] overflow-hidden">
-                  <div
-                    onClick={(e) => e.preventDefault()}
-                    className="px-6 py-4 text-[13.5px] tracking-wider border-b border-white/10 opacity-80 hover:opacity-100 transition-opacity flex items-center justify-between cursor-not-allowed select-none"
+                  <Link
+                    to="/podcast"
+                    className="px-6 py-4 text-[13.5px] tracking-wider border-b border-white/10 hover:bg-hq-yellow hover:text-black transition-colors flex items-center justify-between"
                   >
                     <div>
                       <div className="font-semibold text-[13.5px] uppercase">HQX PODCAST</div>
-                      <div className="text-[11px] text-white/50 font-medium uppercase tracking-wider">FORTNIGHTLY EXECUTIVE INSIGHTS</div>
+                      <div className="text-[11px] text-white/60 font-medium uppercase tracking-wider">FORTNIGHTLY EXECUTIVE INSIGHTS</div>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 opacity-40" />
-                  </div>
-                  <div
-                    onClick={(e) => e.preventDefault()}
-                    className="px-6 py-4 text-[13.5px] tracking-wider opacity-80 hover:opacity-100 transition-opacity flex items-center justify-between cursor-not-allowed select-none"
+                    <ArrowUpRight className="w-4 h-4 opacity-60" />
+                  </Link>
+                  <Link
+                    to="/books"
+                    className="px-6 py-4 text-[13.5px] tracking-wider hover:bg-hq-yellow hover:text-black transition-colors flex items-center justify-between"
                   >
                     <div>
                       <div className="font-semibold text-[13.5px] uppercase">LITERATURE & BOOKS</div>
-                      <div className="text-[11px] text-white/50 font-medium uppercase tracking-wider">2020 TO 2025 ROADMAP</div>
+                      <div className="text-[11px] text-white/60 font-medium uppercase tracking-wider">2020 TO 2025 ROADMAP</div>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 opacity-40" />
-                  </div>
+                    <ArrowUpRight className="w-4 h-4 opacity-60" />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -271,15 +274,13 @@ export default function Navbar() {
           <div className="flex items-center gap-2.5 sm:gap-3">
             <ThemeToggle />
 
-            {/* Book Manny Button (Visible, Disabled Navigation) */}
-            <div
-              onClick={(e) => e.preventDefault()}
-              className="nav-book-btn font-display text-[13.5px] uppercase tracking-wider bg-hq-yellow text-[#0A0A0A] px-5 py-2.5 rounded-full font-semibold shadow-lg shadow-hq-yellow/20 flex items-center gap-2.5 cursor-not-allowed opacity-90 select-none"
-              title="Booking Desk Currently Processing Corporate Inquiries"
+            <Link
+              to="/contact"
+              className="nav-book-btn font-display text-[13.5px] uppercase tracking-wider bg-hq-yellow text-[#0A0A0A] hover:!bg-[#0A0A0A] hover:!text-white dark:hover:!bg-white dark:hover:!text-[#0A0A0A] px-5 py-2.5 rounded-full transition-all duration-300 font-semibold shadow-lg shadow-hq-yellow/20 flex items-center gap-2.5 group cursor-pointer"
             >
-              <span className="text-[#0A0A0A]">BOOK MANNY</span>
+              <span className="text-[#0A0A0A] group-hover:!text-white dark:group-hover:!text-[#0A0A0A] transition-colors">BOOK MANNY</span>
               <svg
-                className="w-[20px] h-[10px] inline-block flex-shrink-0 text-[#0A0A0A]"
+                className="w-[20px] h-[10px] inline-block transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0 text-[#0A0A0A] group-hover:!text-white dark:group-hover:!text-[#0A0A0A]"
                 viewBox="0 0 20 10"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -287,7 +288,7 @@ export default function Navbar() {
                 <line x1="0" y1="5" x2="20" y2="5" stroke="currentColor" strokeWidth="1.2" />
                 <polyline points="15 1, 20 5, 15 9" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </div>
+            </Link>
 
             {/* Mobile Menu Button */}
             <button
@@ -301,7 +302,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Drawer (Responsive Overlay - All Sections Visible, Disabled) */}
+      {/* Mobile Drawer (Responsive Overlay) */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-hq-black text-hq-white pt-24 px-6 pb-12 overflow-y-auto lg:hidden flex flex-col justify-between">
           <div className="flex flex-col gap-6 font-display text-xl uppercase tracking-wider">
@@ -333,23 +334,23 @@ export default function Navbar() {
 
             <div className="py-2 border-b border-white/10">
               <div className="text-xs text-hq-yellow tracking-widest uppercase mb-2 font-mono">CORPORATE PROGRAMS</div>
-              <div className="flex flex-col gap-3 pl-3 text-sm uppercase font-body font-medium tracking-wider opacity-70">
-                <div onClick={(e) => e.preventDefault()} className="cursor-not-allowed">LEADERSHIP DEEP DIVE</div>
-                <div onClick={(e) => e.preventDefault()} className="cursor-not-allowed">ENGAGING WORKSHOPS</div>
-                <div onClick={(e) => e.preventDefault()} className="cursor-not-allowed">KEYNOTES & FRIDAY TALKS</div>
+              <div className="flex flex-col gap-3 pl-3 text-sm uppercase font-body font-medium tracking-wider">
+                <Link to="/leadership-deep-dive" onClick={() => setMobileMenuOpen(false)} className="hover:text-hq-yellow uppercase">LEADERSHIP DEEP DIVE</Link>
+                <Link to="/engaging-workshops" onClick={() => setMobileMenuOpen(false)} className="hover:text-hq-yellow uppercase">ENGAGING WORKSHOPS</Link>
+                <Link to="/keynotes" onClick={() => setMobileMenuOpen(false)} className="hover:text-hq-yellow uppercase">KEYNOTES & FRIDAY TALKS</Link>
               </div>
             </div>
 
             <div className="py-2 border-b border-white/10">
               <div className="text-xs text-hq-yellow tracking-widest uppercase mb-2 font-mono">DIGITAL PRODUCTS</div>
-              <div className="flex flex-col gap-3 pl-3 text-sm uppercase font-body font-medium tracking-wider opacity-70">
-                <div onClick={(e) => e.preventDefault()} className="cursor-not-allowed">MICRO COURSES (100-DAY)</div>
-                <div onClick={(e) => e.preventDefault()} className="cursor-not-allowed">HAPPYU APP</div>
+              <div className="flex flex-col gap-3 pl-3 text-sm uppercase font-body font-medium tracking-wider">
+                <Link to="/micro-courses" onClick={() => setMobileMenuOpen(false)} className="hover:text-hq-yellow uppercase">MICRO COURSES (100-DAY)</Link>
+                <Link to="/happyu-app" onClick={() => setMobileMenuOpen(false)} className="hover:text-hq-yellow uppercase">HAPPYU APP</Link>
               </div>
             </div>
 
-            <div onClick={(e) => e.preventDefault()} className="py-2 border-b border-white/10 opacity-70 cursor-not-allowed uppercase">HQX PODCAST</div>
-            <div onClick={(e) => e.preventDefault()} className="py-2 border-b border-white/10 opacity-70 cursor-not-allowed uppercase">BOOKS & ROADMAP</div>
+            <Link to="/podcast" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-white/10 hover:text-hq-yellow uppercase">HQX PODCAST</Link>
+            <Link to="/books" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-white/10 hover:text-hq-yellow uppercase">BOOKS & ROADMAP</Link>
           </div>
 
           <div className="mt-8 pt-6 border-t border-white/10 flex flex-col gap-4">
@@ -360,12 +361,13 @@ export default function Navbar() {
               <ThemeToggle showLabel />
             </div>
 
-            <div
-              onClick={(e) => e.preventDefault()}
-              className="w-full text-center bg-hq-yellow text-[#0A0A0A] font-display font-semibold uppercase tracking-widest py-4 rounded-full text-sm opacity-90 cursor-not-allowed select-none"
+            <Link
+              to="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full text-center bg-hq-yellow text-[#0A0A0A] font-display font-semibold uppercase tracking-widest py-4 rounded-full text-sm hover:bg-white transition-colors"
             >
               Book Corporate Session
-            </div>
+            </Link>
 
             <a
               href="tel:+919700100800"
