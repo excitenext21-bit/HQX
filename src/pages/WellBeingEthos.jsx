@@ -122,7 +122,7 @@ export default function WellBeingEthos() {
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
       {/* HERO SECTION MATCHING WHY-HQX HERO STYLE WITH UNIFIED PURE BLACK BACKGROUND */}
-      <section className="bg-black text-hq-white relative overflow-hidden h-screen min-h-[640px] max-h-[1080px] w-full flex flex-col justify-between border-b border-white/10 select-none">
+      <section className="bg-[#0A0A0A] text-hq-white relative overflow-hidden h-screen min-h-[640px] max-h-[1080px] w-full flex flex-col justify-between border-b border-white/10">
         
         {/* Background Visual: Halo Man on 100% Pure Black with Subpixel-Locked Halo Glow & Face Reflection */}
         <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
@@ -197,7 +197,7 @@ export default function WellBeingEthos() {
         </motion.div>
 
         {/* Main Content Area (Vertically Centered in Viewport Matching WhyHQX) */}
-        <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 relative z-10 w-full flex-1 flex flex-col justify-center pt-28 sm:pt-32 pb-8">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full flex-1 flex flex-col justify-center pt-28 sm:pt-32 pb-8">
           <div className="max-w-xl">
             
             {/* Editorial Headline with Geist, Arial, sans-serif Typography and Font Weight 300 */}
@@ -206,7 +206,7 @@ export default function WellBeingEthos() {
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               transition={{ duration: 0.85, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
               style={{ fontFamily: '"Geist", Arial, sans-serif', fontWeight: 300 }}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-light tracking-tight leading-[1.14] mb-5 select-none text-white"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-light tracking-tight leading-[1.14] mb-5 text-white"
             >
               <motion.span
                 initial={{ opacity: 0, y: 16 }}
@@ -310,7 +310,7 @@ export default function WellBeingEthos() {
 
 
       {/* BALANCE Beyond WORKLIFE: The 5 Well-Being Pillars (Fixonic-Inspired Split Philosophy Section) */}
-      <section id="pillars" className="py-20 lg:py-28 px-4 sm:px-6 md:px-10 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
+      <section id="pillars" className="py-20 sm:py-24 px-6 md:px-12 max-w-7xl mx-auto scroll-mt-20">
         
         {/* Section Header: Left Bold Title • Right Explanatory Context (Matching The Architecture of Flourishing Style) */}
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 md:gap-12 mb-12 sm:mb-16">
@@ -528,7 +528,7 @@ export default function WellBeingEthos() {
       </section>
 
       {/* The 12 KEY THEMES (Profile Pages 8 & 9) */}
-      <section className="py-20 px-6 md:px-12 bg-hq-gray border-t border-b border-hq-black/10">
+      <section className="py-20 sm:py-24 px-6 md:px-12 bg-hq-gray border-t border-b border-hq-black/10">
         <div className="max-w-7xl mx-auto">
           {/* Section Header: Left Bold Dual-Tone Title • Right Explanatory Context */}
           <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 md:gap-12 mb-12 sm:mb-16">

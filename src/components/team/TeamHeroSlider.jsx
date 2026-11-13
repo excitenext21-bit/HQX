@@ -9,7 +9,7 @@ export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
 
   return (
     <section 
-      className="w-full bg-[#000000] text-white pt-20 sm:pt-24 relative overflow-hidden select-none border-none rounded-none m-0 p-0 h-screen min-h-[640px] max-h-[1080px] flex flex-col justify-between hero-marquee-container"
+      className="w-full bg-[#000000] text-white pt-20 sm:pt-24 relative overflow-hidden border-none rounded-none m-0 p-0 h-screen min-h-[640px] max-h-[1080px] flex flex-col justify-between hero-marquee-container"
     >
       <style>{`
         @keyframes heroMarqueeTrack {

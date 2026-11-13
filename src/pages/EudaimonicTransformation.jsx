@@ -210,7 +210,7 @@ export default function EudaimonicTransformation() {
           - 3-line paragraph: text-sm sm:text-base text-white/80 font-light leading-relaxed
           - Button: SINGLE clean, glowing pill button under the copy
           ========================================================================= */}
-      <section className="bg-black text-white min-h-[100svh] lg:h-screen lg:max-h-screen flex flex-col justify-between pt-20 sm:pt-22 lg:pt-16 pb-0 relative overflow-hidden w-full select-none">
+      <section className="bg-[#0A0A0A] text-white min-h-[100svh] lg:h-screen lg:max-h-screen flex flex-col justify-between pt-20 sm:pt-22 lg:pt-16 pb-0 relative overflow-hidden w-full">
 
         {/* Subtle Stardust Twinkle (Soft 1.5px dots, clean and minimal) */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-10">
@@ -395,7 +395,7 @@ export default function EudaimonicTransformation() {
         </div>
 
         {/* Main Content Area - Vertically centered between header and docked strip */}
-        <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 w-full flex-1 flex items-center py-4 lg:py-6 relative z-20">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full flex-1 flex items-center py-4 lg:py-6 relative z-20">
 
           {/* Headline, Paragraph, and the SINGLE Explore Pillars Button */}
           <div className="max-w-2xl">
@@ -523,8 +523,8 @@ export default function EudaimonicTransformation() {
       </section>
 
       {/* The Architecture of Flourishing - Accordion Section (Matching Reference Style) */}
-      <section id="pillars-detail" className="py-20 sm:py-28 px-6 md:px-12 bg-[#F8F9FA] text-hq-black border-b border-black/10">
-        <div className="max-w-6xl mx-auto">
+      <section id="pillars-detail" className="py-20 sm:py-24 px-6 md:px-12 bg-[#F8F9FA] text-hq-black border-b border-black/10">
+        <div className="max-w-7xl mx-auto">
 
           {/* Header Section: Bold Title • Right Contextual Summary (No Eyebrow Text) */}
           <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 md:gap-12 mb-12 sm:mb-16">
@@ -660,9 +660,73 @@ export default function EudaimonicTransformation() {
         </div>
       </section>
 
+      {/* Manny Anchan Editorial Quote Banner (Same Yellow Quote Section Style as Keynotes Page) */}
+      <section className="h-[340px] sm:h-[400px] lg:h-[430px] bg-hq-yellow text-[#0A0A0A] relative overflow-hidden border-b border-black/10">
+        <div className="max-w-7xl mx-auto h-full px-6 md:px-12 py-6 sm:py-8 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12 lg:gap-16">
+          {/* Left: Manny Anchan B&W Portrait Clipped Inside Giant Closing-Quote Silhouette */}
+          <div className="group/quote h-[220px] sm:h-full max-h-[360px] aspect-[360/420] shrink-0 flex items-center justify-center cursor-pointer">
+            <svg
+              viewBox="0 0 360 420"
+              className="w-full h-full drop-shadow-[0_18px_36px_rgba(0,0,0,0.18)]"
+              role="img"
+              aria-label="Manny Anchan Portrait inside Quote Mark"
+            >
+              <defs>
+                <clipPath id="eudaimonicMannyQuoteClip">
+                  <path d="M 0 0 H 360 V 230 C 360 348, 235 410, 0 420 L 0 332 C 110 322, 164 282, 166 226 H 0 Z" />
+                </clipPath>
+              </defs>
+              <g clipPath="url(#eudaimonicMannyQuoteClip)">
+                <rect x="0" y="0" width="360" height="420" fill="#070709" />
+                <image
+                  href="/images/hero_showcase/manny_founder_podium.jpg"
+                  x="-36"
+                  y="0"
+                  width="432"
+                  height="420"
+                  preserveAspectRatio="xMidYMin slice"
+                  className="transition-transform duration-[2200ms] ease-out -translate-x-6 group-hover/quote:translate-x-6"
+                  style={{ filter: 'grayscale(100%) contrast(1.25) brightness(0.96)' }}
+                />
+              </g>
+            </svg>
+          </div>
+
+          {/* Right: Crisp Dual-Tone Editorial Quote & Attribution Directly on HQX Yellow */}
+          <div className="max-w-2xl text-center sm:text-left">
+            <p
+              style={{ fontFamily: '"Prata", serif' }}
+              className="font-prata font-normal text-xl sm:text-2xl md:text-3xl lg:text-[34px] leading-[1.22] tracking-tight mb-5"
+            >
+              <span className="text-[#0A0A0A]/45">Work so hard that you</span>{' '}
+              <br className="hidden sm:block" />
+              <span className="text-[#0A0A0A]/45">have room only for</span>{' '}
+              <em className="italic font-semibold text-[#0A0A0A]">calm</em>{' '}
+              <br className="hidden sm:block" />
+              <span className="text-[#0A0A0A]/45">over chaos</span>{' '}
+              <span className="text-[#0A0A0A]">&mdash;</span>{' '}
+              <em className="italic font-semibold text-[#0A0A0A]">discipline</em>{' '}
+              <br className="hidden sm:block" />
+              <span className="text-[#0A0A0A]/45">over distraction,</span>{' '}
+              <em className="italic font-semibold text-[#0A0A0A]">purpose</em>{' '}
+              <br className="hidden sm:block" />
+              <span className="text-[#0A0A0A]/45">over pressure.&rdquo;</span>
+            </p>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+              <span className="font-display text-xs sm:text-sm font-bold uppercase tracking-[0.22em] text-[#0A0A0A]">
+                &mdash; Manny Anchan
+              </span>
+              <span className="text-[11px] font-mono text-[#0A0A0A]/65 tracking-wider">
+                Happiness Samurai
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pages 4-8 Matrix: Problem Identification vs. Interventions Framework */}
       {/* Problem Identification & Strategic Interventions Section */}
-      <section className="py-20 px-6 md:px-12 bg-[#F8F9FA] border-b border-black/10">
+      <section className="py-20 sm:py-24 px-6 md:px-12 bg-[#F8F9FA] border-b border-black/10">
         <div className="max-w-7xl mx-auto">
 
           {/* Section Header */}

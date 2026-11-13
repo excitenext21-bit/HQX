@@ -146,7 +146,7 @@ export default function Podcast() {
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
       {/* Hero Banner: Centered Editorial Text (No Buttons) + Interactive Scrollable 5-Card Stepped Fan */}
-      <section className="bg-gradient-to-b from-[#060607] via-[#100B0B] to-black text-white min-h-[100svh] lg:h-[100svh] lg:min-h-[580px] lg:max-h-[1080px] pt-24 sm:pt-28 pb-0 px-4 sm:px-6 md:px-12 border-b border-white/10 relative overflow-hidden flex flex-col justify-between">
+      <section className="bg-[#0A0A0A] text-white min-h-[100svh] lg:h-[100svh] lg:min-h-[580px] lg:max-h-[1080px] pt-24 sm:pt-28 pb-0 px-4 sm:px-6 md:px-12 border-b border-white/10 relative overflow-hidden flex flex-col justify-between">
         {/* Subtle Warm Stage Backlight Behind Center Phone */}
         <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-[560px] h-[280px] bg-hq-yellow/[0.08] rounded-full blur-[140px] pointer-events-none" />
 
@@ -177,7 +177,7 @@ export default function Podcast() {
             if (info.offset.x < -45) stepSlide(1);
             else if (info.offset.x > 45) stepSlide(-1);
           }}
-          className="relative z-10 w-full max-w-6xl mx-auto flex items-end justify-center mt-auto h-[290px] sm:h-[340px] lg:h-[calc(100vh-270px)] lg:min-h-[285px] lg:max-h-[420px] select-none touch-pan-y"
+          className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 flex items-end justify-center mt-auto h-[290px] sm:h-[340px] lg:h-[calc(100vh-270px)] lg:min-h-[285px] lg:max-h-[420px] select-none touch-pan-y"
         >
           {heroSlides.map((slide, idx) => {
             const raw = (idx - centerSlide + heroSlides.length) % heroSlides.length;
@@ -292,7 +292,7 @@ export default function Podcast() {
 
       {/* Featured Video Player */}
       {activeEpisode && (
-        <section id="featured-player" className="py-16 px-6 md:px-12 max-w-7xl mx-auto border-b border-hq-black/10">
+        <section id="featured-player" className="py-20 sm:py-24 px-6 md:px-12 max-w-7xl mx-auto border-b border-hq-black/10">
           <div className="bg-hq-black text-white p-6 md:p-8 rounded-3xl shadow-2xl">
             <div className="flex flex-col lg:flex-row gap-8 items-center">
               {/* Responsive 16:9 YouTube Embed */}
@@ -334,12 +334,15 @@ export default function Podcast() {
       )}
 
       {/* Profile Page 32: Featured Guests Gallery */}
-      <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-display text-4xl md:text-5xl tracking-tight font-semibold">
-            Featured Guests & Conversations
-          </h2>
-          <p className="font-body text-hq-black/70 max-w-xl mx-auto text-sm mt-2 font-light">
+      <section className="py-20 sm:py-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-12 sm:mb-14 pb-8 border-b border-black/10">
+          <div>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] leading-[1.08]">
+              Featured Guests <br />
+              <span className="text-[#666666] font-light">&amp; Conversations</span>
+            </h2>
+          </div>
+          <p className="font-body text-sm sm:text-base text-hq-black/65 max-w-md font-light leading-relaxed lg:pb-1">
             Renowned leaders, creators, entrepreneurs, and thinkers featured on the HQX Podcast series.
           </p>
         </div>
@@ -399,7 +402,7 @@ export default function Podcast() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 md:px-12 text-center bg-hq-yellow text-hq-black border-t border-hq-black">
+      <section className="py-20 sm:py-24 px-6 md:px-12 text-center bg-hq-yellow text-hq-black border-t border-hq-black">
         <h2 className="font-display text-4xl md:text-5xl tracking-tight font-semibold mb-4">
           Never Miss An Executive Insight
         </h2>

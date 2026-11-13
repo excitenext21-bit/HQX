@@ -234,7 +234,7 @@ export default function AboutUs() {
         </div>
 
         {/* Framing Container: Exact Alignment with Navbar Logo (left) & Book Manny Button (right) */}
-        <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 w-full relative z-10 flex-1 flex items-center py-6 sm:py-8">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10 flex-1 flex items-center py-6 sm:py-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
             
             {/* Left Column: High-Contrast Editorial Headline & Subtext (Removed Giant Bold Wordmark) */}
@@ -383,7 +383,7 @@ export default function AboutUs() {
       </section>
 
       {/* DEDICATED CHAPTERS OF HQX (SPLIT EDITORIAL SHOWCASE) */}
-      <section className="pt-14 sm:pt-16 pb-8 sm:pb-10 px-6 md:px-12 bg-[#FAF8F5] dark:bg-[#0E0F12] border-b border-hq-black/10">
+      <section className="py-20 sm:py-24 px-6 md:px-12 bg-[#FAF8F5] dark:bg-[#0E0F12] border-b border-hq-black/10">
         <div className="max-w-7xl mx-auto">
           {/* Header Row: Dual-Tone Title & Top Narrative */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-12 sm:mb-14 pb-8 border-b border-black/10">
@@ -573,7 +573,7 @@ export default function AboutUs() {
       </section>
 
       {/* SECTION 3: CORPORATE FIELD ENGAGEMENTS & CONCLAVES (PAGES 27-31) */}
-      <section id="corporate-engagements" className="pt-8 sm:pt-10 pb-16 sm:pb-20 px-6 md:px-12 bg-black border-b border-white/10 relative overflow-hidden">
+      <section id="corporate-engagements" className="py-20 sm:py-24 px-6 md:px-12 bg-black border-b border-white/10 relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           
           {/* Header Row: Dual-Tone Title & Narrative */}

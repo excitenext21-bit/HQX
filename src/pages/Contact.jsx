@@ -30,7 +30,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
       {/* Dark Hero Section: 3D Open Envelope with Rotating Golden Paper-Plane Arrows — Exact Fit to Screen */}
-      <section className="bg-black text-white min-h-[100svh] lg:h-[100svh] lg:min-h-[560px] lg:max-h-[1080px] flex flex-col justify-between pt-20 sm:pt-24 pb-0 border-b border-white/10 relative overflow-hidden w-full">
+      <section className="bg-[#0A0A0A] text-white min-h-[100svh] lg:h-[100svh] lg:min-h-[560px] lg:max-h-[1080px] flex flex-col justify-between pt-20 sm:pt-24 pb-0 border-b border-white/10 relative overflow-hidden w-full">
         {/* Ambient Studio Lighting */}
         <div className="absolute top-1/3 right-[15%] w-[460px] h-[460px] bg-hq-yellow/[0.08] rounded-full blur-[150px] pointer-events-none" />
         <div className="absolute bottom-1/4 right-[28%] w-[340px] h-[340px] bg-white/[0.04] rounded-full blur-[130px] pointer-events-none" />
@@ -49,7 +49,7 @@ export default function Contact() {
         </div>
 
         {/* Main Framing Container */}
-        <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 w-full relative z-10 flex-1 flex items-center py-3 sm:py-4 min-h-0">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10 flex-1 flex items-center py-3 sm:py-4 min-h-0">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center w-full">
             {/* Left Column: Existing Content in About Us Editorial Style */}
             <motion.div
@@ -238,7 +238,7 @@ export default function Contact() {
       </section>
 
       {/* Main Grid: Form & Corporate Details */}
-      <section id="contact-form" className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
+      <section id="contact-form" className="py-20 sm:py-24 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Details */}
           <div className="lg:col-span-5 space-y-8">

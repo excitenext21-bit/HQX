@@ -297,7 +297,7 @@ export default function WhyHQX() {
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
       {/* HERO SECTION WITH CINEMATIC LIGHT PORTAL BACKGROUND (FIT TO SCREEN) */}
-      <section className="bg-[#07080A] text-hq-white relative overflow-hidden h-screen min-h-[640px] max-h-[1080px] w-full flex flex-col justify-between border-b border-white/10">
+      <section className="bg-[#0A0A0A] text-hq-white relative overflow-hidden h-screen min-h-[640px] max-h-[1080px] w-full flex flex-col justify-between border-b border-white/10">
         {/* Cinematic Background Video: Man Walking Toward Portal & Looking Outside */}
         <div className="absolute inset-0 w-full h-full pointer-events-none">
           <video
@@ -355,7 +355,7 @@ export default function WhyHQX() {
         </motion.div>
 
         {/* Main Content Area (Vertically Centered in Viewport) */}
-        <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 relative z-10 w-full flex-1 flex flex-col justify-center pt-28 sm:pt-32 pb-8">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full flex-1 flex flex-col justify-center pt-28 sm:pt-32 pb-8">
           <div className="max-w-md">
             {/* Editorial Headline with on-load entrance and luminous yellow neon glow synchronized to man animation actions */}
             <motion.h1 
@@ -363,7 +363,7 @@ export default function WhyHQX() {
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               transition={{ duration: 0.85, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
               style={{ fontFamily: '"Geist", Arial, sans-serif', fontWeight: 300 }}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-light tracking-tight leading-[1.15] mb-5 select-none"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-light tracking-tight leading-[1.15] mb-5"
             >
               <span 
                 style={{ ...getStepStyle(0), fontFamily: '"Geist", Arial, sans-serif' }}
@@ -577,7 +577,7 @@ export default function WhyHQX() {
 
       
             {/* 4 PILLARS OF DISTINCTION - ULTRA-MODERN UNBOXED EDITORIAL ARCHITECTURE (MINIMIZED BOTTOM WHITE SPACE) */}
-      <section className="pt-16 sm:pt-20 pb-8 sm:pb-10 px-6 md:px-12 bg-white border-b border-hq-black/10">
+      <section className="py-20 sm:py-24 px-6 md:px-12 bg-white border-b border-hq-black/10">
         <div className="max-w-7xl mx-auto">
           {/* Section Header: Dual-Tone Title & Top Narrative (Matches Supportive Guidance style) */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-8 sm:mb-10 pb-6 sm:pb-8 border-b border-black/10">

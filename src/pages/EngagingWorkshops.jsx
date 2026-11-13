@@ -122,7 +122,7 @@ export default function EngagingWorkshops() {
         </div>
 
         {/* Framing Container: Exact Alignment with About Us Hero */}
-        <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 w-full relative z-10 flex-1 flex items-center py-3 sm:py-4 min-h-0">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10 flex-1 flex items-center py-3 sm:py-4 min-h-0">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center w-full">
             {/* Left Column: About Us Style Editorial Content (Existing Content Only) */}
             <div className="lg:col-span-6 flex flex-col justify-center">
@@ -354,7 +354,7 @@ export default function EngagingWorkshops() {
       </section>
 
       {/* Workshop Catalog (Dedicated Chapters Editorial Split Style) */}
-      <section className="py-16 sm:py-20 px-6 md:px-12 bg-[#FAF8F5] dark:bg-[#0E0F12] border-b border-black/10">
+      <section className="py-20 sm:py-24 px-6 md:px-12 bg-[#FAF8F5] dark:bg-[#0E0F12] border-b border-black/10">
         <div className="max-w-7xl mx-auto">
           {/* Header Row: Dual-Tone Title & Top Narrative */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-10 sm:mb-12 pb-6 border-b border-black/10">
@@ -521,7 +521,7 @@ export default function EngagingWorkshops() {
       </section>
 
       {/* Booking Form Section */}
-      <section className="py-20 px-6 md:px-12 bg-hq-white">
+      <section className="py-20 sm:py-24 px-6 md:px-12 bg-hq-white">
 
         {/* Booking Form */}
         <div id="booking-section" className="bg-hq-black text-white p-8 md:p-14 rounded-3xl border border-black shadow-2xl max-w-4xl mx-auto">

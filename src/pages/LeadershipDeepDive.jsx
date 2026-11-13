@@ -320,10 +320,6 @@ export default function LeadershipDeepDive() {
           </defs>
         </svg>
 
-        {/* Subtle Ambient Glows */}
-        <div className="absolute inset-0 bg-radial-gradient from-hq-yellow/[0.06] via-transparent to-transparent pointer-events-none opacity-40" />
-        <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-hq-yellow/[0.04] rounded-full blur-[140px] pointer-events-none -mr-40" />
-
         {/* Left Side Vertical Text */}
         <div className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex flex-col justify-center items-center pointer-events-none select-none">
           <div
@@ -338,7 +334,7 @@ export default function LeadershipDeepDive() {
         </div>
 
         {/* Framing Container: Exact Alignment with About Us Hero */}
-        <div className="max-w-7xl mx-auto pl-12 pr-6 sm:pl-16 sm:pr-8 md:pl-20 md:pr-12 lg:pl-24 w-full relative z-10 flex-1 flex items-center py-4 sm:py-6 min-h-0">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10 flex-1 flex items-center py-4 sm:py-6 min-h-0">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center w-full">
             {/* Left Column: Editorial Headline, Copy & Signature Button */}
             <motion.div
@@ -552,7 +548,7 @@ export default function LeadershipDeepDive() {
 
       {/* Key Benefits of Leadership Deep Dive (Clean 6-Card Isometric Grid) + Docked Snapshot Bar */}
       <section className="flex flex-col justify-between bg-white dark:bg-[#0E0F12] w-full">
-        <div className="pt-24 sm:pt-28 pb-16 sm:pb-20 px-6 md:px-12 max-w-7xl mx-auto w-full">
+        <div className="py-20 sm:py-24 px-6 md:px-12 max-w-7xl mx-auto w-full">
           {/* Header Row */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-5 lg:gap-6 mb-10 sm:mb-12">
             <div>
@@ -669,7 +665,7 @@ export default function LeadershipDeepDive() {
                   aria-expanded={isActive}
                   className={`group relative rounded-2xl overflow-hidden text-left transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] border ${isActive
                       ? 'flex-[4.8] bg-[#101216] border-white/25 shadow-[0_24px_60px_rgba(0,0,0,0.9)]'
-                      : 'flex-[0.85] hover:flex-[1.05] bg-gradient-to-b from-white/[0.11] via-[#0B0D12] to-white/[0.04] border-white/10 hover:border-hq-yellow/45 cursor-pointer'
+                      : 'flex-[0.85] hover:flex-[1.05] bg-gradient-to-b from-[#1D1F24] via-[#15171B] to-[#101216] border-white/10 hover:border-hq-yellow/45 cursor-pointer'
                     }`}
                 >
                   {isActive ? (
@@ -687,7 +683,7 @@ export default function LeadershipDeepDive() {
                       {/* Top Row: Vertical Location Label + Index */}
                       <div className="relative z-10 flex items-start justify-between">
                         <div
-                          className="font-mono text-[11px] uppercase tracking-[0.22em] text-hq-yellow/90 select-none"
+                          className="font-mono text-[11px] uppercase tracking-[0.22em] text-hq-yellow/90"
                           style={{ writingMode: 'vertical-rl' }}
                         >
                           {item.location}
@@ -713,12 +709,12 @@ export default function LeadershipDeepDive() {
                     </div>
                   ) : (
                     /* Collapsed Vertical Strip View */
-                    <div className="relative w-full h-full flex flex-col items-center justify-between py-6 px-2">
+                    <div className="relative w-full h-full flex flex-col items-center justify-between py-6 px-1 overflow-hidden">
                       {/* Subtle Top Highlight Sheen */}
                       <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/[0.06] to-transparent pointer-events-none" />
 
                       <span
-                        className="relative z-10 font-display text-xs xl:text-[13px] font-medium text-white/80 group-hover:text-hq-yellow tracking-wide whitespace-nowrap transition-colors"
+                        className="relative z-10 font-display text-2xl xl:text-[28px] font-black uppercase tracking-wider whitespace-nowrap transition-all duration-300 text-[#090A0D] [text-shadow:_-1px_-1px_1px_rgba(0,0,0,0.95),_1px_1px_0px_rgba(255,255,255,0.16)] group-hover:text-[#0C0B07] group-hover:[text-shadow:_-1px_-1px_1px_rgba(0,0,0,0.95),_1px_1px_0px_rgba(255,204,0,0.5)]"
                         style={{ writingMode: 'vertical-rl' }}
                       >
                         {item.client}
@@ -798,7 +794,7 @@ export default function LeadershipDeepDive() {
       </section>
 
       {/* FAQs Section (Light Background) */}
-      <section id="faqs" className="py-20 px-6 md:px-12 bg-[#FAF8F5] text-[#0A0A0A] border-t border-black/10">
+      <section id="faqs" className="py-20 sm:py-24 px-6 md:px-12 bg-[#FAF8F5] text-[#0A0A0A] border-t border-black/10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-[#0A0A0A]">

@@ -100,61 +100,196 @@ export default function MicroCourses() {
 
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
-      {/* Hero Header with Authentic Profile Imagery */}
-      <section className="bg-hq-black text-hq-white pt-36 pb-20 px-6 md:px-12 border-b border-white/10 relative overflow-hidden">
-        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-1/2 opacity-25 lg:opacity-35 pointer-events-none overflow-hidden">
-          <img 
-            src="/profile_assets/page_16_img_1_1089.jpeg" 
-            alt="Micro Courses Session" 
-            className="w-full h-full object-cover object-center filter contrast-125"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-hq-black via-hq-black/80 to-transparent"></div>
+      {/* Hero Section: About Us / Workshops Editorial Split Layout + Interactive 100-Day Blueprint Deck */}
+      {/* Hero Section: About-Page Editorial Style + 3D Golden Sand Hourglass on Pure Black */}
+      <section className="bg-black text-white min-h-[100svh] lg:h-[100svh] lg:min-h-[600px] lg:max-h-[1080px] flex flex-col justify-between pt-24 sm:pt-28 pb-0 border-b border-white/10 relative overflow-hidden w-full">
+        {/* Left Side Vertical Text: MICRO COURSES (Matching About Us Hero Style) */}
+        <div className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex flex-col justify-center items-center pointer-events-none select-none">
+          <div
+            className="flex items-center gap-3 sm:gap-4"
+            style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+          >
+            <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
+              MICRO COURSES
+            </span>
+            <span className="w-px h-8 sm:h-14 bg-white/25" />
+          </div>
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="max-w-2xl">
-            <h1 
-              style={{ fontFamily: '"Geist", Arial, sans-serif', fontWeight: 300 }}
-              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-light mb-5"
-            >
-              100-Day <br />
-              <span 
-                style={{ fontFamily: '"Geist", Arial, sans-serif' }}
-                className="text-hq-yellow font-bold"
-              >
-                Micro Courses
-              </span>
-            </h1>
+        {/* Framing Container (About-Us Left Content + Right Hourglass) */}
+        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10 flex-1 flex items-center py-4 sm:py-6 min-h-0">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center w-full">
+            {/* Left Column: About-Us Editorial Headline, Subtext & Signature Hairline CTA */}
+            <div className="lg:col-span-5 flex flex-col justify-center">
+              <div className="max-w-md">
+                <h1
+                  style={{ fontFamily: '"Geist", Arial, sans-serif', fontWeight: 300 }}
+                  className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-light tracking-tight text-white leading-[1.15] mb-5"
+                >
+                  100-Day <br />
+                  <span
+                    style={{ fontFamily: '"Geist", Arial, sans-serif' }}
+                    className="text-hq-yellow font-bold"
+                  >
+                    Micro Courses
+                  </span>
+                </h1>
 
-            <p className="font-body text-base md:text-xl text-hq-white/80 font-light leading-relaxed mb-8">
-              Digital 100-day courses that can be done at your own pace and from anywhere. 10 minutes of daily micro-learning that systematically re-engineers habits, emotional poise, purpose alignment, and financial well-being.
-            </p>
+                <p className="font-body text-sm sm:text-base text-white/80 font-light leading-relaxed mb-8">
+                  Digital 100-day courses that can be done at your own pace and from anywhere. 10 minutes of daily micro-learning that systematically re-engineers habits, emotional poise, purpose alignment, and financial well-being.
+                </p>
 
-            <div className="flex flex-wrap gap-4">
-              <a 
-                href="#courses-catalog" 
-                className="bg-hq-yellow text-hq-black font-display font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white transition-all shadow-xl"
-              >
-                Browse Mini Masteries
-              </a>
-              <Link 
-                to="/happyu-app" 
-                className="border border-white/30 text-white font-display text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all"
-              >
-                Explore HappyU Mobile App
-              </Link>
+                <div className="pt-1 flex flex-wrap items-center gap-6">
+                  <a
+                    href="#courses-catalog"
+                    className="group relative inline-flex items-center justify-between gap-8 py-3.5 px-2 font-display font-medium text-xs tracking-[0.2em] text-white hover:text-hq-yellow transition-colors duration-300 uppercase"
+                  >
+                    <span className="absolute top-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
+                    <span className="relative z-10 font-semibold tracking-widest">BROWSE MINI MASTERIES</span>
+                    <svg
+                      className="w-[22px] h-[11px] inline-block transition-transform duration-300 group-hover:translate-x-1.5 flex-shrink-0"
+                      viewBox="0 0 20 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <line x1="0" y1="5" x2="20" y2="5" stroke="currentColor" strokeWidth="1.2" />
+                      <polyline points="15 1, 20 5, 15 9" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span className="absolute bottom-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Complete Full-View Golden Sand Hourglass Image (+25% Larger) + Flowing Sand Animation */}
+            <div className="lg:col-span-7 flex items-center justify-center">
+              <div className="relative h-[475px] sm:h-[550px] lg:h-[calc(100svh-145px)] max-h-[675px] aspect-[736/1104] flex items-center justify-center select-none pointer-events-none scale-[1.25] origin-center">
+                <img
+                  src="/images/hourglass-hero.jpg"
+                  alt="Golden Sand Hourglass"
+                  className="w-full h-full object-contain pointer-events-none select-none"
+                />
+
+                {/* Animated Golden Sand Stream Flowing Through the Center Neck */}
+                <svg
+                  viewBox="0 0 200 300"
+                  className="absolute inset-0 w-full h-full pointer-events-none"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs>
+                    <linearGradient id="flowingSandGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#FDE68A" stopOpacity="0.95" />
+                      <stop offset="50%" stopColor="#F59E0B" stopOpacity="0.9" />
+                      <stop offset="100%" stopColor="#FDE68A" stopOpacity="0.85" />
+                    </linearGradient>
+                  </defs>
+
+                  {/* Continuous Shimmering Sand Stream in Neck (y=130 to y=198) */}
+                  <line
+                    x1="100"
+                    y1="131"
+                    x2="100"
+                    y2="198"
+                    stroke="url(#flowingSandGrad)"
+                    strokeWidth="1.6"
+                    strokeDasharray="3 4"
+                  >
+                    <animate
+                      attributeName="stroke-dashoffset"
+                      from="28"
+                      to="0"
+                      dur="0.65s"
+                      repeatCount="indefinite"
+                    />
+                  </line>
+
+                  <line
+                    x1="100"
+                    y1="133"
+                    x2="100"
+                    y2="198"
+                    stroke="#FFFBEB"
+                    strokeWidth="0.9"
+                    strokeDasharray="1.5 5.5"
+                    strokeOpacity="0.85"
+                  >
+                    <animate
+                      attributeName="stroke-dashoffset"
+                      from="28"
+                      to="0"
+                      dur="0.45s"
+                      repeatCount="indefinite"
+                    />
+                  </line>
+
+                  {/* Falling Sand Micro-Grains Near Pyramid Apex */}
+                  {[
+                    { cx: 98.8, delay: '0s', dur: '0.7s' },
+                    { cx: 101.2, delay: '0.22s', dur: '0.65s' },
+                    { cx: 99.5, delay: '0.42s', dur: '0.75s' },
+                    { cx: 100.6, delay: '0.58s', dur: '0.68s' }
+                  ].map((g, i) => (
+                    <circle key={i} cx={g.cx} cy="135" r="0.85" fill="#FDE68A">
+                      <animate
+                        attributeName="cy"
+                        values="135;198"
+                        dur={g.dur}
+                        begin={g.delay}
+                        repeatCount="indefinite"
+                      />
+                      <animate
+                        attributeName="opacity"
+                        values="0;0.95;0.9;0"
+                        dur={g.dur}
+                        begin={g.delay}
+                        repeatCount="indefinite"
+                      />
+                    </circle>
+                  ))}
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Docked Stats & Reputation Strip */}
+        <div className="w-full bg-[#0A0A0A]/95 text-white/80 py-3.5 sm:py-4 px-6 border-t border-white/10 overflow-hidden relative z-20">
+          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
+            <div className="flex items-center gap-2">
+              <span className="text-hq-yellow font-bold">05</span>
+              <span className="text-white/70">Mini Masteries</span>
+            </div>
+            <span className="text-white/20 hidden md:inline">&bull;</span>
+            <div className="flex items-center gap-2">
+              <span className="text-hq-yellow font-bold">100 DAYS</span>
+              <span className="text-white/70">Self-Paced Transformation</span>
+            </div>
+            <span className="text-white/20 hidden md:inline">&bull;</span>
+            <div className="flex items-center gap-2">
+              <span className="text-hq-yellow font-bold">10 MINS/DAY</span>
+              <span className="text-white/70">Habit Micro-Learning</span>
+            </div>
+            <span className="text-white/20 hidden md:inline">&bull;</span>
+            <div className="flex items-center gap-2">
+              <span className="text-hq-yellow font-bold">9,490+</span>
+              <span className="text-white/70">Active Learners</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Courses Catalog (Profile Page 16) */}
-      <section id="courses-catalog" className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-display text-4xl md:text-5xl tracking-tight font-semibold">
-            Self-Paced Transformational Blueprints
-          </h2>
-          <p className="font-body text-hq-black/70 max-w-xl mx-auto text-sm mt-2 font-light">
+      <section id="courses-catalog" className="py-20 sm:py-24 px-6 md:px-12 max-w-7xl mx-auto">
+        {/* Header Row: Dual-Tone Title & Top Narrative (Matching Dedicated Chapters of HQX) */}
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-12 sm:mb-14 pb-8 border-b border-black/10">
+          <div>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] leading-[1.08]">
+              Self-Paced Transformational <br />
+              <span className="text-[#666666] font-light">Blueprints</span>
+            </h2>
+          </div>
+          <p className="font-body text-sm sm:text-base text-hq-black/65 max-w-md font-light leading-relaxed lg:pb-1">
             Done at your own pace, on mobile or desktop, with downloadable habit worksheets and lifetime masterclass access.
           </p>
         </div>

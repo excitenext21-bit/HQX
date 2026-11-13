@@ -987,7 +987,7 @@ export default function Home() {
       </div>
 
       {/* 3. 4 REASONS WHY MANNY WILL MAKE YOUR EMPLOYEE PRODUCTIVE */}
-      <section id="reasons-section" className="section-reveal py-20 lg:py-24 bg-hq-white dark:bg-[#07080B] border-b border-hq-black/10 dark:border-white/10 relative">
+      <section id="reasons-section" className="section-reveal py-20 sm:py-24 bg-hq-white dark:bg-[#07080B] border-b border-hq-black/10 dark:border-white/10 relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           {/* Section Header - Zero bottom margin to remove excessive vertical gap */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-0 pb-6 border-b border-hq-black/15 dark:border-white/15">
@@ -1433,7 +1433,7 @@ export default function Home() {
       </section>
 
       {/* 6. OUR TEAM (HORIZONTAL EDITORIAL SCROLLER) */}
-      <section id="team-section" className="section-reveal py-24 bg-[#0A0A0A] text-hq-white border-b border-white/10 overflow-hidden relative">
+      <section id="team-section" className="section-reveal py-20 sm:py-24 bg-[#0A0A0A] text-hq-white border-b border-white/10 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6">
           <div>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[46px] font-bold tracking-tight text-white mb-2 leading-[1.1]">
@@ -1539,7 +1539,7 @@ export default function Home() {
       </section>
 
       {/* 6. BENEFITS & IMPORTANCE OF ENGAGEMENT (STYLED WITH ASYMMETRIC 2-COLUMN PLACEMENT & LITE BG) */}
-      <section id="benefits-section" className="section-reveal py-20 lg:py-28 bg-[#FAF7F2] dark:bg-[#0D0E12] border-b border-hq-black/10 dark:border-white/10 transition-colors">
+      <section id="benefits-section" className="section-reveal py-20 sm:py-24 bg-[#FAF7F2] dark:bg-[#0D0E12] border-b border-hq-black/10 dark:border-white/10 transition-colors">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 lg:items-center">
             
@@ -1667,7 +1667,7 @@ export default function Home() {
       </section>
 
       {/* 8. HQX PODCAST (LITE BG & CONTRACTED LAYOUT - SPOTLIGHT VIDEO ON LEFT & THUMBNAILS ON RIGHT) */}
-      <section id="podcast" className="section-reveal py-20 lg:py-24 bg-[#FAF7F2] dark:bg-[#0D0E12] text-hq-black dark:text-white border-b border-hq-black/10 dark:border-white/10 transition-colors">
+      <section id="podcast" className="section-reveal py-20 sm:py-24 bg-[#FAF7F2] dark:bg-[#0D0E12] text-hq-black dark:text-white border-b border-hq-black/10 dark:border-white/10 transition-colors">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
           {/* Header */}
@@ -1821,7 +1821,7 @@ export default function Home() {
       </section>
 
       {/* 9. AUTHORSHIP ROADMAP (FROM PAGE 17 OF PROFILE) */}
-      <section id="books" className="section-reveal py-24 bg-[#0A0A0A] text-white border-b border-white/10 relative overflow-hidden">
+      <section id="books" className="section-reveal py-20 sm:py-24 bg-[#0A0A0A] text-white border-b border-white/10 relative overflow-hidden">
         {/* Subtle Ambient Background Glows */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-hq-yellow/[0.03] rounded-full blur-[140px]"></div>

@@ -64,12 +64,7 @@ export default function Founder() {
           </div>
         </div>
 
-        
-        {/* Subtle Ambient Radial Light */}
-        <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-hq-yellow/[0.04] rounded-full blur-[160px] pointer-events-none" />
-        <div className="absolute bottom-0 left-10 w-[450px] h-[450px] bg-white/[0.02] rounded-full blur-[140px] pointer-events-none" />
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 w-full flex-1 items-center max-w-7xl mx-auto px-0 lg:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 w-full flex-1 items-center max-w-7xl mx-auto px-6 md:px-12">
           
           {/* Left Column: Keynote Speaking Portrait seamlessly merged with 100% pitch black background */}
           <motion.div 
@@ -100,11 +95,11 @@ export default function Founder() {
               animate="visible"
               className="max-w-xl flex flex-col"
             >
-              {/* Massive Editorial Quote Headline */}
+              {/* Massive Editorial Quote Headline (Same Prata Font-Family as Home Hero "Feel Better. Work Better. Live Better.") */}
               <motion.blockquote 
                 variants={fadeUpVariants}
-                style={{ fontFamily: '"Geist", Arial, sans-serif', fontWeight: 300 }}
-                className="founder-hero-quote font-geist text-2xl sm:text-3xl md:text-4xl lg:text-[2.2rem] xl:text-[2.6rem] font-light leading-[1.2] tracking-tight uppercase text-white mb-8 sm:mb-10 border-l-[3px] border-hq-yellow pl-5 sm:pl-7"
+                style={{ fontFamily: '"Prata", serif' }}
+                className="founder-hero-quote font-prata text-2xl sm:text-3xl md:text-4xl lg:text-[2.2rem] xl:text-[2.6rem] font-normal leading-[1.25] tracking-wide uppercase text-[#F3EFEA] mb-8 sm:mb-10 border-l-[3px] border-hq-yellow pl-5 sm:pl-7"
               >
                 “THIS IS HOW THE GOOD COMPANIES FIND THE GOOD COMPANY.”
               </motion.blockquote>
@@ -141,7 +136,7 @@ export default function Founder() {
         </div>
 
         {/* DOCKED STATS & REPUTATION TICKER STRIP (FIT TO SCREEN AT SCREEN BOTTOM) */}
-        <div className="w-full bg-[#0A0A0A] text-white/80 py-3.5 sm:py-4 px-6 border-t border-white/10 overflow-hidden relative z-20">
+        <div className="w-full bg-black text-white/80 py-3.5 sm:py-4 px-6 border-t border-white/10 overflow-hidden relative z-20">
           <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
             <div className="flex items-center gap-2">
               <span className="text-hq-yellow font-bold">25+</span>
@@ -171,7 +166,7 @@ export default function Founder() {
              PHOTO ON LEFT • CONTENT & EXECUTIVE PEDIGREE (01-04) ON RIGHT
              BACKGROUND: #FAF8F5 (MATCHING ABOUT PAGE)
           ========================================================================= */}
-      <section id="about-founder" className="relative w-full py-16 sm:py-24 lg:py-28 px-6 md:px-12 bg-[#FAF8F5] border-b border-black/10 overflow-hidden">
+      <section id="about-founder" className="relative w-full py-20 sm:py-24 px-6 md:px-12 bg-[#FAF8F5] border-b border-black/10 overflow-hidden">
         
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -330,7 +325,7 @@ export default function Founder() {
           3. MANNY'S JOURNEY SECTION
              DARK EDITORIAL CANVAS • SIGNATURE QUOTE & NARRATIVE
           ========================================================================= */}
-      <section id="journey" className="relative w-full py-20 sm:py-24 lg:py-28 px-6 md:px-12 bg-[#0E0F12] text-white border-b border-white/10 overflow-hidden">
+      <section id="journey" className="relative w-full py-20 sm:py-24 px-6 md:px-12 bg-[#0E0F12] text-white border-b border-white/10 overflow-hidden">
         
         {/* Ambient Warm Golden Glow */}
         <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-hq-yellow/[0.03] rounded-full blur-[150px] pointer-events-none" />
