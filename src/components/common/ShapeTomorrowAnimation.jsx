@@ -3,7 +3,7 @@ import React from 'react';
 const PODCAST_CHANNELS = [
   {
     name: 'Spotify',
-    href: 'https://spotify.com/',
+    href: 'https://open.spotify.com/artist/5xj8kbYV5WOiXe7lF9Dr1g',
     icon: (
       <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
         <circle cx="12" cy="12" r="11" fill="#1DB954" />
@@ -16,7 +16,7 @@ const PODCAST_CHANNELS = [
   },
   {
     name: 'YouTube',
-    href: 'https://youtube.com/',
+    href: 'https://www.youtube.com/@happpinesssamurai1036',
     icon: (
       <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
         <rect x="1.5" y="4.5" width="21" height="15" rx="4" fill="#FF0000" />
@@ -26,7 +26,7 @@ const PODCAST_CHANNELS = [
   },
   {
     name: 'LinkedIn',
-    href: 'https://linkedin.com/',
+    href: 'https://www.linkedin.com/in/manojsanchan/',
     icon: (
       <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
         <rect x="2" y="2" width="20" height="20" rx="4" fill="#0A66C2" />
@@ -39,7 +39,7 @@ const PODCAST_CHANNELS = [
   },
   {
     name: 'Instagram',
-    href: 'https://instagram.com/',
+    href: 'https://www.instagram.com/happinesssamurai/',
     icon: (
       <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
         <defs>

@@ -17,25 +17,25 @@ const SOCIAL_LINKS = [
   {
     name: 'LinkedIn',
     handle: 'HQX Global',
-    href: 'https://linkedin.com',
+    href: 'https://www.linkedin.com/in/manojsanchan/',
     icon: Linkedin
   },
   {
     name: 'YouTube',
     handle: 'Keynotes & Podcast',
-    href: 'https://youtube.com',
+    href: 'https://www.youtube.com/@happpinesssamurai1036',
     icon: Youtube
   },
   {
     name: 'Instagram',
     handle: '@happinesssamurai',
-    href: 'https://instagram.com',
+    href: 'https://www.instagram.com/happinesssamurai/',
     icon: Instagram
   },
   {
     name: 'Spotify',
     handle: 'HQX Podcast',
-    href: 'https://spotify.com',
+    href: 'https://open.spotify.com/artist/5xj8kbYV5WOiXe7lF9Dr1g',
     icon: Radio
   }
 ];

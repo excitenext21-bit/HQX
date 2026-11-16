@@ -1043,7 +1043,7 @@ export function DataProvider({ children }) {
   });
 
   const [books, setBooks] = useState(() => {
-    const saved = localStorage.getItem('hqx_books_v2');
+    const saved = localStorage.getItem('hqx_books_v6');
     return saved ? JSON.parse(saved) : INITIAL_BOOKS;
   });
 
@@ -1086,7 +1086,7 @@ export function DataProvider({ children }) {
   }, [courses]);
 
   useEffect(() => {
-    localStorage.setItem('hqx_books_v2', JSON.stringify(books));
+    localStorage.setItem('hqx_books_v6', JSON.stringify(books));
   }, [books]);
 
   useEffect(() => {
@@ -1193,7 +1193,7 @@ export function DataProvider({ children }) {
   const resetToDefaults = () => {
     localStorage.removeItem('hqx_faculty_v4');
     localStorage.removeItem('hqx_courses_v2');
-    localStorage.removeItem('hqx_books_v2');
+    localStorage.removeItem('hqx_books_v6');
     localStorage.removeItem('hqx_podcasts_v3');
     localStorage.removeItem('hqx_engagements_v2');
     localStorage.removeItem('hqx_inquiries_v2');

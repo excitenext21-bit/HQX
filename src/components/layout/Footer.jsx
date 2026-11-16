@@ -123,10 +123,10 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-wrap items-center gap-x-7 gap-y-2">
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:opacity-60 transition-opacity">LinkedIn</a>
-            <a href="https://youtube.com" target="_blank" rel="noreferrer" className="hover:opacity-60 transition-opacity">YouTube</a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:opacity-60 transition-opacity">Instagram</a>
-            <a href="https://spotify.com" target="_blank" rel="noreferrer" className="hover:opacity-60 transition-opacity">Spotify</a>
+            <a href="https://www.linkedin.com/in/manojsanchan/" target="_blank" rel="noreferrer" className="hover:opacity-60 transition-opacity">LinkedIn</a>
+            <a href="https://www.youtube.com/@happpinesssamurai1036" target="_blank" rel="noreferrer" className="hover:opacity-60 transition-opacity">YouTube</a>
+            <a href="https://www.instagram.com/happinesssamurai/" target="_blank" rel="noreferrer" className="hover:opacity-60 transition-opacity">Instagram</a>
+            <a href="https://open.spotify.com/artist/5xj8kbYV5WOiXe7lF9Dr1g" target="_blank" rel="noreferrer" className="hover:opacity-60 transition-opacity">Spotify</a>
             <button
               type="button"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
