@@ -51,6 +51,37 @@ import { useData } from '../context/DataContext';
 import { useTheme } from '../context/ThemeContext';
 const RotatingGlobe = lazy(() => import('../components/common/RotatingGlobe'));
 
+function DeferredRotatingGlobe({ heightClass }) {
+  const hostRef = useRef(null);
+  const [shouldLoad, setShouldLoad] = useState(false);
+
+  useEffect(() => {
+    const el = hostRef.current;
+    if (!el || shouldLoad) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setShouldLoad(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: '400px 0px' }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [shouldLoad]);
+
+  return (
+    <div ref={hostRef} className={heightClass}>
+      {shouldLoad ? (
+        <Suspense fallback={<div className={heightClass} />}>
+          <RotatingGlobe heightClass={heightClass} />
+        </Suspense>
+      ) : null}
+    </div>
+  );
+}
+
 // Sleek Long-Tail 20px Arrow (1px stroke) for complete page consistency
 function LongArrow({ direction = 'right', className = '' }) {
   if (direction === 'left') {
@@ -1564,9 +1595,7 @@ export default function Home() {
             {/* Right Column: Globe right-aligned (Lazy-loaded to keep Three.js out of critical FCP) */}
             <div className="lg:col-span-7 flex justify-center lg:justify-end items-center">
               <div className="w-full max-w-[640px]">
-                <Suspense fallback={<div className="h-[420px] sm:h-[480px] lg:h-[540px] xl:h-[600px]" />}>
-                  <RotatingGlobe heightClass="h-[420px] sm:h-[480px] lg:h-[540px] xl:h-[600px]" />
-                </Suspense>
+                <DeferredRotatingGlobe heightClass="h-[420px] sm:h-[480px] lg:h-[540px] xl:h-[600px]" />
               </div>
             </div>
 
