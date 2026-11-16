@@ -75,9 +75,11 @@ export default function Books() {
                 {/* Primary & Secondary Signature Hairline CTAs (Matching Other Pages) */}
                 <div className="pt-1 flex flex-wrap items-center gap-6 sm:gap-8">
                   <a
-                    href={selectedBook.pdfUrl || selectedBook.purchaseUrl}
-                    target="_blank"
-                    rel="noreferrer"
+                    href="#books-roadmap"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById('books-roadmap')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
                     className="group relative inline-flex items-center justify-between gap-8 py-3.5 px-2 font-display font-medium text-xs tracking-[0.2em] text-white hover:text-hq-yellow transition-colors duration-300 uppercase"
                   >
                     <span className="absolute top-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
