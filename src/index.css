@@ -4,6 +4,7 @@
    ========================================================================== */
 
 /* 1. TYPOGRAPHY ASSETS */
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
 @import url('https://fonts.cdnfonts.com/css/google-sans');
 @import url('https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600,700,800,900&display=swap');
 
@@ -59,10 +60,12 @@
   body {
     background-color: var(--hq-white);
     color: var(--hq-black);
-    font-family: "Plus Jakarta Sans", "Inter", "General Sans", "Google Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: "Proxima Nova", "Plus Jakarta Sans", "Inter", "General Sans", "Google Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    overflow-x: clip;
+    max-width: 100%;
   }
 
   html.dark,
@@ -71,20 +74,23 @@
     color: #F5F5F5;
   }
 
+  h1, h2, h3, h4, h5, h6, p, a, span, li, button, nav, .font-display, .font-heading, .font-body, .font-sans {
+    font-family: "Proxima Nova", "Plus Jakarta Sans", "Inter", "General Sans", "Google Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
   h1, h2, h3, h4, h5, h6, .font-display, .font-heading {
-    font-family: "Google Sans", "Product Sans", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     letter-spacing: -0.02em;
     text-rendering: optimizeLegibility;
   }
 
   .founder-hero-quote {
-    font-family: "Geist", Arial, sans-serif;
+    font-family: "Proxima Nova", "Geist", Arial, sans-serif;
     letter-spacing: -0.02em;
     text-rendering: optimizeLegibility;
   }
 
   p, .font-body, article, li, blockquote {
-    font-family: "Plus Jakarta Sans", "Inter", "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: "Proxima Nova", "Plus Jakarta Sans", "Inter", "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.7;
     letter-spacing: -0.01em;
     font-weight: 400;
@@ -103,7 +109,7 @@
 .font-display,
 .font-heading,
 .font-monda {
-  font-family: "Google Sans", "Product Sans", sans-serif;
+  font-family: "Proxima Nova", "Google Sans", "Product Sans", sans-serif;
 }
 
 .font-serif,
@@ -111,8 +117,18 @@
   font-family: "Prata", "Tenor Sans", Georgia, Cambria, serif !important;
 }
 
+/* Preserve original font families for Home Page Hero section */
+#home-hero .font-display {
+  font-family: "Google Sans", "Product Sans", "Plus Jakarta Sans", "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+#home-hero .font-body,
+#home-hero p {
+  font-family: "Plus Jakarta Sans", "Inter", "General Sans", "Google Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
 .font-stella {
-  font-family: 'SansakertaMonda', 'Monda', 'Google Sans', sans-serif !important;
+  font-family: 'Proxima Nova', 'SansakertaMonda', 'Monda', 'Google Sans', sans-serif !important;
   font-feature-settings: "dlig" 1, "ss01" 1, "liga" 1, "calt" 1;
   letter-spacing: -0.03em;
 }
@@ -122,7 +138,7 @@ code,
 pre,
 kbd,
 samp {
-  font-family: "Google Sans", "Product Sans", "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Proxima Nova", "Google Sans", "Product Sans", "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 /* 6. STRUCTURAL GRID LINES */
@@ -624,4 +640,15 @@ p {
 
 .animate-stadium-slow-glow {
   animation: stadiumSlowGlow 8s ease-in-out infinite;
+}
+
+/* 9. Tactile Newsprint Paper Texture for Print Media Cards */
+.newsprint-card {
+  position: relative;
+  background-color: #EFECE3;
+  background-image:
+    linear-gradient(rgba(239, 236, 227, 0.25), rgba(239, 236, 227, 0.25)),
+    url('/images/newsprint-texture.jpg');
+  background-size: cover;
+  background-position: center;
 }

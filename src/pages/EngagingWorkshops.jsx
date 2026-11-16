@@ -1,22 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, Clock, Users, CheckCircle2, ArrowRight, Heart, Lightbulb, Target, Zap } from 'lucide-react';
-import { useData } from '../context/DataContext';
+import { Sparkles, Clock, Users, ArrowRight, Heart, Lightbulb, Target, Zap, BookOpen } from 'lucide-react';
 
 export default function EngagingWorkshops() {
-  const { addInquiry } = useData();
   const [isLightOn, setIsLightOn] = useState(true);
   const [hoveredWorkshop, setHoveredWorkshop] = useState(0);
-  const [selectedWorkshop, setSelectedWorkshop] = useState('Strategic Thinking & Performance Optimization');
-  const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({
-    name: '',
-    company: '',
-    email: '',
-    phone: '',
-    headcount: '50-100 Participants',
-    message: ''
-  });
 
   const workshops = [
     {
@@ -81,15 +70,6 @@ export default function EngagingWorkshops() {
     }
   ];
 
-  const handleBooking = (e) => {
-    e.preventDefault();
-    addInquiry({
-      ...form,
-      program: `Workshop: ${selectedWorkshop}`
-    });
-    setSubmitted(true);
-  };
-
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
       {/* Hero Section: About Us Editorial Split Layout + Interactive Light Bulb Toggle */}
@@ -109,7 +89,7 @@ export default function EngagingWorkshops() {
         </motion.div>
 
         {/* Left Side Vertical Text (Matching About Us Hero Style) */}
-        <div className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex flex-col justify-center items-center pointer-events-none select-none">
+        <div className="hidden lg:flex absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex-col justify-center items-center pointer-events-none select-none">
           <div
             className="flex items-center gap-3 sm:gap-4"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
@@ -146,7 +126,7 @@ export default function EngagingWorkshops() {
 
                 <div className="pt-2">
                   <a
-                    href="#booking-section"
+                    href="#workshops-catalog"
                     className="group relative inline-flex items-center justify-between gap-8 py-3.5 px-2 font-display font-medium text-xs tracking-[0.2em] text-white hover:text-hq-yellow transition-colors duration-300 uppercase"
                   >
                     {/* Top border line */}
@@ -354,7 +334,7 @@ export default function EngagingWorkshops() {
       </section>
 
       {/* Workshop Catalog (Dedicated Chapters Editorial Split Style) */}
-      <section className="py-20 sm:py-24 px-6 md:px-12 bg-[#FAF8F5] dark:bg-[#0E0F12] border-b border-black/10">
+      <section id="workshops-catalog" className="py-20 sm:py-24 px-6 md:px-12 bg-[#FAF8F5] dark:bg-[#0E0F12] border-b border-black/10">
         <div className="max-w-7xl mx-auto">
           {/* Header Row: Dual-Tone Title & Top Narrative */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-10 sm:mb-12 pb-6 border-b border-black/10">
@@ -383,8 +363,7 @@ export default function EngagingWorkshops() {
                     onFocus={() => setHoveredWorkshop(idx)}
                     onClick={() => {
                       setHoveredWorkshop(idx);
-                      setSelectedWorkshop(w.title);
-                      document.getElementById('booking-section')?.scrollIntoView({ behavior: 'smooth' });
+                      document.getElementById('workshop-framework')?.scrollIntoView({ behavior: 'smooth' });
                     }}
                     className={`group py-4 sm:py-5 px-4 -mx-4 rounded-2xl flex items-center justify-between gap-4 text-left transition-all duration-300 cursor-pointer ${
                       isActive ? 'bg-black/[0.03]' : 'hover:bg-black/[0.015]'
@@ -449,17 +428,13 @@ export default function EngagingWorkshops() {
                         {workshops[hoveredWorkshop].summary}
                       </p>
                       <div className="flex flex-wrap items-center gap-3">
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setSelectedWorkshop(workshops[hoveredWorkshop].title);
-                            document.getElementById('booking-section')?.scrollIntoView({ behavior: 'smooth' });
-                          }}
+                        <Link
+                          to="/contact"
                           className="inline-flex items-center gap-2 bg-hq-yellow text-hq-black font-display text-[11px] uppercase tracking-widest px-5 py-2.5 rounded-full hover:bg-white transition-colors font-semibold"
                         >
-                          <span>Select Workshop</span>
+                          <span>Inquire Workshop</span>
                           <ArrowRight className="w-3.5 h-3.5" />
-                        </button>
+                        </Link>
                         <span className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-hq-black/85 border border-white/15 text-[10px] font-mono uppercase tracking-widest text-hq-yellow">
                           <Clock className="w-3 h-3 stroke-[1.5]" />
                           {workshops[hoveredWorkshop].duration}
@@ -520,91 +495,151 @@ export default function EngagingWorkshops() {
         </div>
       </section>
 
-      {/* Booking Form Section */}
-      <section className="py-20 sm:py-24 px-6 md:px-12 bg-hq-white">
+      {/* HQ Functional Enhancement Model Bento Section (Grounded in Happiness Decoded PDF) */}
+      <section id="workshop-framework" className="py-20 sm:py-24 px-6 md:px-12 bg-[#141414] text-white">
+        <div className="max-w-7xl mx-auto">
+          {/* Top Header Row: Heading & CTA (Left) + Description & 3 Key Metrics (Right) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start mb-12 sm:mb-14">
+            <div className="lg:col-span-6">
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-hq-yellow font-semibold block mb-3">
+                Happiness Decoded Blueprint
+              </span>
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.1] mb-7 max-w-xl">
+                Transform teams with applied eudaimonic science.
+              </h2>
+              <Link
+                to="/books"
+                className="inline-flex items-center gap-2.5 bg-hq-yellow text-[#0A0A0A] font-display text-xs sm:text-sm font-semibold px-7 py-3.5 rounded-full hover:bg-white transition-colors"
+              >
+                <span>Read Book Excerpt</span>
+                <BookOpen className="w-4 h-4" />
+              </Link>
+            </div>
 
-        {/* Booking Form */}
-        <div id="booking-section" className="bg-hq-black text-white p-8 md:p-14 rounded-3xl border border-black shadow-2xl max-w-4xl mx-auto">
-          <div className="text-center mb-10">
-            <span className="text-xs font-mono uppercase tracking-widest text-hq-yellow block font-bold mb-2">Book Corporate Masterclass</span>
-            <h3 className="font-display text-3xl md:text-4xl font-bold">
-              Reserve Workshop for Your Enterprise
-            </h3>
+            <div className="lg:col-span-6 lg:pt-2">
+              <p className="font-body text-sm sm:text-base text-white/70 font-light leading-relaxed mb-8 max-w-xl">
+                Grounded in Manny Anchan&apos;s <span className="text-white font-medium">Happiness Decoded</span> &amp; the HQ Functional Enhancement Model, every workshop turns small, intentional daily shifts into sustained workplace clarity and resilience.
+              </p>
+
+              <div className="grid grid-cols-3 gap-6 max-w-lg">
+                <div>
+                  <div className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                    250K+
+                  </div>
+                  <div className="font-body text-xs sm:text-sm text-white/55 mt-1">
+                    Professionals
+                  </div>
+                </div>
+                <div>
+                  <div className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                    25+ Yrs
+                  </div>
+                  <div className="font-body text-xs sm:text-sm text-white/55 mt-1">
+                    Stewardship
+                  </div>
+                </div>
+                <div>
+                  <div className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                    10
+                  </div>
+                  <div className="font-body text-xs sm:text-sm text-white/55 mt-1">
+                    Core Levers
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {submitted ? (
-            <div className="bg-hq-yellow text-hq-black p-8 rounded-2xl text-center">
-              <CheckCircle2 className="w-12 h-12 mx-auto mb-3" />
-              <h4 className="font-display text-2xl font-bold mb-2">Workshop Inquiry Received</h4>
-              <p className="font-body text-sm font-light">
-                Our lead facilitator will coordinate directly with your HR/L&D desk within 4 hours.
-              </p>
+          {/* Bottom 3-Column Bento Grid: 2 Cards Left + Tall Visual Center + 2 Cards Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+            {/* Left Column: 2 Stacked Cards */}
+            <div className="lg:col-span-4 flex flex-col gap-5">
+              <div className="flex-1 bg-[#1D1E20] border border-white/[0.06] hover:border-hq-yellow/30 rounded-2xl p-7 sm:p-8 flex flex-col items-center justify-center text-center transition-colors">
+                <div className="w-11 h-11 rounded-full bg-hq-yellow/10 border border-hq-yellow/25 text-hq-yellow flex items-center justify-center mb-4">
+                  <Heart className="w-5 h-5 stroke-[1.75]" />
+                </div>
+                <h3 className="font-display text-lg sm:text-xl font-semibold text-white mb-2.5">
+                  Mental Health &amp; Emotions
+                </h3>
+                <p className="font-body text-xs sm:text-sm text-white/60 font-light leading-relaxed max-w-xs">
+                  Embracing self-care, clear boundaries, and emotional regulation to navigate high-pressure roles with calm resilience.
+                </p>
+              </div>
+
+              <div className="flex-1 bg-[#1D1E20] border border-white/[0.06] hover:border-hq-yellow/30 rounded-2xl p-7 sm:p-8 flex flex-col items-center justify-center text-center transition-colors">
+                <div className="w-11 h-11 rounded-full bg-hq-yellow/10 border border-hq-yellow/25 text-hq-yellow flex items-center justify-center mb-4">
+                  <Zap className="w-5 h-5 stroke-[1.75]" />
+                </div>
+                <h3 className="font-display text-lg sm:text-xl font-semibold text-white mb-2.5">
+                  Energy &amp; Fitness
+                </h3>
+                <p className="font-body text-xs sm:text-sm text-white/60 font-light leading-relaxed max-w-xs">
+                  Misogi-inspired renewal rituals, restful recovery, and movement habits that sustain vitality across demanding sprints.
+                </p>
+              </div>
             </div>
-          ) : (
-            <form onSubmit={handleBooking} className="space-y-6">
-              <div className="p-4 bg-white/5 rounded-xl border border-white/10 mb-6">
-                <span className="text-xs font-mono uppercase text-white/60 block mb-1">Selected Workshop:</span>
-                <span className="font-display text-lg text-hq-yellow font-bold">{selectedWorkshop}</span>
+
+            {/* Center Column: Tall Framed Workshop Showcase Card */}
+            <div className="lg:col-span-4 bg-[#1D1E20] border border-white/[0.06] rounded-2xl p-4 sm:p-5 flex flex-col justify-between min-h-[380px] lg:min-h-0">
+              <div className="text-[11px] font-mono uppercase tracking-[0.18em] text-white/40 mb-3 px-1 flex items-center justify-between">
+                <span>HQ Functional Model</span>
+                <span className="text-hq-yellow">Live Immersion</span>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="text-xs font-mono uppercase text-white/70 block mb-2">Your Name</label>
-                  <input
-                    type="text"
-                    required
-                    value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    placeholder="e.g. Sangeeta Rao"
-                    className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-hq-yellow"
-                  />
-                </div>
-                <div>
-                  <label className="text-xs font-mono uppercase text-white/70 block mb-2">Company / Organization</label>
-                  <input
-                    type="text"
-                    required
-                    value={form.company}
-                    onChange={(e) => setForm({ ...form, company: e.target.value })}
-                    placeholder="e.g. TATA AIG"
-                    className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-hq-yellow"
-                  />
+              <div className="relative flex-1 rounded-xl overflow-hidden bg-black min-h-[260px]">
+                <img
+                  src="/images/hero_showcase/manny_roundtable_engagement.jpg"
+                  alt="Manny Anchan leading an interactive HQX corporate workshop"
+                  className="w-full h-full object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-3.5 left-4 right-4 text-left">
+                  <div className="font-display text-sm font-semibold text-white">
+                    Authentic Dialogue &amp; Gratitude Journals
+                  </div>
+                  <div className="font-body text-xs text-white/65">
+                    From &ldquo;Happiness Decoded&rdquo; &bull; Ch. 1&ndash;10
+                  </div>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="text-xs font-mono uppercase text-white/70 block mb-2">Corporate Email</label>
-                  <input
-                    type="email"
-                    required
-                    value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    placeholder="e.g. s.rao@tataaig.com"
-                    className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-hq-yellow"
-                  />
+              {/* Subtle Bottom Rhythm Bar */}
+              <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between gap-2 text-[11px] font-mono text-white/45 px-1">
+                <span>Mindset</span>
+                <span className="h-1 flex-1 rounded-full bg-white/10 overflow-hidden">
+                  <span className="block h-full w-2/3 bg-hq-yellow rounded-full" />
+                </span>
+                <span className="text-hq-yellow">Kaizen</span>
+              </div>
+            </div>
+
+            {/* Right Column: 2 Stacked Cards */}
+            <div className="lg:col-span-4 flex flex-col gap-5">
+              <div className="flex-1 bg-[#1D1E20] border border-white/[0.06] hover:border-hq-yellow/30 rounded-2xl p-7 sm:p-8 flex flex-col items-center justify-center text-center transition-colors">
+                <div className="w-11 h-11 rounded-full bg-hq-yellow/10 border border-hq-yellow/25 text-hq-yellow flex items-center justify-center mb-4">
+                  <Target className="w-5 h-5 stroke-[1.75]" />
                 </div>
-                <div>
-                  <label className="text-xs font-mono uppercase text-white/70 block mb-2">Contact Number</label>
-                  <input
-                    type="tel"
-                    required
-                    value={form.phone}
-                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                    placeholder="+91 98000 00000"
-                    className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-hq-yellow"
-                  />
-                </div>
+                <h3 className="font-display text-lg sm:text-xl font-semibold text-white mb-2.5">
+                  Mindset &amp; Daily Habits
+                </h3>
+                <p className="font-body text-xs sm:text-sm text-white/60 font-light leading-relaxed max-w-xs">
+                  Kaizen micro-rituals, gratitude journaling, and steady adaptability turning intentional daily steps into excellence.
+                </p>
               </div>
 
-              <button
-                type="submit"
-                className="w-full bg-hq-yellow text-hq-black font-display font-semibold uppercase tracking-widest py-4 rounded-xl text-sm hover:bg-white transition-all shadow-xl"
-              >
-                Submit Workshop Booking Request
-              </button>
-            </form>
-          )}
+              <div className="flex-1 bg-[#1D1E20] border border-white/[0.06] hover:border-hq-yellow/30 rounded-2xl p-7 sm:p-8 flex flex-col items-center justify-center text-center transition-colors">
+                <div className="w-11 h-11 rounded-full bg-hq-yellow/10 border border-hq-yellow/25 text-hq-yellow flex items-center justify-center mb-4">
+                  <Users className="w-5 h-5 stroke-[1.75]" />
+                </div>
+                <h3 className="font-display text-lg sm:text-xl font-semibold text-white mb-2.5">
+                  Work &amp; Minimalism
+                </h3>
+                <p className="font-body text-xs sm:text-sm text-white/60 font-light leading-relaxed max-w-xs">
+                  Balancing firm leadership with approachability, setting clear boundaries, and curating what truly adds value.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

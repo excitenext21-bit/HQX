@@ -321,7 +321,7 @@ export default function LeadershipDeepDive() {
         </svg>
 
         {/* Left Side Vertical Text */}
-        <div className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex flex-col justify-center items-center pointer-events-none select-none">
+        <div className="hidden lg:flex absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex-col justify-center items-center pointer-events-none select-none">
           <div
             className="flex items-center gap-3 sm:gap-4"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
@@ -709,7 +709,7 @@ export default function LeadershipDeepDive() {
                     </div>
                   ) : (
                     /* Collapsed Vertical Strip View */
-                    <div className="relative w-full h-full flex flex-col items-center justify-between py-6 px-1 overflow-hidden">
+                    <div className="relative w-full h-full flex flex-col items-center justify-start py-6 px-1 overflow-hidden">
                       {/* Subtle Top Highlight Sheen */}
                       <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/[0.06] to-transparent pointer-events-none" />
 
@@ -719,8 +719,6 @@ export default function LeadershipDeepDive() {
                       >
                         {item.client}
                       </span>
-
-                      <TabIcon className="relative z-10 w-4 h-4 text-white/50 group-hover:text-hq-yellow stroke-[1.2] transition-colors shrink-0" />
                     </div>
                   )}
                 </button>
@@ -731,7 +729,6 @@ export default function LeadershipDeepDive() {
           {/* Mobile & Tablet Vertical Expanding Accordion */}
           <div className="lg:hidden flex flex-col gap-3">
             {clientEngagements.map((item, idx) => {
-              const TabIcon = item.icon;
               const isActive = activeClient === idx;
               return (
                 <div
@@ -748,10 +745,6 @@ export default function LeadershipDeepDive() {
                     className="w-full px-5 py-4 flex items-center justify-between gap-4 text-left"
                   >
                     <div className="flex items-center gap-3 min-w-0">
-                      <TabIcon
-                        className={`w-5 h-5 shrink-0 stroke-[1.2] ${isActive ? 'text-hq-yellow' : 'text-white/55'
-                          }`}
-                      />
                       <span className={`font-display text-base font-medium truncate ${isActive ? 'text-hq-yellow' : 'text-white'
                         }`}>
                         {item.client}

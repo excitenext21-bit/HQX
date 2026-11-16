@@ -11,3 +11,7 @@ scratch_*.py
 scratch_*.json
 build_svg.py
 youtube_channel_videos.json
+
+# Exceeds GitHub 100 MB file size limit
+public/pdfs/books/happiness-habits.pdf
+dist/pdfs/books/happiness-habits.pdf

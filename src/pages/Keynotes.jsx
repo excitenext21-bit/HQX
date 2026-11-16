@@ -130,9 +130,9 @@ export default function Keynotes() {
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
       {/* Hero Section: Full-Screen 3D Curved Conference Stage with 3D-Synced Content on Screen */}
-      <section className="bg-[#0A0A0A] text-white h-[100svh] min-h-[640px] max-h-[1080px] border-b border-white/10 relative overflow-hidden w-full">
-        {/* Left Side Vertical Text: KEYNOTES & TALKS (Matching About Us Hero Style) */}
-        <div className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex flex-col justify-center items-center pointer-events-none select-none">
+      <section className="bg-[#0A0A0A] text-white min-h-[100svh] lg:h-[100svh] lg:min-h-[640px] lg:max-h-[1080px] flex flex-col justify-between pt-20 sm:pt-24 lg:pt-0 pb-0 border-b border-white/10 relative overflow-hidden w-full">
+        {/* Left Side Vertical Text: KEYNOTES & TALKS (Desktop Only) */}
+        <div className="hidden lg:flex absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex-col justify-center items-center pointer-events-none select-none">
           <div
             className="flex items-center gap-3 sm:gap-4"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
@@ -192,7 +192,7 @@ export default function Keynotes() {
         </ConferenceStage3D>
 
         {/* DOCKED STATS & REPUTATION STRIP (MATCHING ABOUT US & WORKSHOPS HERO) */}
-        <div className="absolute bottom-0 inset-x-0 w-full bg-[#0A0A0A]/95 text-white/80 py-3 sm:py-3.5 px-6 border-t border-white/10 overflow-hidden z-20">
+        <div className="relative lg:absolute lg:bottom-0 inset-x-0 w-full bg-[#0A0A0A]/95 text-white/80 py-3 sm:py-3.5 px-6 border-t border-white/10 overflow-hidden z-20">
           <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-[11px] sm:text-xs font-mono uppercase tracking-widest">
             <div className="flex items-center gap-2">
               <span className="text-hq-yellow font-bold">04</span>

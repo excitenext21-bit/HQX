@@ -1,356 +1,117 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import BrandLogo from './BrandLogo';
+import React from 'react';
+
+const PODCAST_CHANNELS = [
+  {
+    name: 'Spotify',
+    href: 'https://spotify.com/',
+    icon: (
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="11" fill="#1DB954" />
+        <path
+          d="M16.9 16.4c-.2.3-.6.4-.9.2-2.5-1.5-5.6-1.9-9.3-1-.4.1-.7-.1-.8-.5s.1-.7.5-.8c4-.9 7.5-.5 10.3 1.2.3.2.4.6.2.9zm1.3-2.9c-.2.4-.7.5-1.1.3-2.8-1.7-7.1-2.2-10.4-1.2-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.8-1.1 8.5-.6 11.7 1.3.4.2.5.7.3 1.1zm.1-3c-3.4-2-9-2.2-12.2-1.2-.5.2-1.1-.1-1.2-.6-.2-.5.1-1.1.6-1.2 3.7-1.1 9.9-.9 13.8 1.4.5.3.6.9.4 1.4-.3.4-.9.5-1.4.2z"
+          fill="#0A0A0A"
+        />
+      </svg>
+    )
+  },
+  {
+    name: 'YouTube',
+    href: 'https://youtube.com/',
+    icon: (
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="1.5" y="4.5" width="21" height="15" rx="4" fill="#FF0000" />
+        <polygon points="10,8.5 16,12 10,15.5" fill="#FFFFFF" />
+      </svg>
+    )
+  },
+  {
+    name: 'LinkedIn',
+    href: 'https://linkedin.com/',
+    icon: (
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="4" fill="#0A66C2" />
+        <path
+          d="M7.5 10.2v6.3H5.3v-6.3h2.2zm.1-2.1c0 .7-.5 1.2-1.2 1.2s-1.2-.5-1.2-1.2.5-1.2 1.2-1.2 1.2.5 1.2 1.2zm9.9 4.5v3.9h-2.2v-3.6c0-.9-.3-1.5-1.1-1.5-.6 0-1 .4-1.2.8-.1.2-.1.4-.1.6v3.7h-2.2s0-6 0-6.3h2.2v.9c.3-.5.9-1.1 2-1.1 1.5 0 2.6 1 2.6 3z"
+          fill="#FFFFFF"
+        />
+      </svg>
+    )
+  },
+  {
+    name: 'Instagram',
+    href: 'https://instagram.com/',
+    icon: (
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+        <defs>
+          <linearGradient id="igGradFooter" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#F58529" />
+            <stop offset="50%" stopColor="#DD2A7B" />
+            <stop offset="100%" stopColor="#8134AF" />
+          </linearGradient>
+        </defs>
+        <rect x="2" y="2" width="20" height="20" rx="5.5" fill="url(#igGradFooter)" />
+        <circle cx="12" cy="12" r="4.2" fill="none" stroke="#FFFFFF" strokeWidth="1.8" />
+        <circle cx="17.2" cy="6.8" r="1.2" fill="#FFFFFF" />
+      </svg>
+    )
+  }
+];
 
 /**
  * ShapeTomorrowAnimation
- * Full-screen viewport section featuring:
- * 1. Correct official vector brand logo (clean smile swoosh + HQ^x without squircle box, 
- *    matching the official brand reference).
- * 2. Authentic "stella" modern sans-serif typography with discretionary ligatures 
- *    in lowercase geometric aesthetic.
- * 3. Exact "bouncing and moving lines" motion graphics choreography from Akash Goel's post
- *    (@motionbyakash: CDsm52tHj5F) in brand yellow (#FFCC00) and rich black (#0A0A0A).
- * 4. Perfectly framed to fit the viewport screen (100dvh).
+ * Pure black podcast subscription banner with low-opacity studio mic background
+ * and direct channel links (Spotify, YouTube, LinkedIn, Instagram).
  */
 export default function ShapeTomorrowAnimation() {
-  const [key, setKey] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-
-  // Elastic spring easing matching Akash Goel's motion curve
-  const elasticEase = [0.34, 1.56, 0.64, 1];
-
-  const handleReplay = () => {
-    setKey(prev => prev + 1);
-  };
-
   return (
-    <div 
-      className="relative w-full min-h-[92vh] sm:min-h-[95vh] lg:min-h-[100dvh] flex flex-col items-center justify-center text-center  py-10 sm:py-14 px-4 sm:px-6 cursor-pointer overflow-hidden group"
-      onClick={handleReplay}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      title="Click or hover to replay the kinetic motion animation"
-    >
-      {/* ========================================================
-          1. DYNAMIC MOVING & INTERSECTING LINES (motionbyakash style)
-          Rapid lines shooting vertically and horizontally, crossing 
-          and snapping with elastic bounce across the viewport
-         ======================================================== */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-        <svg 
-          key={`lines-${key}`}
-          className="w-full h-full"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {/* Top-to-Bottom Vertical Slicing Line (Left side) */}
-          <motion.line
-            x1="18%"
-            y1="-20%"
-            x2="18%"
-            y2="120%"
-            stroke="#0A0A0A"
-            strokeWidth="1.5"
-            strokeDasharray="140% 140%"
-            initial={{ strokeDashoffset: "140%" }}
-            animate={{ 
-              strokeDashoffset: ["140%", "0%", "-140%"],
-              opacity: [0, 0.4, 0]
-            }}
-            transition={{
-              duration: 2.0,
-              ease: "easeInOut",
-              times: [0, 0.45, 1],
-              repeat: Infinity,
-              repeatDelay: 2.2
-            }}
-          />
-
-          {/* Bottom-to-Top Vertical Slicing Line (Right side) */}
-          <motion.line
-            x1="82%"
-            y1="120%"
-            x2="82%"
-            y2="-20%"
-            stroke="#0A0A0A"
-            strokeWidth="1.5"
-            strokeDasharray="140% 140%"
-            initial={{ strokeDashoffset: "140%" }}
-            animate={{ 
-              strokeDashoffset: ["140%", "0%", "-140%"],
-              opacity: [0, 0.4, 0]
-            }}
-            transition={{
-              duration: 2.0,
-              delay: 0.25,
-              ease: "easeInOut",
-              times: [0, 0.45, 1],
-              repeat: Infinity,
-              repeatDelay: 2.2
-            }}
-          />
-
-          {/* Horizontal Slicing Line (Above 'shape') */}
-          <motion.line
-            x1="-20%"
-            y1="36%"
-            x2="120%"
-            y2="36%"
-            stroke="#0A0A0A"
-            strokeWidth="2"
-            strokeDasharray="140% 140%"
-            initial={{ strokeDashoffset: "-140%" }}
-            animate={{ 
-              strokeDashoffset: ["-140%", "0%", "140%"],
-              opacity: [0, 0.6, 0]
-            }}
-            transition={{
-              duration: 1.8,
-              delay: 0.1,
-              ease: "easeInOut",
-              times: [0, 0.4, 1],
-              repeat: Infinity,
-              repeatDelay: 2.5
-            }}
-          />
-
-          {/* Horizontal Slicing Line (Between 'shape' and 'tomorrow') */}
-          <motion.line
-            x1="120%"
-            y1="58%"
-            x2="-20%"
-            y2="58%"
-            stroke="#0A0A0A"
-            strokeWidth="2.5"
-            strokeDasharray="140% 140%"
-            initial={{ strokeDashoffset: "-140%" }}
-            animate={{ 
-              strokeDashoffset: ["-140%", "0%", "140%"],
-              opacity: [0, 0.75, 0]
-            }}
-            transition={{
-              duration: 1.7,
-              delay: 0.35,
-              ease: "easeInOut",
-              times: [0, 0.45, 1],
-              repeat: Infinity,
-              repeatDelay: 2.5
-            }}
-          />
-
-          {/* Crosshair Dots at Intersections (bounces in like Akash's accents) */}
-          <motion.circle
-            cx="18%"
-            cy="36%"
-            r="3.5"
-            fill="#0A0A0A"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ 
-              scale: [0, 1.8, 1, 0],
-              opacity: [0, 0.9, 0.7, 0]
-            }}
-            transition={{
-              duration: 1.6,
-              delay: 0.2,
-              repeat: Infinity,
-              repeatDelay: 2.5
-            }}
-          />
-
-          <motion.circle
-            cx="82%"
-            cy="58%"
-            r="4"
-            fill="#0A0A0A"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ 
-              scale: [0, 2, 1, 0],
-              opacity: [0, 1, 0.8, 0]
-            }}
-            transition={{
-              duration: 1.6,
-              delay: 0.45,
-              repeat: Infinity,
-              repeatDelay: 2.5
-            }}
-          />
-        </svg>
+    <div className="relative w-full min-h-[38vh] sm:min-h-[42vh] bg-[#0B0B0D] text-white flex items-center justify-center py-14 sm:py-16 px-6 overflow-hidden">
+      {/* Top Stepped Yellow Divider: first 30% at 3px height, rest at 1px */}
+      <div className="absolute top-0 left-0 right-0 flex items-start pointer-events-none z-20" aria-hidden="true">
+        <div className="w-[30%] h-[3px] bg-hq-yellow" />
+        <div className="w-[70%] h-[1px] bg-hq-yellow" />
       </div>
 
-      <div className="max-w-6xl mx-auto flex flex-col items-center justify-center relative z-10 w-full my-auto">
-        {/* ========================================================
-            2. THE CORRECT OFFICIAL BRAND LOGO (Clean Smile + HQ^x)
-            NO squircle box, pure official vector paths with bounce reveal
-           ======================================================== */}
-        <motion.div 
-          key={`brand-logo-${key}`}
-          className="flex items-center justify-center mb-4 sm:mb-6"
-          initial={{ opacity: 0, y: -25, scale: 0.85 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{
-            duration: 0.75,
-            ease: elasticEase
-          }}
-          whileHover={{ scale: 1.05 }}
-        >
-          <BrandLogo 
-            hideSquircle={true}
-            className="h-9 sm:h-11 md:h-12 w-auto overflow-visible" 
-            textColor="#0A0A0A"
-            swooshFill="#0A0A0A"
-          />
-        </motion.div>
+      {/* Flipped Studio Microphone Anchored to Extreme Left — Seamlessly Blended Into #0B0B0D */}
+      <div
+        className="absolute left-0 inset-y-0 h-full pointer-events-none select-none overflow-hidden"
+        style={{
+          WebkitMaskImage:
+            'linear-gradient(to right, rgba(0,0,0,1) 35%, rgba(0,0,0,0.6) 68%, rgba(0,0,0,0) 100%)',
+          maskImage:
+            'linear-gradient(to right, rgba(0,0,0,1) 35%, rgba(0,0,0,0.6) 68%, rgba(0,0,0,0) 100%)'
+        }}
+      >
+        <img
+          src="/images/podcast-mic-bg.jpg"
+          alt=""
+          aria-hidden="true"
+          className="h-full w-auto object-contain object-left -scale-x-100 brightness-90 contrast-125"
+        />
+      </div>
 
-        {/* ========================================================
-            3. THE MOTTO: "The Future of Work is Eudaimonic"
-           ======================================================== */}
-        <motion.div
-          key={`quote-${key}`}
-          className="mb-4 sm:mb-6 overflow-hidden px-4"
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.35,
-            duration: 0.6,
-            ease: "easeOut"
-          }}
-        >
-          <motion.p 
-            className="font-serif italic text-lg sm:text-2xl md:text-[26px] tracking-wide text-hq-black/85"
-            animate={isHovered ? { letterSpacing: "0.06em" } : { letterSpacing: "0.02em" }}
-            transition={{ duration: 0.4 }}
-          >
-            &ldquo;The Future of Work is Eudaimonic&rdquo;
-          </motion.p>
-        </motion.div>
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <h2 className="font-display text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-white leading-tight mb-4">
+          Subscribe on your favourite Platform
+        </h2>
 
-        {/* ========================================================
-            4. GIANT DISPLAY: "shape tomorrow"
-            Styled with the attached "stella" modern sans-serif typography, 
-            discretionary ligatures, circular geometry, and kinetic lines
-           ======================================================== */}
-        <div 
-          key={`heading-${key}`}
-          className="relative flex flex-col items-center justify-center my-2 sm:my-3 font-stella text-hq-black"
-        >
-          {/* Word 1: "shape" in attached typo lowercase aesthetic */}
-          <div className="relative overflow-visible">
-            <motion.h2 
-              className="text-6xl sm:text-8xl md:text-[8.5rem] lg:text-[10rem] font-bold tracking-tight text-hq-black leading-[0.88] m-0 lowercase font-stella"
-              initial={{ 
-                y: 70, 
-                scale: 0.88, 
-                opacity: 0,
-                skewY: 2
-              }}
-              animate={{ 
-                y: [70, -8, 2, 0], 
-                scale: [0.88, 1.05, 0.98, 1], 
-                opacity: 1,
-                skewY: [2, -1, 0]
-              }}
-              transition={{
-                delay: 0.25,
-                duration: 0.85,
-                ease: elasticEase
-              }}
-              whileHover={{ scale: 1.02 }}
+        <p className="font-body text-xs sm:text-sm md:text-base text-white/60 font-light leading-relaxed max-w-xl mx-auto mb-8 sm:mb-10">
+          Tune into fortnightly executive dialogues on eudaimonic leadership, resilience, and purposeful living hosted by Manny Anchan.
+        </p>
+
+        <div className="flex flex-wrap items-center justify-center gap-3.5 sm:gap-4">
+          {PODCAST_CHANNELS.map((ch) => (
+            <a
+              key={ch.name}
+              href={ch.href}
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center gap-3 px-6 py-3.5 bg-[#121215]/90 hover:bg-[#1A1A1E] border border-white/15 hover:border-hq-yellow/60 text-white text-xs sm:text-sm font-display font-semibold tracking-wide transition-all duration-200"
             >
-              shape
-            </motion.h2>
-
-            {/* Rapid Slicing Line Accent right through shape */}
-            <motion.div 
-              className="absolute -bottom-1 left-0 right-0 h-[3px] bg-hq-black origin-left rounded-full pointer-events-none"
-              initial={{ scaleX: 0, opacity: 0 }}
-              animate={{ 
-                scaleX: [0, 1.1, 1],
-                opacity: [0, 0.8, 0.15]
-              }}
-              transition={{
-                delay: 0.55,
-                duration: 0.6,
-                ease: elasticEase
-              }}
-            />
-          </div>
-
-          {/* Word 2: "tomorrow" in attached typo lowercase aesthetic with spring bounce */}
-          <div className="relative overflow-visible mt-2 sm:mt-3">
-            <motion.h2 
-              className="text-6xl sm:text-8xl md:text-[8.5rem] lg:text-[10rem] font-bold tracking-tight text-hq-black leading-[0.88] m-0 lowercase font-stella"
-              initial={{ 
-                y: 80, 
-                scale: 0.86, 
-                opacity: 0,
-                skewY: -2
-              }}
-              animate={{ 
-                y: [80, -10, 3, 0], 
-                scale: [0.86, 1.06, 0.97, 1], 
-                opacity: 1,
-                skewY: [-2, 1, 0]
-              }}
-              transition={{
-                delay: 0.4,
-                duration: 0.9,
-                ease: elasticEase
-              }}
-              whileHover={{ scale: 1.02 }}
-            >
-              tomorrow
-            </motion.h2>
-
-            {/* Intersecting Corner Construction Marks */}
-            <motion.div 
-              className="absolute -right-6 top-1/2 -translate-y-1/2 flex items-center gap-1.5 pointer-events-none hidden sm:flex"
-              initial={{ opacity: 0, x: -15 }}
-              animate={{ 
-                opacity: [0, 1, 0.7],
-                x: [-15, 4, 0]
-              }}
-              transition={{
-                delay: 0.7,
-                duration: 0.5,
-                ease: elasticEase
-              }}
-            >
-              <span className="w-5 h-[2px] bg-hq-black/60 rounded-full" />
-              <span className="w-2.5 h-2.5 rounded-full bg-hq-black/80" />
-            </motion.div>
-          </div>
+              {ch.icon}
+              <span>{ch.name}</span>
+            </a>
+          ))}
         </div>
-
-        {/* ========================================================
-            5. SUBTITLE: "Ready to integrate..."
-           ======================================================== */}
-        <motion.p 
-          key={`sub-${key}`}
-          className="font-body text-base sm:text-xl md:text-[22px] font-normal mt-6 sm:mt-8 max-w-2xl text-hq-black/85 leading-relaxed px-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.55,
-            duration: 0.6,
-            ease: "easeOut"
-          }}
-        >
-          Ready to integrate the Functional Enhancement Model into your organization? 
-          Connect with Manny Anchan directly.
-        </motion.p>
-
-        {/* Micro-badge indicator */}
-        <motion.div
-          className="mt-6 flex items-center gap-2 opacity-60 group-hover:opacity-100 transition-opacity"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.6 }}
-          transition={{ delay: 0.9 }}
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-hq-black animate-ping" />
-          <span className="text-[11px] font-display uppercase tracking-widest text-hq-black font-semibold">
-            Kinetic Motion Active • Click to Replay
-          </span>
-        </motion.div>
       </div>
     </div>
   );

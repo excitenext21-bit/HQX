@@ -43,7 +43,8 @@ const FACULTY_COLLAGE_IMAGES = [
   '/team/carolin-nytra.png',
   '/team/meera-chauhan.png',
   '/team/rupinder-singh.png',
-  '/team/anil-kumar.png'
+  '/team/anil-kumar.png',
+  '/team/arjun-khanna.jpg'
 ];
 
 const CHAPTER_SHOWCASE = {
@@ -56,7 +57,7 @@ const CHAPTER_SHOWCASE = {
   },
   faculty: {
     title: 'Multidisciplinary Faculty',
-    subtitle: '12 World Champions, CEOs & Mentors',
+    subtitle: '13 World Champions, CEOs & Mentors',
     badge: 'Advisory Faculty',
     image: '/images/hero_showcase/chapters_faculty_card.jpg',
     alt: 'HQX Multidisciplinary Advisory Faculty'
@@ -221,7 +222,7 @@ export default function AboutUs() {
         <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-hq-yellow/5 rounded-full blur-[140px] pointer-events-none -mr-40"></div>
 
         {/* Left Side Vertical Text: ABOUT HQX (Matching Why HQX Hero Style) */}
-        <div className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex flex-col justify-center items-center pointer-events-none select-none">
+        <div className="hidden lg:flex absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex-col justify-center items-center pointer-events-none select-none">
           <div 
             className="flex items-center gap-3 sm:gap-4"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
@@ -357,8 +358,8 @@ export default function AboutUs() {
         </div>
 
         {/* DOCKED STATS & REPUTATION TICKER STRIP (MATCHING WHY HQX & FOUNDER HERO SECTION) */}
-        <div className="w-full bg-[#0A0A0A]/95 text-white/80 py-3.5 sm:py-4 px-6 border-t border-white/10 overflow-hidden relative z-20">
-          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
+        <div className="w-full bg-[#0A0A0A]/95 text-white/80 py-3.5 sm:py-4 border-t border-white/10 overflow-hidden relative z-20">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
             <div className="flex items-center gap-2">
               <span className="text-hq-yellow font-bold">25+</span>
               <span className="text-white/70">Years Boardroom Leadership</span>
@@ -383,8 +384,8 @@ export default function AboutUs() {
       </section>
 
       {/* DEDICATED CHAPTERS OF HQX (SPLIT EDITORIAL SHOWCASE) */}
-      <section className="py-20 sm:py-24 px-6 md:px-12 bg-[#FAF8F5] dark:bg-[#0E0F12] border-b border-hq-black/10">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 sm:py-24 bg-[#FAF8F5] dark:bg-[#0E0F12] border-b border-hq-black/10">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
           {/* Header Row: Dual-Tone Title & Top Narrative */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-12 sm:mb-14 pb-8 border-b border-black/10">
             <div>
@@ -573,8 +574,8 @@ export default function AboutUs() {
       </section>
 
       {/* SECTION 3: CORPORATE FIELD ENGAGEMENTS & CONCLAVES (PAGES 27-31) */}
-      <section id="corporate-engagements" className="py-20 sm:py-24 px-6 md:px-12 bg-black border-b border-white/10 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto">
+      <section id="corporate-engagements" className="py-20 sm:py-24 bg-black border-b border-white/10 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
           
           {/* Header Row: Dual-Tone Title & Narrative */}
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 sm:mb-10">
@@ -673,14 +674,13 @@ export default function AboutUs() {
               );
             })}
           </div>
+        </div>
+      </section>
 
-          {/* Global Footprint & Counter Section */}
-          <div className="mt-14 sm:mt-18">
-            <GlobalFootprintCounterBanner />
-          </div>
-
-          
-
+      {/* Global Footprint & Counter Section (Fit to Screen) */}
+      <section className="min-h-[100svh] lg:h-[100svh] lg:min-h-[600px] lg:max-h-[920px] bg-white dark:bg-[#0B0C10] flex items-center py-8 sm:py-10 transition-colors overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
+          <GlobalFootprintCounterBanner />
         </div>
       </section>
 
@@ -798,8 +798,8 @@ export default function AboutUs() {
       )}
 
       {/* CELEBRITY ENDORSEMENT BANNER - EDITORIAL SHOWCASE ALIGNED WITH LOGO & BOOK MANNY BUTTON */}
-      <section className="bg-white text-hq-black py-4 sm:py-6 px-6 md:px-12 border-b border-black/10 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto w-full">
+      <section className="bg-white text-hq-black py-4 sm:py-6 border-b border-black/10 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
           
           {/* Main Showcase Container (Left aligns with Logo, Right aligns with Book Manny Button) */}
           <div className="rounded-[18px] sm:rounded-[24px] overflow-hidden shadow-[0_22px_55px_-12px_rgba(0,0,0,0.22),0_8px_20px_-4px_rgba(0,0,0,0.08)] relative bg-[#0E0F12] flex flex-col lg:flex-row items-stretch min-h-fit">

@@ -336,7 +336,7 @@ export default function WhyHQX() {
           initial={{ opacity: 0, x: -24 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex flex-col justify-center items-center pointer-events-none select-none"
+          className="hidden lg:flex absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex-col justify-center items-center pointer-events-none select-none"
         >
           <div 
             className="flex items-center gap-3 sm:gap-4"
@@ -449,9 +449,9 @@ export default function WhyHQX() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full bg-[#0A0A0A]/95 backdrop-blur-md text-white/80 py-3.5 sm:py-4 px-6 md:px-12 border-t border-white/10 overflow-hidden relative z-20"
+          className="w-full bg-[#0A0A0A]/95 backdrop-blur-md text-white/80 py-3.5 sm:py-4 border-t border-white/10 overflow-hidden relative z-20"
         >
-          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
             <div className="flex items-center gap-2">
               <span className="text-hq-yellow font-bold">+31%</span>
               <span className="text-white/70">Productivity Lift</span>
@@ -478,8 +478,8 @@ export default function WhyHQX() {
 
 
 {/* WHY CHOOSE US / SUPPORTIVE GUIDANCE SHOWCASE (FIT TO SCREEN) */}
-      <section className="min-h-[100svh] lg:h-screen lg:min-h-[640px] lg:max-h-[1080px] px-6 md:px-12 bg-[#FAF8F5] border-b border-black/10 flex flex-col justify-center py-10 lg:py-12">
-        <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center space-y-8 sm:space-y-10 lg:space-y-12">
+      <section className="min-h-[100svh] lg:h-screen lg:min-h-[640px] lg:max-h-[1080px] bg-[#FAF8F5] border-b border-black/10 flex flex-col justify-center py-10 lg:py-12">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full flex-1 flex flex-col justify-center space-y-8 sm:space-y-10 lg:space-y-12">
           
           {/* Section Header: Dual-Tone Title & Top Narrative (Exact Same As The Experts Behind Your Care Design) */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 pb-6 lg:pb-8 border-b border-black/10">
@@ -577,8 +577,8 @@ export default function WhyHQX() {
 
       
             {/* 4 PILLARS OF DISTINCTION - ULTRA-MODERN UNBOXED EDITORIAL ARCHITECTURE (MINIMIZED BOTTOM WHITE SPACE) */}
-      <section className="py-20 sm:py-24 px-6 md:px-12 bg-white border-b border-hq-black/10">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 sm:py-24 bg-white border-b border-hq-black/10">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
           {/* Section Header: Dual-Tone Title & Top Narrative (Matches Supportive Guidance style) */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-8 sm:mb-10 pb-6 sm:pb-8 border-b border-black/10">
             <div>
@@ -671,11 +671,11 @@ export default function WhyHQX() {
       </section>
 
       {/* HOW HQX COMPARES (FULL BG BLACK - FIT TO SCREEN WITHOUT VERTICAL SCROLL) */}
-      <section className="min-h-[100svh] lg:h-screen lg:min-h-[600px] lg:max-h-[1080px] px-6 md:px-12 bg-black text-white border-b border-white/10 relative overflow-hidden flex flex-col justify-center py-6 sm:py-8 lg:py-8">
+      <section className="min-h-[100svh] lg:h-screen lg:min-h-[600px] lg:max-h-[1080px] bg-black text-white border-b border-white/10 relative overflow-hidden flex flex-col justify-center py-6 sm:py-8 lg:py-8">
         {/* Subtle Ambient Radial Highlight */}
         <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[700px] h-[700px] bg-[#FFCE00]/[0.02] rounded-full blur-[160px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center space-y-4 sm:space-y-5 lg:space-y-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full flex-1 flex flex-col justify-center space-y-4 sm:space-y-5 lg:space-y-6 relative z-10">
           
           {/* Section Header: Dual-Tone Title & Top Narrative (Matches Supportive Guidance layout) */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-5 pb-4 sm:pb-5 lg:pb-6 border-b border-white/10">
@@ -818,8 +818,8 @@ export default function WhyHQX() {
         className="relative h-[250vh] sm:h-[280vh] bg-[#FAF8F5] border-b border-black/10"
       >
         {/* Sticky Viewport Container - Exactly Pinned and Centered to Fit the Screen Below Navbar */}
-        <div className="sticky top-16 sm:top-20 h-[calc(100svh-4rem)] sm:h-[calc(100svh-5rem)] max-h-[820px] w-full px-6 md:px-12 flex flex-col justify-center py-2 sm:py-3">
-          <div className="max-w-7xl mx-auto w-full relative z-10 space-y-4 sm:space-y-5">
+        <div className="sticky top-16 sm:top-20 h-[calc(100svh-4rem)] sm:h-[calc(100svh-5rem)] max-h-[820px] w-full flex flex-col justify-center py-2 sm:py-3">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10 space-y-4 sm:space-y-5">
             
             {/* Section Header (Compact, No eyebrow text, clean typography & controls) */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3 sm:gap-4 pb-3 sm:pb-4 border-b border-black/10">

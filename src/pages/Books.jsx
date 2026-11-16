@@ -75,13 +75,13 @@ export default function Books() {
                 {/* Primary & Secondary Signature Hairline CTAs (Matching Other Pages) */}
                 <div className="pt-1 flex flex-wrap items-center gap-6 sm:gap-8">
                   <a
-                    href={selectedBook.purchaseUrl}
+                    href={selectedBook.pdfUrl || selectedBook.purchaseUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="group relative inline-flex items-center justify-between gap-8 py-3.5 px-2 font-display font-medium text-xs tracking-[0.2em] text-white hover:text-hq-yellow transition-colors duration-300 uppercase"
                   >
                     <span className="absolute top-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
-                    <span className="relative z-10 font-semibold tracking-widest">ORDER / READ NOW</span>
+                    <span className="relative z-10 font-semibold tracking-widest">READ BOOK</span>
                     <svg
                       className="w-[22px] h-[11px] inline-block transition-transform duration-300 group-hover:translate-x-1.5 flex-shrink-0"
                       viewBox="0 0 20 10"
@@ -93,24 +93,6 @@ export default function Books() {
                     </svg>
                     <span className="absolute bottom-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
                   </a>
-
-                  <Link
-                    to="/contact"
-                    className="group relative inline-flex items-center justify-between gap-6 py-3.5 px-2 font-display font-medium text-xs tracking-[0.2em] text-white/75 hover:text-hq-yellow transition-colors duration-300 uppercase"
-                  >
-                    <span className="absolute top-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/30 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
-                    <span className="relative z-10 font-semibold tracking-widest">CORPORATE COPIES</span>
-                    <svg
-                      className="w-[20px] h-[10px] inline-block transition-transform duration-300 group-hover:translate-x-1.5 flex-shrink-0"
-                      viewBox="0 0 20 10"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <line x1="0" y1="5" x2="20" y2="5" stroke="currentColor" strokeWidth="1.2" />
-                      <polyline points="15 1, 20 5, 15 9" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    <span className="absolute bottom-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/30 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
-                  </Link>
                 </div>
               </div>
 
@@ -184,76 +166,16 @@ export default function Books() {
         </div>
       </section>
 
-      {/* Featured Book Spotlight */}
-      {selectedBook && (
-        <section className="py-20 sm:py-24 px-6 md:px-12 max-w-7xl mx-auto border-b border-hq-black/10">
-          <div className="bg-hq-gray p-8 md:p-14 rounded-3xl border border-hq-black/15 shadow-2xl flex flex-col lg:flex-row gap-12 items-center">
-            {/* Book Cover Asset */}
-            <div className="w-64 sm:w-72 aspect-[2/3] rounded-2xl overflow-hidden shadow-2xl shrink-0 border-4 border-hq-black relative transform -rotate-1 hover:rotate-0 transition-transform duration-300 bg-white">
-              <img
-                src={selectedBook.cover}
-                alt={selectedBook.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Book Synopsis & Details */}
-            <div className="flex-1">
-              <div className="flex items-center gap-2 text-hq-yellow mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-hq-yellow" />
-                ))}
-                <span className="text-xs font-mono text-hq-black/60 font-semibold ml-2">National Bestseller</span>
-              </div>
-
-              <div className="text-xs font-mono uppercase tracking-widest text-hq-yellow bg-hq-black px-3 py-1 rounded-full inline-block font-bold mb-2">
-                Published {selectedBook.year}
-              </div>
-              <h2 className="font-display text-3xl md:text-5xl font-semibold mb-2">
-                {selectedBook.title}
-              </h2>
-              <div className="font-serif italic text-lg text-hq-black/70 mb-6">
-                {selectedBook.subtitle}
-              </div>
-
-              <p className="font-body text-sm md:text-base text-hq-black/80 font-light leading-relaxed mb-6">
-                {selectedBook.description}
-              </p>
-
-              <div className="p-4 bg-white border-l-4 border-hq-black mb-8 rounded-r-xl shadow-sm">
-                <p className="font-serif italic text-sm text-hq-black/80">
-                  "{selectedBook.quote}"
-                </p>
-                {selectedBook.endorser && (
-                  <div className="text-xs font-display font-bold uppercase tracking-wider mt-1 text-hq-black">
-                    — {selectedBook.endorser}
-                  </div>
-                )}
-              </div>
-
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href={selectedBook.purchaseUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="bg-hq-yellow text-hq-black font-display font-semibold text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-hq-black hover:text-white transition-all shadow-xl flex items-center gap-2"
-                >
-                  <span>Order on Amazon / Official Store</span>
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* Complete Chronological Roadmap: 2020 - 2025 (Profile Page 26 & 38) */}
       <section id="books-roadmap" className="py-20 sm:py-24 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-display text-4xl md:text-6xl tracking-tight font-semibold mb-4">
-            The Authorship Roadmap
-          </h2>
-          <p className="font-body text-hq-black/70 max-w-xl mx-auto text-sm font-light">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-12 sm:mb-14 pb-8 border-b border-black/10">
+          <div>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0A0A0A] leading-[1.08]">
+              The Authorship <br />
+              <span className="text-[#666666] font-light">Roadmap</span>
+            </h2>
+          </div>
+          <p className="font-body text-sm sm:text-base text-hq-black/65 max-w-md font-light leading-relaxed lg:pb-1">
             Click on any title to inspect its core philosophy, chapter breakdown, and executive reviews.
           </p>
         </div>
@@ -300,44 +222,45 @@ export default function Books() {
                     </p>
                   </div>
 
-                  {/* Bottom-Right Bold Year / Index (Matching Reference Rating Corner) */}
-                  <div className="flex items-baseline justify-end gap-1 pt-4">
-                    <span
-                      className={`font-display text-2xl sm:text-3xl font-bold tracking-tight ${
-                        isSelected ? 'text-[#0A0A0A]' : 'text-hq-yellow'
+                  {/* Bottom Row: Read Book Button + Bold Year / Index */}
+                  <div className="flex items-center justify-between gap-3 pt-4">
+                    <a
+                      href={b.pdfUrl || b.purchaseUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className={`inline-flex items-center gap-2 font-display text-[11px] font-bold uppercase tracking-[0.16em] px-4 py-2 rounded-full transition-all ${
+                        isSelected
+                          ? 'bg-[#0A0A0A] text-white hover:bg-white hover:text-[#0A0A0A]'
+                          : 'bg-hq-yellow text-[#0A0A0A] hover:bg-white'
                       }`}
                     >
-                      {b.year}
-                    </span>
-                    <span
-                      className={`font-display text-xs sm:text-sm font-medium ${
-                        isSelected ? 'text-[#0A0A0A]/45' : 'text-white/35'
-                      }`}
-                    >
-                      /0{idx + 1}
-                    </span>
+                      <BookOpen className="w-3.5 h-3.5" />
+                      <span>Read Book</span>
+                    </a>
+
+                    <div className="flex items-baseline justify-end gap-1">
+                      <span
+                        className={`font-display text-2xl sm:text-3xl font-bold tracking-tight ${
+                          isSelected ? 'text-[#0A0A0A]' : 'text-hq-yellow'
+                        }`}
+                      >
+                        {b.year}
+                      </span>
+                      <span
+                        className={`font-display text-xs sm:text-sm font-medium ${
+                          isSelected ? 'text-[#0A0A0A]/45' : 'text-white/35'
+                        }`}
+                      >
+                        /0{idx + 1}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
             );
           })}
         </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 sm:py-24 px-6 md:px-12 text-center bg-hq-yellow text-hq-black border-t border-hq-black">
-        <h2 className="font-display text-4xl md:text-5xl tracking-tight font-semibold mb-4">
-          Corporate Gifting & Bulk Keynote Copies
-        </h2>
-        <p className="font-body text-hq-black/80 max-w-xl mx-auto mb-8 font-light text-base">
-          Inspire your management teams with customized copies signed by Manny Anchan for corporate retreats and townhalls.
-        </p>
-        <Link
-          to="/contact"
-          className="bg-hq-black text-hq-white font-display text-xs uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white hover:text-hq-black transition-all font-semibold shadow-xl"
-        >
-          Inquire for Bulk Orders (+91 97001 00800)
-        </Link>
       </section>
     </div>
   );

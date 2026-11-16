@@ -52,7 +52,7 @@ export default function Founder() {
       <section className="bg-black text-white border-b border-white/10 relative overflow-hidden min-h-[100svh] lg:h-screen lg:max-h-screen flex flex-col justify-between pt-20 lg:pt-16">
 
         {/* Left Side Vertical Text: FOUNDER */}
-        <div className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-30 flex flex-col justify-center items-center pointer-events-none select-none">
+        <div className="hidden lg:flex absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-30 flex-col justify-center items-center pointer-events-none select-none">
           <div 
             className="flex items-center gap-3 sm:gap-4"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
@@ -136,8 +136,8 @@ export default function Founder() {
         </div>
 
         {/* DOCKED STATS & REPUTATION TICKER STRIP (FIT TO SCREEN AT SCREEN BOTTOM) */}
-        <div className="w-full bg-black text-white/80 py-3.5 sm:py-4 px-6 border-t border-white/10 overflow-hidden relative z-20">
-          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
+        <div className="w-full bg-black text-white/80 py-3.5 sm:py-4 border-t border-white/10 overflow-hidden relative z-20">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
             <div className="flex items-center gap-2">
               <span className="text-hq-yellow font-bold">25+</span>
               <span className="text-white/70">Years Boardroom Leadership</span>
@@ -166,9 +166,9 @@ export default function Founder() {
              PHOTO ON LEFT • CONTENT & EXECUTIVE PEDIGREE (01-04) ON RIGHT
              BACKGROUND: #FAF8F5 (MATCHING ABOUT PAGE)
           ========================================================================= */}
-      <section id="about-founder" className="relative w-full py-20 sm:py-24 px-6 md:px-12 bg-[#FAF8F5] border-b border-black/10 overflow-hidden">
+      <section id="about-founder" className="relative w-full py-20 sm:py-24 bg-[#FAF8F5] border-b border-black/10 overflow-hidden">
         
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             
             {/* Left Column: About the Founder Photo (Left Side of Section, Sticky on Desktop) */}
@@ -325,12 +325,12 @@ export default function Founder() {
           3. MANNY'S JOURNEY SECTION
              DARK EDITORIAL CANVAS • SIGNATURE QUOTE & NARRATIVE
           ========================================================================= */}
-      <section id="journey" className="relative w-full py-20 sm:py-24 px-6 md:px-12 bg-[#0E0F12] text-white border-b border-white/10 overflow-hidden">
+      <section id="journey" className="relative w-full py-20 sm:py-24 bg-[#0E0F12] text-white border-b border-white/10 overflow-hidden">
         
         {/* Ambient Warm Golden Glow */}
         <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-hq-yellow/[0.03] rounded-full blur-[150px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           
           {/* Section Eyebrow / Kicker */}
           
@@ -420,8 +420,8 @@ export default function Founder() {
 {/* =========================================================================
           4. SIGNATURE QUOTE - SWISS EDITORIAL MASTERPIECE (SLEEK BY 25% / FIT TO SCREEN)
           ========================================================================= */}
-      <section className="py-7 sm:py-9 md:py-10 px-6 md:px-12 bg-[#FAF9F6] border-b border-black/10 flex items-center justify-center relative overflow-hidden">
-        <div className="max-w-4xl mx-auto w-full">
+      <section className="py-7 sm:py-9 md:py-10 bg-[#FAF9F6] border-b border-black/10 flex items-center justify-center relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
           
           {/* Typographic Poster Canvas (Sleek, Scaled 25% More Compact Stepped Layout) */}
           <div className="grid grid-cols-3 gap-2 sm:gap-2.5 md:gap-3 items-stretch max-w-[430px] sm:max-w-[490px] lg:max-w-[530px] mx-auto">

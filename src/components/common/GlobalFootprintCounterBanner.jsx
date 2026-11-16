@@ -61,6 +61,13 @@ const TEAM_MEMBERS = [
     image: '/team/ajay-srinivasan.png',
   },
   {
+    id: 'arjun',
+    name: 'Arjun Khanna',
+    role: 'Founder & CEO, IntegrityX.ai',
+    badge: '25+ Yrs Enterprise Leadership',
+    image: '/team/arjun-khanna.jpg',
+  },
+  {
     id: 'anil',
     name: 'Anil Kumar',
     role: "Recipient of 'Shaurya Chakra'",
@@ -172,7 +179,7 @@ export default function GlobalFootprintCounterBanner() {
     <div className="relative w-full rounded-[28px] sm:rounded-[36px] bg-[#0A0A0C] border border-white/10 overflow-hidden shadow-2xl transition-all duration-500 hover:border-white/20">
       
       {/* Main Container: 30% Content Text on Left, 70% Semicircle Animation on Right */}
-      <div className="flex flex-col lg:flex-row items-center w-full min-h-[560px] p-6 sm:p-10 lg:p-12 xl:p-14 gap-8 lg:gap-8">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start w-full min-h-[480px] lg:min-h-[500px] xl:min-h-[540px] p-6 sm:p-8 lg:p-10 xl:p-12 gap-6 lg:gap-8">
         
         {/* Left Column: Exactly ~30% width */}
         <div className="w-full lg:w-[36%] xl:w-[34%] shrink-0 flex flex-col justify-center z-20">
@@ -235,7 +242,7 @@ export default function GlobalFootprintCounterBanner() {
           </div>
         </div>
 
-        {/* Right Column: Exactly ~70% width - Clean Semicircle Arch Animation (No background images/lines) */}
+        {/* Right Column: Exactly ~70% width - Clean Semicircle Arch Animation (Aligned to Left Content Top) */}
         <div 
           ref={containerRef}
           onMouseEnter={() => setIsHovered(true)}
@@ -243,13 +250,13 @@ export default function GlobalFootprintCounterBanner() {
             setIsHovered(false);
             setActiveMember(null);
           }}
-          className="w-full lg:w-[68%] xl:w-[70%] h-[480px] sm:h-[540px] lg:h-[580px] relative flex items-center justify-center overflow-hidden z-10 select-none"
+          className="w-full lg:w-[68%] xl:w-[70%] h-[480px] sm:h-[540px] lg:h-[580px] lg:pt-8 relative flex items-center justify-center overflow-hidden z-10 select-none"
         >
 
           {/* Central Showcase: Faculty Name & Role Placed in Center Under Semicircle Arch */}
           <div 
             className="absolute z-20 flex flex-col items-center justify-center text-center p-4 max-w-[280px] sm:max-w-[340px] pointer-events-none"
-            style={{ transform: 'translateY(-15px)' }}
+            style={{ transform: 'translateY(32px)' }}
           >
             <AnimatePresence mode="wait">
               <motion.div
@@ -289,7 +296,7 @@ export default function GlobalFootprintCounterBanner() {
           </div>
 
           {/* Semicircle Rotating Photo Boxes (No background in box) */}
-          <div className="relative w-full h-full flex items-center justify-center pointer-events-none" style={{ transform: 'translateY(-15px)' }}>
+          <div className="relative w-full h-full flex items-center justify-center pointer-events-none" style={{ transform: 'translateY(32px)' }}>
             {TEAM_MEMBERS.map((member, index) => {
               const angleDeg = (rotation + (index * step)) % 360;
               const angleRad = (angleDeg * Math.PI) / 180;

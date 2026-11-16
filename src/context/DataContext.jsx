@@ -233,6 +233,16 @@ const INITIAL_FACULTY = [
     featured: true
   },
   {
+    id: 'f-arjun',
+    name: 'Arjun Khanna',
+    category: 'Executive Leadership',
+    title: 'Founder & CEO, IntegrityX.ai | 25+ Yrs Enterprise Leadership',
+    bio: "Arjun Khanna is the Founder and CEO of IntegrityX.ai (IntegriAI Private Limited), a graph-native AI platform that detects financial leakage in enterprises. With more than 25 years of experience in Indian enterprise sales, he has worked at Hewitt Associates, Mercer, KPMG, Zeus Consulting, FutureSkills Prime (a MeitY–NASSCOM initiative), and the National Skill Development Corporation (NSDC). He studied at The Doon School and St. Stephen's College, Delhi, holds an MBA from Symbiosis, and lives in Mumbai.",
+    image: '/team/arjun-khanna.jpg',
+    active: true,
+    featured: true
+  },
+  {
     id: 'f-rupinder',
     name: 'Rupinder Singh',
     category: 'Physical Vitality & Sports',
@@ -383,6 +393,7 @@ const INITIAL_BOOKS = [
     subtitle: 'The Discipline of Purpose',
     description: 'The foundational philosophy linking ancient samurai mental fortitude with modern workplace joy.',
     cover: '/books/4.jpg',
+    pdfUrl: '/pdfs/books/happiness-samurai.pdf',
     purchaseUrl: 'https://happinesssamurai.com/index.html',
     quote: 'Defining book of the moment. A must read!',
     endorser: 'John Abraham',
@@ -395,6 +406,7 @@ const INITIAL_BOOKS = [
     subtitle: 'Lessons from 25 Years of Global Leadership',
     description: 'A candid reflection on executive burnout in corporate towers at GE Capital, Barclays & ABN AMRO, and the path to genuine eudaimonia.',
     cover: '/books/2.jpg',
+    pdfUrl: '/pdfs/books/happiness-memoir.pdf',
     purchaseUrl: 'https://happinesssamurai.com/index.html',
     quote: 'Raw, honest, and profoundly transformative.'
   },
@@ -405,6 +417,7 @@ const INITIAL_BOOKS = [
     subtitle: 'Dialogue with Titans & Thinkers',
     description: 'Interviews with world champions, CEOs, and spiritual masters exploring concepts from Ikigai, Hygge, Lagom, to Gross National Happiness.',
     cover: '/books/5.jpg',
+    pdfUrl: '/pdfs/books/happiness-conversations.pdf',
     purchaseUrl: 'https://happinesssamurai.com/index.html',
     quote: 'Every chapter holds a gem of practical wisdom.'
   },
@@ -415,6 +428,7 @@ const INITIAL_BOOKS = [
     subtitle: 'Psychology of Wealth & Stewardship',
     description: 'Foster financial literacy, make informed decisions, and create a secure future through effective money management and mindset shifts.',
     cover: '/books/3.jpg',
+    pdfUrl: '/pdfs/books/happiness-money.pdf',
     purchaseUrl: 'https://happinesssamurai.com/index.html',
     quote: 'Demystifies financial anxiety with elegance and clarity.'
   },
@@ -425,6 +439,7 @@ const INITIAL_BOOKS = [
     subtitle: 'The HQ Functional Enhancement Model',
     description: 'The definitive clinical and corporate framework unveiling the five levers of behavioral transformation.',
     cover: '/books/1.jpg',
+    pdfUrl: '/pdfs/books/happiness-decoded.pdf',
     purchaseUrl: 'https://happinesssamurai.com/index.html',
     quote: 'The ultimate operating system for modern business vitality.'
   },
@@ -435,6 +450,7 @@ const INITIAL_BOOKS = [
     subtitle: 'Daily Micro-Rituals for Peak Performance',
     description: 'Empowering leaders to cultivate positive routines and achieve lasting personal and organizational growth.',
     cover: '/books/6.jpg',
+    pdfUrl: '/pdfs/books/happiness-habits.pdf',
     purchaseUrl: 'https://happinesssamurai.com/index.html',
     quote: 'Daily micro-rituals that separate good companies from great companies.',
     endorser: 'John Abraham',
@@ -1013,8 +1029,12 @@ const INITIAL_INQUIRIES = [
 
 export function DataProvider({ children }) {
   const [faculty, setFaculty] = useState(() => {
-    const saved = localStorage.getItem('hqx_faculty_v3');
-    return saved ? JSON.parse(saved) : INITIAL_FACULTY;
+    const saved = localStorage.getItem('hqx_faculty_v4');
+    if (!saved) return INITIAL_FACULTY;
+    const parsed = JSON.parse(saved);
+    const existingIds = new Set(parsed.map((f) => f.id));
+    const missing = INITIAL_FACULTY.filter((f) => !existingIds.has(f.id));
+    return missing.length ? [...parsed, ...missing] : parsed;
   });
 
   const [courses, setCourses] = useState(() => {
@@ -1058,7 +1078,7 @@ export function DataProvider({ children }) {
 
   // Sync to localStorage
   useEffect(() => {
-    localStorage.setItem('hqx_faculty_v3', JSON.stringify(faculty));
+    localStorage.setItem('hqx_faculty_v4', JSON.stringify(faculty));
   }, [faculty]);
 
   useEffect(() => {
@@ -1171,7 +1191,7 @@ export function DataProvider({ children }) {
   };
 
   const resetToDefaults = () => {
-    localStorage.removeItem('hqx_faculty_v3');
+    localStorage.removeItem('hqx_faculty_v4');
     localStorage.removeItem('hqx_courses_v2');
     localStorage.removeItem('hqx_books_v2');
     localStorage.removeItem('hqx_podcasts_v3');

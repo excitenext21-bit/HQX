@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { DataProvider } from './context/DataContext';
 import { ThemeProvider } from './context/ThemeContext';
@@ -6,26 +6,30 @@ import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import FluexaPageTransition from './components/common/FluexaPageTransition';
+import ConnectDrawer from './components/common/ConnectDrawer';
+import BackToTop from './components/common/BackToTop';
+import RouteSEO from './components/common/RouteSEO';
 
+// Eager load Home for fastest initial FCP & LCP
 import Home from './pages/Home';
-import EudaimonicTransformation from './pages/EudaimonicTransformation';
-import WellBeingEthos from './pages/WellBeingEthos';
-import LeadershipDeepDive from './pages/LeadershipDeepDive';
-import EngagingWorkshops from './pages/EngagingWorkshops';
-import Keynotes from './pages/Keynotes';
-import MicroCourses from './pages/MicroCourses';
-import HappyUApp from './pages/HappyUApp';
-import Team from './pages/Team';
-import Podcast from './pages/Podcast';
-import Books from './pages/Books';
-import Contact from './pages/Contact';
-import AdminCMS from './pages/AdminCMS';
 
-import AboutUs from './pages/AboutUs';
-import Founder from './pages/Founder';
-import WhyHQX from './pages/WhyHQX';
+// Route-based code splitting for secondary pages
+const AboutUs = lazy(() => import('./pages/AboutUs'));
+const Founder = lazy(() => import('./pages/Founder'));
+const WhyHQX = lazy(() => import('./pages/WhyHQX'));
+const EudaimonicTransformation = lazy(() => import('./pages/EudaimonicTransformation'));
+const WellBeingEthos = lazy(() => import('./pages/WellBeingEthos'));
+const LeadershipDeepDive = lazy(() => import('./pages/LeadershipDeepDive'));
+const EngagingWorkshops = lazy(() => import('./pages/EngagingWorkshops'));
+const Keynotes = lazy(() => import('./pages/Keynotes'));
+const MicroCourses = lazy(() => import('./pages/MicroCourses'));
+const HappyUApp = lazy(() => import('./pages/HappyUApp'));
+const Team = lazy(() => import('./pages/Team'));
+const Podcast = lazy(() => import('./pages/Podcast'));
+const Books = lazy(() => import('./pages/Books'));
+const Contact = lazy(() => import('./pages/Contact'));
+const AdminCMS = lazy(() => import('./pages/AdminCMS'));
 
-// Scroll to top on route change (preserve hash navigation)
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
 
@@ -33,18 +37,10 @@ function ScrollToTop() {
     if (!hash) {
       window.scrollTo(0, 0);
     } else {
-      const id = hash.replace('#', '');
-      const el = document.getElementById(id);
-      if (el) {
-        setTimeout(() => {
-          const navbarHeight = 80;
-          const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
-          window.scrollTo({
-            top: elementPosition - navbarHeight,
-            behavior: 'smooth'
-          });
-        }, 100);
-      }
+      setTimeout(() => {
+        const el = document.getElementById(hash.replace('#', ''));
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
     }
   }, [pathname, hash]);
 
@@ -56,33 +52,38 @@ export default function App() {
     <ThemeProvider>
       <DataProvider>
         <Router>
+          <RouteSEO />
           <ScrollToTop />
           <FluexaPageTransition />
           <div className="flex flex-col min-h-screen bg-hq-white dark:bg-[#07080B] text-hq-black dark:text-white transition-colors duration-200">
             <Navbar />
             <main className="flex-1">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about-us" element={<AboutUs />} />
-                <Route path="/about" element={<AboutUs />} />
-                <Route path="/founder" element={<Founder />} />
-                <Route path="/why-hqx" element={<WhyHQX />} />
-                <Route path="/eudaimonic-transformation" element={<EudaimonicTransformation />} />
-                <Route path="/well-being-ethos" element={<WellBeingEthos />} />
-                <Route path="/leadership-deep-dive" element={<LeadershipDeepDive />} />
-                <Route path="/engaging-workshops" element={<EngagingWorkshops />} />
-                <Route path="/keynotes" element={<Keynotes />} />
-                <Route path="/micro-courses" element={<MicroCourses />} />
-                <Route path="/happyu-app" element={<HappyUApp />} />
-                <Route path="/team" element={<Team />} />
-                <Route path="/podcast" element={<Podcast />} />
-                <Route path="/books" element={<Books />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/admin" element={<AdminCMS />} />
-                <Route path="*" element={<Home />} />
-              </Routes>
+              <Suspense fallback={<div className="min-h-screen bg-[#0A0A0A]" />}>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/about-us" element={<AboutUs />} />
+                  <Route path="/about" element={<AboutUs />} />
+                  <Route path="/founder" element={<Founder />} />
+                  <Route path="/why-hqx" element={<WhyHQX />} />
+                  <Route path="/eudaimonic-transformation" element={<EudaimonicTransformation />} />
+                  <Route path="/well-being-ethos" element={<WellBeingEthos />} />
+                  <Route path="/leadership-deep-dive" element={<LeadershipDeepDive />} />
+                  <Route path="/engaging-workshops" element={<EngagingWorkshops />} />
+                  <Route path="/keynotes" element={<Keynotes />} />
+                  <Route path="/micro-courses" element={<MicroCourses />} />
+                  <Route path="/happyu-app" element={<HappyUApp />} />
+                  <Route path="/team" element={<Team />} />
+                  <Route path="/podcast" element={<Podcast />} />
+                  <Route path="/books" element={<Books />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/admin" element={<AdminCMS />} />
+                  <Route path="*" element={<Home />} />
+                </Routes>
+              </Suspense>
             </main>
             <Footer />
+            <BackToTop />
+            <ConnectDrawer />
           </div>
         </Router>
       </DataProvider>

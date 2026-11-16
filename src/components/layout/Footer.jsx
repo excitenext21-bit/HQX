@@ -34,107 +34,108 @@ export default function Footer() {
 
   return (
     <footer id="contact" className="bg-hq-yellow text-hq-black relative overflow-hidden">
-      {/* Background Brand Logo Watermark (Pushed UP and fully visible without bottom clipping) */}
-      <div className="absolute right-0 bottom-16 sm:bottom-20 md:bottom-24  pointer-events-none pr-4 sm:pr-8 md:pr-12 overflow-visible opacity-10 md:opacity-[0.12] transition-all">
+      {/* Background Brand Logo Watermark (Stuck to Bottom-Right Corner, 15% Smaller) */}
+      <div className="absolute right-0 bottom-0 pointer-events-none pr-3 sm:pr-6 pb-2 overflow-visible opacity-10 md:opacity-[0.12] transition-all">
         <BrandLogo 
-          className="w-[300px] sm:w-[460px] md:w-[620px] lg:w-[760px] h-auto" 
+          className="w-[255px] sm:w-[390px] md:w-[527px] lg:w-[646px] h-auto" 
           textColor="#000000" 
           yellowFill="rgba(0,0,0,0.12)"
           swooshFill="#000000"
         />
       </div>
 
-      {/* Full-Screen Fit Viewport Hero: Shape Tomorrow */}
-      <section className="w-full min-h-[100dvh] flex flex-col justify-center items-center relative z-10 px-4 sm:px-6 md:px-12 py-10 sm:py-12">
+      {/* Podcast Platform Subscription Banner */}
+      <section className="w-full relative z-10 p-0 m-0">
         <ShapeTomorrowAnimation />
-        
       </section>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center text-center relative z-10 pb-8 sm:pb-12 pt-8">
-
-        {/* Site Map Columns (+10% Text Size - Sleek compact vertical rhythm) */}
-        <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-8 text-left py-8 sm:py-9 border-t border-b border-hq-black/20 text-[13.5px] tracking-wider uppercase font-display">
-          <div>
-            <div className="font-bold text-[15.5px] mb-4 text-hq-black">About & Ethos</div>
-            <ul className="space-y-2.5 font-body text-[13.5px] normal-case text-hq-black/80">
-              <li><Link to="/about-us" className="hover:underline font-semibold">About Us</Link></li>
-              <li><Link to="/founder" className="hover:underline">Founder (Manny Anchan)</Link></li>
-              <li><Link to="/team" className="hover:underline">Our Team & Faculty</Link></li>
-              <li><Link to="/why-hqx" className="hover:underline">Why HQX</Link></li>
-              <li><Link to="/eudaimonic-transformation" className="hover:underline">Eudaimonic Transformation</Link></li>
-              <li><Link to="/well-being-ethos" className="hover:underline">5 Well-Being Pillars</Link></li>
-            </ul>
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 pb-8 sm:pb-10 pt-10 sm:pt-12">
+        {/* Main Asymmetric Placement Row: Left Quote/Ethos + Right Stacked Heading & 2-Col Links */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start pb-10 sm:pb-12 border-b border-hq-black/20 text-left">
+          {/* Left: Bold Statement + Attribution */}
+          <div className="lg:col-span-5">
+            <h3 className="font-display text-2xl sm:text-3xl font-extrabold uppercase tracking-tight leading-[1.08] text-hq-black mb-3">
+              Feel Better. Work Better. <br />
+              Live Better.
+            </h3>
+            <p className="inline-flex items-center gap-2.5 font-body text-xs sm:text-sm text-hq-black/80 font-medium">
+              <span className="inline-block w-4 h-[2px] bg-hq-black/80" aria-hidden="true" />
+              <span>Manny Anchan</span>
+            </p>
           </div>
 
-          <div>
-            <div className="font-bold text-[15.5px] mb-4 text-hq-black">Corporate Interventions</div>
-            <ul className="space-y-2.5 font-body text-[13.5px] normal-case text-hq-black/80">
-              <li><Link to="/leadership-deep-dive" className="hover:underline">Leadership Deep Dive</Link></li>
-              <li><Link to="/engaging-workshops" className="hover:underline">Engaging Workshops</Link></li>
-              <li><Link to="/keynotes" className="hover:underline">Keynotes & Friday Talks</Link></li>
-              <li><Link to="/contact" className="hover:underline">Custom Executive Coaching</Link></li>
-            </ul>
-          </div>
+          {/* Right: Stacked Label + 2-Column Compact Links with Arrow */}
+          <div className="lg:col-span-7 flex flex-col sm:flex-row sm:items-start lg:justify-end gap-8 sm:gap-12">
+            <Link
+              to="/contact"
+              className="group font-display text-lg sm:text-xl font-extrabold uppercase leading-[1.05] tracking-tight text-hq-black shrink-0 inline-flex items-end gap-2 hover:opacity-70 transition-opacity cursor-pointer"
+              aria-label="Connect With HQX — Go to Contact page"
+            >
+              <span>
+                Connect <br />
+                With <br />
+                HQX
+              </span>
+              <span className="text-sm font-bold transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">&#8599;</span>
+            </Link>
 
-          <div>
-            <div className="font-bold text-[15.5px] mb-4 text-hq-black">Digital Offerings</div>
-            <ul className="space-y-2.5 font-body text-[13.5px] normal-case text-hq-black/80">
-              <li><Link to="/happyu-app" className="hover:underline">HappyU App (iOS / Android)</Link></li>
-              <li><Link to="/micro-courses" className="hover:underline">100-Day Micro Courses</Link></li>
-              <li><Link to="/micro-courses" className="hover:underline">Finding Your Ikigai</Link></li>
-              <li><Link to="/micro-courses" className="hover:underline">Happiness in Money</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <div className="font-bold text-[15.5px] mb-4 text-hq-black">Media & Publications</div>
-            <ul className="space-y-2.5 font-body text-[13.5px] normal-case text-hq-black/80">
-              <li><Link to="/podcast" className="hover:underline">HQX Fortnightly Podcast</Link></li>
-              <li><Link to="/books" className="hover:underline">Books (2020-2025)</Link></li>
-              <li><Link to="/team" className="hover:underline">Global Faculty Directory</Link></li>
-              <li><Link to="/contact" className="hover:underline">Book Manny Anchan</Link></li>
-            </ul>
+            <div className="grid grid-cols-2 gap-x-10 sm:gap-x-14 gap-y-2.5 font-body text-xs sm:text-[13px] text-hq-black/85">
+              <Link to="/about-us" className="inline-flex items-center gap-1.5 hover:opacity-60 transition-opacity font-medium">
+                <span>About Us</span>
+                <span className="text-[10px]">&#8599;</span>
+              </Link>
+              <Link to="/happyu-app" className="inline-flex items-center gap-1.5 hover:opacity-60 transition-opacity font-medium">
+                <span>HappyU App</span>
+                <span className="text-[10px]">&#8599;</span>
+              </Link>
+              <Link to="/leadership-deep-dive" className="inline-flex items-center gap-1.5 hover:opacity-60 transition-opacity font-medium">
+                <span>Leadership Deep Dive</span>
+                <span className="text-[10px]">&#8599;</span>
+              </Link>
+              <Link to="/micro-courses" className="inline-flex items-center gap-1.5 hover:opacity-60 transition-opacity font-medium">
+                <span>Micro Courses</span>
+                <span className="text-[10px]">&#8599;</span>
+              </Link>
+              <Link to="/engaging-workshops" className="inline-flex items-center gap-1.5 hover:opacity-60 transition-opacity font-medium">
+                <span>Engaging Workshops</span>
+                <span className="text-[10px]">&#8599;</span>
+              </Link>
+              <Link to="/podcast" className="inline-flex items-center gap-1.5 hover:opacity-60 transition-opacity font-medium">
+                <span>HQX Podcast</span>
+                <span className="text-[10px]">&#8599;</span>
+              </Link>
+              <Link to="/books" className="inline-flex items-center gap-1.5 hover:opacity-60 transition-opacity font-medium">
+                <span>Books (2020&ndash;2025)</span>
+                <span className="text-[10px]">&#8599;</span>
+              </Link>
+              <Link to="/contact" className="inline-flex items-center gap-1.5 hover:opacity-60 transition-opacity font-semibold">
+                <span>Book Manny Anchan</span>
+                <span className="text-[10px]">&#8599;</span>
+              </Link>
+            </div>
           </div>
         </div>
 
-        {/* Legal & Copyright Bar (Sleek, tight, neat and tidy) */}
-        <div className="w-full flex flex-col md:flex-row justify-between items-center gap-5 font-display text-[13.5px] tracking-widest uppercase pt-5 pb-1 text-hq-black/85">
-          <div>&copy; {new Date().getFullYear()} HAPPINESS QUOTIENT GLOBAL PRIVATE LIMITED. ALL RIGHTS RESERVED.</div>
-          
-          <div className="flex gap-8">
+        {/* Bottom Utility & Legal Bar */}
+        <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-4 font-mono text-[10px] sm:text-[11px] tracking-[0.2em] uppercase pt-6 text-hq-black/80">
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
+            <span>&copy; {new Date().getFullYear()} &bull; Happiness Quotient Global</span>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-x-7 gap-y-2">
             <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:opacity-60 transition-opacity">LinkedIn</a>
             <a href="https://youtube.com" target="_blank" rel="noreferrer" className="hover:opacity-60 transition-opacity">YouTube</a>
             <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:opacity-60 transition-opacity">Instagram</a>
             <a href="https://spotify.com" target="_blank" rel="noreferrer" className="hover:opacity-60 transition-opacity">Spotify</a>
+            <button
+              type="button"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="hover:opacity-60 transition-opacity font-bold cursor-pointer"
+              aria-label="Back to top"
+            >
+              Top &uarr;
+            </button>
           </div>
-
-          {/* Back to top in vertical text with long tail 1.5px arrow pointing upside */}
-          <button
-            type="button"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="group inline-flex flex-col items-center gap-2 text-hq-black hover:opacity-60 transition-all cursor-pointer py-1 "
-            aria-label="Back to top"
-          >
-            {/* Long tail 1.5px arrow pointing upside */}
-            <svg 
-              width="14" 
-              height="46" 
-              viewBox="0 0 14 46" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-              className="group-hover:-translate-y-2 transition-transform duration-300"
-            >
-              <line x1="7" y1="46" x2="7" y2="3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-              <polyline points="2 8.5, 7 3, 12 8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            
-            {/* Vertical text: Back to top */}
-            <span 
-              className="font-display text-[11px] font-bold uppercase tracking-[0.25em] [writing-mode:vertical-rl] rotate-180"
-            >
-              Back to top
-            </span>
-          </button>
         </div>
       </div>
     </footer>

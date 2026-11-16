@@ -178,7 +178,7 @@ export default function WellBeingEthos() {
           initial={{ opacity: 0, x: -24 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex flex-col justify-center items-center pointer-events-none select-none"
+          className="hidden lg:flex absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex-col justify-center items-center pointer-events-none select-none"
         >
           <div 
             className="flex items-center gap-3 sm:gap-4"
@@ -281,9 +281,9 @@ export default function WellBeingEthos() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full bg-black/95 backdrop-blur-md text-white/80 py-3.5 sm:py-4 px-6 md:px-12 border-t border-white/10 overflow-hidden relative z-20"
+          className="w-full bg-black/95 backdrop-blur-md text-white/80 py-3.5 sm:py-4 border-t border-white/10 overflow-hidden relative z-20"
         >
-          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
             <div className="flex items-center gap-2">
               <span className="text-hq-yellow font-bold">+34%</span>
               <span className="text-white/70">Strategic Clarity</span>
@@ -528,8 +528,8 @@ export default function WellBeingEthos() {
       </section>
 
       {/* The 12 KEY THEMES (Profile Pages 8 & 9) */}
-      <section className="py-20 sm:py-24 px-6 md:px-12 bg-hq-gray border-t border-b border-hq-black/10">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 sm:py-24 bg-hq-gray border-t border-b border-hq-black/10">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
           {/* Section Header: Left Bold Dual-Tone Title • Right Explanatory Context */}
           <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 md:gap-12 mb-12 sm:mb-16">
             {/* Left Column: Main Headline */}

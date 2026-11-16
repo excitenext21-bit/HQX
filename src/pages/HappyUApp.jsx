@@ -299,7 +299,7 @@ export default function HappyUApp() {
         <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-hq-yellow/5 rounded-full blur-[140px] pointer-events-none -mr-40" />
 
         {/* Left Side Vertical Text: HAPPYU APP */}
-        <div className="absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex flex-col justify-center items-center pointer-events-none select-none">
+        <div className="hidden lg:flex absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex-col justify-center items-center pointer-events-none select-none">
           <div
             className="flex items-center gap-3 sm:gap-4"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}

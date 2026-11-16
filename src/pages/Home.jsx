@@ -1,5 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
+import TestimonialsCollage from '../components/home/TestimonialsCollage';
 import { 
   ArrowDownRight, 
   ArrowRight, 
@@ -48,7 +49,7 @@ import {
 } from 'lucide-react';
 import { useData } from '../context/DataContext';
 import { useTheme } from '../context/ThemeContext';
-import RotatingGlobe from '../components/common/RotatingGlobe';
+const RotatingGlobe = lazy(() => import('../components/common/RotatingGlobe'));
 
 // Sleek Long-Tail 20px Arrow (1px stroke) for complete page consistency
 function LongArrow({ direction = 'right', className = '' }) {
@@ -464,6 +465,15 @@ export default function Home() {
       areaExpertise: 'Clinical Nutrition & Metabolic Vitality',
       bio: "Bhakti is the founder of HEALTHY HIGH a virtual nutrition counselling platform. She is also on the advisory panel for Vitalyse wellness strips and Green Protein.",
       image: '/team/bhakti-kapoor.png'
+    },
+    {
+      id: 'f-arjun',
+      name: 'ARJUN KHANNA',
+      category: 'Enterprise AI & Leadership',
+      title: 'Founder & CEO, IntegrityX.ai (IntegriAI Private Limited)',
+      areaExpertise: 'Graph-Native AI, Enterprise Sales & Strategic Growth',
+      bio: "Arjun Khanna is the Founder and CEO of IntegrityX.ai (IntegriAI Private Limited), a graph-native AI platform detecting financial leakage in enterprises. With 25+ years in Indian enterprise sales across Hewitt Associates, Mercer, KPMG, Zeus Consulting, FutureSkills Prime (MeitY–NASSCOM), and NSDC, he is an alumnus of The Doon School, St. Stephen's College, Delhi, and Symbiosis (MBA), based in Mumbai.",
+      image: '/team/arjun-khanna.jpg'
     }
   ];
 
@@ -473,66 +483,8 @@ export default function Home() {
   // Active pillar for Eudaimonic Transformation
   const [selectedModelPillar, setSelectedModelPillar] = useState(null);
 
-  // Theme & Fixed Back to Top State
+  // Theme State
   const { isDark } = useTheme();
-  const [showSideRails, setShowSideRails] = useState(false);
-  const [isDarkBg, setIsDarkBg] = useState(false);
-
-  // Monitor scroll for Back to Top:
-  // 1. Appears after scrolling past the 4 reasons section
-  // 2. Automatically hides when footer comes into view so it NEVER overlaps in footer
-  // 3. Adapts contrast based on current section
-  useEffect(() => {
-    const handleScroll = () => {
-      const reasonsEl = document.getElementById('reasons-section');
-      const footerEl = document.getElementById('contact');
-      if (!reasonsEl) return;
-
-      const reasonsRect = reasonsEl.getBoundingClientRect();
-      const footerRect = footerEl ? footerEl.getBoundingClientRect() : null;
-
-      // Appears after scrolling into 4 reasons section
-      const isPastReasons = reasonsRect.top <= window.innerHeight * 0.7;
-      // In footer: REMOVE fixed back to top button completely!
-      const isBeforeFooter = footerRect ? footerRect.top > window.innerHeight * 0.92 : true;
-
-      if (isPastReasons && isBeforeFooter) {
-        setShowSideRails(true);
-      } else {
-        setShowSideRails(false);
-      }
-
-      // Section contrast detection at bottom corner position
-      const buttonY = window.innerHeight - 80;
-      const sections = [
-        { id: 'worklife-section', isDarkSection: true },
-        { id: 'team-section', isDarkSection: true },
-        { id: 'footprint-section', isDarkSection: true },
-        { id: 'books', isDarkSection: true },
-        { id: 'reasons-section', isDarkSection: isDark },
-        { id: 'key-themes-section', isDarkSection: isDark },
-        { id: 'benefits-section', isDarkSection: isDark },
-        { id: 'podcast', isDarkSection: isDark },
-      ];
-
-      let detectedDark = isDark;
-      for (const sec of sections) {
-        const el = document.getElementById(sec.id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= buttonY && rect.bottom >= buttonY) {
-            detectedDark = sec.isDarkSection;
-            break;
-          }
-        }
-      }
-      setIsDarkBg(detectedDark);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isDark]);
 
   // Section On-Load & Scroll Reveal Animations
   useEffect(() => {
@@ -777,119 +729,71 @@ export default function Home() {
 
   return (
     <div className="w-full bg-hq-white dark:bg-[#07080B] text-hq-black dark:text-white transition-colors duration-200 relative">
-      {/* FIXED BACK TO TOP WITH 1.5PX LONG-TAIL ARROW (POSITIONED AT BOTTOM-RIGHT TO PREVENT OVERLAPPING SECTION CONTENT, COMPLETELY REMOVED IN FOOTER) */}
-      <div 
-        className={`fixed right-4 sm:right-6 lg:right-8 bottom-8 z-40 hidden md:flex flex-col items-center gap-2 transition-all duration-300 pointer-events-auto  ${
-          showSideRails ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6 pointer-events-none'
-        }`}
-      >
-        <button
-          type="button"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className={`group flex flex-col items-center gap-2 transition-all duration-300 hover:-translate-y-1 p-2 cursor-pointer bg-transparent border-none shadow-none ${
-            isDarkBg ? 'text-white hover:text-hq-yellow' : 'text-[#0A0A0A] hover:text-hq-yellow'
-          }`}
-          aria-label="Back to top"
-          title="Back to top"
-        >
-          {/* Long tail 1.5px arrow pointing upside */}
-          <svg 
-            width="14" 
-            height="46" 
-            viewBox="0 0 14 46" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg"
-            className="transition-transform duration-300 group-hover:-translate-y-1.5 flex-shrink-0"
-          >
-            {/* Long 1.5px stem pointing straight down from arrow tip */}
-            <line 
-              x1="7" 
-              y1="4" 
-              x2="7" 
-              y2="44" 
-              stroke="currentColor" 
-              strokeWidth="1.5" 
-              strokeLinecap="round" 
-            />
-            {/* 1.5px arrow head pointing upwards */}
-            <polyline 
-              points="2,11 7,3 12,11" 
-              stroke="currentColor" 
-              strokeWidth="1.5" 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-            />
-          </svg>
-
-          {/* Vertical text: Back to top */}
-          <span 
-            className="font-display uppercase text-[10px] tracking-[0.25em] font-bold  group-hover:text-hq-yellow transition-colors duration-300"
-            style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
-          >
-            Back to top
-          </span>
-        </button>
-      </div>
-
       {/* 1. LUXURY EDITORIAL HERO SECTION (INSPIRED BY REFERENCE) */}
-      <header className="relative w-full min-h-screen min-h-[820px] lg:h-[96vh] flex flex-col justify-end pb-12 overflow-hidden bg-[#111213]">
+      <header id="home-hero" className="relative w-full min-h-[100svh] md:min-h-[760px] lg:h-[96vh] flex flex-col justify-between md:justify-end pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-10 md:pb-12 overflow-hidden bg-[#111213]">
         {/* Ambient Warm Studio Lighting Behind Manny (With Onload Glow Animation) */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-[44%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] md:w-[900px] h-[450px] md:h-[650px] bg-hq-yellow/[0.08] rounded-full blur-[130px] animate-hero-glow"></div>
+          <div className="absolute top-[30%] md:top-[44%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[460px] md:w-[900px] h-[340px] md:h-[650px] bg-hq-yellow/[0.08] rounded-full blur-[110px] md:blur-[130px] animate-hero-glow"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-[#161719]/40 via-transparent to-[#0A0A0A]"></div>
         </div>
 
-        {/* GIANT MONUMENTAL TYPOGRAPHY LAYER: "MANNY" & "ANCHAN" (MOVED 15% DOWN BELOW NAVIGATION, FRAMING CUTOUT) */}
-        <div className="absolute inset-x-0 top-[41%] sm:top-[42%] md:top-[43%] -translate-y-1/2 z-10 px-6 sm:px-10 md:px-14 lg:px-20 pointer-events-none  max-w-[1550px] mx-auto animate-hero-name">
-          {/* Accessible H1 for SEO */}
-          <h1 className="sr-only">Manny Anchan - The Happiness Samurai</h1>
-          
-          <div className="w-full flex justify-between items-center">
-            {/* MANNY (Brought 10% closer to center) */}
-            <span 
-              className="font-semibold tracking-tight  text-[#FFEFD6] drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)] inline-block pointer-events-auto select-text translate-x-2 sm:translate-x-4 md:translate-x-7"
-              style={{
-                fontFamily: '"Bebas Neue", "Anton", "Oswald", sans-serif',
-                fontSize: 'clamp(4.2rem, 14vw, 14.5rem)',
-                lineHeight: 0.88,
-                transform: 'scaleY(1.08)',
-                transformOrigin: 'bottom left',
-                WebkitTextStroke: '0.4px #FFEFD6',
-                letterSpacing: '0.02em'
-              }}
-            >
-              MANNY
-            </span>
+        {/* MOBILE TOP VISUAL STAGE / DESKTOP FULL-BLEED BACKGROUND FOR MANNY + TYPOGRAPHY */}
+        <div className="relative h-[46vh] sm:h-[52vh] md:static md:h-auto w-full shrink-0 flex items-end justify-center">
+          {/* GIANT MONUMENTAL TYPOGRAPHY LAYER: "MANNY" & "ANCHAN" */}
+          <div className="absolute inset-x-0 top-[44%] md:top-[43%] -translate-y-1/2 z-10 px-4 sm:px-10 md:px-14 lg:px-20 pointer-events-none max-w-[1550px] mx-auto animate-hero-name">
+            {/* Accessible H1 for SEO */}
+            <h1 className="sr-only">Manny Anchan - The Happiness Samurai</h1>
+            
+            <div className="w-full flex justify-between items-center">
+              {/* MANNY */}
+              <span 
+                className="font-semibold tracking-tight text-[#FFEFD6] drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)] inline-block pointer-events-auto select-text translate-x-1 sm:translate-x-4 md:translate-x-7"
+                style={{
+                  fontFamily: '"Bebas Neue", "Anton", "Oswald", sans-serif',
+                  fontSize: 'clamp(3.2rem, 13vw, 14.5rem)',
+                  lineHeight: 0.88,
+                  transform: 'scaleY(1.08)',
+                  transformOrigin: 'bottom left',
+                  WebkitTextStroke: '0.4px #FFEFD6',
+                  letterSpacing: '0.02em'
+                }}
+              >
+                MANNY
+              </span>
 
-            {/* ANCHAN (Brought 10% closer to center) */}
-            <span 
-              className="font-semibold tracking-tight  text-[#FFEFD6] drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)] inline-block pointer-events-auto select-text -translate-x-2 sm:-translate-x-4 md:-translate-x-7"
-              style={{
-                fontFamily: '"Bebas Neue", "Anton", "Oswald", sans-serif',
-                fontSize: 'clamp(4.2rem, 14vw, 14.5rem)',
-                lineHeight: 0.88,
-                transform: 'scaleY(1.08)',
-                transformOrigin: 'bottom right',
-                WebkitTextStroke: '0.4px #FFEFD6',
-                letterSpacing: '0.02em'
-              }}
-            >
-              ANCHAN
-            </span>
+              {/* ANCHAN */}
+              <span 
+                className="font-semibold tracking-tight text-[#FFEFD6] drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)] inline-block pointer-events-auto select-text -translate-x-1 sm:-translate-x-4 md:-translate-x-7"
+                style={{
+                  fontFamily: '"Bebas Neue", "Anton", "Oswald", sans-serif',
+                  fontSize: 'clamp(3.2rem, 13vw, 14.5rem)',
+                  lineHeight: 0.88,
+                  transform: 'scaleY(1.08)',
+                  transformOrigin: 'bottom right',
+                  WebkitTextStroke: '0.4px #FFEFD6',
+                  letterSpacing: '0.02em'
+                }}
+              >
+                ANCHAN
+              </span>
+            </div>
+          </div>
+
+          {/* FOREGROUND FULL-SIZE MANNY ANCHAN CUTOUT */}
+          <div className="relative md:absolute md:inset-x-0 md:bottom-0 z-20 flex justify-center pointer-events-none animate-hero-manny">
+            <img 
+              src="/manny-cutout.png" 
+              alt="Manny Anchan - The Happiness Samurai" 
+              fetchPriority="high"
+              decoding="sync"
+              className="h-[44vh] sm:h-[50vh] md:h-[80vh] lg:h-[86vh] max-h-[850px] w-auto object-contain object-bottom filter drop-shadow-[0_25px_50px_rgba(0,0,0,0.85)] transition-transform duration-700" 
+            />
+            <div className="md:hidden absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
           </div>
         </div>
 
-        {/* FOREGROUND FULL-SIZE MANNY ANCHAN CUTOUT (ONLOAD 3D DEPTH RISE) */}
-        <div className="absolute inset-x-0 bottom-0 z-20 flex justify-center pointer-events-none animate-hero-manny">
-          <img 
-            src="/manny-cutout.png" 
-            alt="Manny Anchan - The Happiness Samurai" 
-            className="h-[70vh] sm:h-[75vh] md:h-[80vh] lg:h-[86vh] max-h-[850px] w-auto object-contain object-bottom filter drop-shadow-[0_25px_50px_rgba(0,0,0,0.85)] transition-transform duration-700" 
-          />
-        </div>
-
-        {/* BOTTOM EDITORIAL CONTENT (LEFT & RIGHT OF MANNY'S TORSO - CLEANLY BELOW GIANT LETTERS) */}
-        <div className="relative z-30 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-end gap-8">
+        {/* BOTTOM EDITORIAL CONTENT (STACKED CLEANLY BELOW IMAGE ON MOBILE, LEFT/RIGHT ON DESKTOP) */}
+        <div className="relative z-30 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-8 pt-4 md:pt-0">
           {/* Left Column: Core Message & Primary CTA (Onload Reveal) */}
           <div className="w-full md:w-5/12 lg:w-4/12 flex flex-col items-start text-left animate-hero-left">
             <h2 className="font-prata text-xl sm:text-2xl lg:text-[1.76rem] text-[#F3EFEA] font-normal leading-snug mb-3 tracking-wide" style={{ fontFamily: '"Prata", serif' }}>
@@ -1655,10 +1559,12 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Column: Globe right-aligned */}
+            {/* Right Column: Globe right-aligned (Lazy-loaded to keep Three.js out of critical FCP) */}
             <div className="lg:col-span-7 flex justify-center lg:justify-end items-center">
               <div className="w-full max-w-[640px]">
-                <RotatingGlobe heightClass="h-[420px] sm:h-[480px] lg:h-[540px] xl:h-[600px]" />
+                <Suspense fallback={<div className="h-[420px] sm:h-[480px] lg:h-[540px] xl:h-[600px]" />}>
+                  <RotatingGlobe heightClass="h-[420px] sm:h-[480px] lg:h-[540px] xl:h-[600px]" />
+                </Suspense>
               </div>
             </div>
 
@@ -1666,8 +1572,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Executive Testimonials Bento Collage (Above HQX Podcast) */}
+      <TestimonialsCollage />
+
       {/* 8. HQX PODCAST (LITE BG & CONTRACTED LAYOUT - SPOTLIGHT VIDEO ON LEFT & THUMBNAILS ON RIGHT) */}
-      <section id="podcast" className="section-reveal py-20 sm:py-24 bg-[#FAF7F2] dark:bg-[#0D0E12] text-hq-black dark:text-white border-b border-hq-black/10 dark:border-white/10 transition-colors">
+      <section id="podcast" className="section-reveal py-20 sm:py-24 bg-[#FAF7F2] dark:bg-[#0D0E12] text-hq-black dark:text-white transition-colors">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
           {/* Header */}
@@ -1912,20 +1821,6 @@ export default function Home() {
                 </div>
               );
             })}
-          </div>
-
-          {/* John Abraham Endorsement Quote Box */}
-          <div className="max-w-3xl mx-auto bg-gradient-to-br from-[#141416] to-[#0A0A0C] text-white p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl text-center relative overflow-hidden group hover:border-hq-yellow/40 transition-colors">
-            {/* Subtle Yellow Ambient Radial Background Glow */}
-            <div className="absolute inset-0 bg-radial-gradient from-hq-yellow/[0.08] via-transparent to-transparent opacity-60 pointer-events-none"></div>
-            
-            <Quote className="w-10 h-10 mx-auto mb-4 stroke-1 text-hq-yellow opacity-80" />
-            <blockquote className="font-serif italic text-2xl md:text-3xl font-semibold leading-snug text-white/95">
-              "Defining Book of The Moment. A Must Read!"
-            </blockquote>
-            <div className="font-display uppercase tracking-widest text-xs mt-4 font-bold text-hq-yellow">
-              — John Abraham, Celebrated Actor & Youth Fitness Icon
-            </div>
           </div>
         </div>
       </section>

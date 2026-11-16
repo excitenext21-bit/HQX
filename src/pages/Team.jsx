@@ -22,8 +22,8 @@ export default function Team() {
       <TeamHeroSlider faculty={faculty} onSelectMember={setSelectedMember} />
 
       {/* THE EXPERTS BEHIND YOUR CARE (MATCHING USER REFERENCE DESIGN) */}
-      <section className="py-20 sm:py-24 px-6 md:px-12 bg-[#FAF8F5] border-b border-black/10">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 sm:py-24 bg-[#FAF8F5] border-b border-black/10">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
           {/* Section Header: Dual-Tone Title & Top Narrative (Matching About Us Dedicated Chapters Style) */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-12 sm:mb-14 pb-8 border-b border-black/10">
             <div>
