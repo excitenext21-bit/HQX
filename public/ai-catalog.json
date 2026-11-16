@@ -1,65 +1,10 @@
 {
-  "$schema": "https://ard-spec.org/schemas/ai-catalog.v1.json",
-  "version": "1.0.0",
-  "name": "HQX — Happiness Samurai",
-  "description": "Executive well-being, behavioral neuroscience, and eudaimonic leadership architecture founded by Manny Anchan.",
-  "url": "https://hqx.co",
-  "documentation": "https://hqx.co/llms.txt",
-  "resources": [
-    {
-      "name": "Home",
-      "url": "https://hqx.co/",
-      "type": "webpage",
-      "description": "Overview of the HQX Functional Enhancement Model, global footprint, and testimonials."
-    },
-    {
-      "name": "About Us",
-      "url": "https://hqx.co/about-us",
-      "type": "webpage",
-      "description": "Corporate conclaves, pan-India and global eudaimonic impact, and leadership chapters."
-    },
-    {
-      "name": "Founder",
-      "url": "https://hqx.co/founder",
-      "type": "webpage",
-      "description": "Profile and executive journey of Manny Anchan."
-    },
-    {
-      "name": "Corporate Keynotes",
-      "url": "https://hqx.co/keynotes",
-      "type": "webpage",
-      "description": "Keynote repertoire, Friday Talks, and speaking engagements."
-    },
-    {
-      "name": "Engaging Workshops",
-      "url": "https://hqx.co/engaging-workshops",
-      "type": "webpage",
-      "description": "Interactive corporate workshops led by HQX faculty."
-    },
-    {
-      "name": "Eudaimonic Transformation",
-      "url": "https://hqx.co/eudaimonic-transformation",
-      "type": "webpage",
-      "description": "The five pillars of flourishing and enterprise intervention matrix."
-    },
-    {
-      "name": "Books",
-      "url": "https://hqx.co/books",
-      "type": "webpage",
-      "description": "Authored books and excerpts by Manny Anchan."
-    },
-    {
-      "name": "Podcast",
-      "url": "https://hqx.co/podcast",
-      "type": "webpage",
-      "description": "Executive dialogues and podcast episodes hosted by Manny Anchan."
-    },
-    {
-      "name": "Contact",
-      "url": "https://hqx.co/contact",
-      "type": "webpage",
-      "description": "Book Manny Anchan for keynotes, workshops, and advisory programs."
-    }
-  ]
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "HQX — Happiness Samurai",
+    "identifier": "did:web:happinesssamurai.com",
+    "documentationUrl": "https://happinesssamurai.com/llms.txt",
+    "logoUrl": "https://happinesssamurai.com/brand-logo.svg"
+  },
+  "entries": []
 }
-
