@@ -16,7 +16,7 @@ export default function EngagingWorkshops() {
       summary: 'Enhance professional capabilities, eliminate execution bottlenecks, and align operational priorities with strategic long-term vision.',
       expertName: 'Ajay Srinivasan',
       expertRole: 'Seasoned Business Leader & Scale Strategist',
-      expertImage: '/team/ajay-srinivasan.png'
+      expertImage: '/team/ajay-srinivasan.webp'
     },
     {
       id: 'w2',
@@ -26,7 +26,7 @@ export default function EngagingWorkshops() {
       summary: 'Autonomic nervous system regulation, vagal tone activation, mindfulness techniques, and clinical burnout prevention.',
       expertName: 'Carolin Nytra',
       expertRole: 'Olympic Hurdler & Holistic Well-Being Advocate',
-      expertImage: '/team/carolin-nytra.png'
+      expertImage: '/team/carolin-nytra.webp'
     },
     {
       id: 'w3',
@@ -36,7 +36,7 @@ export default function EngagingWorkshops() {
       summary: 'Lessons from international sports podiums on bouncing back from immediate setbacks, maintaining composure, and clutch execution.',
       expertName: 'Rupinder Singh',
       expertRole: 'Olympic Field Hockey Star & Gold Medalist',
-      expertImage: '/team/rupinder-singh.png'
+      expertImage: '/team/rupinder-singh.webp'
     },
     {
       id: 'w4',
@@ -46,7 +46,7 @@ export default function EngagingWorkshops() {
       summary: 'Navigating executive pressure while showing up emotionally grounded for modern children without guilt or generational friction.',
       expertName: 'Soha Ali Khan',
       expertRole: 'Author & Modern Parenting Mentor',
-      expertImage: '/team/soha-ali-khan.png'
+      expertImage: '/team/soha-ali-khan.webp'
     },
     {
       id: 'w5',
@@ -56,7 +56,7 @@ export default function EngagingWorkshops() {
       summary: 'Evidence-based frameworks from Warwick & Yale on cultivating psychological safety, labor harmony, and positive work culture.',
       expertName: 'Meera Chauhan',
       expertRole: 'Director at Tricolite | Warwick & Yale Fellow',
-      expertImage: '/team/meera-chauhan.png'
+      expertImage: '/team/meera-chauhan.webp'
     },
     {
       id: 'w6',
@@ -66,7 +66,17 @@ export default function EngagingWorkshops() {
       summary: 'Fit Panda holistic movement routines, desk-side mobility drills, somatic resets, and metabolic energy sustainment.',
       expertName: 'Parvej Mantrri',
       expertRole: 'Fit Panda Founder & Celebrity Fitness Coach',
-      expertImage: '/team/parvej-mantrri.png'
+      expertImage: '/team/parvej-mantrri.webp'
+    },
+    {
+      id: 'w7',
+      title: 'Enterprise AI Governance & High-Trust Sales Leadership',
+      duration: 'Half Day (3 Hours)',
+      target: 'CXOs, Enterprise Sales Leaders & Governance Heads',
+      summary: 'Graph-native AI clarity, financial leakage prevention, and 25+ years of enterprise leadership wisdom for building resilient high-trust teams.',
+      expertName: 'Arjun Khanna',
+      expertRole: 'Founder & CEO, IntegrityX.ai | 25+ Yrs Enterprise Leadership',
+      expertImage: '/team/arjun-khanna.jpg'
     }
   ];
 

@@ -356,7 +356,7 @@ export default function Home() {
       title: 'Director at Tricolite Electrical Industries | Warwick & Yale Fellow',
       areaExpertise: 'Mindfulness & Industrial Relations',
       bio: "Meera Chauhan is a Director with Tricolite Electrical Industries. She has done her Master's Degree in Industrial Relations and Personnel Management from Warwick Business School and also a mid career Fellowship at Yale University",
-      image: '/team/meera-chauhan.png'
+      image: '/team/meera-chauhan.webp'
     },
     {
       id: 'f-bijay',
@@ -365,7 +365,7 @@ export default function Home() {
       title: 'Esteemed Kundalini Yoga Instructor & Holistic Wellness Mentor',
       areaExpertise: 'Kundalini Yoga, Ancient Wisdom & Breath Science',
       bio: "Esteemed Kundalini Yoga instructor Bijay Anand fosters holistic wellness, integrating ancient wisdom and contemporary insights for a balanced, transformative practice.",
-      image: '/team/bijay-anand.png'
+      image: '/team/bijay-anand.webp'
     },
     {
       id: 'f-rajiv',
@@ -374,7 +374,7 @@ export default function Home() {
       title: 'Manufacturing CEO & Author | HBS Alumnus & Ex-VP Honda Cars',
       areaExpertise: 'Japanese Management Philosophy & Corporate Culture',
       bio: 'Mr. Gupta is currently the CEO of a leading manufacturing company. Author of "The Good Indian Employee\'s Guide to Surviving a Lala Company." Ex-VP and National Head of Sales & Marketing at Honda Cars. Alumnus of HBS.',
-      image: '/team/rajiv-gupta.png'
+      image: '/team/rajiv-gupta.webp'
     },
     {
       id: 'f-soha',
@@ -383,7 +383,7 @@ export default function Home() {
       title: 'Acclaimed Author & Modern Family Mentor | Oxford & LSE Alumna',
       areaExpertise: 'Work-Life Integration & Emotional Intelligence',
       bio: 'Soha Ali Khan, Indian actress from a noble lineage, blends regal charm with cinematic brilliance, symbolizing cultural richness in Bollywood. She also the author to the book "The Perils of being Moderately Famous"',
-      image: '/team/soha-ali-khan.png'
+      image: '/team/soha-ali-khan.webp'
     },
     {
       id: 'f-sanjay',
@@ -392,7 +392,7 @@ export default function Home() {
       title: 'Healthcare Pioneer & Founder of Suburban Diagnostics',
       areaExpertise: 'Diagnostic Innovation, Entrepreneurial Scaling & Patient Care',
       bio: "Dr. Sanjay Arora, healthcare pioneer, founded Suburban Diagnostics, prioritizing precision and patient care. Awards recognize his leadership, innovation, and entrepreneurial excellence.",
-      image: '/team/sanjay-arora.png'
+      image: '/team/sanjay-arora.webp'
     },
     {
       id: 'f-bharati',
@@ -401,7 +401,7 @@ export default function Home() {
       title: 'Well Being Practitioner & Founder of IDHA',
       areaExpertise: 'Dance & Expressive Movement Therapy',
       bio: "Bharati K. Jaisingh, Well Being Practitioner and founder of IDHA, utilizes dance and expressive arts to foster therapeutic experiences for individuals and communities.",
-      image: '/team/bharati-jaisingh.png'
+      image: '/team/bharati-jaisingh.webp'
     },
     {
       id: 'f-manny',
@@ -410,7 +410,7 @@ export default function Home() {
       title: 'Founder & Chief Happiness Officer | Harvard & Columbia Alum',
       areaExpertise: 'Personal Leadership, Ikigai & Purpose Alignment',
       bio: '25 years in global management at GE Capital, HDFC Bank, ABN AMRO, Barclays, AUB, and FAB. Researched Ikigai, Hygge, Lagom, Sisu, and Gross National Happiness.',
-      image: '/team/manny-anchan.png'
+      image: '/team/manny-anchan.webp'
     },
     {
       id: 'f-anil',
@@ -419,7 +419,7 @@ export default function Home() {
       title: "Recipient of 'SHAURYA CHAKRA' | LBS & ISB Alumnus",
       areaExpertise: 'Personal Leadership & High-Stakes Resilience',
       bio: "Anil, recipient of 'SHAURYA CHAKRA' award is a former military officer, motivational speaker, leadership expert, and fundraiser for alternative investment funds. Alumnus of London Business School and ISB.",
-      image: '/team/anil-kumar.png'
+      image: '/team/anil-kumar.webp'
     },
     {
       id: 'f-carolin',
@@ -428,7 +428,7 @@ export default function Home() {
       title: 'Retired German Olympic Hurdler & Holistic Well-Being Advocate',
       areaExpertise: 'Spirituality, Mindset & Cacao Guidance',
       bio: "Carolin Nytra is a retired German Olympic hurdler, now a holistic well-being advocate. Now, a Cacao Priestess, she empowers others through mindset and spiritual guidance.",
-      image: '/team/carolin-nytra.png'
+      image: '/team/carolin-nytra.webp'
     },
     {
       id: 'f-ajay',
@@ -437,7 +437,7 @@ export default function Home() {
       title: 'Seasoned Business Leader & Strategic Advisor',
       areaExpertise: 'Enterprise Scaling & Executive Resilience',
       bio: "Ajay Srinivasan is a seasoned business leader with a diverse career, founding and expanding businesses in India and abroad, showcasing leadership across different organizational structures and industries.",
-      image: '/team/ajay-srinivasan.png'
+      image: '/team/ajay-srinivasan.webp'
     },
     {
       id: 'f-rupinder',
@@ -446,7 +446,7 @@ export default function Home() {
       title: 'Olympic Field Hockey Star & International Champion',
       areaExpertise: 'Athletic Tenacity & Clutch Mindset Under Pressure',
       bio: "Rupinder Pal Singh, born on Nov 11, 1990, in Faridkot, Punjab, is an Indian hockey star known for powerful drag-flicks, international victories, and inspiring young players.",
-      image: '/team/rupinder-singh.png'
+      image: '/team/rupinder-singh.webp'
     },
     {
       id: 'f-parvej',
@@ -455,7 +455,7 @@ export default function Home() {
       title: 'Versatile Entertainer & Celebrity Fitness Coach',
       areaExpertise: 'Physical Fitness, Motivation & Creative Energy',
       bio: "Parvej, a versatile entertainer, excels as an actor, host, voice-over artist, and celebrity fitness coach, earning acclaim in various roles.",
-      image: '/team/parvej-mantrri.png'
+      image: '/team/parvej-mantrri.webp'
     },
     {
       id: 'f-bhakti',
@@ -464,7 +464,7 @@ export default function Home() {
       title: 'Founder of HEALTHY HIGH & Nutritional Wellness Advisor',
       areaExpertise: 'Clinical Nutrition & Metabolic Vitality',
       bio: "Bhakti is the founder of HEALTHY HIGH a virtual nutrition counselling platform. She is also on the advisory panel for Vitalyse wellness strips and Green Protein.",
-      image: '/team/bhakti-kapoor.png'
+      image: '/team/bhakti-kapoor.webp'
     },
     {
       id: 'f-arjun',
@@ -782,9 +782,11 @@ export default function Home() {
           {/* FOREGROUND FULL-SIZE MANNY ANCHAN CUTOUT */}
           <div className="relative md:absolute md:inset-x-0 md:bottom-0 z-20 flex justify-center pointer-events-none animate-hero-manny">
             <img 
-              src="/manny-cutout.png" 
+              src="/manny-cutout.webp" 
               alt="Manny Anchan - The Happiness Samurai" 
-              fetchPriority="high"
+              width="555"
+              height="963"
+              fetchpriority="high"
               decoding="sync"
               className="h-[44vh] sm:h-[50vh] md:h-[80vh] lg:h-[86vh] max-h-[850px] w-auto object-contain object-bottom filter drop-shadow-[0_25px_50px_rgba(0,0,0,0.85)] transition-transform duration-700" 
             />
@@ -964,7 +966,7 @@ export default function Home() {
       </section>
 
       {/* 4. BALANCE WITHIN WORKLIFE (AESTHETIC ARCHED HORIZON SECTION - FIT TO SCREEN & BOTTOM ATTACHED) */}
-      <section id="worklife-section" className="section-reveal relative bg-[#000000] text-hq-white min-h-screen min-h-[660px] lg:h-screen flex flex-col justify-between pt-14 sm:pt-16 md:pt-20 pb-0 overflow-hidden border-b border-white/10 ">
+      <section id="worklife-section" className="section-reveal relative bg-[#000000] text-hq-white lg:min-h-[660px] lg:h-screen flex flex-col justify-between gap-6 sm:gap-8 lg:gap-0 pt-12 sm:pt-16 md:pt-20 pb-0 overflow-hidden border-b border-white/10 ">
         {/* Subtle Ambient Background Gradients */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[900px] h-[360px] bg-hq-yellow/[0.08] rounded-full blur-[140px]"></div>
@@ -1605,6 +1607,7 @@ export default function Home() {
                 {activePodcast ? (
                   <iframe
                     key={activePodcast.id}
+                    loading="lazy"
                     className="w-full h-full"
                     src={`https://www.youtube.com/embed/${activePodcast.youtubeId}?autoplay=0&rel=0`}
                     title={activePodcast.title}
@@ -1803,9 +1806,9 @@ export default function Home() {
                       </span>
                     </div>
 
-                    <h4 className="font-display text-sm sm:text-base font-bold leading-tight mb-1 text-white group-hover:text-hq-yellow transition-colors line-clamp-1">
+                    <h3 className="font-display text-sm sm:text-base font-bold leading-tight mb-1 text-white group-hover:text-hq-yellow transition-colors line-clamp-1">
                       {b.title}
-                    </h4>
+                    </h3>
                     <p className="font-body text-[11px] font-light leading-relaxed mb-3 line-clamp-2 text-white/60 group-hover:text-white/80 transition-colors">
                       {b.subtitle}
                     </p>

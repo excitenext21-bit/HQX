@@ -84,6 +84,8 @@ export default function ShapeTomorrowAnimation() {
         <img
           src="/images/podcast-mic-bg.jpg"
           alt=""
+          width="720"
+          height="900"
           aria-hidden="true"
           className="h-full w-auto object-contain object-left -scale-x-100 brightness-90 contrast-125"
         />

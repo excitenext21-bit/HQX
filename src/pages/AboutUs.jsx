@@ -32,18 +32,18 @@ import GlobalFootprintCounterBanner from '../components/common/GlobalFootprintCo
 
 
 const FACULTY_COLLAGE_IMAGES = [
-  '/team/parvej-mantrri.png',
-  '/team/soha-ali-khan.png',
-  '/team/rajiv-gupta.png',
-  '/team/sanjay-arora.png',
-  '/team/bharati-jaisingh.png',
-  '/team/bijay-anand.png',
-  '/team/bhakti-kapoor.png',
-  '/team/ajay-srinivasan.png',
-  '/team/carolin-nytra.png',
-  '/team/meera-chauhan.png',
-  '/team/rupinder-singh.png',
-  '/team/anil-kumar.png',
+  '/team/parvej-mantrri.webp',
+  '/team/soha-ali-khan.webp',
+  '/team/rajiv-gupta.webp',
+  '/team/sanjay-arora.webp',
+  '/team/bharati-jaisingh.webp',
+  '/team/bijay-anand.webp',
+  '/team/bhakti-kapoor.webp',
+  '/team/ajay-srinivasan.webp',
+  '/team/carolin-nytra.webp',
+  '/team/meera-chauhan.webp',
+  '/team/rupinder-singh.webp',
+  '/team/anil-kumar.webp',
   '/team/arjun-khanna.jpg'
 ];
 

@@ -8,7 +8,7 @@ const TESTIMONIALS = [
     name: 'Michael Clarke',
     role: 'Former Captain, Australian Cricket Team',
     initials: 'MC',
-    image: '/images/testimonials/michael-clarke.jpg',
+    image: '/images/testimonials/michael-clarke.webp',
     quote:
       'Champions are built long before they step onto the field. HQx provides a powerful framework for developing purpose, resilience, and the mindset needed to perform at your best—in sport, business, and life.'
   },
@@ -17,7 +17,7 @@ const TESTIMONIALS = [
     name: 'Suhail Nathani',
     role: 'Managing Partner, ELP',
     initials: 'SN',
-    image: '/images/testimonials/suhail-nathani.jpg',
+    image: '/images/testimonials/suhail-nathani.webp',
     quote:
       "The HQx framework helped our leaders rethink success beyond KPIs. Manny's storytelling, vulnerability, and practical transformation process resonated with every level of our organization."
   },
@@ -26,7 +26,7 @@ const TESTIMONIALS = [
     name: 'Ankur Aggrawal',
     role: 'Executive Chairman & MD, Crystal Group',
     initials: 'AA',
-    image: '/images/testimonials/ankur-aggrawal.jpg',
+    image: '/images/testimonials/ankur-aggrawal.webp',
     quote:
       "Manny's HQx session was one of the most authentic leadership conversations our teams have experienced. His ability to blend business performance, emotional intelligence, and practical habits created immediate impact across our leadership cohort."
   },
@@ -35,7 +35,7 @@ const TESTIMONIALS = [
     name: 'Vikram Shroff',
     role: 'Vice Chairman, UPL',
     initials: 'VS',
-    image: '/images/testimonials/vikram-shroff.jpg',
+    image: '/images/testimonials/vikram-shroff.webp',
     quote:
       'Our leadership team was captivated from start to finish. Manny combines wisdom, business acumen, and human connection in a way that is both rare and powerful.'
   },
@@ -44,7 +44,7 @@ const TESTIMONIALS = [
     name: 'Sabeena Ladak',
     role: 'Head of Corporate HR & Talent Acquisition, Cipla',
     initials: 'SL',
-    image: '/images/testimonials/sabeena-ladak.jpg',
+    image: '/images/testimonials/sabeena-ladak.webp',
     quote:
       'In a world full of motivational speakers, Manny stands apart. His insights are grounded in lived experience, backed by research, and delivered with humility. Our teams left inspired and equipped with actionable tools.'
   },
@@ -53,7 +53,7 @@ const TESTIMONIALS = [
     name: 'Girish Wagh',
     role: 'Executive Director of Tata Motors',
     initials: 'GW',
-    image: '/images/testimonials/girish-wagh.jpg',
+    image: '/images/testimonials/girish-wagh.webp',
     quote:
       "The session generated more post-event conversations than any leadership workshop we've hosted. Manny's ability to make complex ideas simple and actionable is exceptional."
   },
@@ -62,7 +62,7 @@ const TESTIMONIALS = [
     name: 'Kushal Desai',
     role: 'Chairman & Managing Director, Apar Industries',
     initials: 'KD',
-    image: '/images/testimonials/kushal-desai.jpg',
+    image: '/images/testimonials/kushal-desai.webp',
     quote:
       "Manny's unique journey from finance and business leadership to wellbeing and human performance gives him a perspective few speakers possess. His session was insightful, refreshing, and deeply relevant."
   },
@@ -71,7 +71,7 @@ const TESTIMONIALS = [
     name: 'Archana Shiroor',
     role: 'CHRO, Yes Bank',
     initials: 'AS',
-    image: '/images/testimonials/archana-shiroor.jpg',
+    image: '/images/testimonials/archana-shiroor.webp',
     quote:
       'The HQx methodology provides a practical roadmap for sustainable high performance. Our managers appreciated the balance of science, self-awareness, and real-world application.'
   },
@@ -80,7 +80,7 @@ const TESTIMONIALS = [
     name: 'Dhirendra Mahyavanshi',
     role: 'Founder, Fast-Growing Startup, Turtlemint',
     initials: 'DM',
-    image: '/images/testimonials/dhirendra-mahyavanshi.jpg',
+    image: '/images/testimonials/dhirendra-mahyavanshi.webp',
     quote:
       "Our people didn't just enjoy the session—they changed behaviors afterward. That is the true test of any learning experience, and HQx delivered."
   },
@@ -89,7 +89,7 @@ const TESTIMONIALS = [
     name: 'Rakesh Bhatia',
     role: 'Group CFO, Tata Capital',
     initials: 'RB',
-    image: '/images/testimonials/rakesh-bhatia.jpg',
+    image: '/images/testimonials/rakesh-bhatia.webp',
     quote:
       "The combination of concepts from Blue Zones, Ikigai, wellbeing science, and leadership development was delivered masterfully. Manny's authenticity creates trust, and trust creates transformation."
   },
@@ -98,7 +98,7 @@ const TESTIMONIALS = [
     name: 'Sasha Mirchandani',
     role: 'Billionaire Investor, Kae Capital',
     initials: 'SM',
-    image: '/images/testimonials/sasha-mirchandani.jpg',
+    image: '/images/testimonials/sasha-mirchandani.webp',
     quote:
       "Manny's work addresses a critical challenge of modern leadership: how to succeed without losing yourself in the process. His message is timely, profound, and immensely valuable."
   }
