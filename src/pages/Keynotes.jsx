@@ -394,7 +394,7 @@ export default function Keynotes() {
               return (
                 <div
                   key={idx}
-                  className={`relative min-h-[340px] lg:min-h-[370px] p-5 sm:p-6 flex flex-col justify-between text-[#0A0A0A] bg-white border border-black/10 sm:border-r sm:border-l-0 sm:first:border-l group overflow-hidden transform-gpu will-change-transform transition-[transform,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:z-20 hover:-translate-y-2.5 hover:scale-[1.02] hover:shadow-[0_24px_55px_rgba(0,0,0,0.14)] ${
+                  className={`relative min-h-[340px] lg:min-h-[370px] p-5 sm:p-6 flex flex-col justify-between text-[#0A0A0A] dark:text-white bg-white dark:bg-[#121318] border border-black/10 dark:border-white/15 sm:border-r sm:border-l-0 sm:first:border-l group overflow-hidden transform-gpu will-change-transform transition-[transform,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:z-20 hover:-translate-y-2.5 hover:scale-[1.02] hover:shadow-[0_24px_55px_rgba(0,0,0,0.14)] ${
                     idx === 0 ? 'rounded-t-2xl lg:rounded-t-none lg:rounded-l-2xl' : ''
                   } ${
                     idx === topics.length - 1 ? 'rounded-b-2xl lg:rounded-b-none lg:rounded-r-2xl' : ''
@@ -405,16 +405,11 @@ export default function Keynotes() {
                     alt={t.title}
                     loading="lazy"
                     decoding="async"
-                    className="absolute inset-0 w-full h-full object-cover object-center grayscale contrast-110 opacity-[0.28] group-hover:opacity-[0.38] group-hover:scale-105 transition-all duration-700"
+                    className="absolute inset-0 w-full h-full object-cover object-center grayscale contrast-110 opacity-[0.28] dark:opacity-[0.18] group-hover:opacity-[0.38] dark:group-hover:opacity-[0.26] group-hover:scale-105 transition-all duration-700"
                   />
-                  {/* Clean Pure White Readability Veil */}
-                  <div
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                      background:
-                        'linear-gradient(90deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.62) 55%, rgba(255,255,255,0.30) 100%), linear-gradient(180deg, rgba(255,255,255,0.45) 0%, transparent 40%, rgba(255,255,255,0.78) 100%)'
-                    }}
-                  />
+                  {/* Theme-Aware Readability Veil (White in Normal Mode, Dark Slate in Dark Mode) */}
+                  <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-white/85 via-white/65 to-white/30 dark:from-[#0E0F14]/95 dark:via-[#0E0F14]/88 dark:to-[#0E0F14]/65" />
+                  <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-white/45 via-transparent to-white/80 dark:from-[#0E0F14]/65 dark:via-transparent dark:to-[#0E0F14]/92" />
 
                   {/* Top Bar */}
                   <div className="relative z-10 flex items-center justify-between">

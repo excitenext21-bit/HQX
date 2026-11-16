@@ -1163,14 +1163,14 @@ export default function ConferenceStage3D({ children }) {
 
   if (!webglReady) {
     return (
-      <div className="relative w-full h-full bg-gradient-to-b from-[#0A0A0A] via-[#FFCC00] to-[#0A0A0A] flex items-center justify-center px-8">
-        <div className="w-full max-w-2xl text-center">{children}</div>
+      <div className="relative w-full flex-1 min-h-[460px] sm:min-h-[540px] lg:min-h-0 h-full bg-gradient-to-b from-[#0A0A0A] via-[#FFCC00] to-[#0A0A0A] flex items-center justify-center px-6 sm:px-8">
+        <div className="conference-stage-overlay w-full max-w-2xl text-center">{children}</div>
       </div>
     );
   }
 
   return (
-    <div className="relative w-full h-full overflow-hidden">
+    <div className="relative w-full flex-1 min-h-[460px] sm:min-h-[540px] lg:min-h-0 h-full overflow-hidden">
       <div
         ref={containerRef}
         aria-label="Interactive 3D HQX Keynotes & Friday Talks Curved Conference Stage"
@@ -1188,7 +1188,7 @@ export default function ConferenceStage3D({ children }) {
       {children && (
         <div
           ref={contentOverlayRef}
-          className="absolute left-1/2 top-1/2 z-10 w-[min(90vw,44rem)] pointer-events-none will-change-transform origin-center"
+          className="conference-stage-overlay absolute left-1/2 top-1/2 z-10 w-[min(88vw,44rem)] px-2 sm:px-0 pointer-events-none will-change-transform origin-center"
           style={{ transform: 'translate3d(-50%, -50%, 0)' }}
         >
           {children}

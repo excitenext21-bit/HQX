@@ -275,21 +275,21 @@ export default function Founder() {
               </div>
 
               {/* 25-Year Executive Epiphany / MISSION Card */}
-              <div className="bg-white/90 backdrop-blur-md p-6 sm:p-7 rounded-[24px] border border-black/10 shadow-sm mb-8 space-y-3.5">
-                <div className="flex items-center justify-between pb-3 border-b border-black/10">
-                  <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest font-bold text-[#0A0A0A]">
+              <div className="bg-white/90 dark:bg-[#14151B] backdrop-blur-md p-6 sm:p-7 rounded-[24px] border border-black/10 dark:border-white/15 shadow-sm mb-8 space-y-3.5">
+                <div className="flex items-center justify-between pb-3 border-b border-black/10 dark:border-white/10">
+                  <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest font-bold text-[#0A0A0A] dark:text-white">
                     <Sparkles className="w-4 h-4 text-hq-yellow fill-hq-yellow" />
                     <span>25-Year Executive Epiphany</span>
                   </div>
-                  <span className="text-[10px] font-mono uppercase tracking-widest font-bold text-[#0A0A0A] bg-hq-yellow/30 px-2.5 py-0.5 rounded-full">
+                  <span className="text-[10px] font-mono uppercase tracking-widest font-bold text-[#0A0A0A] dark:text-hq-yellow bg-hq-yellow/30 dark:bg-hq-yellow/15 px-2.5 py-0.5 rounded-full">
                     MISSION
                   </span>
                 </div>
 
-                <p className="font-body text-xs sm:text-sm text-[#1A1A1A] font-light leading-relaxed">
+                <p className="font-body text-xs sm:text-sm text-[#1A1A1A] dark:text-white/85 font-light leading-relaxed">
                   I spent over twenty-five years building businesses, leading global teams, and navigating high-pressure boardrooms. Along the way, I discovered a truth that no business school teaches—success without wellbeing is simply another form of burnout.
                 </p>
-                <p className="font-body text-xs sm:text-sm text-[#1A1A1A] font-light leading-relaxed pt-2 border-t border-black/5">
+                <p className="font-body text-xs sm:text-sm text-[#1A1A1A] dark:text-white/85 font-light leading-relaxed pt-2 border-t border-black/5 dark:border-white/10">
                   Today, I help leaders and organizations pursue a different definition of excellence: one where high performance is fuelled by purpose, elite habits, emotional resilience and mental wealth. My mission is simple—to help people become happier humans and better performers.
                 </p>
               </div>
@@ -298,7 +298,7 @@ export default function Founder() {
               <div className="flex flex-wrap items-center gap-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-3 bg-[#EAE6DF] hover:bg-[#0A0A0A] hover:text-white text-[#0A0A0A] pl-6 pr-2 py-2 rounded-full text-xs font-display font-semibold transition-all duration-300 shadow-sm group"
+                  className="inline-flex items-center gap-3 bg-[#EAE6DF] dark:bg-[#1C1E26] hover:bg-[#0A0A0A] dark:hover:bg-hq-yellow hover:text-white dark:hover:text-[#0A0A0A] text-[#0A0A0A] dark:text-white pl-6 pr-2 py-2 rounded-full text-xs font-display font-semibold transition-all duration-300 shadow-sm group"
                 >
                   <span className="tracking-wide">Book Manny</span>
                   <span className="w-8 h-8 rounded-full bg-hq-yellow text-[#0A0A0A] flex items-center justify-center font-bold group-hover:scale-105 transition-transform">
@@ -458,13 +458,13 @@ export default function Founder() {
 
             {/* Col 3, Row 3: Author Name & Designation */}
             <div className="col-start-3 row-start-3 pt-1.5 sm:pt-2 pl-0.5">
-              <div className="font-display font-semibold text-xs sm:text-[13px] md:text-sm text-[#141414] tracking-tight">
+              <div className="font-display font-semibold text-xs sm:text-[13px] md:text-sm text-[#141414] dark:text-white tracking-tight">
                 Manny Anchan
               </div>
-              <div className="font-body text-[10px] sm:text-[11px] md:text-xs text-[#5A5A5A] font-normal leading-snug mt-0.5">
+              <div className="font-body text-[10px] sm:text-[11px] md:text-xs text-[#5A5A5A] dark:text-white/75 font-normal leading-snug mt-0.5">
                 Founder, Happiness Samurai
               </div>
-              <div className="font-mono text-[8px] sm:text-[9px] text-[#888888] uppercase tracking-wider mt-0.5">
+              <div className="font-mono text-[8px] sm:text-[9px] text-[#888888] dark:text-white/60 uppercase tracking-wider mt-0.5">
                 Author & Global Speaker
               </div>
             </div>

@@ -272,9 +272,20 @@ html.dark .nav-book-btn:hover svg {
 }
 
 .hover\:bg-hq-yellow:hover,
-[class*="hover:bg-hq-yellow"]:hover {
+[class*="hover:bg-hq-yellow"]:hover,
+.hover\:bg-hq-yellow:hover span,
+.hover\:bg-hq-yellow:hover svg,
+[class*="hover:bg-hq-yellow"]:hover span,
+[class*="hover:bg-hq-yellow"]:hover svg {
   background-color: var(--hq-yellow) !important;
   color: var(--hq-black) !important;
+}
+
+.hover\:bg-hq-yellow:hover span,
+.hover\:bg-hq-yellow:hover svg,
+[class*="hover:bg-hq-yellow"]:hover span,
+[class*="hover:bg-hq-yellow"]:hover svg {
+  background-color: transparent !important;
 }
 
 .hover\:bg-hq-black:hover,
@@ -320,17 +331,32 @@ html.dark .nav-book-btn:hover svg {
   color: var(--hq-yellow);
 }
 
-#navbar .nav-book-btn,
-#navbar .nav-book-btn span {
+#navbar .nav-book-btn:not(:hover),
+#navbar .nav-book-btn:not(:hover) span,
+#navbar .nav-book-btn:not(:hover) svg {
   color: var(--hq-black) !important;
 }
 
-/* 11. 20% DARKER PARAGRAPHS ON LIGHT / WHITE BACKGROUNDS (HEADINGS UNTOUCHED) */
-:not(#navbar) .bg-white p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
-:not(#navbar) .bg-\[\#FFFFFF\] p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
-:not(#navbar) .bg-\[\#FAF8F5\] p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
-:not(#navbar) .bg-\[\#FAF7F2\] p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
-:not(#navbar) .bg-hq-white p:not([class*="text-white"]):not([class*="text-hq-yellow"]) {
+#navbar .nav-book-btn:hover,
+#navbar .nav-book-btn:hover span,
+#navbar .nav-book-btn:hover svg {
+  background-color: var(--hq-black) !important;
+  color: var(--hq-white) !important;
+}
+
+html.dark #navbar .nav-book-btn:hover,
+html.dark #navbar .nav-book-btn:hover span,
+html.dark #navbar .nav-book-btn:hover svg {
+  background-color: var(--hq-white) !important;
+  color: var(--hq-black) !important;
+}
+
+/* 11. 20% DARKER PARAGRAPHS ON LIGHT / WHITE BACKGROUNDS (LIGHT MODE ONLY) */
+html:not(.dark) :not(#navbar) .bg-white p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
+html:not(.dark) :not(#navbar) .bg-\[\#FFFFFF\] p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
+html:not(.dark) :not(#navbar) .bg-\[\#FAF8F5\] p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
+html:not(.dark) :not(#navbar) .bg-\[\#FAF7F2\] p:not([class*="text-white"]):not([class*="text-hq-yellow"]),
+html:not(.dark) :not(#navbar) .bg-hq-white p:not([class*="text-white"]):not([class*="text-hq-yellow"]) {
   color: #1A1A1A;
 }
 
@@ -522,24 +548,59 @@ a.font-light {
   font-weight: 400 !important; /* Promotes fragile 300 weight to solid smooth 400 */
 }
 
-/* 2. Global Paragraph Base Color - Rich, readable charcoal */
-p {
+/* 2. Global Paragraph Base Color - Theme-aware (never overrides explicit text-white on dark sections) */
+html:not(.dark) p:not([class*="text-white"]) {
   color: #1A1A1A;
 }
 
-/* 3. High-Contrast Text Color Overrides for Light Backgrounds */
-.text-hq-black\/50,
-.text-hq-black\/55,
-.text-hq-black\/60,
-.text-hq-black\/65,
-.text-black\/50,
-.text-black\/60 {
+html.dark p:not(.bg-hq-yellow *):not(.newsprint-card *) {
+  color: rgba(245, 245, 245, 0.88);
+}
+
+/* Guarantee light paragraph text inside explicitly dark sections in both modes (without overriding nested light cards) */
+:is(.bg-\[\#0A0A0A\], .bg-\[\#0A0A0C\], .bg-black, .bg-hq-black, .bg-\[\#0B0B0D\], .bg-\[\#0C0D0F\], .bg-\[\#0E0F12\], .bg-\[\#14151B\], .bg-\[\#1C1D21\]) p {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+html:not(.dark) :is(.bg-white, .bg-\[\#FFFFFF\], .bg-\[\#FAF8F5\], .bg-\[\#FAF7F2\], .bg-\[\#F8F9FA\], .bg-\[\#F5F5F5\], .bg-hq-white) p:not([class*="text-white"]):not([class*="text-hq-yellow"]) {
+  color: #1A1A1A !important;
+}
+
+/* Keep dark text inside yellow brand surfaces in both modes, except dark nested banners (#0B0B0D) or dark buttons */
+.bg-hq-yellow > :not(section) :is(p, h1, h2, h3, h4, h5, h6, span, strong, b, a, li):not(.text-white):not(:is(.bg-hq-black, .bg-black, .bg-\[\#0A0A0A\], .bg-\[\#111111\]) *),
+main .bg-hq-yellow :is(p, h1, h2, h3, h4, h5, h6, span, strong, b, a, li):not(.text-white):not(.bg-hq-black):not(.bg-black):not(.bg-\[\#0A0A0A\]):not(.bg-\[\#111111\]):not(:is(.bg-hq-black, .bg-black, .bg-\[\#0A0A0A\], .bg-\[\#111111\]) *) {
+  color: #0A0A0A !important;
+}
+
+/* Guarantee high-contrast text on dark buttons even inside yellow or light containers */
+:is(button, a):is(.bg-hq-black, .bg-black, .bg-\[\#0A0A0A\], .bg-\[\#111111\], .bg-\[\#1E2024\]):not(:hover),
+:is(button, a):is(.bg-hq-black, .bg-black, .bg-\[\#0A0A0A\], .bg-\[\#111111\], .bg-\[\#1E2024\]):not(:hover) :is(span, svg) {
+  color: #FFFFFF;
+}
+
+.bg-\[\#0B0B0D\] h2,
+.bg-\[\#0B0B0D\] a,
+.bg-\[\#0B0B0D\] span {
+  color: #FFFFFF !important;
+}
+
+.bg-\[\#0B0B0D\] p {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+/* 3. High-Contrast Text Color Overrides for Light Backgrounds (Light Mode Only) */
+html:not(.dark) .text-hq-black\/50,
+html:not(.dark) .text-hq-black\/55,
+html:not(.dark) .text-hq-black\/60,
+html:not(.dark) .text-hq-black\/65,
+html:not(.dark) .text-black\/50,
+html:not(.dark) .text-black\/60 {
   color: rgba(10, 10, 10, 0.85) !important;
 }
 
-.text-hq-black\/70,
-.text-hq-black\/75,
-.text-hq-black\/80 {
+html:not(.dark) .text-hq-black\/70,
+html:not(.dark) .text-hq-black\/75,
+html:not(.dark) .text-hq-black\/80 {
   color: rgba(10, 10, 10, 0.90) !important;
 }
 
@@ -557,13 +618,56 @@ p {
   color: rgba(255, 255, 255, 0.95) !important;
 }
 
-/* 5. Muted warm tones on cards/sections elevated for sharp readability */
-.text-\[\#6E6660\],
-.text-\[\#7A7067\],
-.text-\[\#666666\],
-.text-\[\#6E645A\],
-.text-\[\#8E8E93\] {
+/* 5. Muted warm tones on cards/sections elevated for sharp readability (Light Mode Only) */
+html:not(.dark) .text-\[\#6E6660\],
+html:not(.dark) .text-\[\#7A7067\],
+html:not(.dark) .text-\[\#666666\],
+html:not(.dark) .text-\[\#6E645A\],
+html:not(.dark) .text-\[\#8E8E93\] {
   color: #383430 !important;
+}
+
+/* 5b. Universal Dark Mode Fallbacks for Light-Only Sections, Cards, Dividers & Text */
+html.dark main section:is(.bg-white, .bg-hq-white, [class*="bg-[#FF" i]:not([class*="bg-[#FFCC" i]), [class*="bg-[#FA" i], [class*="bg-[#F8" i], [class*="bg-[#F7" i], [class*="bg-[#F5" i], [class*="bg-[#F4" i], [class*="bg-[#F2" i], .bg-neutral-50, .bg-gray-50, .bg-stone-50) {
+  background-color: #0B0C10 !important;
+  color: #F5F5F5 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+html.dark main :is(div, article, aside, form, a, button):is(.bg-white, [class*="bg-white/"], .bg-hq-white, [class*="bg-[#FA" i], [class*="bg-[#F8" i], [class*="bg-[#F7" i], [class*="bg-[#F5" i], [class*="bg-[#F4" i], [class*="bg-[#F2" i], [class*="bg-[#EF" i], [class*="bg-[#EA" i], .bg-neutral-50, .bg-neutral-100, .bg-gray-50, .bg-gray-100, .bg-slate-50, .bg-slate-100, .bg-zinc-50, .bg-zinc-100):not(.bg-hq-yellow):not([class*="bg-hq-yellow"]):not([class*="bg-[#FFCC" i]):not([class*="bg-[#F9D8" i]):not([class*="dark:bg-white"]) {
+  background-color: #14151B !important;
+  color: #F5F5F5 !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+html.dark main :is([class*="border-black"], [class*="divide-black"]):not(.bg-hq-yellow *):not(.newsprint-card *) {
+  border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+/* Keep dark text on the yellow 3D Keynotes stage screen in both light and dark modes */
+.conference-stage-overlay :is(h1, h2, h3, span, a, svg) {
+  color: #0A0A0A !important;
+}
+
+.conference-stage-overlay p {
+  color: rgba(10, 10, 10, 0.85) !important;
+}
+
+html.dark main :is(h1, h2, h3, h4, h5, h6):not([class*="text-hq-yellow"]):not([class*="text-amber"]):not([class*="text-yellow"]):not(.bg-hq-yellow *):not(.newsprint-card *):not(.conference-stage-overlay *) {
+  color: #F5F5F5 !important;
+}
+
+html.dark main :is(.text-hq-black, .text-black, [class*="text-hq-black/"], [class*="text-black/"], [class*="text-[#0"], [class*="text-[#1"], [class*="text-[#2"], [class*="text-[#3"], .text-neutral-900, .text-neutral-800, .text-gray-900, .text-gray-800):not(.bg-hq-yellow *):not(.newsprint-card *):not(.conference-stage-overlay *):not([class*="dark:text-"]) {
+  color: #F5F5F5 !important;
+}
+
+html.dark main :is([class*="text-[#4"], [class*="text-[#5"], [class*="text-[#6"], [class*="text-[#7"], [class*="text-[#8"], [class*="text-[#9"], .text-neutral-700, .text-neutral-600, .text-neutral-500, .text-gray-700, .text-gray-600, .text-gray-500):not(.bg-hq-yellow *):not(.newsprint-card *):not([class*="dark:text-"]) {
+  color: rgba(255, 255, 255, 0.74) !important;
+}
+
+html.dark main :is(input, textarea, select) {
+  color: #F5F5F5 !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
 /* 6. Universal smooth font rendering */
@@ -651,4 +755,15 @@ p {
     url('/images/newsprint-texture.jpg');
   background-size: cover;
   background-position: center;
+  color: #111111 !important;
+}
+
+.newsprint-card p,
+.newsprint-card h1,
+.newsprint-card h2,
+.newsprint-card h3,
+.newsprint-card h4,
+.newsprint-card span,
+.newsprint-card a {
+  color: #111111 !important;
 }

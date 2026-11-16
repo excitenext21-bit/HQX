@@ -179,7 +179,7 @@ export default function GlobalFootprintCounterBanner() {
     <div className="relative w-full rounded-[28px] sm:rounded-[36px] bg-[#0A0A0C] border border-white/10 overflow-hidden shadow-2xl transition-all duration-500 hover:border-white/20">
       
       {/* Main Container: 30% Content Text on Left, 70% Semicircle Animation on Right */}
-      <div className="flex flex-col lg:flex-row items-center lg:items-start w-full min-h-[480px] lg:min-h-[500px] xl:min-h-[540px] p-6 sm:p-8 lg:p-10 xl:p-12 gap-6 lg:gap-8">
+      <div className="flex flex-col lg:flex-row items-center lg:items-center w-full min-h-[440px] lg:min-h-[480px] p-6 sm:p-8 lg:p-9 xl:p-11 gap-6 lg:gap-8">
         
         {/* Left Column: Exactly ~30% width */}
         <div className="w-full lg:w-[36%] xl:w-[34%] shrink-0 flex flex-col justify-center z-20">
@@ -250,7 +250,7 @@ export default function GlobalFootprintCounterBanner() {
             setIsHovered(false);
             setActiveMember(null);
           }}
-          className="w-full lg:w-[68%] xl:w-[70%] h-[480px] sm:h-[540px] lg:h-[580px] lg:pt-8 relative flex items-center justify-center overflow-hidden z-10 select-none"
+          className="w-full lg:w-[68%] xl:w-[70%] h-[420px] sm:h-[480px] lg:h-[520px] relative flex items-center justify-center overflow-visible z-10 select-none"
         >
 
           {/* Central Showcase: Faculty Name & Role Placed in Center Under Semicircle Arch */}

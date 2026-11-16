@@ -403,7 +403,7 @@ export default function AboutUs() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             
             {/* Left Column: 3 Clean Interactive Rows with Dynamic Hover Triggers */}
-            <div className="lg:col-span-7 flex flex-col divide-y divide-black/10 border-b border-black/10">
+            <div className="lg:col-span-7 flex flex-col divide-y divide-black/10 dark:divide-white/15 border-b border-black/10 dark:border-white/15">
               
               {/* Row 1: Meet The Founder */}
               <Link 
@@ -418,7 +418,7 @@ export default function AboutUs() {
                   <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-all duration-300 shrink-0 shadow-sm ${
                     hoveredChapter === 'founder' 
                       ? 'bg-hq-black text-hq-yellow scale-105 shadow-md' 
-                      : 'bg-[#EFECE6] text-hq-black/80 group-hover:bg-hq-black group-hover:text-hq-yellow'
+                      : 'bg-[#EFECE6] dark:bg-white/10 text-hq-black/80 dark:text-white/85 group-hover:bg-hq-black group-hover:text-hq-yellow'
                   }`}>
                     <User className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
@@ -460,7 +460,7 @@ export default function AboutUs() {
                   <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-all duration-300 shrink-0 shadow-sm ${
                     hoveredChapter === 'faculty' 
                       ? 'bg-hq-black text-hq-yellow scale-105 shadow-md' 
-                      : 'bg-[#EFECE6] text-hq-black/80 group-hover:bg-hq-black group-hover:text-hq-yellow'
+                      : 'bg-[#EFECE6] dark:bg-white/10 text-hq-black/80 dark:text-white/85 group-hover:bg-hq-black group-hover:text-hq-yellow'
                   }`}>
                     <Users className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
@@ -502,7 +502,7 @@ export default function AboutUs() {
                   <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-all duration-300 shrink-0 shadow-sm ${
                     hoveredChapter === 'why' 
                       ? 'bg-hq-black text-hq-yellow scale-105 shadow-md' 
-                      : 'bg-[#EFECE6] text-hq-black/80 group-hover:bg-hq-black group-hover:text-hq-yellow'
+                      : 'bg-[#EFECE6] dark:bg-white/10 text-hq-black/80 dark:text-white/85 group-hover:bg-hq-black group-hover:text-hq-yellow'
                   }`}>
                     <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
@@ -677,8 +677,8 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Global Footprint & Counter Section (Fit to Screen) */}
-      <section className="min-h-[100svh] lg:h-[100svh] lg:min-h-[600px] lg:max-h-[920px] bg-white dark:bg-[#0B0C10] flex items-center py-8 sm:py-10 transition-colors overflow-hidden">
+      {/* Global Footprint & Counter Section (Fit to Screen, No Clipping) */}
+      <section className="min-h-[100svh] bg-white dark:bg-[#0B0C10] flex items-center pt-20 pb-10 sm:py-12 lg:py-16 transition-colors">
         <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
           <GlobalFootprintCounterBanner />
         </div>

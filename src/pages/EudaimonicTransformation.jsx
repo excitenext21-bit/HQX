@@ -212,6 +212,74 @@ export default function EudaimonicTransformation() {
           ========================================================================= */}
       <section className="bg-black text-white min-h-[100svh] lg:h-screen lg:max-h-screen flex flex-col justify-between pt-20 sm:pt-22 lg:pt-16 pb-0 relative overflow-hidden w-full">
 
+        {/* Full-Bleed Sharp Sunrise Silhouette Hero Backdrop (Shifted 20% Right + Seamless Hyperlapse Clouds Behind Man) */}
+        <div className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden bg-black" aria-hidden="true">
+          {/* Shared 20%-Right-Shifted Layer Stack so Base Sky, Clouds, and Foreground Man Align Pixel-for-Pixel */}
+          <div
+            className="absolute inset-0 md:translate-x-[14%] lg:translate-x-[20%]"
+            style={{
+              WebkitMaskImage:
+                'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 100%)',
+              maskImage:
+                'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 100%)'
+            }}
+          >
+            {/* Layer 1: Base Sunrise Sky & Horizon */}
+            <img
+              src="/images/eudaimonic-hero-sunrise.jpg"
+              alt=""
+              className="w-full h-full object-cover object-center contrast-[1.06] saturate-[1.05]"
+            />
+
+            {/* Layer 2: Seamless Hyperlapse Clouds Behind the Man & Mountain Peak */}
+            <div
+              className="absolute inset-0 overflow-hidden pointer-events-none"
+              style={{
+                WebkitMaskImage:
+                  'linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,1) 52%, rgba(0,0,0,0) 76%)',
+                maskImage:
+                  'linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,1) 52%, rgba(0,0,0,0) 76%)'
+              }}
+            >
+              {/* Upper-Sky Hyperlapse Cloud Layer (6s seamless periodic loop) */}
+              <motion.div
+                animate={{ x: ['0%', '-50%'] }}
+                transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
+                className="absolute top-0 left-0 w-[200%] h-[62%] flex opacity-80 will-change-transform"
+              >
+                <img src="/images/hyperlapse-clouds.png" alt="" className="w-1/2 h-full object-cover" />
+                <img src="/images/hyperlapse-clouds.png" alt="" className="w-1/2 h-full object-cover" />
+              </motion.div>
+
+              {/* Lower-Horizon Fast Hyperlapse Cloud Layer (4.2s seamless periodic loop) */}
+              <motion.div
+                animate={{ x: ['0%', '-50%'] }}
+                transition={{ duration: 4.2, repeat: Infinity, ease: 'linear' }}
+                className="absolute top-[16%] left-0 w-[200%] h-[52%] flex opacity-75 will-change-transform"
+              >
+                <img src="/images/hyperlapse-clouds.png" alt="" className="w-1/2 h-full object-cover -scale-y-100" />
+                <img src="/images/hyperlapse-clouds.png" alt="" className="w-1/2 h-full object-cover -scale-y-100" />
+              </motion.div>
+            </div>
+
+            {/* Layer 3: Foreground Man & Mountain Peak (In Front of Clouds) */}
+            <img
+              src="/images/eudaimonic-hero-sunrise-fg.png"
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover object-center contrast-[1.06] saturate-[1.05]"
+            />
+          </div>
+
+          {/* Left & Bottom Readability Scrim */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                'linear-gradient(to right, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.68) 34%, rgba(0,0,0,0.12) 64%, rgba(0,0,0,0.18) 100%), linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.88) 100%)'
+            }}
+          />
+        </div>
+
         {/* Left Side Vertical Text: EUDAIMONIC TRANSFORMATION with Yellow Arrow (Clean, NO divider line) */}
         <div className="hidden lg:flex absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-30 flex-col justify-center items-center pointer-events-none select-none">
           <div
@@ -400,15 +468,8 @@ export default function EudaimonicTransformation() {
                           </span>
                         </div>
 
-                        {/* Right: Inset Cinematic Image Thumbnail & Collapse Chevron */}
-                        <div className="flex items-center gap-3 sm:gap-4 shrink-0">
-                          <div className="w-24 sm:w-40 md:w-56 h-10 sm:h-12 rounded-xl sm:rounded-2xl overflow-hidden border border-black/15 shadow-inner bg-black/10">
-                            <img
-                              src={item.image}
-                              alt={item.title}
-                              className="w-full h-full object-cover filter contrast-105"
-                            />
-                          </div>
+                        {/* Right: Collapse Chevron */}
+                        <div className="flex items-center shrink-0">
                           <ChevronUp className="w-5 h-5 text-hq-black/80 shrink-0" />
                         </div>
                       </button>
