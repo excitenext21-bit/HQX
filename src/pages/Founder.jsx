@@ -294,24 +294,24 @@ export default function Founder() {
                 </p>
               </div>
 
-              {/* Reference Pill Button: Book Manny with Round Circle Arrow */}
-              <div className="flex flex-wrap items-center gap-4">
+              {/* High-Impact Primary Call-to-Action Buttons */}
+              <div className="flex flex-wrap items-center gap-4 pt-1">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-3 bg-[#EAE6DF] dark:bg-[#1C1E26] hover:bg-[#0A0A0A] dark:hover:bg-hq-yellow hover:text-white dark:hover:text-[#0A0A0A] text-[#0A0A0A] dark:text-white pl-6 pr-2 py-2 rounded-full text-xs font-display font-semibold transition-all duration-300 shadow-sm group"
+                  className="inline-flex items-center gap-3 bg-hq-yellow hover:bg-[#0A0A0A] text-[#0A0A0A] hover:text-white px-7 py-3.5 rounded-full text-xs sm:text-sm font-display font-bold uppercase tracking-wider shadow-xl shadow-hq-yellow/25 hover:shadow-2xl hover:scale-105 transition-all duration-300 group"
                 >
-                  <span className="tracking-wide">Book Manny</span>
-                  <span className="w-8 h-8 rounded-full bg-hq-yellow text-[#0A0A0A] flex items-center justify-center font-bold group-hover:scale-105 transition-transform">
-                    <ArrowRight className="w-4 h-4" />
+                  <span className="tracking-widest">Book Manny</span>
+                  <span className="w-7 h-7 rounded-full bg-[#0A0A0A] text-hq-yellow group-hover:bg-hq-yellow group-hover:text-[#0A0A0A] flex items-center justify-center transition-colors">
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                   </span>
                 </Link>
 
                 <Link
                   to="/books"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-display font-medium text-[#0A0A0A] hover:text-black border border-black/15 hover:border-black/30 transition-colors"
+                  className="inline-flex items-center gap-2.5 bg-[#0A0A0A] hover:bg-hq-yellow text-white hover:text-[#0A0A0A] border border-[#0A0A0A] hover:border-hq-yellow px-7 py-3.5 rounded-full text-xs sm:text-sm font-display font-bold uppercase tracking-wider shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group"
                 >
-                  <BookOpen className="w-3.5 h-3.5" />
-                  <span>Bestselling Books</span>
+                  <BookOpen className="w-4 h-4 text-hq-yellow group-hover:text-[#0A0A0A] transition-colors" />
+                  <span className="tracking-widest">Bestselling Books</span>
                 </Link>
               </div>
 

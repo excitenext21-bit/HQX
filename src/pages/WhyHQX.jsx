@@ -293,6 +293,64 @@ export default function WhyHQX() {
     }
   ];
 
+  const IMPACTED_INSTITUTION_BADGES = [
+    {
+      name: 'Healthcare',
+      subtitle: 'Clinical & Hospital Systems',
+      logo: '/images/logos/healthcare.png'
+    },
+    {
+      name: 'Pharma',
+      subtitle: 'Life Sciences & Biotech',
+      logo: '/images/logos/pharma.svg'
+    },
+    {
+      name: 'NSG',
+      subtitle: 'National Security Guard',
+      logo: '/images/logos/nsg.png'
+    },
+    {
+      name: 'Indian Army',
+      subtitle: 'Armed Forces Command',
+      logo: '/images/logos/indian_army.svg'
+    },
+    {
+      name: 'NACIN',
+      subtitle: 'Customs & Narcotics Academy',
+      logo: '/images/logos/nacin.png'
+    },
+    {
+      name: 'Government',
+      subtitle: 'Public Policy & Ministries',
+      logo: '/images/logos/government_of_india.svg'
+    },
+    {
+      name: 'RBI',
+      subtitle: 'Reserve Bank of India',
+      logo: '/images/logos/rbi.svg'
+    },
+    {
+      name: 'NHRD',
+      subtitle: 'National HRD Network',
+      logo: '/images/logos/nhrd.svg'
+    },
+    {
+      name: 'FICCI',
+      subtitle: 'Apex Industry Chamber',
+      logo: '/images/logos/ficci.png'
+    },
+    {
+      name: 'BMC',
+      subtitle: 'Brihanmumbai Municipal Corp',
+      logo: '/images/logos/bmc.png'
+    },
+    {
+      name: 'IMC',
+      subtitle: "Indian Merchants' Chamber",
+      logo: '/images/logos/imc.png'
+    }
+  ];
+
 
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
@@ -484,32 +542,78 @@ export default function WhyHQX() {
           {/* Section Header: Dual-Tone Title & Top Narrative (Exact Same As The Experts Behind Your Care Design) */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 pb-6 lg:pb-8 border-b border-black/10">
             <div>
+              <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-[#A37B1E] dark:text-hq-yellow font-bold block mb-1">
+                Statistics
+              </span>
               <h2 className="font-display text-2xl sm:text-3xl lg:text-[34px] font-semibold tracking-tight text-[#0A0A0A] dark:text-white leading-[1.1]">
-                Supportive Guidance <br />
-                <span className="text-[#666666] dark:text-white/60 font-light">You Can Count On</span>
+                Turning Challenges <br />
+                <span className="text-[#666666] dark:text-white/60 font-light">into Global Success</span>
               </h2>
             </div>
             <p className="font-body text-sm sm:text-base text-hq-black/65 max-w-md font-light leading-relaxed lg:pb-1">
-              From everyday stress to life's biggest challenges, our caring professionals are here to guide you with personalized support and evidence-based approaches.
+              Measurable leadership impact, executive stamina, and organizational resilience proven across global enterprises.
             </p>
           </div>
 
-          {/* Bottom Tier: Left 3 Stat Rows + Right 2x2 Feature Grid */}
+          {/* Bottom Tier: Left 6 Stats Grid + Right 2x2 Feature Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
             
-            {/* Left Column: 3 Metric Rows */}
-            <div className="lg:col-span-6 flex flex-col divide-y divide-black/10 border-b border-black/10">
-              <div className="py-4 sm:py-5 lg:py-6 flex items-center justify-between">
-                <span className="font-display text-base sm:text-lg text-[#1E1915] font-medium">Happy Clients</span>
-                <span className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">120K+</span>
-              </div>
-              <div className="py-4 sm:py-5 lg:py-6 flex items-center justify-between">
-                <span className="font-display text-base sm:text-lg text-[#1E1915] font-medium">Sessions Completed</span>
-                <span className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">200K+</span>
-              </div>
-              <div className="py-4 sm:py-5 lg:py-6 flex items-center justify-between">
-                <span className="font-display text-base sm:text-lg text-[#1E1915] font-medium">Expert Therapists</span>
-                <span className="font-display text-2xl sm:text-3xl font-semibold text-[#1E1915]">50+</span>
+            {/* Left Column: 6 Core Metrics from Yellow Spec */}
+            <div className="lg:col-span-6">
+              <div className="grid grid-cols-2 gap-x-8 sm:gap-x-10 gap-y-5 sm:gap-y-6">
+                <div className="pb-4 border-b border-black/10">
+                  <div className="font-display text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#1E1915] dark:text-white leading-none">
+                    30+
+                  </div>
+                  <div className="font-body text-xs sm:text-sm text-[#1E1915]/70 dark:text-white/70 font-medium mt-2">
+                    Years of experience
+                  </div>
+                </div>
+
+                <div className="pb-4 border-b border-black/10">
+                  <div className="font-display text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#1E1915] dark:text-white leading-none">
+                    18+
+                  </div>
+                  <div className="font-body text-xs sm:text-sm text-[#1E1915]/70 dark:text-white/70 font-medium mt-2">
+                    Countries worked in
+                  </div>
+                </div>
+
+                <div className="pb-4 border-b border-black/10">
+                  <div className="font-display text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#1E1915] dark:text-white leading-none">
+                    25,000+
+                  </div>
+                  <div className="font-body text-xs sm:text-sm text-[#1E1915]/70 dark:text-white/70 font-medium mt-2">
+                    Executives Trained
+                  </div>
+                </div>
+
+                <div className="pb-4 border-b border-black/10">
+                  <div className="font-display text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#1E1915] dark:text-white leading-none">
+                    1,000+
+                  </div>
+                  <div className="font-body text-xs sm:text-sm text-[#1E1915]/70 dark:text-white/70 font-medium mt-2">
+                    Speaking hours
+                  </div>
+                </div>
+
+                <div className="pb-2 border-b sm:border-b-0 border-black/10">
+                  <div className="font-display text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#1E1915] dark:text-white leading-none">
+                    95%
+                  </div>
+                  <div className="font-body text-xs sm:text-sm text-[#1E1915]/70 dark:text-white/70 font-medium mt-2">
+                    Rating
+                  </div>
+                </div>
+
+                <div className="pb-2">
+                  <div className="font-display text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#1E1915] dark:text-white leading-none">
+                    3
+                  </div>
+                  <div className="font-body text-xs sm:text-sm text-[#1E1915]/70 dark:text-white/70 font-medium mt-2">
+                    TEDx Talks
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -943,6 +1047,56 @@ export default function WhyHQX() {
               </AnimatePresence>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* STRATEGIC INSTITUTIONS & IMPACTED SECTORS - EXPANDED PROMINENT LOGO SHOWCASE (FULLY VISIBLE) */}
+      <section className="py-12 sm:py-16 bg-[#FAF8F5] border-b border-black/10 overflow-hidden relative">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
+          <div className="bg-white rounded-2xl sm:rounded-3xl border border-black/10 py-6 sm:py-8 px-5 sm:px-8 shadow-[0_12px_40px_-10px_rgba(0,0,0,0.06)] overflow-hidden">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-black/10">
+              <div className="flex items-center gap-2.5">
+                <span className="w-3 h-3 rounded-full bg-[#FFCE00] inline-block animate-pulse shadow-xs" />
+                <h3 className="font-mono text-xs sm:text-sm font-bold tracking-[0.22em] text-[#0A0A0A] uppercase">
+                  Strategic Institutions & Impacted Sectors
+                </h3>
+              </div>
+              <span className="font-mono text-[11px] sm:text-xs text-[#555555] tracking-wider font-semibold">
+                Healthcare &bull; Pharma &bull; Defence &bull; Governance &bull; Central Banking &bull; Industry Apex
+              </span>
+            </div>
+
+            {/* Infinite Scrolling Track */}
+            <div className="relative w-full overflow-hidden group/marquee">
+              <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
+              <div className="animate-marquee whitespace-nowrap inline-flex gap-5 sm:gap-7 items-center py-2 group-hover/marquee:[animation-play-state:paused]">
+                {[...IMPACTED_INSTITUTION_BADGES, ...IMPACTED_INSTITUTION_BADGES].map((badge, bIdx) => (
+                  <div 
+                    key={bIdx}
+                    className="inline-flex items-center gap-4 sm:gap-5 bg-[#FAF8F5] hover:bg-white border border-black/10 hover:border-black/30 rounded-2xl px-5 sm:px-6 py-3.5 sm:py-4 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0"
+                  >
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-white border border-black/5 flex items-center justify-center p-2.5 shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+                      <img 
+                        src={badge.logo} 
+                        alt={badge.name} 
+                        className="w-full h-full object-contain filter contrast-105" 
+                      />
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <span className="font-display font-bold text-sm sm:text-base md:text-[17px] text-[#0A0A0A] tracking-tight leading-snug">
+                        {badge.name}
+                      </span>
+                      <span className="font-body text-xs sm:text-[13px] text-[#666666] font-medium leading-snug whitespace-nowrap mt-0.5">
+                        {badge.subtitle}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

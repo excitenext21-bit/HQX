@@ -98,7 +98,7 @@ const TESTIMONIALS = [
     name: 'Sasha Mirchandani',
     role: 'Billionaire Investor, Kae Capital',
     initials: 'SM',
-    image: '/images/testimonials/sasha-mirchandani.webp',
+    image: '/images/testimonials/sasha-mirchandani.jpg',
     quote:
       "Manny's work addresses a critical challenge of modern leadership: how to succeed without losing yourself in the process. His message is timely, profound, and immensely valuable."
   }
@@ -207,9 +207,9 @@ export default function TestimonialsCollage() {
                   type="button"
                   onClick={() => setActiveIndex(idx)}
                   aria-label={`View review from ${item.name}`}
-                  className="group relative aspect-[3/4] w-full overflow-hidden bg-[#141518] cursor-pointer focus:outline-none"
+                  className="group relative aspect-[3/4] w-full overflow-hidden bg-black cursor-pointer focus:outline-none"
                 >
-                  <div className="w-full h-full overflow-hidden">
+                  <div className="w-full h-full overflow-hidden bg-black">
                     <PortraitVisual item={item} large={false} />
                   </div>
                 </button>
@@ -219,7 +219,7 @@ export default function TestimonialsCollage() {
 
           {/* CENTER ZONE: Tall Vertical Active Portrait Spanning Full Height */}
           <div className="lg:col-span-4 order-1 lg:order-2 flex items-stretch">
-            <div className="group relative w-full h-[340px] sm:h-[420px] lg:h-[min(68vh,540px)] overflow-hidden bg-[#141518]">
+            <div className="group relative w-full h-[340px] sm:h-[420px] lg:h-[min(68vh,540px)] overflow-hidden bg-black">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeItem.id}
@@ -227,7 +227,7 @@ export default function TestimonialsCollage() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.98 }}
                   transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                  className="w-full h-full"
+                  className="w-full h-full bg-black"
                 >
                   <PortraitVisual item={activeItem} large={true} />
                 </motion.div>

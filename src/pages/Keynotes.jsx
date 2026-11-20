@@ -117,6 +117,46 @@ export default function Keynotes() {
       group: 'TEDx',
       detail: 'The HQx 2027 high-performance operating system: Eat the Frog, Power of 5, Choose Hard, Flow State, and Rule of 72.',
       image: '/images/linkedin/yellow-taxi.jpg'
+    },
+    {
+      city: 'National Leadership Conclave',
+      title: 'Ikigai & Peak Performance Grand Keynote',
+      category: 'Grand Keynote',
+      group: 'TEDx',
+      detail: 'Manny Anchan addressing 1,200+ leaders and delegates on the timeless Japanese philosophy of Ikigai, cognitive energy, and sustainable peak vitality.',
+      image: '/images/hero_showcase/manny_ikigai_grand_stage.jpg'
+    },
+    {
+      city: 'Mumbai Boardroom',
+      title: 'Executive Boardroom Immersion & Strategy',
+      category: 'Boardroom Conclave',
+      group: 'Townhall',
+      detail: 'High-stakes C-suite cognitive resilience retreat guiding cross-industry executives in strategic poise, stress eradication, and collaborative execution.',
+      image: '/images/hero_showcase/manny_boardroom_discussion.jpg'
+    },
+    {
+      city: 'Bengaluru Tech Summit',
+      title: 'High-Velocity Purpose & Cognitive Clarity',
+      category: 'Leadership Masterclass',
+      group: 'TEDx',
+      detail: 'Delivering an intensive masterclass on mental wealth, emotional regulation under pressure, and architecting eudaimonic performance routines.',
+      image: '/images/hero_showcase/manny_turtleneck_keynote.jpg'
+    },
+    {
+      city: 'Goa Executive Retreat',
+      title: 'Data Science & Biotech Leadership Immersion',
+      category: 'Corporate Retreat',
+      group: 'Townhall',
+      detail: 'Mango Sciences multi-day corporate offsite focusing on team purpose alignment, psychological safety, and collective momentum.',
+      image: '/images/hero_showcase/mango_sciences_retreat_stairs.jpg'
+    },
+    {
+      city: 'Delhi NCR',
+      title: 'Strategic Executive Roundtable & Advisory',
+      category: 'Executive Session',
+      group: 'Townhall',
+      detail: 'Facilitating transformative executive dialogues on intentional leadership, burnout prevention, and modern enterprise stewardship.',
+      image: '/images/hero_showcase/manny_executive_immersion_talk.jpg'
     }
   ];
 
@@ -239,8 +279,8 @@ export default function Keynotes() {
             <div className="lg:col-span-5">
               <div className="group/stage rounded-[28px] overflow-hidden shadow-2xl border border-hq-black/10 bg-hq-black aspect-[4/3.6] lg:max-h-[440px] w-full relative">
                 <img
-                  src="/profile_assets/page_15_img_1_1060.jpeg"
-                  alt="Friday Talks in Progress"
+                  src="/images/hero_showcase/manny_ikigai_grand_stage.jpg"
+                  alt="Manny Anchan Keynote on Stage"
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover animate-pulse-subtle transition-transform duration-[1800ms] ease-out scale-[1.03] group-hover/stage:scale-110"

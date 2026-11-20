@@ -123,6 +123,7 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-wrap items-center gap-x-7 gap-y-2">
+            <a href="https://x.com/MannyAnchan" target="_blank" rel="noreferrer" className="hover:opacity-60 transition-opacity">X (Twitter)</a>
             <a href="https://www.linkedin.com/in/manojsanchan/" target="_blank" rel="noreferrer" className="hover:opacity-60 transition-opacity">LinkedIn</a>
             <a href="https://www.youtube.com/@happpinesssamurai1036" target="_blank" rel="noreferrer" className="hover:opacity-60 transition-opacity">YouTube</a>
             <a href="https://www.instagram.com/happinesssamurai/" target="_blank" rel="noreferrer" className="hover:opacity-60 transition-opacity">Instagram</a>

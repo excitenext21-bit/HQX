@@ -49,6 +49,7 @@ import {
 } from 'lucide-react';
 import { useData } from '../context/DataContext';
 import { useTheme } from '../context/ThemeContext';
+import InquiryModal from '../components/common/InquiryModal';
 const RotatingGlobe = lazy(() => import('../components/common/RotatingGlobe'));
 
 function DeferredRotatingGlobe({ heightClass }) {
@@ -158,6 +159,15 @@ export default function Home() {
   const [selectedTeamMember, setSelectedTeamMember] = useState(null);
   const [isTeamHovered, setIsTeamHovered] = useState(false);
   const teamScrollContainerRef = useRef(null);
+
+  // Inquiry Modal State for lead/booking capture
+  const [isInquiryModalOpen, setIsInquiryModalOpen] = useState(false);
+  const [inquiryModalProgram, setInquiryModalProgram] = useState('Executive Workshop Track');
+
+  const openInquiryModal = (programName = 'Executive Workshop Track') => {
+    setInquiryModalProgram(programName);
+    setIsInquiryModalOpen(true);
+  };
 
   // Mouse drag-to-scroll state for OUR TEAM section
   const [isMouseDown, setIsMouseDown] = useState(false);
@@ -503,8 +513,17 @@ export default function Home() {
       category: 'Enterprise AI & Leadership',
       title: 'Founder & CEO, IntegrityX.ai (IntegriAI Private Limited)',
       areaExpertise: 'Graph-Native AI, Enterprise Sales & Strategic Growth',
-      bio: "Arjun Khanna is the Founder and CEO of IntegrityX.ai (IntegriAI Private Limited), a graph-native AI platform detecting financial leakage in enterprises. With 25+ years in Indian enterprise sales across Hewitt Associates, Mercer, KPMG, Zeus Consulting, FutureSkills Prime (MeitY–NASSCOM), and NSDC, he is an alumnus of The Doon School, St. Stephen's College, Delhi, and Symbiosis (MBA), based in Mumbai.",
+      bio: "Arjun Khanna is the Founder and CEO of IntegrityX.ai (IntegriAI Private Limited), a graph-native AI platform detecting financial leakage in enterprises. With 25+ years in Indian enterprise sales across Hewitt Associates, Mercer, KPMG, Zeus Consulting, FutureSkills Prime (MeitY–NASSCOM), and NSDC, he is an alumnus of The Doon School, St. Stephen's College, Delhi, and Symbiosis (MBA), based in Mumbai. Bionic for Business is an HQx Global initiative in collaboration with IntegrityX.ai. It brings together HQx’s expertise in human transformation and IntegrityX.ai’s focus on using AI to improve business profitability. Arjun Khanna, Founder and CEO of IntegrityX.ai (IntegriAI Private Limited), leads the AI transformation work for the partnership.",
       image: '/team/arjun-khanna.jpg'
+    },
+    {
+      id: 'f-neha',
+      name: 'NEHA DUBEY',
+      category: 'Mindfulness & Psychotherapy',
+      title: 'Psychotherapist | Regent\'s School London Alumna & Guy\'s Hospital Veteran',
+      areaExpertise: 'Clinical Psychotherapy & Private Practice (15+ Yrs)',
+      bio: "Neha Dubey is a psychotherapist who has been in Private Practice in Mumbai for the last 15 years. She trained at the Regent’s School of Psychotherapy, London. She then worked at Guy’s Hospital and the Psychotherapy Center of London Association of Counsellors and Psychotherapists (LACAP) in London before moving back to India.",
+      image: '/team/neha-dubey.jpg'
     }
   ];
 
@@ -1181,7 +1200,7 @@ export default function Home() {
                         Key
                       </span>
                       <span className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-tight text-hq-yellow leading-none mt-1">
-                        Theme
+                        Themes
                       </span>
                       <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-hq-black/50 dark:text-white/50 mt-2 font-semibold">
                         Systemic Well-Being
@@ -1197,17 +1216,14 @@ export default function Home() {
 
                 {/* Section Action CTA Button */}
                 <div className="pt-2">
-                  <Link
-                    to="#contact"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="inline-flex items-center gap-3 bg-hq-black text-white dark:bg-white dark:text-black dark:hover:bg-hq-yellow dark:hover:text-black font-display text-xs uppercase tracking-widest px-7 py-3.5 rounded-full hover:bg-hq-yellow hover:text-hq-black transition-all font-semibold shadow-lg group"
+                  <button
+                    type="button"
+                    onClick={() => openInquiryModal('Modular Workshop Track')}
+                    className="inline-flex items-center gap-3 bg-hq-black text-white dark:bg-white dark:text-black dark:hover:bg-hq-yellow dark:hover:text-black font-display text-xs uppercase tracking-widest px-7 py-3.5 rounded-full hover:bg-hq-yellow hover:text-hq-black transition-all font-semibold shadow-lg group cursor-pointer"
                   >
                     <span>Book Modular Workshop Track</span>
                     <LongArrow className="group-hover:translate-x-1" />
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1253,17 +1269,14 @@ export default function Home() {
                       </p>
 
                       <div className="mt-3.5">
-                        <Link
-                          to="#contact"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                          }}
-                          className="inline-flex items-center gap-2.5 text-xs font-mono uppercase tracking-wider font-semibold text-hq-black dark:text-white hover:text-hq-yellow transition-all group/btn"
+                        <button
+                          type="button"
+                          onClick={() => openInquiryModal(`Intervention Track: ${keyThemes[currentPairIdx * 2]?.title || 'Key Theme'}`)}
+                          className="inline-flex items-center gap-2.5 text-xs font-mono uppercase tracking-wider font-semibold text-hq-black dark:text-white hover:text-hq-yellow transition-all group/btn cursor-pointer"
                         >
                           <span>Explore Intervention Track</span>
                           <LongArrow className="text-hq-yellow group-hover/btn:translate-x-1" />
-                        </Link>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -1302,17 +1315,14 @@ export default function Home() {
                       </p>
 
                       <div className="mt-3.5">
-                        <Link
-                          to="#contact"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                          }}
-                          className="inline-flex items-center gap-2.5 text-xs font-mono uppercase tracking-wider font-semibold text-hq-black dark:text-white hover:text-hq-yellow transition-all group/btn"
+                        <button
+                          type="button"
+                          onClick={() => openInquiryModal(`Intervention Track: ${keyThemes[currentPairIdx * 2 + 1]?.title || 'Key Theme'}`)}
+                          className="inline-flex items-center gap-2.5 text-xs font-mono uppercase tracking-wider font-semibold text-hq-black dark:text-white hover:text-hq-yellow transition-all group/btn cursor-pointer"
                         >
                           <span>Explore Intervention Track</span>
                           <LongArrow className="text-hq-yellow group-hover/btn:translate-x-1" />
-                        </Link>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -1377,7 +1387,7 @@ export default function Home() {
               Our <span className="text-hq-yellow">Team</span>
             </h2>
             <p className="font-body text-[16px] text-white/70 font-light max-w-xl">
-              World champions, Olympic medalists, seasoned business leaders, and renowned wellness authorities collaborating to cultivate enterprise potential.
+              World champions, Olympic medalists, Ex-CEOs, Founders, Seasoned business leaders, and renowned wellness authorities collaborating to cultivate enterprise potential.
             </p>
           </div>
 
@@ -1398,7 +1408,7 @@ export default function Home() {
               <LongArrow direction="right" />
             </button>
             <Link
-              to="#team-section"
+              to="/team"
               className="ml-2 font-display text-xs uppercase tracking-widest font-semibold text-white/80 hover:text-hq-yellow transition-colors underline underline-offset-4"
             >
               VIEW ALL
@@ -1583,7 +1593,7 @@ export default function Home() {
 
               <div className="pt-2">
                 <Link
-                  to="#key-themes-section"
+                  to="/keynotes"
                   className="inline-flex items-center gap-3 text-xs font-mono uppercase tracking-widest font-semibold text-white hover:text-hq-yellow transition-colors group"
                 >
                   <span>Explore Nationwide Summits</span>
@@ -1618,7 +1628,7 @@ export default function Home() {
               </h2>
             </div>
             <Link 
-              to="#podcast" 
+              to="/podcast" 
               className="inline-flex items-center gap-2.5 text-xs font-display tracking-widest uppercase text-hq-black dark:text-white hover:text-hq-yellow dark:hover:text-hq-yellow font-semibold group"
             >
               <span>View All 10 Episodes & Channels</span>
@@ -1674,7 +1684,7 @@ export default function Home() {
 
                   <div className="flex items-center gap-4 pt-1">
                     <Link
-                      to="#podcast"
+                      to="/podcast"
                       className="inline-flex items-center gap-2 bg-hq-black text-white hover:bg-hq-yellow hover:text-hq-black dark:bg-white dark:text-black dark:hover:bg-hq-yellow text-xs font-display uppercase tracking-widest font-semibold px-6 py-2.5 rounded-full transition-all group/btn shadow"
                     >
                       <span>Full Episode Notes</span>
@@ -1782,7 +1792,7 @@ export default function Home() {
 
             <div className="flex items-center gap-4 shrink-0">
               <Link 
-                to="#books" 
+                to="/books" 
                 className="inline-flex items-center gap-2 font-display text-xs uppercase tracking-widest font-semibold text-white/80 hover:text-hq-yellow transition-colors group/nav"
               >
                 <span>Explore All Books</span>
@@ -1844,7 +1854,7 @@ export default function Home() {
                   </div>
 
                   <Link 
-                    to="#books" 
+                    to="/books" 
                     className="text-[10px] sm:text-[11px] font-display uppercase font-bold tracking-wider pt-2 border-t border-white/10 inline-flex items-center gap-2 group/bk text-white/70 group-hover:text-hq-yellow transition-colors"
                   >
                     <span>View Details</span>
@@ -1910,24 +1920,20 @@ export default function Home() {
                 </p>
 
                 <div className="flex flex-wrap gap-3">
-                  <Link 
-                    to="#contact" 
+                  <button 
+                    type="button"
                     onClick={() => {
+                      const memberName = selectedTeamMember.name;
                       setSelectedTeamMember(null);
-                      const el = document.getElementById('contact');
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      openInquiryModal(`Advisory Session with ${memberName}`);
                     }}
-                    className="bg-[#141B2D] text-white hover:bg-amber-500 hover:text-black text-xs font-display uppercase tracking-widest px-5 py-2.5 font-bold rounded-full transition-colors shadow-sm"
+                    className="bg-[#141B2D] text-white hover:bg-amber-500 hover:text-black text-xs font-display uppercase tracking-widest px-5 py-2.5 font-bold rounded-full transition-colors shadow-sm cursor-pointer"
                   >
                     Request Advisory Session
-                  </Link>
+                  </button>
                   <Link 
-                    to="#team-section" 
-                    onClick={() => {
-                      setSelectedTeamMember(null);
-                      const el = document.getElementById('team-section');
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    }}
+                    to="/team" 
+                    onClick={() => setSelectedTeamMember(null)}
                     className="border border-slate-300 text-slate-700 hover:bg-slate-100 text-xs font-display uppercase tracking-widest px-5 py-2.5 font-bold rounded-full transition-colors"
                   >
                     View Faculty Profile
@@ -1938,6 +1944,13 @@ export default function Home() {
           </div>
         </div>
       )}
+
+      {/* LEAD CAPTURE & INQUIRY MODAL POPUP */}
+      <InquiryModal
+        isOpen={isInquiryModalOpen}
+        onClose={() => setIsInquiryModalOpen(false)}
+        initialProgram={inquiryModalProgram}
+      />
     </div>
   );
 }

@@ -29,6 +29,7 @@ import {
 } from 'lucide-react';
 import CorporatePartnersMarquee from '../components/common/CorporatePartnersMarquee';
 import GlobalFootprintCounterBanner from '../components/common/GlobalFootprintCounterBanner';
+import BrandLogo from '../components/common/BrandLogo';
 
 
 const FACULTY_COLLAGE_IMAGES = [
@@ -44,7 +45,8 @@ const FACULTY_COLLAGE_IMAGES = [
   '/team/meera-chauhan.webp',
   '/team/rupinder-singh.webp',
   '/team/anil-kumar.webp',
-  '/team/arjun-khanna.jpg'
+  '/team/arjun-khanna.jpg',
+  '/team/neha-dubey.jpg'
 ];
 
 const CHAPTER_SHOWCASE = {
@@ -57,7 +59,7 @@ const CHAPTER_SHOWCASE = {
   },
   faculty: {
     title: 'Multidisciplinary Faculty',
-    subtitle: '13 World Champions, CEOs & Mentors',
+    subtitle: '14 World Champions, CEOs & Mentors',
     badge: 'Advisory Faculty',
     image: '/images/hero_showcase/chapters_faculty_card.jpg',
     alt: 'HQX Multidisciplinary Advisory Faculty'
@@ -142,7 +144,7 @@ export default function AboutUs() {
       desc: 'Data science & biotech team purpose alignment and Ikigai discovery.',
       fullDesc: 'Specialized deep-work retreat for bio-informaticians, data scientists, and healthcare AI researchers linking rigorous analytical labor to societal health impact and Ikigai.',
       focus: 'Ikigai & Purpose Discovery',
-      image: '/images/hero_showcase/yt__b83chqCJG0_maxresdefault.jpg',
+      image: '/images/hero_showcase/mango_sciences_retreat_stairs.jpg',
       tag: 'Biotech Offsite',
       category: 'national',
       attendees: '120+ Researchers & Engineers',
@@ -192,20 +194,6 @@ export default function AboutUs() {
       category: 'national',
       attendees: '800+ Live Delegates',
       takeaways: ['Redefining corporate eudaimonia', 'Daily 3-breath grounding method', 'Translating purpose into daily action']
-    },
-    {
-      id: 'tedx-elpro',
-      client: 'TEDx ElPro International',
-      location: 'Pune, India',
-      country: 'India',
-      desc: 'Inspiring future leaders, educators, and innovators on purposeful living.',
-      fullDesc: 'Inspiring address to over 1,000 educators, global scholars, and youth leaders exploring how institutional mindfulness and purpose cultivation transform academic achievement and societal harmony.',
-      focus: 'Purpose-Driven Innovation',
-      image: '/images/hero_showcase/manny_tedx_elpro.jpg',
-      tag: 'TEDx Keynote',
-      category: 'national',
-      attendees: '1,000+ Educators & Innovators',
-      takeaways: ['Empowering resilient next-gen leaders', 'Educational mindfulness architectures', 'Emotional fortitude in the digital age']
     }
   ];
 
@@ -535,7 +523,7 @@ export default function AboutUs() {
 
             {/* Right Column: Dynamic Photographic Showcase with Smooth Cross-Fade on Hover */}
             <div className="lg:col-span-5 h-full flex items-center justify-center">
-              <div className="relative w-full h-[380px] sm:h-[440px] lg:h-[490px] rounded-[32px] overflow-hidden shadow-2xl border border-black/10 bg-[#EFECE6] group">
+              <div className="relative w-full h-[380px] sm:h-[440px] lg:h-[490px] rounded-[32px] overflow-hidden shadow-2xl border border-black/10 bg-black group">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={hoveredChapter}
@@ -546,9 +534,9 @@ export default function AboutUs() {
                     className="absolute inset-0 w-full h-full"
                   >
                     {hoveredChapter === 'faculty' ? (
-                      <div className="w-full h-full grid grid-cols-4 grid-rows-3 gap-[1px] bg-black/50 overflow-hidden">
+                      <div className="w-full h-full grid grid-cols-4 grid-rows-4 gap-[1px] bg-black overflow-hidden">
                         {FACULTY_COLLAGE_IMAGES.map((src, i) => (
-                          <div key={i} className="relative w-full h-full overflow-hidden bg-[#E2DFD8]">
+                          <div key={i} className="relative w-full h-full overflow-hidden bg-black">
                             <img
                               src={src}
                               alt="Faculty Member"
@@ -556,6 +544,9 @@ export default function AboutUs() {
                             />
                           </div>
                         ))}
+                        <div className="col-span-2 relative w-full h-full bg-black flex items-center justify-center p-3 sm:p-5 border-t border-l border-white/10">
+                          <BrandLogo className="h-8 sm:h-11 w-auto max-w-[85%]" textColor="#FFFFFF" />
+                        </div>
                       </div>
                     ) : (
                       <img 

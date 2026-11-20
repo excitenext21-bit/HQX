@@ -125,6 +125,14 @@ export default function Podcast() {
       alt: 'HQX Podcast Studio Recording',
       episodeIdx: 5,
       objPos: 'object-[20%_25%]'
+    },
+    {
+      id: 'slide-5',
+      type: 'image',
+      src: '/images/hero_showcase/manny_podcast_yellow_chairs.jpg',
+      alt: 'HQX Podcast Studio Interview Set',
+      episodeIdx: 0,
+      objPos: 'object-center'
     }
   ];
 

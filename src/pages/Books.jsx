@@ -264,6 +264,63 @@ export default function Books() {
           })}
         </div>
       </section>
+
+      {/* AUTHOR SPOTLIGHT: PHYSICAL COLLECTOR'S EDITIONS & EXECUTIVE GIFTING */}
+      <section className="py-16 sm:py-20 bg-[#0A0A0A] text-white border-t border-white/10 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Image of Manny Anchan with Happiness Decoded */}
+            <div className="lg:col-span-5 flex justify-center">
+              <div className="relative w-full max-w-[400px] aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/15 group">
+                <img
+                  src="/images/hero_showcase/manny_happiness_decoded_book.jpg"
+                  alt="Manny Anchan holding Happiness Decoded"
+                  className="w-full h-full object-cover filter contrast-105 group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-4 left-4 right-4 p-3 bg-black/60 backdrop-blur-md rounded-xl border border-white/10">
+                  <div className="font-display font-bold text-xs uppercase tracking-wider text-hq-yellow">Official Author Edition</div>
+                  <div className="font-body text-[11px] text-white/80">Manny Anchan with the yellow collector's edition of Happiness Decoded</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Editorial Content */}
+            <div className="lg:col-span-7 space-y-5">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-hq-yellow/10 border border-hq-yellow/30 text-hq-yellow font-mono text-xs uppercase tracking-widest">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Executive & Boardroom Distribution</span>
+              </div>
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-white leading-tight">
+                Gifting Eudaimonic Clarity <br />
+                <span className="text-hq-yellow font-light">to Global Leaders & Cohorts</span>
+              </h2>
+              <p className="font-body text-sm sm:text-base text-white/75 font-light leading-relaxed">
+                Manny Anchan’s publications are not merely reading material; they serve as tactical executive companions distributed across Fortune 500 boardrooms, banking conglomerates, and elite leadership offsites worldwide. Each edition translates decades of frontline institutional experience into actionable daily mastery.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                  <div className="font-display font-bold text-sm text-white mb-1">Bulk Corporate Orders</div>
+                  <p className="font-body text-xs text-white/60 leading-relaxed">Custom branded editions and book bundles for executive summits, retreats, and annual conferences.</p>
+                </div>
+                <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                  <div className="font-display font-bold text-sm text-white mb-1">Signed Author Copies</div>
+                  <p className="font-body text-xs text-white/60 leading-relaxed">Numbered hardbound collector sets paired with personalized executive inscriptions by Manny Anchan.</p>
+                </div>
+              </div>
+              <div className="pt-2">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 bg-hq-yellow text-[#0A0A0A] font-display font-bold text-xs uppercase tracking-widest px-6 py-3 rounded-full hover:bg-white transition-all shadow-md"
+                >
+                  <span>Inquire for Executive Copies</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

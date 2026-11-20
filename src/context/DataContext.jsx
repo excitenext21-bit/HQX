@@ -237,8 +237,18 @@ const INITIAL_FACULTY = [
     name: 'Arjun Khanna',
     category: 'Executive Leadership',
     title: 'Founder & CEO, IntegrityX.ai | 25+ Yrs Enterprise Leadership',
-    bio: "Arjun Khanna is the Founder and CEO of IntegrityX.ai (IntegriAI Private Limited), a graph-native AI platform that detects financial leakage in enterprises. With more than 25 years of experience in Indian enterprise sales, he has worked at Hewitt Associates, Mercer, KPMG, Zeus Consulting, FutureSkills Prime (a MeitY–NASSCOM initiative), and the National Skill Development Corporation (NSDC). He studied at The Doon School and St. Stephen's College, Delhi, holds an MBA from Symbiosis, and lives in Mumbai.",
+    bio: "Arjun Khanna is the Founder and CEO of IntegrityX.ai (IntegriAI Private Limited), a graph-native AI platform that detects financial leakage in enterprises. With more than 25 years of experience in Indian enterprise sales, he has worked at Hewitt Associates, Mercer, KPMG, Zeus Consulting, FutureSkills Prime (a MeitY–NASSCOM initiative), and the National Skill Development Corporation (NSDC). He studied at The Doon School and St. Stephen's College, Delhi, holds an MBA from Symbiosis, and lives in Mumbai. Bionic for Business is an HQx Global initiative in collaboration with IntegrityX.ai. It brings together HQx’s expertise in human transformation and IntegrityX.ai’s focus on using AI to improve business profitability. Arjun Khanna, Founder and CEO of IntegrityX.ai (IntegriAI Private Limited), leads the AI transformation work for the partnership.",
     image: '/team/arjun-khanna.jpg',
+    active: true,
+    featured: true
+  },
+  {
+    id: 'f-neha',
+    name: 'Neha Dubey',
+    category: 'Mindfulness & Well-Being',
+    title: 'Psychotherapist | Regent\'s London Alumna & Guy\'s Hospital Veteran',
+    bio: "Neha Dubey is a psychotherapist who has been in Private Practice in Mumbai for the last 15 years. She trained at the Regent’s School of Psychotherapy, London. She then worked at Guy’s Hospital and the Psychotherapy Center of London Association of Counsellors and Psychotherapists (LACAP) in London before moving back to India.",
+    image: '/team/neha-dubey.jpg',
     active: true,
     featured: true
   },
@@ -701,94 +711,6 @@ const INITIAL_PODCASTS = [
     "duration": "50:39",
     "summary": "Celebrated actor Sameera Reddy shares candid reflections on overcoming postpartum depression, corporate pressure, and finding genuine self-love.",
     "thumbnail": "https://i.ytimg.com/vi/EI6SNlfIn54/hqdefault.jpg"
-  },
-  {
-    "id": "yt-17t_VxbPOVc",
-    "youtubeId": "17t_VxbPOVc",
-    "title": "Happy Conversations: Micro Moments of Joy",
-    "guest": "Manny Anchan",
-    "category": "Micro-Insight",
-    "date": "Micro Series",
-    "duration": "0:39",
-    "summary": "Short reflection by Manny Anchan on noticing everyday spontaneous joy and building intentional connections.",
-    "thumbnail": "https://i.ytimg.com/vi/17t_VxbPOVc/hqdefault.jpg"
-  },
-  {
-    "id": "yt-4xvmWMBFii8",
-    "youtubeId": "4xvmWMBFii8",
-    "title": "Journey Is The Destination: Mindset Shifts",
-    "guest": "Manny Anchan",
-    "category": "Micro-Insight",
-    "date": "Micro Series",
-    "duration": "0:53",
-    "summary": "A powerful 53-second insight on detachment from outcomes and rediscovering meaning in daily practice.",
-    "thumbnail": "https://i.ytimg.com/vi/4xvmWMBFii8/hqdefault.jpg"
-  },
-  {
-    "id": "yt-BHpaC1ObaVA",
-    "youtubeId": "BHpaC1ObaVA",
-    "title": "What Makes You Happy? Corporate Voices at Aditya Birla Capital",
-    "guest": "Aditya Birla Capital Team",
-    "category": "Corporate Spotlight",
-    "date": "Enterprise Voice",
-    "duration": "4:09",
-    "summary": "Direct employee stories and perspectives on what fuels happiness, purpose, and camaraderie at Aditya Birla Capital.",
-    "thumbnail": "https://i.ytimg.com/vi/BHpaC1ObaVA/hqdefault.jpg"
-  },
-  {
-    "id": "yt-NTdduGwLilQ",
-    "youtubeId": "NTdduGwLilQ",
-    "title": "Culture & Joy at Work: Voices at Tata Capital",
-    "guest": "Tata Capital Team",
-    "category": "Corporate Spotlight",
-    "date": "Enterprise Voice",
-    "duration": "2:47",
-    "summary": "Exploring employee well-being culture, trust, and mutual encouragement across teams at Tata Capital.",
-    "thumbnail": "https://i.ytimg.com/vi/NTdduGwLilQ/hqdefault.jpg"
-  },
-  {
-    "id": "yt-8OROLKExUbY",
-    "youtubeId": "8OROLKExUbY",
-    "title": "Finding Joy in Everyday Craft: Interviewing My Favorite Barista",
-    "guest": "Special Guest",
-    "category": "Everyday Happiness",
-    "date": "Human Connection",
-    "duration": "4:23",
-    "summary": "Manny sits down with a skilled barista to discuss presence, craftsmanship, and how small genuine interactions brighten human days.",
-    "thumbnail": "https://i.ytimg.com/vi/8OROLKExUbY/hqdefault.jpg"
-  },
-  {
-    "id": "yt-oHdbLEax_a0",
-    "youtubeId": "oHdbLEax_a0",
-    "title": "What Is Your Life’s Design? Taking Charge & Shaping Destiny",
-    "guest": "Manny Anchan",
-    "category": "Masterclass",
-    "date": "Life Design",
-    "duration": "4:09",
-    "summary": "Practical frameworks by Manny Anchan on moving from passive reaction to intentional life architecture and proactive design.",
-    "thumbnail": "https://i.ytimg.com/vi/oHdbLEax_a0/hqdefault.jpg"
-  },
-  {
-    "id": "yt-JurW3HRo3V4",
-    "youtubeId": "JurW3HRo3V4",
-    "title": "The Transformative Power of Daily Journaling",
-    "guest": "Manny Anchan",
-    "category": "Habit Mastery",
-    "date": "Behavioral Practice",
-    "duration": "1:37",
-    "summary": "Manny Anchan explains the neuroscience of daily journaling: clarity, stress release, and cognitive crystallization.",
-    "thumbnail": "https://i.ytimg.com/vi/JurW3HRo3V4/hqdefault.jpg"
-  },
-  {
-    "id": "yt-uMDEotodPD4",
-    "youtubeId": "uMDEotodPD4",
-    "title": "Happiness Samurai Book Signing & Keynote Address",
-    "guest": "Manny Anchan",
-    "category": "Keynote Event",
-    "date": "Book Launch",
-    "duration": "40:20",
-    "summary": "Full video recording of the high-energy Happiness Samurai book launch, keynote address, and audience Q&A with Manny Anchan.",
-    "thumbnail": "https://i.ytimg.com/vi/uMDEotodPD4/hqdefault.jpg"
   }
 ];
 
@@ -1048,7 +970,7 @@ export function DataProvider({ children }) {
   });
 
   const [podcasts, setPodcasts] = useState(() => {
-    const saved = localStorage.getItem('hqx_podcasts_v3');
+    const saved = localStorage.getItem('hqx_podcasts_v4');
     return saved ? JSON.parse(saved) : INITIAL_PODCASTS;
   });
 
@@ -1090,7 +1012,7 @@ export function DataProvider({ children }) {
   }, [books]);
 
   useEffect(() => {
-    localStorage.setItem('hqx_podcasts_v3', JSON.stringify(podcasts));
+    localStorage.setItem('hqx_podcasts_v4', JSON.stringify(podcasts));
   }, [podcasts]);
 
   useEffect(() => {
@@ -1194,7 +1116,7 @@ export function DataProvider({ children }) {
     localStorage.removeItem('hqx_faculty_v5');
     localStorage.removeItem('hqx_courses_v2');
     localStorage.removeItem('hqx_books_v6');
-    localStorage.removeItem('hqx_podcasts_v3');
+    localStorage.removeItem('hqx_podcasts_v4');
     localStorage.removeItem('hqx_engagements_v2');
     localStorage.removeItem('hqx_inquiries_v2');
     localStorage.removeItem('hqx_richtext_v2');
