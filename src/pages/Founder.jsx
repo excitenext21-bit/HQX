@@ -181,9 +181,9 @@ export default function Founder() {
             >
               <div className="relative w-full max-w-[480px] sm:max-w-[520px] lg:max-w-none h-[480px] sm:h-[580px] lg:h-[640px] xl:h-[700px] rounded-[32px] sm:rounded-[44px] overflow-hidden shadow-2xl bg-[#1C1D21] border border-black/10 group">
                 <img 
-                  src="/images/hero_showcase/manny_portrait_studio.jpg" 
-                  alt="Manny Anchan - Executive Studio Portrait" 
-                  className="w-full h-full object-cover object-center filter contrast-[1.03] group-hover:scale-102 transition-transform duration-700 ease-out" 
+                  src="/images/hero_showcase/manny_founder_yellow_glasses.jpg" 
+                  alt="Manny Anchan - Founder, Happiness Samurai" 
+                  className="w-full h-full object-cover object-top filter contrast-[1.03] group-hover:scale-102 transition-transform duration-700 ease-out" 
                 />
                 
                 {/* Subtle Luxury Inset Border */}
