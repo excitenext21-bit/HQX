@@ -77,6 +77,16 @@ export default function EngagingWorkshops() {
       expertName: 'Arjun Khanna',
       expertRole: 'Founder & CEO, IntegrityX.ai | 25+ Yrs Enterprise Leadership',
       expertImage: '/team/arjun-khanna.jpg'
+    },
+    {
+      id: 'w8',
+      title: 'Cognitive Reframing, Emotional Poise & Trauma-Informed Resilience',
+      duration: 'Half Day (3.5 Hours)',
+      target: 'Senior Executives, People Leaders & High-Stress Professional Teams',
+      summary: 'Evidence-based cognitive restructuring, nervous system stabilization, emotional agility in high-stakes negotiations, and clinical strategies to dismantle systemic burnout.',
+      expertName: 'Neha Dubey',
+      expertRole: 'Psychotherapist | Guy’s Hospital London Veteran & Regent’s Alumna',
+      expertImage: '/team/neha-dubey.jpg'
     }
   ];
 
@@ -321,7 +331,7 @@ export default function EngagingWorkshops() {
         <div className="w-full bg-[#0A0A0A]/95 text-white/80 py-3.5 sm:py-4 px-6 border-t border-white/10 overflow-hidden relative z-20">
           <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
             <div className="flex items-center gap-2">
-              <span className="text-hq-yellow font-bold">06</span>
+              <span className="text-hq-yellow font-bold">08</span>
               <span className="text-white/70">Interactive Corporate Masterclasses</span>
             </div>
             <span className="text-white/20 hidden md:inline">•</span>
