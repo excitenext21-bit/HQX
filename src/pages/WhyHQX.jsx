@@ -1051,34 +1051,34 @@ export default function WhyHQX() {
         </div>
       </section>
 
-      {/* STRATEGIC INSTITUTIONS & IMPACTED SECTORS - EXPANDED PROMINENT LOGO SHOWCASE (FULLY VISIBLE) */}
-      <section className="py-12 sm:py-16 bg-[#FAF8F5] border-b border-black/10 overflow-hidden relative">
+      {/* STRATEGIC INSTITUTIONS & IMPACTED SECTORS - EXPANDED PROMINENT LOGO SHOWCASE (BLACK BACKGROUND) */}
+      <section className="py-12 sm:py-16 bg-[#07080B] border-b border-white/10 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
-          <div className="bg-white rounded-2xl sm:rounded-3xl border border-black/10 py-6 sm:py-8 px-5 sm:px-8 shadow-[0_12px_40px_-10px_rgba(0,0,0,0.06)] overflow-hidden">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-black/10">
+          <div className="bg-[#111216] rounded-2xl sm:rounded-3xl border border-white/10 py-6 sm:py-8 px-5 sm:px-8 shadow-[0_12px_40px_-10px_rgba(0,0,0,0.5)] overflow-hidden">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-white/10">
               <div className="flex items-center gap-2.5">
                 <span className="w-3 h-3 rounded-full bg-[#FFCE00] inline-block animate-pulse shadow-xs" />
-                <h3 className="font-mono text-xs sm:text-sm font-bold tracking-[0.22em] text-[#0A0A0A] uppercase">
+                <h3 className="font-mono text-xs sm:text-sm font-bold tracking-[0.22em] text-white uppercase">
                   Strategic Institutions & Impacted Sectors
                 </h3>
               </div>
-              <span className="font-mono text-[11px] sm:text-xs text-[#555555] tracking-wider font-semibold">
+              <span className="font-mono text-[11px] sm:text-xs text-white/60 tracking-wider font-semibold">
                 Healthcare &bull; Pharma &bull; Defence &bull; Governance &bull; Central Banking &bull; Industry Apex
               </span>
             </div>
 
             {/* Infinite Scrolling Track */}
             <div className="relative w-full overflow-hidden group/marquee">
-              <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+              <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#111216] to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#111216] to-transparent z-10 pointer-events-none" />
 
               <div className="animate-marquee whitespace-nowrap inline-flex gap-5 sm:gap-7 items-center py-2 group-hover/marquee:[animation-play-state:paused]">
                 {[...IMPACTED_INSTITUTION_BADGES, ...IMPACTED_INSTITUTION_BADGES].map((badge, bIdx) => (
                   <div 
                     key={bIdx}
-                    className="inline-flex items-center gap-4 sm:gap-5 bg-[#FAF8F5] hover:bg-white border border-black/10 hover:border-black/30 rounded-2xl px-5 sm:px-6 py-3.5 sm:py-4 shadow-xs hover:shadow-md transition-all duration-300 group shrink-0"
+                    className="inline-flex items-center gap-4 sm:gap-5 bg-[#181920] hover:bg-[#20222B] border border-white/10 hover:border-hq-yellow/50 rounded-2xl px-5 sm:px-6 py-3.5 sm:py-4 shadow-sm hover:shadow-lg transition-all duration-300 group shrink-0"
                   >
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-white border border-black/5 flex items-center justify-center p-2.5 shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-white border border-white/10 flex items-center justify-center p-2.5 shrink-0 shadow-xs group-hover:scale-105 transition-transform">
                       <img 
                         src={badge.logo} 
                         alt={badge.name} 
@@ -1086,10 +1086,10 @@ export default function WhyHQX() {
                       />
                     </div>
                     <div className="flex flex-col text-left">
-                      <span className="font-display font-bold text-sm sm:text-base md:text-[17px] text-[#0A0A0A] tracking-tight leading-snug">
+                      <span className="font-display font-bold text-sm sm:text-base md:text-[17px] text-white tracking-tight leading-snug group-hover:text-hq-yellow transition-colors">
                         {badge.name}
                       </span>
-                      <span className="font-body text-xs sm:text-[13px] text-[#666666] font-medium leading-snug whitespace-nowrap mt-0.5">
+                      <span className="font-body text-xs sm:text-[13px] text-white/70 font-medium leading-snug whitespace-nowrap mt-0.5">
                         {badge.subtitle}
                       </span>
                     </div>
