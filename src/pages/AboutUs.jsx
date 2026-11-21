@@ -73,6 +73,177 @@ const CHAPTER_SHOWCASE = {
   }
 };
 
+function HeroAbstractLines() {
+  return (
+    <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 select-none">
+      {/* Dynamic Golden Ambient Aura positioned behind the curves */}
+      <motion.div
+        animate={{
+          opacity: [0.35, 0.65, 0.35],
+          scale: [0.95, 1.08, 0.95],
+          x: [-10, 15, -10],
+          y: [-8, 12, -8]
+        }}
+        transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute top-1/4 right-[10%] w-[580px] h-[580px] rounded-full bg-gradient-to-br from-hq-yellow/25 via-amber-500/15 to-transparent blur-[120px]"
+      />
+      
+      <motion.div
+        animate={{
+          opacity: [0.25, 0.5, 0.25],
+          scale: [1, 1.12, 1],
+          y: [10, -15, 10]
+        }}
+        transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute -bottom-10 left-[15%] w-[480px] h-[480px] rounded-full bg-gradient-to-tr from-hq-yellow/20 via-transparent to-transparent blur-[100px]"
+      />
+
+      {/* SVG Canvas for High-Resolution Smooth Animated Vector Curves */}
+      <svg
+        className="w-full h-full absolute inset-0"
+        viewBox="0 0 1440 900"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <defs>
+          <linearGradient id="heroGoldPrimary" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#FFCC00" stopOpacity="0.0" />
+            <stop offset="25%" stopColor="#FFCC00" stopOpacity="0.65" />
+            <stop offset="65%" stopColor="#FFE066" stopOpacity="0.85" />
+            <stop offset="100%" stopColor="#FFCC00" stopOpacity="0.1" />
+          </linearGradient>
+
+          <linearGradient id="heroGoldSecondary" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#F59E0B" stopOpacity="0.0" />
+            <stop offset="35%" stopColor="#FFCC00" stopOpacity="0.55" />
+            <stop offset="75%" stopColor="#FDE68A" stopOpacity="0.65" />
+            <stop offset="100%" stopColor="#FFCC00" stopOpacity="0.0" />
+          </linearGradient>
+
+          <linearGradient id="heroWhiteAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.0" />
+            <stop offset="40%" stopColor="#FFFFFF" stopOpacity="0.45" />
+            <stop offset="70%" stopColor="#FFFFFF" stopOpacity="0.25" />
+            <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.0" />
+          </linearGradient>
+
+          <filter id="heroGoldGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+        </defs>
+
+        {/* Group 1: Primary Sweeping S-Curves (Slow Floating Wave) */}
+        <motion.g
+          animate={{
+            y: [0, -18, 0],
+            x: [0, 10, 0],
+          }}
+          transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          {/* Main Hero Horizon Ribbon 1 */}
+          <path
+            d="M -100 780 C 220 720, 480 840, 820 620 C 1120 420, 1340 380, 1580 180"
+            stroke="url(#heroGoldPrimary)"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            filter="url(#heroGoldGlow)"
+          />
+
+          {/* Parallel Contour 2 */}
+          <path
+            d="M -80 740 C 240 680, 500 800, 840 580 C 1140 380, 1360 340, 1600 140"
+            stroke="url(#heroGoldSecondary)"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+          />
+
+          {/* Fine Dash Satellite Orbit Line */}
+          <path
+            d="M -60 700 C 260 640, 520 760, 860 540 C 1160 340, 1380 300, 1620 100"
+            stroke="url(#heroWhiteAccent)"
+            strokeWidth="1.2"
+            strokeDasharray="5 7"
+          />
+        </motion.g>
+
+        {/* Group 2: Counter-Flowing Arch & Topographical Resonance Waves */}
+        <motion.g
+          animate={{
+            y: [0, 22, 0],
+            x: [0, -12, 0],
+          }}
+          transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          {/* Deep Dynamic Arc Cutting Beneath Right Photo Pills */}
+          <path
+            d="M -50 480 C 320 540, 680 340, 1020 480 C 1260 580, 1420 520, 1600 390"
+            stroke="url(#heroGoldSecondary)"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          />
+
+          {/* Graceful Lower Echo Contour */}
+          <path
+            d="M -30 520 C 340 580, 700 380, 1040 520 C 1280 620, 1440 560, 1620 430"
+            stroke="url(#heroGoldPrimary)"
+            strokeWidth="1.4"
+            strokeLinecap="round"
+            strokeOpacity="0.75"
+          />
+
+          {/* Tertiary Delicate White Horizon Arc */}
+          <path
+            d="M -10 560 C 360 620, 720 420, 1060 560 C 1300 660, 1460 600, 1640 470"
+            stroke="url(#heroWhiteAccent)"
+            strokeWidth="1"
+            strokeDasharray="3 6"
+          />
+        </motion.g>
+
+        {/* Group 3: Kinetic Luminous Pulse Beam traversing along the line */}
+        <motion.path
+          d="M -100 780 C 220 720, 480 840, 820 620 C 1120 420, 1340 380, 1580 180"
+          stroke="#FFEA79"
+          strokeWidth="3.2"
+          strokeLinecap="round"
+          strokeDasharray="140 1200"
+          animate={{
+            strokeDashoffset: [0, -1340]
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: 'linear'
+          }}
+          filter="url(#heroGoldGlow)"
+          className="opacity-90"
+        />
+
+        {/* Kinetic Secondary White Shimmer Beam */}
+        <motion.path
+          d="M -50 480 C 320 540, 680 340, 1020 480 C 1260 580, 1420 520, 1600 390"
+          stroke="#FFFFFF"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeDasharray="100 1100"
+          animate={{
+            strokeDashoffset: [0, -1200]
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: 'linear',
+            delay: 1.5
+          }}
+          className="opacity-80"
+        />
+      </svg>
+    </div>
+  );
+}
+
 export default function AboutUs() {
   const [activeTab, setActiveTab] = useState('all');
   const [selectedConclave, setSelectedConclave] = useState(null);
@@ -205,9 +376,8 @@ export default function AboutUs() {
     <div className="min-h-screen bg-hq-white text-hq-black">
       {/* ARCHITECTURAL EDITORIAL HERO SECTION - BLACK SCREEN-FITTING LUXURY */}
       <section className="bg-[#0A0A0A] text-white min-h-[100svh] lg:h-screen lg:min-h-[660px] lg:max-h-[1080px] flex flex-col justify-between pt-24 sm:pt-28 pb-0 border-b border-white/10 relative overflow-hidden w-full">
-        {/* Subtle Ambient Glows */}
-        <div className="absolute inset-0 bg-radial-gradient from-hq-yellow/10 via-transparent to-transparent pointer-events-none opacity-40"></div>
-        <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-hq-yellow/5 rounded-full blur-[140px] pointer-events-none -mr-40"></div>
+        {/* Clearly Visible & Smoothly Animated Abstract Architectural Contour Waves */}
+        <HeroAbstractLines />
 
         {/* Left Side Vertical Text: ABOUT HQX (Matching Why HQX Hero Style) */}
         <div className="hidden lg:flex absolute left-3 sm:left-6 lg:left-8 xl:left-12 inset-y-0 z-20 flex-col justify-center items-center pointer-events-none select-none">
