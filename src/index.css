@@ -676,6 +676,16 @@ html.dark main :is(input, textarea, select) {
   font-size: 15px !important;
 }
 
+/* Hero bottom docked ticker / stats strip with data: explicitly 13px */
+.hero-docked-strip,
+.hero-docked-strip *,
+.hero-docked-strip span,
+.hero-docked-strip a,
+.hero-docked-strip div,
+.hero-docked-strip p {
+  font-size: 13px !important;
+}
+
 /* 7. Stadium Tunnel & Left-Corner-to-Top Yellow Buffering Animations */
 @keyframes stadiumBufferGlow {
   0% {

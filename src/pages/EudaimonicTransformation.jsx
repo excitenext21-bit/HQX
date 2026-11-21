@@ -366,8 +366,8 @@ export default function EudaimonicTransformation() {
         </div>
 
         {/* DOCKED 4 ENTERPRISE LEVERS STRIP (INSIDE HERO SECTION, FIT TO SCREEN AT BOTTOM LIKE FOUNDER HERO) */}
-        <div className="w-full bg-[#0A0A0A] text-white/80 py-3 sm:py-3.5 border-t border-white/10 overflow-hidden relative z-20 mt-auto">
-          <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-4">
+        <div className="w-full bg-[#0A0A0A] text-white/80 py-3 sm:py-3.5 border-t border-white/10 overflow-hidden relative z-20 mt-auto hero-docked-strip">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-4 text-[13px]">
 
             {/* Engagement */}
             <div className="flex flex-col gap-0.5 max-w-[270px]">

@@ -508,9 +508,9 @@ export default function WhyHQX() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full bg-[#0A0A0A]/95 backdrop-blur-md text-white/80 py-3.5 sm:py-4 border-t border-white/10 overflow-hidden relative z-20"
+          className="w-full bg-[#0A0A0A]/95 backdrop-blur-md text-white/80 py-3.5 sm:py-4 border-t border-white/10 overflow-hidden relative z-20 hero-docked-strip"
         >
-          <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-[13px] font-mono uppercase tracking-widest">
             <div className="flex items-center gap-2">
               <span className="text-hq-yellow font-bold">+31%</span>
               <span className="text-white/70">Productivity Lift</span>

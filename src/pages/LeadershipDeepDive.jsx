@@ -521,8 +521,8 @@ export default function LeadershipDeepDive() {
         </div>
 
         {/* DOCKED STATS & REPUTATION STRIP (MATCHING PURE BLACK HERO BG) */}
-        <div className="w-full bg-black/95 text-white/80 py-3.5 sm:py-4 px-6 border-t border-white/10 overflow-hidden relative z-20">
-          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
+        <div className="w-full bg-black/95 text-white/80 py-3.5 sm:py-4 px-6 border-t border-white/10 overflow-hidden relative z-20 hero-docked-strip">
+          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-[13px] font-mono uppercase tracking-widest">
             <div className="flex items-center gap-2">
               <span className="text-hq-yellow font-bold">25+</span>
               <span className="text-white/70">Years Boardroom Leadership</span>

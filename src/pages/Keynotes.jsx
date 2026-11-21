@@ -232,8 +232,8 @@ export default function Keynotes() {
         </ConferenceStage3D>
 
         {/* DOCKED STATS & REPUTATION STRIP (MATCHING ABOUT US & WORKSHOPS HERO) */}
-        <div className="relative lg:absolute lg:bottom-0 inset-x-0 w-full bg-[#0A0A0A]/95 text-white/80 py-3 sm:py-3.5 px-6 border-t border-white/10 overflow-hidden z-20">
-          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-[15px] sm:text-xs font-mono uppercase tracking-widest">
+        <div className="relative lg:absolute lg:bottom-0 inset-x-0 w-full bg-[#0A0A0A]/95 text-white/80 py-3 sm:py-3.5 px-6 border-t border-white/10 overflow-hidden z-20 hero-docked-strip">
+          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-[13px] font-mono uppercase tracking-widest">
             <div className="flex items-center gap-2">
               <span className="text-hq-yellow font-bold">04</span>
               <span className="text-white/75">Signature Keynote Frameworks</span>

@@ -328,8 +328,8 @@ export default function EngagingWorkshops() {
         </div>
 
         {/* DOCKED STATS & REPUTATION STRIP (MATCHING ABOUT US HERO SECTION) */}
-        <div className="w-full bg-[#0A0A0A]/95 text-white/80 py-3.5 sm:py-4 px-6 border-t border-white/10 overflow-hidden relative z-20">
-          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
+        <div className="w-full bg-[#0A0A0A]/95 text-white/80 py-3.5 sm:py-4 px-6 border-t border-white/10 overflow-hidden relative z-20 hero-docked-strip">
+          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-[13px] font-mono uppercase tracking-widest">
             <div className="flex items-center gap-2">
               <span className="text-hq-yellow font-bold">08</span>
               <span className="text-white/70">Interactive Corporate Masterclasses</span>

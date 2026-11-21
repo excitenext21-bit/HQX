@@ -112,8 +112,8 @@ export default function Contact() {
         </div>
 
         {/* DOCKED PRIORITY DESK STRIP (MATCHING ABOUT US HERO SECTION) */}
-        <div className="w-full bg-[#0A0A0A]/95 text-white/80 py-3.5 sm:py-4 px-6 border-t border-white/10 overflow-hidden relative z-20">
-          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs font-mono uppercase tracking-widest">
+        <div className="w-full bg-[#0A0A0A]/95 text-white/80 py-3.5 sm:py-4 px-6 border-t border-white/10 overflow-hidden relative z-20 hero-docked-strip">
+          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-[13px] font-mono uppercase tracking-widest">
             <a href="tel:+919700100800" className="flex items-center gap-2 hover:text-hq-yellow transition-colors">
               <span className="text-hq-yellow font-bold">PRIORITY DESK</span>
               <span className="text-white/80">+91 97001 00800</span>
