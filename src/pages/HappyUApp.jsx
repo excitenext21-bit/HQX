@@ -381,6 +381,25 @@ export default function HappyUApp() {
                       </div>
                     </div>
                   </a>
+
+                  {/* Editable PDF Download Button */}
+                  <a
+                    href="/HappyU-App-HQX-Editable-Brochure.pdf"
+                    download="HappyU-App-HQX-Editable-Brochure.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-3.5 bg-[#FFCD00] text-[#0A0A0A] hover:bg-white transition-all duration-300 px-5 py-3.5 rounded-2xl shadow-xl border border-[#FFCD00]"
+                  >
+                    <Download className="w-6 h-6 text-[#0A0A0A] shrink-0 group-hover:scale-110 transition-transform" />
+                    <div className="text-left">
+                      <div className="text-[10px] font-mono uppercase tracking-wider leading-none opacity-80">
+                        Interactive Spec
+                      </div>
+                      <div className="font-display text-base sm:text-lg font-bold leading-tight tracking-tight">
+                        Editable PDF
+                      </div>
+                    </div>
+                  </a>
                 </div>
 
                 {storeNotice && (
@@ -952,6 +971,24 @@ export default function HappyUApp() {
                     </div>
                     <div className="font-display text-sm sm:text-base font-bold leading-none tracking-tight">
                       Google Play
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="/HappyU-App-HQX-Editable-Brochure.pdf"
+                  download="HappyU-App-HQX-Editable-Brochure.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-3 bg-[#0A0A0A] text-white hover:bg-white hover:text-[#0A0A0A] transition-all duration-300 px-5 py-3 rounded-xl shadow-lg border border-black/30"
+                >
+                  <Download className="w-5 h-5 text-hq-yellow group-hover:text-black shrink-0 group-hover:scale-110 transition-transform" />
+                  <div className="text-left">
+                    <div className="text-[10px] font-body text-white/65 group-hover:text-black/65 leading-none mb-1">
+                      Enterprise Spec
+                    </div>
+                    <div className="font-display text-sm sm:text-base font-bold leading-none tracking-tight">
+                      Editable PDF
                     </div>
                   </div>
                 </a>

@@ -757,3 +757,32 @@ html.dark main :is(input, textarea, select) {
 .newsprint-card a {
   color: #111111 !important;
 }
+
+/* 10. High-Fidelity Print & PDF Styles */
+@media print {
+  /* Hide fixed navigation, sticky connect drawer, modals, background blur overlays */
+  nav, header, footer, aside, .connect-drawer, #connect-drawer, [aria-label="Connect with HQX"], .fixed.inset-y-0.right-0 {
+    display: none !important;
+  }
+
+  body, html {
+    background: #0A0A0A !important;
+    color: #FFFFFF !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Unravel horizontal carousels into a clean printable grid */
+  .animate-marquee, [class*="animate-marquee"] {
+    animation: none !important;
+    transform: none !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
