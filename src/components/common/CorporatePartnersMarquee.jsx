@@ -154,7 +154,7 @@ export default function CorporatePartnersMarquee({
                 {title}
               </span>
             </div>
-            <div className={`text-[11px] font-mono tracking-wider font-semibold ${
+            <div className={`text-[15px] font-mono tracking-wider font-semibold ${
               reversed ? 'text-[#0A0A0A]/80' : 'text-white/60'
             }`}>
               Active across 16 Indian States & 9 Global Nations

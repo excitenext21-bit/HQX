@@ -321,7 +321,7 @@ export default function GlobalFootprintMapSection() {
                           whileHover={{ scale: 1.08 }}
                         >
                           <span className="text-xs sm:text-sm leading-none">{hub.flag}</span>
-                          <span className="text-[11px] sm:text-[12px] font-display font-semibold tracking-tight text-[#0A0A0A] hover:text-inherit">
+                          <span className="text-[15px] sm:text-[15px] font-display font-semibold tracking-tight text-[#0A0A0A] hover:text-inherit">
                             {hub.name}
                           </span>
                           {isIndia && (
@@ -354,7 +354,7 @@ export default function GlobalFootprintMapSection() {
                                   </div>
                                 </div>
                               </div>
-                              <p className="font-body text-[11px] text-white/70 font-light leading-relaxed mb-2">
+                              <p className="font-body text-[15px] text-white/70 font-light leading-relaxed mb-2">
                                 {hub.desc}
                               </p>
                               <div className="text-[10px] font-mono text-white/50 pt-1.5 border-t border-white/10">
@@ -416,7 +416,7 @@ export default function GlobalFootprintMapSection() {
                 </div>
 
                 <div className="absolute top-2 right-2 z-30 hidden sm:block">
-                  <div className="px-3.5 py-1.5 rounded-full bg-[#1E1A17] text-white shadow-md text-[11px] font-mono flex items-center gap-2">
+                  <div className="px-3.5 py-1.5 rounded-full bg-[#1E1A17] text-white shadow-md text-[15px] font-mono flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-hq-yellow animate-pulse" />
                     <span>16 States Active</span>
                   </div>
@@ -511,7 +511,7 @@ export default function GlobalFootprintMapSection() {
                                 <div className="text-[9px] font-mono uppercase tracking-wider text-white/40 mb-0.5">
                                   What Was Organized:
                                 </div>
-                                <p className="font-body text-[11px] text-white/80 font-normal leading-relaxed">
+                                <p className="font-body text-[15px] text-white/80 font-normal leading-relaxed">
                                   {state.programs}
                                 </p>
                               </div>

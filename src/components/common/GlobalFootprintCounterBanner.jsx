@@ -200,22 +200,22 @@ export default function GlobalFootprintCounterBanner() {
           <div className="grid grid-cols-2 gap-4 py-4 mb-6 border-t border-b border-white/10 max-w-sm">
             <div>
               <div className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">9</div>
-              <div className="text-[11px] font-mono text-hq-yellow uppercase tracking-wider font-semibold mt-0.5">Nations</div>
+              <div className="text-[15px] font-mono text-hq-yellow uppercase tracking-wider font-semibold mt-0.5">Nations</div>
               <div className="text-[10px] text-white/45 truncate mt-0.5">Global Footprint</div>
             </div>
             <div>
               <div className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">16</div>
-              <div className="text-[11px] font-mono text-hq-yellow uppercase tracking-wider font-semibold mt-0.5">States</div>
+              <div className="text-[15px] font-mono text-hq-yellow uppercase tracking-wider font-semibold mt-0.5">States</div>
               <div className="text-[10px] text-white/45 truncate mt-0.5">Pan-India Reach</div>
             </div>
             <div>
               <div className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">40+</div>
-              <div className="text-[11px] font-mono text-hq-yellow uppercase tracking-wider font-semibold mt-0.5">Titans</div>
+              <div className="text-[15px] font-mono text-hq-yellow uppercase tracking-wider font-semibold mt-0.5">Titans</div>
               <div className="text-[10px] text-white/45 truncate mt-0.5">Enterprise Conclaves</div>
             </div>
             <div>
               <div className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">100k+</div>
-              <div className="text-[11px] font-mono text-hq-yellow uppercase tracking-wider font-semibold mt-0.5">Leaders</div>
+              <div className="text-[15px] font-mono text-hq-yellow uppercase tracking-wider font-semibold mt-0.5">Leaders</div>
               <div className="text-[10px] text-white/45 truncate mt-0.5">Energized Worldwide</div>
             </div>
           </div>
@@ -278,7 +278,7 @@ export default function GlobalFootprintCounterBanner() {
                 </div>
 
                 {/* Third text: Faculty Badge without bg or border */}
-                <div className="mt-2.5 text-xs sm:text-[13px] font-mono text-white/60 tracking-wider">
+                <div className="mt-2.5 text-xs sm:text-[15px] font-mono text-white/60 tracking-wider">
                   <span>{currentFocalMember.badge}</span>
                 </div>
 

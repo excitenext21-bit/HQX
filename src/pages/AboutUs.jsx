@@ -215,7 +215,7 @@ export default function AboutUs() {
             className="flex items-center gap-3 sm:gap-4"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
           >
-            <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
+            <span className="font-display text-[15px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
               ABOUT HQX
             </span>
             <span className="w-px h-8 sm:h-14 bg-white/25"></span>
@@ -654,7 +654,7 @@ export default function AboutUs() {
                       {item.desc}
                     </p>
 
-                    <div className="flex items-center gap-2 text-[11px] font-mono text-hq-yellow mt-2.5">
+                    <div className="flex items-center gap-2 text-[15px] font-mono text-hq-yellow mt-2.5">
                       <MapPin className="w-3 h-3 text-hq-yellow shrink-0" />
                       <span>{item.location}</span>
                       <span className="text-white/40">•</span>
@@ -706,7 +706,7 @@ export default function AboutUs() {
               {/* Header Badges */}
               <div className="absolute bottom-3.5 left-5 right-5 flex items-center justify-between">
                 {selectedConclave.tag ? (
-                  <span className="px-3 py-1 rounded-full bg-hq-yellow text-hq-black font-mono text-[10px] sm:text-[11px] font-bold tracking-wider uppercase shadow-md">
+                  <span className="px-3 py-1 rounded-full bg-hq-yellow text-hq-black font-mono text-[10px] sm:text-[15px] font-bold tracking-wider uppercase shadow-md">
                     {selectedConclave.tag}
                   </span>
                 ) : (
@@ -764,7 +764,7 @@ export default function AboutUs() {
 
             {/* Modal Footer CTA */}
             <div className="p-4 sm:p-5 border-t border-white/10 bg-[#0F1015] shrink-0 flex flex-col sm:flex-row items-center justify-between gap-3">
-              <div className="text-[11px] sm:text-xs text-white/60 text-center sm:text-left">
+              <div className="text-[15px] sm:text-xs text-white/60 text-center sm:text-left">
                 Looking to host a bespoke executive offsite or keynote?
               </div>
               <div className="flex items-center gap-2.5 w-full sm:w-auto">
@@ -842,10 +842,10 @@ export default function AboutUs() {
                     <img src="/books/4.jpg" alt="Happiness Samurai" className="w-full h-full object-cover" />
                   </div>
                   <div className="min-w-0">
-                    <div className="font-mono text-xs sm:text-[13px] font-bold text-white tracking-wider group-hover:text-hq-yellow transition-colors truncate">
+                    <div className="font-mono text-xs sm:text-[15px] font-bold text-white tracking-wider group-hover:text-hq-yellow transition-colors truncate">
                       HAPPINESS SAMURAI
                     </div>
-                    <div className="font-mono text-[11px] text-white/60 truncate">
+                    <div className="font-mono text-[15px] text-white/60 truncate">
                       Foreword by John Abraham
                     </div>
                   </div>
@@ -860,10 +860,10 @@ export default function AboutUs() {
                     <img src="/books/1.jpg" alt="The Ikigai Code" className="w-full h-full object-cover" />
                   </div>
                   <div className="min-w-0">
-                    <div className="font-mono text-xs sm:text-[13px] font-semibold text-white/80 tracking-wider group-hover:text-white transition-colors truncate">
+                    <div className="font-mono text-xs sm:text-[15px] font-semibold text-white/80 tracking-wider group-hover:text-white transition-colors truncate">
                       THE IKIGAI CODE
                     </div>
-                    <div className="font-mono text-[11px] text-white/50 truncate">
+                    <div className="font-mono text-[15px] text-white/50 truncate">
                       National Bestseller
                     </div>
                   </div>
@@ -878,10 +878,10 @@ export default function AboutUs() {
                     <img src="/books/2.jpg" alt="Eudaimonia Leadership" className="w-full h-full object-cover" />
                   </div>
                   <div className="min-w-0">
-                    <div className="font-mono text-xs sm:text-[13px] font-semibold text-white/80 tracking-wider group-hover:text-white transition-colors truncate">
+                    <div className="font-mono text-xs sm:text-[15px] font-semibold text-white/80 tracking-wider group-hover:text-white transition-colors truncate">
                       GROSS HAPPINESS
                     </div>
-                    <div className="font-mono text-[11px] text-white/50 truncate">
+                    <div className="font-mono text-[15px] text-white/50 truncate">
                       Executive Framework
                     </div>
                   </div>

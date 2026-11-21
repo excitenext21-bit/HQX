@@ -177,7 +177,7 @@ export default function Keynotes() {
             className="flex items-center gap-3 sm:gap-4"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
           >
-            <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
+            <span className="font-display text-[15px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
               KEYNOTES &amp; TALKS
             </span>
             <span className="w-px h-8 sm:h-14 bg-white/25" />
@@ -233,7 +233,7 @@ export default function Keynotes() {
 
         {/* DOCKED STATS & REPUTATION STRIP (MATCHING ABOUT US & WORKSHOPS HERO) */}
         <div className="relative lg:absolute lg:bottom-0 inset-x-0 w-full bg-[#0A0A0A]/95 text-white/80 py-3 sm:py-3.5 px-6 border-t border-white/10 overflow-hidden z-20">
-          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-[11px] sm:text-xs font-mono uppercase tracking-widest">
+          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 sm:gap-4 text-[15px] sm:text-xs font-mono uppercase tracking-widest">
             <div className="flex items-center gap-2">
               <span className="text-hq-yellow font-bold">04</span>
               <span className="text-white/75">Signature Keynote Frameworks</span>
@@ -470,7 +470,7 @@ export default function Keynotes() {
                     </p>
 
                     <div className="mt-auto">
-                      <span className="inline-block text-[11px] font-mono font-semibold px-3.5 py-1.5 rounded-full bg-hq-yellow text-[#0A0A0A]">
+                      <span className="inline-block text-[15px] font-mono font-semibold px-3.5 py-1.5 rounded-full bg-hq-yellow text-[#0A0A0A]">
                         {t.duration}
                       </span>
                     </div>
@@ -514,7 +514,7 @@ export default function Keynotes() {
                 <span className="font-display text-xs uppercase tracking-[0.22em] text-hq-yellow font-bold">
                   Engage &amp; Inspire
                 </span>
-                <span className="text-[11px] font-mono uppercase tracking-wider px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-white border border-white/20">
+                <span className="text-[15px] font-mono uppercase tracking-wider px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-white border border-white/20">
                   {activeEvent.category}
                 </span>
               </div>
@@ -705,7 +705,7 @@ export default function Keynotes() {
                       <ChevronRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
-                  <span className="text-[11px] font-mono text-[#0A0A0A]/45">
+                  <span className="text-[15px] font-mono text-[#0A0A0A]/45">
                     Click any thumbnail to enlarge
                   </span>
                 </div>

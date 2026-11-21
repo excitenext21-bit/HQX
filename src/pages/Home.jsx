@@ -1046,7 +1046,7 @@ export default function Home() {
                   <span className="hidden lg:inline-block group-hover:translate-x-1.5 transition-transform text-lg">
                     <LongArrow />
                   </span>
-                  <span className="lg:hidden inline-flex items-center gap-1.5 text-[11px] text-hq-black/60 dark:text-white/60">
+                  <span className="lg:hidden inline-flex items-center gap-1.5 text-[15px] text-hq-black/60 dark:text-white/60">
                     <span className="w-1.5 h-1.5 rounded-full bg-hq-yellow inline-block"></span>
                     Verified Metric
                   </span>
@@ -1260,7 +1260,7 @@ export default function Home() {
                       <span className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-tight text-hq-yellow leading-none mt-1">
                         Themes
                       </span>
-                      <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-hq-black/50 dark:text-white/50 mt-2 font-semibold">
+                      <span className="font-mono text-[15px] uppercase tracking-[0.2em] text-hq-black/50 dark:text-white/50 mt-2 font-semibold">
                         Systemic Well-Being
                       </span>
                     </div>
@@ -1518,7 +1518,7 @@ export default function Home() {
                   <div className="text-[16px] font-body text-white/70 font-light leading-snug mb-1 line-clamp-2">
                     {member.title}
                   </div>
-                  <div className="text-[10px] sm:text-[11px] font-mono text-hq-yellow uppercase tracking-wider mb-3 line-clamp-1">
+                  <div className="text-[10px] sm:text-[15px] font-mono text-hq-yellow uppercase tracking-wider mb-3 line-clamp-1">
                     {member.areaExpertise || member.category}
                   </div>
                   
@@ -1570,7 +1570,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Column: 2 Parallel Columns of Benefits (Normal Case, Font Weight 400, +20% font size 19.2px, 20px x 1.5px Line Bullet) */}
+            {/* Right Column: 2 Parallel Columns of Benefits (Bold, +20% font size 19.2px, 20px x 2.5px Line Bullet) */}
             <div className="lg:col-span-7">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5 sm:gap-y-6">
                 
@@ -1579,10 +1579,10 @@ export default function Home() {
                   {engagementBenefits.slice(0, 5).map((benefit, idx) => (
                     <div 
                       key={idx}
-                      className="group flex items-center gap-3.5 cursor-default  py-1 sm:py-1.5"
+                      className="group flex items-center gap-3.5 cursor-default py-1 sm:py-1.5"
                     >
-                      <span className="w-[20px] h-[1.5px] bg-hq-yellow shrink-0 group-hover:w-[26px] transition-all duration-200 rounded-full" />
-                      <span className="font-body text-[19.2px] font-[400] text-hq-black/85 dark:text-white/85 group-hover:text-hq-black dark:group-hover:text-white transition-colors leading-normal">
+                      <span className="w-[20px] h-[2.5px] bg-hq-yellow shrink-0 group-hover:w-[26px] transition-all duration-200 rounded-full" />
+                      <span className="font-body text-[19.2px] font-bold text-hq-black dark:text-white group-hover:text-hq-yellow dark:group-hover:text-hq-yellow transition-colors leading-normal">
                         {benefit}
                       </span>
                     </div>
@@ -1594,10 +1594,10 @@ export default function Home() {
                   {engagementBenefits.slice(5, 10).map((benefit, idx) => (
                     <div 
                       key={idx}
-                      className="group flex items-center gap-3.5 cursor-default  py-1 sm:py-1.5"
+                      className="group flex items-center gap-3.5 cursor-default py-1 sm:py-1.5"
                     >
-                      <span className="w-[20px] h-[1.5px] bg-hq-yellow shrink-0 group-hover:w-[26px] transition-all duration-200 rounded-full" />
-                      <span className="font-body text-[19.2px] font-[400] text-hq-black/85 dark:text-white/85 group-hover:text-hq-black dark:group-hover:text-white transition-colors leading-normal">
+                      <span className="w-[20px] h-[2.5px] bg-hq-yellow shrink-0 group-hover:w-[26px] transition-all duration-200 rounded-full" />
+                      <span className="font-body text-[19.2px] font-bold text-hq-black dark:text-white group-hover:text-hq-yellow dark:group-hover:text-hq-yellow transition-colors leading-normal">
                         {benefit}
                       </span>
                     </div>
@@ -1635,7 +1635,7 @@ export default function Home() {
                   <div className="font-display text-2xl sm:text-3xl font-bold text-white mb-0.5">
                     16
                   </div>
-                  <div className="font-mono text-[11px] uppercase tracking-wider text-hq-yellow font-medium">
+                  <div className="font-mono text-[15px] uppercase tracking-wider text-hq-yellow font-medium">
                     Indian States
                   </div>
                 </div>
@@ -1643,7 +1643,7 @@ export default function Home() {
                   <div className="font-display text-2xl sm:text-3xl font-bold text-white mb-0.5">
                     9+
                   </div>
-                  <div className="font-mono text-[11px] uppercase tracking-wider text-hq-yellow font-medium">
+                  <div className="font-mono text-[15px] uppercase tracking-wider text-hq-yellow font-medium">
                     Global Hubs
                   </div>
                 </div>
@@ -1682,7 +1682,7 @@ export default function Home() {
                   Strategic Institutions & Impacted Sectors
                 </h3>
               </div>
-              <span className="font-mono text-[11px] sm:text-xs text-white/60 tracking-wider font-semibold">
+              <span className="font-mono text-[15px] sm:text-xs text-white/60 tracking-wider font-semibold">
                 Healthcare &bull; Pharma &bull; Defence &bull; Governance &bull; Central Banking &bull; Industry Apex
               </span>
             </div>
@@ -1709,7 +1709,7 @@ export default function Home() {
                       <span className="font-display font-bold text-sm sm:text-base md:text-[17px] text-white tracking-tight leading-snug group-hover:text-hq-yellow transition-colors">
                         {badge.name}
                       </span>
-                      <span className="font-body text-xs sm:text-[13px] text-white/70 font-medium leading-snug whitespace-nowrap mt-0.5">
+                      <span className="font-body text-xs sm:text-[15px] text-white/70 font-medium leading-snug whitespace-nowrap mt-0.5">
                         {badge.subtitle}
                       </span>
                     </div>
@@ -1735,7 +1735,7 @@ export default function Home() {
                   Strategic Institutions & Impacted Sectors
                 </h3>
               </div>
-              <span className="font-mono text-[11px] sm:text-xs text-white/60 tracking-wider font-semibold">
+              <span className="font-mono text-[15px] sm:text-xs text-white/60 tracking-wider font-semibold">
                 Healthcare &bull; Pharma &bull; Defence &bull; Governance &bull; Central Banking &bull; Industry Apex
               </span>
             </div>
@@ -1762,7 +1762,7 @@ export default function Home() {
                       <span className="font-display font-bold text-sm sm:text-base md:text-[17px] text-white tracking-tight leading-snug group-hover:text-hq-yellow transition-colors">
                         {badge.name}
                       </span>
-                      <span className="font-body text-xs sm:text-[13px] text-white/70 font-medium leading-snug whitespace-nowrap mt-0.5">
+                      <span className="font-body text-xs sm:text-[15px] text-white/70 font-medium leading-snug whitespace-nowrap mt-0.5">
                         {badge.subtitle}
                       </span>
                     </div>
@@ -1818,7 +1818,7 @@ export default function Home() {
               {activePodcast && (
                 <div className="p-6 bg-white dark:bg-white/[0.03] border border-hq-black/10 dark:border-white/10 rounded-2xl shadow-sm transition-all duration-300">
                   <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
-                    <span className="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-hq-yellow font-bold bg-hq-black px-2.5 py-1 rounded">
+                    <span className="inline-flex items-center gap-1.5 text-[15px] font-mono uppercase tracking-wider text-hq-yellow font-bold bg-hq-black px-2.5 py-1 rounded">
                       <Radio className="w-3 h-3 text-hq-yellow" />
                       <span>{activePodcast.category || 'Featured Episode'}</span>
                     </span>
@@ -1996,7 +1996,7 @@ export default function Home() {
                         loading="lazy"
                       />
                       {/* Year Badge */}
-                      <span className={`absolute top-2 left-2 text-[10px] sm:text-[11px] font-display font-bold px-2.5 py-0.5 rounded-full shadow-md ${
+                      <span className={`absolute top-2 left-2 text-[10px] sm:text-[15px] font-display font-bold px-2.5 py-0.5 rounded-full shadow-md ${
                         isLatest ? 'bg-hq-yellow text-hq-black' : 'bg-black/75 backdrop-blur-sm text-hq-yellow border border-hq-yellow/30'
                       }`}>
                         {b.year}
@@ -2006,14 +2006,14 @@ export default function Home() {
                     <h3 className="font-display text-sm sm:text-base font-bold leading-tight mb-1 text-white group-hover:text-hq-yellow transition-colors line-clamp-1">
                       {b.title}
                     </h3>
-                    <p className="font-body text-[11px] font-light leading-relaxed mb-3 line-clamp-2 text-white/60 group-hover:text-white/80 transition-colors">
+                    <p className="font-body text-[15px] font-light leading-relaxed mb-3 line-clamp-2 text-white/60 group-hover:text-white/80 transition-colors">
                       {b.subtitle}
                     </p>
                   </div>
 
                   <Link 
                     to="/books" 
-                    className="text-[10px] sm:text-[11px] font-display uppercase font-bold tracking-wider pt-2 border-t border-white/10 inline-flex items-center gap-2 group/bk text-white/70 group-hover:text-hq-yellow transition-colors"
+                    className="text-[10px] sm:text-[15px] font-display uppercase font-bold tracking-wider pt-2 border-t border-white/10 inline-flex items-center gap-2 group/bk text-white/70 group-hover:text-hq-yellow transition-colors"
                   >
                     <span>View Details</span>
                     <LongArrow className="group-hover/bk:translate-x-1" />
@@ -2061,7 +2061,7 @@ export default function Home() {
                     {selectedTeamMember.category}
                   </span>
                   {selectedTeamMember.areaExpertise && (
-                    <span className="text-[11px] font-mono text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-full font-semibold">
+                    <span className="text-[15px] font-mono text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-full font-semibold">
                       {selectedTeamMember.areaExpertise}
                     </span>
                   )}

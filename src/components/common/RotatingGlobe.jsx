@@ -625,7 +625,7 @@ export default function RotatingGlobe({ className = '', heightClass = '' }) {
             </div>
 
             {/* Scope / Impact Detail */}
-            <div className="pt-2.5 border-t border-white/10 text-[11px] font-body text-white/70 italic">
+            <div className="pt-2.5 border-t border-white/10 text-[15px] font-body text-white/70 italic">
               "{hoveredLocation.scope}"
             </div>
           </div>

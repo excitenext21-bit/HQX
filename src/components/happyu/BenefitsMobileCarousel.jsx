@@ -448,7 +448,7 @@ function MorphingBenefitSlot({
                 <h3 className="font-display text-[22px] sm:text-[24px] font-bold text-white leading-[1.15] tracking-tight mb-2">
                   {benefit.title}
                 </h3>
-                <p className="font-body text-[13px] sm:text-sm text-white/90 font-normal leading-relaxed">
+                <p className="font-body text-[15px] sm:text-sm text-white/90 font-normal leading-relaxed">
                   {benefit.desc}
                 </p>
               </div>

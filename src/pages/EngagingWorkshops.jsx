@@ -114,7 +114,7 @@ export default function EngagingWorkshops() {
             className="flex items-center gap-3 sm:gap-4"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
           >
-            <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
+            <span className="font-display text-[15px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
               ENGAGING WORKSHOPS
             </span>
             <span className="w-px h-8 sm:h-14 bg-white/25" />
@@ -311,7 +311,7 @@ export default function EngagingWorkshops() {
                       isLightOn ? 'text-hq-yellow' : 'text-white/45'
                     }`}
                   />
-                  <span className="font-mono text-[11px] uppercase tracking-widest font-semibold">
+                  <span className="font-mono text-[15px] uppercase tracking-widest font-semibold">
                     Light {isLightOn ? 'On' : 'Off'}
                   </span>
                   <span
@@ -441,7 +441,7 @@ export default function EngagingWorkshops() {
                       <div className="font-display text-xl sm:text-2xl font-bold leading-snug mb-1">
                         {workshops[hoveredWorkshop].expertName}
                       </div>
-                      <div className="text-[11px] font-mono text-hq-yellow/90 mb-2">
+                      <div className="text-[15px] font-mono text-hq-yellow/90 mb-2">
                         {workshops[hoveredWorkshop].expertRole}
                       </div>
                       <p className="font-body text-xs sm:text-sm text-white/80 font-light line-clamp-2 mb-4">
@@ -450,7 +450,7 @@ export default function EngagingWorkshops() {
                       <div className="flex flex-wrap items-center gap-3">
                         <Link
                           to="/contact"
-                          className="inline-flex items-center gap-2 bg-hq-yellow text-hq-black font-display text-[11px] uppercase tracking-widest px-5 py-2.5 rounded-full hover:bg-white transition-colors font-semibold"
+                          className="inline-flex items-center gap-2 bg-hq-yellow text-hq-black font-display text-[15px] uppercase tracking-widest px-5 py-2.5 rounded-full hover:bg-white transition-colors font-semibold"
                         >
                           <span>Inquire Workshop</span>
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -477,7 +477,7 @@ export default function EngagingWorkshops() {
             <div className="text-left md:pr-8 flex items-start gap-4 group">
               <Target className="w-8 h-8 text-white/80 group-hover:text-hq-yellow shrink-0 stroke-[1.2] mt-0.5 transition-colors" />
               <div>
-                <h3 className="font-display text-xs sm:text-[13px] font-bold uppercase tracking-wider text-white mb-1.5 group-hover:text-hq-yellow transition-colors">
+                <h3 className="font-display text-xs sm:text-[15px] font-bold uppercase tracking-wider text-white mb-1.5 group-hover:text-hq-yellow transition-colors">
                   PRODUCTIVITY FOCUSED
                 </h3>
                 <p className="font-body text-xs text-white/55 font-light leading-relaxed">
@@ -490,7 +490,7 @@ export default function EngagingWorkshops() {
             <div className="text-left md:px-8 flex items-start gap-4 group">
               <Heart className="w-8 h-8 text-white/80 group-hover:text-hq-yellow shrink-0 stroke-[1.2] mt-0.5 transition-colors" />
               <div>
-                <h3 className="font-display text-xs sm:text-[13px] font-bold uppercase tracking-wider text-white mb-1.5 group-hover:text-hq-yellow transition-colors">
+                <h3 className="font-display text-xs sm:text-[15px] font-bold uppercase tracking-wider text-white mb-1.5 group-hover:text-hq-yellow transition-colors">
                   HOLISTIC WELL-BEING TOOLKIT
                 </h3>
                 <p className="font-body text-xs text-white/55 font-light leading-relaxed">
@@ -503,7 +503,7 @@ export default function EngagingWorkshops() {
             <div className="text-left md:pl-8 flex items-start gap-4 group">
               <Zap className="w-8 h-8 text-white/80 group-hover:text-hq-yellow shrink-0 stroke-[1.2] mt-0.5 transition-colors" />
               <div>
-                <h3 className="font-display text-xs sm:text-[13px] font-bold uppercase tracking-wider text-white mb-1.5 group-hover:text-hq-yellow transition-colors">
+                <h3 className="font-display text-xs sm:text-[15px] font-bold uppercase tracking-wider text-white mb-1.5 group-hover:text-hq-yellow transition-colors">
                   ACTIONABLE STRATEGIES
                 </h3>
                 <p className="font-body text-xs text-white/55 font-light leading-relaxed">
@@ -601,7 +601,7 @@ export default function EngagingWorkshops() {
 
             {/* Center Column: Tall Framed Workshop Showcase Card */}
             <div className="lg:col-span-4 bg-[#1D1E20] border border-white/[0.06] rounded-2xl p-4 sm:p-5 flex flex-col justify-between min-h-[380px] lg:min-h-0">
-              <div className="text-[11px] font-mono uppercase tracking-[0.18em] text-white/40 mb-3 px-1 flex items-center justify-between">
+              <div className="text-[15px] font-mono uppercase tracking-[0.18em] text-white/40 mb-3 px-1 flex items-center justify-between">
                 <span>HQ Functional Model</span>
                 <span className="text-hq-yellow">Live Immersion</span>
               </div>
@@ -624,7 +624,7 @@ export default function EngagingWorkshops() {
               </div>
 
               {/* Subtle Bottom Rhythm Bar */}
-              <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between gap-2 text-[11px] font-mono text-white/45 px-1">
+              <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between gap-2 text-[15px] font-mono text-white/45 px-1">
                 <span>Mindset</span>
                 <span className="h-1 flex-1 rounded-full bg-white/10 overflow-hidden">
                   <span className="block h-full w-2/3 bg-hq-yellow rounded-full" />

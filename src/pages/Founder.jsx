@@ -57,7 +57,7 @@ export default function Founder() {
             className="flex items-center gap-3 sm:gap-4"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
           >
-            <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
+            <span className="font-display text-[15px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
               FOUNDER
             </span>
             <span className="w-px h-8 sm:h-14 bg-white/25"></span>
@@ -233,42 +233,42 @@ export default function Founder() {
                 {/* 2x2 Grid of Points */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 text-xs font-body">
                   <div className="flex items-start gap-3.5">
-                    <span className="w-7 h-7 rounded-full bg-black text-hq-yellow font-mono text-[11px] flex items-center justify-center shrink-0 mt-0.5 font-bold shadow-sm">
+                    <span className="w-7 h-7 rounded-full bg-black text-hq-yellow font-mono text-[15px] flex items-center justify-center shrink-0 mt-0.5 font-bold shadow-sm">
                       01
                     </span>
                     <div>
                       <div className="font-semibold text-sm sm:text-[15px] text-[#0A0A0A]">Executive Education</div>
-                      <div className="text-[#555555] text-xs sm:text-[13px] mt-0.5 leading-relaxed">Harvard &amp; Columbia Business School Alumni</div>
+                      <div className="text-[#555555] text-xs sm:text-[15px] mt-0.5 leading-relaxed">Harvard &amp; Columbia Business School Alumni</div>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3.5">
-                    <span className="w-7 h-7 rounded-full bg-black text-hq-yellow font-mono text-[11px] flex items-center justify-center shrink-0 mt-0.5 font-bold shadow-sm">
+                    <span className="w-7 h-7 rounded-full bg-black text-hq-yellow font-mono text-[15px] flex items-center justify-center shrink-0 mt-0.5 font-bold shadow-sm">
                       02
                     </span>
                     <div>
                       <div className="font-semibold text-sm sm:text-[15px] text-[#0A0A0A]">Global Keynotes</div>
-                      <div className="text-[#555555] text-xs sm:text-[13px] mt-0.5 leading-relaxed">4x TEDx Speaker (Katra, ElPro, Navrachana, Man Sagar)</div>
+                      <div className="text-[#555555] text-xs sm:text-[15px] mt-0.5 leading-relaxed">4x TEDx Speaker (Katra, ElPro, Navrachana, Man Sagar)</div>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3.5">
-                    <span className="w-7 h-7 rounded-full bg-black text-hq-yellow font-mono text-[11px] flex items-center justify-center shrink-0 mt-0.5 font-bold shadow-sm">
+                    <span className="w-7 h-7 rounded-full bg-black text-hq-yellow font-mono text-[15px] flex items-center justify-center shrink-0 mt-0.5 font-bold shadow-sm">
                       03
                     </span>
                     <div>
                       <div className="font-semibold text-sm sm:text-[15px] text-[#0A0A0A]">Corporate Leadership</div>
-                      <div className="text-[#555555] text-xs sm:text-[13px] mt-0.5 leading-relaxed">GE Capital, HDFC Bank, Barclays, ABN AMRO, AUB, FAB</div>
+                      <div className="text-[#555555] text-xs sm:text-[15px] mt-0.5 leading-relaxed">GE Capital, HDFC Bank, Barclays, ABN AMRO, AUB, FAB</div>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3.5">
-                    <span className="w-7 h-7 rounded-full bg-black text-hq-yellow font-mono text-[11px] flex items-center justify-center shrink-0 mt-0.5 font-bold shadow-sm">
+                    <span className="w-7 h-7 rounded-full bg-black text-hq-yellow font-mono text-[15px] flex items-center justify-center shrink-0 mt-0.5 font-bold shadow-sm">
                       04
                     </span>
                     <div>
                       <div className="font-semibold text-sm sm:text-[15px] text-[#0A0A0A]">Global Footprint</div>
-                      <div className="text-[#555555] text-xs sm:text-[13px] mt-0.5 leading-relaxed">High-trust summits across 9 nations &amp; 16 Indian states</div>
+                      <div className="text-[#555555] text-xs sm:text-[15px] mt-0.5 leading-relaxed">High-trust summits across 9 nations &amp; 16 Indian states</div>
                     </div>
                   </div>
                 </div>
@@ -458,10 +458,10 @@ export default function Founder() {
 
             {/* Col 3, Row 3: Author Name & Designation */}
             <div className="col-start-3 row-start-3 pt-1.5 sm:pt-2 pl-0.5">
-              <div className="font-display font-semibold text-xs sm:text-[13px] md:text-sm text-[#141414] dark:text-white tracking-tight">
+              <div className="font-display font-semibold text-xs sm:text-[15px] md:text-sm text-[#141414] dark:text-white tracking-tight">
                 Manny Anchan
               </div>
-              <div className="font-body text-[10px] sm:text-[11px] md:text-xs text-[#5A5A5A] dark:text-white/75 font-normal leading-snug mt-0.5">
+              <div className="font-body text-[10px] sm:text-[15px] md:text-xs text-[#5A5A5A] dark:text-white/75 font-normal leading-snug mt-0.5">
                 Founder, Happiness Samurai
               </div>
               <div className="font-mono text-[8px] sm:text-[9px] text-[#888888] dark:text-white/60 uppercase tracking-wider mt-0.5">

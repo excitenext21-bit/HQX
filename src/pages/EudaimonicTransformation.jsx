@@ -286,7 +286,7 @@ export default function EudaimonicTransformation() {
             className="flex items-center gap-2.5 sm:gap-3"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
           >
-            <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-white/90 drop-shadow-md">
+            <span className="font-display text-[15px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-white/90 drop-shadow-md">
               EUDAIMONIC TRANSFORMATION
             </span>
             <ArrowRight className="w-3.5 h-3.5 text-hq-yellow" />
@@ -374,7 +374,7 @@ export default function EudaimonicTransformation() {
               <span className="text-hq-yellow font-bold font-mono text-xs uppercase tracking-widest">
                 Engagement
               </span>
-              <span className="text-white/70 text-[11px] sm:text-xs font-light leading-snug">
+              <span className="text-white/70 text-[15px] sm:text-xs font-light leading-snug">
                 Fostering deep psychological connection with daily enterprise missions.
               </span>
             </div>
@@ -386,7 +386,7 @@ export default function EudaimonicTransformation() {
               <span className="text-hq-yellow font-bold font-mono text-xs uppercase tracking-widest">
                 Productivity
               </span>
-              <span className="text-white/70 text-[11px] sm:text-xs font-light leading-snug">
+              <span className="text-white/70 text-[15px] sm:text-xs font-light leading-snug">
                 Optimizing attentional architecture and eliminating cognitive friction.
               </span>
             </div>
@@ -398,7 +398,7 @@ export default function EudaimonicTransformation() {
               <span className="text-hq-yellow font-bold font-mono text-xs uppercase tracking-widest">
                 Collaboration
               </span>
-              <span className="text-white/70 text-[11px] sm:text-xs font-light leading-snug">
+              <span className="text-white/70 text-[15px] sm:text-xs font-light leading-snug">
                 Eradicating departmental silos through radical trust and camaraderie.
               </span>
             </div>
@@ -410,7 +410,7 @@ export default function EudaimonicTransformation() {
               <span className="text-hq-yellow font-bold font-mono text-xs uppercase tracking-widest">
                 Profitability
               </span>
-              <span className="text-white/70 text-[11px] sm:text-xs font-light leading-snug">
+              <span className="text-white/70 text-[15px] sm:text-xs font-light leading-snug">
                 Translating employee vitality and resilience directly into bottom-line gains.
               </span>
             </div>
@@ -499,7 +499,7 @@ export default function EudaimonicTransformation() {
                                 key={idx}
                                 className={`${idx === 0 ? 'md:pr-6' : idx === item.breakdown.length - 1 ? 'md:pl-6' : 'md:px-6'} py-2 md:py-0`}
                               >
-                                <p className="font-body text-xs sm:text-[13px] text-hq-black/90 leading-relaxed">
+                                <p className="font-body text-xs sm:text-[15px] text-hq-black/90 leading-relaxed">
                                   {hasColon ? (
                                     <>
                                       <strong className="font-bold text-hq-black">{title}</strong>
@@ -606,7 +606,7 @@ export default function EudaimonicTransformation() {
               <span className="font-display text-xs sm:text-sm font-bold uppercase tracking-[0.22em] text-[#0A0A0A]">
                 &mdash; Manny Anchan
               </span>
-              <span className="text-[11px] font-mono text-[#0A0A0A]/65 tracking-wider">
+              <span className="text-[15px] font-mono text-[#0A0A0A]/65 tracking-wider">
                 Happiness Samurai
               </span>
             </div>
@@ -694,7 +694,7 @@ export default function EudaimonicTransformation() {
                   {/* List of Audited Friction Items */}
                   <div className="space-y-2">
                     {currentDomain.problems.slice(1, 4).map((prob, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-[13px] text-neutral-700">
+                      <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-[15px] text-neutral-700">
                         <span className="w-1.5 h-1.5 rounded-full bg-red-500/70 mt-1.5 shrink-0" />
                         <span className="font-normal leading-relaxed">{prob}</span>
                       </div>
@@ -717,7 +717,7 @@ export default function EudaimonicTransformation() {
                   {/* Secondary Interventions */}
                   <div className="space-y-2.5 mb-6">
                     {currentDomain.interventions.slice(1, 4).map((sol, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-[13px] text-white/90">
+                      <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-[15px] text-white/90">
                         <CheckCircle2 className="w-4 h-4 text-hq-yellow mt-0.5 shrink-0" />
                         <span className="font-light leading-relaxed">{sol}</span>
                       </div>

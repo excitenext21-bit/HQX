@@ -79,7 +79,7 @@ export default function Footer() {
               <span className="text-sm font-bold transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">&#8599;</span>
             </Link>
 
-            <div className="grid grid-cols-2 gap-x-10 sm:gap-x-14 gap-y-2.5 font-body text-xs sm:text-[13px] text-hq-black/85">
+            <div className="grid grid-cols-2 gap-x-10 sm:gap-x-14 gap-y-2.5 font-body text-xs sm:text-[15px] text-hq-black/85">
               <Link to="/about-us" className="inline-flex items-center gap-1.5 hover:opacity-60 transition-opacity font-medium">
                 <span>About Us</span>
                 <span className="text-[10px]">&#8599;</span>
@@ -117,7 +117,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Utility & Legal Bar */}
-        <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-4 font-mono text-[10px] sm:text-[11px] tracking-[0.2em] uppercase pt-6 text-hq-black/80">
+        <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-4 font-mono text-[10px] sm:text-[15px] tracking-[0.2em] uppercase pt-6 text-hq-black/80">
           <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
             <span>&copy; {new Date().getFullYear()} &bull; Happiness Quotient Global</span>
           </div>

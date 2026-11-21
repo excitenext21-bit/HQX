@@ -82,7 +82,7 @@ export default function TeamHeroSlider({ faculty = [], onSelectMember }) {
                   <div className="h-[2px] w-8 bg-hq-yellow rounded-full mb-2.5 transition-all duration-500 ease-out group-hover:w-16"></div>
 
                   {/* Clean Role / Title: font-weight 300 */}
-                  <p className="font-body text-[11px] sm:text-xs text-white/70 font-[300] line-clamp-2 leading-relaxed">
+                  <p className="font-body text-[15px] sm:text-xs text-white/70 font-[300] line-clamp-2 leading-relaxed">
                     {member.title}
                   </p>
                 </div>

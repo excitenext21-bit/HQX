@@ -86,7 +86,7 @@ export default function ConnectDrawer() {
       >
         <span className="w-2 h-2 rounded-full bg-[#0A0A0A] shadow-sm animate-pulse" />
         <span
-          className="font-display text-[11px] font-bold uppercase tracking-[0.26em] text-[#0A0A0A] group-hover:scale-105 transition-transform"
+          className="font-display text-[15px] font-bold uppercase tracking-[0.26em] text-[#0A0A0A] group-hover:scale-105 transition-transform"
           style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
         >
           Connect
@@ -169,7 +169,7 @@ export default function ConnectDrawer() {
               <div className="w-9 h-9 rounded-xl bg-[#0A0A0A] text-hq-yellow flex items-center justify-center shrink-0 shadow-xs">
                 <Mail className="w-4 h-4" />
               </div>
-              <div className="min-w-0 flex-1 font-body text-[11px] sm:text-xs font-semibold text-[#0A0A0A] group-hover:text-black transition-colors whitespace-nowrap">
+              <div className="min-w-0 flex-1 font-body text-[15px] sm:text-xs font-semibold text-[#0A0A0A] group-hover:text-black transition-colors whitespace-nowrap">
                 connect@happinesssamurai.com
               </div>
               <ArrowUpRight className="w-4 h-4 text-black/40 group-hover:text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />

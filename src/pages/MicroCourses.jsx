@@ -151,7 +151,7 @@ export default function MicroCourses() {
             className="flex items-center gap-3 sm:gap-4"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
           >
-            <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
+            <span className="font-display text-[15px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
               MICRO COURSES
             </span>
             <span className="w-px h-8 sm:h-14 bg-white/25" />
@@ -381,7 +381,7 @@ export default function MicroCourses() {
           <div className="lg:col-span-8 space-y-20 sm:space-y-24">
             {/* Section 1: Mini Masteries */}
             <div id="mini-masteries" className="scroll-mt-28">
-              <div className="font-mono text-[11px] uppercase tracking-[0.16em] text-[#737373]">
+              <div className="font-mono text-[15px] uppercase tracking-[0.16em] text-[#737373]">
                 01 / Mini Masteries
               </div>
               <h3 className="font-display text-2xl sm:text-[28px] lg:text-[32px] font-light tracking-tight text-[#0A0A0A] leading-[1.18] mt-2">
@@ -424,7 +424,7 @@ export default function MicroCourses() {
                         className="w-full text-left flex items-center justify-between gap-4 cursor-pointer group"
                       >
                         <div className="flex items-center gap-4">
-                          <span className="font-mono text-[11px] text-[#8C8C8C] tabular-nums">
+                          <span className="font-mono text-[15px] text-[#8C8C8C] tabular-nums">
                             0{idx + 1}
                           </span>
                           <span
@@ -435,7 +435,7 @@ export default function MicroCourses() {
                             {m.title}
                           </span>
                         </div>
-                        <span className="font-mono text-[11px] uppercase tracking-wider text-[#8C8C8C] group-hover:text-[#0A0A0A] transition-colors">
+                        <span className="font-mono text-[15px] uppercase tracking-wider text-[#8C8C8C] group-hover:text-[#0A0A0A] transition-colors">
                           {isExpanded ? '−' : '+'}
                         </span>
                       </button>
@@ -447,7 +447,7 @@ export default function MicroCourses() {
                           <button
                             type="button"
                             onClick={() => setSelectedCourse(microCourses[idx] || microCourses[0])}
-                            className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-[#0A0A0A] hover:text-[#666666] transition-colors shrink-0 cursor-pointer"
+                            className="inline-flex items-center gap-2 font-mono text-[15px] uppercase tracking-[0.14em] text-[#0A0A0A] hover:text-[#666666] transition-colors shrink-0 cursor-pointer"
                           >
                             <span>Enroll</span>
                             <ArrowRight className="w-3.5 h-3.5" />
@@ -471,7 +471,7 @@ export default function MicroCourses() {
 
             {/* Section 2: Bi-Weekly Posts on Well-Being */}
             <div id="biweekly-posts" className="scroll-mt-28">
-              <div className="font-mono text-[11px] uppercase tracking-[0.16em] text-[#737373]">
+              <div className="font-mono text-[15px] uppercase tracking-[0.16em] text-[#737373]">
                 02 / Bi-Weekly Posts on Well-Being
               </div>
               <h3 className="font-display text-2xl sm:text-[28px] lg:text-[32px] font-light tracking-tight text-[#0A0A0A] leading-[1.18] mt-2">
@@ -509,7 +509,7 @@ export default function MicroCourses() {
 
             {/* Section 3: Happiness Quotient & Introspective Assessment */}
             <div id="hq-assessment" className="scroll-mt-28">
-              <div className="font-mono text-[11px] uppercase tracking-[0.16em] text-[#737373]">
+              <div className="font-mono text-[15px] uppercase tracking-[0.16em] text-[#737373]">
                 03 / Happiness Quotient &amp; Introspective Assessment
               </div>
               <h3 className="font-display text-2xl sm:text-[28px] lg:text-[32px] font-light tracking-tight text-[#0A0A0A] leading-[1.18] mt-2">
@@ -593,7 +593,7 @@ export default function MicroCourses() {
 
             {/* Section 4: Handouts & Exercises */}
             <div id="handouts-exercises" className="scroll-mt-28">
-              <div className="font-mono text-[11px] uppercase tracking-[0.16em] text-[#737373]">
+              <div className="font-mono text-[15px] uppercase tracking-[0.16em] text-[#737373]">
                 04 / Handouts &amp; Exercises
               </div>
               <h3 className="font-display text-2xl sm:text-[28px] lg:text-[32px] font-light tracking-tight text-[#0A0A0A] leading-[1.18] mt-2">

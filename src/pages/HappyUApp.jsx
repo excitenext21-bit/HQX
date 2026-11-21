@@ -304,7 +304,7 @@ export default function HappyUApp() {
             className="flex items-center gap-3 sm:gap-4"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
           >
-            <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
+            <span className="font-display text-[15px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
               HAPPYU APP
             </span>
             <span className="w-px h-8 sm:h-14 bg-white/25" />
@@ -334,7 +334,7 @@ export default function HappyUApp() {
 
               {/* Official Store Download Buttons (Google Play Store & Apple App Store) */}
               <div id="download-app" className="mb-2">
-                <div className="text-[11px] font-mono uppercase tracking-widest text-white/55 mb-3">
+                <div className="text-[15px] font-mono uppercase tracking-widest text-white/55 mb-3">
                   Download HappyU on Your Device
                 </div>
                 <div className="flex flex-wrap items-center gap-4">
@@ -381,25 +381,6 @@ export default function HappyUApp() {
                       </div>
                     </div>
                   </a>
-
-                  {/* Editable PDF Download Button */}
-                  <a
-                    href="/HappyU-App-HQX-Editable-Brochure.pdf"
-                    download="HappyU-App-HQX-Editable-Brochure.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex items-center gap-3.5 bg-[#FFCD00] text-[#0A0A0A] hover:bg-white transition-all duration-300 px-5 py-3.5 rounded-2xl shadow-xl border border-[#FFCD00]"
-                  >
-                    <Download className="w-6 h-6 text-[#0A0A0A] shrink-0 group-hover:scale-110 transition-transform" />
-                    <div className="text-left">
-                      <div className="text-[10px] font-mono uppercase tracking-wider leading-none opacity-80">
-                        Interactive Spec
-                      </div>
-                      <div className="font-display text-base sm:text-lg font-bold leading-tight tracking-tight">
-                        Editable PDF
-                      </div>
-                    </div>
-                  </a>
                 </div>
 
                 {storeNotice && (
@@ -407,7 +388,7 @@ export default function HappyUApp() {
                     <span>{storeNotice}</span>
                     <Link
                       to="/contact"
-                      className="shrink-0 bg-hq-yellow text-hq-black font-display font-bold text-[11px] uppercase tracking-wider px-3.5 py-2 rounded-lg hover:bg-white transition-colors"
+                      className="shrink-0 bg-hq-yellow text-hq-black font-display font-bold text-[15px] uppercase tracking-wider px-3.5 py-2 rounded-lg hover:bg-white transition-colors"
                     >
                       Get Access Link
                     </Link>
@@ -531,7 +512,7 @@ export default function HappyUApp() {
                           className="h-5 w-auto mb-1.5"
                           textColor="#FFFFFF"
                         />
-                        <div className="font-display text-[11px] font-bold text-white/85 tracking-tight">
+                        <div className="font-display text-[15px] font-bold text-white/85 tracking-tight">
                           happyu.hqx
                         </div>
                         <div className="font-mono text-[9px] text-white/45 leading-tight">
@@ -831,10 +812,10 @@ export default function HappyUApp() {
                             {/* Lower Content: Dash + Concise Details */}
                             <div className="px-2 pb-2 flex-1 flex flex-col justify-end">
                               <span className="w-5 h-[1.5px] bg-[#0A0A0A]/45 block mb-4" />
-                              <p className="font-body text-xs sm:text-[13px] text-[#0A0A0A]/75 font-light leading-relaxed mb-3">
+                              <p className="font-body text-xs sm:text-[15px] text-[#0A0A0A]/75 font-light leading-relaxed mb-3">
                                 {item.included}
                               </p>
-                              <p className="font-body text-xs sm:text-[13px] text-[#0A0A0A] font-medium leading-relaxed">
+                              <p className="font-body text-xs sm:text-[15px] text-[#0A0A0A] font-medium leading-relaxed">
                                 {item.advantage}
                               </p>
                             </div>
@@ -851,7 +832,7 @@ export default function HappyUApp() {
                             {/* Middle Dash + Description + Bottom-Left Circular Icon */}
                             <div className="pt-8">
                               <span className="w-5 h-[1.5px] bg-[#0A0A0A]/40 block mb-4" />
-                              <p className="font-body text-xs sm:text-[13px] text-[#0A0A0A]/70 font-light leading-relaxed mb-7">
+                              <p className="font-body text-xs sm:text-[15px] text-[#0A0A0A]/70 font-light leading-relaxed mb-7">
                                 {item.included} {item.advantage}
                               </p>
                               <div className="w-10 h-10 rounded-full bg-[#F2F3F5] text-[#0A0A0A] flex items-center justify-center">
@@ -971,24 +952,6 @@ export default function HappyUApp() {
                     </div>
                     <div className="font-display text-sm sm:text-base font-bold leading-none tracking-tight">
                       Google Play
-                    </div>
-                  </div>
-                </a>
-
-                <a
-                  href="/HappyU-App-HQX-Editable-Brochure.pdf"
-                  download="HappyU-App-HQX-Editable-Brochure.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-3 bg-[#0A0A0A] text-white hover:bg-white hover:text-[#0A0A0A] transition-all duration-300 px-5 py-3 rounded-xl shadow-lg border border-black/30"
-                >
-                  <Download className="w-5 h-5 text-hq-yellow group-hover:text-black shrink-0 group-hover:scale-110 transition-transform" />
-                  <div className="text-left">
-                    <div className="text-[10px] font-body text-white/65 group-hover:text-black/65 leading-none mb-1">
-                      Enterprise Spec
-                    </div>
-                    <div className="font-display text-sm sm:text-base font-bold leading-none tracking-tight">
-                      Editable PDF
                     </div>
                   </div>
                 </a>

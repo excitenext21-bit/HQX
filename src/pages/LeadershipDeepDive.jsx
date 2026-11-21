@@ -326,7 +326,7 @@ export default function LeadershipDeepDive() {
             className="flex items-center gap-3 sm:gap-4"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
           >
-            <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
+            <span className="font-display text-[15px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
               LEADERSHIP DEEP DIVE
             </span>
             <span className="w-px h-8 sm:h-14 bg-white/25" />
@@ -577,7 +577,7 @@ export default function LeadershipDeepDive() {
                   <h3 className="font-display text-lg sm:text-xl font-bold text-[#0A0A0A] dark:text-white tracking-tight mb-2">
                     {benefit.title}
                   </h3>
-                  <p className="font-body text-xs sm:text-[13px] text-black/65 dark:text-white/70 font-normal leading-relaxed">
+                  <p className="font-body text-xs sm:text-[15px] text-black/65 dark:text-white/70 font-normal leading-relaxed">
                     {benefit.desc}
                   </p>
                 </div>
@@ -594,10 +594,10 @@ export default function LeadershipDeepDive() {
               <div className="text-left md:pr-8 flex items-start gap-4 group">
                 <Calendar className="w-8 h-8 text-hq-black/85 shrink-0 stroke-[1.2] mt-0.5 transition-transform duration-300 group-hover:scale-105" />
                 <div>
-                  <h4 className="font-display text-xs sm:text-[13px] font-bold uppercase tracking-wider text-hq-black mb-1.5">
+                  <h4 className="font-display text-xs sm:text-[15px] font-bold uppercase tracking-wider text-hq-black mb-1.5">
                     Format &amp; Duration
                   </h4>
-                  <p className="font-body text-xs sm:text-[13px] text-hq-black/75 font-light leading-relaxed">
+                  <p className="font-body text-xs sm:text-[15px] text-hq-black/75 font-light leading-relaxed">
                     2 - 3 Full Days (Residential / Offsite)
                   </p>
                 </div>
@@ -607,10 +607,10 @@ export default function LeadershipDeepDive() {
               <div className="text-left md:px-8 flex items-start gap-4 group">
                 <Users className="w-8 h-8 text-hq-black/85 shrink-0 stroke-[1.2] mt-0.5 transition-transform duration-300 group-hover:scale-105" />
                 <div>
-                  <h4 className="font-display text-xs sm:text-[13px] font-bold uppercase tracking-wider text-hq-black mb-1.5">
+                  <h4 className="font-display text-xs sm:text-[15px] font-bold uppercase tracking-wider text-hq-black mb-1.5">
                     Target Cohort
                   </h4>
-                  <p className="font-body text-xs sm:text-[13px] text-hq-black/75 font-light leading-relaxed">
+                  <p className="font-body text-xs sm:text-[15px] text-hq-black/75 font-light leading-relaxed">
                     15 to 60 Senior CXOs &amp; Board Members
                   </p>
                 </div>
@@ -620,10 +620,10 @@ export default function LeadershipDeepDive() {
               <div className="text-left md:pl-8 flex items-start gap-4 group">
                 <MapPin className="w-8 h-8 text-hq-black/85 shrink-0 stroke-[1.2] mt-0.5 transition-transform duration-300 group-hover:scale-105" />
                 <div>
-                  <h4 className="font-display text-xs sm:text-[13px] font-bold uppercase tracking-wider text-hq-black mb-1.5">
+                  <h4 className="font-display text-xs sm:text-[15px] font-bold uppercase tracking-wider text-hq-black mb-1.5">
                     Locations Delivered
                   </h4>
-                  <p className="font-body text-xs sm:text-[13px] text-hq-black/75 font-light leading-relaxed">
+                  <p className="font-body text-xs sm:text-[15px] text-hq-black/75 font-light leading-relaxed">
                     Domestic (Goa, Lonavala) &amp; Global (Tanzania, Mauritius)
                   </p>
                 </div>
@@ -683,7 +683,7 @@ export default function LeadershipDeepDive() {
                       {/* Top Row: Vertical Location Label + Index */}
                       <div className="relative z-10 flex items-start justify-between">
                         <div
-                          className="font-mono text-[11px] uppercase tracking-[0.22em] text-hq-yellow/90"
+                          className="font-mono text-[15px] uppercase tracking-[0.22em] text-hq-yellow/90"
                           style={{ writingMode: 'vertical-rl' }}
                         >
                           {item.location}
@@ -750,7 +750,7 @@ export default function LeadershipDeepDive() {
                         {item.client}
                       </span>
                     </div>
-                    <span className="font-mono text-[11px] uppercase tracking-wider text-white/55 shrink-0">
+                    <span className="font-mono text-[15px] uppercase tracking-wider text-white/55 shrink-0">
                       {item.location}
                     </span>
                   </button>

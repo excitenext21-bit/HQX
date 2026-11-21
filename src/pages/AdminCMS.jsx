@@ -908,7 +908,7 @@ export default function AdminCMS() {
                     <span className="font-mono text-[10px] uppercase text-hq-black/60">Primary Brand Accent:</span>
                     <div className="flex items-center gap-1.5 bg-white border p-1 rounded">
                       <div className="w-5 h-5 rounded bg-hq-yellow border"></div>
-                      <span className="font-mono text-[11px]">#FFCC00 (HQ Yellow)</span>
+                      <span className="font-mono text-[15px]">#FFCC00 (HQ Yellow)</span>
                     </div>
                   </div>
                 </div>

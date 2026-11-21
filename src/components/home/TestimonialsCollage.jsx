@@ -250,7 +250,7 @@ export default function TestimonialsCollage() {
                   <div className="font-display text-xs sm:text-sm font-semibold text-[#111111]">
                     {activeItem.name}
                   </div>
-                  <div className="font-body text-[11px] sm:text-xs text-[#888888] mt-0.5 mb-7 sm:mb-9">
+                  <div className="font-body text-[15px] sm:text-xs text-[#888888] mt-0.5 mb-7 sm:mb-9">
                     {activeItem.role}
                   </div>
 

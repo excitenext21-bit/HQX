@@ -434,7 +434,7 @@ export default function Podcast() {
                     <div className="font-display text-xs sm:text-sm font-medium text-white line-clamp-1">
                       {ep.guest}
                     </div>
-                    <div className="font-body text-[11px] text-white/60 line-clamp-1">
+                    <div className="font-body text-[15px] text-white/60 line-clamp-1">
                       {ep.title}
                     </div>
                   </div>

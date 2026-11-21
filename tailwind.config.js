@@ -7,6 +7,9 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      fontSize: {
+        xs: ['15px', { lineHeight: '1.45' }],
+      },
       colors: {
         hq: {
           yellow: '#FFCC00',

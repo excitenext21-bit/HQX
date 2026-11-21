@@ -665,6 +665,17 @@ html.dark main :is(input, textarea, select) {
   text-rendering: optimizeLegibility;
 }
 
+/* Universal font-size upgrade: All 11px, 11.5px, 12px, and xs font sizes render at 15px */
+.text-xs,
+[class*="text-[11px]"],
+[class*="text-[11.5px]"],
+[class*="text-[12px]"],
+.text-\[11px\],
+.text-\[11\.5px\],
+.text-\[12px\] {
+  font-size: 15px !important;
+}
+
 /* 7. Stadium Tunnel & Left-Corner-to-Top Yellow Buffering Animations */
 @keyframes stadiumBufferGlow {
   0% {

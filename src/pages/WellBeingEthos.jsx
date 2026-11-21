@@ -184,7 +184,7 @@ export default function WellBeingEthos() {
             className="flex items-center gap-3 sm:gap-4"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
           >
-            <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
+            <span className="font-display text-[15px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
               WELL-BEING ETHOS
             </span>
             <motion.span 
@@ -397,7 +397,7 @@ export default function WellBeingEthos() {
             </div>
 
             {/* Subtle bottom tag on dark column */}
-            <div className="pt-8 border-t border-white/10 mt-8 hidden sm:flex items-center justify-between text-[11px] font-mono text-white/40 uppercase tracking-widest">
+            <div className="pt-8 border-t border-white/10 mt-8 hidden sm:flex items-center justify-between text-[15px] font-mono text-white/40 uppercase tracking-widest">
               <span>5 Executive Pillars</span>
               <span className="text-hq-yellow font-bold">100% Quantified Impact</span>
             </div>
@@ -407,7 +407,7 @@ export default function WellBeingEthos() {
           <div className="lg:col-span-7 bg-white text-hq-black p-6 sm:p-10 md:p-12 lg:p-14 flex flex-col justify-between relative min-h-[460px] lg:min-h-[560px]">
             
             {/* Top-Left Flush Brand Badge (Matching Fixonic's top banner) */}
-            <div className="absolute top-0 left-0 bg-hq-yellow text-hq-black font-display text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] px-5 sm:px-6 py-2.5 shadow-sm">
+            <div className="absolute top-0 left-0 bg-hq-yellow text-hq-black font-display text-[15px] sm:text-xs font-bold uppercase tracking-[0.2em] px-5 sm:px-6 py-2.5 shadow-sm">
               HQ WELL-BEING ETHOS
             </div>
 
@@ -443,7 +443,7 @@ export default function WellBeingEthos() {
 
                   {/* Actionable Enterprise Protocols */}
                   <div className="space-y-2.5 pt-2">
-                    <div className="text-[11px] font-mono uppercase tracking-widest text-hq-black/60 font-bold mb-2">
+                    <div className="text-[15px] font-mono uppercase tracking-widest text-hq-black/60 font-bold mb-2">
                       Actionable Enterprise Protocols:
                     </div>
                     <div className="grid grid-cols-1 gap-2">
@@ -488,7 +488,7 @@ export default function WellBeingEthos() {
             <div className="text-left md:pr-8 flex items-start gap-4 group">
               <Target className="w-8 h-8 text-white/80 group-hover:text-hq-yellow shrink-0 stroke-[1.2] mt-0.5 transition-colors" />
               <div>
-                <h4 className="font-display text-xs sm:text-[13px] font-bold uppercase tracking-wider text-white mb-1.5 group-hover:text-hq-yellow transition-colors">
+                <h4 className="font-display text-xs sm:text-[15px] font-bold uppercase tracking-wider text-white mb-1.5 group-hover:text-hq-yellow transition-colors">
                   FOCUS ON ENGAGEMENT
                 </h4>
                 <p className="font-body text-xs text-white/55 font-light leading-relaxed">
@@ -501,7 +501,7 @@ export default function WellBeingEthos() {
             <div className="text-left md:px-8 flex items-start gap-4 group">
               <Zap className="w-8 h-8 text-white/80 group-hover:text-hq-yellow shrink-0 stroke-[1.2] mt-0.5 transition-colors" />
               <div>
-                <h4 className="font-display text-xs sm:text-[13px] font-bold uppercase tracking-wider text-white mb-1.5 group-hover:text-hq-yellow transition-colors">
+                <h4 className="font-display text-xs sm:text-[15px] font-bold uppercase tracking-wider text-white mb-1.5 group-hover:text-hq-yellow transition-colors">
                   STRATEGIES THAT DRIVE IMPACT
                 </h4>
                 <p className="font-body text-xs text-white/55 font-light leading-relaxed">
@@ -514,7 +514,7 @@ export default function WellBeingEthos() {
             <div className="text-left md:pl-8 flex items-start gap-4 group">
               <Users className="w-8 h-8 text-white/80 group-hover:text-hq-yellow shrink-0 stroke-[1.2] mt-0.5 transition-colors" />
               <div>
-                <h4 className="font-display text-xs sm:text-[13px] font-bold uppercase tracking-wider text-white mb-1.5 group-hover:text-hq-yellow transition-colors">
+                <h4 className="font-display text-xs sm:text-[15px] font-bold uppercase tracking-wider text-white mb-1.5 group-hover:text-hq-yellow transition-colors">
                   SYNERGY &amp; STRONG CULTURE
                 </h4>
                 <p className="font-body text-xs text-white/55 font-light leading-relaxed">
@@ -561,26 +561,26 @@ export default function WellBeingEthos() {
                   container: 'bg-white border-black/[0.06] hover:border-black/15 shadow-[0_2px_16px_rgba(0,0,0,0.03)]',
                   quote: 'text-[#0A0A0A] group-hover:text-hq-yellow',
                   title: 'text-[#0A0A0A]',
-                  desc: 'text-neutral-500',
+                  desc: 'text-neutral-600',
                 },
                 yellow: {
                   container: 'bg-hq-yellow border-black/10 hover:border-black/30 shadow-[0_4px_20px_rgba(255,204,0,0.18)]',
                   quote: 'text-[#0A0A0A]',
                   title: 'text-[#0A0A0A]',
-                  desc: 'text-[#0A0A0A]/80',
+                  desc: 'text-[#0A0A0A]/85',
                 },
                 black: {
                   container: 'bg-[#0B0B0B] border-white/10 hover:border-hq-yellow/50 shadow-xl',
                   quote: 'text-hq-yellow',
                   title: 'text-white',
-                  desc: 'text-white/70',
+                  desc: 'text-white/80',
                 },
               }[variantKey];
 
               const photoTile = (
                 <div
                   key={`${theme.id}-photo`}
-                  className="group relative rounded-2xl sm:rounded-[20px] overflow-hidden bg-black/5 min-h-[260px] sm:min-h-[290px] lg:min-h-[310px] h-full shadow-sm border border-black/[0.05]"
+                  className="group relative rounded-2xl sm:rounded-[20px] overflow-hidden bg-black/5 min-h-[280px] sm:min-h-[310px] lg:min-h-[330px] h-full shadow-sm border border-black/[0.05]"
                 >
                   <img
                     src={imgSrc}
@@ -595,7 +595,7 @@ export default function WellBeingEthos() {
               const cardTile = (
                 <div
                   key={`${theme.id}-card`}
-                  className={`${cardTheme.container} p-6 sm:p-7 rounded-2xl sm:rounded-[20px] border hover:shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[260px] sm:min-h-[290px] lg:min-h-[310px] h-full group`}
+                  className={`${cardTheme.container} p-6 sm:p-7 rounded-2xl sm:rounded-[20px] border hover:shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[280px] sm:min-h-[310px] lg:min-h-[330px] h-full group`}
                 >
                   {/* Top: Clean Quote Mark + Theme Heading (Halsa Editorial Styling) */}
                   <div>
@@ -610,9 +610,9 @@ export default function WellBeingEthos() {
                     </h3>
                   </div>
 
-                  {/* Bottom: Concise Narrative Description */}
-                  <div className="pt-8 mt-auto">
-                    <p className={`font-body text-xs sm:text-[13px] font-normal leading-relaxed ${cardTheme.desc}`}>
+                  {/* Bottom: Concise Narrative Description (Matching Explanatory Context: text-sm sm:text-base font-normal leading-relaxed text-neutral-600) */}
+                  <div className="pt-5 sm:pt-6 mt-auto">
+                    <p className={`font-body text-sm sm:text-base font-normal leading-relaxed ${cardTheme.desc}`}>
                       {theme.desc}
                     </p>
                   </div>
@@ -764,13 +764,13 @@ export default function WellBeingEthos() {
                         <div className="mb-2">
                           <div className="text-xs sm:text-sm font-display font-medium text-white leading-snug">
                             Award-Winning Methodology <br />
-                            <span className="text-hq-yellow text-[11px] font-mono uppercase tracking-wider">
+                            <span className="text-hq-yellow text-[15px] font-mono uppercase tracking-wider">
                               G2 Benchmark Verified
                             </span>
                           </div>
                         </div>
 
-                        <p className="font-body text-[11px] sm:text-xs text-white/65 font-light leading-relaxed">
+                        <p className="font-body text-[15px] sm:text-xs text-white/65 font-light leading-relaxed">
                           {activeItem.desc}
                         </p>
                       </div>
@@ -809,7 +809,7 @@ export default function WellBeingEthos() {
                             >
                               {metric.kpi1Label}
                             </div>
-                            <p className="text-[11px] font-body text-[#0A0A0A]/80 leading-relaxed">
+                            <p className="text-[15px] font-body text-[#0A0A0A]/80 leading-relaxed">
                               {metric.kpi1Sub}
                             </p>
                           </div>
@@ -830,7 +830,7 @@ export default function WellBeingEthos() {
                             >
                               {metric.kpi2Label}
                             </div>
-                            <p className="text-[11px] font-body text-white/70 leading-relaxed">
+                            <p className="text-[15px] font-body text-white/70 leading-relaxed">
                               {metric.kpi2Sub}
                             </p>
                           </div>

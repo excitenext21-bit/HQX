@@ -17,7 +17,7 @@ export default function Books() {
             className="flex items-center gap-3 sm:gap-4"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
           >
-            <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
+            <span className="font-display text-[15px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
               PUBLISHED BOOKS
             </span>
             <span className="w-px h-8 sm:h-14 bg-white/25" />
@@ -56,7 +56,7 @@ export default function Books() {
                 </h1>
 
                 {/* Edition Year Row */}
-                <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-xs sm:text-[13px] font-mono text-white/50 mb-5">
+                <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-xs sm:text-[15px] font-mono text-white/50 mb-5">
                   <span className="inline-flex items-center gap-1.5">
                     <BookOpen className="w-3.5 h-3.5 text-hq-yellow" />
                     <span>
@@ -125,7 +125,7 @@ export default function Books() {
 
           {/* Bottom Shelf: MORE BOOKS BY MANNY ANCHAN */}
           <div className="pt-3.5 sm:pt-4 border-t border-white/[0.08] shrink-0">
-            <div className="font-display text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-white/45 font-semibold mb-2.5 sm:mb-3">
+            <div className="font-display text-[10px] sm:text-[15px] uppercase tracking-[0.18em] text-white/45 font-semibold mb-2.5 sm:mb-3">
               MORE BOOKS BY MANNY ANCHAN
             </div>
 
@@ -216,7 +216,7 @@ export default function Books() {
                       {b.title}
                     </h3>
                     <p
-                      className={`font-body text-xs sm:text-[13px] font-light leading-relaxed line-clamp-4 ${
+                      className={`font-body text-xs sm:text-[15px] font-light leading-relaxed line-clamp-4 ${
                         isSelected ? 'text-[#0A0A0A]/80' : 'text-white/75'
                       }`}
                     >
@@ -231,7 +231,7 @@ export default function Books() {
                       target="_blank"
                       rel="noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className={`inline-flex items-center gap-2 font-display text-[11px] font-bold uppercase tracking-[0.16em] px-4 py-2 rounded-full transition-all ${
+                      className={`inline-flex items-center gap-2 font-display text-[15px] font-bold uppercase tracking-[0.16em] px-4 py-2 rounded-full transition-all ${
                         isSelected
                           ? 'bg-[#0A0A0A] text-white hover:bg-white hover:text-[#0A0A0A]'
                           : 'bg-hq-yellow text-[#0A0A0A] hover:bg-white'
@@ -280,7 +280,7 @@ export default function Books() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-4 left-4 right-4 p-3 bg-black/60 backdrop-blur-md rounded-xl border border-white/10">
                   <div className="font-display font-bold text-xs uppercase tracking-wider text-hq-yellow">Official Author Edition</div>
-                  <div className="font-body text-[11px] text-white/80">Manny Anchan with the yellow collector's edition of Happiness Decoded</div>
+                  <div className="font-body text-[15px] text-white/80">Manny Anchan with the yellow collector's edition of Happiness Decoded</div>
                 </div>
               </div>
             </div>

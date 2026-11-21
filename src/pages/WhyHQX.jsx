@@ -168,7 +168,8 @@ export default function WhyHQX() {
       id: 'tech',
       title: 'DeepTech, AI & Life Sciences',
       category: 'Innovation, Frontier Tech & Healthcare',
-      image: '/images/hero_showcase/manny_retreat_synergy.jpg',
+      image: '/images/deeptech_impact_stage.jpg',
+      imagePosition: 'object-[center_60%]',
       whatWeDid: 'HQX embedded our proprietary 5-Pillar Eudaimonic Architecture inside high-velocity engineering pods, AI research laboratories, and clinical biotechnology teams. We implemented cognitive decompression sessions, asynchronous focus cycles, and empathetic team communication protocols designed to neutralize the relentless stress of rapid sprint iterations and complex drug discovery timelines.',
       howItWasImpactful: 'By replacing chronic panic-driven hustle with grounded inner vitality, technical organizations recorded an audited +31% productivity surge and a marked eradication of developer exhaustion. High-consequence engineering teams maintained accelerated code deployments and clinical trial breakthroughs while experiencing near-zero turnover among mission-critical principal architects.',
       metric: 'High-Velocity Exponential Engineering & Life Science Pods',
@@ -400,7 +401,7 @@ export default function WhyHQX() {
             className="flex items-center gap-3 sm:gap-4"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
           >
-            <span className="font-display text-[11px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
+            <span className="font-display text-[15px] sm:text-xs lg:text-sm font-bold tracking-[0.3em] uppercase text-hq-yellow drop-shadow-md">
               WHY HQX
             </span>
             <motion.span 
@@ -542,7 +543,7 @@ export default function WhyHQX() {
           {/* Section Header: Dual-Tone Title & Top Narrative (Exact Same As The Experts Behind Your Care Design) */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 pb-6 lg:pb-8 border-b border-black/10">
             <div>
-              <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-[#A37B1E] dark:text-hq-yellow font-bold block mb-1">
+              <span className="text-[15px] font-mono uppercase tracking-[0.22em] text-[#A37B1E] dark:text-hq-yellow font-bold block mb-1">
                 Statistics
               </span>
               <h2 className="font-display text-2xl sm:text-3xl lg:text-[34px] font-semibold tracking-tight text-[#0A0A0A] dark:text-white leading-[1.1]">
@@ -1024,7 +1025,7 @@ export default function WhyHQX() {
                         </p>
 
                         {/* Verified Impact Metric Capsule */}
-                        <div className="pt-0.5 flex items-center gap-2 text-[11px] sm:text-xs font-mono text-[#1E1915]">
+                        <div className="pt-0.5 flex items-center gap-2 text-[15px] sm:text-xs font-mono text-[#1E1915]">
                           <span className="w-2 h-2 rounded-full bg-[#FFCE00]" />
                           <span className="font-bold tracking-wider">{item.metric}</span>
                         </div>
@@ -1036,7 +1037,7 @@ export default function WhyHQX() {
                           <img 
                             src={item.image} 
                             alt={item.title} 
-                            className="w-full h-full object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700"
+                            className={`w-full h-full object-cover ${item.imagePosition || 'object-center'} filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700`}
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
                         </div>
@@ -1062,7 +1063,7 @@ export default function WhyHQX() {
                   Strategic Institutions & Impacted Sectors
                 </h3>
               </div>
-              <span className="font-mono text-[11px] sm:text-xs text-white/60 tracking-wider font-semibold">
+              <span className="font-mono text-[15px] sm:text-xs text-white/60 tracking-wider font-semibold">
                 Healthcare &bull; Pharma &bull; Defence &bull; Governance &bull; Central Banking &bull; Industry Apex
               </span>
             </div>
@@ -1089,7 +1090,7 @@ export default function WhyHQX() {
                       <span className="font-display font-bold text-sm sm:text-base md:text-[17px] text-white tracking-tight leading-snug group-hover:text-hq-yellow transition-colors">
                         {badge.name}
                       </span>
-                      <span className="font-body text-xs sm:text-[13px] text-white/70 font-medium leading-snug whitespace-nowrap mt-0.5">
+                      <span className="font-body text-xs sm:text-[15px] text-white/70 font-medium leading-snug whitespace-nowrap mt-0.5">
                         {badge.subtitle}
                       </span>
                     </div>
