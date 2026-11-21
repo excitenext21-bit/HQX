@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    padding: 60px;
+  }
+  
+  /* High-Res Titanium Phone Chassis */
+  .phone-case {
+    position: relative;
+    width: 380px;
+    height: 780px;
+    border-radius: 54px;
+    padding: 5px;
+    background: linear-gradient(145deg, #8a8e9d 0%, #3e424c 30%, #1c1d22 70%, #0d0e12 100%);
+    box-shadow: 
+      0 40px 100px -15px rgba(0, 0, 0, 0.95),
+      0 20px 40px -10px rgba(0, 0, 0, 0.8),
+      inset 0 1px 2px rgba(255, 255, 255, 0.35),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Hardware Side Buttons */
+  .btn-silent { position: absolute; left: -6px; top: 125px; width: 4px; height: 32px; border-radius: 3px 0 0 3px; background: #5a5d68; }
+  .btn-vol-up { position: absolute; left: -6px; top: 175px; width: 4px; height: 58px; border-radius: 3px 0 0 3px; background: #5a5d68; }
+  .btn-vol-dn { position: absolute; left: -6px; top: 245px; width: 4px; height: 58px; border-radius: 3px 0 0 3px; background: #5a5d68; }
+  .btn-power  { position: absolute; right: -6px; top: 195px; width: 4px; height: 75px; border-radius: 0 3px 3px 0; background: #5a5d68; }
+
+  /* Inner Bezel */
+  .bezel {
+    width: 100%;
+    height: 100%;
+    border-radius: 49px;
+    background: #000000;
+    padding: 10px;
+    box-shadow: inset 0 0 16px rgba(0,0,0,0.98);
+  }
+
+  /* Screen Canvas */
+  .screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #07080B;
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Glass Sheen Reflection */
+  .glass-sheen {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(130deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.03) 30%, transparent 60%);
+    pointer-events: none;
+    z-index: 40;
+  }
+
+  /* Dynamic Island & Status Bar */
+  .status-bar {
+    width: 100%;
+    padding: 14px 24px 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #FFFFFF;
+    z-index: 50;
+  }
+  .dynamic-island {
+    width: 105px;
+    height: 28px;
+    background: #000000;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8px;
+  }
+  .camera-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #111a2e;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .home-bar {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.35);
+    z-index: 50;
+  }
+</style>
+
+<style>
+  .screen-content {
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+  }
+  .app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .protocol-tag {
+    font-size: 9.5px;
+    font-weight: 800;
+    font-family: monospace;
+    letter-spacing: 0.12em;
+    color: #FFCD00;
+    text-transform: uppercase;
+    background: rgba(255,205,0,0.12);
+    padding: 3px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(255,205,0,0.3);
+  }
+  .breath-circle {
+    width: 170px;
+    height: 170px;
+    margin: 16px auto;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,205,0,0.18) 0%, rgba(255,205,0,0.04) 60%, transparent 75%);
+    border: 2px solid rgba(255,205,0,0.6);
+    box-shadow: 0 0 35px rgba(255,205,0,0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .timer-val {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+  }
+  .timer-phase {
+    font-size: 11px;
+    font-weight: 700;
+    color: #FFCD00;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .streak-card {
+    background: #121318;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 12px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .mood-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 6px;
+  }
+  .mood-pill {
+    flex: 1;
+    background: #14151B;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 8px 4px;
+    text-align: center;
+    font-size: 10px;
+    color: rgba(255,255,255,0.8);
+  }
+  .mood-pill.active {
+    border-color: #FFCD00;
+    background: rgba(255,205,0,0.12);
+    color: #FFCD00;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+  <div class="phone-case">
+    <div class="btn-silent"></div>
+    <div class="btn-vol-up"></div>
+    <div class="btn-vol-dn"></div>
+    <div class="btn-power"></div>
+    <div class="bezel">
+      <div class="screen">
+        <div class="glass-sheen"></div>
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="dynamic-island"><div class="camera-dot"></div></div>
+          <span>100%</span>
+        </div>
+
+        <div class="screen-content">
+          <div>
+            <div class="app-header">
+              <div>
+                <div style="font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.6); text-transform: uppercase;">HQX Companion</div>
+                <div style="font-size: 16px; font-weight: 800; color: #FFFFFF;">HappyU Session</div>
+              </div>
+              <span class="protocol-tag">BOX BREATHING</span>
+            </div>
+
+            <!-- Breathing Sphere -->
+            <div class="breath-circle">
+              <div class="timer-val">03:00</div>
+              <div class="timer-phase">Inhale (4s)</div>
+              <div style="font-size: 9px; color: rgba(255,255,255,0.5); margin-top: 4px;">4s Hold &bull; 4s Exhale</div>
+            </div>
+
+            <!-- Audio Focus Track -->
+            <div style="background: #121318; border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 18px; color: #FFCD00;">&#127911;</span>
+                <div>
+                  <div style="font-size: 12px; font-weight: 700; color: #FFFFFF;">Deep Stillness & Reset</div>
+                  <div style="font-size: 10px; color: rgba(255,255,255,0.5);">Delta waves &bull; Executive calming</div>
+                </div>
+              </div>
+              <div style="width: 28px; height: 28px; border-radius: 50%; background: #FFCD00; color: #0A0A0A; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900;">&#9658;</div>
+            </div>
+          </div>
+
+          <div>
+            <!-- Streak Card -->
+            <div class="streak-card">
+              <div>
+                <div style="font-size: 10px; color: rgba(255,255,255,0.6); text-transform: uppercase; font-weight: 700;">Ikigai Micro-Streak</div>
+                <div style="font-size: 18px; font-weight: 800; color: #FFCD00;">28 Days Active</div>
+              </div>
+              <div style="font-size: 24px;">&#128293;</div>
+            </div>
+
+            <!-- Mood Check-in -->
+            <div style="margin-bottom: 16px;">
+              <div style="font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.7); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em;">
+                Vitality Pulse Check-in
+              </div>
+              <div class="mood-row">
+                <div class="mood-pill">&#128524;<br>Calm</div>
+                <div class="mood-pill active">&#9889;<br>Focused</div>
+                <div class="mood-pill">&#128522;<br>Joyful</div>
+                <div class="mood-pill">&#129300;<br>Grounded</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="home-bar"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
