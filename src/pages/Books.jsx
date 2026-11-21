@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, Star, ExternalLink, Quote, Sparkles, Check, ArrowRight, Award } from 'lucide-react';
+import { BookOpen, Star, ExternalLink, Quote, Check, ArrowRight, Award } from 'lucide-react';
 import { useData } from '../context/DataContext';
 
 export default function Books() {
@@ -287,10 +287,6 @@ export default function Books() {
 
             {/* Editorial Content */}
             <div className="lg:col-span-7 space-y-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-hq-yellow/10 border border-hq-yellow/30 text-hq-yellow font-mono text-xs uppercase tracking-widest">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Executive & Boardroom Distribution</span>
-              </div>
               <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-white leading-tight">
                 Gifting Eudaimonic Clarity <br />
                 <span className="text-hq-yellow font-light">to Global Leaders & Cohorts</span>
