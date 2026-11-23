@@ -19,35 +19,27 @@ export default function NSGWarriorShowcase() {
           {/* LEFT COLUMN: Editorial Story & Commemoration */}
           <div className="lg:col-span-7 flex flex-col space-y-6">
             
-            {/* Status Eyebrow */}
-            <div className="flex flex-wrap items-center gap-2.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-hq-yellow inline-block animate-pulse shadow-xs" />
-              <span className="font-mono text-xs sm:text-[13px] font-bold tracking-[0.22em] text-hq-yellow uppercase">
-                Elite Forces Mental Resilience &bull; Manesar Base
-              </span>
-            </div>
-
             {/* Headlines */}
             <div>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.1]">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight !text-white leading-[1.1]">
                 The Inner Strength of a Warrior <span className="inline-block">🇮🇳</span>
               </h2>
-              <p className="font-display text-xl sm:text-2xl text-hq-yellow font-semibold tracking-wide mt-2">
+              <p className="font-display text-xl sm:text-2xl !text-hq-yellow font-semibold tracking-wide mt-2">
                 HQx Global &times; National Security Guard
               </p>
             </div>
 
-            {/* Narrative Paragraphs */}
-            <div className="space-y-4 font-body text-sm sm:text-base text-white/80 leading-relaxed">
-              <p className="p-4 sm:p-5 rounded-xl bg-white/[0.03] border border-white/10">
-                It was an honour to lead a four-hour mental wellness (in person) workshop for the <strong className="text-white font-semibold">Elite Black Cat commandos</strong> of the NSG at Manesar head base (plus via online for personnel stationed across the country) alongside <strong className="text-hq-yellow font-semibold">Maj Anil Kumar, Shaurya Chakra (Retd.)</strong>.
+            {/* Narrative Paragraphs with forced bright contrast */}
+            <div className="space-y-4 font-body text-sm sm:text-base !text-white/90 leading-relaxed">
+              <p className="p-4 sm:p-5 rounded-xl bg-white/[0.04] border border-white/10 !text-white/95">
+                It was an honour to lead a four-hour mental wellness (in person) workshop for the <strong className="!text-white font-bold">Elite Black Cat commandos</strong> of the NSG at Manesar head base (plus via online for personnel stationed across the country) alongside <strong className="!text-hq-yellow font-bold">Maj Anil Kumar, Shaurya Chakra (Retd.)</strong>.
               </p>
 
-              <p>
-                We explored how to stay composed under pressure, recover after demanding situations, and build daily habits that support mental well-being. Through <strong className="text-white font-semibold">Ikigai</strong>, we reflected on the sense of purpose that sustains us in service and in life.
+              <p className="!text-white/90">
+                We explored how to stay composed under pressure, recover after demanding situations, and build daily habits that support mental well-being. Through <strong className="!text-white font-bold">Ikigai</strong>, we reflected on the sense of purpose that sustains us in service and in life.
               </p>
 
-              <p className="text-white/70 italic border-l-2 border-hq-yellow pl-4 py-1">
+              <p className="!text-white/80 italic border-l-2 border-hq-yellow pl-4 py-1">
                 &ldquo;As we approach the 18th anniversary of 26/11, we remember the lives lost and honour the courage of those who answered the call. Contributing to the well-being of those who serve the nation was a privilege for all of us at HQx.&rdquo;
               </p>
             </div>

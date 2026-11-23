@@ -805,6 +805,37 @@ html.dark main :is(input, textarea, select) {
   color: #111111 !important;
 }
 
+/* NSG Warrior Section High-Contrast Typography */
+#nsg-warrior,
+#nsg-warrior h2,
+#nsg-warrior h3 {
+  color: #FFFFFF !important;
+}
+
+#nsg-warrior p,
+#nsg-warrior p span,
+html:not(.dark) #nsg-warrior p,
+html.dark #nsg-warrior p {
+  color: rgba(245, 245, 245, 0.92) !important;
+}
+
+#nsg-warrior strong,
+html:not(.dark) #nsg-warrior strong {
+  color: #FFFFFF !important;
+}
+
+#nsg-warrior .text-hq-yellow,
+#nsg-warrior [class*="text-hq-yellow"],
+html:not(.dark) #nsg-warrior [class*="text-hq-yellow"] {
+  color: var(--hq-yellow) !important;
+}
+
+#nsg-warrior .text-white\/60,
+#nsg-warrior .text-white\/70,
+#nsg-warrior .text-white\/80 {
+  color: rgba(240, 240, 240, 0.75) !important;
+}
+
 /* 10. High-Fidelity Print & PDF Styles */
 @media print {
   /* Hide fixed navigation, sticky connect drawer, modals, background blur overlays */
