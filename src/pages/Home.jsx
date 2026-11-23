@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import TestimonialsCollage from '../components/home/TestimonialsCollage';
+import NSGWarriorShowcase from '../components/home/NSGWarriorShowcase';
 import { IMPACTED_INSTITUTION_BADGES } from '../components/home/StrategicInstitutionsSection';
 import { 
   ArrowDownRight, 
@@ -952,19 +953,19 @@ export default function Home() {
                 className="inline-flex items-center gap-3 shrink-0 group cursor-pointer"
               >
                 {/* Logo without background and bigger */}
-                <div className="h-12 sm:h-14 md:h-16 w-14 sm:w-16 md:w-18 flex items-center justify-center p-1 shrink-0 group-hover:scale-110 transition-transform duration-200">
+                <div className="h-14 sm:h-16 md:h-20 w-auto min-w-[55px] max-w-[150px] sm:max-w-[180px] flex items-center justify-center p-1 shrink-0 group-hover:scale-105 transition-transform duration-200">
                   <img 
                     src={badge.logo} 
                     alt={badge.name} 
-                    className="max-h-full max-w-full object-contain filter brightness-0 invert sepia saturate-[800%] hue-rotate-[5deg]" 
+                    className="max-h-full max-w-full object-contain filter contrast-105" 
                     loading="lazy"
                   />
                 </div>
                 <div className="flex flex-col text-left">
-                  <span className="font-display font-bold text-xs sm:text-sm md:text-base uppercase tracking-wider text-hq-yellow leading-tight whitespace-nowrap">
+                  <span className="font-display font-bold text-sm sm:text-base md:text-[17px] text-white group-hover:text-hq-yellow transition-colors leading-tight whitespace-nowrap">
                     {badge.name}
                   </span>
-                  <span className="font-mono text-[10px] sm:text-xs text-hq-yellow/70 leading-tight whitespace-nowrap mt-0.5">
+                  <span className="font-body text-xs sm:text-[13px] text-white/60 font-medium leading-tight whitespace-nowrap mt-0.5">
                     {badge.subtitle}
                   </span>
                 </div>
@@ -1649,6 +1650,9 @@ export default function Home() {
 
       {/* Executive Testimonials Bento Collage */}
       <TestimonialsCollage />
+
+      {/* THE INNER STRENGTH OF A WARRIOR - NSG BLACK CAT COMMANDOS COLLABORATION */}
+      <NSGWarriorShowcase />
 
       {/* 8. HQX PODCAST (LITE BG & CONTRACTED LAYOUT - SPOTLIGHT VIDEO ON LEFT & THUMBNAILS ON RIGHT) */}
       <section id="podcast" className="section-reveal py-20 sm:py-24 bg-[#FAF7F2] dark:bg-[#0D0E12] text-hq-black dark:text-white transition-colors">
