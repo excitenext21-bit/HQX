@@ -981,8 +981,17 @@ export function DataProvider({ children }) {
   });
 
   const [podcasts, setPodcasts] = useState(() => {
-    const saved = localStorage.getItem('hqx_podcasts_v4');
-    return saved ? JSON.parse(saved) : INITIAL_PODCASTS;
+    try {
+      localStorage.removeItem('hqx_podcasts_v4');
+      const saved = localStorage.getItem('hqx_podcasts_v5');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.some(p => p.youtubeId === 'gDlgkcZNI1k')) {
+          return parsed;
+        }
+      }
+    } catch (_) {}
+    return INITIAL_PODCASTS;
   });
 
   const [engagements, setEngagements] = useState(() => {
@@ -1023,7 +1032,7 @@ export function DataProvider({ children }) {
   }, [books]);
 
   useEffect(() => {
-    localStorage.setItem('hqx_podcasts_v4', JSON.stringify(podcasts));
+    localStorage.setItem('hqx_podcasts_v5', JSON.stringify(podcasts));
   }, [podcasts]);
 
   useEffect(() => {
@@ -1128,6 +1137,7 @@ export function DataProvider({ children }) {
     localStorage.removeItem('hqx_courses_v2');
     localStorage.removeItem('hqx_books_v6');
     localStorage.removeItem('hqx_podcasts_v4');
+    localStorage.removeItem('hqx_podcasts_v5');
     localStorage.removeItem('hqx_engagements_v2');
     localStorage.removeItem('hqx_inquiries_v2');
     localStorage.removeItem('hqx_richtext_v2');

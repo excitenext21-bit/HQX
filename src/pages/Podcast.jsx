@@ -21,6 +21,7 @@ export default function Podcast() {
   const [activeEpisode, setActiveEpisode] = useState(podcasts[0] || null);
   const [expandedEpisodeId, setExpandedEpisodeId] = useState(null);
   const [centerSlide, setCenterSlide] = useState(2);
+  const [modalVideo, setModalVideo] = useState(null);
   const [showAllPodcasts, setShowAllPodcasts] = useState(false);
   const visibleNextUp = showAllPodcasts ? podcasts : podcasts.slice(0, 6);
   const visibleFeaturedConversations = showAllPodcasts ? podcasts : podcasts.slice(0, 10);
@@ -88,49 +89,66 @@ export default function Podcast() {
       type: 'video',
       src: '/videos/happiness_samurai_john_abraham.mp4',
       poster: '/profile_assets/page_32_img_11_2380.jpeg',
-      alt: 'HQX Podcast Guest Dialogue',
+      alt: 'John Abraham — Bollywood Icon & Fitness Advocate',
+      guest: 'John Abraham',
+      title: 'Discipline, Fitness & Mental Fortitude',
       episodeIdx: 3,
+      youtubeId: 'gDlgkcZNI1k',
       objPos: 'object-center'
     },
     {
       id: 'slide-1',
       type: 'image',
       src: '/images/hero_showcase/manny_podcast_mayank.jpg',
-      alt: 'HQX Podcast Studio Conversation',
+      alt: 'Mayank Bathwal — Health Insurance & Leadership',
+      guest: 'Mayank Bathwal',
+      title: 'Health Insurance, Protection & Well-being',
       episodeIdx: 1,
+      youtubeId: 'qj0-Kj_e_yY',
       objPos: 'object-[25%_25%]'
     },
     {
       id: 'slide-2',
-      type: 'video',
-      src: '/videos/happiness_samurai_ikigai.mp4',
-      poster: '/profile_assets/page_21_img_1_1306.jpeg',
-      alt: 'HQX Podcast — Stories, Mindset and Insights',
+      type: 'image',
+      src: '/images/hero_showcase/podcast_arjun_khanna.jpg',
+      alt: 'HQX Autumn Season 2026: Arjun Khanna (AI Deep Thought Leader)',
+      guest: 'Arjun Khanna',
+      title: 'AI & Deep Thought Leadership',
       episodeIdx: 0,
+      youtubeId: 'gDlgkcZNI1k',
       objPos: 'object-center'
     },
     {
       id: 'slide-3',
       type: 'image',
-      src: '/images/hero_showcase/podcast_arjun_khanna.jpg',
-      alt: 'HQX Autumn Season 2026: Arjun Khanna (AI Deep Thought Leader)',
-      episodeIdx: 0,
-      objPos: 'object-center'
+      src: '/images/hero_showcase/manny_podcast_rakesh.jpg',
+      alt: 'Rakesh Makkar — Financial Inclusion',
+      guest: 'Rakesh Makkar',
+      title: 'Financial Inclusion & Micro-entrepreneurship',
+      episodeIdx: 5,
+      youtubeId: 'Y9jZ7_U9P4k',
+      objPos: 'object-[20%_25%]'
     },
     {
       id: 'slide-4',
       type: 'image',
-      src: '/images/hero_showcase/manny_podcast_rakesh.jpg',
-      alt: 'HQX Podcast Studio Recording',
-      episodeIdx: 5,
-      objPos: 'object-[20%_25%]'
+      src: '/images/hero_showcase/manny_podcast_yellow_chairs.jpg',
+      alt: 'HQX Podcast Studio Interview Set',
+      guest: 'Kavinder Singh',
+      title: 'Hospitality, Leisure & Customer Delight',
+      episodeIdx: 2,
+      youtubeId: 'Ww_6t0z7r4Y',
+      objPos: 'object-center'
     },
     {
       id: 'slide-5',
       type: 'image',
-      src: '/images/hero_showcase/manny_podcast_yellow_chairs.jpg',
-      alt: 'HQX Podcast Studio Interview Set',
+      src: '/images/hero_showcase/manny_ikigai_grand_stage.jpg',
+      alt: 'Manny Anchan — Keynote & Purpose Alignment',
+      guest: 'Manny Anchan',
+      title: 'Ikigai, Purpose & High Performance',
       episodeIdx: 0,
+      youtubeId: 'gDlgkcZNI1k',
       objPos: 'object-center'
     }
   ];
@@ -188,21 +206,34 @@ export default function Podcast() {
   ];
 
   const handleSelectSlide = (idx, offset) => {
+    const slide = heroSlides[idx];
+    const epIdx = slide.episodeIdx;
+    const ep = podcasts[epIdx] || podcasts[0];
+
     if (offset === 0) {
-      const epIdx = heroSlides[idx].episodeIdx;
-      if (podcasts[epIdx]) {
-        setActiveEpisode(podcasts[epIdx]);
-      }
-      const el = document.getElementById('featured-player');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const selectedVideo = ep ? {
+        ...ep,
+        youtubeId: slide.youtubeId || ep.youtubeId
+      } : {
+        id: 'yt-gDlgkcZNI1k',
+        youtubeId: 'gDlgkcZNI1k',
+        title: slide.title || 'HQx Autumn Season 2026: AI & Deep Thought Leadership',
+        guest: slide.guest || 'Arjun Khanna',
+        duration: '48:15',
+        category: 'AI Deep Thought Leader | Founder & CEO, IntegrityX.ai',
+        date: 'Autumn 2026',
+        summary: 'HQx Autumn season 2026 featuring Arjun Khanna, AI Deep thought leader and enterprise pioneer, exploring the future of artificial intelligence, ethical leadership, and cognitive resilience.'
+      };
+      setModalVideo(selectedVideo);
+      if (ep) {
+        setActiveEpisode(ep);
+        setExpandedEpisodeId(ep.id);
       }
       return;
     }
     setCenterSlide(idx);
-    const epIdx = heroSlides[idx].episodeIdx;
-    if (podcasts[epIdx]) {
-      setActiveEpisode(podcasts[epIdx]);
+    if (ep) {
+      setActiveEpisode(ep);
     }
   };
 
@@ -342,7 +373,7 @@ export default function Podcast() {
                   }`}
                 />
 
-                {/* Top Phone Dynamic Island & Play Triangle ONLY when Centered */}
+                {/* Top Phone Dynamic Island, Play Button & Episode Title Pill ONLY when Centered */}
                 {isCenter && (
                   <>
                     <div className="absolute top-3 inset-x-4 z-20 flex items-center justify-between pointer-events-none">
@@ -351,9 +382,21 @@ export default function Podcast() {
                       <Wifi className="w-3 h-3 text-white/80 stroke-[1.5]" />
                     </div>
 
-                    <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
-                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center group-hover:scale-110 group-hover:bg-hq-yellow group-hover:border-hq-yellow transition-all duration-300 shadow-lg">
-                        <Play className="w-4 h-4 sm:w-5 sm:h-5 fill-white text-white group-hover:fill-black group-hover:text-black ml-0.5 transition-colors" />
+                    <div className="absolute inset-0 z-20 flex flex-col items-center justify-center pointer-events-none">
+                      <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-hq-yellow text-black flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-[0_0_35px_rgba(255,204,0,0.6)]">
+                        <Play className="w-5 h-5 sm:w-6 sm:h-6 fill-black text-black ml-0.5" />
+                      </div>
+                      <span className="mt-2 text-[10px] font-mono uppercase tracking-widest text-white/90 bg-black/60 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/10">
+                        Click to Watch
+                      </span>
+                    </div>
+
+                    <div className="absolute inset-x-3 bottom-3 z-20 p-2.5 rounded-xl bg-black/80 backdrop-blur-md border border-white/15 pointer-events-none text-left">
+                      <div className="text-[10px] uppercase font-mono tracking-wider text-hq-yellow font-bold truncate">
+                        {slide.guest}
+                      </div>
+                      <div className="text-[12px] text-white font-medium line-clamp-1 leading-snug">
+                        {slide.title}
                       </div>
                     </div>
                   </>
@@ -697,6 +740,78 @@ export default function Podcast() {
           </div>
         </div>
       </section>
+
+      {/* Interactive YouTube Video Playback Modal */}
+      <AnimatePresence>
+        {modalVideo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setModalVideo(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10 bg-black/85 backdrop-blur-md"
+          >
+            <motion.div
+              initial={{ scale: 0.92, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.92, opacity: 0, y: 20 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-4xl bg-[#111317] border border-white/20 rounded-3xl overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.9)] text-white"
+            >
+              <button
+                type="button"
+                onClick={() => setModalVideo(null)}
+                className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/65 hover:bg-hq-yellow text-white hover:text-black border border-white/20 flex items-center justify-center transition-colors cursor-pointer"
+                aria-label="Close modal"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="aspect-video w-full bg-black">
+                <iframe
+                  className="w-full h-full"
+                  src={`https://www.youtube.com/embed/${modalVideo.youtubeId}?autoplay=1&rel=0`}
+                  title={modalVideo.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+
+              <div className="p-5 sm:p-7 bg-gradient-to-b from-[#14171E] to-[#0D0F13] border-t border-white/10">
+                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-hq-yellow font-semibold mb-2">
+                  <span>Now Playing</span>
+                  {modalVideo.duration && (
+                    <>
+                      <span className="text-white/30">&bull;</span>
+                      <span>{modalVideo.duration}</span>
+                    </>
+                  )}
+                  {modalVideo.category && (
+                    <>
+                      <span className="text-white/30">&bull;</span>
+                      <span className="truncate max-w-[300px]">{modalVideo.category}</span>
+                    </>
+                  )}
+                </div>
+                <h3 className="font-display text-xl sm:text-2xl font-semibold text-white mb-1.5">
+                  {modalVideo.title}
+                </h3>
+                {modalVideo.guest && (
+                  <div className="text-sm text-white/80 font-medium mb-3">
+                    Dialogue with {modalVideo.guest}
+                  </div>
+                )}
+                {modalVideo.summary && (
+                  <p className="font-body text-xs sm:text-sm text-white/70 font-light leading-relaxed">
+                    {modalVideo.summary}
+                  </p>
+                )}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
