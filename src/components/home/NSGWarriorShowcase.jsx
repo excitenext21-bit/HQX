@@ -47,11 +47,21 @@ export default function NSGWarriorShowcase() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           
-          {/* LEFT: Authentic Stage Photograph */}
-          <div className="lg:col-span-6 order-2 lg:order-1">
-            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.8)] group">
+          {/* LEFT: Headline & Sharp, Unrounded Authentic Stage Photograph */}
+          <div className="lg:col-span-6 flex flex-col space-y-4">
+            
+            {/* Headline placed directly above image */}
+            <div>
+              <h2 className="font-display text-base sm:text-lg md:text-xl lg:text-[23px] font-bold tracking-tight text-white leading-[1.25]">
+                The Inner Strength of a Warrior <IndiaFlag className="w-5 h-3.5" /> <br className="hidden sm:inline" />
+                <span className="text-hq-yellow">HQx Global &times; National Security Guard</span>
+              </h2>
+            </div>
+
+            {/* Sharp stage photograph with no rounded corners */}
+            <div className="relative overflow-hidden border border-white/10 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.8)] group">
               <img 
                 src="/images/nsg-warrior-stage.jpg" 
                 alt="Manny Anchan leading Mental Wellness - The Inner Strength of a Warrior for NSG Black Cat Commandos" 
@@ -60,25 +70,15 @@ export default function NSGWarriorShowcase() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-3 left-4 right-4 sm:bottom-4 sm:left-5 text-left pointer-events-none">
-                <span className="font-mono text-[11px] sm:text-xs text-white/80 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+                <span className="font-mono text-[11px] sm:text-xs text-white/80 bg-black/70 backdrop-blur-md px-3 py-1 border border-white/10">
                   National Security Guard Head Base &bull; Manesar
                 </span>
               </div>
             </div>
           </div>
 
-          {/* RIGHT: Minimalist, High-Contrast Content */}
-          <div className="lg:col-span-6 order-1 lg:order-2 flex flex-col space-y-6">
-            
-            {/* Headlines styled exactly like "Benefits of Engagement" but 50% smaller */}
-            <div>
-              <h2 className="font-display text-base sm:text-lg md:text-xl lg:text-[23px] font-bold tracking-tight text-white leading-[1.25] mb-3">
-                The Inner Strength of a Warrior <IndiaFlag className="w-5 h-3.5" /> <br className="hidden sm:inline" />
-                <span className="text-hq-yellow">HQx Global &times; National Security Guard</span>
-              </h2>
-            </div>
-
-            {/* Narrative Content with High Readability */}
+          {/* RIGHT: Minimalist Narrative Content */}
+          <div className="lg:col-span-6 flex flex-col space-y-5 lg:pt-1">
             <div className="space-y-4 font-body text-sm sm:text-base leading-relaxed" style={{ color: '#F3F4F6' }}>
               <p style={{ color: '#F3F4F6', margin: 0, lineHeight: 1.8 }}>
                 It was an honour to lead a four-hour mental wellness (in person) workshop for the{' '}
