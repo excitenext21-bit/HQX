@@ -133,15 +133,15 @@ export default function Team() {
                   <Link
                     to="/contact"
                     onClick={() => setSelectedMember(null)}
-                    className="bg-[#1E1A17] hover:bg-black text-[#FAF8F5] font-body text-xs uppercase tracking-wider px-6 py-3 rounded-full transition-all font-medium flex items-center gap-2 shadow-sm"
+                    className="bg-[#1E1A17] hover:bg-black text-[#FAF8F5] font-body text-[11px] uppercase tracking-wider px-5 py-2.5 rounded-full transition-all font-medium flex items-center gap-2 shadow-sm"
                   >
                     <span>Request Advisory Session</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-3 h-3" />
                   </Link>
                   <Link
                     to="/engaging-workshops"
                     onClick={() => setSelectedMember(null)}
-                    className="border border-black/15 text-[#1E1A17] hover:bg-black/5 font-body text-xs uppercase tracking-wider px-6 py-3 rounded-full transition-all font-medium"
+                    className="border border-black/15 text-[#1E1A17] hover:bg-black/5 font-body text-[11px] uppercase tracking-wider px-5 py-2.5 rounded-full transition-all font-medium"
                   >
                     View Workshops
                   </Link>

@@ -1500,7 +1500,7 @@ export default function Home() {
                         setSelectedTeamMember(member);
                       }
                     }}
-                    className="inline-flex items-center gap-2 font-display text-[11px] uppercase tracking-widest font-bold text-white group-hover:text-hq-yellow transition-colors pb-0.5 border-b border-white group-hover:border-hq-yellow w-fit mt-1"
+                    className="inline-flex items-center gap-1.5 font-display text-[10px] uppercase tracking-widest font-bold text-white group-hover:text-hq-yellow transition-colors pb-0.5 border-b border-white group-hover:border-hq-yellow w-fit mt-1"
                   >
                     <span>KNOW MORE</span>
                     <LongArrow className="group-hover:translate-x-1" />

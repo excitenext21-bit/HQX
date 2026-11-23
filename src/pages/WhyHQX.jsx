@@ -24,7 +24,6 @@ import {
 import { STATES_COVERED, GLOBAL_FOOTPRINT_COUNTRIES } from '../context/DataContext';
 import CorporatePartnersMarquee from '../components/common/CorporatePartnersMarquee';
 import GlobalFootprintMapSection from '../components/common/GlobalFootprintMapSection';
-import StrategicInstitutionsSection from '../components/home/StrategicInstitutionsSection';
 
 export default function WhyHQX() {
   const [activeIndustry, setActiveIndustry] = useState(0);
@@ -294,65 +293,6 @@ export default function WhyHQX() {
       ]
     }
   ];
-
-  const IMPACTED_INSTITUTION_BADGES = [
-    {
-      name: 'Healthcare',
-      subtitle: 'Clinical & Hospital Systems',
-      logo: '/images/logos/healthcare.png'
-    },
-    {
-      name: 'Pharma',
-      subtitle: 'Life Sciences & Biotech',
-      logo: '/images/logos/pharma.svg'
-    },
-    {
-      name: 'NSG',
-      subtitle: 'National Security Guard',
-      logo: '/images/logos/nsg.png'
-    },
-    {
-      name: 'Indian Army',
-      subtitle: 'Armed Forces Command',
-      logo: '/images/logos/indian_army.svg'
-    },
-    {
-      name: 'NACIN',
-      subtitle: 'Customs & Narcotics Academy',
-      logo: '/images/logos/nacin.png'
-    },
-    {
-      name: 'Government',
-      subtitle: 'Public Policy & Ministries',
-      logo: '/images/logos/government_of_india.svg'
-    },
-    {
-      name: 'RBI',
-      subtitle: 'Reserve Bank of India',
-      logo: '/images/logos/rbi.png'
-    },
-    {
-      name: 'NHRD',
-      subtitle: 'National HRD Network',
-      logo: '/images/logos/nhrd.svg'
-    },
-    {
-      name: 'FICCI',
-      subtitle: 'Apex Industry Chamber',
-      logo: '/images/logos/ficci.png'
-    },
-    {
-      name: 'BMC',
-      subtitle: 'Brihanmumbai Municipal Corp',
-      logo: '/images/logos/bmc.png'
-    },
-    {
-      name: 'IMC',
-      subtitle: "Indian Merchants' Chamber",
-      logo: '/images/logos/imc.png'
-    }
-  ];
-
 
   return (
     <div className="min-h-screen bg-hq-white text-hq-black">
@@ -1052,9 +992,6 @@ export default function WhyHQX() {
           </div>
         </div>
       </section>
-
-      {/* STRATEGIC INSTITUTIONS & IMPACTED SECTORS - 3 VERTICAL SCROLLING COLUMNS WITH LEFT EDITORIAL */}
-      <StrategicInstitutionsSection />
 
       {/* NATIONWIDE & GLOBAL FOOTPRINT - DOTTED MATRIX WORLD MAP (UPLOADED SPEC) */}
       <GlobalFootprintMapSection />
