@@ -6,6 +6,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import FluexaPageTransition from './components/common/FluexaPageTransition';
+import BrandLoader from './components/common/BrandLoader';
 import ConnectDrawer from './components/common/ConnectDrawer';
 import BackToTop from './components/common/BackToTop';
 import RouteSEO from './components/common/RouteSEO';
@@ -58,7 +59,7 @@ export default function App() {
           <div className="flex flex-col min-h-screen bg-hq-white dark:bg-[#07080B] text-hq-black dark:text-white transition-colors duration-200">
             <Navbar />
             <main className="flex-1">
-              <Suspense fallback={<div className="min-h-screen bg-[#0A0A0A]" />}>
+              <Suspense fallback={<div className="min-h-screen bg-transparent" />}>
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/about-us" element={<AboutUs />} />

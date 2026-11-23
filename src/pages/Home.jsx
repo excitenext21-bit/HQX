@@ -837,8 +837,8 @@ export default function Home() {
 
   return (
     <div className="w-full bg-hq-white dark:bg-[#07080B] text-hq-black dark:text-white transition-colors duration-200 relative">
-      {/* 1. LUXURY EDITORIAL HERO SECTION (INSPIRED BY REFERENCE) */}
-      <header id="home-hero" className="relative w-full min-h-[100svh] md:min-h-[760px] lg:h-[96vh] flex flex-col justify-between md:justify-end pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-10 md:pb-12 overflow-hidden bg-[#111213]">
+      {/* 1. LUXURY EDITORIAL HERO SECTION - 100% FIT TO SCREEN */}
+      <header id="home-hero" className="relative w-full h-[100svh] min-h-[100svh] max-h-[100svh] lg:h-screen lg:max-h-screen flex flex-col justify-between pt-16 sm:pt-20 md:pt-22 pb-5 sm:pb-7 md:pb-8 overflow-hidden bg-[#111213]">
         {/* Ambient Warm Studio Lighting Behind Manny (With Onload Glow Animation) */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-[30%] md:top-[44%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[460px] md:w-[900px] h-[340px] md:h-[650px] bg-hq-yellow/[0.08] rounded-full blur-[110px] md:blur-[130px] animate-hero-glow"></div>
@@ -846,7 +846,7 @@ export default function Home() {
         </div>
 
         {/* MOBILE TOP VISUAL STAGE / DESKTOP FULL-BLEED BACKGROUND FOR MANNY + TYPOGRAPHY */}
-        <div className="relative h-[46vh] sm:h-[52vh] md:static md:h-auto w-full shrink-0 flex items-end justify-center">
+        <div className="relative h-[42vh] sm:h-[48vh] md:static md:h-auto w-full shrink-0 flex items-end justify-center">
           {/* GIANT MONUMENTAL TYPOGRAPHY LAYER: "MANNY" & "ANCHAN" */}
           <div className="absolute inset-x-0 top-[44%] md:top-[43%] -translate-y-1/2 z-10 px-4 sm:px-10 md:px-14 lg:px-20 pointer-events-none max-w-[1550px] mx-auto animate-hero-name">
             {/* Accessible H1 for SEO */}
@@ -858,12 +858,12 @@ export default function Home() {
                 className="font-semibold tracking-tight text-[#FFEFD6] drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)] inline-block pointer-events-auto select-text translate-x-1 sm:translate-x-4 md:translate-x-7"
                 style={{
                   fontFamily: '"Bebas Neue", "Anton", "Oswald", sans-serif',
-                  fontSize: 'clamp(3.2rem, 13vw, 14.5rem)',
-                  lineHeight: 0.88,
+                  fontSize: 'clamp(3.8rem, 15.5vw, 18rem)',
+                  lineHeight: 0.84,
                   transform: 'scaleY(1.08)',
                   transformOrigin: 'bottom left',
                   WebkitTextStroke: '0.4px #FFEFD6',
-                  letterSpacing: '0.02em'
+                  letterSpacing: '0.015em'
                 }}
               >
                 MANNY
@@ -874,12 +874,12 @@ export default function Home() {
                 className="font-semibold tracking-tight text-[#FFEFD6] drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)] inline-block pointer-events-auto select-text -translate-x-1 sm:-translate-x-4 md:-translate-x-7"
                 style={{
                   fontFamily: '"Bebas Neue", "Anton", "Oswald", sans-serif',
-                  fontSize: 'clamp(3.2rem, 13vw, 14.5rem)',
-                  lineHeight: 0.88,
+                  fontSize: 'clamp(3.8rem, 15.5vw, 18rem)',
+                  lineHeight: 0.84,
                   transform: 'scaleY(1.08)',
                   transformOrigin: 'bottom right',
                   WebkitTextStroke: '0.4px #FFEFD6',
-                  letterSpacing: '0.02em'
+                  letterSpacing: '0.015em'
                 }}
               >
                 ANCHAN
@@ -896,20 +896,20 @@ export default function Home() {
               height="963"
               fetchpriority="high"
               decoding="sync"
-              className="h-[44vh] sm:h-[50vh] md:h-[80vh] lg:h-[86vh] max-h-[850px] w-auto object-contain object-bottom filter drop-shadow-[0_25px_50px_rgba(0,0,0,0.85)] transition-transform duration-700" 
+              className="h-[40vh] sm:h-[46vh] md:h-[70vh] lg:h-[75vh] max-h-[720px] w-auto object-contain object-bottom filter drop-shadow-[0_25px_50px_rgba(0,0,0,0.85)] transition-transform duration-700" 
             />
             <div className="md:hidden absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
           </div>
         </div>
 
         {/* BOTTOM EDITORIAL CONTENT (STACKED CLEANLY BELOW IMAGE ON MOBILE, LEFT/RIGHT ON DESKTOP) */}
-        <div className="relative z-30 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-8 pt-4 md:pt-0">
+        <div className="relative z-30 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-5 md:gap-8 pb-1 sm:pb-3 md:pb-4">
           {/* Left Column: Core Message & Primary CTA (Onload Reveal) */}
           <div className="w-full md:w-5/12 lg:w-4/12 flex flex-col items-start text-left animate-hero-left">
             <h2 className="font-prata text-xl sm:text-2xl lg:text-[1.76rem] text-[#F3EFEA] font-normal leading-snug mb-3 tracking-wide" style={{ fontFamily: '"Prata", serif' }}>
               Feel Better. Work Better. Live Better.
             </h2>
-            <p className="font-body text-white/70 text-xs sm:text-sm leading-relaxed mb-6 font-light max-w-sm">
+            <p className="font-body text-white/70 text-xs sm:text-sm leading-relaxed mb-3.5 font-light max-w-sm">
               Enterprise well-being and peak performance interventions designed to eradicate executive burnout, instill psychological safety, and drive measurable organizational happiness.
             </p>
             
@@ -919,7 +919,7 @@ export default function Home() {
                 e.preventDefault();
                 document.getElementById('key-themes-section')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="group relative inline-flex items-center justify-between gap-6 py-3.5 px-1 font-display font-medium text-xs tracking-widest text-white hover:text-hq-yellow transition-colors duration-300"
+              className="group relative inline-flex items-center justify-between gap-6 py-2.5 px-1 font-display font-medium text-xs tracking-widest text-white hover:text-hq-yellow transition-colors duration-300"
             >
               {/* Top border line: 1.25px, white by default, on hover width decreases to 20% at right edge and turns theme yellow */}
               <span className="absolute top-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1.25px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none"></span>
@@ -946,7 +946,7 @@ export default function Home() {
             <div className="font-display text-white text-base sm:text-lg font-normal mb-2">
               25+ Years Corporate Stewardship
             </div>
-            <p className="font-body text-white/70 text-xs sm:text-sm leading-relaxed mb-5 font-light max-w-xs">
+            <p className="font-body text-white/70 text-xs sm:text-sm leading-relaxed mb-3.5 font-light max-w-xs">
               Harvard & Columbia alum. Former executive at GE Capital, HDFC, Barclays & ABN AMRO. Trusted across 16 states & 9 countries.
             </p>
             
@@ -956,7 +956,7 @@ export default function Home() {
                 e.preventDefault();
                 document.getElementById('team-section')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="group relative inline-flex items-center justify-between gap-6 py-3.5 px-1 font-display text-xs tracking-widest text-white hover:text-hq-yellow transition-colors duration-300"
+              className="group relative inline-flex items-center justify-between gap-6 py-2.5 px-1 font-display text-xs tracking-widest text-white hover:text-hq-yellow transition-colors duration-300"
             >
               {/* Top border line: 1.25px, white by default, on hover width decreases to 20% at right edge and turns theme yellow */}
               <span className="absolute top-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1.25px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none"></span>

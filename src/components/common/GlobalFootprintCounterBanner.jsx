@@ -19,6 +19,13 @@ const TEAM_MEMBERS = [
     image: '/team/soha-ali-khan.webp',
   },
   {
+    id: 'neha',
+    name: 'Neha Dubey',
+    role: 'Psychotherapist & Mindfulness Practitioner',
+    badge: 'Regent’s College London & Guy’s Hospital',
+    image: '/team/neha-dubey.jpg',
+  },
+  {
     id: 'rajiv',
     name: 'Rajiv Gupta',
     role: 'Ex-VP Honda Cars & Author',

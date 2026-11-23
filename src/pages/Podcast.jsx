@@ -22,7 +22,15 @@ export default function Podcast() {
   const [expandedEpisodeId, setExpandedEpisodeId] = useState(null);
   const [centerSlide, setCenterSlide] = useState(2);
   const [modalVideo, setModalVideo] = useState(null);
+  const [isVideoLoading, setIsVideoLoading] = useState(true);
   const [showAllPodcasts, setShowAllPodcasts] = useState(false);
+
+  const openVideoModal = (ep) => {
+    setIsVideoLoading(true);
+    setModalVideo(ep);
+    setActiveEpisode(ep);
+    setExpandedEpisodeId(ep.id);
+  };
   const visibleNextUp = showAllPodcasts ? podcasts : podcasts.slice(0, 6);
   const visibleFeaturedConversations = showAllPodcasts ? podcasts : podcasts.slice(0, 10);
 
@@ -224,11 +232,7 @@ export default function Podcast() {
         date: 'Autumn 2026',
         summary: 'HQx Autumn season 2026 featuring Arjun Khanna, AI Deep thought leader and enterprise pioneer, exploring the future of artificial intelligence, ethical leadership, and cognitive resilience.'
       };
-      setModalVideo(selectedVideo);
-      if (ep) {
-        setActiveEpisode(ep);
-        setExpandedEpisodeId(ep.id);
-      }
+      openVideoModal(selectedVideo);
       return;
     }
     setCenterSlide(idx);
@@ -451,8 +455,7 @@ export default function Podcast() {
                   type="button"
                   onClick={() => {
                     if (thumbDraggedRef.current) return;
-                    setActiveEpisode(ep);
-                    setExpandedEpisodeId(ep.id);
+                    openVideoModal(ep);
                   }}
                   className={`group relative w-[200px] sm:w-[220px] lg:w-[235px] aspect-[4/4.3] shrink-0 rounded-2xl overflow-hidden text-left bg-[#14171D] transition-all duration-300 cursor-pointer border ${
                     isSelected
@@ -561,17 +564,13 @@ export default function Podcast() {
                   return (
                     <div
                       key={ep.id}
-                      onClick={() => {
-                        setActiveEpisode(ep);
-                        setExpandedEpisodeId(ep.id);
-                      }}
+                      onClick={() => openVideoModal(ep)}
                       role="button"
                       tabIndex={0}
                       onKeyDown={(e) => {
                         if (e.key === 'Enter' || e.key === ' ') {
                           e.preventDefault();
-                          setActiveEpisode(ep);
-                          setExpandedEpisodeId(ep.id);
+                          openVideoModal(ep);
                         }
                       }}
                       className={`group flex items-center justify-between gap-3 p-2.5 -mx-2.5 rounded-2xl transition-colors cursor-pointer ${
@@ -620,10 +619,7 @@ export default function Podcast() {
                     <button
                       key={`series-${ep.id}`}
                       type="button"
-                      onClick={() => {
-                        setActiveEpisode(ep);
-                        setExpandedEpisodeId(ep.id);
-                      }}
+                      onClick={() => openVideoModal(ep)}
                       className={`group flex items-center gap-3.5 p-2.5 rounded-2xl text-left transition-colors cursor-pointer ${
                         isPlaying ? 'bg-white/[0.08]' : 'hover:bg-white/[0.05]'
                       }`}
@@ -741,7 +737,7 @@ export default function Podcast() {
         </div>
       </section>
 
-      {/* Interactive YouTube Video Playback Modal */}
+      {/* Interactive YouTube Video Playback Modal - Fit to Screen */}
       <AnimatePresence>
         {modalVideo && (
           <motion.div
@@ -749,30 +745,52 @@ export default function Podcast() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setModalVideo(null)}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10 bg-black/85 backdrop-blur-md"
+            className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-4 md:p-6 bg-black/90 backdrop-blur-xl"
           >
             <motion.div
-              initial={{ scale: 0.92, opacity: 0, y: 20 }}
+              initial={{ scale: 0.94, opacity: 0, y: 15 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.92, opacity: 0, y: 20 }}
-              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              exit={{ scale: 0.94, opacity: 0, y: 15 }}
+              transition={{ type: 'spring', damping: 26, stiffness: 320 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-4xl bg-[#111317] border border-white/20 rounded-3xl overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.95)] text-white"
+              className="relative w-full max-w-5xl max-h-[94vh] flex flex-col bg-[#111317] border border-white/20 rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_30px_90px_rgba(0,0,0,0.98)] text-white"
             >
               {/* Close Button */}
               <button
                 type="button"
                 onClick={() => setModalVideo(null)}
-                className="absolute top-4 right-4 z-30 w-10 h-10 rounded-full bg-black/70 hover:bg-hq-yellow text-white hover:text-black border border-white/20 flex items-center justify-center transition-colors cursor-pointer shadow-lg"
+                className="absolute top-3.5 right-3.5 z-30 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/75 hover:bg-hq-yellow text-white hover:text-black border border-white/25 flex items-center justify-center transition-colors cursor-pointer shadow-lg"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              {/* YouTube Video Responsive Wrapper */}
-              <div className="relative aspect-video w-full bg-black overflow-hidden">
+              {/* YouTube Video Responsive Wrapper with Custom Loading State */}
+              <div className="relative w-full aspect-video max-h-[66vh] bg-black overflow-hidden shrink-0 flex items-center justify-center">
+                {/* Loader Overlay before Video Loads */}
+                <AnimatePresence>
+                  {isVideoLoading && (
+                    <motion.div
+                      initial={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.25 }}
+                      className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-[#0C0E12] pointer-events-none"
+                    >
+                      <div className="relative w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-white/10" />
+                        <div className="absolute inset-0 rounded-full border-[3px] border-hq-yellow border-t-transparent animate-spin" />
+                        <Play className="w-5 h-5 fill-hq-yellow text-hq-yellow ml-0.5 animate-pulse" />
+                      </div>
+                      <p className="mt-4 text-[11px] sm:text-xs font-mono tracking-widest uppercase text-white/70 font-medium">
+                        Loading Episode...
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
                 <iframe
                   key={modalVideo.youtubeId || 'gDlgkcZNI1k'}
+                  onLoad={() => setIsVideoLoading(false)}
                   className="absolute inset-0 w-full h-full border-0"
                   src={`https://www.youtube.com/embed/${modalVideo.youtubeId || 'gDlgkcZNI1k'}?autoplay=1&mute=0&rel=0&enablejsapi=1`}
                   title={modalVideo.title || 'HQX Podcast Episode'}
@@ -783,9 +801,9 @@ export default function Podcast() {
               </div>
 
               {/* Modal Metadata & Direct YouTube Link */}
-              <div className="p-5 sm:p-7 bg-gradient-to-b from-[#14171E] to-[#0D0F13] border-t border-white/10">
-                <div className="flex flex-wrap items-center justify-between gap-3 mb-2.5">
-                  <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-hq-yellow font-semibold">
+              <div className="p-4 sm:p-6 bg-gradient-to-b from-[#14171E] to-[#0D0F13] border-t border-white/10 overflow-y-auto">
+                <div className="flex flex-wrap items-center justify-between gap-2.5 mb-2">
+                  <div className="flex items-center gap-2 text-[11px] sm:text-xs font-mono uppercase tracking-widest text-hq-yellow font-semibold">
                     <span>Now Playing</span>
                     {modalVideo.duration && (
                       <>
@@ -796,7 +814,7 @@ export default function Podcast() {
                     {modalVideo.category && (
                       <>
                         <span className="text-white/30">&bull;</span>
-                        <span className="truncate max-w-[280px]">{modalVideo.category}</span>
+                        <span className="truncate max-w-[260px] sm:max-w-none">{modalVideo.category}</span>
                       </>
                     )}
                   </div>
@@ -812,16 +830,16 @@ export default function Podcast() {
                   </a>
                 </div>
 
-                <h3 className="font-display text-xl sm:text-2xl font-semibold text-white mb-1.5">
+                <h3 className="font-display text-lg sm:text-xl md:text-2xl font-semibold text-white mb-1 leading-snug">
                   {modalVideo.title}
                 </h3>
                 {modalVideo.guest && (
-                  <div className="text-sm text-white/80 font-medium mb-3">
+                  <div className="text-xs sm:text-sm text-white/80 font-medium mb-2">
                     Dialogue with {modalVideo.guest}
                   </div>
                 )}
                 {modalVideo.summary && (
-                  <p className="font-body text-xs sm:text-sm text-white/70 font-light leading-relaxed">
+                  <p className="font-body text-xs sm:text-sm text-white/70 font-light leading-relaxed line-clamp-2 sm:line-clamp-3">
                     {modalVideo.summary}
                   </p>
                 )}

@@ -299,8 +299,9 @@ export default function EngagingWorkshops() {
                   type="button"
                   role="switch"
                   aria-checked={isLightOn}
+                  aria-label={isLightOn ? 'Turn light off' : 'Turn light on'}
                   onClick={() => setIsLightOn((prev) => !prev)}
-                  className={`inline-flex items-center gap-3 px-4 py-2 rounded-full border backdrop-blur-md transition-all duration-300 cursor-pointer ${
+                  className={`inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full border backdrop-blur-md transition-all duration-300 cursor-pointer ${
                     isLightOn
                       ? 'bg-white/[0.08] border-hq-yellow/50 text-white shadow-[0_0_24px_rgba(255,206,0,0.18)]'
                       : 'bg-white/[0.04] border-white/15 text-white/70 hover:border-white/30'
@@ -311,9 +312,6 @@ export default function EngagingWorkshops() {
                       isLightOn ? 'text-hq-yellow' : 'text-white/45'
                     }`}
                   />
-                  <span className="font-mono text-[15px] uppercase tracking-widest font-semibold">
-                    Light {isLightOn ? 'On' : 'Off'}
-                  </span>
                   <span
                     className={`w-10 h-5 rounded-full p-0.5 flex items-center transition-colors duration-300 ${
                       isLightOn ? 'bg-hq-yellow justify-end' : 'bg-white/20 justify-start'
