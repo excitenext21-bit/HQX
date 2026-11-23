@@ -1,14 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 80" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="5 8 250 52" fill="none">
   <!-- NHRDN Stylized Human Network Icon -->
-  <g transform="translate(10, 8)">
-    <circle cx="32" cy="12" r="7" fill="#4FD1C5" />
-    <circle cx="52" cy="32" r="7" fill="#4CAF50" />
-    <circle cx="32" cy="52" r="7" fill="#FF9800" />
-    <circle cx="12" cy="32" r="7" fill="#0072C6" />
-    <path d="M32 19 C42 19 45 22 52 32 C45 42 42 45 32 45 C22 45 19 42 12 32 C19 22 22 19 32 19 Z" fill="none" stroke="#0072C6" stroke-width="3" stroke-linecap="round"/>
-    <circle cx="32" cy="32" r="5" fill="#E65100" />
+  <g transform="translate(6, 4)">
+    <circle cx="28" cy="10" r="7" fill="#4FD1C5" />
+    <circle cx="48" cy="28" r="7" fill="#4CAF50" />
+    <circle cx="28" cy="46" r="7" fill="#FF9800" />
+    <circle cx="8" cy="28" r="7" fill="#0072C6" />
+    <path d="M28 17 C37 17 40 20 48 28 C40 37 37 40 28 40 C19 40 16 37 8 28 C16 19 19 17 28 17 Z" fill="none" stroke="#0072C6" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="28" cy="28" r="5" fill="#E65100" />
   </g>
   <!-- NHRD Network Typography -->
-  <text x="82" y="38" font-family="'Geist', 'Inter', 'Segoe UI', sans-serif" font-weight="900" font-size="28" fill="#FFFFFF" letter-spacing="1">NHRDN</text>
-  <text x="84" y="54" font-family="'Geist', 'Inter', 'Segoe UI', sans-serif" font-weight="600" font-size="11" fill="#4FD1C5" letter-spacing="0.5">NATIONAL HRD NETWORK</text>
+  <text x="68" y="32" font-family="'Geist', 'Inter', 'Segoe UI', sans-serif" font-weight="900" font-size="28" fill="#FFFFFF" letter-spacing="1">NHRDN</text>
+  <text x="70" y="47" font-family="'Geist', 'Inter', 'Segoe UI', sans-serif" font-weight="600" font-size="10.5" fill="#4FD1C5" letter-spacing="0.5">NATIONAL HRD NETWORK</text>
 </svg>
