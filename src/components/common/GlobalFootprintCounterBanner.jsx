@@ -236,7 +236,7 @@ export default function GlobalFootprintCounterBanner() {
               <span className="absolute top-0 right-0 w-full group-hover:w-1/5 h-[1px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none"></span>
               <span className="relative z-10">Explore Faculty</span>
               <svg 
-                className="w-[20px] h-[10px] inline-block transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0" 
+                className="w-[18px] h-[9px] inline-block transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0" 
                 viewBox="0 0 20 10" 
                 fill="none" 
                 xmlns="http://www.w3.org/2000/svg"

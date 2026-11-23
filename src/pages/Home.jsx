@@ -90,7 +90,7 @@ function LongArrow({ direction = 'right', className = '' }) {
   if (direction === 'left') {
     return (
       <svg 
-        className={`w-[20px] h-[10px] inline-block flex-shrink-0 transition-transform duration-300 ${className}`} 
+        className={`w-[18px] h-[9px] inline-block flex-shrink-0 transition-transform duration-300 ${className}`} 
         viewBox="0 0 20 10" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +102,7 @@ function LongArrow({ direction = 'right', className = '' }) {
   }
   return (
     <svg 
-      className={`w-[20px] h-[10px] inline-block flex-shrink-0 transition-transform duration-300 ${className}`} 
+      className={`w-[18px] h-[9px] inline-block flex-shrink-0 transition-transform duration-300 ${className}`} 
       viewBox="0 0 20 10" 
       fill="none" 
       xmlns="http://www.w3.org/2000/svg"
@@ -863,7 +863,7 @@ export default function Home() {
                 e.preventDefault();
                 document.getElementById('key-themes-section')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="group relative inline-flex items-center justify-between gap-6 py-2.5 px-1 font-display font-medium text-xs tracking-widest text-white hover:text-hq-yellow transition-colors duration-300"
+              className="group relative inline-flex items-center justify-between gap-6 py-2 px-1 font-display font-medium text-[11px] tracking-widest text-white hover:text-hq-yellow transition-colors duration-300"
             >
               {/* Top border line: 1.25px, white by default, on hover width decreases to 20% at right edge and turns theme yellow */}
               <span className="absolute top-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none"></span>
@@ -871,7 +871,7 @@ export default function Home() {
               <span className="relative z-10">Explore Interventions</span>
 
               <svg 
-                className="w-[20px] h-[10px] inline-block transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0" 
+                className="w-[18px] h-[9px] inline-block transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0" 
                 viewBox="0 0 20 10" 
                 fill="none" 
                 xmlns="http://www.w3.org/2000/svg"
@@ -900,7 +900,7 @@ export default function Home() {
                 e.preventDefault();
                 document.getElementById('team-section')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="group relative inline-flex items-center justify-between gap-6 py-2.5 px-1 font-display text-xs tracking-widest text-white hover:text-hq-yellow transition-colors duration-300"
+              className="group relative inline-flex items-center justify-between gap-6 py-2 px-1 font-display text-[11px] tracking-widest text-white hover:text-hq-yellow transition-colors duration-300"
             >
               {/* Top border line: 1.25px, white by default, on hover width decreases to 20% at right edge and turns theme yellow */}
               <span className="absolute top-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none"></span>
@@ -908,7 +908,7 @@ export default function Home() {
               <span className="relative z-10">Know more</span>
 
               <svg 
-                className="w-[20px] h-[10px] inline-block transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0" 
+                className="w-[18px] h-[9px] inline-block transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0" 
                 viewBox="0 0 20 10" 
                 fill="none" 
                 xmlns="http://www.w3.org/2000/svg"
@@ -1500,7 +1500,7 @@ export default function Home() {
                         setSelectedTeamMember(member);
                       }
                     }}
-                    className="inline-flex items-center gap-2 font-display text-xs uppercase tracking-widest font-bold text-white group-hover:text-hq-yellow transition-colors pb-0.5 border-b border-white group-hover:border-hq-yellow w-fit mt-1"
+                    className="inline-flex items-center gap-2 font-display text-[11px] uppercase tracking-widest font-bold text-white group-hover:text-hq-yellow transition-colors pb-0.5 border-b border-white group-hover:border-hq-yellow w-fit mt-1"
                   >
                     <span>KNOW MORE</span>
                     <LongArrow className="group-hover:translate-x-1" />

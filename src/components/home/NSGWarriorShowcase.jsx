@@ -47,20 +47,20 @@ export default function NSGWarriorShowcase() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        
+        {/* ROW 1: Headline placed directly above image */}
+        <div className="mb-4 lg:mb-5 max-w-2xl">
+          <h2 className="font-display text-base sm:text-lg md:text-xl lg:text-[23px] font-bold tracking-tight text-white leading-[1.25]">
+            The Inner Strength of a Warrior <IndiaFlag className="w-5 h-3.5" /> <br className="hidden sm:inline" />
+            <span className="text-hq-yellow">HQx Global &times; National Security Guard</span>
+          </h2>
+        </div>
+
+        {/* ROW 2: Image and Paragraphs starting at the EXACT same horizontal line */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           
-          {/* LEFT: Headline & Sharp, Unrounded Authentic Stage Photograph */}
-          <div className="lg:col-span-6 flex flex-col space-y-4">
-            
-            {/* Headline placed directly above image */}
-            <div>
-              <h2 className="font-display text-base sm:text-lg md:text-xl lg:text-[23px] font-bold tracking-tight text-white leading-[1.25]">
-                The Inner Strength of a Warrior <IndiaFlag className="w-5 h-3.5" /> <br className="hidden sm:inline" />
-                <span className="text-hq-yellow">HQx Global &times; National Security Guard</span>
-              </h2>
-            </div>
-
-            {/* Sharp stage photograph with no rounded corners */}
+          {/* LEFT: Sharp, Unrounded Authentic Stage Photograph */}
+          <div className="lg:col-span-6">
             <div className="relative overflow-hidden border border-white/10 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.8)] group">
               <img 
                 src="/images/nsg-warrior-stage.jpg" 
@@ -77,8 +77,8 @@ export default function NSGWarriorShowcase() {
             </div>
           </div>
 
-          {/* RIGHT: Minimalist Narrative Content */}
-          <div className="lg:col-span-6 flex flex-col space-y-5 lg:pt-1">
+          {/* RIGHT: Minimalist Narrative Content - Starts horizontally flush with image top line */}
+          <div className="lg:col-span-6 flex flex-col space-y-5">
             <div className="space-y-4 font-body text-sm sm:text-base leading-relaxed" style={{ color: '#F3F4F6' }}>
               <p style={{ color: '#F3F4F6', margin: 0, lineHeight: 1.8 }}>
                 It was an honour to lead a four-hour mental wellness (in person) workshop for the{' '}

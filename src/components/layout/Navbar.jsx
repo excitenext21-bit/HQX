@@ -288,7 +288,7 @@ export default function Navbar() {
             >
               <span className="text-[#0A0A0A] group-hover:!text-white dark:group-hover:!text-[#0A0A0A] transition-colors">BOOK MANNY</span>
               <svg
-                className="w-[20px] h-[10px] inline-block transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0 text-[#0A0A0A] group-hover:!text-white dark:group-hover:!text-[#0A0A0A]"
+                className="w-[18px] h-[9px] inline-block transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0 text-[#0A0A0A] group-hover:!text-white dark:group-hover:!text-[#0A0A0A]"
                 viewBox="0 0 20 10"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

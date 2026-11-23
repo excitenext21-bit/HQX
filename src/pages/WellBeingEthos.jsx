@@ -251,7 +251,7 @@ export default function WellBeingEthos() {
                   e.preventDefault();
                   document.getElementById('pillars')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="group relative inline-flex items-center justify-between gap-8 py-3.5 px-2 font-display font-medium text-xs tracking-[0.2em] text-white hover:text-hq-yellow transition-colors duration-300 uppercase cursor-pointer"
+                className="group relative inline-flex items-center justify-between gap-8 py-3 px-1.5 font-display font-medium text-[11px] tracking-[0.2em] text-white hover:text-hq-yellow transition-colors duration-300 uppercase cursor-pointer"
               >
                 {/* Top hairline border line */}
                 <span className="absolute top-0 right-0 w-full group-hover:w-1/4 h-[1px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
@@ -259,7 +259,7 @@ export default function WellBeingEthos() {
                 <span className="relative z-10 font-semibold tracking-widest">EXPLORE 5 PILLARS</span>
 
                 <svg 
-                  className="w-[22px] h-[11px] inline-block transition-transform duration-300 group-hover:translate-x-1.5 flex-shrink-0" 
+                  className="w-[19px] h-[9.5px] inline-block transition-transform duration-300 group-hover:translate-x-1.5 flex-shrink-0" 
                   viewBox="0 0 20 10" 
                   fill="none" 
                   xmlns="http://www.w3.org/2000/svg"

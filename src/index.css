@@ -854,6 +854,18 @@ html:not(.dark) #nsg-warrior [class*="text-hq-yellow"] {
   color: rgba(240, 240, 240, 0.85) !important;
 }
 
+/* 10% Proportional Scale Reduction for Buttons & "Know More" CTAs Across All Pages */
+a[class*="group relative inline-flex items-center justify-between"],
+button[class*="group relative inline-flex items-center justify-between"] {
+  font-size: 11px !important;
+}
+
+a[class*="group relative inline-flex items-center justify-between"] svg,
+button[class*="group relative inline-flex items-center justify-between"] svg {
+  transform: scale(0.9);
+  transform-origin: center;
+}
+
 /* 10. High-Fidelity Print & PDF Styles */
 @media print {
   /* Hide fixed navigation, sticky connect drawer, modals, background blur overlays */
