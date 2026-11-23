@@ -757,43 +757,61 @@ export default function Podcast() {
               exit={{ scale: 0.92, opacity: 0, y: 20 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-4xl bg-[#111317] border border-white/20 rounded-3xl overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.9)] text-white"
+              className="relative w-full max-w-4xl bg-[#111317] border border-white/20 rounded-3xl overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.95)] text-white"
             >
+              {/* Close Button */}
               <button
                 type="button"
                 onClick={() => setModalVideo(null)}
-                className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/65 hover:bg-hq-yellow text-white hover:text-black border border-white/20 flex items-center justify-center transition-colors cursor-pointer"
+                className="absolute top-4 right-4 z-30 w-10 h-10 rounded-full bg-black/70 hover:bg-hq-yellow text-white hover:text-black border border-white/20 flex items-center justify-center transition-colors cursor-pointer shadow-lg"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="aspect-video w-full bg-black">
+              {/* YouTube Video Responsive Wrapper */}
+              <div className="relative aspect-video w-full bg-black overflow-hidden">
                 <iframe
-                  className="w-full h-full"
-                  src={`https://www.youtube.com/embed/${modalVideo.youtubeId}?autoplay=1&rel=0`}
-                  title={modalVideo.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  key={modalVideo.youtubeId || 'gDlgkcZNI1k'}
+                  className="absolute inset-0 w-full h-full border-0"
+                  src={`https://www.youtube.com/embed/${modalVideo.youtubeId || 'gDlgkcZNI1k'}?autoplay=1&mute=0&rel=0&enablejsapi=1`}
+                  title={modalVideo.title || 'HQX Podcast Episode'}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 />
               </div>
 
+              {/* Modal Metadata & Direct YouTube Link */}
               <div className="p-5 sm:p-7 bg-gradient-to-b from-[#14171E] to-[#0D0F13] border-t border-white/10">
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-hq-yellow font-semibold mb-2">
-                  <span>Now Playing</span>
-                  {modalVideo.duration && (
-                    <>
-                      <span className="text-white/30">&bull;</span>
-                      <span>{modalVideo.duration}</span>
-                    </>
-                  )}
-                  {modalVideo.category && (
-                    <>
-                      <span className="text-white/30">&bull;</span>
-                      <span className="truncate max-w-[300px]">{modalVideo.category}</span>
-                    </>
-                  )}
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-2.5">
+                  <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-hq-yellow font-semibold">
+                    <span>Now Playing</span>
+                    {modalVideo.duration && (
+                      <>
+                        <span className="text-white/30">&bull;</span>
+                        <span>{modalVideo.duration}</span>
+                      </>
+                    )}
+                    {modalVideo.category && (
+                      <>
+                        <span className="text-white/30">&bull;</span>
+                        <span className="truncate max-w-[280px]">{modalVideo.category}</span>
+                      </>
+                    )}
+                  </div>
+
+                  <a
+                    href={`https://www.youtube.com/watch?v=${modalVideo.youtubeId || 'gDlgkcZNI1k'}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-white/80 hover:text-hq-yellow transition-colors underline underline-offset-4 decoration-white/30 hover:decoration-hq-yellow"
+                  >
+                    <span>Watch on YouTube</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
                 </div>
+
                 <h3 className="font-display text-xl sm:text-2xl font-semibold text-white mb-1.5">
                   {modalVideo.title}
                 </h3>

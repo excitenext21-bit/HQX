@@ -246,8 +246,8 @@ const INITIAL_FACULTY = [
     id: 'f-neha',
     name: 'Neha Dubey',
     category: 'Mindfulness & Well-Being',
-    title: 'Psychotherapist | Regent\'s London Alumna & Guy\'s Hospital Veteran',
-    bio: "Neha Dubey is a psychotherapist who has been in Private Practice in Mumbai for the last 15 years. She trained at the Regent’s School of Psychotherapy, London. She then worked at Guy’s Hospital and the Psychotherapy Center of London Association of Counsellors and Psychotherapists (LACAP) in London before moving back to India.",
+    title: 'Psychotherapist | Alumna School of Psychotherapy, Regent’s College London | Worked at Guy’s Hospital and LACAP, London',
+    bio: "Neha Dubey is a psychotherapist who has been in Private Practice in Mumbai for the last 15 years. Alumna School of Psychotherapy, Regent’s College London. Worked at Guy’s Hospital and LACAP, London before moving back to India.",
     image: '/team/neha-dubey.jpg',
     active: true,
     featured: true
@@ -962,12 +962,19 @@ const INITIAL_INQUIRIES = [
 
 export function DataProvider({ children }) {
   const [faculty, setFaculty] = useState(() => {
-    const saved = localStorage.getItem('hqx_faculty_v5');
-    if (!saved) return INITIAL_FACULTY;
-    const parsed = JSON.parse(saved);
-    const existingIds = new Set(parsed.map((f) => f.id));
-    const missing = INITIAL_FACULTY.filter((f) => !existingIds.has(f.id));
-    return missing.length ? [...parsed, ...missing] : parsed;
+    try {
+      localStorage.removeItem('hqx_faculty_v5');
+      const saved = localStorage.getItem('hqx_faculty_v6');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.some(f => f.id === 'f-neha' && f.title.includes('Regent’s College'))) {
+          const existingIds = new Set(parsed.map((f) => f.id));
+          const missing = INITIAL_FACULTY.filter((f) => !existingIds.has(f.id));
+          return missing.length ? [...parsed, ...missing] : parsed;
+        }
+      }
+    } catch (_) {}
+    return INITIAL_FACULTY;
   });
 
   const [courses, setCourses] = useState(() => {
@@ -1020,7 +1027,7 @@ export function DataProvider({ children }) {
 
   // Sync to localStorage
   useEffect(() => {
-    localStorage.setItem('hqx_faculty_v5', JSON.stringify(faculty));
+    localStorage.setItem('hqx_faculty_v6', JSON.stringify(faculty));
   }, [faculty]);
 
   useEffect(() => {
@@ -1134,6 +1141,7 @@ export function DataProvider({ children }) {
 
   const resetToDefaults = () => {
     localStorage.removeItem('hqx_faculty_v5');
+    localStorage.removeItem('hqx_faculty_v6');
     localStorage.removeItem('hqx_courses_v2');
     localStorage.removeItem('hqx_books_v6');
     localStorage.removeItem('hqx_podcasts_v4');

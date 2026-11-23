@@ -578,9 +578,9 @@ export default function Home() {
       id: 'f-neha',
       name: 'NEHA DUBEY',
       category: 'Mindfulness & Psychotherapy',
-      title: 'Psychotherapist | Regent\'s School London Alumna & Guy\'s Hospital Veteran',
+      title: 'Psychotherapist | Alumna School of Psychotherapy, Regent’s College London | Worked at Guy’s Hospital and LACAP, London',
       areaExpertise: 'Clinical Psychotherapy & Private Practice (15+ Yrs)',
-      bio: "Neha Dubey is a psychotherapist who has been in Private Practice in Mumbai for the last 15 years. She trained at the Regent’s School of Psychotherapy, London. She then worked at Guy’s Hospital and the Psychotherapy Center of London Association of Counsellors and Psychotherapists (LACAP) in London before moving back to India.",
+      bio: "Neha Dubey is a psychotherapist who has been in Private Practice in Mumbai for the last 15 years. Alumna School of Psychotherapy, Regent’s College London. Worked at Guy’s Hospital and LACAP, London before moving back to India.",
       image: '/team/neha-dubey.jpg'
     }
   ];

@@ -85,7 +85,7 @@ export default function EngagingWorkshops() {
       target: 'Senior Executives, People Leaders & High-Stress Professional Teams',
       summary: 'Evidence-based cognitive restructuring, nervous system stabilization, emotional agility in high-stakes negotiations, and clinical strategies to dismantle systemic burnout.',
       expertName: 'Neha Dubey',
-      expertRole: 'Psychotherapist | Guy’s Hospital London Veteran & Regent’s Alumna',
+      expertRole: 'Psychotherapist | Alumna School of Psychotherapy, Regent’s College London | Worked at Guy’s Hospital and LACAP, London',
       expertImage: '/team/neha-dubey.jpg'
     }
   ];
