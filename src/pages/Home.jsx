@@ -941,7 +941,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Marquee Track: Black background with logos without background, bigger and in yellow */}
+        {/* Marquee Track: Black background with logos without white background, larger and transparent */}
         <div className="relative w-full py-5 overflow-hidden group/marquee bg-[#0A0A0A]">
           <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-28 bg-gradient-to-r from-[#0A0A0A] to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-28 bg-gradient-to-l from-[#0A0A0A] to-transparent z-10 pointer-events-none" />
@@ -950,14 +950,14 @@ export default function Home() {
             {[...IMPACTED_INSTITUTION_BADGES, ...IMPACTED_INSTITUTION_BADGES].map((badge, bIdx) => (
               <div 
                 key={bIdx}
-                className="inline-flex items-center gap-3 shrink-0 group cursor-pointer"
+                className="inline-flex items-center gap-3.5 shrink-0 group cursor-pointer"
               >
-                {/* Logo without background and bigger */}
+                {/* Logo without white background, enlarged and floating cleanly */}
                 <div className="h-14 sm:h-16 md:h-20 w-auto min-w-[55px] max-w-[150px] sm:max-w-[180px] flex items-center justify-center p-1 shrink-0 group-hover:scale-105 transition-transform duration-200">
                   <img 
                     src={badge.logo} 
                     alt={badge.name} 
-                    className="max-h-full max-w-full object-contain filter contrast-105" 
+                    className="max-h-full max-w-full object-contain filter contrast-105 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]" 
                     loading="lazy"
                   />
                 </div>
@@ -965,7 +965,7 @@ export default function Home() {
                   <span className="font-display font-bold text-sm sm:text-base md:text-[17px] text-white group-hover:text-hq-yellow transition-colors leading-tight whitespace-nowrap">
                     {badge.name}
                   </span>
-                  <span className="font-body text-xs sm:text-[13px] text-white/60 font-medium leading-tight whitespace-nowrap mt-0.5">
+                  <span className="font-body text-xs sm:text-[13px] text-white/70 font-medium leading-tight whitespace-nowrap mt-0.5">
                     {badge.subtitle}
                   </span>
                 </div>

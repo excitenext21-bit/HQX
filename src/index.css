@@ -582,10 +582,21 @@ html:not(.dark) :is(.bg-white, .bg-\[\#FFFFFF\], .bg-\[\#FAF8F5\], .bg-\[\#FAF7F
   color: #1A1A1A !important;
 }
 
-/* Keep dark text inside yellow brand surfaces in both modes, except dark nested banners (#0B0B0D) or dark buttons */
-.bg-hq-yellow > :not(section) :is(p, h1, h2, h3, h4, h5, h6, span, strong, b, a, li):not(.text-white):not(:is(.bg-hq-black, .bg-black, .bg-\[\#0A0A0A\], .bg-\[\#111111\]) *),
-main .bg-hq-yellow :is(p, h1, h2, h3, h4, h5, h6, span, strong, b, a, li):not(.text-white):not(.bg-hq-black):not(.bg-black):not(.bg-\[\#0A0A0A\]):not(.bg-\[\#111111\]):not(:is(.bg-hq-black, .bg-black, .bg-\[\#0A0A0A\], .bg-\[\#111111\]) *) {
+/* Keep dark text inside yellow brand surfaces in both modes, except dark nested banners (#0B0B0D), dark marquees, or dark buttons */
+.bg-hq-yellow > :not(section) :is(p, h1, h2, h3, h4, h5, h6, span, strong, b, a, li):not(.text-white):not(.text-hq-yellow):not(.marquee-dark *):not([class*="marquee-partners"] *):not(:is(.bg-hq-black, .bg-black, .bg-\[\#0A0A0A\], .bg-\[\#111111\]) *),
+main .bg-hq-yellow :is(p, h1, h2, h3, h4, h5, h6, span, strong, b, a, li):not(.text-white):not(.text-hq-yellow):not(.marquee-dark *):not([class*="marquee-partners"] *):not(.bg-hq-black):not(.bg-black):not(.bg-\[\#0A0A0A\]):not(.bg-\[\#111111\]):not(:is(.bg-hq-black, .bg-black, .bg-\[\#0A0A0A\], .bg-\[\#111111\]) *) {
   color: #0A0A0A !important;
+}
+
+/* Explicit high-contrast rules for dark marquee track inside yellow sections or footer */
+.marquee-dark,
+.marquee-dark span,
+.marquee-dark svg,
+.marquee-partners-track,
+.marquee-partners-track span,
+.marquee-partners-track svg {
+  color: var(--hq-yellow) !important;
+  fill: currentColor !important;
 }
 
 /* Guarantee high-contrast text on dark buttons even inside yellow or light containers */
@@ -814,9 +825,14 @@ html.dark main :is(input, textarea, select) {
 
 #nsg-warrior p,
 #nsg-warrior p span,
+#nsg-warrior blockquote,
+#nsg-warrior blockquote span,
 html:not(.dark) #nsg-warrior p,
-html.dark #nsg-warrior p {
-  color: rgba(245, 245, 245, 0.92) !important;
+html:not(.dark) #nsg-warrior blockquote,
+html:not(.dark) #nsg-warrior p span,
+html.dark #nsg-warrior p,
+html.dark #nsg-warrior blockquote {
+  color: #F3F4F6 !important;
 }
 
 #nsg-warrior strong,
@@ -826,6 +842,8 @@ html:not(.dark) #nsg-warrior strong {
 
 #nsg-warrior .text-hq-yellow,
 #nsg-warrior [class*="text-hq-yellow"],
+#nsg-warrior strong.text-hq-yellow,
+html:not(.dark) #nsg-warrior .text-hq-yellow,
 html:not(.dark) #nsg-warrior [class*="text-hq-yellow"] {
   color: var(--hq-yellow) !important;
 }
@@ -833,7 +851,7 @@ html:not(.dark) #nsg-warrior [class*="text-hq-yellow"] {
 #nsg-warrior .text-white\/60,
 #nsg-warrior .text-white\/70,
 #nsg-warrior .text-white\/80 {
-  color: rgba(240, 240, 240, 0.75) !important;
+  color: rgba(240, 240, 240, 0.85) !important;
 }
 
 /* 10. High-Fidelity Print & PDF Styles */

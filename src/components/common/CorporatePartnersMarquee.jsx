@@ -13,7 +13,7 @@ export const corporatePartners = [
     name: 'Barclays',
     monogram: (
       <svg className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2.5c-.8 0-1.5.7-1.5 1.5 0 .3.1.5.2.7L7 7.5l-4-1 2 4.5-3 2 4.5 1L7 19h10l.5-5 4.5-1-3-2 2-4.5-4 1-3.7-2.8c.1-.2.2-.4.2-.7 0-.8-.7-1.5-1.5-1.5zm0 4.5l2 2.5h-4l2-2.5zm-3 4h6l1.5 3h-9l1.5-3zm.5 4.5h5l.5 2h-6l.5-2z"/>
+        <path d="M12 2.5c-.8 0-1.5.7-1.5 1.5 0 .3.1.5.2.7L7 7.5l-4-1 2 4.5-3 2 4.5 1L7 19h10l.5-5 4.5-1-3-2 2-4.5-4 1-3.7-2.8c.1-.2.2-.4.2-.7 0-.8-.7-1.5-1.5-1.5zm0 4.5l2 2.5h-4l2-2.5zm-3 4h6l1.5 3h-9l1.5-3zm.5 4.5h5l.5 2h-6l.5-2z" />
       </svg>
     )
   },
@@ -130,33 +130,29 @@ export const corporatePartners = [
   }
 ];
 
-export default function CorporatePartnersMarquee({ 
-  showHeader = true, 
+export default function CorporatePartnersMarquee({
+  showHeader = true,
   title = "Trusted by Over 40+ Industry Titans",
-  reversed = true 
+  reversed = true
 }) {
   return (
     <div className="w-full">
       {showHeader && (
-        <div className={`py-4 px-6 border-b flex items-center justify-between ${
-          reversed 
-            ? 'bg-hq-yellow text-[#0A0A0A] border-hq-black/15 shadow-sm' 
+        <div className={`py-4 px-6 border-b flex items-center justify-between ${reversed
+            ? 'bg-hq-yellow text-[#0A0A0A] border-hq-black/15 shadow-sm'
             : 'bg-[#0A0A0A] text-white border-white/10'
-        }`}>
+          }`}>
           <div className="max-w-7xl mx-auto w-full flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
             <div className="flex items-center gap-2">
-              <span className={`w-2.5 h-2.5 rounded-full inline-block animate-pulse ${
-                reversed ? 'bg-hq-black' : 'bg-hq-yellow'
-              }`}></span>
-              <span className={`font-display font-bold text-xs sm:text-sm uppercase tracking-widest ${
-                reversed ? 'text-[#0A0A0A]' : 'text-hq-yellow'
-              }`}>
+              <span className={`w-2.5 h-2.5 rounded-full inline-block animate-pulse ${reversed ? 'bg-hq-black' : 'bg-hq-yellow'
+                }`}></span>
+              <span className={`font-display font-bold text-xs sm:text-sm uppercase tracking-widest ${reversed ? 'text-[#0A0A0A]' : 'text-hq-yellow'
+                }`}>
                 {title}
               </span>
             </div>
-            <div className={`text-[15px] font-mono tracking-wider font-semibold ${
-              reversed ? 'text-[#0A0A0A]/80' : 'text-white/60'
-            }`}>
+            <div className={`text-[15px] font-mono tracking-wider font-semibold ${reversed ? 'text-[#0A0A0A]/80' : 'text-white/60'
+              }`}>
               Active across 16 Indian States & 9 Global Nations
             </div>
           </div>
@@ -164,34 +160,37 @@ export default function CorporatePartnersMarquee({
       )}
 
       {/* DYNAMIC CORPORATE PARTNERS INFINITE MARQUEE WITH MONOGRAM & TEXT LOGO OF IDENTICAL UNIFORM SIZE */}
-      <div className={`w-full py-5 overflow-hidden relative shadow-inner ${
-        reversed 
-          ? 'bg-[#0A0A0A] text-hq-yellow marquee-dark' 
-          : 'bg-hq-yellow text-[#0A0A0A]'
-      }`}>
-        <div className={`absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r z-10 pointer-events-none ${
-          reversed ? 'from-[#0A0A0A] to-transparent' : 'from-hq-yellow to-transparent'
-        }`}></div>
-        <div className={`absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l z-10 pointer-events-none ${
-          reversed ? 'from-[#0A0A0A] to-transparent' : 'from-hq-yellow to-transparent'
-        }`}></div>
-        
-        <div className="marquee-partners-track animate-marquee whitespace-nowrap inline-flex gap-10 md:gap-14 items-center px-4 ">
+      <div
+        className={`w-full py-5 overflow-hidden relative shadow-inner ${reversed
+            ? 'bg-[#0A0A0A] text-hq-yellow marquee-dark'
+            : 'bg-hq-yellow text-[#0A0A0A]'
+          }`}
+        style={reversed ? { backgroundColor: '#0A0A0A', color: '#FFCC00' } : { backgroundColor: '#FFCC00', color: '#0A0A0A' }}
+      >
+        <div className={`absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r z-10 pointer-events-none ${reversed ? 'from-[#0A0A0A] to-transparent' : 'from-hq-yellow to-transparent'
+          }`}></div>
+        <div className={`absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l z-10 pointer-events-none ${reversed ? 'from-[#0A0A0A] to-transparent' : 'from-hq-yellow to-transparent'
+          }`}></div>
+
+        <div className="marquee-partners-track animate-marquee whitespace-nowrap inline-flex gap-10 md:gap-14 items-center px-4">
           {[...corporatePartners, ...corporatePartners].map((partner, idx) => (
             <div key={idx} className="inline-flex items-center gap-2.5 h-8 flex-shrink-0 group">
-              <span className={`flex items-center justify-center group-hover:scale-110 transition-transform duration-200 ${
-                reversed ? 'text-hq-yellow' : 'text-[#0A0A0A]'
-              }`}>
+              <span
+                className="flex items-center justify-center group-hover:scale-110 transition-transform duration-200"
+                style={{ color: reversed ? '#FFCC00' : '#0A0A0A' }}
+              >
                 {partner.monogram}
               </span>
-              <span className={`font-display uppercase tracking-widest font-bold text-xs sm:text-sm md:text-base leading-none whitespace-nowrap ${
-                reversed ? 'text-hq-yellow' : 'text-[#0A0A0A]'
-              }`}>
+              <span
+                className="font-display uppercase tracking-widest font-bold text-xs sm:text-sm md:text-base leading-none whitespace-nowrap"
+                style={{ color: reversed ? '#FFCC00' : '#0A0A0A' }}
+              >
                 {partner.name}
               </span>
-              <span className={`marquee-partners-dot ml-8 md:ml-10 font-light ${
-                reversed ? 'text-hq-yellow/40' : 'text-[#0A0A0A]/40'
-              }`}>•</span>
+              <span
+                className="marquee-partners-dot ml-8 md:ml-10 font-light"
+                style={{ color: reversed ? 'rgba(255, 204, 0, 0.4)' : 'rgba(10, 10, 10, 0.4)' }}
+              >•</span>
             </div>
           ))}
         </div>

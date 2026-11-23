@@ -1,6 +1,40 @@
 import React from 'react';
 import { Shield, Target, Compass, HeartHandshake, Award } from 'lucide-react';
 
+function IndiaFlag({ className = "w-6 h-4 sm:w-7 sm:h-4.5" }) {
+  return (
+    <span className={`inline-flex items-center align-middle mx-1.5 shadow-sm rounded-xs overflow-hidden shrink-0 border border-white/20 ${className}`}>
+      <svg viewBox="0 0 900 600" className="w-full h-full block">
+        {/* Saffron band */}
+        <rect width="900" height="200" fill="#FF9933" />
+        {/* White band */}
+        <rect y="200" width="900" height="200" fill="#FFFFFF" />
+        {/* Green band */}
+        <rect y="400" width="900" height="200" fill="#138808" />
+        {/* Ashoka Chakra */}
+        <circle cx="450" cy="300" r="80" fill="none" stroke="#000080" strokeWidth="12" />
+        <circle cx="450" cy="300" r="16" fill="#000080" />
+        {Array.from({ length: 24 }).map((_, i) => {
+          const angle = (i * 15 * Math.PI) / 180;
+          const x2 = 450 + 80 * Math.cos(angle);
+          const y2 = 300 + 80 * Math.sin(angle);
+          return (
+            <line
+              key={i}
+              x1="450"
+              y1="300"
+              x2={x2}
+              y2={y2}
+              stroke="#000080"
+              strokeWidth="5"
+            />
+          );
+        })}
+      </svg>
+    </span>
+  );
+}
+
 export default function NSGWarriorShowcase() {
   return (
     <section 
@@ -21,27 +55,55 @@ export default function NSGWarriorShowcase() {
             
             {/* Headlines */}
             <div>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight !text-white leading-[1.1]">
-                The Inner Strength of a Warrior <span className="inline-block">🇮🇳</span>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.1] flex items-center flex-wrap">
+                The Inner Strength of a Warrior <IndiaFlag />
               </h2>
-              <p className="font-display text-xl sm:text-2xl !text-hq-yellow font-semibold tracking-wide mt-2">
+              <p className="font-display text-xl sm:text-2xl text-hq-yellow font-semibold tracking-wide mt-2">
                 HQx Global &times; National Security Guard
               </p>
             </div>
 
-            {/* Narrative Paragraphs with forced bright contrast */}
-            <div className="space-y-4 font-body text-sm sm:text-base !text-white/90 leading-relaxed">
-              <p className="p-4 sm:p-5 rounded-xl bg-white/[0.04] border border-white/10 !text-white/95">
-                It was an honour to lead a four-hour mental wellness (in person) workshop for the <strong className="!text-white font-bold">Elite Black Cat commandos</strong> of the NSG at Manesar head base (plus via online for personnel stationed across the country) alongside <strong className="!text-hq-yellow font-bold">Maj Anil Kumar, Shaurya Chakra (Retd.)</strong>.
-              </p>
+            {/* Narrative Paragraphs with forced bright contrast & elevated dark cards */}
+            <div className="space-y-4 font-body text-sm sm:text-base leading-relaxed" style={{ color: '#F3F4F6' }}>
+              <div 
+                className="p-5 sm:p-6 rounded-2xl bg-[#13151B] border border-white/10 shadow-lg"
+                style={{ color: '#F3F4F6' }}
+              >
+                <p style={{ color: '#F3F4F6', margin: 0, lineHeight: 1.7 }}>
+                  It was an honour to lead a four-hour mental wellness (in person) workshop for the{' '}
+                  <strong style={{ color: '#FFFFFF', fontWeight: 700 }}>
+                    Elite Black Cat commandos
+                  </strong>{' '}
+                  of the NSG at Manesar head base (plus via online for personnel stationed across the country) alongside{' '}
+                  <strong style={{ color: '#FFCC00', fontWeight: 700 }}>
+                    Maj Anil Kumar, Shaurya Chakra (Retd.)
+                  </strong>.
+                </p>
+              </div>
 
-              <p className="!text-white/90">
-                We explored how to stay composed under pressure, recover after demanding situations, and build daily habits that support mental well-being. Through <strong className="!text-white font-bold">Ikigai</strong>, we reflected on the sense of purpose that sustains us in service and in life.
-              </p>
+              <div 
+                className="p-5 sm:p-6 rounded-2xl bg-[#13151B] border border-white/10 shadow-lg"
+                style={{ color: '#F3F4F6' }}
+              >
+                <p style={{ color: '#F3F4F6', margin: 0, lineHeight: 1.7 }}>
+                  We explored how to stay composed under pressure, recover after demanding situations, and build daily habits that support mental well-being. Through{' '}
+                  <strong style={{ color: '#FFFFFF', fontWeight: 700 }}>
+                    Ikigai
+                  </strong>, we reflected on the sense of purpose that sustains us in service and in life.
+                </p>
+              </div>
 
-              <p className="!text-white/80 italic border-l-2 border-hq-yellow pl-4 py-1">
-                &ldquo;As we approach the 18th anniversary of 26/11, we remember the lives lost and honour the courage of those who answered the call. Contributing to the well-being of those who serve the nation was a privilege for all of us at HQx.&rdquo;
-              </p>
+              <div 
+                className="p-5 sm:p-6 rounded-2xl bg-[#13151B] border-l-4 border-l-hq-yellow border-t border-r border-b border-white/10 shadow-lg"
+                style={{ color: '#F3F4F6' }}
+              >
+                <blockquote 
+                  className="italic" 
+                  style={{ color: 'rgba(255, 255, 255, 0.94)', margin: 0, lineHeight: 1.7 }}
+                >
+                  &ldquo;As we approach the 18th anniversary of 26/11, we remember the lives lost and honour the courage of those who answered the call. Contributing to the well-being of those who serve the nation was a privilege for all of us at HQx.&rdquo;
+                </blockquote>
+              </div>
             </div>
 
             {/* Key Focus Pillars */}
@@ -73,8 +135,8 @@ export default function NSGWarriorShowcase() {
 
             {/* Salutation */}
             <div className="pt-2 flex items-center justify-between border-t border-white/10">
-              <span className="font-display font-extrabold text-2xl sm:text-3xl text-hq-yellow tracking-wider">
-                Jai Hind. 🇮🇳
+              <span className="font-display font-extrabold text-2xl sm:text-3xl text-hq-yellow tracking-wider flex items-center">
+                Jai Hind. <IndiaFlag />
               </span>
               <span className="font-mono text-xs text-white/50 tracking-wider">
                 HQx Special Operations Wellness Division
