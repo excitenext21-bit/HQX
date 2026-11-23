@@ -70,14 +70,12 @@ export default function NSGWarriorShowcase() {
           {/* RIGHT: Minimalist, High-Contrast Content */}
           <div className="lg:col-span-6 order-1 lg:order-2 flex flex-col space-y-6">
             
-            {/* Headlines */}
+            {/* Headlines styled exactly like "Benefits of Engagement" */}
             <div>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.1] flex items-center flex-wrap">
-                The Inner Strength of a Warrior <IndiaFlag />
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[46px] font-bold tracking-tight text-white leading-[1.1] mb-4">
+                The Inner Strength of a Warrior <IndiaFlag /> <br className="hidden sm:inline" />
+                <span className="text-hq-yellow">HQx Global &times; National Security Guard</span>
               </h2>
-              <p className="font-display text-xl sm:text-2xl text-hq-yellow font-semibold tracking-wide mt-2">
-                HQx Global &times; National Security Guard
-              </p>
             </div>
 
             {/* Narrative Content with High Readability */}
