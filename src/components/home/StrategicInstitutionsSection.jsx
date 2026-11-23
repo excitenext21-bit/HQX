@@ -105,42 +105,50 @@ export default function StrategicInstitutionsSection({ className = '' }) {
   return (
     <section className={`py-6 sm:py-8 lg:py-9 bg-[#07080B] overflow-hidden relative ${className}`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
-        {/* Seamless borderless container with NO background box */}
-        <div className="bg-transparent overflow-hidden">
+        {/* Half screen fit container with NO outer border */}
+        <div className="bg-[#111216] rounded-2xl sm:rounded-3xl p-5 sm:p-7 lg:p-8 shadow-[0_12px_45px_-10px_rgba(0,0,0,0.6)] overflow-hidden">
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
             
-            {/* LEFT HALF: Headline, Narrative & Sectors */}
+            {/* LEFT HALF: Heading, Sectors & Narrative (No duplicate pills/tags) */}
             <div className="flex flex-col justify-center space-y-2.5 sm:space-y-3">
               
+              {/* Gold status dot & category */}
+              <div className="flex items-center gap-2.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#FFCE00] inline-block animate-pulse shadow-xs" />
+                <span className="font-mono text-xs font-bold tracking-[0.22em] text-[#FFCE00] uppercase">
+                  Strategic Institutions &amp; Impacted Sectors
+                </span>
+              </div>
+
               {/* Main Headline */}
               <h2 className="font-display text-2xl sm:text-3xl lg:text-[34px] font-bold text-white tracking-tight leading-[1.18]">
                 Empowering India&apos;s <span className="text-[#FFCE00]">Apex Commands &amp; Critical Sectors</span>
               </h2>
-
-              {/* Concise impact narrative */}
-              <p className="font-body text-xs sm:text-[13px] text-white/60 leading-relaxed pt-0.5">
-                From frontline armed forces commands and civil service academies to central banking authorities and leading healthcare networks, HQX delivers transformative eudaimonic leadership and executive resilience across India.
-              </p>
 
               {/* Sectors list line */}
               <p className="font-mono text-xs sm:text-[13px] text-white/75 tracking-wide font-medium leading-relaxed">
                 Healthcare &bull; Pharma &bull; Defence &bull; Governance &bull; Central Banking &bull; Industry Apex
               </p>
 
+              {/* Concise impact narrative */}
+              <p className="font-body text-xs sm:text-[13px] text-white/60 leading-relaxed pt-0.5">
+                From frontline armed forces commands and civil service academies to central banking authorities and leading healthcare networks, HQX delivers transformative eudaimonic leadership and executive resilience across India.
+              </p>
+
             </div>
 
-            {/* RIGHT HALF: 2 Vertical Scrolling Columns (Up & Down) */}
+            {/* RIGHT HALF: 2 Vertical Scrolling Columns (Up & Down) - 20% lesser height */}
             <div className="relative">
               
-              {/* Outer vertical viewport (~300px height) with top/bottom fade masks into #07080B */}
+              {/* Outer vertical viewport (~300px height, 20% lesser) with top/bottom fade masks */}
               <div className="relative h-[255px] sm:h-[285px] lg:h-[305px] overflow-hidden group/marquee">
                 
                 {/* Top Fade Gradient */}
-                <div className="absolute inset-x-0 top-0 h-10 sm:h-12 bg-gradient-to-b from-[#07080B] via-[#07080B]/80 to-transparent z-20 pointer-events-none" />
+                <div className="absolute inset-x-0 top-0 h-10 sm:h-12 bg-gradient-to-b from-[#111216] via-[#111216]/80 to-transparent z-20 pointer-events-none" />
                 
                 {/* Bottom Fade Gradient */}
-                <div className="absolute inset-x-0 bottom-0 h-10 sm:h-12 bg-gradient-to-t from-[#07080B] via-[#07080B]/80 to-transparent z-20 pointer-events-none" />
+                <div className="absolute inset-x-0 bottom-0 h-10 sm:h-12 bg-gradient-to-t from-[#111216] via-[#111216]/80 to-transparent z-20 pointer-events-none" />
 
                 {/* TWO COLUMNS ONLY */}
                 <div className="grid grid-cols-2 gap-3 sm:gap-5 h-full">

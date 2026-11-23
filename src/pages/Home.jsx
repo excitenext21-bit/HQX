@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import TestimonialsCollage from '../components/home/TestimonialsCollage';
-import StrategicInstitutionsSection from '../components/home/StrategicInstitutionsSection';
+import StrategicInstitutionsSection, { IMPACTED_INSTITUTION_BADGES } from '../components/home/StrategicInstitutionsSection';
 import { 
   ArrowDownRight, 
   ArrowRight, 
@@ -111,64 +111,6 @@ function LongArrow({ direction = 'right', className = '' }) {
     </svg>
   );
 }
-
-const IMPACTED_INSTITUTION_BADGES = [
-  {
-    name: 'Healthcare',
-    subtitle: 'Clinical & Hospital Systems',
-    logo: '/images/logos/healthcare.png'
-  },
-  {
-    name: 'Pharma',
-    subtitle: 'Life Sciences & Biotech',
-    logo: '/images/logos/pharma.svg'
-  },
-  {
-    name: 'NSG',
-    subtitle: 'National Security Guard',
-    logo: '/images/logos/nsg.png'
-  },
-  {
-    name: 'Indian Army',
-    subtitle: 'Armed Forces Command',
-    logo: '/images/logos/indian_army.svg'
-  },
-  {
-    name: 'NACIN',
-    subtitle: 'Customs & Narcotics Academy',
-    logo: '/images/logos/nacin.png'
-  },
-  {
-    name: 'Government',
-    subtitle: 'Public Policy & Ministries',
-    logo: '/images/logos/government_of_india.svg'
-  },
-  {
-    name: 'RBI',
-    subtitle: 'Reserve Bank of India',
-    logo: '/images/logos/rbi.svg'
-  },
-  {
-    name: 'NHRD',
-    subtitle: 'National HRD Network',
-    logo: '/images/logos/nhrd.svg'
-  },
-  {
-    name: 'FICCI',
-    subtitle: 'Apex Industry Chamber',
-    logo: '/images/logos/ficci.png'
-  },
-  {
-    name: 'BMC',
-    subtitle: 'Brihanmumbai Municipal Corp',
-    logo: '/images/logos/bmc.png'
-  },
-  {
-    name: 'IMC',
-    subtitle: "Indian Merchants' Chamber",
-    logo: '/images/logos/imc.png'
-  }
-];
 
 export default function Home() {
   const { 
@@ -981,25 +923,44 @@ export default function Home() {
         </div>
       </header>
 
-      {/* 2. DYNAMIC CORPORATE PARTNERS INFINITE MARQUEE WITH MONOGRAM & TEXT LOGO OF IDENTICAL UNIFORM SIZE */}
-      <div className="w-full bg-hq-yellow py-5 overflow-hidden relative shadow-inner text-[#0A0A0A] dark:text-[#0A0A0A]">
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-hq-yellow to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-hq-yellow to-transparent z-10 pointer-events-none"></div>
-        
-        <div className="marquee-partners-track animate-marquee whitespace-nowrap inline-flex gap-10 md:gap-14 items-center px-4  text-[#0A0A0A] dark:text-[#0A0A0A]">
-          {[...corporatePartners, ...corporatePartners].map((partner, idx) => (
-            <div key={idx} className="inline-flex items-center gap-2.5 h-8 flex-shrink-0 group text-[#0A0A0A] dark:text-[#0A0A0A]">
-              <span className="flex items-center justify-center text-[#0A0A0A] dark:text-[#0A0A0A] group-hover:scale-110 transition-transform duration-200">
-                {partner.monogram}
-              </span>
-              <span className="font-display uppercase tracking-widest text-[#0A0A0A] dark:text-[#0A0A0A] font-bold text-xs sm:text-sm md:text-base leading-none whitespace-nowrap">
-                {partner.name}
-              </span>
-              <span className="marquee-partners-dot ml-8 md:ml-10 text-[#0A0A0A]/40 dark:text-[#0A0A0A]/40 font-light">•</span>
-            </div>
-          ))}
+      {/* 2. EMPOWERING INDIA'S APEX COMMANDS & CRITICAL SECTORS - ONLY LOGO WITH WHITE BG SCROLLING FROM RIGHT TO LEFT */}
+      <section className="w-full bg-[#0D0E12] border-b border-white/10 overflow-hidden relative py-3.5 sm:py-4">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 mb-2.5 sm:mb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div className="flex items-center gap-2.5">
+            <span className="w-2 h-2 rounded-full bg-[#FFCE00] inline-block animate-pulse shadow-xs" />
+            <h2 className="font-mono text-xs sm:text-[13px] font-bold tracking-[0.2em] text-white uppercase">
+              Empowering India&apos;s <span className="text-[#FFCE00]">Apex Commands &amp; Critical Sectors</span>
+            </h2>
+          </div>
+          <span className="hidden sm:inline font-mono text-[11px] sm:text-xs text-white/50 tracking-wider">
+            Healthcare &bull; Pharma &bull; Defence &bull; Governance &bull; Central Banking &bull; Industry Apex
+          </span>
         </div>
-      </div>
+
+        {/* Infinite scrolling track of only logos with white bg from right to left */}
+        <div className="relative w-full overflow-hidden group/marquee">
+          {/* Edge gradient masks */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#0D0E12] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#0D0E12] to-transparent z-10 pointer-events-none" />
+
+          <div className="animate-marquee whitespace-nowrap inline-flex gap-5 sm:gap-7 items-center py-1 group-hover/marquee:[animation-play-state:paused]">
+            {[...IMPACTED_INSTITUTION_BADGES, ...IMPACTED_INSTITUTION_BADGES].map((badge, bIdx) => (
+              <div 
+                key={bIdx}
+                title={badge.name + (badge.subtitle ? ` - ${badge.subtitle}` : '')}
+                className="w-13 h-13 sm:w-16 sm:h-16 md:w-[68px] md:h-[68px] rounded-xl bg-white flex items-center justify-center p-2.5 shrink-0 shadow-sm hover:scale-105 transition-transform duration-200 cursor-pointer"
+              >
+                <img 
+                  src={badge.logo} 
+                  alt={badge.name} 
+                  className="w-full h-full object-contain filter contrast-105" 
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* 3. 4 REASONS WHY MANNY WILL MAKE YOUR EMPLOYEE PRODUCTIVE */}
       <section id="reasons-section" className="section-reveal py-20 sm:py-24 bg-hq-white dark:bg-[#07080B] border-b border-hq-black/10 dark:border-white/10 relative">

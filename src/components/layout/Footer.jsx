@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Zap, ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react';
 import { useData } from '../../context/DataContext';
 import BrandLogo from '../common/BrandLogo';
+import CorporatePartnersMarquee from '../common/CorporatePartnersMarquee';
 import ShapeTomorrowAnimation from '../common/ShapeTomorrowAnimation';
 
 export default function Footer() {
@@ -43,6 +44,9 @@ export default function Footer() {
           swooshFill="#000000"
         />
       </div>
+
+      {/* Corporate Partners Infinite Scrolling Marquee - Placed Above Subscribe on your favourite Platform */}
+      <CorporatePartnersMarquee showTitle={false} />
 
       {/* Podcast Platform Subscription Banner */}
       <section className="w-full relative z-10 p-0 m-0">
