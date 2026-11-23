@@ -109,17 +109,17 @@ export default function ShapeTomorrowAnimation() {
           Tune into fortnightly executive dialogues on eudaimonic leadership, resilience, and purposeful living hosted by Manny Anchan.
         </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-3.5 sm:gap-4">
+        <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8">
           {PODCAST_CHANNELS.map((ch) => (
             <a
               key={ch.name}
               href={ch.href}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center gap-3 px-6 py-3.5 bg-[#121215]/90 hover:bg-[#1A1A1E] border border-white/15 hover:border-hq-yellow/60 text-white text-xs sm:text-sm font-display font-semibold tracking-wide transition-all duration-200"
+              className="group inline-flex items-center gap-2.5 text-white/90 hover:text-hq-yellow text-sm sm:text-base font-display font-semibold tracking-wide transition-colors duration-200 py-1"
             >
-              {ch.icon}
-              <span>{ch.name}</span>
+              <span className="transition-transform duration-200 group-hover:scale-110">{ch.icon}</span>
+              <span className="group-hover:text-hq-yellow transition-colors">{ch.name}</span>
             </a>
           ))}
         </div>

@@ -117,10 +117,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Utility & Legal Bar */}
-        <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-4 font-mono text-[11px] sm:text-[13.5px] tracking-normal uppercase pt-6 text-hq-black/80">
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <span>&copy; {new Date().getFullYear()} &bull; Happiness Quotient Global</span>
-            <span className="hidden sm:inline-block opacity-30">&bull;</span>
+        <div className="w-full flex flex-col md:grid md:grid-cols-3 items-start md:items-center gap-4 font-mono text-[11px] sm:text-[13.5px] tracking-normal uppercase pt-6 text-hq-black/80">
+          {/* Left: Website Concept */}
+          <div className="justify-self-start">
             <span>
               Website Concept &ndash;{' '}
               <a
@@ -134,7 +133,13 @@ export default function Footer() {
             </span>
           </div>
 
-          <div className="flex items-center gap-x-5 sm:gap-x-6 gap-y-2">
+          {/* Center: Copyright */}
+          <div className="md:text-center md:justify-self-center">
+            <span>&copy; {new Date().getFullYear()} &bull; Happiness Quotient Global</span>
+          </div>
+
+          {/* Right: Social Icons + Top */}
+          <div className="flex items-center gap-x-5 sm:gap-x-6 gap-y-2 md:justify-self-end">
             <a
               href="https://x.com/MannyAnchan"
               target="_blank"
