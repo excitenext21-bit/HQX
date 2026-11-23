@@ -111,11 +111,10 @@ export default function Podcast() {
     },
     {
       id: 'slide-3',
-      type: 'video',
-      src: '/videos/happiness_samurai_mental_health.mp4',
-      poster: '/profile_assets/page_32_img_15_2398.jpeg',
-      alt: 'HQX Podcast Executive Dialogue',
-      episodeIdx: 2,
+      type: 'image',
+      src: '/images/hero_showcase/podcast_arjun_khanna.jpg',
+      alt: 'HQX Autumn Season 2026: Arjun Khanna (AI Deep Thought Leader)',
+      episodeIdx: 0,
       objPos: 'object-center'
     },
     {

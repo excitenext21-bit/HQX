@@ -471,6 +471,17 @@ const INITIAL_BOOKS = [
 // Exact Real Podcasts from Page 12 of Profile
 const INITIAL_PODCASTS = [
   {
+    "id": "yt-gDlgkcZNI1k",
+    "youtubeId": "gDlgkcZNI1k",
+    "title": "HQx Autumn Season 2026: AI & Deep Thought Leadership",
+    "guest": "Arjun Khanna",
+    "category": "AI Deep Thought Leader | Founder & CEO, IntegrityX.ai",
+    "date": "Autumn 2026",
+    "duration": "48:15",
+    "summary": "HQx Autumn season 2026 featuring Arjun Khanna, AI Deep thought leader and enterprise pioneer, exploring the future of artificial intelligence, ethical leadership, and cognitive resilience.",
+    "thumbnail": "/images/hero_showcase/podcast_arjun_khanna.jpg"
+  },
+  {
     "id": "yt-SF72EvyPp_s",
     "youtubeId": "SF72EvyPp_s",
     "title": "Building Purposeful Ventures & Strategic Narrative",
