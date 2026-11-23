@@ -329,7 +329,7 @@ export default function WhyHQX() {
     {
       name: 'RBI',
       subtitle: 'Reserve Bank of India',
-      logo: '/images/logos/rbi.svg'
+      logo: '/images/logos/rbi.png'
     },
     {
       name: 'NHRD',

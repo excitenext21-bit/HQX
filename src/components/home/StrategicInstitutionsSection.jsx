@@ -34,7 +34,7 @@ export const IMPACTED_INSTITUTION_BADGES = [
   {
     name: 'RBI',
     subtitle: 'Reserve Bank of India',
-    logo: '/images/logos/rbi.svg'
+    logo: '/images/logos/rbi.png'
   },
   {
     name: 'NHRD',
