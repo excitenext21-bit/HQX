@@ -1,0 +1,10 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "HQX — Happiness Samurai",
+    "identifier": "did:web:happinesssamurai.com",
+    "documentationUrl": "https://happinesssamurai.com/llms.txt",
+    "logoUrl": "https://happinesssamurai.com/brand-logo.svg"
+  },
+  "entries": []
+}
