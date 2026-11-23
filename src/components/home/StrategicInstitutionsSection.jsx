@@ -79,9 +79,9 @@ const COLUMN_2_ITEMS = [
 
 function InstitutionItem({ badge }) {
   return (
-    <div className="flex items-center gap-3.5 py-2 px-2.5 rounded-xl hover:bg-white/[0.05] transition-colors duration-200 group shrink-0">
+    <div className="flex items-center gap-3 py-1.5 px-2 rounded-xl hover:bg-white/[0.05] transition-colors duration-200 group shrink-0">
       {/* Clean logo tile with NO border */}
-      <div className="w-12 h-12 sm:w-13 sm:h-13 rounded-xl bg-white flex items-center justify-center p-2 shrink-0 shadow-sm group-hover:scale-105 transition-transform duration-200">
+      <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-xl bg-white flex items-center justify-center p-1.5 shrink-0 shadow-sm group-hover:scale-105 transition-transform duration-200">
         <img 
           src={badge.logo} 
           alt={badge.name} 
@@ -90,10 +90,10 @@ function InstitutionItem({ badge }) {
         />
       </div>
       <div className="flex flex-col min-w-0">
-        <span className="font-display font-bold text-sm sm:text-[15px] text-white tracking-tight leading-snug group-hover:text-[#FFCE00] transition-colors truncate">
+        <span className="font-display font-bold text-xs sm:text-sm text-white tracking-tight leading-snug group-hover:text-[#FFCE00] transition-colors truncate">
           {badge.name}
         </span>
-        <span className="font-body text-xs text-white/60 font-medium leading-snug truncate mt-0.5">
+        <span className="font-body text-[11px] sm:text-xs text-white/60 font-medium leading-snug truncate mt-0.5">
           {badge.subtitle}
         </span>
       </div>
@@ -103,15 +103,15 @@ function InstitutionItem({ badge }) {
 
 export default function StrategicInstitutionsSection({ className = '' }) {
   return (
-    <section className={`py-8 sm:py-10 lg:py-12 bg-[#07080B] border-b border-white/10 overflow-hidden relative ${className}`}>
+    <section className={`py-6 sm:py-8 lg:py-9 bg-[#07080B] overflow-hidden relative ${className}`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
-        {/* Half screen fit container */}
-        <div className="bg-[#111216] rounded-2xl sm:rounded-3xl border border-white/10 p-6 sm:p-8 lg:p-10 shadow-[0_12px_45px_-10px_rgba(0,0,0,0.6)] overflow-hidden">
+        {/* Half screen fit container with NO outer border */}
+        <div className="bg-[#111216] rounded-2xl sm:rounded-3xl p-5 sm:p-7 lg:p-8 shadow-[0_12px_45px_-10px_rgba(0,0,0,0.6)] overflow-hidden">
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
             
             {/* LEFT HALF: Heading, Sectors & Narrative (No duplicate pills/tags) */}
-            <div className="flex flex-col justify-center space-y-4">
+            <div className="flex flex-col justify-center space-y-2.5 sm:space-y-3">
               
               {/* Gold status dot & category */}
               <div className="flex items-center gap-2.5">
@@ -122,40 +122,40 @@ export default function StrategicInstitutionsSection({ className = '' }) {
               </div>
 
               {/* Main Headline */}
-              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-[1.18]">
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-[34px] font-bold text-white tracking-tight leading-[1.18]">
                 Empowering India&apos;s <span className="text-[#FFCE00]">Apex Commands &amp; Critical Sectors</span>
               </h2>
 
               {/* Sectors list line */}
-              <p className="font-mono text-xs sm:text-sm text-white/75 tracking-wide font-medium leading-relaxed">
+              <p className="font-mono text-xs sm:text-[13px] text-white/75 tracking-wide font-medium leading-relaxed">
                 Healthcare &bull; Pharma &bull; Defence &bull; Governance &bull; Central Banking &bull; Industry Apex
               </p>
 
               {/* Concise impact narrative */}
-              <p className="font-body text-xs sm:text-sm text-white/60 leading-relaxed pt-1">
+              <p className="font-body text-xs sm:text-[13px] text-white/60 leading-relaxed pt-0.5">
                 From frontline armed forces commands and civil service academies to central banking authorities and leading healthcare networks, HQX delivers transformative eudaimonic leadership and executive resilience across India.
               </p>
 
             </div>
 
-            {/* RIGHT HALF: 2 Vertical Scrolling Columns (Up & Down) */}
+            {/* RIGHT HALF: 2 Vertical Scrolling Columns (Up & Down) - 20% lesser height */}
             <div className="relative">
               
-              {/* Outer vertical viewport (~half screen height: 350px-380px) with top/bottom fade masks */}
-              <div className="relative h-[320px] sm:h-[360px] lg:h-[380px] overflow-hidden group/marquee">
+              {/* Outer vertical viewport (~300px height, 20% lesser) with top/bottom fade masks */}
+              <div className="relative h-[255px] sm:h-[285px] lg:h-[305px] overflow-hidden group/marquee">
                 
                 {/* Top Fade Gradient */}
-                <div className="absolute inset-x-0 top-0 h-14 sm:h-16 bg-gradient-to-b from-[#111216] via-[#111216]/80 to-transparent z-20 pointer-events-none" />
+                <div className="absolute inset-x-0 top-0 h-10 sm:h-12 bg-gradient-to-b from-[#111216] via-[#111216]/80 to-transparent z-20 pointer-events-none" />
                 
                 {/* Bottom Fade Gradient */}
-                <div className="absolute inset-x-0 bottom-0 h-14 sm:h-16 bg-gradient-to-t from-[#111216] via-[#111216]/80 to-transparent z-20 pointer-events-none" />
+                <div className="absolute inset-x-0 bottom-0 h-10 sm:h-12 bg-gradient-to-t from-[#111216] via-[#111216]/80 to-transparent z-20 pointer-events-none" />
 
                 {/* TWO COLUMNS ONLY */}
-                <div className="grid grid-cols-2 gap-3 sm:gap-6 h-full">
+                <div className="grid grid-cols-2 gap-3 sm:gap-5 h-full">
                   
                   {/* COLUMN 1: Scrolling UP */}
                   <div className="overflow-hidden flex flex-col">
-                    <div className="animate-marquee-up flex flex-col gap-2.5 group-hover/marquee:[animation-play-state:paused]">
+                    <div className="animate-marquee-up flex flex-col gap-2 group-hover/marquee:[animation-play-state:paused]">
                       {/* Repeat twice for continuous infinite vertical loop */}
                       {[...COLUMN_1_ITEMS, ...COLUMN_1_ITEMS].map((badge, idx) => (
                         <InstitutionItem key={`col1-${idx}`} badge={badge} />
@@ -165,7 +165,7 @@ export default function StrategicInstitutionsSection({ className = '' }) {
 
                   {/* COLUMN 2: Scrolling DOWN */}
                   <div className="overflow-hidden flex flex-col">
-                    <div className="animate-marquee-down flex flex-col gap-2.5 group-hover/marquee:[animation-play-state:paused]">
+                    <div className="animate-marquee-down flex flex-col gap-2 group-hover/marquee:[animation-play-state:paused]">
                       {/* Repeat twice for continuous infinite vertical loop */}
                       {[...COLUMN_2_ITEMS, ...COLUMN_2_ITEMS].map((badge, idx) => (
                         <InstitutionItem key={`col2-${idx}`} badge={badge} />
