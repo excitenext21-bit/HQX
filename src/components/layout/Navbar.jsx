@@ -95,7 +95,7 @@ export default function Navbar() {
                   >
                     <div>
                       <div className="font-semibold text-[13.5px] uppercase">ABOUT HQX</div>
-                      <div className="text-[11px] text-white/60 font-medium uppercase tracking-wider">ENTERPRISE PURPOSE & VISION</div>
+                      <div className="text-[13px] text-white/60 font-medium uppercase tracking-wider">ENTERPRISE PURPOSE & VISION</div>
                     </div>
                     <ArrowUpRight className="w-4 h-4 opacity-60" />
                   </Link>
@@ -105,7 +105,7 @@ export default function Navbar() {
                   >
                     <div>
                       <div className="font-semibold text-[13.5px] uppercase">FOUNDER</div>
-                      <div className="text-[11px] text-white/60 font-medium uppercase tracking-wider">MANNY ANCHAN</div>
+                      <div className="text-[13px] text-white/60 font-medium uppercase tracking-wider">MANNY ANCHAN</div>
                     </div>
                     <ArrowUpRight className="w-4 h-4 opacity-60" />
                   </Link>
@@ -115,7 +115,7 @@ export default function Navbar() {
                   >
                     <div>
                       <div className="font-semibold text-[13.5px] uppercase">TEAM</div>
-                      <div className="text-[11px] text-white/60 font-medium uppercase tracking-wider">ADVISORY FACULTY & MENTORS</div>
+                      <div className="text-[13px] text-white/60 font-medium uppercase tracking-wider">ADVISORY FACULTY & MENTORS</div>
                     </div>
                     <ArrowUpRight className="w-4 h-4 opacity-60" />
                   </Link>
@@ -125,7 +125,7 @@ export default function Navbar() {
                   >
                     <div>
                       <div className="font-semibold text-[13.5px] uppercase">WHY HQX</div>
-                      <div className="text-[11px] text-white/60 font-medium uppercase tracking-wider">THE EUDAIMONIC ADVANTAGE</div>
+                      <div className="text-[13px] text-white/60 font-medium uppercase tracking-wider">THE EUDAIMONIC ADVANTAGE</div>
                     </div>
                     <ArrowUpRight className="w-4 h-4 opacity-60" />
                   </Link>
@@ -179,7 +179,7 @@ export default function Navbar() {
                   >
                     <div>
                       <div className="font-semibold text-[13.5px] uppercase">LEADERSHIP DEEP DIVE</div>
-                      <div className="text-[11px] text-white/60 font-medium uppercase tracking-wider">EXECUTIVE RETREAT & PURPOSE ALIGNMENT</div>
+                      <div className="text-[13px] text-white/60 font-medium uppercase tracking-wider">EXECUTIVE RETREAT & PURPOSE ALIGNMENT</div>
                     </div>
                     <ArrowUpRight className="w-4 h-4 opacity-60" />
                   </Link>
@@ -189,7 +189,7 @@ export default function Navbar() {
                   >
                     <div>
                       <div className="font-semibold text-[13.5px] uppercase">ENGAGING WORKSHOPS</div>
-                      <div className="text-[11px] text-white/60 font-medium uppercase tracking-wider">MINDFULNESS, PRODUCTIVITY & GRIT</div>
+                      <div className="text-[13px] text-white/60 font-medium uppercase tracking-wider">MINDFULNESS, PRODUCTIVITY & GRIT</div>
                     </div>
                     <ArrowUpRight className="w-4 h-4 opacity-60" />
                   </Link>
@@ -199,7 +199,7 @@ export default function Navbar() {
                   >
                     <div>
                       <div className="font-semibold text-[13.5px] uppercase">KEYNOTES & FRIDAY TALKS</div>
-                      <div className="text-[11px] text-white/60 font-medium uppercase tracking-wider">DISRUPTIVE CORPORATE TOWNHALLS</div>
+                      <div className="text-[13px] text-white/60 font-medium uppercase tracking-wider">DISRUPTIVE CORPORATE TOWNHALLS</div>
                     </div>
                     <ArrowUpRight className="w-4 h-4 opacity-60" />
                   </Link>
@@ -224,7 +224,7 @@ export default function Navbar() {
                   >
                     <div>
                       <div className="font-semibold text-[13.5px] uppercase">MICRO COURSES</div>
-                      <div className="text-[11px] text-white/60 font-medium uppercase tracking-wider">100-DAY MASTERY BLUEPRINTS</div>
+                      <div className="text-[13px] text-white/60 font-medium uppercase tracking-wider">100-DAY MASTERY BLUEPRINTS</div>
                     </div>
                     <ArrowUpRight className="w-4 h-4 opacity-60" />
                   </Link>
@@ -234,7 +234,7 @@ export default function Navbar() {
                   >
                     <div>
                       <div className="font-semibold text-[13.5px] uppercase">HAPPYU APP</div>
-                      <div className="text-[11px] text-white/60 font-medium uppercase tracking-wider">MEDITATION, GRATITUDE & MOOD TRACK</div>
+                      <div className="text-[13px] text-white/60 font-medium uppercase tracking-wider">MEDITATION, GRATITUDE & MOOD TRACK</div>
                     </div>
                     <ArrowUpRight className="w-4 h-4 opacity-60" />
                   </Link>
@@ -259,7 +259,7 @@ export default function Navbar() {
                   >
                     <div>
                       <div className="font-semibold text-[13.5px] uppercase">HQX PODCAST</div>
-                      <div className="text-[11px] text-white/60 font-medium uppercase tracking-wider">FORTNIGHTLY EXECUTIVE INSIGHTS</div>
+                      <div className="text-[13px] text-white/60 font-medium uppercase tracking-wider">FORTNIGHTLY EXECUTIVE INSIGHTS</div>
                     </div>
                     <ArrowUpRight className="w-4 h-4 opacity-60" />
                   </Link>
@@ -269,7 +269,7 @@ export default function Navbar() {
                   >
                     <div>
                       <div className="font-semibold text-[13.5px] uppercase">LITERATURE & BOOKS</div>
-                      <div className="text-[11px] text-white/60 font-medium uppercase tracking-wider">2020 TO 2025 ROADMAP</div>
+                      <div className="text-[13px] text-white/60 font-medium uppercase tracking-wider">2020 TO 2025 ROADMAP</div>
                     </div>
                     <ArrowUpRight className="w-4 h-4 opacity-60" />
                   </Link>
