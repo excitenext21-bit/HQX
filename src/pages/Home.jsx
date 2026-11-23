@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import TestimonialsCollage from '../components/home/TestimonialsCollage';
-import StrategicInstitutionsSection, { IMPACTED_INSTITUTION_BADGES } from '../components/home/StrategicInstitutionsSection';
+import { IMPACTED_INSTITUTION_BADGES } from '../components/home/StrategicInstitutionsSection';
 import { 
   ArrowDownRight, 
   ArrowRight, 
@@ -923,39 +923,52 @@ export default function Home() {
         </div>
       </header>
 
-      {/* 2. EMPOWERING INDIA'S APEX COMMANDS & CRITICAL SECTORS - ONLY LOGO WITH WHITE BG SCROLLING FROM RIGHT TO LEFT */}
-      <section className="w-full bg-[#0D0E12] border-b border-white/10 overflow-hidden relative py-3.5 sm:py-4">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 mb-2.5 sm:mb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-          <div className="flex items-center gap-2.5">
-            <span className="w-2 h-2 rounded-full bg-[#FFCE00] inline-block animate-pulse shadow-xs" />
-            <h2 className="font-mono text-xs sm:text-[13px] font-bold tracking-[0.2em] text-white uppercase">
-              Empowering India&apos;s <span className="text-[#FFCE00]">Apex Commands &amp; Critical Sectors</span>
-            </h2>
+      {/* 2. EMPOWERING INDIA'S APEX COMMANDS & CRITICAL SECTORS - YELLOW HEADER & YELLOW LOGOS MARQUEE */}
+      <section className="w-full bg-[#0A0A0A] overflow-hidden relative">
+        {/* Yellow Header Bar matching Trusted Titans aesthetic */}
+        <div className="w-full bg-hq-yellow text-[#0A0A0A] py-3.5 px-6 md:px-12 border-b border-hq-black/15 shadow-sm">
+          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+            <div className="flex items-center gap-2.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-hq-black inline-block animate-pulse" />
+              <h2 className="font-display font-bold text-xs sm:text-sm uppercase tracking-widest text-[#0A0A0A]">
+                Empowering India&apos;s Apex Commands &amp; Critical Sectors
+              </h2>
+            </div>
+            <div className="text-[13px] sm:text-[15px] font-mono tracking-wider font-semibold text-[#0A0A0A]/85">
+              Healthcare &bull; Pharma &bull; Defence &bull; Governance &bull; Central Banking &bull; Industry Apex
+            </div>
           </div>
-          <span className="hidden sm:inline font-mono text-[11px] sm:text-xs text-white/50 tracking-wider">
-            Healthcare &bull; Pharma &bull; Defence &bull; Governance &bull; Central Banking &bull; Industry Apex
-          </span>
         </div>
 
-        {/* Infinite scrolling track of only logos with white bg from right to left */}
-        <div className="relative w-full overflow-hidden group/marquee">
-          {/* Edge gradient masks */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#0D0E12] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#0D0E12] to-transparent z-10 pointer-events-none" />
+        {/* Marquee Track: Black background with logos without background, bigger and in yellow */}
+        <div className="relative w-full py-5 overflow-hidden group/marquee bg-[#0A0A0A]">
+          <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-28 bg-gradient-to-r from-[#0A0A0A] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-28 bg-gradient-to-l from-[#0A0A0A] to-transparent z-10 pointer-events-none" />
 
-          <div className="animate-marquee whitespace-nowrap inline-flex gap-5 sm:gap-7 items-center py-1 group-hover/marquee:[animation-play-state:paused]">
+          <div className="animate-marquee whitespace-nowrap inline-flex gap-8 sm:gap-12 md:gap-14 items-center px-4 group-hover/marquee:[animation-play-state:paused]">
             {[...IMPACTED_INSTITUTION_BADGES, ...IMPACTED_INSTITUTION_BADGES].map((badge, bIdx) => (
               <div 
                 key={bIdx}
-                title={badge.name + (badge.subtitle ? ` - ${badge.subtitle}` : '')}
-                className="w-13 h-13 sm:w-16 sm:h-16 md:w-[68px] md:h-[68px] rounded-xl bg-white flex items-center justify-center p-2.5 shrink-0 shadow-sm hover:scale-105 transition-transform duration-200 cursor-pointer"
+                className="inline-flex items-center gap-3 shrink-0 group cursor-pointer"
               >
-                <img 
-                  src={badge.logo} 
-                  alt={badge.name} 
-                  className="w-full h-full object-contain filter contrast-105" 
-                  loading="lazy"
-                />
+                {/* Logo without background and bigger */}
+                <div className="h-12 sm:h-14 md:h-16 w-14 sm:w-16 md:w-18 flex items-center justify-center p-1 shrink-0 group-hover:scale-110 transition-transform duration-200">
+                  <img 
+                    src={badge.logo} 
+                    alt={badge.name} 
+                    className="max-h-full max-w-full object-contain filter brightness-0 invert sepia saturate-[800%] hue-rotate-[5deg]" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="flex flex-col text-left">
+                  <span className="font-display font-bold text-xs sm:text-sm md:text-base uppercase tracking-wider text-hq-yellow leading-tight whitespace-nowrap">
+                    {badge.name}
+                  </span>
+                  <span className="font-mono text-[10px] sm:text-xs text-hq-yellow/70 leading-tight whitespace-nowrap mt-0.5">
+                    {badge.subtitle}
+                  </span>
+                </div>
+                <span className="ml-6 sm:ml-8 text-hq-yellow/40 font-light">•</span>
               </div>
             ))}
           </div>
@@ -1636,9 +1649,6 @@ export default function Home() {
 
       {/* Executive Testimonials Bento Collage */}
       <TestimonialsCollage />
-
-      {/* STRATEGIC INSTITUTIONS & IMPACTED SECTORS - 3 VERTICAL SCROLLING COLUMNS WITH LEFT EDITORIAL */}
-      <StrategicInstitutionsSection />
 
       {/* 8. HQX PODCAST (LITE BG & CONTRACTED LAYOUT - SPOTLIGHT VIDEO ON LEFT & THUMBNAILS ON RIGHT) */}
       <section id="podcast" className="section-reveal py-20 sm:py-24 bg-[#FAF7F2] dark:bg-[#0D0E12] text-hq-black dark:text-white transition-colors">
