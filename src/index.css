@@ -513,6 +513,32 @@ html.dark ::-webkit-scrollbar-track {
   filter: blur(0px);
 }
 
+/* Vertical Scrolling Marquee for Strategic Institutions */
+@keyframes marqueeUp {
+  0% { transform: translateY(0%); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes marqueeDown {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0%); }
+}
+
+.animate-marquee-up {
+  animation: marqueeUp 24s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-down {
+  animation: marqueeDown 24s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-up-alt {
+  animation: marqueeUp 28s linear infinite;
+  will-change: transform;
+}
+
 /* Prevent dark background paragraphs from being darkened */
 .bg-\[\#0A0A0A\] p,
 .bg-black p,

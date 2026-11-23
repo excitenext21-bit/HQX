@@ -7,6 +7,7 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import FluexaPageTransition from './components/common/FluexaPageTransition';
 import BrandLoader from './components/common/BrandLoader';
+import GlobalSectionReveal from './components/common/GlobalSectionReveal';
 import ConnectDrawer from './components/common/ConnectDrawer';
 import BackToTop from './components/common/BackToTop';
 import RouteSEO from './components/common/RouteSEO';
@@ -56,6 +57,7 @@ export default function App() {
           <RouteSEO />
           <ScrollToTop />
           <FluexaPageTransition />
+          <GlobalSectionReveal />
           <div className="flex flex-col min-h-screen bg-hq-white dark:bg-[#07080B] text-hq-black dark:text-white transition-colors duration-200">
             <Navbar />
             <main className="flex-1">
