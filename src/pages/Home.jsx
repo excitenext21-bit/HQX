@@ -866,7 +866,7 @@ export default function Home() {
               className="group relative inline-flex items-center justify-between gap-6 py-2.5 px-1 font-display font-medium text-xs tracking-widest text-white hover:text-hq-yellow transition-colors duration-300"
             >
               {/* Top border line: 1.25px, white by default, on hover width decreases to 20% at right edge and turns theme yellow */}
-              <span className="absolute top-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1.25px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none"></span>
+              <span className="absolute top-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none"></span>
 
               <span className="relative z-10">Explore Interventions</span>
 
@@ -881,7 +881,7 @@ export default function Home() {
               </svg>
 
               {/* Bottom border line: 1.25px, white by default, on hover width decreases to 20% at right edge and turns theme yellow */}
-              <span className="absolute bottom-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1.25px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none"></span>
+              <span className="absolute bottom-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none"></span>
             </Link>
           </div>
 
@@ -903,7 +903,7 @@ export default function Home() {
               className="group relative inline-flex items-center justify-between gap-6 py-2.5 px-1 font-display text-xs tracking-widest text-white hover:text-hq-yellow transition-colors duration-300"
             >
               {/* Top border line: 1.25px, white by default, on hover width decreases to 20% at right edge and turns theme yellow */}
-              <span className="absolute top-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1.25px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none"></span>
+              <span className="absolute top-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none"></span>
 
               <span className="relative z-10">Know more</span>
 
@@ -918,7 +918,7 @@ export default function Home() {
               </svg>
 
               {/* Bottom border line: 1.25px, white by default, on hover width decreases to 20% at right edge and turns theme yellow */}
-              <span className="absolute bottom-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1.25px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none"></span>
+              <span className="absolute bottom-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none"></span>
             </Link>
           </div>
         </div>
@@ -941,35 +941,28 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Marquee Track: Black background with logos without white background, larger and transparent */}
-        <div className="relative w-full py-5 overflow-hidden group/marquee bg-[#0A0A0A]">
+        {/* Marquee Track: Black background with logos only (no text), large and transparent */}
+        <div className="relative w-full py-6 sm:py-8 overflow-hidden group/marquee bg-[#0A0A0A]">
           <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-28 bg-gradient-to-r from-[#0A0A0A] to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-28 bg-gradient-to-l from-[#0A0A0A] to-transparent z-10 pointer-events-none" />
 
-          <div className="animate-marquee whitespace-nowrap inline-flex gap-8 sm:gap-12 md:gap-14 items-center px-4 group-hover/marquee:[animation-play-state:paused]">
+          <div className="animate-marquee whitespace-nowrap inline-flex gap-12 sm:gap-16 md:gap-20 items-center px-4 group-hover/marquee:[animation-play-state:paused]">
             {[...IMPACTED_INSTITUTION_BADGES, ...IMPACTED_INSTITUTION_BADGES].map((badge, bIdx) => (
               <div 
                 key={bIdx}
-                className="inline-flex items-center gap-3.5 shrink-0 group cursor-pointer"
+                className="inline-flex items-center gap-10 sm:gap-14 shrink-0 group cursor-pointer"
+                title={`${badge.name} - ${badge.subtitle}`}
               >
-                {/* Logo without white background, enlarged and floating cleanly */}
-                <div className="h-14 sm:h-16 md:h-20 w-auto min-w-[55px] max-w-[150px] sm:max-w-[180px] flex items-center justify-center p-1 shrink-0 group-hover:scale-105 transition-transform duration-200">
+                {/* Only Logo to display, enlarged with generous spacing */}
+                <div className="h-16 sm:h-20 md:h-24 w-auto min-w-[70px] max-w-[220px] sm:max-w-[280px] flex items-center justify-center p-2 shrink-0 group-hover:scale-105 transition-transform duration-200">
                   <img 
                     src={badge.logo} 
                     alt={badge.name} 
-                    className="max-h-full max-w-full object-contain filter contrast-105 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]" 
+                    className="max-h-full max-w-full object-contain filter contrast-105 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" 
                     loading="lazy"
                   />
                 </div>
-                <div className="flex flex-col text-left">
-                  <span className="font-display font-bold text-sm sm:text-base md:text-[17px] text-white group-hover:text-hq-yellow transition-colors leading-tight whitespace-nowrap">
-                    {badge.name}
-                  </span>
-                  <span className="font-body text-xs sm:text-[13px] text-white/70 font-medium leading-tight whitespace-nowrap mt-0.5">
-                    {badge.subtitle}
-                  </span>
-                </div>
-                <span className="ml-6 sm:ml-8 text-hq-yellow/40 font-light">•</span>
+                <span className="text-hq-yellow/30 font-light text-xl">•</span>
               </div>
             ))}
           </div>

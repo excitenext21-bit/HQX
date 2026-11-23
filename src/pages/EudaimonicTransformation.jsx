@@ -343,7 +343,7 @@ export default function EudaimonicTransformation() {
                 className="group relative inline-flex items-center justify-between gap-6 py-3.5 px-1 font-display font-medium text-xs tracking-widest text-white hover:text-hq-yellow transition-colors duration-300"
               >
                 {/* Top border line: 1.25px, white by default, on hover width decreases to 20% at right edge and turns theme yellow */}
-                <span className="absolute top-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1.25px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
+                <span className="absolute top-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
 
                 <span className="relative z-10 uppercase tracking-[0.2em]">EXPLORE PILLARS</span>
 
@@ -358,7 +358,7 @@ export default function EudaimonicTransformation() {
                 </svg>
 
                 {/* Bottom border line: 1.25px, white by default, on hover width decreases to 20% at right edge and turns theme yellow */}
-                <span className="absolute bottom-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1.25px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
+                <span className="absolute bottom-0 right-0 w-full group-hover:w-1/5 group-hover:w-[20%] h-[1px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
               </a>
             </motion.div>
 

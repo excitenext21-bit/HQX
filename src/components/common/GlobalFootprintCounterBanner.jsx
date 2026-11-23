@@ -233,7 +233,7 @@ export default function GlobalFootprintCounterBanner() {
               to="/team" 
               className="group relative inline-flex items-center justify-between gap-6 py-3.5 px-1 font-display font-medium text-xs tracking-widest text-white hover:text-hq-yellow transition-colors duration-300 uppercase"
             >
-              <span className="absolute top-0 right-0 w-full group-hover:w-1/5 h-[1.25px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none"></span>
+              <span className="absolute top-0 right-0 w-full group-hover:w-1/5 h-[1px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none"></span>
               <span className="relative z-10">Explore Faculty</span>
               <svg 
                 className="w-[20px] h-[10px] inline-block transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0" 
@@ -244,7 +244,7 @@ export default function GlobalFootprintCounterBanner() {
                 <line x1="0" y1="5" x2="20" y2="5" stroke="currentColor" strokeWidth="1" />
                 <polyline points="15 1, 20 5, 15 9" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className="absolute bottom-0 right-0 w-full group-hover:w-1/5 h-[1.25px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none"></span>
+              <span className="absolute bottom-0 right-0 w-full group-hover:w-1/5 h-[1px] bg-white group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none"></span>
             </Link>
           </div>
         </div>

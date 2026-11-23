@@ -210,7 +210,7 @@ export default function Keynotes() {
                 className="group relative inline-flex items-center justify-between gap-7 py-3 px-2 font-display font-medium text-xs tracking-[0.2em] text-[#0A0A0A] hover:text-black transition-colors duration-300 uppercase"
               >
                 {/* Top border line */}
-                <span className="absolute top-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-[#0A0A0A]/55 group-hover:bg-[#0A0A0A] transition-all duration-300 ease-out pointer-events-none" />
+                <span className="absolute top-0 right-0 w-full group-hover:w-1/4 h-[1px] bg-[#0A0A0A]/55 group-hover:bg-[#0A0A0A] transition-all duration-300 ease-out pointer-events-none" />
 
                 <span className="relative z-10 font-semibold tracking-widest">CHECK SPEAKING CALENDAR</span>
 
@@ -225,7 +225,7 @@ export default function Keynotes() {
                 </svg>
 
                 {/* Bottom border line */}
-                <span className="absolute bottom-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-[#0A0A0A]/55 group-hover:bg-[#0A0A0A] transition-all duration-300 ease-out pointer-events-none" />
+                <span className="absolute bottom-0 right-0 w-full group-hover:w-1/4 h-[1px] bg-[#0A0A0A]/55 group-hover:bg-[#0A0A0A] transition-all duration-300 ease-out pointer-events-none" />
               </Link>
             </div>
           </div>
@@ -536,7 +536,7 @@ export default function Keynotes() {
                   className="group relative inline-flex items-center justify-between gap-7 py-3 px-2 font-display font-medium text-xs tracking-[0.2em] text-white hover:text-hq-yellow transition-colors duration-300 uppercase"
                 >
                   {/* Top border line */}
-                  <span className="absolute top-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
+                  <span className="absolute top-0 right-0 w-full group-hover:w-1/4 h-[1px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
 
                   <span className="relative z-10 font-semibold tracking-widest">INQUIRE ABOUT SIMILAR SESSION</span>
 
@@ -551,7 +551,7 @@ export default function Keynotes() {
                   </svg>
 
                   {/* Bottom border line */}
-                  <span className="absolute bottom-0 right-0 w-full group-hover:w-1/4 h-[1.25px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
+                  <span className="absolute bottom-0 right-0 w-full group-hover:w-1/4 h-[1px] bg-white/60 group-hover:bg-hq-yellow transition-all duration-300 ease-out pointer-events-none" />
                 </Link>
               </div>
 
