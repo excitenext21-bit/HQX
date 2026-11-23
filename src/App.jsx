@@ -59,7 +59,7 @@ export default function App() {
           <div className="flex flex-col min-h-screen bg-hq-white dark:bg-[#07080B] text-hq-black dark:text-white transition-colors duration-200">
             <Navbar />
             <main className="flex-1">
-              <Suspense fallback={<div className="min-h-screen bg-transparent" />}>
+              <Suspense fallback={<div className="min-h-screen bg-[#07080B]" />}>
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/about-us" element={<AboutUs />} />

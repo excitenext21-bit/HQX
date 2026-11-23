@@ -4,21 +4,33 @@ import { motion, AnimatePresence } from 'framer-motion';
 import BrandLogo from './BrandLogo';
 
 export default function FluexaPageTransition() {
-  const [animating, setAnimating] = useState(true);
+  const [animating, setAnimating] = useState(() => {
+    // Only show loader once when first entering or loading the website
+    try {
+      return !sessionStorage.getItem('hqx_site_loaded');
+    } catch (_) {
+      return true;
+    }
+  });
 
-  // Trigger Brand Loader ONLY ONCE on initial website load (not on every page)
+  // Only animate on initial website entry, not on every page transition
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setAnimating(false);
-    }, 1150);
-    return () => clearTimeout(timer);
-  }, []);
+    if (animating) {
+      const timer = setTimeout(() => {
+        setAnimating(false);
+        try {
+          sessionStorage.setItem('hqx_site_loaded', 'true');
+        } catch (_) {}
+      }, 1250);
+      return () => clearTimeout(timer);
+    }
+  }, [animating]);
 
   return (
     <AnimatePresence mode="wait">
       {animating && (
         <motion.div
-          key="initial-website-loader"
+          key="hqx-website-initial-loader"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25, delay: 0.75 }}
